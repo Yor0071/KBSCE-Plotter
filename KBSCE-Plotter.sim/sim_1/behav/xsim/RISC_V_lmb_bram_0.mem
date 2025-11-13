@@ -1,0 +1,16 @@
+// Mem file initialization records.
+//
+// SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+// Vivado v2025.1 (64-bit)
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+// Created on Thursday November 13, 2025 - 12:18:12 pm, from:
+//
+//     Map file     - c:\Users\liamb\GitHub\KBSCE-Plotter\KBSCE-Plotter.gen\sources_1\bd\RISC_V\RISC_V.bmm
+//     Data file(s) - c:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/data/riscv_bootloop.elf
+//
+// Address space 'RISC_V_i_microblaze_riscv_0.RISC_V_i_microblaze_riscv_0_local_memory_lmb_bram_ADDR_SPACE', bit lane [31:0].
+//
+// Bus width = 32 bits, number of bus blocks = 1.
+
+@0000000000000000
+    0000006F

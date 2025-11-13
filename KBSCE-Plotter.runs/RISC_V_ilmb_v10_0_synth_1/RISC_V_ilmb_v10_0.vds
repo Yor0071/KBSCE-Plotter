@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Nov 13 12:00:15 2025
+# Process ID         : 7028
+# Current directory  : C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/RISC_V_ilmb_v10_0_synth_1
+# Command line       : vivado.exe -log RISC_V_ilmb_v10_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_ilmb_v10_0.tcl
+# Log file           : C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/RISC_V_ilmb_v10_0_synth_1/RISC_V_ilmb_v10_0.vds
+# Journal file       : C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/RISC_V_ilmb_v10_0_synth_1\vivado.jou
+# Running On         : ThinkpadP1_Liam
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 34174 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39274 MB
+# Available Virtual  : 12783 MB
+#-----------------------------------------------------------
+source RISC_V_ilmb_v10_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 491.852 ; gain = 211.879
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP RISC_V_ilmb_v10_0, cache-ID = 309aa0ad33ea0f5d.
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 13 12:00:42 2025...
