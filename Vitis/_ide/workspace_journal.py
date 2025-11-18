@@ -1,22 +1,10 @@
-# 2025-11-13T13:18:00.635177100
+# 2025-11-18T08:55:47.084016
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="Vitis")
 
-platform = client.get_component(name="bare_minimum_risc-V")
-status = platform.build()
+advanced_options = client.create_advanced_options_dict(dt_overlay="0")
 
-status = platform.build()
-
-comp = client.get_component(name="sw_to_led")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-vitis.dispose()
-
-vitis.dispose()
+platform = client.create_platform_component(name = "linux",hw_design = "$COMPONENT_LOCATION/../bare_minimum_risc-V/hw/RISC_V_wrapper.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
 
