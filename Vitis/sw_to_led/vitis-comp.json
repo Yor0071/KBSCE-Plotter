@@ -1,7 +1,7 @@
 {
   "name": "sw_to_led",
   "type": "HOST",
-  "platform": "bare_minimum_risc-V",
+  "platform": "linux",
   "domain": "standalone_microblaze_riscv_0",
   "cpuInstance": "microblaze_riscv_0",
   "cpuType": "microblaze_riscv",
