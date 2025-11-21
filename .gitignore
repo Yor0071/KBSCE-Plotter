@@ -1,0 +1,46 @@
+# Vivado project files
+*.jou
+*.log
+*.str
+*.sim
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.srcs/sources_1/bd/*/hdl/
+*.srcs/*/bd/*/ip/*_stub.*    
+*.gen/
+*.Xil/
+
+# Vivado-generated project files
+*.xpr
+*.xml
+*.html
+*.backup.jou
+*.backup.log
+
+# Checkpoints, bitstreams, etc.
+*.dcp
+*.bit
+*.bin
+*.mcs
+*.prm
+
+# Simulation intermediates
+*.wdb
+*.wcfg
+*.vcd
+*.vvp
+
+# Temporary directories
+.tcl.history
+*.tmp
+*.temp
+*.log
+*.jou
+
+# Other tool folders (common for FPGA workflows)
+.cache/
+.hw/
+.srcs/*/ip/*/ui/
+Vivado/KBSCE-Plotter.xpr
