@@ -43,3 +43,4 @@
 .cache/
 .hw/
 .srcs/*/ip/*/ui/
+Vivado/KBSCE-Plotter.xpr
