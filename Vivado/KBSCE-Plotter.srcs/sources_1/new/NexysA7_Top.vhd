@@ -12,8 +12,14 @@ entity NexysA7_Top is
     LED         : out std_logic_vector(15 downto 0);
     
     -- Motor-uitgangen (IN1/IN2 naar L298N)
-    MOT_IN1     : out std_logic;
-    MOT_IN2     : out std_logic
+    M1_IN1      : out std_logic;
+    M1_IN2      : out std_logic;
+    M2_IN1      : out std_logic;
+    M2_IN2      : out std_logic;
+    M3_IN1      : out std_logic;
+    M3_IN2      : out std_logic;
+    M4_IN1      : out std_logic;
+    M4_IN2      : out std_logic
   );
 end NexysA7_Top;
 
@@ -43,9 +49,19 @@ architecture RTL of NexysA7_Top is
     );
   end component;
 
-  -- interne signalen
-  signal speed_s : std_logic_vector(7 downto 0);
-  signal dir_s   : std_logic;
+  -- vaste minimale snelheid
+  constant MIN_SPEED : std_logic_vector(7 downto 0) := x"40";
+
+  -- interne signalen per motor
+  signal speed_M1 : std_logic_vector(7 downto 0);
+  signal speed_M2 : std_logic_vector(7 downto 0);
+  signal speed_M3 : std_logic_vector(7 downto 0);
+  signal speed_M4 : std_logic_vector(7 downto 0);
+
+  signal dir_M1   : std_logic;
+  signal dir_M2   : std_logic;
+  signal dir_M3   : std_logic;
+  signal dir_M4   : std_logic;
 
 begin
 
@@ -61,21 +77,79 @@ begin
       UART_RX_OUT => UART_RX_OUT,
       UART_TX_IN  => UART_TX_IN
     );
-    
+
+  --------------------------------------------------------------------
+  -- Debug: LED's laten de switches zien (optioneel, maar handig)
+  --------------------------------------------------------------------
+  -- LED <= SW;  -- kun je aan laten tijdens debug
+
   --------------------------------------------------------------------
   -- Motor besturen via switches
+  -- M1: SW0 = dir, SW1 = enable
+  -- M2: SW2 = dir, SW3 = enable
+  -- M3: SW4 = dir, SW5 = enable
+  -- M4: SW6 = dir, SW7 = enable
   --------------------------------------------------------------------
-  speed_s <= SW(7 downto 0);  -- snelheid met SW0..7
-  dir_s   <= SW(8);           -- richting met SW8
+  dir_M1 <= SW(0);
+  dir_M2 <= SW(2);
+  dir_M3 <= SW(4);
+  dir_M4 <= SW(6);
 
-  u_motor : MotorControl
+  speed_M1 <= (others => '0') when SW(1) = '0' else MIN_SPEED;
+  speed_M2 <= (others => '0') when SW(3) = '0' else MIN_SPEED;
+  speed_M3 <= (others => '0') when SW(5) = '0' else MIN_SPEED;
+  speed_M4 <= (others => '0') when SW(7) = '0' else MIN_SPEED;
+
+  --------------------------------------------------------------------
+  -- Motor 1 (X1)
+  --------------------------------------------------------------------
+  u_motor1 : MotorControl
     port map(
       clk    => CLK100MHZ,
       resetn => CPU_RESETN,
-      speed  => speed_s,
-      dir    => dir_s,
-      in1    => MOT_IN1,
-      in2    => MOT_IN2
+      speed  => speed_M1,
+      dir    => dir_M1,
+      in1    => M1_IN1,
+      in2    => M1_IN2
+    );
+
+  --------------------------------------------------------------------
+  -- Motor 2 (X2)
+  --------------------------------------------------------------------
+  u_motor2 : MotorControl
+    port map(
+      clk    => CLK100MHZ,
+      resetn => CPU_RESETN,
+      speed  => speed_M2,
+      dir    => dir_M2,
+      in1    => M2_IN1,
+      in2    => M2_IN2
+    );
+
+  --------------------------------------------------------------------
+  -- Motor 3 (Y)
+  --------------------------------------------------------------------
+  u_motor3 : MotorControl
+    port map(
+      clk    => CLK100MHZ,
+      resetn => CPU_RESETN,
+      speed  => speed_M3,
+      dir    => dir_M3,
+      in1    => M3_IN1,
+      in2    => M3_IN2
+    );
+
+  --------------------------------------------------------------------
+  -- Motor 4 (Z / pen)
+  --------------------------------------------------------------------
+  u_motor4 : MotorControl
+    port map(
+      clk    => CLK100MHZ,
+      resetn => CPU_RESETN,
+      speed  => speed_M4,
+      dir    => dir_M4,
+      in1    => M4_IN1,
+      in2    => M4_IN2
     );
 
 end RTL;
