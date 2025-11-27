@@ -50,7 +50,7 @@ architecture RTL of NexysA7_Top is
   end component;
 
   -- vaste minimale snelheid
-  constant MIN_SPEED : std_logic_vector(7 downto 0) := x"40";
+  constant MIN_SPEED : std_logic_vector(7 downto 0) := x"70";
 
   -- interne signalen per motor
   signal speed_M1 : std_logic_vector(7 downto 0);
