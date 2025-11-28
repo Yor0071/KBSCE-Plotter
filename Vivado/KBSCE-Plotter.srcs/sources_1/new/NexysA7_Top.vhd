@@ -19,11 +19,31 @@ entity NexysA7_Top is
     M3_IN1      : out std_logic;
     M3_IN2      : out std_logic;
     M4_IN1      : out std_logic;
-    M4_IN2      : out std_logic
+    M4_IN2      : out std_logic;
+    
+    -- VGA Signal Generator
+    PCLK        : in  std_logic;
+    VGA_R       : out std_logic_vector(3 downto 0);
+    VGA_G       : out std_logic_vector(3 downto 0);
+    VGA_B       : out std_logic_vector(3 downto 0);
+    VGA_HS      : out std_logic;
+    VGA_VS      : out std_logic
   );
 end NexysA7_Top;
 
 architecture RTL of NexysA7_Top is
+  -- VGA Signal Generator
+    component VGASignalGenerator is
+        port(
+            clk_23_75MHz : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+            
+            vga_R  : out std_logic_vector(3 downto 0); -- RGB444
+            vga_G  : out std_logic_vector(3 downto 0);
+            vga_B  : out std_logic_vector(3 downto 0);
+            vga_HS : out std_logic; -- Horizontal Sync
+            vga_VS : out std_logic -- Vertical Sync
+        );
+    end component VGASignalGenerator;
 
   -- bestaand wrapper-component
   component RISC_V_wrapper is
@@ -64,6 +84,17 @@ architecture RTL of NexysA7_Top is
   signal dir_M4   : std_logic;
 
 begin
+    -- VGA Signal Generator
+    u_VGASignalGenerator : VGASignalGenerator port map(
+        clk_23_75MHz => PCLK,
+        
+        vga_R => VGA_R,
+        vga_G => VGA_G,
+        vga_B => VGA_B,
+        
+        vga_HS => VGA_HS,
+        vga_VS => VGA_VS
+    );
 
   --------------------------------------------------------------------
   -- RISC-V systeem
