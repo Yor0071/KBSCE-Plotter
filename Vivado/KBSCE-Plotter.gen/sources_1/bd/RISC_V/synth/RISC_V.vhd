@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Fri Nov 28 18:40:43 2025
+--Date        : Fri Nov 28 21:54:24 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -920,7 +920,7 @@ architecture STRUCTURE of RISC_V is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of VGA_PCLK : signal is "xilinx.com:signal:clock:1.0 CLK.VGA_PCLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of VGA_PCLK : signal is "XIL_INTERFACENAME CLK.VGA_PCLK, CLK_DOMAIN /clk_wiz_1_clk_out1, FREQ_HZ 23750000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_PARAMETER of VGA_PCLK : signal is "XIL_INTERFACENAME CLK.VGA_PCLK, CLK_DOMAIN /clk_wiz_1_clk_out1, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
   attribute X_INTERFACE_INFO of reset : signal is "xilinx.com:signal:reset:1.0 RST.RESET RST";
   attribute X_INTERFACE_PARAMETER of reset : signal is "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of sys_clock : signal is "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK";

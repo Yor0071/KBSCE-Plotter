@@ -48,16 +48,16 @@ architecture Behavioral of VGASignalGenerator is
     constant V_LINES_RND : natural := 480;
     
     constant TOTAL_PIXELS : natural := 800; -- This includes blanking
-    constant TOTAL_V_LINES : natural := 500;
+    constant TOTAL_V_LINES : natural := 525;
     
     constant H_SYNC_POLARITY : std_logic := '0'; -- Pulse polarity
-    constant V_SYNC_POLARITY : std_logic := '1';
+    constant V_SYNC_POLARITY : std_logic := '0';
     
     constant H_FRONT_PORCH : natural := 16; -- Technisch Ontwerp 5.4.1 in signal production
-    constant H_SYNC_PULSE : natural := 64;
+    constant H_SYNC_PULSE : natural := 96;
     
-    constant V_FRONT_PORCH : natural := 3;
-    constant V_SYNC_PULSE : natural := 4;
+    constant V_FRONT_PORCH : natural := 10;
+    constant V_SYNC_PULSE : natural := 33;
 begin
     process (pclk) is
         variable hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
