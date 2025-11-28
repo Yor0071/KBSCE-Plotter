@@ -34,7 +34,7 @@ architecture RTL of NexysA7_Top is
   -- VGA Signal Generator
     component VGASignalGenerator is
         port(
-            clk_23_75MHz : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+            pclk : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
             
             vga_R  : out std_logic_vector(3 downto 0); -- RGB444
             vga_G  : out std_logic_vector(3 downto 0);
@@ -88,7 +88,7 @@ architecture RTL of NexysA7_Top is
 begin
     -- VGA Signal Generator
     u_VGASignalGenerator : VGASignalGenerator port map(
-        clk_23_75MHz => VGA_PCLK,
+        pclk => VGA_PCLK,
         
         vga_R => VGA_R,
         vga_G => VGA_G,

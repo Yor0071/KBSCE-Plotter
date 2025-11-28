@@ -38,7 +38,7 @@ end VGASignalGenerator_tb;
 architecture Behavioral of VGASignalGenerator_tb is
     component VGASignalGenerator is
         port(
-            clk_23_75MHz : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+            pclk : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
             
             vga_R  : out std_logic_vector(3 downto 0); -- RGB444
             vga_G  : out std_logic_vector(3 downto 0);
@@ -54,7 +54,7 @@ architecture Behavioral of VGASignalGenerator_tb is
     
 begin
     uut: VGASignalGenerator port map(
-        clk_23_75MHz => pclk,
+        pclk => pclk,
         
         vga_R => vga_R,
         vga_G => vga_G,
