@@ -19,7 +19,8 @@ entity RISC_V_wrapper is
     CPU_RESETN : in STD_LOGIC;
     CLK100MHZ : in STD_LOGIC;
     UART_RX_OUT : in STD_LOGIC;
-    UART_TX_IN : out STD_LOGIC
+    UART_TX_IN : out STD_LOGIC;
+    VGA_PCLK : out STD_LOGIC
   );
 end RISC_V_wrapper;
 
@@ -31,7 +32,8 @@ architecture STRUCTURE of RISC_V_wrapper is
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     sys_clock : in STD_LOGIC;
-    reset : in STD_LOGIC
+    reset : in STD_LOGIC;
+    VGA_PCLK : out std_logic
   );
   end component RISC_V;
 begin
@@ -42,6 +44,7 @@ RISC_V_i: component RISC_V
       reset => CPU_RESETN,
       sys_clock => CLK100MHZ,
       usb_uart_rxd => UART_RX_OUT,
-      usb_uart_txd => UART_TX_IN
+      usb_uart_txd => UART_TX_IN,
+      VGA_PCLK => VGA_PCLK
     );
 end STRUCTURE;

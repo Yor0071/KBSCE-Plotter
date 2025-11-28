@@ -1,9 +1,9 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
---Date        : Thu Nov 13 11:57:49 2025
---Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+--Date        : Fri Nov 28 18:40:43 2025
+--Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
 --Purpose     : IP block netlist
@@ -532,6 +532,7 @@ entity RISC_V is
   port (
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    VGA_PCLK : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -617,9 +618,9 @@ architecture STRUCTURE of RISC_V is
   component RISC_V_clk_wiz_1_0 is
   port (
     reset : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
     clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    VGA_PCLK : out STD_LOGIC
   );
   end component RISC_V_clk_wiz_1_0;
   component RISC_V_rst_clk_wiz_1_100M_0 is
@@ -849,7 +850,6 @@ architecture STRUCTURE of RISC_V is
   signal axi_smc_M02_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M02_AXI_WVALID : STD_LOGIC;
-  signal clk_wiz_1_locked : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_riscv_0_Clk : STD_LOGIC;
   signal microblaze_riscv_0_M_AXI_DP_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -918,8 +918,10 @@ architecture STRUCTURE of RISC_V is
   attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of microblaze_riscv_0 : label is "yes";
   attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of reset : signal is "xilinx.com:signal:reset:1.0 RST.RESET RST";
+  attribute X_INTERFACE_INFO of VGA_PCLK : signal is "xilinx.com:signal:clock:1.0 CLK.VGA_PCLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of VGA_PCLK : signal is "XIL_INTERFACENAME CLK.VGA_PCLK, CLK_DOMAIN /clk_wiz_1_clk_out1, FREQ_HZ 23750000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_INFO of reset : signal is "xilinx.com:signal:reset:1.0 RST.RESET RST";
   attribute X_INTERFACE_PARAMETER of reset : signal is "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of sys_clock : signal is "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK";
   attribute X_INTERFACE_PARAMETER of sys_clock : signal is "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN RISC_V_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
@@ -1086,9 +1088,9 @@ axi_uartlite_0: component RISC_V_axi_uartlite_0_0
     );
 clk_wiz_1: component RISC_V_clk_wiz_1_0
      port map (
+      VGA_PCLK => VGA_PCLK,
       clk_in1 => sys_clock,
       clk_out1 => microblaze_riscv_0_Clk,
-      locked => clk_wiz_1_locked,
       reset => reset_inv_0_Res(0)
     );
 mdm_1: component RISC_V_mdm_1_0
@@ -1192,7 +1194,7 @@ rst_clk_wiz_1_100M: component RISC_V_rst_clk_wiz_1_100M_0
      port map (
       aux_reset_in => '1',
       bus_struct_reset(0) => rst_clk_wiz_1_100M_bus_struct_reset(0),
-      dcm_locked => clk_wiz_1_locked,
+      dcm_locked => '1',
       ext_reset_in => reset,
       interconnect_aresetn(0) => NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED(0),
       mb_debug_sys_rst => mdm_1_debug_sys_rst,

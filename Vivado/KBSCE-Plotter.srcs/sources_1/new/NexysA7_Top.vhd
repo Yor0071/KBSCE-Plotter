@@ -22,7 +22,6 @@ entity NexysA7_Top is
     M4_IN2      : out std_logic;
     
     -- VGA Signal Generator
-    PCLK        : in  std_logic;
     VGA_R       : out std_logic_vector(3 downto 0);
     VGA_G       : out std_logic_vector(3 downto 0);
     VGA_B       : out std_logic_vector(3 downto 0);
@@ -44,6 +43,8 @@ architecture RTL of NexysA7_Top is
             vga_VS : out std_logic -- Vertical Sync
         );
     end component VGASignalGenerator;
+    
+    signal VGA_PCLK : std_logic;
 
   -- bestaand wrapper-component
   component RISC_V_wrapper is
@@ -53,7 +54,8 @@ architecture RTL of NexysA7_Top is
       CPU_RESETN  : in  STD_LOGIC;
       CLK100MHZ   : in  STD_LOGIC;
       UART_RX_OUT : in  STD_LOGIC;
-      UART_TX_IN  : out STD_LOGIC
+      UART_TX_IN  : out STD_LOGIC;
+      VGA_PCLK    : out STD_LOGIC
     );
   end component;
 
@@ -86,7 +88,7 @@ architecture RTL of NexysA7_Top is
 begin
     -- VGA Signal Generator
     u_VGASignalGenerator : VGASignalGenerator port map(
-        clk_23_75MHz => PCLK,
+        clk_23_75MHz => VGA_PCLK,
         
         vga_R => VGA_R,
         vga_G => VGA_G,
@@ -106,7 +108,8 @@ begin
       CPU_RESETN  => CPU_RESETN,
       CLK100MHZ   => CLK100MHZ,
       UART_RX_OUT => UART_RX_OUT,
-      UART_TX_IN  => UART_TX_IN
+      UART_TX_IN  => UART_TX_IN,
+      VGA_PCLK    => VGA_PCLK
     );
 
   --------------------------------------------------------------------
