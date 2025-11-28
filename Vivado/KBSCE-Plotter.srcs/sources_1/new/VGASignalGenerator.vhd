@@ -79,10 +79,6 @@ begin
             vga_HS <= not H_SYNC_POLARITY;
             vga_VS <= not V_SYNC_POLARITY;
             if hCount >= TOTAL_ACTIVE_PIXELS then -- In blanking area
-                vga_R <= (others => '0'); -- Force blank color
-                vga_G <= (others => '0');
-                vga_B <= (others => '0');
-                
                 if hCount >= TOTAL_ACTIVE_PIXELS + H_FRONT_PORCH then
                     if hCount < TOTAL_ACTIVE_PIXELS + H_FRONT_PORCH + H_SYNC_PULSE then
                         vga_HS <= H_SYNC_POLARITY; -- H Sync Pulse
@@ -91,10 +87,6 @@ begin
             end if;
             
             if vCount >= V_LINES_RND then -- In blanking area
-                vga_R <= (others => '0'); -- Force blank color
-                vga_G <= (others => '0');
-                vga_B <= (others => '0');
-                
                 if vCount >= V_LINES_RND + V_FRONT_PORCH then
                     if vCount < V_LINES_RND + V_FRONT_PORCH + V_SYNC_PULSE then
                         vga_VS <= V_SYNC_POLARITY; -- V Sync Pulse
@@ -104,6 +96,10 @@ begin
             
             if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then -- Active Display Region
                 vga_R <= (others => '1'); -- Hardcoded red
+                vga_G <= (others => '0');
+                vga_B <= (others => '0');
+            else
+                vga_R <= (others => '0'); -- Force blank color: in blanking region
                 vga_G <= (others => '0');
                 vga_B <= (others => '0');
             end if;
