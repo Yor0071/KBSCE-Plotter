@@ -62,6 +62,8 @@ begin
     process (clk_23_75MHz) is
         variable hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
         variable vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
+        
+        variable col_R, col_G, col_B : std_logic_vector(3 downto 0);
     begin
         if rising_edge(clk_23_75MHz) then
             if hCount = TOTAL_PIXELS - 1 then -- Counter for horizontal pixels
@@ -94,10 +96,19 @@ begin
                 end if;
             end if;
             
+            -- Test pattern generator
+            col_R := (others => '0');
+            col_G := (others => '0');
+            col_B := (others => '1'); -- Blue contents
+            if (hCount = 0 or hCount = TOTAL_ACTIVE_PIXELS - 1) or (vCount = 0 or vCount = V_LINES_RND - 1) then -- Border
+                col_R := (others => '1'); -- Red border
+                col_B := (others => '0');
+            end if;
+            
             if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then -- Active Display Region
-                vga_R <= (others => '1'); -- Hardcoded red
-                vga_G <= (others => '0');
-                vga_B <= (others => '0');
+                vga_R <= col_R;
+                vga_G <= col_G;
+                vga_B <= col_B;
             else
                 vga_R <= (others => '0'); -- Force blank color: in blanking region
                 vga_G <= (others => '0');
