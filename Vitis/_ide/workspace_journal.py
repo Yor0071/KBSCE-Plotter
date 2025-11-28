@@ -1,24 +1,12 @@
-# 2025-11-18T09:03:38.138937
+# 2025-11-28T13:29:34.903718800
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="Vitis")
 
-platform = client.get_component(name="linux")
-status = platform.build()
+client.delete_component(name="sw_to_led")
 
-status = platform.build()
+client.delete_component(name="componentName")
 
-comp = client.get_component(name="sw_to_led")
-comp.build()
-
-status = comp.clean()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
+vitis.dispose()
 
