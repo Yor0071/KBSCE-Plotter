@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Nov 28 14:18:14 2025
+# Process ID         : 21732
+# Current directory  : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent26364 C:\Users\liamb\GitHub\KBSCE-Plotter\Vivado\KBSCE-Plotter.xpr
+# Log file           : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/vivado.log
+# Journal file       : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado\vivado.jou
+# Running On         : ThinkpadP1_Liam
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 34174 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39274 MB
+# Available Virtual  : 23136 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.xpr
+update_compile_order -fileset sources_1

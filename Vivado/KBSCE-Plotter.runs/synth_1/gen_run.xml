@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1763033329">
-  <File Type="PA-TCL" Name="RISC_V_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="RISC_V_wrapper_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="RISC_V_wrapper_reports.tcl"/>
-  <File Type="RDS-RDS" Name="RISC_V_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="RISC_V_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="RISC_V_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="RISC_V_wrapper.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="RISC_V_wrapper_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="RISC_V_wrapper_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1764335254" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_ov7670_vga.dcp">
+  <File Type="REPORTS-TCL" Name="top_ov7670_vga_reports.tcl"/>
+  <File Type="RDS-UTIL" Name="top_ov7670_vga_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_ov7670_vga_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="top_ov7670_vga.tcl"/>
+  <File Type="RDS-RDS" Name="top_ov7670_vga.vds"/>
+  <File Type="RDS-DCP" Name="top_ov7670_vga.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/bd/RISC_V/RISC_V.bd">
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/hdl/RISC_V_wrapper.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/ov7670_vhdl_full_project/ov7670_capture.vhd">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PGENDIR/sources_1/bd/RISC_V/hdl/RISC_V_wrapper.vhd"/>
-        <Attr Name="ImportTime" Val="1763031469"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Users/liamb/Downloads/ov7670_vhdl_full_project/ov7670_capture.vhd"/>
+        <Attr Name="ImportTime" Val="1763555665"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ov7670_vhdl_full_project/vga_sync.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Users/liamb/Downloads/ov7670_vhdl_full_project/vga_sync.vhd"/>
+        <Attr Name="ImportTime" Val="1763555665"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ov7670_vhdl_full_project/top_ov7670_vga.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Users/liamb/Downloads/ov7670_vhdl_full_project/top_ov7670_vga.vhd"/>
+        <Attr Name="ImportTime" Val="1763555665"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/line_buffer.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="RISC_V_wrapper"/>
+      <Option Name="TopModule" Val="top_ov7670_vga"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -36,7 +56,7 @@
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/imports/VHDL_Projects/Nexys-A7-100T-Master.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../VHDL_Projects/Nexys-A7-100T-Master.xdc"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Nexys-A7-100T-Master.xdc"/>
         <Attr Name="ImportTime" Val="1756722688"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -48,26 +68,25 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/top_ov7670_vga.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
-    <Step Id="synth_design"/>
+    <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2025"/>
+    <Step Id="synth_design">
+      <Option Id="Directive">0</Option>
+      <Option Id="FlattenHierarchy">1</Option>
+      <Option Id="FsmExtraction">0</Option>
+    </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_microblaze_riscv_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_clk_wiz_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_dlmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_mdm_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_gpio_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_dlmb_bram_if_cntlr_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_ilmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_ilmb_bram_if_cntlr_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_smc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_lmb_bram_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_rst_clk_wiz_1_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_uartlite_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_reset_inv_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="frame_buffer"/>
 </GenRun>

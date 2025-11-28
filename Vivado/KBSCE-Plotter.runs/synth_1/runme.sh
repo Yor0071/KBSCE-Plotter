@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/synth_1'
+HD_PWD='C:/VHDL_Projects/camera_to_vga/camera_to_vga.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RISC_V_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_wrapper.tcl
+EAStep vivado -log top_ov7670_vga.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_ov7670_vga.tcl

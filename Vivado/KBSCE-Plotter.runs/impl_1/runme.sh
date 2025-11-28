@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/impl_1'
+HD_PWD='C:/VHDL_Projects/camera_to_vga/camera_to_vga.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -43,6 +43,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log RISC_V_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source RISC_V_wrapper.tcl -notrace
+EAStep vivado -log top_ov7670_vga.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top_ov7670_vga.tcl -notrace
 
 

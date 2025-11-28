@@ -3,12 +3,12 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Thu Nov 13 12:30:07 2025
-# Process ID         : 4016
-# Current directory  : C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/impl_1
-# Command line       : vivado.exe -log RISC_V_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source RISC_V_wrapper.tcl -notrace
-# Log file           : C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/impl_1/RISC_V_wrapper.vdi
-# Journal file       : C:/Users/liamb/GitHub/KBSCE-Plotter/KBSCE-Plotter.runs/impl_1\vivado.jou
+# Start of session at: Fri Nov 28 14:08:30 2025
+# Process ID         : 7764
+# Current directory  : C:/VHDL_Projects/camera_to_vga/camera_to_vga.runs/impl_1
+# Command line       : vivado.exe -log top_ov7670_vga.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_ov7670_vga.tcl -notrace
+# Log file           : C:/VHDL_Projects/camera_to_vga/camera_to_vga.runs/impl_1/top_ov7670_vga.vdi
+# Journal file       : C:/VHDL_Projects/camera_to_vga/camera_to_vga.runs/impl_1\vivado.jou
 # Running On         : ThinkpadP1_Liam
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 26100
@@ -19,6 +19,6 @@
 # Host memory        : 34174 MB
 # Swap memory        : 5100 MB
 # Total Virtual      : 39274 MB
-# Available Virtual  : 17048 MB
+# Available Virtual  : 19735 MB
 #-----------------------------------------------------------
-source RISC_V_wrapper.tcl -notrace
+source top_ov7670_vga.tcl -notrace
