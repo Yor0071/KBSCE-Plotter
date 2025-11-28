@@ -75,6 +75,8 @@ begin
         wait for 21 ns;
     end process;
 
+    -- Upload file to https://madlittlemods.github.io/vga-simulator/
+    -- More on blog: https://ericeastwood.com/blog/vga-simulator-getting-started/
     VGA_EXPORTER: process (pclk)
         file file_pointer: text is out "write.txt";
         variable line_el: line;
