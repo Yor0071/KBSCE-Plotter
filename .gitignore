@@ -43,3 +43,4 @@
 .hw/
 .srcs/*/ip/*/ui/
 Vivado/KBSCE-Plotter.xpr
+/Vitis/sw_to_led/build
