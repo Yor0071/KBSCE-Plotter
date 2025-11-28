@@ -80,6 +80,9 @@ begin
         -- A horizontal scanline takes 800 TOTAL_PIXELS so after 800 * 42 ns = 33.6 us
         wait for 34 us;
         
+        -- A whole frame takes TOTAL_PIXELS * TOTAL_V_LINES * 42 ns (clock period) = 16.8 ms
+        wait for 17 ms;
+        
         report "End test bench";
         wait; -- Do not loop
     end process;
