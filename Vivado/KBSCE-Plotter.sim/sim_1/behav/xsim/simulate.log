@@ -1,2 +1,5 @@
 Time resolution is 1 ps
-Block Memory Generator module RISC_V_wrapper.RISC_V_i.microblaze_riscv_0_local_memory.lmb_bram.inst.native_mem_mapped_module.blk_mem_gen_v8_4_11_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Note: Begin test bench
+Time: 0 ps  Iteration: 0  Process: /VGASignalGenerator_tb/TEST_BENCH  File: /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sim_1/new/VGASignalGenerator_tb.vhd
+Note: End test bench
+Time: 34 us  Iteration: 0  Process: /VGASignalGenerator_tb/TEST_BENCH  File: /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sim_1/new/VGASignalGenerator_tb.vhd
