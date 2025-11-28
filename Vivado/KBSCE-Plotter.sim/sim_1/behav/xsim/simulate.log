@@ -1,5 +1,3 @@
 Time resolution is 1 ps
 Note: Begin test bench
 Time: 0 ps  Iteration: 0  Process: /VGASignalGenerator_tb/TEST_BENCH  File: /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sim_1/new/VGASignalGenerator_tb.vhd
-Note: End test bench
-Time: 34 us  Iteration: 0  Process: /VGASignalGenerator_tb/TEST_BENCH  File: /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sim_1/new/VGASignalGenerator_tb.vhd

@@ -3,5 +3,5 @@
 May 21 2025
 22:59:56
 /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.sim/sim_1/behav/xsim/glbl.v,1763115596,verilog,,,,glbl,,axi_vip_v1_1_21;smartconnect_v1_0;xilinx_vip,,,,,,
-/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sim_1/new/VGASignalGenerator_tb.vhd,1764344904,vhdl,,,,vgasignalgenerator_tb,,,,,,,,
-/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/VGASignalGenerator.vhd,1764345507,vhdl,,,,vgasignalgenerator,,,,,,,,
+/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sim_1/new/VGASignalGenerator_tb.vhd,1764360438,vhdl,,,,vgasignalgenerator_tb,,,,,,,,
+/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/VGASignalGenerator.vhd,1764352877,vhdl,,,,vgasignalgenerator,,,,,,,,

@@ -67,9 +67,9 @@ begin
     PCLK_GENERATOR: process is
     begin
         pclk <= '1'; -- T = 1/f -> 1 / 23.75 MHz = 42 ns approximately
-        wait for 21 ns;
+        wait for 21.05263 ns;
         pclk <= '0';
-        wait for 21 ns;
+        wait for 21.05263 ns;
     end process;
     
     TEST_BENCH: process is
