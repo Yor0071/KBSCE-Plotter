@@ -66,14 +66,14 @@ begin
         if rising_edge(clk_23_75MHz) then
             if hCount = TOTAL_PIXELS - 1 then -- Counter for horizontal pixels
                 hCount := 0;
+                
+                if vCount = TOTAL_V_LINES - 1 then -- Counter for vertical scanlines
+                    vCount := 0;
+                else
+                    vCount := vCount + 1;
+                end if;
             else
                 hCount := hCount + 1;
-            end if;
-            
-            if vCount = TOTAL_V_LINES - 1 then -- Counter for vertical scanlines
-                vCount := 0;
-            else
-                vCount := vCount + 1;
             end if;
             
             vga_HS <= not H_SYNC_POLARITY;
