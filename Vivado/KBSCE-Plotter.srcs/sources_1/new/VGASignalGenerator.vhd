@@ -35,6 +35,9 @@ entity VGASignalGenerator is
     port(
         pclk : in std_logic; -- Should be 25 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
         
+        pixel_data: in std_logic_vector(11 downto 0); -- Pixel data is supplied from outside
+        fb_address: out std_logic_vector(18 downto 0); -- Framebuffer
+        
         vga_R  : out std_logic_vector(3 downto 0); -- RGB444
         vga_G  : out std_logic_vector(3 downto 0);
         vga_B  : out std_logic_vector(3 downto 0);
@@ -62,9 +65,16 @@ architecture Behavioral of VGASignalGenerator is
      -- Shared between signal generation process and BRAM read process for indexing
     signal hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
     signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
-    
-    signal pixel_data : std_logic_vector(11 downto 0);
 begin
+    ADDRESS_GENERATION_PROC: process (pclk) is
+    begin
+        if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then
+            fb_address <= std_logic_vector(to_unsigned(vCount * hCount + hCount, 19));
+        else
+            fb_address <= (others => '0'); -- Default address to prevent reading out of bounds
+        end if;
+    end process;
+
     SIGNAL_GENERATION_PROC: process (pclk) is
         variable col_R, col_G, col_B : std_logic_vector(3 downto 0);
     begin

@@ -54,8 +54,11 @@ architecture RTL of NexysA7_Top is
   -- VGA Signal Generator
     component VGASignalGenerator is
         port(
-            pclk : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+            pclk : in std_logic; -- Should be 25 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
             
+            pixel_data: in std_logic_vector(11 downto 0); -- Pixel data is supplied from outside
+            fb_address: out std_logic_vector(18 downto 0); -- Framebuffer
+        
             vga_R  : out std_logic_vector(3 downto 0); -- RGB444
             vga_G  : out std_logic_vector(3 downto 0);
             vga_B  : out std_logic_vector(3 downto 0);
@@ -128,6 +131,9 @@ begin
     -- VGA Signal Generator
     u_VGASignalGenerator : VGASignalGenerator port map(
         pclk => VGA_PCLK,
+        
+        pixel_data => vga_pixel_data,
+        fb_address => vga_address,
         
         vga_R => VGA_R,
         vga_G => VGA_G,
