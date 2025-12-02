@@ -19,11 +19,32 @@ entity NexysA7_Top is
     M3_IN1      : out std_logic;
     M3_IN2      : out std_logic;
     M4_IN1      : out std_logic;
-    M4_IN2      : out std_logic
+    M4_IN2      : out std_logic;
+    
+    -- VGA Signal Generator
+    VGA_R       : out std_logic_vector(3 downto 0);
+    VGA_G       : out std_logic_vector(3 downto 0);
+    VGA_B       : out std_logic_vector(3 downto 0);
+    VGA_HS      : out std_logic;
+    VGA_VS      : out std_logic
   );
 end NexysA7_Top;
 
 architecture RTL of NexysA7_Top is
+  -- VGA Signal Generator
+    component VGASignalGenerator is
+        port(
+            pclk : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+            
+            vga_R  : out std_logic_vector(3 downto 0); -- RGB444
+            vga_G  : out std_logic_vector(3 downto 0);
+            vga_B  : out std_logic_vector(3 downto 0);
+            vga_HS : out std_logic; -- Horizontal Sync
+            vga_VS : out std_logic -- Vertical Sync
+        );
+    end component VGASignalGenerator;
+    
+    signal VGA_PCLK : std_logic;
 
   -- bestaand wrapper-component
   component RISC_V_wrapper is
@@ -33,7 +54,8 @@ architecture RTL of NexysA7_Top is
       CPU_RESETN  : in  STD_LOGIC;
       CLK100MHZ   : in  STD_LOGIC;
       UART_RX_OUT : in  STD_LOGIC;
-      UART_TX_IN  : out STD_LOGIC
+      UART_TX_IN  : out STD_LOGIC;
+      VGA_PCLK    : out STD_LOGIC
     );
   end component;
 
@@ -64,6 +86,17 @@ architecture RTL of NexysA7_Top is
   signal dir_M4   : std_logic;
 
 begin
+    -- VGA Signal Generator
+    u_VGASignalGenerator : VGASignalGenerator port map(
+        pclk => VGA_PCLK,
+        
+        vga_R => VGA_R,
+        vga_G => VGA_G,
+        vga_B => VGA_B,
+        
+        vga_HS => VGA_HS,
+        vga_VS => VGA_VS
+    );
 
   --------------------------------------------------------------------
   -- RISC-V systeem
@@ -75,7 +108,8 @@ begin
       CPU_RESETN  => CPU_RESETN,
       CLK100MHZ   => CLK100MHZ,
       UART_RX_OUT => UART_RX_OUT,
-      UART_TX_IN  => UART_TX_IN
+      UART_TX_IN  => UART_TX_IN,
+      VGA_PCLK    => VGA_PCLK
     );
 
   --------------------------------------------------------------------

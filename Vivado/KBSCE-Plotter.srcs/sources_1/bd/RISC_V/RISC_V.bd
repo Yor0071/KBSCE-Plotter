@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC7B034F61F5FCFE7",
+      "boundary_crc": "0xB2C499972396BD38",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V",
       "name": "RISC_V",
@@ -108,6 +108,32 @@
             "value": "ACTIVE_LOW"
           }
         }
+      },
+      "VGA_PCLK": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/clk_wiz_1_clk_out1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "25000000",
+            "value_src": "ip_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          }
+        }
       }
     },
     "components": {
@@ -115,7 +141,7 @@
         "vlnv": "xilinx.com:ip:microblaze_riscv:1.0",
         "ip_revision": "5",
         "xci_name": "RISC_V_microblaze_riscv_0_0",
-        "xci_path": "ip\\RISC_V_microblaze_riscv_0_0\\RISC_V_microblaze_riscv_0_0.xci",
+        "xci_path": "ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xci",
         "inst_hier_path": "microblaze_riscv_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -245,7 +271,7 @@
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "15",
             "xci_name": "RISC_V_dlmb_v10_0",
-            "xci_path": "ip\\RISC_V_dlmb_v10_0\\RISC_V_dlmb_v10_0.xci",
+            "xci_path": "ip/RISC_V_dlmb_v10_0/RISC_V_dlmb_v10_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/dlmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -280,7 +306,7 @@
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "15",
             "xci_name": "RISC_V_ilmb_v10_0",
-            "xci_path": "ip\\RISC_V_ilmb_v10_0\\RISC_V_ilmb_v10_0.xci",
+            "xci_path": "ip/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/ilmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -315,7 +341,7 @@
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "26",
             "xci_name": "RISC_V_dlmb_bram_if_cntlr_0",
-            "xci_path": "ip\\RISC_V_dlmb_bram_if_cntlr_0\\RISC_V_dlmb_bram_if_cntlr_0.xci",
+            "xci_path": "ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -348,7 +374,7 @@
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "26",
             "xci_name": "RISC_V_ilmb_bram_if_cntlr_0",
-            "xci_path": "ip\\RISC_V_ilmb_bram_if_cntlr_0\\RISC_V_ilmb_bram_if_cntlr_0.xci",
+            "xci_path": "ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -371,7 +397,7 @@
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
             "ip_revision": "11",
             "xci_name": "RISC_V_lmb_bram_0",
-            "xci_path": "ip\\RISC_V_lmb_bram_0\\RISC_V_lmb_bram_0.xci",
+            "xci_path": "ip/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/lmb_bram",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -447,7 +473,7 @@
         "vlnv": "xilinx.com:ip:mdm_riscv:1.0",
         "ip_revision": "5",
         "xci_name": "RISC_V_mdm_1_0",
-        "xci_path": "ip\\RISC_V_mdm_1_0\\RISC_V_mdm_1_0.xci",
+        "xci_path": "ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xci",
         "inst_hier_path": "mdm_1",
         "has_run_ip_tcl": "true"
       },
@@ -455,12 +481,45 @@
         "vlnv": "xilinx.com:ip:clk_wiz:6.0",
         "ip_revision": "16",
         "xci_name": "RISC_V_clk_wiz_1_0",
-        "xci_path": "ip\\RISC_V_clk_wiz_1_0\\RISC_V_clk_wiz_1_0.xci",
+        "xci_path": "ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0.xci",
         "inst_hier_path": "clk_wiz_1",
         "has_run_ip_tcl": "true",
         "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "130.958"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "98.575"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "175.402"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "98.575"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "25"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
           "CLK_IN1_BOARD_INTERFACE": {
             "value": "sys_clock"
+          },
+          "CLK_OUT2_PORT": {
+            "value": "VGA_PCLK"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "10.000"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "10.000"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "40"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "2"
           },
           "PRIM_SOURCE": {
             "value": "Single_ended_clock_capable_pin"
@@ -470,6 +529,9 @@
           },
           "USE_BOARD_FLOW": {
             "value": "true"
+          },
+          "USE_LOCKED": {
+            "value": "false"
           }
         }
       },
@@ -477,7 +539,7 @@
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "ip_revision": "17",
         "xci_name": "RISC_V_rst_clk_wiz_1_100M_0",
-        "xci_path": "ip\\RISC_V_rst_clk_wiz_1_100M_0\\RISC_V_rst_clk_wiz_1_100M_0.xci",
+        "xci_path": "ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0.xci",
         "inst_hier_path": "rst_clk_wiz_1_100M",
         "has_run_ip_tcl": "true"
       },
@@ -485,7 +547,7 @@
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "37",
         "xci_name": "RISC_V_axi_gpio_0_0",
-        "xci_path": "ip\\RISC_V_axi_gpio_0_0\\RISC_V_axi_gpio_0_0.xci",
+        "xci_path": "ip/RISC_V_axi_gpio_0_0/RISC_V_axi_gpio_0_0.xci",
         "inst_hier_path": "axi_gpio_leds",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -501,7 +563,7 @@
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "37",
         "xci_name": "RISC_V_axi_gpio_1_0",
-        "xci_path": "ip\\RISC_V_axi_gpio_1_0\\RISC_V_axi_gpio_1_0.xci",
+        "xci_path": "ip/RISC_V_axi_gpio_1_0/RISC_V_axi_gpio_1_0.xci",
         "inst_hier_path": "axi_gpio_switches",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -517,7 +579,7 @@
         "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
         "ip_revision": "39",
         "xci_name": "RISC_V_axi_uartlite_0_0",
-        "xci_path": "ip\\RISC_V_axi_uartlite_0_0\\RISC_V_axi_uartlite_0_0.xci",
+        "xci_path": "ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0.xci",
         "inst_hier_path": "axi_uartlite_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -533,7 +595,7 @@
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "27",
         "xci_name": "RISC_V_axi_smc_0",
-        "xci_path": "ip\\RISC_V_axi_smc_0\\RISC_V_axi_smc_0.xci",
+        "xci_path": "ip/RISC_V_axi_smc_0/RISC_V_axi_smc_0.xci",
         "inst_hier_path": "axi_smc",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -672,7 +734,7 @@
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
         "ip_revision": "5",
         "xci_name": "RISC_V_reset_inv_0_0",
-        "xci_path": "ip\\RISC_V_reset_inv_0_0\\RISC_V_reset_inv_0_0.xci",
+        "xci_path": "ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0.xci",
         "inst_hier_path": "reset_inv_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -748,10 +810,10 @@
       }
     },
     "nets": {
-      "clk_wiz_1_locked": {
+      "clk_wiz_1_VGA_PCLK": {
         "ports": [
-          "clk_wiz_1/locked",
-          "rst_clk_wiz_1_100M/dcm_locked"
+          "clk_wiz_1/VGA_PCLK",
+          "VGA_PCLK"
         ]
       },
       "mdm_1_debug_sys_rst": {
