@@ -67,11 +67,15 @@ architecture Behavioral of VGASignalGenerator is
     signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
 begin
     ADDRESS_GENERATION_PROC: process (pclk) is
+        variable calculated_address : integer range 0 to 307200;
     begin
-        if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then
-            fb_address <= std_logic_vector(to_unsigned(vCount * hCount + hCount, 19));
-        else
-            fb_address <= (others => '0'); -- Default address to prevent reading out of bounds
+        if rising_edge(pclk) then
+            calculated_address := vCount * hCount + hCount;
+            if calculated_address >= 307200 then
+                calculated_address := 0; -- Default address to prevent reading out of bounds
+            end if;
+            
+            fb_address <= std_logic_vector(to_unsigned(calculated_address, 19));
         end if;
     end process;
 
