@@ -65,20 +65,9 @@ architecture Behavioral of VGASignalGenerator is
      -- Shared between signal generation process and BRAM read process for indexing
     signal hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
     signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
+    
+    signal fb_index : integer range 0 to (TOTAL_ACTIVE_PIXELS * V_LINES_RND - 1) := 1;
 begin
-    ADDRESS_GENERATION_PROC: process (pclk) is
-        variable calculated_address : integer range 0 to 307199; -- 307200 (640*480) possible indices
-    begin
-        if rising_edge(pclk) then
-             -- Read the one after the current clock because a lookup takes a clock cycle so it will be synchronized
-            calculated_address := vCount * hCount + hCount + 1;
-            if calculated_address >= 307200 then
-                calculated_address := 0; -- Default address to prevent reading out of bounds
-            end if;
-            
-            fb_address <= std_logic_vector(to_unsigned(calculated_address, 19));
-        end if;
-    end process;
 
     SIGNAL_GENERATION_PROC: process (pclk) is
     begin
@@ -117,6 +106,13 @@ begin
                 vga_R <= pixel_data(11 downto 8);
                 vga_G <= pixel_data(7  downto 4);
                 vga_B <= pixel_data(3  downto 0);
+                
+                fb_index <= fb_index + 1;
+                if fb_index >= (TOTAL_ACTIVE_PIXELS * V_LINES_RND) then
+                    fb_index <= 0;
+                end if;
+                
+                fb_address <= std_logic_vector(to_unsigned(fb_index, 19));
             else
                 vga_R <= (others => '0'); -- Force blank color: in blanking region
                 vga_G <= (others => '0');
