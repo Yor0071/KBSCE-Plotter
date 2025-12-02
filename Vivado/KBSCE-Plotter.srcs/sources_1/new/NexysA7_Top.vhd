@@ -12,14 +12,14 @@ entity NexysA7_Top is
     LED         : out std_logic_vector(15 downto 0);
     
     -- Motor-uitgangen (IN1/IN2 naar L298N)
-    M1_IN1      : out std_logic;
-    M1_IN2      : out std_logic;
-    M2_IN1      : out std_logic;
-    M2_IN2      : out std_logic;
-    M3_IN1      : out std_logic;
-    M3_IN2      : out std_logic;
-    M4_IN1      : out std_logic;
-    M4_IN2      : out std_logic
+    m1_in1_0      : out std_logic;
+    m1_in2_0      : out std_logic;
+    m2_in1_0      : out std_logic;
+    m2_in2_0      : out std_logic;
+    m3_in1_0      : out std_logic;
+    m3_in2_0      : out std_logic;
+    m4_in1_0      : out std_logic;
+    m4_in2_0      : out std_logic
   );
 end NexysA7_Top;
 
@@ -109,8 +109,8 @@ begin
       resetn => CPU_RESETN,
       speed  => speed_M1,
       dir    => dir_M1,
-      in1    => M1_IN1,
-      in2    => M1_IN2
+      in1    => m1_in1_0,
+      in2    => m1_in2_0
     );
 
   --------------------------------------------------------------------
@@ -122,8 +122,8 @@ begin
       resetn => CPU_RESETN,
       speed  => speed_M2,
       dir    => dir_M2,
-      in1    => M2_IN1,
-      in2    => M2_IN2
+      in1    => m2_in1_0,
+      in2    => m2_in2_0
     );
 
   --------------------------------------------------------------------
@@ -135,8 +135,8 @@ begin
       resetn => CPU_RESETN,
       speed  => speed_M3,
       dir    => dir_M3,
-      in1    => M3_IN1,
-      in2    => M3_IN2
+      in1    => m3_in1_0,
+      in2    => m3_in2_0
     );
 
   --------------------------------------------------------------------
@@ -148,8 +148,8 @@ begin
       resetn => CPU_RESETN,
       speed  => speed_M4,
       dir    => dir_M4,
-      in1    => M4_IN1,
-      in2    => M4_IN2
+      in1    => m4_in1_0,
+      in2    => m4_in2_0
     );
 
 end RTL;
