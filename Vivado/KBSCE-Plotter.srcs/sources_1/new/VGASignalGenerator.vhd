@@ -81,7 +81,6 @@ begin
     end process;
 
     SIGNAL_GENERATION_PROC: process (pclk) is
-        variable col_R, col_G, col_B : std_logic_vector(3 downto 0);
     begin
         if rising_edge(pclk) then
             if hCount = TOTAL_PIXELS - 1 then -- Counter for horizontal pixels
@@ -114,14 +113,10 @@ begin
                 end if;
             end if;
             
-            col_R := pixel_data(11 downto 8);
-            col_G := pixel_data(7  downto 4);
-            col_B := pixel_data(3  downto 0);
-            
             if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then -- Active Display Region
-                vga_R <= col_R;
-                vga_G <= col_G;
-                vga_B <= col_B;
+                vga_R <= pixel_data(11 downto 8);
+                vga_G <= pixel_data(7  downto 4);
+                vga_B <= pixel_data(3  downto 0);
             else
                 vga_R <= (others => '0'); -- Force blank color: in blanking region
                 vga_G <= (others => '0');
