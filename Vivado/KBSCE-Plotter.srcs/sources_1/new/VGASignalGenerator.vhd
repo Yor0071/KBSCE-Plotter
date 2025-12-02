@@ -67,10 +67,11 @@ architecture Behavioral of VGASignalGenerator is
     signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
 begin
     ADDRESS_GENERATION_PROC: process (pclk) is
-        variable calculated_address : integer range 0 to 307200;
+        variable calculated_address : integer range 0 to 307199; -- 307200 (640*480) possible indices
     begin
         if rising_edge(pclk) then
-            calculated_address := vCount * hCount + hCount;
+             -- Read the one after the current clock because a lookup takes a clock cycle so it will be synchronized
+            calculated_address := vCount * hCount + hCount + 1;
             if calculated_address >= 307200 then
                 calculated_address := 0; -- Default address to prevent reading out of bounds
             end if;
