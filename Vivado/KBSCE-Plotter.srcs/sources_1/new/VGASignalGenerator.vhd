@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -58,24 +58,27 @@ architecture Behavioral of VGASignalGenerator is
     
     constant V_FRONT_PORCH : natural := 3;
     constant V_SYNC_PULSE : natural := 4;
+    
+     -- Shared between signal generation process and BRAM read process for indexing
+    signal hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
+    signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
+    
+    signal pixel_data : std_logic_vector(11 downto 0);
 begin
-    process (pclk) is
-        variable hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
-        variable vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
-        
+    SIGNAL_GENERATION_PROC: process (pclk) is
         variable col_R, col_G, col_B : std_logic_vector(3 downto 0);
     begin
         if rising_edge(pclk) then
             if hCount = TOTAL_PIXELS - 1 then -- Counter for horizontal pixels
-                hCount := 0;
+                hCount <= 0;
                 
                 if vCount = TOTAL_V_LINES - 1 then -- Counter for vertical scanlines
-                    vCount := 0;
+                    vCount <= 0;
                 else
-                    vCount := vCount + 1;
+                    vCount <= vCount + 1;
                 end if;
             else
-                hCount := hCount + 1;
+                hCount <= hCount + 1;
             end if;
             
             vga_HS <= not H_SYNC_POLARITY;
@@ -96,14 +99,9 @@ begin
                 end if;
             end if;
             
-            -- Test pattern generator
-            col_R := (others => '0');
-            col_G := (others => '0');
-            col_B := (others => '1'); -- Blue contents
-            if (hCount = 0 or hCount = TOTAL_ACTIVE_PIXELS - 1) or (vCount = 0 or vCount = V_LINES_RND - 1) then -- Border
-                col_R := (others => '1'); -- Red border
-                col_B := (others => '0');
-            end if;
+            col_R := pixel_data(11 downto 8);
+            col_G := pixel_data(7  downto 4);
+            col_B := pixel_data(3  downto 0);
             
             if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then -- Active Display Region
                 vga_R <= col_R;
