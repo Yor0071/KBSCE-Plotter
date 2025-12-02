@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity VGASignalGenerator is
     port(
-        pclk : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+        pclk : in std_logic; -- Should be 25 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
         
         vga_R  : out std_logic_vector(3 downto 0); -- RGB444
         vga_G  : out std_logic_vector(3 downto 0);
@@ -48,16 +48,16 @@ architecture Behavioral of VGASignalGenerator is
     constant V_LINES_RND : natural := 480;
     
     constant TOTAL_PIXELS : natural := 800; -- This includes blanking
-    constant TOTAL_V_LINES : natural := 525;
+    constant TOTAL_V_LINES : natural := 500;
     
     constant H_SYNC_POLARITY : std_logic := '0'; -- Pulse polarity
-    constant V_SYNC_POLARITY : std_logic := '0';
+    constant V_SYNC_POLARITY : std_logic := '1';
     
     constant H_FRONT_PORCH : natural := 16; -- Technisch Ontwerp 5.4.1 in signal production
-    constant H_SYNC_PULSE : natural := 96;
+    constant H_SYNC_PULSE : natural := 64;
     
-    constant V_FRONT_PORCH : natural := 10;
-    constant V_SYNC_PULSE : natural := 33;
+    constant V_FRONT_PORCH : natural := 3;
+    constant V_SYNC_PULSE : natural := 4;
 begin
     process (pclk) is
         variable hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
