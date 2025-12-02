@@ -31,6 +31,26 @@ entity NexysA7_Top is
 end NexysA7_Top;
 
 architecture RTL of NexysA7_Top is
+    -- Framebuffer
+    component framebuffer is
+        Port ( 
+            clka : in STD_LOGIC;
+            ena : in STD_LOGIC;
+            wea : in STD_LOGIC_VECTOR ( 0 to 0 );
+            addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
+            dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
+            douta : out STD_LOGIC_VECTOR ( 11 downto 0 );
+            
+            clkb : in STD_LOGIC;
+            enb : in STD_LOGIC;
+            web : in STD_LOGIC_VECTOR ( 0 to 0 );
+            addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
+            dinb : in STD_LOGIC_VECTOR ( 11 downto 0 );
+            doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
+        );
+    end component;
+    
+
   -- VGA Signal Generator
     component VGASignalGenerator is
         port(
@@ -45,6 +65,9 @@ architecture RTL of NexysA7_Top is
     end component VGASignalGenerator;
     
     signal VGA_PCLK : std_logic;
+    
+    signal vga_pixel_data : std_logic_vector(11 downto 0);
+    signal vga_address : std_logic_vector(18 downto 0);
 
   -- bestaand wrapper-component
   component RISC_V_wrapper is
@@ -86,6 +109,22 @@ architecture RTL of NexysA7_Top is
   signal dir_M4   : std_logic;
 
 begin
+    u_Framebuffer : Framebuffer port map(
+        clka  => VGA_PCLK,
+        ena   => '1',
+        wea   => (others => '0'), -- Read by default
+        addra => vga_address,
+        dina  => (others => '0'), -- Unused
+        douta => vga_pixel_data,
+       
+        clkb  => '0', -- Change to camera PCLK
+        enb   => '1',
+        web   => (others => '1'), -- Write by default
+        addrb => (others => '0'), -- Change to camera address
+        dinb  => (others => '0'), -- Change to camera pixel data
+        doutb => open -- Unused
+    );
+
     -- VGA Signal Generator
     u_VGASignalGenerator : VGASignalGenerator port map(
         pclk => VGA_PCLK,
