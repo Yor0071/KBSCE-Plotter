@@ -70,7 +70,6 @@ architecture Behavioral of VGASignalGenerator is
     
     signal fb_index : integer := 0;
 begin
-
     SIGNAL_GENERATION_PROC: process (pclk) is
     begin
         if rising_edge(pclk) then
@@ -104,9 +103,10 @@ begin
                 end if;
             end if;
             
-            if hCount = TOTAL_PIXELS - 2 - BRAM_LATENCY and vCount > V_LINES_RND then
+            -- Framebuffer address calculation logic
+            if hCount = TOTAL_PIXELS - 2 - BRAM_LATENCY and vCount > V_LINES_RND then -- Before hCount = 0 -> in blanking region
                 fb_index <= 0;
-            elsif hCount >= TOTAL_ACTIVE_PIXELS - BRAM_LATENCY - 1 and hCount < TOTAL_PIXELS - BRAM_LATENCY - 1 then
+            elsif hCount >= TOTAL_ACTIVE_PIXELS - BRAM_LATENCY - 1 and hCount < TOTAL_PIXELS - BRAM_LATENCY - 1 then -- Do not update in blanking region
                 fb_index <= fb_index;
             else
                 fb_index <= fb_index + 1;
