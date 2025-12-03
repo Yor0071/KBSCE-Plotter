@@ -1,7 +1,7 @@
 from PIL import Image
 
-img = Image.open("TPTILEwv-640x480.png").convert("RGB")
-with open("framebuffer_tptilewv.coe", "w") as f:
+img = Image.open("colour-bars-smpte-75-640x480-377410117.gif").convert("RGB")
+with open("framebuffer.coe", "w") as f:
     f.write("memory_initialization_radix=16;\n")
     f.write("memory_initialization_vector=\n")
     vals = []

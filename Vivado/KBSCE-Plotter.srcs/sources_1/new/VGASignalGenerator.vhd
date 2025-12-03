@@ -64,11 +64,11 @@ architecture Behavioral of VGASignalGenerator is
     
     constant BRAM_LATENCY : natural := 2; -- 2 clock cycles
     
-     -- Shared between signal generation process and BRAM read process for indexing
+     -- For signal generation process
     signal hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
     signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
     
-    signal fb_index : unsigned(18 downto 0) := to_unsigned(BRAM_LATENCY, 19);
+    signal fb_index : integer := 0;
 begin
 
     SIGNAL_GENERATION_PROC: process (pclk) is
@@ -104,18 +104,20 @@ begin
                 end if;
             end if;
             
+            if hCount = TOTAL_PIXELS - 1 - BRAM_LATENCY and vCount > V_LINES_RND then
+                fb_index <= 0;
+            elsif hCount >= TOTAL_ACTIVE_PIXELS - BRAM_LATENCY - 1 and hCount < TOTAL_PIXELS - BRAM_LATENCY - 1 then
+                fb_index <= fb_index;
+            else
+                fb_index <= fb_index + 1;
+            end if;
+            
+            fb_address <= std_logic_vector(to_unsigned(fb_index, 19));
+                
             if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then -- Active Display Region
                 vga_R <= pixel_data(11 downto 8);
                 vga_G <= pixel_data(7  downto 4);
                 vga_B <= pixel_data(3  downto 0);
-                
-                if hCount = 0 and vCount = 0 then
-                    fb_index <= to_unsigned(BRAM_LATENCY, 19);
-                else
-                    fb_index <= fb_index + 1;
-                end if;
-            
-                fb_address <= std_logic_vector(fb_index);
             else
                 vga_R <= (others => '0'); -- Force blank color: in blanking region
                 vga_G <= (others => '0');
