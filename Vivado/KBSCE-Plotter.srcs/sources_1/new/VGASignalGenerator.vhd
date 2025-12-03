@@ -110,7 +110,7 @@ begin
                 vga_B <= pixel_data(3  downto 0);
                 
                 if hCount = 0 and vCount = 0 then
-                    fb_index <= (others => '0');
+                    fb_index <= to_unsigned(BRAM_LATENCY, 19);
                 else
                     fb_index <= fb_index + 1;
                 end if;
