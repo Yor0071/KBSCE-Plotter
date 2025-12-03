@@ -114,7 +114,7 @@ begin
                 else
                     fb_index <= fb_index + 1;
                 end if;
-                
+            
                 fb_address <= std_logic_vector(fb_index);
             else
                 vga_R <= (others => '0'); -- Force blank color: in blanking region

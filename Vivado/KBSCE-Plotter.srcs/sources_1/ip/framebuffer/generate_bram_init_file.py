@@ -1,7 +1,7 @@
 from PIL import Image
 
-img = Image.open("RCA_Indian_Head_Test_Pattern.svg.png").convert("RGB")
-with open("framebuffer_head.coe", "w") as f:
+img = Image.open("TPTILEwv-640x480.png").convert("RGB")
+with open("framebuffer_tptilewv.coe", "w") as f:
     f.write("memory_initialization_radix=16;\n")
     f.write("memory_initialization_vector=\n")
     vals = []
