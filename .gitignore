@@ -5,7 +5,6 @@
 *.sim
 *.cache/
 *.hw/
-*.ip_user_files/
 *.runs/
 *.srcs/sources_1/bd/*/hdl/
 *.srcs/*/bd/*/ip/*_stub.*    
