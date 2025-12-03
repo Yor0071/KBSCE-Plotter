@@ -62,11 +62,13 @@ architecture Behavioral of VGASignalGenerator is
     constant V_FRONT_PORCH : natural := 3;
     constant V_SYNC_PULSE : natural := 4;
     
+    constant BRAM_LATENCY : natural := 2; -- 2 clock cycles
+    
      -- Shared between signal generation process and BRAM read process for indexing
     signal hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
     signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
     
-    signal fb_index : integer range 0 to (TOTAL_ACTIVE_PIXELS * V_LINES_RND - 1) := 1;
+    signal fb_index : integer range 0 to (TOTAL_ACTIVE_PIXELS * V_LINES_RND - 1) := BRAM_LATENCY;
 begin
 
     SIGNAL_GENERATION_PROC: process (pclk) is
