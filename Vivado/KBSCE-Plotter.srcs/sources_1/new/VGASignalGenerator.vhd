@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -34,6 +34,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity VGASignalGenerator is
     port(
         pclk : in std_logic; -- Should be 25 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+        
+        pixel_data: in std_logic_vector(11 downto 0); -- Pixel data is supplied from outside
+        fb_address: out std_logic_vector(18 downto 0); -- Framebuffer
         
         vga_R  : out std_logic_vector(3 downto 0); -- RGB444
         vga_G  : out std_logic_vector(3 downto 0);
@@ -58,24 +61,28 @@ architecture Behavioral of VGASignalGenerator is
     
     constant V_FRONT_PORCH : natural := 3;
     constant V_SYNC_PULSE : natural := 4;
+    
+    constant BRAM_LATENCY : natural := 2; -- 2 clock cycles
+    
+     -- For signal generation process
+    signal hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
+    signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
+    
+    signal fb_index : integer := 0;
 begin
-    process (pclk) is
-        variable hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
-        variable vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
-        
-        variable col_R, col_G, col_B : std_logic_vector(3 downto 0);
+    SIGNAL_GENERATION_PROC: process (pclk) is
     begin
         if rising_edge(pclk) then
             if hCount = TOTAL_PIXELS - 1 then -- Counter for horizontal pixels
-                hCount := 0;
+                hCount <= 0;
                 
                 if vCount = TOTAL_V_LINES - 1 then -- Counter for vertical scanlines
-                    vCount := 0;
+                    vCount <= 0;
                 else
-                    vCount := vCount + 1;
+                    vCount <= vCount + 1;
                 end if;
             else
-                hCount := hCount + 1;
+                hCount <= hCount + 1;
             end if;
             
             vga_HS <= not H_SYNC_POLARITY;
@@ -96,19 +103,21 @@ begin
                 end if;
             end if;
             
-            -- Test pattern generator
-            col_R := (others => '0');
-            col_G := (others => '0');
-            col_B := (others => '1'); -- Blue contents
-            if (hCount = 0 or hCount = TOTAL_ACTIVE_PIXELS - 1) or (vCount = 0 or vCount = V_LINES_RND - 1) then -- Border
-                col_R := (others => '1'); -- Red border
-                col_B := (others => '0');
+            -- Framebuffer address calculation logic
+            if hCount = TOTAL_PIXELS - 2 - BRAM_LATENCY and vCount > V_LINES_RND then -- Before hCount = 0 -> in blanking region
+                fb_index <= 0;
+            elsif hCount >= TOTAL_ACTIVE_PIXELS - BRAM_LATENCY - 1 and hCount < TOTAL_PIXELS - BRAM_LATENCY - 1 then -- Do not update in blanking region
+                fb_index <= fb_index;
+            else
+                fb_index <= fb_index + 1;
             end if;
             
+            fb_address <= std_logic_vector(to_unsigned(fb_index, 19));
+                
             if hCount < TOTAL_ACTIVE_PIXELS and vCount < V_LINES_RND then -- Active Display Region
-                vga_R <= col_R;
-                vga_G <= col_G;
-                vga_B <= col_B;
+                vga_R <= pixel_data(11 downto 8);
+                vga_G <= pixel_data(7  downto 4);
+                vga_B <= pixel_data(3  downto 0);
             else
                 vga_R <= (others => '0'); -- Force blank color: in blanking region
                 vga_G <= (others => '0');

@@ -31,11 +31,34 @@ entity NexysA7_Top is
 end NexysA7_Top;
 
 architecture RTL of NexysA7_Top is
+    -- Framebuffer
+    component framebuffer is
+        Port ( 
+            clka : in STD_LOGIC;
+            ena : in STD_LOGIC;
+            wea : in STD_LOGIC_VECTOR ( 0 to 0 );
+            addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
+            dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
+            douta : out STD_LOGIC_VECTOR ( 11 downto 0 );
+            
+            clkb : in STD_LOGIC;
+            enb : in STD_LOGIC;
+            web : in STD_LOGIC_VECTOR ( 0 to 0 );
+            addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
+            dinb : in STD_LOGIC_VECTOR ( 11 downto 0 );
+            doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
+        );
+    end component;
+    
+
   -- VGA Signal Generator
     component VGASignalGenerator is
         port(
-            pclk : in std_logic; -- Should be 23.75 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+            pclk : in std_logic; -- Should be 25 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
             
+            pixel_data: in std_logic_vector(11 downto 0); -- Pixel data is supplied from outside
+            fb_address: out std_logic_vector(18 downto 0); -- Framebuffer
+        
             vga_R  : out std_logic_vector(3 downto 0); -- RGB444
             vga_G  : out std_logic_vector(3 downto 0);
             vga_B  : out std_logic_vector(3 downto 0);
@@ -45,6 +68,9 @@ architecture RTL of NexysA7_Top is
     end component VGASignalGenerator;
     
     signal VGA_PCLK : std_logic;
+    
+    signal vga_pixel_data : std_logic_vector(11 downto 0);
+    signal vga_address : std_logic_vector(18 downto 0);
 
   -- bestaand wrapper-component
   component RISC_V_wrapper is
@@ -86,9 +112,28 @@ architecture RTL of NexysA7_Top is
   signal dir_M4   : std_logic;
 
 begin
+    u_Framebuffer : Framebuffer port map(
+        clka  => VGA_PCLK,
+        ena   => '1',
+        wea   => (others => '0'), -- Read by default
+        addra => vga_address,
+        dina  => (others => '0'), -- Unused
+        douta => vga_pixel_data,
+       
+        clkb  => '0', -- Change to camera PCLK
+        enb   => '1',
+        web   => (others => '1'), -- Write by default
+        addrb => (others => '0'), -- Change to camera address
+        dinb  => (others => '0'), -- Change to camera pixel data
+        doutb => open -- Unused
+    );
+
     -- VGA Signal Generator
     u_VGASignalGenerator : VGASignalGenerator port map(
         pclk => VGA_PCLK,
+        
+        pixel_data => vga_pixel_data,
+        fb_address => vga_address,
         
         vga_R => VGA_R,
         vga_G => VGA_G,
