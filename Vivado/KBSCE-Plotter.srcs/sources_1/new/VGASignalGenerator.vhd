@@ -68,7 +68,7 @@ architecture Behavioral of VGASignalGenerator is
     signal hCount : integer range 0 to TOTAL_PIXELS - 1 := 0;
     signal vCount : integer range 0 to TOTAL_V_LINES - 1 := 0;
     
-    signal fb_index : integer range 0 to (TOTAL_ACTIVE_PIXELS * V_LINES_RND - 1) := BRAM_LATENCY;
+    signal fb_index : unsigned(18 downto 0) := to_unsigned(BRAM_LATENCY, 19);
 begin
 
     SIGNAL_GENERATION_PROC: process (pclk) is
@@ -109,12 +109,13 @@ begin
                 vga_G <= pixel_data(7  downto 4);
                 vga_B <= pixel_data(3  downto 0);
                 
-                fb_index <= fb_index + 1;
-                if fb_index >= (TOTAL_ACTIVE_PIXELS * V_LINES_RND) then
-                    fb_index <= 0;
+                if hCount = 0 and vCount = 0 then
+                    fb_index <= (others => '0');
+                else
+                    fb_index <= fb_index + 1;
                 end if;
                 
-                fb_address <= std_logic_vector(to_unsigned(fb_index, 19));
+                fb_address <= std_logic_vector(fb_index);
             else
                 vga_R <= (others => '0'); -- Force blank color: in blanking region
                 vga_G <= (others => '0');
