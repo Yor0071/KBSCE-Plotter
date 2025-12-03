@@ -104,7 +104,7 @@ begin
                 end if;
             end if;
             
-            if hCount = TOTAL_PIXELS - 1 - BRAM_LATENCY and vCount > V_LINES_RND then
+            if hCount = TOTAL_PIXELS - 2 - BRAM_LATENCY and vCount > V_LINES_RND then
                 fb_index <= 0;
             elsif hCount >= TOTAL_ACTIVE_PIXELS - BRAM_LATENCY - 1 and hCount < TOTAL_PIXELS - BRAM_LATENCY - 1 then
                 fb_index <= fb_index;
