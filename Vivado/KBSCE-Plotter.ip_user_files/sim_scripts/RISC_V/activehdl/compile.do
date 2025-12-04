@@ -129,6 +129,9 @@ vcom -work axi_uartlite_v2_0_39 -93  \
 vcom -work xil_defaultlib -93  \
 "../../../bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/sim/RISC_V_axi_uartlite_0_0.vhd" \
 
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_15 -l microblaze_riscv_v1_0_5 -l xil_defaultlib -l lmb_v10_v3_0_15 -l lmb_bram_if_cntlr_v4_0_26 -l blk_mem_gen_v8_4_11 -l axi_lite_ipif_v3_0_4 -l mdm_riscv_v1_0_5 -l proc_sys_reset_v5_0_17 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_37 -l axi_uartlite_v2_0_39 -l xlconstant_v1_1_10 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_35 -l axi_vip_v1_1_21 -l util_vector_logic_v2_0_5 \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/sim/bd_33e2.v" \
+
 vlog -work xlconstant_v1_1_10  -v2k5 "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_15 -l microblaze_riscv_v1_0_5 -l xil_defaultlib -l lmb_v10_v3_0_15 -l lmb_bram_if_cntlr_v4_0_26 -l blk_mem_gen_v8_4_11 -l axi_lite_ipif_v3_0_4 -l mdm_riscv_v1_0_5 -l proc_sys_reset_v5_0_17 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_37 -l axi_uartlite_v2_0_39 -l xlconstant_v1_1_10 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_35 -l axi_vip_v1_1_21 -l util_vector_logic_v2_0_5 \
 "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a165/hdl/xlconstant_v1_1_vl_rfs.v" \
 
@@ -231,9 +234,6 @@ vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../KBSCE-Plotter.gen/source
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_52/sim/bd_33e2_m03bn_0.sv" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_53/sim/bd_33e2_m03e_0.sv" \
 
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_15 -l microblaze_riscv_v1_0_5 -l xil_defaultlib -l lmb_v10_v3_0_15 -l lmb_bram_if_cntlr_v4_0_26 -l blk_mem_gen_v8_4_11 -l axi_lite_ipif_v3_0_4 -l mdm_riscv_v1_0_5 -l proc_sys_reset_v5_0_17 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_37 -l axi_uartlite_v2_0_39 -l xlconstant_v1_1_10 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_35 -l axi_vip_v1_1_21 -l util_vector_logic_v2_0_5 \
-"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/sim/bd_33e2.v" \
-
 vlog -work axi_infrastructure_v1_1_0  -v2k5 "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_15 -l microblaze_riscv_v1_0_5 -l xil_defaultlib -l lmb_v10_v3_0_15 -l lmb_bram_if_cntlr_v4_0_26 -l blk_mem_gen_v8_4_11 -l axi_lite_ipif_v3_0_4 -l mdm_riscv_v1_0_5 -l proc_sys_reset_v5_0_17 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_37 -l axi_uartlite_v2_0_39 -l xlconstant_v1_1_10 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_35 -l axi_vip_v1_1_21 -l util_vector_logic_v2_0_5 \
 "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 
@@ -253,9 +253,10 @@ vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../KBSCE-Plotter.gen/sources_
 "../../../bd/RISC_V/ip/RISC_V_reset_inv_0_0/sim/RISC_V_reset_inv_0_0.v" \
 
 vcom -work xil_defaultlib -93  \
-"../../../bd/RISC_V/ipshared/6292/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/RISC_V/ipshared/6292/hdl/motor_ctrl.vhd" \
-"../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_1/sim/RISC_V_motor_ctrl_0_1.vhd" \
+"../../../bd/RISC_V/ipshared/630b/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/RISC_V/ipshared/630b/hdl/motor_ctrl.vhd" \
+"../../../bd/RISC_V/ipshared/630b/src/MotorControl.vhd" \
+"../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/sim/RISC_V_motor_ctrl_0_4.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
 
 vlog -work xil_defaultlib \

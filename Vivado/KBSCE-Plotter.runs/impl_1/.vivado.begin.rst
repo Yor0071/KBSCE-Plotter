@@ -1,20 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="yoric" Host="DESKTOP-H6STBOR" Pid="8628" HostCore="8" HostMemory="017061695488">
+    <Process Command="vivado.bat" Owner="yoric" Host="DESKTOP-H6STBOR" Pid="9520" HostCore="8" HostMemory="017061695488">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="yoric" Host="DESKTOP-H6STBOR" Pid="13396" HostCore="8" HostMemory="017061695488">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="yoric" Host="DESKTOP-H6STBOR" Pid="17860" HostCore="8" HostMemory="017061695488">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="yoric" Host="DESKTOP-H6STBOR" Pid="6312" HostCore="8" HostMemory="017061695488">
+    <Process Command="vivado.bat" Owner="yoric" Host="DESKTOP-H6STBOR" Pid="7984" HostCore="8" HostMemory="017061695488">
     </Process>
 </ProcessHandle>

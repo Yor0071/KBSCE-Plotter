@@ -56,8 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "RISC_V_motor_ctrl_0_4_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 set_param general.usePosixSpawnForFork 1
-set_param xicom.use_bs_reader 1
+set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
@@ -79,7 +80,7 @@ set_property ip_output_repo c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plot
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/RISC_V_motor_ctrl_0_4.xci
+read_ip -quiet C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/RISC_V_motor_ctrl_0_4.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

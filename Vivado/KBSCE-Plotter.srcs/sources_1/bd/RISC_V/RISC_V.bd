@@ -7,7 +7,8 @@
       "name": "RISC_V",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.1"
+      "tool_version": "2025.1",
+      "validated": "true"
     },
     "design_tree": {
       "microblaze_riscv_0": "",
@@ -76,8 +77,20 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "RISC_V_sys_clock",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           },
           "PHASE": {
             "value": "0.0"
@@ -88,6 +101,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_LOW"
           }
@@ -750,7 +767,7 @@
       },
       "motor_ctrl_0": {
         "vlnv": "xilinx.com:user:motor_ctrl:1.0",
-        "ip_revision": "4",
+        "ip_revision": "5",
         "xci_name": "RISC_V_motor_ctrl_0_4",
         "xci_path": "ip\\RISC_V_motor_ctrl_0_4\\RISC_V_motor_ctrl_0_4.xci",
         "inst_hier_path": "motor_ctrl_0",

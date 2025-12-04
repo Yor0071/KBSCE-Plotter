@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
---Date        : Tue Dec  2 13:36:08 2025
+--Date        : Thu Dec  4 10:08:14 2025
 --Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -532,6 +532,22 @@ entity RISC_V is
   port (
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    enc_x1_a_0 : in STD_LOGIC;
+    enc_x1_b_0 : in STD_LOGIC;
+    enc_x2_a_0 : in STD_LOGIC;
+    enc_x2_b_0 : in STD_LOGIC;
+    enc_y_a_0 : in STD_LOGIC;
+    enc_y_b_0 : in STD_LOGIC;
+    enc_z_a_0 : in STD_LOGIC;
+    enc_z_b_0 : in STD_LOGIC;
+    m1_in1_0 : out STD_LOGIC;
+    m1_in2_0 : out STD_LOGIC;
+    m2_in1_0 : out STD_LOGIC;
+    m2_in2_0 : out STD_LOGIC;
+    m3_in1_0 : out STD_LOGIC;
+    m3_in2_0 : out STD_LOGIC;
+    m4_in1_0 : out STD_LOGIC;
+    m4_in2_0 : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -990,14 +1006,6 @@ architecture STRUCTURE of RISC_V is
   signal NLW_axi_smc_M02_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_uartlite_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_riscv_0_Interrupt_Ack_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
-  signal NLW_motor_ctrl_0_m1_in1_UNCONNECTED : STD_LOGIC;
-  signal NLW_motor_ctrl_0_m1_in2_UNCONNECTED : STD_LOGIC;
-  signal NLW_motor_ctrl_0_m2_in1_UNCONNECTED : STD_LOGIC;
-  signal NLW_motor_ctrl_0_m2_in2_UNCONNECTED : STD_LOGIC;
-  signal NLW_motor_ctrl_0_m3_in1_UNCONNECTED : STD_LOGIC;
-  signal NLW_motor_ctrl_0_m3_in2_UNCONNECTED : STD_LOGIC;
-  signal NLW_motor_ctrl_0_m4_in1_UNCONNECTED : STD_LOGIC;
-  signal NLW_motor_ctrl_0_m4_in2_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_clk_wiz_1_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute BMM_INFO_PROCESSOR : string;
@@ -1291,22 +1299,22 @@ microblaze_riscv_0_local_memory: entity work.microblaze_riscv_0_local_memory_imp
     );
 motor_ctrl_0: component RISC_V_motor_ctrl_0_4
      port map (
-      enc_x1_a => '0',
-      enc_x1_b => '0',
-      enc_x2_a => '0',
-      enc_x2_b => '0',
-      enc_y_a => '0',
-      enc_y_b => '0',
-      enc_z_a => '0',
-      enc_z_b => '0',
-      m1_in1 => NLW_motor_ctrl_0_m1_in1_UNCONNECTED,
-      m1_in2 => NLW_motor_ctrl_0_m1_in2_UNCONNECTED,
-      m2_in1 => NLW_motor_ctrl_0_m2_in1_UNCONNECTED,
-      m2_in2 => NLW_motor_ctrl_0_m2_in2_UNCONNECTED,
-      m3_in1 => NLW_motor_ctrl_0_m3_in1_UNCONNECTED,
-      m3_in2 => NLW_motor_ctrl_0_m3_in2_UNCONNECTED,
-      m4_in1 => NLW_motor_ctrl_0_m4_in1_UNCONNECTED,
-      m4_in2 => NLW_motor_ctrl_0_m4_in2_UNCONNECTED,
+      enc_x1_a => enc_x1_a_0,
+      enc_x1_b => enc_x1_b_0,
+      enc_x2_a => enc_x2_a_0,
+      enc_x2_b => enc_x2_b_0,
+      enc_y_a => enc_y_a_0,
+      enc_y_b => enc_y_b_0,
+      enc_z_a => enc_z_a_0,
+      enc_z_b => enc_z_b_0,
+      m1_in1 => m1_in1_0,
+      m1_in2 => m1_in2_0,
+      m2_in1 => m2_in1_0,
+      m2_in2 => m2_in2_0,
+      m3_in1 => m3_in1_0,
+      m3_in2 => m3_in2_0,
+      m4_in1 => m4_in1_0,
+      m4_in2 => m4_in2_0,
       s00_axi_aclk => microblaze_riscv_0_Clk,
       s00_axi_araddr(4 downto 0) => axi_smc_M03_AXI_ARADDR(4 downto 0),
       s00_axi_aresetn => rst_clk_wiz_1_100M_peripheral_aresetn(0),

@@ -47,14 +47,32 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:motor_ctrl:1.0
--- IP Revision: 2
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY RISC_V_motor_ctrl_0_1 IS
+ENTITY RISC_V_motor_ctrl_0_4 IS
   PORT (
+    m1_in1 : OUT STD_LOGIC;
+    m1_in2 : OUT STD_LOGIC;
+    m2_in1 : OUT STD_LOGIC;
+    m2_in2 : OUT STD_LOGIC;
+    m3_in1 : OUT STD_LOGIC;
+    m3_in2 : OUT STD_LOGIC;
+    m4_in1 : OUT STD_LOGIC;
+    m4_in2 : OUT STD_LOGIC;
+    enc_x1_a : IN STD_LOGIC;
+    enc_x1_b : IN STD_LOGIC;
+    enc_x2_a : IN STD_LOGIC;
+    enc_x2_b : IN STD_LOGIC;
+    enc_y_a : IN STD_LOGIC;
+    enc_y_b : IN STD_LOGIC;
+    enc_z_a : IN STD_LOGIC;
+    enc_z_b : IN STD_LOGIC;
+    s00_axi_aclk : IN STD_LOGIC;
+    s00_axi_aresetn : IN STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -73,21 +91,37 @@ ENTITY RISC_V_motor_ctrl_0_1 IS
     s00_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_rvalid : OUT STD_LOGIC;
-    s00_axi_rready : IN STD_LOGIC;
-    s00_axi_aclk : IN STD_LOGIC;
-    s00_axi_aresetn : IN STD_LOGIC
+    s00_axi_rready : IN STD_LOGIC
   );
-END RISC_V_motor_ctrl_0_1;
+END RISC_V_motor_ctrl_0_4;
 
-ARCHITECTURE RISC_V_motor_ctrl_0_1_arch OF RISC_V_motor_ctrl_0_1 IS
+ARCHITECTURE RISC_V_motor_ctrl_0_4_arch OF RISC_V_motor_ctrl_0_4 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF RISC_V_motor_ctrl_0_1_arch: ARCHITECTURE IS "yes";
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF RISC_V_motor_ctrl_0_4_arch: ARCHITECTURE IS "yes";
   COMPONENT motor_ctrl IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER;
       C_S00_AXI_ADDR_WIDTH : INTEGER
     );
     PORT (
+      m1_in1 : OUT STD_LOGIC;
+      m1_in2 : OUT STD_LOGIC;
+      m2_in1 : OUT STD_LOGIC;
+      m2_in2 : OUT STD_LOGIC;
+      m3_in1 : OUT STD_LOGIC;
+      m3_in2 : OUT STD_LOGIC;
+      m4_in1 : OUT STD_LOGIC;
+      m4_in2 : OUT STD_LOGIC;
+      enc_x1_a : IN STD_LOGIC;
+      enc_x1_b : IN STD_LOGIC;
+      enc_x2_a : IN STD_LOGIC;
+      enc_x2_b : IN STD_LOGIC;
+      enc_y_a : IN STD_LOGIC;
+      enc_y_b : IN STD_LOGIC;
+      enc_z_a : IN STD_LOGIC;
+      enc_z_b : IN STD_LOGIC;
+      s00_axi_aclk : IN STD_LOGIC;
+      s00_axi_aresetn : IN STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -106,9 +140,7 @@ ARCHITECTURE RISC_V_motor_ctrl_0_1_arch OF RISC_V_motor_ctrl_0_1 IS
       s00_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_rvalid : OUT STD_LOGIC;
-      s00_axi_rready : IN STD_LOGIC;
-      s00_axi_aclk : IN STD_LOGIC;
-      s00_axi_aresetn : IN STD_LOGIC
+      s00_axi_rready : IN STD_LOGIC
     );
   END COMPONENT motor_ctrl;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -149,6 +181,24 @@ BEGIN
       C_S00_AXI_ADDR_WIDTH => 5
     )
     PORT MAP (
+      m1_in1 => m1_in1,
+      m1_in2 => m1_in2,
+      m2_in1 => m2_in1,
+      m2_in2 => m2_in2,
+      m3_in1 => m3_in1,
+      m3_in2 => m3_in2,
+      m4_in1 => m4_in1,
+      m4_in2 => m4_in2,
+      enc_x1_a => enc_x1_a,
+      enc_x1_b => enc_x1_b,
+      enc_x2_a => enc_x2_a,
+      enc_x2_b => enc_x2_b,
+      enc_y_a => enc_y_a,
+      enc_y_b => enc_y_b,
+      enc_z_a => enc_z_a,
+      enc_z_b => enc_z_b,
+      s00_axi_aclk => s00_axi_aclk,
+      s00_axi_aresetn => s00_axi_aresetn,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,
@@ -167,8 +217,6 @@ BEGIN
       s00_axi_rdata => s00_axi_rdata,
       s00_axi_rresp => s00_axi_rresp,
       s00_axi_rvalid => s00_axi_rvalid,
-      s00_axi_rready => s00_axi_rready,
-      s00_axi_aclk => s00_axi_aclk,
-      s00_axi_aresetn => s00_axi_aresetn
+      s00_axi_rready => s00_axi_rready
     );
-END RISC_V_motor_ctrl_0_1_arch;
+END RISC_V_motor_ctrl_0_4_arch;
