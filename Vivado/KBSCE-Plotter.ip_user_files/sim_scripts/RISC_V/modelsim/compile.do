@@ -250,9 +250,9 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/s
 "../../../bd/RISC_V/ip/RISC_V_reset_inv_0_0/sim/RISC_V_reset_inv_0_0.v" \
 
 vcom -work xil_defaultlib  -93  \
-"../../../bd/RISC_V/ipshared/630b/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/RISC_V/ipshared/630b/hdl/motor_ctrl.vhd" \
-"../../../bd/RISC_V/ipshared/630b/src/MotorControl.vhd" \
+"../../../bd/RISC_V/ipshared/3a4d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/RISC_V/ipshared/3a4d/hdl/motor_ctrl.vhd" \
+"../../../bd/RISC_V/ipshared/3a4d/src/MotorControl.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/sim/RISC_V_motor_ctrl_0_4.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
 

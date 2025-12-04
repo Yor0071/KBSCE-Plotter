@@ -1,9 +1,9 @@
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\plotter_hw\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotter\\hw\\sdt\\system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\plotter_hw\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotter\\hw\\sdt\\system-top.dts"
 /dts-v1/;
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\plotter_hw\\hw\\sdt\\pl.dtsi" 1
+# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotter\\hw\\sdt\\pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -389,9 +389,19 @@
    xlnx,lmb-awidth = <32>;
    xlnx,name = "microblaze_riscv_0_local_memory_ilmb_bram_if_cntlr";
   };
+  motor_ctrl_0: motor_ctrl@44a00000 {
+   xlnx,s00-axi-data-width = <32>;
+   compatible = "xlnx,motor-ctrl-1.0";
+   status = "okay";
+   xlnx,s00-axi-addr-width = <5>;
+   xlnx,ip-name = "motor_ctrl";
+   xlnx,edk-iptype = "PERIPHERAL";
+   reg = <0x44a00000 0x10000>;
+   xlnx,name = "motor_ctrl_0";
+  };
  };
 };
-# 3 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\plotter_hw\\hw\\sdt\\system-top.dts" 2
+# 3 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotter\\hw\\sdt\\system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
@@ -419,7 +429,8 @@
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x4000>,
          <0x40000000 &axi_gpio_leds 0x40000000 0x10000>,
          <0x40010000 &axi_gpio_switches 0x40010000 0x10000>,
-         <0x40600000 &axi_uartlite_0 0x40600000 0x10000>;
+         <0x40600000 &axi_uartlite_0 0x40600000 0x10000>,
+         <0x44a00000 &motor_ctrl_0 0x44a00000 0x10000>;
   #ranges-address-cells = <0x1>;
   #ranges-size-cells = <0x1>;
  };

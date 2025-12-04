@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Thu Dec  4 10:09:33 2025
+-- Date        : Thu Dec  4 12:48:24 2025
 -- Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/RISC_V_motor_ctrl_0_4_stub.vhdl
@@ -57,7 +57,7 @@ entity RISC_V_motor_ctrl_0_4 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of RISC_V_motor_ctrl_0_4 : entity is "RISC_V_motor_ctrl_0_4,motor_ctrl,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of RISC_V_motor_ctrl_0_4 : entity is "RISC_V_motor_ctrl_0_4,motor_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=motor_ctrl,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}";
+  attribute core_generation_info of RISC_V_motor_ctrl_0_4 : entity is "RISC_V_motor_ctrl_0_4,motor_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=motor_ctrl,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of RISC_V_motor_ctrl_0_4 : entity is "yes";
 end RISC_V_motor_ctrl_0_4;

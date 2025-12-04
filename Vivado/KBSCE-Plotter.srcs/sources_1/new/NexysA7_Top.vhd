@@ -10,146 +10,91 @@ entity NexysA7_Top is
     UART_TX_IN  : out std_logic;
     SW          : in  std_logic_vector(15 downto 0);
     LED         : out std_logic_vector(15 downto 0);
-    
-    -- Motor-uitgangen (IN1/IN2 naar L298N)
-    m1_in1_0      : out std_logic;
-    m1_in2_0      : out std_logic;
-    m2_in1_0      : out std_logic;
-    m2_in2_0      : out std_logic;
-    m3_in1_0      : out std_logic;
-    m3_in2_0      : out std_logic;
-    m4_in1_0      : out std_logic;
-    m4_in2_0      : out std_logic
+
+    -- Encoders (passen bij je XDC)
+    enc_x1_a_0 : in std_logic;
+    enc_x1_b_0 : in std_logic;
+    enc_x2_a_0 : in std_logic;
+    enc_x2_b_0 : in std_logic;
+    enc_y_a_0  : in std_logic;
+    enc_y_b_0  : in std_logic;
+    enc_z_a_0  : in std_logic;
+    enc_z_b_0  : in std_logic;
+
+    -- Motor outputs (passen bij je XDC)
+    m1_in1_0 : out std_logic;
+    m1_in2_0 : out std_logic;
+    m2_in1_0 : out std_logic;
+    m2_in2_0 : out std_logic;
+    m3_in1_0 : out std_logic;
+    m3_in2_0 : out std_logic;
+    m4_in1_0 : out std_logic;
+    m4_in2_0 : out std_logic
   );
 end NexysA7_Top;
 
 architecture RTL of NexysA7_Top is
 
-  -- bestaand wrapper-component
   component RISC_V_wrapper is
     port (
-      LED         : out STD_LOGIC_VECTOR ( 15 downto 0 );
-      SW          : in  STD_LOGIC_VECTOR ( 15 downto 0 );
-      CPU_RESETN  : in  STD_LOGIC;
-      CLK100MHZ   : in  STD_LOGIC;
-      UART_RX_OUT : in  STD_LOGIC;
-      UART_TX_IN  : out STD_LOGIC
+      LED_tri_o    : out STD_LOGIC_VECTOR ( 15 downto 0 );
+      SW_tri_i     : in  STD_LOGIC_VECTOR ( 15 downto 0 );
+      enc_x1_a_0   : in  STD_LOGIC;
+      enc_x1_b_0   : in  STD_LOGIC;
+      enc_x2_a_0   : in  STD_LOGIC;
+      enc_x2_b_0   : in  STD_LOGIC;
+      enc_y_a_0    : in  STD_LOGIC;
+      enc_y_b_0    : in  STD_LOGIC;
+      enc_z_a_0    : in  STD_LOGIC;
+      enc_z_b_0    : in  STD_LOGIC;
+      m1_in1_0     : out STD_LOGIC;
+      m1_in2_0     : out STD_LOGIC;
+      m2_in1_0     : out STD_LOGIC;
+      m2_in2_0     : out STD_LOGIC;
+      m3_in1_0     : out STD_LOGIC;
+      m3_in2_0     : out STD_LOGIC;
+      m4_in1_0     : out STD_LOGIC;
+      m4_in2_0     : out STD_LOGIC;
+      reset        : in  STD_LOGIC;
+      sys_clock    : in  STD_LOGIC;
+      usb_uart_rxd : in  STD_LOGIC;
+      usb_uart_txd : out STD_LOGIC
     );
   end component;
-
-  -- MotorControl component
-  component MotorControl is
-    port(
-      clk    : in  std_logic;
-      resetn : in  std_logic;
-      speed  : in  std_logic_vector(7 downto 0);
-      dir    : in  std_logic;
-      in1    : out std_logic;
-      in2    : out std_logic
-    );
-  end component;
-
-  -- vaste minimale snelheid
-  constant MIN_SPEED : std_logic_vector(7 downto 0) := x"BF"; -- 75%
-
-  -- interne signalen per motor
-  signal speed_M1 : std_logic_vector(7 downto 0);
-  signal speed_M2 : std_logic_vector(7 downto 0);
-  signal speed_M3 : std_logic_vector(7 downto 0);
-  signal speed_M4 : std_logic_vector(7 downto 0);
-
-  signal dir_M1   : std_logic;
-  signal dir_M2   : std_logic;
-  signal dir_M3   : std_logic;
-  signal dir_M4   : std_logic;
 
 begin
 
-  --------------------------------------------------------------------
-  -- RISC-V systeem
-  --------------------------------------------------------------------
   u_cpu : RISC_V_wrapper
-    port map(
-      LED         => LED,
-      SW          => SW,
-      CPU_RESETN  => CPU_RESETN,
-      CLK100MHZ   => CLK100MHZ,
-      UART_RX_OUT => UART_RX_OUT,
-      UART_TX_IN  => UART_TX_IN
-    );
+    port map (
+      -- leds & switches
+      LED_tri_o    => LED,
+      SW_tri_i     => SW,
 
-  --------------------------------------------------------------------
-  -- Debug: LED's laten de switches zien (optioneel, maar handig)
-  --------------------------------------------------------------------
-  -- LED <= SW;  -- kun je aan laten tijdens debug
+      -- encoders
+      enc_x1_a_0   => enc_x1_a_0,
+      enc_x1_b_0   => enc_x1_b_0,
+      enc_x2_a_0   => enc_x2_a_0,
+      enc_x2_b_0   => enc_x2_b_0,
+      enc_y_a_0    => enc_y_a_0,
+      enc_y_b_0    => enc_y_b_0,
+      enc_z_a_0    => enc_z_a_0,
+      enc_z_b_0    => enc_z_b_0,
 
-  --------------------------------------------------------------------
-  -- Motor besturen via switches
-  -- M1: SW0 = dir, SW1 = enable
-  -- M2: SW2 = dir, SW3 = enable
-  -- M3: SW4 = dir, SW5 = enable
-  -- M4: SW6 = dir, SW7 = enable
-  --------------------------------------------------------------------
-  dir_M1 <= SW(0);
-  dir_M2 <= SW(2);
-  dir_M3 <= SW(4);
-  dir_M4 <= SW(6);
+      -- motor outputs
+      m1_in1_0     => m1_in1_0,
+      m1_in2_0     => m1_in2_0,
+      m2_in1_0     => m2_in1_0,
+      m2_in2_0     => m2_in2_0,
+      m3_in1_0     => m3_in1_0,
+      m3_in2_0     => m3_in2_0,
+      m4_in1_0     => m4_in1_0,
+      m4_in2_0     => m4_in2_0,
 
-  speed_M1 <= (others => '0') when SW(1) = '0' else MIN_SPEED;
-  speed_M2 <= (others => '0') when SW(3) = '0' else MIN_SPEED;
-  speed_M3 <= (others => '0') when SW(5) = '0' else MIN_SPEED;
-  speed_M4 <= (others => '0') when SW(7) = '0' else MIN_SPEED;
-
-  --------------------------------------------------------------------
-  -- Motor 1 (X1)
-  --------------------------------------------------------------------
-  u_motor1 : MotorControl
-    port map(
-      clk    => CLK100MHZ,
-      resetn => CPU_RESETN,
-      speed  => speed_M1,
-      dir    => dir_M1,
-      in1    => m1_in1_0,
-      in2    => m1_in2_0
-    );
-
-  --------------------------------------------------------------------
-  -- Motor 2 (X2)
-  --------------------------------------------------------------------
-  u_motor2 : MotorControl
-    port map(
-      clk    => CLK100MHZ,
-      resetn => CPU_RESETN,
-      speed  => speed_M2,
-      dir    => dir_M2,
-      in1    => m2_in1_0,
-      in2    => m2_in2_0
-    );
-
-  --------------------------------------------------------------------
-  -- Motor 3 (Y)
-  --------------------------------------------------------------------
-  u_motor3 : MotorControl
-    port map(
-      clk    => CLK100MHZ,
-      resetn => CPU_RESETN,
-      speed  => speed_M3,
-      dir    => dir_M3,
-      in1    => m3_in1_0,
-      in2    => m3_in2_0
-    );
-
-  --------------------------------------------------------------------
-  -- Motor 4 (Z / pen)
-  --------------------------------------------------------------------
-  u_motor4 : MotorControl
-    port map(
-      clk    => CLK100MHZ,
-      resetn => CPU_RESETN,
-      speed  => speed_M4,
-      dir    => dir_M4,
-      in1    => m4_in1_0,
-      in2    => m4_in2_0
+      -- clock/reset/uart
+      reset        => CPU_RESETN,
+      sys_clock    => CLK100MHZ,
+      usb_uart_rxd => UART_RX_OUT,
+      usb_uart_txd => UART_TX_IN
     );
 
 end RTL;
