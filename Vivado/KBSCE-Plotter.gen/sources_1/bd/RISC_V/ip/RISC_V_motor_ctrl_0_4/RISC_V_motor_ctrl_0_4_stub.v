@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Thu Dec  4 12:48:24 2025
+// Date        : Thu Dec  4 13:27:58 2025
 // Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/RISC_V_motor_ctrl_0_4_stub.v
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "RISC_V_motor_ctrl_0_4,motor_ctrl,{}" *) (* core_generation_info = "RISC_V_motor_ctrl_0_4,motor_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=motor_ctrl,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "RISC_V_motor_ctrl_0_4,motor_ctrl,{}" *) (* core_generation_info = "RISC_V_motor_ctrl_0_4,motor_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=motor_ctrl,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}" *) (* downgradeipidentifiedwarnings = "yes" *) 
 (* x_core_info = "motor_ctrl,Vivado 2025.1" *) 
 module RISC_V_motor_ctrl_0_4(m1_in1, m1_in2, m2_in1, m2_in2, m3_in1, m3_in2, 
   m4_in1, m4_in2, enc_x1_a, enc_x1_b, enc_x2_a, enc_x2_b, enc_y_a, enc_y_b, enc_z_a, enc_z_b, 

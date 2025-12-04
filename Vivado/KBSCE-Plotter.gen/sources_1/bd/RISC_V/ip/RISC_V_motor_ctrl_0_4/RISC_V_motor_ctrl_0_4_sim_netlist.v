@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Thu Dec  4 12:48:24 2025
+// Date        : Thu Dec  4 13:27:58 2025
 // Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/RISC_V_motor_ctrl_0_4_sim_netlist.v
@@ -347,6 +347,33 @@ endmodule
 
 (* ORIG_REF_NAME = "MotorControl" *) 
 module RISC_V_motor_ctrl_0_4_MotorControl_1
+   (\slv_reg2_reg[6] ,
+    m3_in1,
+    m3_in1_0);
+  output [0:0]\slv_reg2_reg[6] ;
+  input [3:0]m3_in1;
+  input [3:0]m3_in1_0;
+
+  wire in10_carry_n_1;
+  wire in10_carry_n_2;
+  wire in10_carry_n_3;
+  wire [3:0]m3_in1;
+  wire [3:0]m3_in1_0;
+  wire [0:0]\slv_reg2_reg[6] ;
+  wire [3:0]NLW_in10_carry_O_UNCONNECTED;
+
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  CARRY4 in10_carry
+       (.CI(1'b0),
+        .CO({\slv_reg2_reg[6] ,in10_carry_n_1,in10_carry_n_2,in10_carry_n_3}),
+        .CYINIT(1'b0),
+        .DI(m3_in1),
+        .O(NLW_in10_carry_O_UNCONNECTED[3:0]),
+        .S(m3_in1_0));
+endmodule
+
+(* ORIG_REF_NAME = "MotorControl" *) 
+module RISC_V_motor_ctrl_0_4_MotorControl_2
    (\slv_reg3_reg[6] ,
     m4_in1,
     m4_in1_0);
@@ -381,10 +408,10 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl
     m1_in2,
     m2_in1,
     m2_in2,
-    m4_in1,
-    m4_in2,
     m3_in1,
     m3_in2,
+    m4_in1,
+    m4_in2,
     s00_axi_rdata,
     s00_axi_bvalid,
     s00_axi_wready,
@@ -406,10 +433,10 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl
   output m1_in2;
   output m2_in1;
   output m2_in2;
-  output m4_in1;
-  output m4_in2;
   output m3_in1;
   output m3_in2;
+  output m4_in1;
+  output m4_in2;
   output [31:0]s00_axi_rdata;
   output s00_axi_bvalid;
   output s00_axi_wready;
@@ -461,10 +488,19 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl
   wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35;
   wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36;
   wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_38;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_39;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_40;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_41;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_42;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_43;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_44;
+  wire motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_45;
   wire [7:0]p_0_in;
   wire pwm;
   wire pwm_0;
   wire pwm_1;
+  wire pwm_2;
   wire s00_axi_aclk;
   wire [2:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -494,9 +530,10 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl
         .m2_in1_0(pwm_0),
         .m2_in2(m2_in2),
         .m3_in1(m3_in1),
+        .m3_in1_0(pwm_1),
         .m3_in2(m3_in2),
         .m4_in1(m4_in1),
-        .m4_in1_0(pwm_1),
+        .m4_in1_0(pwm_2),
         .m4_in2(m4_in2),
         .p_0_in(p_0_in),
         .s00_axi_aclk(s00_axi_aclk),
@@ -515,8 +552,10 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl
         .s00_axi_wvalid(s00_axi_wvalid),
         .\slv_reg1_reg[6]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_26,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_27,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_28,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_29}),
         .\slv_reg1_reg[9]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_22,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_23,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_24,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_25}),
-        .\slv_reg3_reg[6]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37}),
-        .\slv_reg3_reg[9]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33}));
+        .\slv_reg2_reg[6]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37}),
+        .\slv_reg2_reg[9]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33}),
+        .\slv_reg3_reg[6]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_42,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_43,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_44,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_45}),
+        .\slv_reg3_reg[9]_0 ({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_38,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_39,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_40,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_41}));
   RISC_V_motor_ctrl_0_4_MotorControl u_m1
        (.CO(pwm),
         .DI({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_18,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_19,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_20,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_21}),
@@ -528,10 +567,14 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl
        (.m2_in1({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_26,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_27,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_28,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_29}),
         .m2_in1_0({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_22,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_23,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_24,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_25}),
         .\slv_reg1_reg[6] (pwm_0));
-  RISC_V_motor_ctrl_0_4_MotorControl_1 u_m4
-       (.m4_in1({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37}),
-        .m4_in1_0({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33}),
-        .\slv_reg3_reg[6] (pwm_1));
+  RISC_V_motor_ctrl_0_4_MotorControl_1 u_m3
+       (.m3_in1({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37}),
+        .m3_in1_0({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33}),
+        .\slv_reg2_reg[6] (pwm_1));
+  RISC_V_motor_ctrl_0_4_MotorControl_2 u_m4
+       (.m4_in1({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_42,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_43,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_44,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_45}),
+        .m4_in1_0({motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_38,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_39,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_40,motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_41}),
+        .\slv_reg3_reg[6] (pwm_2));
 endmodule
 
 (* ORIG_REF_NAME = "motor_ctrl_slave_lite_v1_0_S00_AXI" *) 
@@ -546,14 +589,16 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
     m1_in2,
     m2_in1,
     m2_in2,
-    m4_in1,
-    m4_in2,
     m3_in1,
     m3_in2,
+    m4_in1,
+    m4_in2,
     S,
     DI,
     \slv_reg1_reg[9]_0 ,
     \slv_reg1_reg[6]_0 ,
+    \slv_reg2_reg[9]_0 ,
+    \slv_reg2_reg[6]_0 ,
     \slv_reg3_reg[9]_0 ,
     \slv_reg3_reg[6]_0 ,
     s00_axi_rdata,
@@ -565,6 +610,7 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
     s00_axi_arvalid,
     CO,
     m2_in1_0,
+    m3_in1_0,
     m4_in1_0,
     s00_axi_aresetn,
     p_0_in,
@@ -582,14 +628,16 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   output m1_in2;
   output m2_in1;
   output m2_in2;
-  output m4_in1;
-  output m4_in2;
   output m3_in1;
   output m3_in2;
+  output m4_in1;
+  output m4_in2;
   output [3:0]S;
   output [3:0]DI;
   output [3:0]\slv_reg1_reg[9]_0 ;
   output [3:0]\slv_reg1_reg[6]_0 ;
+  output [3:0]\slv_reg2_reg[9]_0 ;
+  output [3:0]\slv_reg2_reg[6]_0 ;
   output [3:0]\slv_reg3_reg[9]_0 ;
   output [3:0]\slv_reg3_reg[6]_0 ;
   output [31:0]s00_axi_rdata;
@@ -601,6 +649,7 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   input s00_axi_arvalid;
   input [0:0]CO;
   input [0:0]m2_in1_0;
+  input [0:0]m3_in1_0;
   input [0:0]m4_in1_0;
   input s00_axi_aresetn;
   input [7:0]p_0_in;
@@ -645,6 +694,7 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   wire [0:0]m2_in1_0;
   wire m2_in2;
   wire m3_in1;
+  wire [0:0]m3_in1_0;
   wire m3_in2;
   wire m4_in1;
   wire [0:0]m4_in1_0;
@@ -653,7 +703,7 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   wire [31:7]p_1_in;
   wire [8:8]reg_x1_ctrl;
   wire [8:8]reg_x2_ctrl;
-  wire [9:8]reg_y_ctrl;
+  wire [8:8]reg_y_ctrl;
   wire [8:8]reg_z_ctrl;
   wire s00_axi_aclk;
   wire [2:0]s00_axi_araddr;
@@ -776,6 +826,8 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   wire \slv_reg2[31]_i_1_n_0 ;
   wire \slv_reg2[31]_i_2_n_0 ;
   wire \slv_reg2[7]_i_1_n_0 ;
+  wire [3:0]\slv_reg2_reg[6]_0 ;
+  wire [3:0]\slv_reg2_reg[9]_0 ;
   wire \slv_reg2_reg_n_0_[0] ;
   wire \slv_reg2_reg_n_0_[10] ;
   wire \slv_reg2_reg_n_0_[11] ;
@@ -806,6 +858,7 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   wire \slv_reg2_reg_n_0_[5] ;
   wire \slv_reg2_reg_n_0_[6] ;
   wire \slv_reg2_reg_n_0_[7] ;
+  wire \slv_reg2_reg_n_0_[9] ;
   wire \slv_reg3[15]_i_1_n_0 ;
   wire \slv_reg3[23]_i_1_n_0 ;
   wire \slv_reg3[31]_i_1_n_0 ;
@@ -1138,6 +1191,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h2F020000)) 
     in10_carry_i_1__1
+       (.I0(\slv_reg2_reg_n_0_[6] ),
+        .I1(p_0_in[6]),
+        .I2(p_0_in[7]),
+        .I3(\slv_reg2_reg_n_0_[7] ),
+        .I4(\slv_reg2_reg_n_0_[9] ),
+        .O(\slv_reg2_reg[6]_0 [3]));
+  LUT5 #(
+    .INIT(32'h2F020000)) 
+    in10_carry_i_1__2
        (.I0(\slv_reg3_reg_n_0_[6] ),
         .I1(p_0_in[6]),
         .I2(p_0_in[7]),
@@ -1165,6 +1227,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h2F020000)) 
     in10_carry_i_2__1
+       (.I0(\slv_reg2_reg_n_0_[4] ),
+        .I1(p_0_in[4]),
+        .I2(p_0_in[5]),
+        .I3(\slv_reg2_reg_n_0_[5] ),
+        .I4(\slv_reg2_reg_n_0_[9] ),
+        .O(\slv_reg2_reg[6]_0 [2]));
+  LUT5 #(
+    .INIT(32'h2F020000)) 
+    in10_carry_i_2__2
        (.I0(\slv_reg3_reg_n_0_[4] ),
         .I1(p_0_in[4]),
         .I2(p_0_in[5]),
@@ -1192,6 +1263,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h2F020000)) 
     in10_carry_i_3__1
+       (.I0(\slv_reg2_reg_n_0_[2] ),
+        .I1(p_0_in[2]),
+        .I2(p_0_in[3]),
+        .I3(\slv_reg2_reg_n_0_[3] ),
+        .I4(\slv_reg2_reg_n_0_[9] ),
+        .O(\slv_reg2_reg[6]_0 [1]));
+  LUT5 #(
+    .INIT(32'h2F020000)) 
+    in10_carry_i_3__2
        (.I0(\slv_reg3_reg_n_0_[2] ),
         .I1(p_0_in[2]),
         .I2(p_0_in[3]),
@@ -1219,6 +1299,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h2F000200)) 
     in10_carry_i_4__1
+       (.I0(\slv_reg2_reg_n_0_[0] ),
+        .I1(p_0_in[0]),
+        .I2(p_0_in[1]),
+        .I3(\slv_reg2_reg_n_0_[9] ),
+        .I4(\slv_reg2_reg_n_0_[1] ),
+        .O(\slv_reg2_reg[6]_0 [0]));
+  LUT5 #(
+    .INIT(32'h2F000200)) 
+    in10_carry_i_4__2
        (.I0(\slv_reg3_reg_n_0_[0] ),
         .I1(p_0_in[0]),
         .I2(p_0_in[1]),
@@ -1246,6 +1335,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h82000587)) 
     in10_carry_i_5__1
+       (.I0(\slv_reg2_reg_n_0_[9] ),
+        .I1(\slv_reg2_reg_n_0_[7] ),
+        .I2(p_0_in[7]),
+        .I3(\slv_reg2_reg_n_0_[6] ),
+        .I4(p_0_in[6]),
+        .O(\slv_reg2_reg[9]_0 [3]));
+  LUT5 #(
+    .INIT(32'h82000587)) 
+    in10_carry_i_5__2
        (.I0(\slv_reg3_reg_n_0_[9] ),
         .I1(\slv_reg3_reg_n_0_[7] ),
         .I2(p_0_in[7]),
@@ -1273,6 +1371,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h82000587)) 
     in10_carry_i_6__1
+       (.I0(\slv_reg2_reg_n_0_[9] ),
+        .I1(\slv_reg2_reg_n_0_[5] ),
+        .I2(p_0_in[5]),
+        .I3(\slv_reg2_reg_n_0_[4] ),
+        .I4(p_0_in[4]),
+        .O(\slv_reg2_reg[9]_0 [2]));
+  LUT5 #(
+    .INIT(32'h82000587)) 
+    in10_carry_i_6__2
        (.I0(\slv_reg3_reg_n_0_[9] ),
         .I1(\slv_reg3_reg_n_0_[5] ),
         .I2(p_0_in[5]),
@@ -1300,6 +1407,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h82000587)) 
     in10_carry_i_7__1
+       (.I0(\slv_reg2_reg_n_0_[9] ),
+        .I1(\slv_reg2_reg_n_0_[3] ),
+        .I2(p_0_in[3]),
+        .I3(\slv_reg2_reg_n_0_[2] ),
+        .I4(p_0_in[2]),
+        .O(\slv_reg2_reg[9]_0 [1]));
+  LUT5 #(
+    .INIT(32'h82000587)) 
+    in10_carry_i_7__2
        (.I0(\slv_reg3_reg_n_0_[9] ),
         .I1(\slv_reg3_reg_n_0_[3] ),
         .I2(p_0_in[3]),
@@ -1327,6 +1443,15 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h84000387)) 
     in10_carry_i_8__1
+       (.I0(\slv_reg2_reg_n_0_[1] ),
+        .I1(\slv_reg2_reg_n_0_[9] ),
+        .I2(p_0_in[1]),
+        .I3(\slv_reg2_reg_n_0_[0] ),
+        .I4(p_0_in[0]),
+        .O(\slv_reg2_reg[9]_0 [0]));
+  LUT5 #(
+    .INIT(32'h84000387)) 
+    in10_carry_i_8__2
        (.I0(\slv_reg3_reg_n_0_[1] ),
         .I1(\slv_reg3_reg_n_0_[9] ),
         .I2(p_0_in[1]),
@@ -1361,28 +1486,28 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
        (.I0(reg_x2_ctrl),
         .I1(m2_in1_0),
         .O(m2_in2));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h2)) 
     m3_in1_INST_0
-       (.I0(reg_y_ctrl[9]),
-        .I1(reg_y_ctrl[8]),
+       (.I0(m3_in1_0),
+        .I1(reg_y_ctrl),
         .O(m3_in1));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h8)) 
     m3_in2_INST_0
-       (.I0(reg_y_ctrl[9]),
-        .I1(reg_y_ctrl[8]),
+       (.I0(reg_y_ctrl),
+        .I1(m3_in1_0),
         .O(m3_in2));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h2)) 
     m4_in1_INST_0
        (.I0(m4_in1_0),
         .I1(reg_z_ctrl),
         .O(m4_in1));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h8)) 
     m4_in2_INST_0
@@ -1972,7 +2097,7 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h000000AC)) 
     \s00_axi_rdata[8]_INST_0_i_1 
-       (.I0(reg_y_ctrl[8]),
+       (.I0(reg_y_ctrl),
         .I1(reg_x1_ctrl),
         .I2(sel0[1]),
         .I3(sel0[2]),
@@ -1991,7 +2116,7 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h000000AC)) 
     \s00_axi_rdata[9]_INST_0_i_1 
-       (.I0(reg_y_ctrl[9]),
+       (.I0(\slv_reg2_reg_n_0_[9] ),
         .I1(\slv_reg0_reg_n_0_[9] ),
         .I2(sel0[1]),
         .I3(sel0[2]),
@@ -2693,13 +2818,13 @@ module RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[8]),
-        .Q(reg_y_ctrl[8]),
+        .Q(reg_y_ctrl),
         .R(SR));
   FDRE \slv_reg2_reg[9] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[9]),
-        .Q(reg_y_ctrl[9]),
+        .Q(\slv_reg2_reg_n_0_[9] ),
         .R(SR));
   LUT5 #(
     .INIT(32'hA8080000)) 

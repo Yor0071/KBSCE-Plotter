@@ -10,9 +10,9 @@ vhdl xil_defaultlib  \
 "../../../bd/RISC_V/ip/RISC_V_axi_gpio_1_0/sim/RISC_V_axi_gpio_1_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/sim/RISC_V_axi_uartlite_0_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_1/sim/bd_33e2_psr_aclk_0.vhd" \
-"../../../bd/RISC_V/ipshared/3a4d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/RISC_V/ipshared/3a4d/hdl/motor_ctrl.vhd" \
-"../../../bd/RISC_V/ipshared/3a4d/src/MotorControl.vhd" \
+"../../../bd/RISC_V/ipshared/999a/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd" \
+"../../../bd/RISC_V/ipshared/999a/src/MotorControl.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/sim/RISC_V_motor_ctrl_0_4.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
 

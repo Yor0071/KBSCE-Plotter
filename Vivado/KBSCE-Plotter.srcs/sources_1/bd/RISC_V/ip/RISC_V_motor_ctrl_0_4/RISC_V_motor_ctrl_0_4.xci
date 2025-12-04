@@ -4,7 +4,7 @@
     "xci_name": "RISC_V_motor_ctrl_0_4",
     "cell_name": "motor_ctrl_0",
     "component_reference": "xilinx.com:user:motor_ctrl:1.0",
-    "ip_revision": "7",
+    "ip_revision": "8",
     "gen_directory": "../../../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "7" } ],
+        "IPREVISION": [ { "value": "8" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

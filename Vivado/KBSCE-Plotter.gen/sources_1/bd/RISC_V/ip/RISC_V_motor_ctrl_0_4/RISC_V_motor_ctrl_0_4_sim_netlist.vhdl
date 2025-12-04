@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Thu Dec  4 12:48:24 2025
+-- Date        : Thu Dec  4 13:27:58 2025
 -- Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/RISC_V_motor_ctrl_0_4_sim_netlist.vhdl
@@ -277,15 +277,50 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity RISC_V_motor_ctrl_0_4_MotorControl_1 is
   port (
-    \slv_reg3_reg[6]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    m4_in1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    m4_in1_0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    \slv_reg2_reg[6]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m3_in1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    m3_in1_0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of RISC_V_motor_ctrl_0_4_MotorControl_1 : entity is "MotorControl";
 end RISC_V_motor_ctrl_0_4_MotorControl_1;
 
 architecture STRUCTURE of RISC_V_motor_ctrl_0_4_MotorControl_1 is
+  signal in10_carry_n_1 : STD_LOGIC;
+  signal in10_carry_n_2 : STD_LOGIC;
+  signal in10_carry_n_3 : STD_LOGIC;
+  signal NLW_in10_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  attribute COMPARATOR_THRESHOLD : integer;
+  attribute COMPARATOR_THRESHOLD of in10_carry : label is 11;
+begin
+in10_carry: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => \slv_reg2_reg[6]\(0),
+      CO(2) => in10_carry_n_1,
+      CO(1) => in10_carry_n_2,
+      CO(0) => in10_carry_n_3,
+      CYINIT => '0',
+      DI(3 downto 0) => m3_in1(3 downto 0),
+      O(3 downto 0) => NLW_in10_carry_O_UNCONNECTED(3 downto 0),
+      S(3 downto 0) => m3_in1_0(3 downto 0)
+    );
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity RISC_V_motor_ctrl_0_4_MotorControl_2 is
+  port (
+    \slv_reg3_reg[6]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m4_in1 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    m4_in1_0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RISC_V_motor_ctrl_0_4_MotorControl_2 : entity is "MotorControl";
+end RISC_V_motor_ctrl_0_4_MotorControl_2;
+
+architecture STRUCTURE of RISC_V_motor_ctrl_0_4_MotorControl_2 is
   signal in10_carry_n_1 : STD_LOGIC;
   signal in10_carry_n_2 : STD_LOGIC;
   signal in10_carry_n_3 : STD_LOGIC;
@@ -322,14 +357,16 @@ entity RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI is
     m1_in2 : out STD_LOGIC;
     m2_in1 : out STD_LOGIC;
     m2_in2 : out STD_LOGIC;
-    m4_in1 : out STD_LOGIC;
-    m4_in2 : out STD_LOGIC;
     m3_in1 : out STD_LOGIC;
     m3_in2 : out STD_LOGIC;
+    m4_in1 : out STD_LOGIC;
+    m4_in2 : out STD_LOGIC;
     S : out STD_LOGIC_VECTOR ( 3 downto 0 );
     DI : out STD_LOGIC_VECTOR ( 3 downto 0 );
     \slv_reg1_reg[9]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     \slv_reg1_reg[6]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    \slv_reg2_reg[9]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    \slv_reg2_reg[6]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     \slv_reg3_reg[9]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     \slv_reg3_reg[6]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -341,6 +378,7 @@ entity RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI is
     s00_axi_arvalid : in STD_LOGIC;
     CO : in STD_LOGIC_VECTOR ( 0 to 0 );
     m2_in1_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    m3_in1_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     m4_in1_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aresetn : in STD_LOGIC;
     p_0_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -384,7 +422,7 @@ architecture STRUCTURE of RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_A
   signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 7 );
   signal reg_x1_ctrl : STD_LOGIC_VECTOR ( 8 to 8 );
   signal reg_x2_ctrl : STD_LOGIC_VECTOR ( 8 to 8 );
-  signal reg_y_ctrl : STD_LOGIC_VECTOR ( 9 downto 8 );
+  signal reg_y_ctrl : STD_LOGIC_VECTOR ( 8 to 8 );
   signal reg_z_ctrl : STD_LOGIC_VECTOR ( 8 to 8 );
   signal \^s00_axi_bvalid\ : STD_LOGIC;
   signal \s00_axi_rdata[0]_INST_0_i_1_n_0\ : STD_LOGIC;
@@ -523,6 +561,7 @@ architecture STRUCTURE of RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_A
   signal \slv_reg2_reg_n_0_[5]\ : STD_LOGIC;
   signal \slv_reg2_reg_n_0_[6]\ : STD_LOGIC;
   signal \slv_reg2_reg_n_0_[7]\ : STD_LOGIC;
+  signal \slv_reg2_reg_n_0_[9]\ : STD_LOGIC;
   signal \slv_reg3[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg3[23]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg3[31]_i_1_n_0\ : STD_LOGIC;
@@ -572,10 +611,10 @@ architecture STRUCTURE of RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_A
   attribute SOFT_HLUTNM of m1_in2_INST_0 : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of m2_in1_INST_0 : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of m2_in2_INST_0 : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of m3_in1_INST_0 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of m3_in2_INST_0 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of m4_in1_INST_0 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of m4_in2_INST_0 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of m3_in1_INST_0 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of m3_in2_INST_0 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of m4_in1_INST_0 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of m4_in2_INST_0 : label is "soft_lutpair4";
 begin
   SR(0) <= \^sr\(0);
   axi_arready_reg_0 <= \^axi_arready_reg_0\;
@@ -966,6 +1005,18 @@ in10_carry_i_1: unisim.vcomponents.LUT5
       INIT => X"2F020000"
     )
         port map (
+      I0 => \slv_reg2_reg_n_0_[6]\,
+      I1 => p_0_in(6),
+      I2 => p_0_in(7),
+      I3 => \slv_reg2_reg_n_0_[7]\,
+      I4 => \slv_reg2_reg_n_0_[9]\,
+      O => \slv_reg2_reg[6]_0\(3)
+    );
+\in10_carry_i_1__2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"2F020000"
+    )
+        port map (
       I0 => \slv_reg3_reg_n_0_[6]\,
       I1 => p_0_in(6),
       I2 => p_0_in(7),
@@ -998,6 +1049,18 @@ in10_carry_i_2: unisim.vcomponents.LUT5
       O => \slv_reg1_reg[6]_0\(2)
     );
 \in10_carry_i_2__1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"2F020000"
+    )
+        port map (
+      I0 => \slv_reg2_reg_n_0_[4]\,
+      I1 => p_0_in(4),
+      I2 => p_0_in(5),
+      I3 => \slv_reg2_reg_n_0_[5]\,
+      I4 => \slv_reg2_reg_n_0_[9]\,
+      O => \slv_reg2_reg[6]_0\(2)
+    );
+\in10_carry_i_2__2\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"2F020000"
     )
@@ -1038,6 +1101,18 @@ in10_carry_i_3: unisim.vcomponents.LUT5
       INIT => X"2F020000"
     )
         port map (
+      I0 => \slv_reg2_reg_n_0_[2]\,
+      I1 => p_0_in(2),
+      I2 => p_0_in(3),
+      I3 => \slv_reg2_reg_n_0_[3]\,
+      I4 => \slv_reg2_reg_n_0_[9]\,
+      O => \slv_reg2_reg[6]_0\(1)
+    );
+\in10_carry_i_3__2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"2F020000"
+    )
+        port map (
       I0 => \slv_reg3_reg_n_0_[2]\,
       I1 => p_0_in(2),
       I2 => p_0_in(3),
@@ -1070,6 +1145,18 @@ in10_carry_i_4: unisim.vcomponents.LUT5
       O => \slv_reg1_reg[6]_0\(0)
     );
 \in10_carry_i_4__1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"2F000200"
+    )
+        port map (
+      I0 => \slv_reg2_reg_n_0_[0]\,
+      I1 => p_0_in(0),
+      I2 => p_0_in(1),
+      I3 => \slv_reg2_reg_n_0_[9]\,
+      I4 => \slv_reg2_reg_n_0_[1]\,
+      O => \slv_reg2_reg[6]_0\(0)
+    );
+\in10_carry_i_4__2\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"2F000200"
     )
@@ -1110,6 +1197,18 @@ in10_carry_i_5: unisim.vcomponents.LUT5
       INIT => X"82000587"
     )
         port map (
+      I0 => \slv_reg2_reg_n_0_[9]\,
+      I1 => \slv_reg2_reg_n_0_[7]\,
+      I2 => p_0_in(7),
+      I3 => \slv_reg2_reg_n_0_[6]\,
+      I4 => p_0_in(6),
+      O => \slv_reg2_reg[9]_0\(3)
+    );
+\in10_carry_i_5__2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"82000587"
+    )
+        port map (
       I0 => \slv_reg3_reg_n_0_[9]\,
       I1 => \slv_reg3_reg_n_0_[7]\,
       I2 => p_0_in(7),
@@ -1142,6 +1241,18 @@ in10_carry_i_6: unisim.vcomponents.LUT5
       O => \slv_reg1_reg[9]_0\(2)
     );
 \in10_carry_i_6__1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"82000587"
+    )
+        port map (
+      I0 => \slv_reg2_reg_n_0_[9]\,
+      I1 => \slv_reg2_reg_n_0_[5]\,
+      I2 => p_0_in(5),
+      I3 => \slv_reg2_reg_n_0_[4]\,
+      I4 => p_0_in(4),
+      O => \slv_reg2_reg[9]_0\(2)
+    );
+\in10_carry_i_6__2\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"82000587"
     )
@@ -1182,6 +1293,18 @@ in10_carry_i_7: unisim.vcomponents.LUT5
       INIT => X"82000587"
     )
         port map (
+      I0 => \slv_reg2_reg_n_0_[9]\,
+      I1 => \slv_reg2_reg_n_0_[3]\,
+      I2 => p_0_in(3),
+      I3 => \slv_reg2_reg_n_0_[2]\,
+      I4 => p_0_in(2),
+      O => \slv_reg2_reg[9]_0\(1)
+    );
+\in10_carry_i_7__2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"82000587"
+    )
+        port map (
       I0 => \slv_reg3_reg_n_0_[9]\,
       I1 => \slv_reg3_reg_n_0_[3]\,
       I2 => p_0_in(3),
@@ -1214,6 +1337,18 @@ in10_carry_i_8: unisim.vcomponents.LUT5
       O => \slv_reg1_reg[9]_0\(0)
     );
 \in10_carry_i_8__1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"84000387"
+    )
+        port map (
+      I0 => \slv_reg2_reg_n_0_[1]\,
+      I1 => \slv_reg2_reg_n_0_[9]\,
+      I2 => p_0_in(1),
+      I3 => \slv_reg2_reg_n_0_[0]\,
+      I4 => p_0_in(0),
+      O => \slv_reg2_reg[9]_0\(0)
+    );
+\in10_carry_i_8__2\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"84000387"
     )
@@ -1266,7 +1401,7 @@ m3_in1_INST_0: unisim.vcomponents.LUT2
       INIT => X"2"
     )
         port map (
-      I0 => reg_y_ctrl(9),
+      I0 => m3_in1_0(0),
       I1 => reg_y_ctrl(8),
       O => m3_in1
     );
@@ -1275,8 +1410,8 @@ m3_in2_INST_0: unisim.vcomponents.LUT2
       INIT => X"8"
     )
         port map (
-      I0 => reg_y_ctrl(9),
-      I1 => reg_y_ctrl(8),
+      I0 => reg_y_ctrl(8),
+      I1 => m3_in1_0(0),
       O => m3_in2
     );
 m4_in1_INST_0: unisim.vcomponents.LUT2
@@ -2090,7 +2225,7 @@ m4_in2_INST_0: unisim.vcomponents.LUT2
       INIT => X"000000AC"
     )
         port map (
-      I0 => reg_y_ctrl(9),
+      I0 => \slv_reg2_reg_n_0_[9]\,
       I1 => \slv_reg0_reg_n_0_[9]\,
       I2 => sel0(1),
       I3 => sel0(2),
@@ -3032,7 +3167,7 @@ m4_in2_INST_0: unisim.vcomponents.LUT2
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(9),
-      Q => reg_y_ctrl(9),
+      Q => \slv_reg2_reg_n_0_[9]\,
       R => \^sr\(0)
     );
 \slv_reg3[15]_i_1\: unisim.vcomponents.LUT5
@@ -3353,10 +3488,10 @@ entity RISC_V_motor_ctrl_0_4_motor_ctrl is
     m1_in2 : out STD_LOGIC;
     m2_in1 : out STD_LOGIC;
     m2_in2 : out STD_LOGIC;
-    m4_in1 : out STD_LOGIC;
-    m4_in2 : out STD_LOGIC;
     m3_in1 : out STD_LOGIC;
     m3_in2 : out STD_LOGIC;
+    m4_in1 : out STD_LOGIC;
+    m4_in2 : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_bvalid : out STD_LOGIC;
     s00_axi_wready : out STD_LOGIC;
@@ -3402,10 +3537,19 @@ architecture STRUCTURE of RISC_V_motor_ctrl_0_4_motor_ctrl is
   signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35 : STD_LOGIC;
   signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36 : STD_LOGIC;
   signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_38 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_39 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_40 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_41 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_42 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_43 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_44 : STD_LOGIC;
+  signal motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_45 : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal pwm : STD_LOGIC;
   signal pwm_0 : STD_LOGIC;
   signal pwm_1 : STD_LOGIC;
+  signal pwm_2 : STD_LOGIC;
 begin
 motor_ctrl_slave_lite_v1_0_S00_AXI_inst: entity work.RISC_V_motor_ctrl_0_4_motor_ctrl_slave_lite_v1_0_S00_AXI
      port map (
@@ -3428,9 +3572,10 @@ motor_ctrl_slave_lite_v1_0_S00_AXI_inst: entity work.RISC_V_motor_ctrl_0_4_motor
       m2_in1_0(0) => pwm_0,
       m2_in2 => m2_in2,
       m3_in1 => m3_in1,
+      m3_in1_0(0) => pwm_1,
       m3_in2 => m3_in2,
       m4_in1 => m4_in1,
-      m4_in1_0(0) => pwm_1,
+      m4_in1_0(0) => pwm_2,
       m4_in2 => m4_in2,
       p_0_in(7 downto 0) => p_0_in(7 downto 0),
       s00_axi_aclk => s00_axi_aclk,
@@ -3455,14 +3600,22 @@ motor_ctrl_slave_lite_v1_0_S00_AXI_inst: entity work.RISC_V_motor_ctrl_0_4_motor
       \slv_reg1_reg[9]_0\(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_23,
       \slv_reg1_reg[9]_0\(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_24,
       \slv_reg1_reg[9]_0\(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_25,
-      \slv_reg3_reg[6]_0\(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,
-      \slv_reg3_reg[6]_0\(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,
-      \slv_reg3_reg[6]_0\(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,
-      \slv_reg3_reg[6]_0\(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37,
-      \slv_reg3_reg[9]_0\(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,
-      \slv_reg3_reg[9]_0\(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,
-      \slv_reg3_reg[9]_0\(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,
-      \slv_reg3_reg[9]_0\(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33
+      \slv_reg2_reg[6]_0\(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,
+      \slv_reg2_reg[6]_0\(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,
+      \slv_reg2_reg[6]_0\(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,
+      \slv_reg2_reg[6]_0\(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37,
+      \slv_reg2_reg[9]_0\(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,
+      \slv_reg2_reg[9]_0\(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,
+      \slv_reg2_reg[9]_0\(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,
+      \slv_reg2_reg[9]_0\(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33,
+      \slv_reg3_reg[6]_0\(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_42,
+      \slv_reg3_reg[6]_0\(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_43,
+      \slv_reg3_reg[6]_0\(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_44,
+      \slv_reg3_reg[6]_0\(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_45,
+      \slv_reg3_reg[9]_0\(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_38,
+      \slv_reg3_reg[9]_0\(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_39,
+      \slv_reg3_reg[9]_0\(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_40,
+      \slv_reg3_reg[9]_0\(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_41
     );
 u_m1: entity work.RISC_V_motor_ctrl_0_4_MotorControl
      port map (
@@ -3491,17 +3644,29 @@ u_m2: entity work.RISC_V_motor_ctrl_0_4_MotorControl_0
       m2_in1_0(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_25,
       \slv_reg1_reg[6]\(0) => pwm_0
     );
-u_m4: entity work.RISC_V_motor_ctrl_0_4_MotorControl_1
+u_m3: entity work.RISC_V_motor_ctrl_0_4_MotorControl_1
      port map (
-      m4_in1(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,
-      m4_in1(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,
-      m4_in1(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,
-      m4_in1(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37,
-      m4_in1_0(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,
-      m4_in1_0(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,
-      m4_in1_0(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,
-      m4_in1_0(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33,
-      \slv_reg3_reg[6]\(0) => pwm_1
+      m3_in1(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_34,
+      m3_in1(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_35,
+      m3_in1(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_36,
+      m3_in1(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_37,
+      m3_in1_0(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_30,
+      m3_in1_0(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_31,
+      m3_in1_0(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_32,
+      m3_in1_0(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_33,
+      \slv_reg2_reg[6]\(0) => pwm_1
+    );
+u_m4: entity work.RISC_V_motor_ctrl_0_4_MotorControl_2
+     port map (
+      m4_in1(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_42,
+      m4_in1(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_43,
+      m4_in1(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_44,
+      m4_in1(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_45,
+      m4_in1_0(3) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_38,
+      m4_in1_0(2) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_39,
+      m4_in1_0(1) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_40,
+      m4_in1_0(0) => motor_ctrl_slave_lite_v1_0_S00_AXI_inst_n_41,
+      \slv_reg3_reg[6]\(0) => pwm_2
     );
 end STRUCTURE;
 library IEEE;
