@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/xiltimer/src
+# Install script for directory: C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/xiltimer/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,36 +34,36 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Xilinx/2025.1/Vitis/gnu/riscv/nt/riscv64-unknown-elf/bin/riscv64-unknown-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "D:/xlilinx/2025.1/Vitis/gnu/riscv/nt/riscv64-unknown-elf/bin/riscv64-unknown-elf-objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/lib/libxiltimer.a")
+   "C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/lib/libxiltimer.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/libxiltimer.a")
+  file(INSTALL DESTINATION "C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/libxiltimer.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include/../include")
+   "C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include/../include")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/include")
+  file(INSTALL DESTINATION "C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/include")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/core/cmake_install.cmake")
+  include("C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/Platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/core/cmake_install.cmake")
 
 endif()
 

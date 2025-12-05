@@ -1,4 +1,4 @@
-domain_path: C:\Users\yoric\OneDrive\Documenten\GitHub\KBSCE-Plotter\Vitis\Plotter\Platform\export\Platform\sw\standalone_microblaze_riscv_0
+domain_path: C:\Users\emmah\Desktop\school\KBS_CE\KBSCE-Plotter\Vitis\Plotter\Platform\export\Platform\sw\standalone_microblaze_riscv_0
 app_src_dir: C:\Xilinx\2025.1\Vitis\data\embeddedsw\lib\sw_apps\empty_application
 template: empty_application
 lang: c
