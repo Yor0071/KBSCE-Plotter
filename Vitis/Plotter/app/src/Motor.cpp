@@ -1,7 +1,7 @@
 #include "Motor.h"
 
 // // Initialisation functions
-Motor :: Motor(){
+Motor::Motor(){
     // No initialisation needed
 }
 

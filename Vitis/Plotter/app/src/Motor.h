@@ -25,8 +25,8 @@ extern "C"{
 #define MOTOR_DIR_BIT    (1U << 8)         // 0 = forward, 1 = backward
 #define MOTOR_SPEED(v)   ((v) & 0xFFU)
 
-// Cap speed at 75 (not 255 annymore)
-#define DEFAULT_SPEED    255U   // Motor speed
+// Min speed 75 (max 255)
+#define DEFAULT_SPEED    150U   // Motor speed
 
 class Motor{             
     public:

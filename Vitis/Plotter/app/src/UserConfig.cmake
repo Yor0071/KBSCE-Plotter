@@ -30,7 +30,9 @@ set(USER_INCLUDE_DIRECTORIES
 )
 set(USER_COMPILE_SOURCES
 "main.cpp"
+"Motor.cpp"
 )
+file(GLOB USER_COMPILE_SOURCES "*.cpp")
 
 # -----------------------------------------
 

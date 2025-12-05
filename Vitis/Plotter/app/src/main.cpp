@@ -32,12 +32,15 @@ int main(void){
     delay_1s();
     motors.move_X(0, DEFAULT_SPEED);
     delay_1s();
+    motors.stop_X();
 
     while (1){
         // Move Y back and forth
         motors.move_Y(1, DEFAULT_SPEED);
+        motors.move_X(1, DEFAULT_SPEED);
         delay_1s();
         motors.move_Y(0, DEFAULT_SPEED);
+        motors.move_X(0, DEFAULT_SPEED);
         delay_1s();
     }
 
