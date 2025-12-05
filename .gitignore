@@ -2,14 +2,6 @@
 *.jou
 *.log
 *.str
-*.sim
-*.cache/
-*.hw/
-*.ip_user_files/
-*.runs/
-*.srcs/sources_1/bd/*/hdl/
-*.srcs/*/bd/*/ip/*_stub.*    
-*.gen/
 *.Xil/
 
 # Vivado-generated project files
@@ -20,7 +12,6 @@
 *.backup.log
 
 # Checkpoints, bitstreams, etc.
-*.bit
 *.bin
 *.mcs
 *.prm
@@ -43,3 +34,4 @@
 .hw/
 .srcs/*/ip/*/ui/
 Vivado/KBSCE-Plotter.xpr
+/Vitis/sw_to_led/build
