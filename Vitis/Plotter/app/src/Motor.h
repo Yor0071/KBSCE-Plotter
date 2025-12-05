@@ -26,7 +26,7 @@ extern "C"{
 #define MOTOR_SPEED(v)   ((v) & 0xFFU)
 
 // Min speed 75 (max 255)
-#define DEFAULT_SPEED    150U  // Motor speed
+#define DEFAULT_SPEED 150U  // Motor speed
 
 class Motor{             
     public:
