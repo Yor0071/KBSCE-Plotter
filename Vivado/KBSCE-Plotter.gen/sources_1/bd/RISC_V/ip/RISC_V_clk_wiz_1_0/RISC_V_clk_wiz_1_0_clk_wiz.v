@@ -54,6 +54,7 @@
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
 // clk_out1__100.00000______0.000______50.0______130.958_____98.575
+// VGA_PCLK__25.00000______0.000______50.0______175.402_____98.575
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -67,9 +68,9 @@ module RISC_V_clk_wiz_1_0_clk_wiz
  (// Clock in ports
   // Clock out ports
   output        clk_out1,
+  output        VGA_PCLK,
   // Status and control signals
   input         reset,
-  output        locked,
   input         clk_in1
  );
   // Input buffering
@@ -91,7 +92,7 @@ wire clk_in2_RISC_V_clk_wiz_1_0;
   //    * Unused outputs are labeled unused
 
   wire        clk_out1_RISC_V_clk_wiz_1_0;
-  wire        clk_out2_RISC_V_clk_wiz_1_0;
+  wire        VGA_PCLK_RISC_V_clk_wiz_1_0;
   wire        clk_out3_RISC_V_clk_wiz_1_0;
   wire        clk_out4_RISC_V_clk_wiz_1_0;
   wire        clk_out5_RISC_V_clk_wiz_1_0;
@@ -106,7 +107,6 @@ wire clk_in2_RISC_V_clk_wiz_1_0;
   wire        clkfbout_buf_RISC_V_clk_wiz_1_0;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
-   wire clkout1_unused;
    wire clkout1b_unused;
    wire clkout2_unused;
    wire clkout2b_unused;
@@ -132,6 +132,10 @@ wire clk_in2_RISC_V_clk_wiz_1_0;
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
+    .CLKOUT1_DIVIDE       (40),
+    .CLKOUT1_PHASE        (0.000),
+    .CLKOUT1_DUTY_CYCLE   (0.500),
+    .CLKOUT1_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (10.000))
   mmcm_adv_inst
     // Output clocks
@@ -140,7 +144,7 @@ wire clk_in2_RISC_V_clk_wiz_1_0;
     .CLKFBOUTB           (clkfboutb_unused),
     .CLKOUT0             (clk_out1_RISC_V_clk_wiz_1_0),
     .CLKOUT0B            (clkout0b_unused),
-    .CLKOUT1             (clkout1_unused),
+    .CLKOUT1             (VGA_PCLK_RISC_V_clk_wiz_1_0),
     .CLKOUT1B            (clkout1b_unused),
     .CLKOUT2             (clkout2_unused),
     .CLKOUT2B            (clkout2b_unused),
@@ -176,7 +180,6 @@ wire clk_in2_RISC_V_clk_wiz_1_0;
     .RST                 (reset_high));
   assign reset_high = reset; 
 
-  assign locked = locked_int;
 // Clock Monitor clock assigning
 //--------------------------------------
  // Output buffering
@@ -195,6 +198,10 @@ wire clk_in2_RISC_V_clk_wiz_1_0;
    (.O   (clk_out1),
     .I   (clk_out1_RISC_V_clk_wiz_1_0));
 
+
+  BUFG clkout2_buf
+   (.O   (VGA_PCLK),
+    .I   (VGA_PCLK_RISC_V_clk_wiz_1_0));
 
 
 

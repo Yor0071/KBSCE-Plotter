@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Fri Nov 21 14:38:15 2025
--- Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_v10_0/RISC_V_dlmb_v10_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+-- Date        : Fri Nov 28 17:45:07 2025
+-- Host        : mrt-fed-lap running 64-bit unknown
+-- Command     : write_vhdl -force -mode funcsim -rename_top RISC_V_dlmb_v10_0 -prefix
+--               RISC_V_dlmb_v10_0_ RISC_V_dlmb_v10_0_sim_netlist.vhdl
 -- Design      : RISC_V_dlmb_v10_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -53,8 +53,6 @@ entity RISC_V_dlmb_v10_0_lmb_v10 is
   attribute C_LMB_NUM_SLAVES of RISC_V_dlmb_v10_0_lmb_v10 : entity is 1;
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of RISC_V_dlmb_v10_0_lmb_v10 : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_dlmb_v10_0_lmb_v10 : entity is "lmb_v10";
 end RISC_V_dlmb_v10_0_lmb_v10;
 
 architecture STRUCTURE of RISC_V_dlmb_v10_0_lmb_v10 is

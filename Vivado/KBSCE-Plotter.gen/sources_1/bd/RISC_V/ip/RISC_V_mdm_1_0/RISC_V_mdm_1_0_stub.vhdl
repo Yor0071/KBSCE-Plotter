@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Fri Nov 21 14:40:42 2025
--- Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0_stub.vhdl
+-- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+-- Date        : Fri Nov 28 17:46:22 2025
+-- Host        : mrt-fed-lap running 64-bit unknown
+-- Command     : write_vhdl -force -mode synth_stub -rename_top RISC_V_mdm_1_0 -prefix
+--               RISC_V_mdm_1_0_ RISC_V_mdm_1_0_stub.vhdl
 -- Design      : RISC_V_mdm_1_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1

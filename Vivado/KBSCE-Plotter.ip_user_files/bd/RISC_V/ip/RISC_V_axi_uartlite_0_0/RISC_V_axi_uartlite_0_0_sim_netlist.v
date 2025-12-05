@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Fri Nov 21 14:48:10 2025
-// Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0_sim_netlist.v
+// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+// Date        : Fri Nov 28 17:45:08 2025
+// Host        : mrt-fed-lap running 64-bit unknown
+// Command     : write_verilog -force -mode funcsim -rename_top RISC_V_axi_uartlite_0_0 -prefix
+//               RISC_V_axi_uartlite_0_0_ RISC_V_axi_uartlite_0_0_sim_netlist.v
 // Design      : RISC_V_axi_uartlite_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -153,7 +153,6 @@ module RISC_V_axi_uartlite_0_0
         .tx(tx));
 endmodule
 
-(* ORIG_REF_NAME = "address_decoder" *) 
 module RISC_V_axi_uartlite_0_0_address_decoder
    (\GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg[1]_0 ,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0 ,
@@ -583,7 +582,6 @@ module RISC_V_axi_uartlite_0_0_address_decoder
         .O(s_axi_aresetn_0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module RISC_V_axi_uartlite_0_0_axi_lite_ipif
    (\GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg ,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg ,
@@ -740,8 +738,7 @@ endmodule
 
 (* C_BAUDRATE = "9600" *) (* C_DATA_BITS = "8" *) (* C_FAMILY = "artix7" *) 
 (* C_ODD_PARITY = "0" *) (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) (* C_S_AXI_ADDR_WIDTH = "4" *) 
-(* C_S_AXI_DATA_WIDTH = "32" *) (* C_USE_PARITY = "0" *) (* ORIG_REF_NAME = "axi_uartlite" *) 
-(* downgradeipidentifiedwarnings = "yes" *) 
+(* C_S_AXI_DATA_WIDTH = "32" *) (* C_USE_PARITY = "0" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module RISC_V_axi_uartlite_0_0_axi_uartlite
    (s_axi_aclk,
     s_axi_aresetn,
@@ -929,7 +926,6 @@ module RISC_V_axi_uartlite_0_0_axi_uartlite
         .tx_Buffer_Full(tx_Buffer_Full));
 endmodule
 
-(* ORIG_REF_NAME = "baudrate" *) 
 module RISC_V_axi_uartlite_0_0_baudrate
    (en_16x_Baud,
     SR,
@@ -1177,7 +1173,6 @@ module RISC_V_axi_uartlite_0_0_baudrate
         .R(SR));
 endmodule
 
-(* ORIG_REF_NAME = "pselect_f" *) 
 module RISC_V_axi_uartlite_0_0_pselect_f
    (ce_expnd_i_3,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] ,
@@ -1219,7 +1214,6 @@ module RISC_V_axi_uartlite_0_0_pselect_f__parameterized1
         .O(ce_expnd_i_1));
 endmodule
 
-(* ORIG_REF_NAME = "slave_attachment" *) 
 module RISC_V_axi_uartlite_0_0_slave_attachment
    (\GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg[1] ,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] ,
@@ -1633,7 +1627,6 @@ module RISC_V_axi_uartlite_0_0_slave_attachment
         .R(rst));
 endmodule
 
-(* ORIG_REF_NAME = "srl_fifo" *) 
 module RISC_V_axi_uartlite_0_0_srl_fifo
    (tx_Buffer_Full,
     Q,
@@ -2300,7 +2293,6 @@ module RISC_V_axi_uartlite_0_0_srl_fifo_0
         .O(s_axi_aresetn_0));
 endmodule
 
-(* ORIG_REF_NAME = "uartlite_core" *) 
 module RISC_V_axi_uartlite_0_0_uartlite_core
    (tx,
     rx_Buffer_Full,
@@ -2494,7 +2486,6 @@ module RISC_V_axi_uartlite_0_0_uartlite_core
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "uartlite_rx" *) 
 module RISC_V_axi_uartlite_0_0_uartlite_rx
    (FIFO_Full_reg,
     SR,
@@ -3067,7 +3058,6 @@ module RISC_V_axi_uartlite_0_0_uartlite_rx
         .R(SR));
 endmodule
 
-(* ORIG_REF_NAME = "uartlite_tx" *) 
 module RISC_V_axi_uartlite_0_0_uartlite_tx
    (tx,
     tx_Buffer_Full,
@@ -3322,9 +3312,9 @@ module RISC_V_axi_uartlite_0_0_uartlite_tx
         .R(SR));
 endmodule
 
-(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
-(* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
+(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* SIM_ASSERT_CHK = "0" *) 
+(* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) 
+(* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
 module RISC_V_axi_uartlite_0_0_xpm_cdc_single
    (src_clk,
     src_in,

@@ -1,7 +1,7 @@
 # Vivado project files
 *.jou
 *.log
-*.str   
+*.str
 *.Xil/
 
 # Vivado-generated project files

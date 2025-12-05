@@ -14,6 +14,18 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity RISC_V_wrapper is
   port (
+    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTA_1_clk : in STD_LOGIC;
+    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_en : in STD_LOGIC;
+    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTB_0_clk : in STD_LOGIC;
+    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_en : in STD_LOGIC;
+    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     enc_x1_a_0 : in STD_LOGIC;
@@ -32,6 +44,7 @@ entity RISC_V_wrapper is
     m3_in2_0 : out STD_LOGIC;
     m4_in1_0 : out STD_LOGIC;
     m4_in2_0 : out STD_LOGIC;
+    VGA_PCLK : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -64,11 +77,36 @@ architecture STRUCTURE of RISC_V_wrapper is
     enc_z_a_0 : in STD_LOGIC;
     enc_y_b_0 : in STD_LOGIC;
     enc_z_b_0 : in STD_LOGIC
+    VGA_PCLK : out STD_LOGIC;
+    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTB_0_clk : in STD_LOGIC;
+    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_en : in STD_LOGIC;
+    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTA_1_clk : in STD_LOGIC;
+    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_en : in STD_LOGIC;
+    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component RISC_V;
 begin
 RISC_V_i: component RISC_V
      port map (
+      BRAM_PORTA_1_addr(18 downto 0) => BRAM_PORTA_1_addr(18 downto 0),
+      BRAM_PORTA_1_clk => BRAM_PORTA_1_clk,
+      BRAM_PORTA_1_din(11 downto 0) => BRAM_PORTA_1_din(11 downto 0),
+      BRAM_PORTA_1_dout(11 downto 0) => BRAM_PORTA_1_dout(11 downto 0),
+      BRAM_PORTA_1_en => BRAM_PORTA_1_en,
+      BRAM_PORTA_1_we(0) => BRAM_PORTA_1_we(0),
+      BRAM_PORTB_0_addr(18 downto 0) => BRAM_PORTB_0_addr(18 downto 0),
+      BRAM_PORTB_0_clk => BRAM_PORTB_0_clk,
+      BRAM_PORTB_0_din(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
+      BRAM_PORTB_0_dout(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
+      BRAM_PORTB_0_en => BRAM_PORTB_0_en,
+      BRAM_PORTB_0_we(0) => BRAM_PORTB_0_we(0),
       LED_tri_o(15 downto 0) => LED_tri_o(15 downto 0),
       SW_tri_i(15 downto 0) => SW_tri_i(15 downto 0),
       enc_x1_a_0 => enc_x1_a_0,
@@ -87,6 +125,7 @@ RISC_V_i: component RISC_V
       m3_in2_0 => m3_in2_0,
       m4_in1_0 => m4_in1_0,
       m4_in2_0 => m4_in2_0,
+      VGA_PCLK => VGA_PCLK,
       reset => reset,
       sys_clock => sys_clock,
       usb_uart_rxd => usb_uart_rxd,

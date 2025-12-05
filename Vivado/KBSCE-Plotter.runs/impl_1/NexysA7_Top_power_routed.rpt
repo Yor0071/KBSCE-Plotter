@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date             : Thu Dec  4 13:35:50 2025
-| Host             : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+| Date             : Fri Dec  5 11:54:49 2025
+| Host             : mrt-fed-lap running 64-bit unknown
 | Command          : report_power -file NexysA7_Top_power_routed.rpt -pb NexysA7_Top_power_summary_routed.pb -rpx NexysA7_Top_power_routed.rpx
 | Design           : NexysA7_Top
 | Device           : xc7a100tcsg324-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.227        |
+| Total On-Chip Power (W)  | 0.238        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.129        |
-| Device Static (W)        | 0.098        |
+| Dynamic (W)              | 0.136        |
+| Device Static (W)        | 0.103        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.0         |
-| Junction Temperature (C) | 26.0         |
+| Max Ambient (C)          | 83.9         |
+| Junction Temperature (C) | 26.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.011 |       11 |       --- |             --- |
-| Slice Logic              |     0.005 |     6391 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     2492 |     63400 |            3.93 |
+| Clocks                   |     0.013 |       10 |       --- |             --- |
+| Slice Logic              |     0.004 |     6848 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     2679 |     63400 |            4.23 |
 |   LUT as Distributed RAM |    <0.001 |       64 |     19000 |            0.34 |
-|   Register               |    <0.001 |     2546 |    126800 |            2.01 |
-|   CARRY4                 |    <0.001 |       77 |     15850 |            0.49 |
-|   F7/F8 Muxes            |    <0.001 |       14 |     63400 |            0.02 |
+|   CARRY4                 |    <0.001 |       91 |     15850 |            0.57 |
+|   Register               |    <0.001 |     2456 |    126800 |            1.94 |
+|   F7/F8 Muxes            |    <0.001 |      143 |     63400 |            0.23 |
 |   LUT as Shift Register  |    <0.001 |       43 |     19000 |            0.23 |
-|   Others                 |     0.000 |      477 |       --- |             --- |
-| Signals                  |     0.005 |     4762 |       --- |             --- |
-| Block RAM                |    <0.001 |        4 |       135 |            2.96 |
+|   Others                 |     0.000 |      699 |       --- |             --- |
+| Signals                  |     0.005 |     5438 |       --- |             --- |
+| Block RAM                |     0.002 |    107.5 |       135 |           79.63 |
 | MMCM                     |     0.106 |        1 |         6 |           16.67 |
-| I/O                      |     0.002 |       44 |       210 |           20.95 |
-| Static Power             |     0.098 |          |           |                 |
-| Total                    |     0.227 |          |           |                 |
+| I/O                      |     0.006 |       58 |       210 |           27.62 |
+| Static Power             |     0.103 |          |           |                 |
+| Total                    |     0.238 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,16 +76,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.037 |       0.022 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.042 |       0.024 |      0.018 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -132,12 +132,11 @@ Table of Contents
 +-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------+
 | Clock                                                                                               | Domain                                                                                              | Constraint (ns) |
 +-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------+
-| CLK100MHZ                                                                                           | CLK100MHZ                                                                                           |            10.0 |
+| VGA_PCLK_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK_RISC_V_clk_wiz_1_0                                           |            40.0 |
 | clk_out1_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1_RISC_V_clk_wiz_1_0                                           |            10.0 |
-| clk_out1_RISC_V_clk_wiz_1_0_1                                                                       | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1_RISC_V_clk_wiz_1_0                                           |            10.0 |
 | clkfbout_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/clkfbout_RISC_V_clk_wiz_1_0                                           |            10.0 |
-| clkfbout_RISC_V_clk_wiz_1_0_1                                                                       | u_cpu/RISC_V_i/clk_wiz_1/inst/clkfbout_RISC_V_clk_wiz_1_0                                           |            10.0 |
 | sys_clk_pin                                                                                         | CLK100MHZ                                                                                           |            10.0 |
+| sys_clk_pin                                                                                         | CLK100MHZ_IBUF_BUFG                                                                                 |            10.0 |
 | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native/O | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |            66.7 |
 | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/tck                                                          |            33.3 |
 | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE                                      | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I_n_9                                         |            33.3 |
@@ -153,11 +152,12 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| NexysA7_Top              |     0.129 |
-|   u_cpu                  |     0.127 |
-|     RISC_V_i             |     0.127 |
+| NexysA7_Top              |     0.136 |
+|   u_cpu                  |     0.128 |
+|     RISC_V_i             |     0.128 |
 |       axi_gpio_switches  |     0.001 |
-|       axi_smc            |     0.004 |
+|       axi_smc            |     0.003 |
+|       blk_mem_gen_0      |     0.003 |
 |       clk_wiz_1          |     0.106 |
 |       microblaze_riscv_0 |     0.011 |
 +--------------------------+-----------+

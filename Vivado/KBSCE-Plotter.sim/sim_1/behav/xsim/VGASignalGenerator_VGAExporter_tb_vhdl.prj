@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../KBSCE-Plotter.srcs/sources_1/new/VGASignalGenerator.vhd" \
+"../../../../KBSCE-Plotter.srcs/sim_1/new/VGASignalGenerator_VGAExporter_tb.vhd" \
+
+# Do not sort compile order
+nosort

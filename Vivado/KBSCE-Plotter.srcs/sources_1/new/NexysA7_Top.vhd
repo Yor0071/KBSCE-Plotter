@@ -30,10 +30,47 @@ entity NexysA7_Top is
     m3_in2_0 : out std_logic;
     m4_in1_0 : out std_logic;
     m4_in2_0 : out std_logic
+    
+    -- Motor-uitgangen (IN1/IN2 naar L298N)
+    M1_IN1      : out std_logic;
+    M1_IN2      : out std_logic;
+    M2_IN1      : out std_logic;
+    M2_IN2      : out std_logic;
+    M3_IN1      : out std_logic;
+    M3_IN2      : out std_logic;
+    M4_IN1      : out std_logic;
+    M4_IN2      : out std_logic;
+    
+    -- VGA Signal Generator
+    VGA_R       : out std_logic_vector(3 downto 0);
+    VGA_G       : out std_logic_vector(3 downto 0);
+    VGA_B       : out std_logic_vector(3 downto 0);
+    VGA_HS      : out std_logic;
+    VGA_VS      : out std_logic
   );
 end NexysA7_Top;
 
 architecture RTL of NexysA7_Top is
+  -- VGA Signal Generator
+    component VGASignalGenerator is
+        port(
+            pclk : in std_logic; -- Should be 25 MHz, Technisch Ontwerp 5.4.1 in CRT timing parameters
+            
+            pixel_data: in std_logic_vector(11 downto 0); -- Pixel data is supplied from outside
+            fb_address: out std_logic_vector(18 downto 0); -- Framebuffer
+        
+            vga_R  : out std_logic_vector(3 downto 0); -- RGB444
+            vga_G  : out std_logic_vector(3 downto 0);
+            vga_B  : out std_logic_vector(3 downto 0);
+            vga_HS : out std_logic; -- Horizontal Sync
+            vga_VS : out std_logic -- Vertical Sync
+        );
+    end component VGASignalGenerator;
+    
+    signal VGA_PCLK : std_logic;
+    
+    signal vga_pixel_data : std_logic_vector(11 downto 0);
+    signal vga_address : std_logic_vector(18 downto 0);
 
   component RISC_V_wrapper is
     port (
@@ -60,15 +97,71 @@ architecture RTL of NexysA7_Top is
       usb_uart_rxd : in  STD_LOGIC;
       usb_uart_txd : out STD_LOGIC
     );
+      port (
+        LED : out STD_LOGIC_VECTOR ( 15 downto 0 );
+        SW : in STD_LOGIC_VECTOR ( 15 downto 0 );
+        CPU_RESETN : in STD_LOGIC;
+        CLK100MHZ : in STD_LOGIC;
+        UART_RX_OUT : in STD_LOGIC;
+        UART_TX_IN : out STD_LOGIC;
+        VGA_PCLK : out STD_LOGIC;
+        VGA_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        VGA_FB_clk : in STD_LOGIC;
+        VGA_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        VGA_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        VGA_FB_en : in STD_LOGIC;
+        VGA_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+        CAM_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        CAM_FB_clk : in STD_LOGIC;
+        CAM_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        CAM_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        CAM_FB_en : in STD_LOGIC;
+        CAM_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 )
+      );
   end component;
 
 begin
+    -- VGA Signal Generator
+    u_VGASignalGenerator : VGASignalGenerator port map(
+        pclk => VGA_PCLK,
+        
+        pixel_data => vga_pixel_data,
+        fb_address => vga_address,
+        
+        vga_R => VGA_R,
+        vga_G => VGA_G,
+        vga_B => VGA_B,
+        
+        vga_HS => VGA_HS,
+        vga_VS => VGA_VS
+    );
 
   u_cpu : RISC_V_wrapper
     port map (
       -- leds & switches
       LED_tri_o    => LED,
       SW_tri_i     => SW,
+      LED         => LED,
+      SW          => SW,
+      CPU_RESETN  => CPU_RESETN,
+      CLK100MHZ   => CLK100MHZ,
+      UART_RX_OUT => UART_RX_OUT,
+      UART_TX_IN  => UART_TX_IN,
+      VGA_PCLK    => VGA_PCLK,
+      
+      VGA_FB_addr  => vga_address,
+      VGA_FB_clk   => VGA_PCLK,
+      VGA_FB_din   => (others => '0'), -- Unused
+      VGA_FB_dout  => vga_pixel_data,
+      VGA_FB_en    => '1',
+      VGA_FB_we    => (others => '0'), -- Read by default
+        
+      CAM_FB_addr  => (others => '0'),
+      CAM_FB_clk   => '0', -- Change to CAM_PCLK
+      CAM_FB_din   => (others => '0'),
+      CAM_FB_dout  => open, -- Unused
+      CAM_FB_en    => '1',
+      CAM_FB_we    => (others => '1') -- Write by default
 
       -- encoders
       enc_x1_a_0   => enc_x1_a_0,

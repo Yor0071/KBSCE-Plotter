@@ -48,7 +48,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_
 # IP: bd/RISC_V/ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_reset_inv_0_0 || ORIG_REF_NAME==RISC_V_reset_inv_0_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_motor_ctrl_0_4/RISC_V_motor_ctrl_0_4.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_motor_ctrl_0_4 || ORIG_REF_NAME==RISC_V_motor_ctrl_0_4} -quiet] -quiet
+# IP: bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_blk_mem_gen_0_0 || ORIG_REF_NAME==RISC_V_blk_mem_gen_0_0} -quiet] -quiet
 
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc
+# XDC: /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc

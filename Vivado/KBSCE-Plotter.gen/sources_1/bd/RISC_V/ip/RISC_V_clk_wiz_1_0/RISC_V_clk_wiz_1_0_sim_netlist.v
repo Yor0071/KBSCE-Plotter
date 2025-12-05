@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Fri Nov 21 14:40:44 2025
-// Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0_sim_netlist.v
+// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+// Date        : Fri Nov 28 21:55:02 2025
+// Host        : mrt-fed-lap running 64-bit unknown
+// Command     : write_verilog -force -mode funcsim -rename_top RISC_V_clk_wiz_1_0 -prefix
+//               RISC_V_clk_wiz_1_0_ RISC_V_clk_wiz_1_0_sim_netlist.v
 // Design      : RISC_V_clk_wiz_1_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,49 +16,49 @@
 (* NotValidForBitStream *)
 module RISC_V_clk_wiz_1_0
    (clk_out1,
+    VGA_PCLK,
     reset,
-    locked,
     clk_in1);
   output clk_out1;
+  output VGA_PCLK;
   input reset;
-  output locked;
   input clk_in1;
 
+  wire VGA_PCLK;
   (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) wire clk_in1;
   wire clk_out1;
-  wire locked;
   (* RTL_KEEP = "yes" *) wire reset;
 
-  RISC_V_clk_wiz_1_0_clk_wiz inst
-       (.clk_in1(clk_in1),
+  RISC_V_clk_wiz_1_0_RISC_V_clk_wiz_1_0_clk_wiz inst
+       (.VGA_PCLK(VGA_PCLK),
+        .clk_in1(clk_in1),
         .clk_out1(clk_out1),
-        .locked(locked),
         .reset(reset));
 endmodule
 
-module RISC_V_clk_wiz_1_0_clk_wiz
+module RISC_V_clk_wiz_1_0_RISC_V_clk_wiz_1_0_clk_wiz
    (clk_out1,
+    VGA_PCLK,
     reset,
-    locked,
     clk_in1);
   output clk_out1;
+  output VGA_PCLK;
   input reset;
-  output locked;
   input clk_in1;
 
+  wire VGA_PCLK;
+  wire VGA_PCLK_RISC_V_clk_wiz_1_0;
   wire clk_in1;
   wire clk_in1_RISC_V_clk_wiz_1_0;
   wire clk_out1;
   wire clk_out1_RISC_V_clk_wiz_1_0;
   wire clkfbout_RISC_V_clk_wiz_1_0;
   wire clkfbout_buf_RISC_V_clk_wiz_1_0;
-  wire locked;
   wire reset;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
@@ -68,6 +68,7 @@ module RISC_V_clk_wiz_1_0_clk_wiz
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED;
   wire NLW_mmcm_adv_inst_DRDY_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_LOCKED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_PSDONE_UNCONNECTED;
   wire [15:0]NLW_mmcm_adv_inst_DO_UNCONNECTED;
 
@@ -89,6 +90,10 @@ module RISC_V_clk_wiz_1_0_clk_wiz
        (.I(clk_out1_RISC_V_clk_wiz_1_0),
         .O(clk_out1));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout2_buf
+       (.I(VGA_PCLK_RISC_V_clk_wiz_1_0),
+        .O(VGA_PCLK));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
     .CLKFBOUT_MULT_F(10.000000),
@@ -100,7 +105,7 @@ module RISC_V_clk_wiz_1_0_clk_wiz
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(1),
+    .CLKOUT1_DIVIDE(40),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
@@ -149,7 +154,7 @@ module RISC_V_clk_wiz_1_0_clk_wiz
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
         .CLKOUT0(clk_out1_RISC_V_clk_wiz_1_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED),
+        .CLKOUT1(VGA_PCLK_RISC_V_clk_wiz_1_0),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
@@ -165,7 +170,7 @@ module RISC_V_clk_wiz_1_0_clk_wiz
         .DO(NLW_mmcm_adv_inst_DO_UNCONNECTED[15:0]),
         .DRDY(NLW_mmcm_adv_inst_DRDY_UNCONNECTED),
         .DWE(1'b0),
-        .LOCKED(locked),
+        .LOCKED(NLW_mmcm_adv_inst_LOCKED_UNCONNECTED),
         .PSCLK(1'b0),
         .PSDONE(NLW_mmcm_adv_inst_PSDONE_UNCONNECTED),
         .PSEN(1'b0),
