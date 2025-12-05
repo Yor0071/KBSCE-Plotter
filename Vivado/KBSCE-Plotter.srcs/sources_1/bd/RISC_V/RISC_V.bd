@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xDD65D30F74297A53",
+      "boundary_crc": "0xDD65D30FAC765DCE",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V",
       "name": "RISC_V",
@@ -68,33 +68,6 @@
           "TxD": {
             "physical_name": "usb_uart_txd",
             "direction": "O"
-          }
-        }
-      },
-      "BRAM_PORTA_0": {
-        "mode": "Slave",
-        "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
-        "vlnv": "xilinx.com:interface:bram_rtl:1.0",
-        "parameters": {
-          "MASTER_TYPE": {
-            "value": "OTHER",
-            "value_src": "default"
-          },
-          "MEM_ECC": {
-            "value": "NONE",
-            "value_src": "default"
-          },
-          "MEM_SIZE": {
-            "value": "8192",
-            "value_src": "default"
-          },
-          "MEM_WIDTH": {
-            "value": "32",
-            "value_src": "default"
-          },
-          "READ_LATENCY": {
-            "value": "1",
-            "value_src": "default"
           }
         }
       },
