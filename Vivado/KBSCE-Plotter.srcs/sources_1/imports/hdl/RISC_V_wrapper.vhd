@@ -12,6 +12,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
+
 entity RISC_V_wrapper is
   port (
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -35,9 +36,7 @@ entity RISC_V_wrapper is
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
-    usb_uart_txd : out STD_LOGIC
-    LED : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    SW : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    usb_uart_txd : out STD_LOGIC;
     CPU_RESETN : in STD_LOGIC;
     CLK100MHZ : in STD_LOGIC;
     UART_RX_OUT : in STD_LOGIC;
@@ -82,7 +81,7 @@ architecture STRUCTURE of RISC_V_wrapper is
     enc_x1_a_0 : in STD_LOGIC;
     enc_z_a_0 : in STD_LOGIC;
     enc_y_b_0 : in STD_LOGIC;
-    enc_z_b_0 : in STD_LOGIC
+    enc_z_b_0 : in STD_LOGIC;
     VGA_PCLK : out std_logic;
     
     BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
@@ -124,13 +123,8 @@ RISC_V_i: component RISC_V
       reset => reset,
       sys_clock => sys_clock,
       usb_uart_rxd => usb_uart_rxd,
-      usb_uart_txd => usb_uart_txd
-        LED_tri_o(15 downto 0) => LED(15 downto 0),
-        SW_tri_i(15 downto 0) => SW(15 downto 0),
-        reset => CPU_RESETN,
-        sys_clock => CLK100MHZ,
-        usb_uart_rxd => UART_RX_OUT,
-        usb_uart_txd => UART_TX_IN,
+      usb_uart_txd => usb_uart_txd,
+      
         VGA_PCLK => VGA_PCLK,
         
         BRAM_PORTA_1_addr => VGA_FB_addr,

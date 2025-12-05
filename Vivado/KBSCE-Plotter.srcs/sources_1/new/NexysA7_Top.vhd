@@ -29,18 +29,8 @@ entity NexysA7_Top is
     m3_in1_0 : out std_logic;
     m3_in2_0 : out std_logic;
     m4_in1_0 : out std_logic;
-    m4_in2_0 : out std_logic
-    
-    -- Motor-uitgangen (IN1/IN2 naar L298N)
-    M1_IN1      : out std_logic;
-    M1_IN2      : out std_logic;
-    M2_IN1      : out std_logic;
-    M2_IN2      : out std_logic;
-    M3_IN1      : out std_logic;
-    M3_IN2      : out std_logic;
-    M4_IN1      : out std_logic;
-    M4_IN2      : out std_logic;
-    
+    m4_in2_0 : out std_logic;
+        
     -- VGA Signal Generator
     VGA_R       : out std_logic_vector(3 downto 0);
     VGA_G       : out std_logic_vector(3 downto 0);
@@ -73,52 +63,48 @@ architecture RTL of NexysA7_Top is
     signal vga_address : std_logic_vector(18 downto 0);
 
   component RISC_V_wrapper is
-    port (
-      LED_tri_o    : out STD_LOGIC_VECTOR ( 15 downto 0 );
-      SW_tri_i     : in  STD_LOGIC_VECTOR ( 15 downto 0 );
-      enc_x1_a_0   : in  STD_LOGIC;
-      enc_x1_b_0   : in  STD_LOGIC;
-      enc_x2_a_0   : in  STD_LOGIC;
-      enc_x2_b_0   : in  STD_LOGIC;
-      enc_y_a_0    : in  STD_LOGIC;
-      enc_y_b_0    : in  STD_LOGIC;
-      enc_z_a_0    : in  STD_LOGIC;
-      enc_z_b_0    : in  STD_LOGIC;
-      m1_in1_0     : out STD_LOGIC;
-      m1_in2_0     : out STD_LOGIC;
-      m2_in1_0     : out STD_LOGIC;
-      m2_in2_0     : out STD_LOGIC;
-      m3_in1_0     : out STD_LOGIC;
-      m3_in2_0     : out STD_LOGIC;
-      m4_in1_0     : out STD_LOGIC;
-      m4_in2_0     : out STD_LOGIC;
-      reset        : in  STD_LOGIC;
-      sys_clock    : in  STD_LOGIC;
-      usb_uart_rxd : in  STD_LOGIC;
-      usb_uart_txd : out STD_LOGIC
-    );
-      port (
-        LED : out STD_LOGIC_VECTOR ( 15 downto 0 );
-        SW : in STD_LOGIC_VECTOR ( 15 downto 0 );
-        CPU_RESETN : in STD_LOGIC;
-        CLK100MHZ : in STD_LOGIC;
-        UART_RX_OUT : in STD_LOGIC;
-        UART_TX_IN : out STD_LOGIC;
-        VGA_PCLK : out STD_LOGIC;
-        VGA_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-        VGA_FB_clk : in STD_LOGIC;
-        VGA_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-        VGA_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-        VGA_FB_en : in STD_LOGIC;
-        VGA_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-        CAM_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-        CAM_FB_clk : in STD_LOGIC;
-        CAM_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-        CAM_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-        CAM_FB_en : in STD_LOGIC;
-        CAM_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 )
-      );
-  end component;
+  port (
+    LED_tri_o    : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    SW_tri_i     : in  STD_LOGIC_VECTOR ( 15 downto 0 );
+    enc_x1_a_0   : in  STD_LOGIC;
+    enc_x1_b_0   : in  STD_LOGIC;
+    enc_x2_a_0   : in  STD_LOGIC;
+    enc_x2_b_0   : in  STD_LOGIC;
+    enc_y_a_0    : in  STD_LOGIC;
+    enc_y_b_0    : in  STD_LOGIC;
+    enc_z_a_0    : in  STD_LOGIC;
+    enc_z_b_0    : in  STD_LOGIC;
+    m1_in1_0     : out STD_LOGIC;
+    m1_in2_0     : out STD_LOGIC;
+    m2_in1_0     : out STD_LOGIC;
+    m2_in2_0     : out STD_LOGIC;
+    m3_in1_0     : out STD_LOGIC;
+    m3_in2_0     : out STD_LOGIC;
+    m4_in1_0     : out STD_LOGIC;
+    m4_in2_0     : out STD_LOGIC;
+    reset        : in  STD_LOGIC;
+    sys_clock    : in  STD_LOGIC;
+    usb_uart_rxd : in  STD_LOGIC;
+    usb_uart_txd : out STD_LOGIC;
+    CPU_RESETN   : in  STD_LOGIC;
+    CLK100MHZ    : in  STD_LOGIC;
+    UART_RX_OUT  : in  STD_LOGIC;
+    UART_TX_IN   : out STD_LOGIC;
+    VGA_PCLK     : out STD_LOGIC;
+    VGA_FB_addr  : in  STD_LOGIC_VECTOR ( 18 downto 0 );
+    VGA_FB_clk   : in  STD_LOGIC;
+    VGA_FB_din   : in  STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_FB_dout  : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_FB_en    : in  STD_LOGIC;
+    VGA_FB_we    : in  STD_LOGIC_VECTOR ( 0 to 0 );
+    CAM_FB_addr  : in  STD_LOGIC_VECTOR ( 18 downto 0 );
+    CAM_FB_clk   : in  STD_LOGIC;
+    CAM_FB_din   : in  STD_LOGIC_VECTOR ( 11 downto 0 );
+    CAM_FB_dout  : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    CAM_FB_en    : in  STD_LOGIC;
+    CAM_FB_we    : in  STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+end component;
 
 begin
     -- VGA Signal Generator
@@ -141,8 +127,6 @@ begin
       -- leds & switches
       LED_tri_o    => LED,
       SW_tri_i     => SW,
-      LED         => LED,
-      SW          => SW,
       CPU_RESETN  => CPU_RESETN,
       CLK100MHZ   => CLK100MHZ,
       UART_RX_OUT => UART_RX_OUT,
@@ -161,7 +145,7 @@ begin
       CAM_FB_din   => (others => '0'),
       CAM_FB_dout  => open, -- Unused
       CAM_FB_en    => '1',
-      CAM_FB_we    => (others => '1') -- Write by default
+      CAM_FB_we    => (others => '1'), -- Write by default
 
       -- encoders
       enc_x1_a_0   => enc_x1_a_0,

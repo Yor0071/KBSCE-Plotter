@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Dec  5 11:53:38 2025
-| Host         : mrt-fed-lap running 64-bit unknown
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Fri Dec  5 15:01:41 2025
+| Host         : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 | Command      : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
 | Design       : NexysA7_Top
 | Device       : xc7a100tcsg324-1
@@ -28,18 +28,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |   61 |     0 |          0 |     63400 |  0.10 |
-|   LUT as Logic          |   61 |     0 |          0 |     63400 |  0.10 |
-|   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         |  119 |     0 |          0 |    126800 |  0.09 |
-|   Register as Flip Flop |  119 |     0 |          0 |    126800 |  0.09 |
-|   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                |    0 |     0 |          0 |     31700 |  0.00 |
-| F8 Muxes                |    0 |     0 |          0 |     15850 |  0.00 |
-+-------------------------+------+-------+------------+-----------+-------+
++----------------------------+------+-------+------------+-----------+-------+
+|          Site Type         | Used | Fixed | Prohibited | Available | Util% |
++----------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs*                | 3223 |     0 |          0 |     63400 |  5.08 |
+|   LUT as Logic             | 3115 |     0 |          0 |     63400 |  4.91 |
+|   LUT as Memory            |  108 |     0 |          0 |     19000 |  0.57 |
+|     LUT as Distributed RAM |   64 |     0 |            |           |       |
+|     LUT as Shift Register  |   44 |     0 |            |           |       |
+| Slice Registers            | 2936 |     0 |          0 |    126800 |  2.32 |
+|   Register as Flip Flop    | 2936 |     0 |          0 |    126800 |  2.32 |
+|   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
+| F7 Muxes                   |  116 |     0 |          0 |     31700 |  0.37 |
+| F8 Muxes                   |   40 |     0 |          0 |     15850 |  0.25 |
++----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 Warning! For any ECO changes, please run place_design if there are unplaced instances
@@ -57,23 +59,25 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 0     |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 119   |          Yes |       Reset |            - |
+| 1     |          Yes |           - |          Set |
+| 213   |          Yes |           - |        Reset |
+| 119   |          Yes |         Set |            - |
+| 2603  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
 2. Memory
 ---------
 
-+----------------+------+-------+------------+-----------+-------+
-|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
-+----------------+------+-------+------------+-----------+-------+
-| Block RAM Tile |    0 |     0 |          0 |       135 |  0.00 |
-|   RAMB36/FIFO* |    0 |     0 |          0 |       135 |  0.00 |
-|   RAMB18       |    0 |     0 |          0 |       270 |  0.00 |
-+----------------+------+-------+------------+-----------+-------+
++-------------------+-------+-------+------------+-----------+-------+
+|     Site Type     |  Used | Fixed | Prohibited | Available | Util% |
++-------------------+-------+-------+------------+-----------+-------+
+| Block RAM Tile    | 107.5 |     0 |          0 |       135 | 79.63 |
+|   RAMB36/FIFO*    |   107 |     0 |          0 |       135 | 79.26 |
+|     RAMB36E1 only |   107 |       |            |           |       |
+|   RAMB18          |     1 |     0 |          0 |       270 |  0.37 |
+|     RAMB18E1 only |     1 |       |            |           |       |
++-------------------+-------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
 
@@ -115,9 +119,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
+| BUFGCTRL   |    6 |     0 |          0 |        32 | 18.75 |
 | BUFIO      |    0 |     0 |          0 |        24 |  0.00 |
-| MMCME2_ADV |    0 |     0 |          0 |         6 |  0.00 |
+| MMCME2_ADV |    1 |     0 |          0 |         6 | 16.67 |
 | PLLE2_ADV  |    0 |     0 |          0 |         6 |  0.00 |
 | BUFMRCE    |    0 |     0 |          0 |        12 |  0.00 |
 | BUFHCE     |    0 |     0 |          0 |        96 |  0.00 |
@@ -131,7 +135,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------+------+-------+------------+-----------+-------+
 |  Site Type  | Used | Fixed | Prohibited | Available | Util% |
 +-------------+------+-------+------------+-----------+-------+
-| BSCANE2     |    0 |     0 |          0 |         4 |  0.00 |
+| BSCANE2     |    1 |     0 |          0 |         4 | 25.00 |
 | CAPTUREE2   |    0 |     0 |          0 |         1 |  0.00 |
 | DNA_PORT    |    0 |     0 |          0 |         1 |  0.00 |
 | EFUSE_USR   |    0 |     0 |          0 |         1 |  0.00 |
@@ -146,44 +150,43 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     |  119 |        Flop & Latch |
-| OBUF     |   39 |                  IO |
-| LUT3     |   33 |                 LUT |
-| CARRY4   |   21 |          CarryLogic |
-| LUT4     |   19 |                 LUT |
-| IBUF     |   19 |                  IO |
-| LUT2     |   15 |                 LUT |
-| LUT5     |   12 |                 LUT |
-| LUT1     |   10 |                 LUT |
-| LUT6     |    9 |                 LUT |
-+----------+------+---------------------+
++------------+------+---------------------+
+|  Ref Name  | Used | Functional Category |
++------------+------+---------------------+
+| FDRE       | 2603 |        Flop & Latch |
+| LUT6       | 1028 |                 LUT |
+| LUT2       |  712 |                 LUT |
+| LUT5       |  672 |                 LUT |
+| LUT4       |  626 |                 LUT |
+| LUT3       |  555 |                 LUT |
+| LUT1       |  236 |                 LUT |
+| FDCE       |  213 |        Flop & Latch |
+| FDSE       |  119 |        Flop & Latch |
+| MUXF7      |  116 |               MuxFx |
+| RAMB36E1   |  107 |        Block Memory |
+| RAMD32     |   96 |  Distributed Memory |
+| CARRY4     |   91 |          CarryLogic |
+| SRL16E     |   43 |  Distributed Memory |
+| MUXF8      |   40 |               MuxFx |
+| OBUF       |   39 |                  IO |
+| RAMS32     |   32 |  Distributed Memory |
+| IBUF       |   19 |                  IO |
+| BUFG       |    4 |               Clock |
+| BUFGCTRL   |    2 |               Clock |
+| SRLC32E    |    1 |  Distributed Memory |
+| RAMB18E1   |    1 |        Block Memory |
+| MMCME2_ADV |    1 |               Clock |
+| FDPE       |    1 |        Flop & Latch |
+| BSCANE2    |    1 |              Others |
++------------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+-----------------------------+------+
-|           Ref Name          | Used |
-+-----------------------------+------+
-| RISC_V_rst_clk_wiz_1_100M_0 |    1 |
-| RISC_V_reset_inv_0_0        |    1 |
-| RISC_V_microblaze_riscv_0_0 |    1 |
-| RISC_V_mdm_1_0              |    1 |
-| RISC_V_lmb_bram_0           |    1 |
-| RISC_V_ilmb_v10_0           |    1 |
-| RISC_V_ilmb_bram_if_cntlr_0 |    1 |
-| RISC_V_dlmb_v10_0           |    1 |
-| RISC_V_dlmb_bram_if_cntlr_0 |    1 |
-| RISC_V_clk_wiz_1_0          |    1 |
-| RISC_V_blk_mem_gen_0_0      |    1 |
-| RISC_V_axi_uartlite_0_0     |    1 |
-| RISC_V_axi_smc_0            |    1 |
-| RISC_V_axi_gpio_1_0         |    1 |
-| RISC_V_axi_gpio_0_0         |    1 |
-+-----------------------------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 
 9. Instantiated Netlists

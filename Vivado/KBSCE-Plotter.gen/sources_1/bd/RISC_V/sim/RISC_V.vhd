@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
---Date        : Thu Dec  4 13:26:22 2025
+--Date        : Fri Dec  5 14:21:42 2025
 --Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -544,6 +544,7 @@ entity RISC_V is
     BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    VGA_PCLK : out STD_LOGIC;
     enc_x1_a_0 : in STD_LOGIC;
     enc_x1_b_0 : in STD_LOGIC;
     enc_x2_a_0 : in STD_LOGIC;
@@ -560,15 +561,13 @@ entity RISC_V is
     m3_in2_0 : out STD_LOGIC;
     m4_in1_0 : out STD_LOGIC;
     m4_in2_0 : out STD_LOGIC;
-    VGA_PCLK : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=2,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=None}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of RISC_V : entity is "RISC_V.hwdef";
 end RISC_V;
@@ -666,7 +665,7 @@ architecture STRUCTURE of RISC_V is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component RISC_V_rst_clk_wiz_1_100M_0;
-  component RISC_V_axi_gpio_0_0 is
+  component RISC_V_axi_gpio_leds_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC;
@@ -689,8 +688,8 @@ architecture STRUCTURE of RISC_V is
     s_axi_rready : in STD_LOGIC;
     gpio_io_o : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  end component RISC_V_axi_gpio_0_0;
-  component RISC_V_axi_gpio_1_0 is
+  end component RISC_V_axi_gpio_leds_0;
+  component RISC_V_axi_gpio_switches_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC;
@@ -713,7 +712,7 @@ architecture STRUCTURE of RISC_V is
     s_axi_rready : in STD_LOGIC;
     gpio_io_i : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  end component RISC_V_axi_gpio_1_0;
+  end component RISC_V_axi_gpio_switches_0;
   component RISC_V_axi_uartlite_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -847,7 +846,23 @@ architecture STRUCTURE of RISC_V is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component RISC_V_reset_inv_0_0;
-  component RISC_V_motor_ctrl_0_4 is
+  component RISC_V_blk_mem_gen_0_0 is
+  port (
+    clka : in STD_LOGIC;
+    ena : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
+    addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    douta : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    clkb : in STD_LOGIC;
+    enb : in STD_LOGIC;
+    web : in STD_LOGIC_VECTOR ( 0 to 0 );
+    addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    dinb : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
+  );
+  end component RISC_V_blk_mem_gen_0_0;
+  component RISC_V_motor_ctrl_0_0 is
   port (
     m1_in1 : out STD_LOGIC;
     m1_in2 : out STD_LOGIC;
@@ -887,23 +902,7 @@ architecture STRUCTURE of RISC_V is
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  end component RISC_V_motor_ctrl_0_4;
-  component RISC_V_blk_mem_gen_0_0 is
-  port (
-    clka : in STD_LOGIC;
-    ena : in STD_LOGIC;
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    douta : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    clkb : in STD_LOGIC;
-    enb : in STD_LOGIC;
-    web : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    dinb : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
-  );
-  end component RISC_V_blk_mem_gen_0_0;
+  end component RISC_V_motor_ctrl_0_0;
   signal axi_smc_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal axi_smc_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_ARVALID : STD_LOGIC;
@@ -974,7 +973,6 @@ architecture STRUCTURE of RISC_V is
   signal axi_smc_M03_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M03_AXI_WVALID : STD_LOGIC;
-  signal clk_wiz_1_locked : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_riscv_0_Clk : STD_LOGIC;
   signal microblaze_riscv_0_M_AXI_DP_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1075,7 +1073,7 @@ architecture STRUCTURE of RISC_V is
   attribute X_INTERFACE_INFO of SW_tri_i : signal is "xilinx.com:interface:gpio:1.0 SW TRI_I";
   attribute X_INTERFACE_MODE of SW_tri_i : signal is "Master";
 begin
-axi_gpio_leds: component RISC_V_axi_gpio_0_0
+axi_gpio_leds: component RISC_V_axi_gpio_leds_0
      port map (
       gpio_io_o(15 downto 0) => LED_tri_o(15 downto 0),
       s_axi_aclk => microblaze_riscv_0_Clk,
@@ -1098,7 +1096,7 @@ axi_gpio_leds: component RISC_V_axi_gpio_0_0
       s_axi_wstrb(3 downto 0) => axi_smc_M00_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => axi_smc_M00_AXI_WVALID
     );
-axi_gpio_switches: component RISC_V_axi_gpio_1_0
+axi_gpio_switches: component RISC_V_axi_gpio_switches_0
      port map (
       gpio_io_i(15 downto 0) => SW_tri_i(15 downto 0),
       s_axi_aclk => microblaze_riscv_0_Clk,
@@ -1360,7 +1358,7 @@ microblaze_riscv_0_local_memory: entity work.microblaze_riscv_0_local_memory_imp
       LMB_Clk => microblaze_riscv_0_Clk,
       SYS_Rst => rst_clk_wiz_1_100M_bus_struct_reset(0)
     );
-motor_ctrl_0: component RISC_V_motor_ctrl_0_4
+motor_ctrl_0: component RISC_V_motor_ctrl_0_0
      port map (
       enc_x1_a => enc_x1_a_0,
       enc_x1_b => enc_x1_b_0,
