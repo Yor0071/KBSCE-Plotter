@@ -31,26 +31,6 @@ entity NexysA7_Top is
 end NexysA7_Top;
 
 architecture RTL of NexysA7_Top is
-    -- Framebuffer
-    component framebuffer is
-        Port ( 
-            clka : in STD_LOGIC;
-            ena : in STD_LOGIC;
-            wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-            addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
-            dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
-            douta : out STD_LOGIC_VECTOR ( 11 downto 0 );
-            
-            clkb : in STD_LOGIC;
-            enb : in STD_LOGIC;
-            web : in STD_LOGIC_VECTOR ( 0 to 0 );
-            addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
-            dinb : in STD_LOGIC_VECTOR ( 11 downto 0 );
-            doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
-        );
-    end component;
-    
-
   -- VGA Signal Generator
     component VGASignalGenerator is
         port(
@@ -74,15 +54,27 @@ architecture RTL of NexysA7_Top is
 
   -- bestaand wrapper-component
   component RISC_V_wrapper is
-    port (
-      LED         : out STD_LOGIC_VECTOR ( 15 downto 0 );
-      SW          : in  STD_LOGIC_VECTOR ( 15 downto 0 );
-      CPU_RESETN  : in  STD_LOGIC;
-      CLK100MHZ   : in  STD_LOGIC;
-      UART_RX_OUT : in  STD_LOGIC;
-      UART_TX_IN  : out STD_LOGIC;
-      VGA_PCLK    : out STD_LOGIC
-    );
+      port (
+        LED : out STD_LOGIC_VECTOR ( 15 downto 0 );
+        SW : in STD_LOGIC_VECTOR ( 15 downto 0 );
+        CPU_RESETN : in STD_LOGIC;
+        CLK100MHZ : in STD_LOGIC;
+        UART_RX_OUT : in STD_LOGIC;
+        UART_TX_IN : out STD_LOGIC;
+        VGA_PCLK : out STD_LOGIC;
+        VGA_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        VGA_FB_clk : in STD_LOGIC;
+        VGA_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        VGA_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        VGA_FB_en : in STD_LOGIC;
+        VGA_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+        CAM_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        CAM_FB_clk : in STD_LOGIC;
+        CAM_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        CAM_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        CAM_FB_en : in STD_LOGIC;
+        CAM_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 )
+      );
   end component;
 
   -- MotorControl component
@@ -112,22 +104,6 @@ architecture RTL of NexysA7_Top is
   signal dir_M4   : std_logic;
 
 begin
-    u_Framebuffer : Framebuffer port map(
-        clka  => VGA_PCLK,
-        ena   => '1',
-        wea   => (others => '0'), -- Read by default
-        addra => vga_address,
-        dina  => (others => '0'), -- Unused
-        douta => vga_pixel_data,
-       
-        clkb  => '0', -- Change to camera PCLK
-        enb   => '1',
-        web   => (others => '1'), -- Write by default
-        addrb => (others => '0'), -- Change to camera address
-        dinb  => (others => '0'), -- Change to camera pixel data
-        doutb => open -- Unused
-    );
-
     -- VGA Signal Generator
     u_VGASignalGenerator : VGASignalGenerator port map(
         pclk => VGA_PCLK,
@@ -148,13 +124,27 @@ begin
   --------------------------------------------------------------------
   u_cpu : RISC_V_wrapper
     port map(
-      LED         => LED,
-      SW          => SW,
-      CPU_RESETN  => CPU_RESETN,
-      CLK100MHZ   => CLK100MHZ,
-      UART_RX_OUT => UART_RX_OUT,
-      UART_TX_IN  => UART_TX_IN,
-      VGA_PCLK    => VGA_PCLK
+        LED         => LED,
+        SW          => SW,
+        CPU_RESETN  => CPU_RESETN,
+        CLK100MHZ   => CLK100MHZ,
+        UART_RX_OUT => UART_RX_OUT,
+        UART_TX_IN  => UART_TX_IN,
+        VGA_PCLK    => VGA_PCLK,
+      
+        VGA_FB_addr  => vga_address,
+        VGA_FB_clk   => VGA_PCLK,
+        VGA_FB_din   => (others => '0'), -- Unused
+        VGA_FB_dout  => vga_pixel_data,
+        VGA_FB_en    => '1',
+        VGA_FB_we    => (others => '0'), -- Read by default
+        
+        CAM_FB_addr  => (others => '0'),
+        CAM_FB_clk   => '0', -- Change to CAM_PCLK
+        CAM_FB_din   => (others => '0'),
+        CAM_FB_dout  => open, -- Unused
+        CAM_FB_en    => '1',
+        CAM_FB_we    => (others => '1') -- Write by default
     );
 
   --------------------------------------------------------------------

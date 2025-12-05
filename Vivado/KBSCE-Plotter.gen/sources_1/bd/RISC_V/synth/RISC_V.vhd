@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Fri Nov 28 21:54:24 2025
+--Date        : Fri Dec  5 11:52:56 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -530,6 +530,18 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity RISC_V is
   port (
+    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTA_1_clk : in STD_LOGIC;
+    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_en : in STD_LOGIC;
+    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTB_0_clk : in STD_LOGIC;
+    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_en : in STD_LOGIC;
+    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     VGA_PCLK : out STD_LOGIC;
@@ -539,7 +551,7 @@ entity RISC_V is
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=15,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=2,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of RISC_V : entity is "RISC_V.hwdef";
 end RISC_V;
@@ -799,6 +811,22 @@ architecture STRUCTURE of RISC_V is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component RISC_V_reset_inv_0_0;
+  component RISC_V_blk_mem_gen_0_0 is
+  port (
+    clka : in STD_LOGIC;
+    ena : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
+    addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    douta : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    clkb : in STD_LOGIC;
+    enb : in STD_LOGIC;
+    web : in STD_LOGIC_VECTOR ( 0 to 0 );
+    addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    dinb : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
+  );
+  end component RISC_V_blk_mem_gen_0_0;
   signal axi_smc_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal axi_smc_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_ARVALID : STD_LOGIC;
@@ -918,6 +946,10 @@ architecture STRUCTURE of RISC_V is
   attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of microblaze_riscv_0 : label is "yes";
   attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of BRAM_PORTA_1_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 CLK";
+  attribute X_INTERFACE_INFO of BRAM_PORTA_1_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 EN";
+  attribute X_INTERFACE_INFO of BRAM_PORTB_0_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 CLK";
+  attribute X_INTERFACE_INFO of BRAM_PORTB_0_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 EN";
   attribute X_INTERFACE_INFO of VGA_PCLK : signal is "xilinx.com:signal:clock:1.0 CLK.VGA_PCLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of VGA_PCLK : signal is "XIL_INTERFACENAME CLK.VGA_PCLK, CLK_DOMAIN /clk_wiz_1_clk_out1, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
@@ -929,6 +961,18 @@ architecture STRUCTURE of RISC_V is
   attribute X_INTERFACE_MODE : string;
   attribute X_INTERFACE_MODE of usb_uart_rxd : signal is "Master";
   attribute X_INTERFACE_INFO of usb_uart_txd : signal is "xilinx.com:interface:uart:1.0 usb_uart TxD";
+  attribute X_INTERFACE_INFO of BRAM_PORTA_1_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 ADDR";
+  attribute X_INTERFACE_MODE of BRAM_PORTA_1_addr : signal is "Slave";
+  attribute X_INTERFACE_PARAMETER of BRAM_PORTA_1_addr : signal is "XIL_INTERFACENAME BRAM_PORTA_1, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 2, READ_WRITE_MODE READ_WRITE";
+  attribute X_INTERFACE_INFO of BRAM_PORTA_1_din : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 DIN";
+  attribute X_INTERFACE_INFO of BRAM_PORTA_1_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 DOUT";
+  attribute X_INTERFACE_INFO of BRAM_PORTA_1_we : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 WE";
+  attribute X_INTERFACE_INFO of BRAM_PORTB_0_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 ADDR";
+  attribute X_INTERFACE_MODE of BRAM_PORTB_0_addr : signal is "Slave";
+  attribute X_INTERFACE_PARAMETER of BRAM_PORTB_0_addr : signal is "XIL_INTERFACENAME BRAM_PORTB_0, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 2, READ_WRITE_MODE READ_WRITE";
+  attribute X_INTERFACE_INFO of BRAM_PORTB_0_din : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 DIN";
+  attribute X_INTERFACE_INFO of BRAM_PORTB_0_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 DOUT";
+  attribute X_INTERFACE_INFO of BRAM_PORTB_0_we : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 WE";
   attribute X_INTERFACE_INFO of LED_tri_o : signal is "xilinx.com:interface:gpio:1.0 LED TRI_O";
   attribute X_INTERFACE_MODE of LED_tri_o : signal is "Master";
   attribute X_INTERFACE_INFO of SW_tri_i : signal is "xilinx.com:interface:gpio:1.0 SW TRI_I";
@@ -1085,6 +1129,21 @@ axi_uartlite_0: component RISC_V_axi_uartlite_0_0
       s_axi_wstrb(3 downto 0) => axi_smc_M02_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => axi_smc_M02_AXI_WVALID,
       tx => usb_uart_txd
+    );
+blk_mem_gen_0: component RISC_V_blk_mem_gen_0_0
+     port map (
+      addra(18 downto 0) => BRAM_PORTA_1_addr(18 downto 0),
+      addrb(18 downto 0) => BRAM_PORTB_0_addr(18 downto 0),
+      clka => BRAM_PORTA_1_clk,
+      clkb => BRAM_PORTB_0_clk,
+      dina(11 downto 0) => BRAM_PORTA_1_din(11 downto 0),
+      dinb(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
+      douta(11 downto 0) => BRAM_PORTA_1_dout(11 downto 0),
+      doutb(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
+      ena => BRAM_PORTA_1_en,
+      enb => BRAM_PORTB_0_en,
+      wea(0) => BRAM_PORTA_1_we(0),
+      web(0) => BRAM_PORTB_0_we(0)
     );
 clk_wiz_1: component RISC_V_clk_wiz_1_0
      port map (

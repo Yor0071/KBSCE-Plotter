@@ -20,7 +20,19 @@ entity RISC_V_wrapper is
     CLK100MHZ : in STD_LOGIC;
     UART_RX_OUT : in STD_LOGIC;
     UART_TX_IN : out STD_LOGIC;
-    VGA_PCLK : out STD_LOGIC
+    VGA_PCLK : out STD_LOGIC;
+    VGA_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    VGA_FB_clk : in STD_LOGIC;
+    VGA_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_FB_en : in STD_LOGIC;
+    VGA_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    CAM_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    CAM_FB_clk : in STD_LOGIC;
+    CAM_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    CAM_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    CAM_FB_en : in STD_LOGIC;
+    CAM_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 end RISC_V_wrapper;
 
@@ -33,18 +45,46 @@ architecture STRUCTURE of RISC_V_wrapper is
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     sys_clock : in STD_LOGIC;
     reset : in STD_LOGIC;
-    VGA_PCLK : out std_logic
+    VGA_PCLK : out std_logic;
+    
+    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTA_1_clk : in STD_LOGIC;
+    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTA_1_en : in STD_LOGIC;
+    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    
+    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTB_0_clk : in STD_LOGIC;
+    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORTB_0_en : in STD_LOGIC;
+    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component RISC_V;
 begin
 RISC_V_i: component RISC_V
      port map (
-      LED_tri_o(15 downto 0) => LED(15 downto 0),
-      SW_tri_i(15 downto 0) => SW(15 downto 0),
-      reset => CPU_RESETN,
-      sys_clock => CLK100MHZ,
-      usb_uart_rxd => UART_RX_OUT,
-      usb_uart_txd => UART_TX_IN,
-      VGA_PCLK => VGA_PCLK
+        LED_tri_o(15 downto 0) => LED(15 downto 0),
+        SW_tri_i(15 downto 0) => SW(15 downto 0),
+        reset => CPU_RESETN,
+        sys_clock => CLK100MHZ,
+        usb_uart_rxd => UART_RX_OUT,
+        usb_uart_txd => UART_TX_IN,
+        VGA_PCLK => VGA_PCLK,
+        
+        BRAM_PORTA_1_addr => VGA_FB_addr,
+        BRAM_PORTA_1_clk  => VGA_FB_clk,
+        BRAM_PORTA_1_din  => VGA_FB_din,
+        BRAM_PORTA_1_dout => VGA_FB_dout,
+        BRAM_PORTA_1_en   => VGA_FB_en,
+        BRAM_PORTA_1_we   => VGA_FB_we,
+        
+        BRAM_PORTB_0_addr => CAM_FB_addr,
+        BRAM_PORTB_0_clk  => CAM_FB_clk,
+        BRAM_PORTB_0_din  => CAM_FB_din,
+        BRAM_PORTB_0_dout => CAM_FB_dout,
+        BRAM_PORTB_0_en   => CAM_FB_en,
+        BRAM_PORTB_0_we   => CAM_FB_we
     );
 end STRUCTURE;
