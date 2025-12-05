@@ -1,11 +1,11 @@
-// includes
+// Includes
 extern "C"{
     #include "xparameters.h"
     #include "xil_io.h"
 }
 
-//registers
-#define MOTOR_BASE XPAR_MOTOR_CTRL_0_BASEADDR    // Base address van motor IP
+// Registers
+#define MOTOR_BASE XPAR_MOTOR_CTRL_0_BASEADDR // Base address of motor IP
 
 // Assumption:
 //   slv_reg0 (0x00) = motor X1
@@ -22,11 +22,11 @@ extern "C"{
 // | bit 9  | bit 8  | bits 7..0 |
 // | enable | dir    | speed     |
 #define MOTOR_ENABLE_BIT (1U << 9)
-#define MOTOR_DIR_BIT    (1U << 8)         // 0 = forward, 1 = backward
+#define MOTOR_DIR_BIT    (1U << 8)  // 0 = forward, 1 = backward
 #define MOTOR_SPEED(v)   ((v) & 0xFFU)
 
 // Min speed 75 (max 255)
-#define DEFAULT_SPEED    150U   // Motor speed
+#define DEFAULT_SPEED    150U  // Motor speed
 
 class Motor{             
     public:
