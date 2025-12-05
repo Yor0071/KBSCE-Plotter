@@ -12,7 +12,6 @@
 *.backup.log
 
 # Checkpoints, bitstreams, etc.
-*.bit
 *.bin
 *.mcs
 *.prm
