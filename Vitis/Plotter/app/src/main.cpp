@@ -1,5 +1,7 @@
-#include "xparameters.h"
-#include "xil_io.h"
+extern "C" {
+    #include "xil_io.h"
+    #include "xparameters.h"   
+}
 
 // ---------------------------------------------------------
 //  Hardware addresses
