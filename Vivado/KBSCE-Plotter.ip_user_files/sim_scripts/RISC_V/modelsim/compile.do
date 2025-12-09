@@ -126,9 +126,6 @@ vcom -work axi_uartlite_v2_0_39 -64 -93  \
 vcom -work xil_defaultlib -64 -93  \
 "../../../bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/sim/RISC_V_axi_uartlite_0_0.vhd" \
 
-vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../apps/Xilinx/2025.1/data/rsb/busdef" "+incdir+/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
-"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/sim/bd_33e2.v" \
-
 vlog -work xlconstant_v1_1_10 -64 -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../apps/Xilinx/2025.1/data/rsb/busdef" "+incdir+/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a165/hdl/xlconstant_v1_1_vl_rfs.v" \
 
@@ -224,6 +221,9 @@ vlog -work xil_defaultlib -64 -incr -mfcu  -sv -L axi_vip_v1_1_21 -L smartconnec
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_45/sim/bd_33e2_m02bn_0.sv" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_46/sim/bd_33e2_m02e_0.sv" \
 
+vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../apps/Xilinx/2025.1/data/rsb/busdef" "+incdir+/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/sim/bd_33e2.v" \
+
 vlog -work axi_infrastructure_v1_1_0 -64 -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../apps/Xilinx/2025.1/data/rsb/busdef" "+incdir+/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 
@@ -241,12 +241,10 @@ vlog -work util_vector_logic_v2_0_5 -64 -incr -mfcu  "+incdir+../../../../KBSCE-
 
 vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../apps/Xilinx/2025.1/data/rsb/busdef" "+incdir+/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../bd/RISC_V/ip/RISC_V_reset_inv_0_0/sim/RISC_V_reset_inv_0_0.v" \
+"../../../bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_1/sim/RISC_V_blk_mem_gen_0_0.v" \
 
 vcom -work xil_defaultlib -64 -93  \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
-
-vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../apps/Xilinx/2025.1/data/rsb/busdef" "+incdir+/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
-"../../../bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_1/sim/RISC_V_blk_mem_gen_0_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

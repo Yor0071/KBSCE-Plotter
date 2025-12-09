@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Dec  5 11:54:48 2025
+| Date         : Tue Dec  9 10:17:43 2025
 | Host         : mrt-fed-lap running 64-bit unknown
 | Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file NexysA7_Top_timing_summary_routed.rpt -pb NexysA7_Top_timing_summary_routed.pb -rpx NexysA7_Top_timing_summary_routed.rpx -warn_on_violation
 | Design       : NexysA7_Top
