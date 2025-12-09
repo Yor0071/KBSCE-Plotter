@@ -1,7 +1,7 @@
 sdt: hw_artifacts/microblaze_riscv_0_baremetal.dts
 family: artix7
 path: /home/maartenvk/src/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
-config: None
+config: default
 os: standalone
 os_info:
   standalone:
