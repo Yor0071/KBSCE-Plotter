@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/maartenvk/src/KBSCE-Plotter/Vitis/app/src/.compile_commands",
+  "command": "/home/maartenvk/apps/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-gcc -isystem /home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/export/linux/sw/standalone_microblaze_riscv_0/include -isystem /home/maartenvk/apps/Xilinx/2025.1/gnu/riscv/lin/riscv64-unknown-elf/x86_64-oesdk-linux/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include -isystem /home/maartenvk/apps/Xilinx/2025.1/gnu/riscv/lin/riscv64-unknown-elf/x86_64-oesdk-linux/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include-fixed -isystem /home/maartenvk/apps/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/riscv32-xilinx-elf/usr/include   -march=rv32i_zicsr_zifencei -mabi=ilp32 -DSDT  -MMD -MP  -specs=/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/export/linux/sw/standalone_microblaze_riscv_0/Xilinx.spec -I/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/export/linux/sw/standalone_microblaze_riscv_0/include -Wall -Wextra      -O0  -g3     -U__clang__ -o CMakeFiles/app.elf.dir/dummy.c.obj -c /home/maartenvk/src/KBSCE-Plotter/Vitis/app/src/dummy.c",
+  "file": "/home/maartenvk/src/KBSCE-Plotter/Vitis/app/src/dummy.c"
+}
+]

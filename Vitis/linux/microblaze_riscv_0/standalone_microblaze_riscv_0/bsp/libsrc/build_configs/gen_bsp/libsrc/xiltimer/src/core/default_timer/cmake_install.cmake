@@ -1,4 +1,4 @@
-# Install script for directory: /home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/xiltimer/src/core/default_timer
+# Install script for directory: /home/maartenvk/src/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/xiltimer/src/core/default_timer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

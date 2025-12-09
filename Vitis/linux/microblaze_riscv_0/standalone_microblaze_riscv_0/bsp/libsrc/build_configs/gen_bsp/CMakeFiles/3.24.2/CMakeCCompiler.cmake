@@ -67,7 +67,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include;/home/maartenvk/apps/Xilinx/2025.1/gnu/riscv/lin/riscv64-unknown-elf/x86_64-oesdk-linux/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include;/home/maartenvk/apps/Xilinx/2025.1/gnu/riscv/lin/riscv64-unknown-elf/x86_64-oesdk-linux/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include-fixed;/home/maartenvk/apps/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/riscv32-xilinx-elf/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/maartenvk/src/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include;/home/maartenvk/apps/Xilinx/2025.1/gnu/riscv/lin/riscv64-unknown-elf/x86_64-oesdk-linux/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include;/home/maartenvk/apps/Xilinx/2025.1/gnu/riscv/lin/riscv64-unknown-elf/x86_64-oesdk-linux/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include-fixed;/home/maartenvk/apps/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/riscv32-xilinx-elf/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

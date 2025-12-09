@@ -1,4 +1,4 @@
-# Install script for directory: /home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/gpio/src
+# Install script for directory: /home/maartenvk/src/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/gpio/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
