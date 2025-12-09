@@ -94,13 +94,23 @@ architecture RTL of BRAMMux is
     ATTRIBUTE X_INTERFACE_INFO of s_out_fb_addr: SIGNAL is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB ADDR";
     ATTRIBUTE X_INTERFACE_INFO of s_out_fb_clk: SIGNAL is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB CLK";
     ATTRIBUTE X_INTERFACE_INFO of s_out_fb_rst: SIGNAL is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB RST";
-    
+
+    ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+    ATTRIBUTE X_INTERFACE_PARAMETER of s_out_fb_addr : SIGNAL is "MASTER_TYPE BRAM_CTRL";
+
   -- Uncomment the following to set interface specific parameter on the bus interface.
     --ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
     --ATTRIBUTE X_INTERFACE_PARAMETER of <port_name>: SIGNAL is "MASTER_TYPE <value>,MEM_ECC <value>,MEM_WIDTH <value>,MEM_SIZE <value>,READ_WRITE_MODE <value>";
 
 begin
+    s_out_fb_clk <= s_in_microblaze_clk when s_in_microblaze_en = '1' else s_in_camera_clk;
+    s_out_fb_rst <= s_in_microblaze_rst when s_in_microblaze_en = '1' else s_in_camera_rst;
     
-
+    s_out_fb_en   <= s_in_microblaze_en   when s_in_microblaze_en = '1' else s_in_camera_en;
+    s_out_fb_din  <= s_in_microblaze_din  when s_in_microblaze_en = '1' else s_in_camera_din;
+    s_out_fb_we   <= s_in_microblaze_we   when s_in_microblaze_en = '1' else s_in_camera_we;
+    s_out_fb_addr <= s_in_microblaze_addr when s_in_microblaze_en = '1' else s_in_camera_addr;
+    
+    s_in_microblaze_dout <= s_out_fb_dout;
+    s_in_camera_dout <= s_out_fb_dout;
 end RTL;
-				

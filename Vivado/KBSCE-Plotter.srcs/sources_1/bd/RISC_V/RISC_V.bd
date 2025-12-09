@@ -1075,6 +1075,12 @@
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
             "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "BRAM_CTRL",
+                "value_src": "constant"
+              }
+            },
             "port_maps": {
               "EN": {
                 "physical_name": "s_out_fb_en",

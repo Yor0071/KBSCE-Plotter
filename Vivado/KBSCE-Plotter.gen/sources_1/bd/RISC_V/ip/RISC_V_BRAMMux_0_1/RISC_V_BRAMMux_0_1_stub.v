@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Tue Dec  9 11:07:34 2025
+// Date        : Tue Dec  9 11:50:16 2025
 // Host        : mrt-fed-lap running 64-bit unknown
 // Command     : write_verilog -force -mode synth_stub
 //               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_1/RISC_V_BRAMMux_0_1_stub.v
@@ -36,7 +36,7 @@ module RISC_V_BRAMMux_0_1(s_in_microblaze_en, s_in_microblaze_dout,
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA ADDR" *) input [18:0]s_in_camera_addr;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA CLK" *) input s_in_camera_clk;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA RST" *) input s_in_camera_rst;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB EN" *) (* x_interface_mode = "master BRAM_OUT_PORT_FB" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_OUT_PORT_FB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *) output s_out_fb_en;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB EN" *) (* x_interface_mode = "master BRAM_OUT_PORT_FB" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_OUT_PORT_FB, MASTER_TYPE BRAM_CTRL, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) output s_out_fb_en;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB DOUT" *) input [11:0]s_out_fb_dout;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB DIN" *) output [11:0]s_out_fb_din;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB WE" *) output [0:0]s_out_fb_we;
