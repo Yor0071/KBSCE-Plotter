@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1'
+HD_PWD='/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RISC_V_axi_bram_ctrl_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_axi_bram_ctrl_0_0.tcl
+EAStep vivado -log RISC_V_dlmb_bram_if_cntlr_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_dlmb_bram_if_cntlr_0.tcl

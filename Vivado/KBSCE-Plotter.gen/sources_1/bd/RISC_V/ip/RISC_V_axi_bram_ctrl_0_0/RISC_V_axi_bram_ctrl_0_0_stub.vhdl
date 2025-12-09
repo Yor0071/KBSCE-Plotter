@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
 -- Date        : Tue Dec  9 11:01:54 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
--- Command     : write_vhdl -force -mode synth_stub
---               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top RISC_V_axi_bram_ctrl_0_0 -prefix
+--               RISC_V_axi_bram_ctrl_0_0_ RISC_V_axi_bram_ctrl_0_0_stub.vhdl
 -- Design      : RISC_V_axi_bram_ctrl_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1

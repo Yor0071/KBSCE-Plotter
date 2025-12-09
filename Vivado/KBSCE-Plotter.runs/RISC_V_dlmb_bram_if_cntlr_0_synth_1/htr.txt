@@ -7,4 +7,4 @@
 # Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log RISC_V_axi_bram_ctrl_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_axi_bram_ctrl_0_0.tcl
+vivado -log RISC_V_dlmb_bram_if_cntlr_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_dlmb_bram_if_cntlr_0.tcl

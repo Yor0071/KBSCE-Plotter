@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Nov 28 17:45:08 2025
+-- Date        : Tue Dec  9 12:37:53 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
--- Command     : write_vhdl -force -mode funcsim -rename_top RISC_V_dlmb_bram_if_cntlr_0 -prefix
---               RISC_V_dlmb_bram_if_cntlr_0_ RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
 -- Design      : RISC_V_dlmb_bram_if_cntlr_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,7 +15,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr is
   port (
     LMB_Clk : in STD_LOGIC;
     LMB_Rst : in STD_LOGIC;
@@ -138,70 +138,70 @@ entity RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
     Interrupt : out STD_LOGIC
   );
   attribute C_ARBITRATION : integer;
-  attribute C_ARBITRATION of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_ARBITRATION of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_BASEADDR : string;
-  attribute C_BASEADDR of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000000000000000000000000000";
+  attribute C_BASEADDR of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000000000000000000000000000";
   attribute C_BRAM_AWIDTH : integer;
-  attribute C_BRAM_AWIDTH of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 32;
+  attribute C_BRAM_AWIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 32;
   attribute C_CE_COUNTER_WIDTH : integer;
-  attribute C_CE_COUNTER_WIDTH of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_CE_COUNTER_WIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_CE_FAILING_REGISTERS : integer;
-  attribute C_CE_FAILING_REGISTERS of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_CE_FAILING_REGISTERS of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_ECC : integer;
-  attribute C_ECC of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_ECC of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_ECC_ONOFF_REGISTER : integer;
-  attribute C_ECC_ONOFF_REGISTER of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_ECC_ONOFF_REGISTER of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_ECC_ONOFF_RESET_VALUE : integer;
-  attribute C_ECC_ONOFF_RESET_VALUE of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 1;
+  attribute C_ECC_ONOFF_RESET_VALUE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 1;
   attribute C_ECC_STATUS_REGISTERS : integer;
-  attribute C_ECC_STATUS_REGISTERS of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_ECC_STATUS_REGISTERS of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "artix7";
+  attribute C_FAMILY of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "artix7";
   attribute C_FAULT_INJECT : integer;
-  attribute C_FAULT_INJECT of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_FAULT_INJECT of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_HIGHADDR : string;
-  attribute C_HIGHADDR of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000000000000011111111111111";
+  attribute C_HIGHADDR of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000000000000011111111111111";
   attribute C_INTERCONNECT : integer;
-  attribute C_INTERCONNECT of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_INTERCONNECT of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_LMB_AWIDTH : integer;
-  attribute C_LMB_AWIDTH of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 32;
+  attribute C_LMB_AWIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 32;
   attribute C_LMB_DWIDTH : integer;
-  attribute C_LMB_DWIDTH of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 32;
+  attribute C_LMB_DWIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 32;
   attribute C_LMB_PROTOCOL : integer;
-  attribute C_LMB_PROTOCOL of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_LMB_PROTOCOL of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_MASK : string;
-  attribute C_MASK of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000001000000000000000000000000000000";
+  attribute C_MASK of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000001000000000000010000000000000000";
   attribute C_MASK1 : string;
-  attribute C_MASK1 of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
+  attribute C_MASK1 of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK2 : string;
-  attribute C_MASK2 of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
+  attribute C_MASK2 of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK3 : string;
-  attribute C_MASK3 of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
+  attribute C_MASK3 of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK4 : string;
-  attribute C_MASK4 of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
+  attribute C_MASK4 of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK5 : string;
-  attribute C_MASK5 of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
+  attribute C_MASK5 of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK6 : string;
-  attribute C_MASK6 of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
+  attribute C_MASK6 of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK7 : string;
-  attribute C_MASK7 of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
+  attribute C_MASK7 of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_NUM_LMB : integer;
-  attribute C_NUM_LMB of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 1;
+  attribute C_NUM_LMB of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 1;
   attribute C_S_AXI_CTRL_ADDR_WIDTH : integer;
-  attribute C_S_AXI_CTRL_ADDR_WIDTH of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 32;
+  attribute C_S_AXI_CTRL_ADDR_WIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 32;
   attribute C_S_AXI_CTRL_BASEADDR : string;
-  attribute C_S_AXI_CTRL_BASEADDR of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "32'b11111111111111111111111111111111";
+  attribute C_S_AXI_CTRL_BASEADDR of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "32'b11111111111111111111111111111111";
   attribute C_S_AXI_CTRL_DATA_WIDTH : integer;
-  attribute C_S_AXI_CTRL_DATA_WIDTH of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 32;
+  attribute C_S_AXI_CTRL_DATA_WIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 32;
   attribute C_S_AXI_CTRL_HIGHADDR : string;
-  attribute C_S_AXI_CTRL_HIGHADDR of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "32'b00000000000000000000000000000000";
+  attribute C_S_AXI_CTRL_HIGHADDR of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is "32'b00000000000000000000000000000000";
   attribute C_UE_FAILING_REGISTERS : integer;
-  attribute C_UE_FAILING_REGISTERS of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
+  attribute C_UE_FAILING_REGISTERS of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 0;
   attribute C_WRITE_ACCESS : integer;
-  attribute C_WRITE_ACCESS of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 2;
-end RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr;
+  attribute C_WRITE_ACCESS of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr : entity is 2;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr;
 
-architecture STRUCTURE of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr is
   signal \<const0>\ : STD_LOGIC;
   signal \^bram_din_a\ : STD_LOGIC_VECTOR ( 0 to 31 );
   signal \^lmb_abus\ : STD_LOGIC_VECTOR ( 0 to 31 );
@@ -214,8 +214,8 @@ architecture STRUCTURE of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
   signal lmb_as : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \BRAM_WEN_A[0]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \BRAM_WEN_A[1]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \BRAM_WEN_A[2]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \BRAM_WEN_A[1]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \BRAM_WEN_A[2]_INST_0\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \BRAM_WEN_A[3]_INST_0\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \No_ECC.Sl_Rdy_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \No_ECC.lmb_as_i_1\ : label is "soft_lutpair2";
@@ -530,57 +530,62 @@ begin
   \^lmb_addrstrobe\ <= LMB_AddrStrobe;
   \^lmb_clk\ <= LMB_Clk;
   \^lmb_writedbus\(0 to 31) <= LMB_WriteDBus(0 to 31);
-\BRAM_WEN_A[0]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[0]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"40"
+      INIT => X"0200"
     )
         port map (
-      I0 => \^lmb_abus\(1),
-      I1 => LMB_WriteStrobe,
-      I2 => LMB_BE(0),
+      I0 => LMB_WriteStrobe,
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(0),
       O => BRAM_WEN_A(0)
     );
-\BRAM_WEN_A[1]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[1]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"40"
+      INIT => X"0200"
     )
         port map (
-      I0 => \^lmb_abus\(1),
-      I1 => LMB_WriteStrobe,
-      I2 => LMB_BE(1),
+      I0 => LMB_WriteStrobe,
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(1),
       O => BRAM_WEN_A(1)
     );
-\BRAM_WEN_A[2]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[2]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"40"
+      INIT => X"0200"
     )
         port map (
-      I0 => \^lmb_abus\(1),
-      I1 => LMB_WriteStrobe,
-      I2 => LMB_BE(2),
+      I0 => LMB_WriteStrobe,
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(2),
       O => BRAM_WEN_A(2)
     );
-\BRAM_WEN_A[3]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[3]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"40"
+      INIT => X"0200"
     )
         port map (
-      I0 => \^lmb_abus\(1),
-      I1 => LMB_WriteStrobe,
-      I2 => LMB_BE(3),
+      I0 => LMB_WriteStrobe,
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(3),
       O => BRAM_WEN_A(3)
     );
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\No_ECC.Sl_Rdy_i_1\: unisim.vcomponents.LUT2
+\No_ECC.Sl_Rdy_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"1"
+      INIT => X"01"
     )
         port map (
       I0 => \^lmb_abus\(1),
-      I1 => LMB_Rst,
+      I1 => \^lmb_abus\(15),
+      I2 => LMB_Rst,
       O => \No_ECC.Sl_Rdy_i_1_n_0\
     );
 \No_ECC.Sl_Rdy_reg\: unisim.vcomponents.FDRE
@@ -622,7 +627,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity RISC_V_dlmb_bram_if_cntlr_0 is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     LMB_Clk : in STD_LOGIC;
     LMB_Rst : in STD_LOGIC;
@@ -646,16 +651,16 @@ entity RISC_V_dlmb_bram_if_cntlr_0 is
     BRAM_Din_A : in STD_LOGIC_VECTOR ( 0 to 31 )
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of RISC_V_dlmb_bram_if_cntlr_0 : entity is true;
+  attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of RISC_V_dlmb_bram_if_cntlr_0 : entity is "RISC_V_dlmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{}";
+  attribute CHECK_LICENSE_TYPE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "RISC_V_dlmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{}";
   attribute downgradeipidentifiedwarnings : string;
-  attribute downgradeipidentifiedwarnings of RISC_V_dlmb_bram_if_cntlr_0 : entity is "yes";
+  attribute downgradeipidentifiedwarnings of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of RISC_V_dlmb_bram_if_cntlr_0 : entity is "lmb_bram_if_cntlr,Vivado 2025.1";
-end RISC_V_dlmb_bram_if_cntlr_0;
+  attribute x_core_info of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "lmb_bram_if_cntlr,Vivado 2025.1";
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
-architecture STRUCTURE of RISC_V_dlmb_bram_if_cntlr_0 is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal \<const0>\ : STD_LOGIC;
   signal NLW_U0_BRAM_Rst_A_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_CE_UNCONNECTED : STD_LOGIC;
@@ -740,7 +745,7 @@ architecture STRUCTURE of RISC_V_dlmb_bram_if_cntlr_0 is
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of U0 : label is 0;
   attribute C_MASK : string;
-  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000001000000000000000000000000000000";
+  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000001000000000000010000000000000000";
   attribute C_MASK1 : string;
   attribute C_MASK1 of U0 : label is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK2 : string;
@@ -809,7 +814,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-U0: entity work.RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
+U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_lmb_bram_if_cntlr
      port map (
       BRAM_Addr_A(0 to 31) => BRAM_Addr_A(0 to 31),
       BRAM_Clk_A => BRAM_Clk_A,

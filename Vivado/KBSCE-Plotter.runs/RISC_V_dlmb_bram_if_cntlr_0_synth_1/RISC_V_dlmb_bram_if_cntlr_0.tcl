@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0.tcl"
+  variable script "/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1/RISC_V_dlmb_bram_if_cntlr_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -55,7 +55,7 @@ if {$::dispatch::connected} {
   }
 }
 
-OPTRACE "RISC_V_axi_bram_ctrl_0_0_synth_1" START { ROLLUP_AUTO }
+OPTRACE "RISC_V_dlmb_bram_if_cntlr_0_synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 4
 set_msg_config -id {Common 17-41} -limit 10000000
@@ -80,8 +80,8 @@ set_property ip_output_repo /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plott
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0.xci
-set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_ooc.xdc]
+read_ip -quiet /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0.xci
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -97,14 +97,14 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1 -new_name RISC_V_axi_bram_ctrl_0_0 -ip [get_ips RISC_V_axi_bram_ctrl_0_0]]
+set cacheID [config_ip_cache -export -no_bom  -dir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1 -new_name RISC_V_dlmb_bram_if_cntlr_0 -ip [get_ips RISC_V_dlmb_bram_if_cntlr_0]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top RISC_V_axi_bram_ctrl_0_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
+synth_design -top RISC_V_dlmb_bram_if_cntlr_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 
@@ -115,24 +115,24 @@ OPTRACE "Write IP Cache" START { }
 set_param constraints.enableBinaryConstraints false
 
 catch {
- write_checkpoint -force -noxdef -rename_prefix RISC_V_axi_bram_ctrl_0_0_ RISC_V_axi_bram_ctrl_0_0.dcp
+ write_checkpoint -force -noxdef -rename_prefix RISC_V_dlmb_bram_if_cntlr_0_ RISC_V_dlmb_bram_if_cntlr_0.dcp
 
  set ipCachedFiles {}
- write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_axi_bram_ctrl_0_0_stub.v
- lappend ipCachedFiles RISC_V_axi_bram_ctrl_0_0_stub.v
+ write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_dlmb_bram_if_cntlr_0_stub.v
+ lappend ipCachedFiles RISC_V_dlmb_bram_if_cntlr_0_stub.v
 
- write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_axi_bram_ctrl_0_0_stub.vhdl
- lappend ipCachedFiles RISC_V_axi_bram_ctrl_0_0_stub.vhdl
+ write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl
+ lappend ipCachedFiles RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl
 
- write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_axi_bram_ctrl_0_0_sim_netlist.v
- lappend ipCachedFiles RISC_V_axi_bram_ctrl_0_0_sim_netlist.v
+ write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.v
+ lappend ipCachedFiles RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.v
 
- write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_axi_bram_ctrl_0_0_sim_netlist.vhdl
- lappend ipCachedFiles RISC_V_axi_bram_ctrl_0_0_sim_netlist.vhdl
+ write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
+ lappend ipCachedFiles RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
  set TIME_taken [expr [clock seconds] - $TIME_start]
 
  if { [get_msg_config -count -severity {CRITICAL WARNING}] == 0 } {
-  config_ip_cache -add -dcp RISC_V_axi_bram_ctrl_0_0.dcp -move_files $ipCachedFiles   -synth_runtime $TIME_taken  -ip [get_ips RISC_V_axi_bram_ctrl_0_0]
+  config_ip_cache -add -dcp RISC_V_dlmb_bram_if_cntlr_0.dcp -move_files $ipCachedFiles   -synth_runtime $TIME_taken  -ip [get_ips RISC_V_dlmb_bram_if_cntlr_0]
  }
 OPTRACE "Write IP Cache" END { }
 }
@@ -140,44 +140,44 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
 }
 
-rename_ref -prefix_all RISC_V_axi_bram_ctrl_0_0_
+rename_ref -prefix_all RISC_V_dlmb_bram_if_cntlr_0_
 
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef RISC_V_axi_bram_ctrl_0_0.dcp
+write_checkpoint -force -noxdef RISC_V_dlmb_bram_if_cntlr_0.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-generate_parallel_reports -reports { "report_utilization -file RISC_V_axi_bram_ctrl_0_0_utilization_synth.rpt -pb RISC_V_axi_bram_ctrl_0_0_utilization_synth.pb"  } 
+generate_parallel_reports -reports { "report_utilization -file RISC_V_dlmb_bram_if_cntlr_0_utilization_synth.rpt -pb RISC_V_dlmb_bram_if_cntlr_0_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0.dcp /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0.dcp
+  file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1/RISC_V_dlmb_bram_if_cntlr_0.dcp /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_stub.v
+  write_verilog -force -mode synth_stub /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_stub.vhdl
+  write_vhdl -force -mode synth_stub /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_sim_netlist.v
+  write_verilog -force -mode funcsim /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -187,32 +187,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0.dcp /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0.dcp
+  file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1/RISC_V_dlmb_bram_if_cntlr_0.dcp /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0_stub.v /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_stub.v
+  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1/RISC_V_dlmb_bram_if_cntlr_0_stub.v /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0_stub.vhdl /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_stub.vhdl
+  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0_sim_netlist.v /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_sim_netlist.v
+  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1/RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.v /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0_sim_netlist.vhdl /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_sim_netlist.vhdl
+  file rename -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_dlmb_bram_if_cntlr_0_synth_1/RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -220,17 +220,17 @@ if { [catch {
 close [open .end.used_ip_cache.rst w]
 }; # end if cacheID 
 
-if {[file isdir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_axi_bram_ctrl_0_0]} {
+if {[file isdir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_dlmb_bram_if_cntlr_0]} {
   catch { 
-    file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_stub.v /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_axi_bram_ctrl_0_0
+    file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_stub.v /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_dlmb_bram_if_cntlr_0
   }
 }
 
-if {[file isdir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_axi_bram_ctrl_0_0]} {
+if {[file isdir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_dlmb_bram_if_cntlr_0]} {
   catch { 
-    file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_stub.vhdl /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_axi_bram_ctrl_0_0
+    file copy -force /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.ip_user_files/ip/RISC_V_dlmb_bram_if_cntlr_0
   }
 }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
-OPTRACE "RISC_V_axi_bram_ctrl_0_0_synth_1" END { }
+OPTRACE "RISC_V_dlmb_bram_if_cntlr_0_synth_1" END { }

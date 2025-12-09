@@ -3,8 +3,8 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/bare_minimum_risc-V/hw/RISC_V_wrapper.xsa",
-    "xsaPathInPlatform": "linux/hw/RISC_V_wrapper.xsa",
+    "xsa": "/home/maartenvk/src/KBSCE-Plotter/Vivado/NexysA7_Top.xsa",
+    "xsaPathInPlatform": "linux/hw/NexysA7_Top.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
     "isCustomFSBL": false,
