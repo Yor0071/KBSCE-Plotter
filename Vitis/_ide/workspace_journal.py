@@ -13,3 +13,7 @@ status = domain.regenerate()
 
 status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa")
 
+status = domain.regenerate()
+
+status = domain.update_path(option = "OS",name="standalone", new_path = "/home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/lib/bsp/standalone_v9_3")
+
