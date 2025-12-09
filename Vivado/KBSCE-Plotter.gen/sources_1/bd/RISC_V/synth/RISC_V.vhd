@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Tue Dec  9 10:14:50 2025
+--Date        : Tue Dec  9 10:57:56 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -551,7 +551,7 @@ entity RISC_V is
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of RISC_V : entity is "RISC_V.hwdef";
 end RISC_V;
@@ -827,6 +827,31 @@ architecture STRUCTURE of RISC_V is
     doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   end component RISC_V_blk_mem_gen_0_0;
+  component RISC_V_BRAMMux_0_1 is
+  port (
+    s_in_microblaze_en : in STD_LOGIC;
+    s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_in_microblaze_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_in_microblaze_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    s_in_microblaze_clk : in STD_LOGIC;
+    s_in_microblaze_rst : in STD_LOGIC;
+    s_in_camera_en : in STD_LOGIC;
+    s_in_camera_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_in_camera_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_in_camera_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s_in_camera_addr : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    s_in_camera_clk : in STD_LOGIC;
+    s_in_camera_rst : in STD_LOGIC;
+    s_out_fb_en : out STD_LOGIC;
+    s_out_fb_dout : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_out_fb_din : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_out_fb_we : out STD_LOGIC_VECTOR ( 0 to 0 );
+    s_out_fb_addr : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    s_out_fb_clk : out STD_LOGIC;
+    s_out_fb_rst : out STD_LOGIC
+  );
+  end component RISC_V_BRAMMux_0_1;
   signal axi_smc_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal axi_smc_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_ARVALID : STD_LOGIC;
@@ -931,6 +956,14 @@ architecture STRUCTURE of RISC_V is
   signal rst_clk_wiz_1_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_wiz_1_100M_mb_reset : STD_LOGIC;
   signal rst_clk_wiz_1_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_BRAMMux_0_s_out_fb_clk_UNCONNECTED : STD_LOGIC;
+  signal NLW_BRAMMux_0_s_out_fb_en_UNCONNECTED : STD_LOGIC;
+  signal NLW_BRAMMux_0_s_out_fb_rst_UNCONNECTED : STD_LOGIC;
+  signal NLW_BRAMMux_0_s_in_camera_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal NLW_BRAMMux_0_s_in_microblaze_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal NLW_BRAMMux_0_s_out_fb_addr_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal NLW_BRAMMux_0_s_out_fb_din_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal NLW_BRAMMux_0_s_out_fb_we_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_smc_M00_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M00_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M01_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -978,6 +1011,30 @@ architecture STRUCTURE of RISC_V is
   attribute X_INTERFACE_INFO of SW_tri_i : signal is "xilinx.com:interface:gpio:1.0 SW TRI_I";
   attribute X_INTERFACE_MODE of SW_tri_i : signal is "Master";
 begin
+BRAMMux_0: component RISC_V_BRAMMux_0_1
+     port map (
+      s_in_camera_addr(9 downto 0) => B"0000000000",
+      s_in_camera_clk => '0',
+      s_in_camera_din(11 downto 0) => B"000000001000",
+      s_in_camera_dout(11 downto 0) => NLW_BRAMMux_0_s_in_camera_dout_UNCONNECTED(11 downto 0),
+      s_in_camera_en => '0',
+      s_in_camera_rst => '0',
+      s_in_camera_we(0) => '0',
+      s_in_microblaze_addr(9 downto 0) => B"0000000000",
+      s_in_microblaze_clk => '0',
+      s_in_microblaze_din(11 downto 0) => B"000000001000",
+      s_in_microblaze_dout(11 downto 0) => NLW_BRAMMux_0_s_in_microblaze_dout_UNCONNECTED(11 downto 0),
+      s_in_microblaze_en => '0',
+      s_in_microblaze_rst => '0',
+      s_in_microblaze_we(0) => '0',
+      s_out_fb_addr(9 downto 0) => NLW_BRAMMux_0_s_out_fb_addr_UNCONNECTED(9 downto 0),
+      s_out_fb_clk => NLW_BRAMMux_0_s_out_fb_clk_UNCONNECTED,
+      s_out_fb_din(11 downto 0) => NLW_BRAMMux_0_s_out_fb_din_UNCONNECTED(11 downto 0),
+      s_out_fb_dout(11 downto 0) => B"000000001000",
+      s_out_fb_en => NLW_BRAMMux_0_s_out_fb_en_UNCONNECTED,
+      s_out_fb_rst => NLW_BRAMMux_0_s_out_fb_rst_UNCONNECTED,
+      s_out_fb_we(0) => NLW_BRAMMux_0_s_out_fb_we_UNCONNECTED(0)
+    );
 axi_gpio_leds: component RISC_V_axi_gpio_0_0
      port map (
       gpio_io_o(15 downto 0) => LED_tri_o(15 downto 0),

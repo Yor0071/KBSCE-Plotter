@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec  9 10:15:01 2025" VIVADOVERSION="2025.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec  9 10:57:58 2025" VIVADOVERSION="2025.1">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="RISC_V" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -121,6 +121,7 @@
     </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORTB_0" NAME="BRAM_PORTB_0" TYPE="TARGET">
       <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
+      <PARAMETER NAME="MEM_ADDRESS_MODE"/>
       <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
       <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
       <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
@@ -137,6 +138,7 @@
     </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORTA_1" NAME="BRAM_PORTA_1" TYPE="TARGET">
       <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
+      <PARAMETER NAME="MEM_ADDRESS_MODE"/>
       <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
       <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
       <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
@@ -154,6 +156,89 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/BRAMMux_0" HWVERSION="1.0" INSTANCE="BRAMMux_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BRAMMux" VLNV="xilinx.com:module_ref:BRAMMux:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="RISC_V_BRAMMux_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="9" NAME="s_in_camera_addr" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_in_camera_clk" SIGIS="clk"/>
+        <PORT DIR="I" LEFT="11" NAME="s_in_camera_din" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="11" NAME="s_in_camera_dout" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_in_camera_en" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_in_camera_rst" SIGIS="rst"/>
+        <PORT DIR="I" LEFT="0" NAME="s_in_camera_we" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="9" NAME="s_in_microblaze_addr" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_in_microblaze_clk" SIGIS="clk"/>
+        <PORT DIR="I" LEFT="11" NAME="s_in_microblaze_din" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="11" NAME="s_in_microblaze_dout" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_in_microblaze_en" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_in_microblaze_rst" SIGIS="rst"/>
+        <PORT DIR="I" LEFT="0" NAME="s_in_microblaze_we" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="9" NAME="s_out_fb_addr" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="s_out_fb_clk" SIGIS="clk"/>
+        <PORT DIR="O" LEFT="11" NAME="s_out_fb_din" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="11" NAME="s_out_fb_dout" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="s_out_fb_en" SIGIS="undef"/>
+        <PORT DIR="O" NAME="s_out_fb_rst" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="s_out_fb_we" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_IN_PORT_MICROBLAZE" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PARAMETER NAME="READ_WRITE_MODE"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="s_in_microblaze_addr"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="s_in_microblaze_clk"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="s_in_microblaze_din"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="s_in_microblaze_dout"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="s_in_microblaze_en"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="s_in_microblaze_rst"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="s_in_microblaze_we"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_IN_PORT_CAMERA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PARAMETER NAME="READ_WRITE_MODE"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="s_in_camera_addr"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="s_in_camera_clk"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="s_in_camera_din"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="s_in_camera_dout"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="s_in_camera_en"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="s_in_camera_rst"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="s_in_camera_we"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_OUT_PORT_FB" TYPE="INITIATOR" VLNV="xilinx.com:interface:bram:1.0">
+          <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
+          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
+          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PARAMETER NAME="READ_WRITE_MODE"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="s_out_fb_addr"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="s_out_fb_clk"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="s_out_fb_din"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="s_out_fb_dout"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="s_out_fb_en"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="s_out_fb_rst"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="s_out_fb_we"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
     <MODULE COREREVISION="37" FULLNAME="/axi_gpio_leds" HWVERSION="2.0" INSTANCE="axi_gpio_leds" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_gpio" VLNV="xilinx.com:ip:axi_gpio:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_gpio;v=v2_0;d=pg144-axi-gpio.pdf"/>
