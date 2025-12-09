@@ -11,3 +11,5 @@ domain = platform.get_domain(name="standalone_microblaze_riscv_0")
 
 status = domain.regenerate()
 
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa")
+

@@ -4,7 +4,7 @@ XBram_Config XBram_ConfigTable[] __attribute__ ((section (".drvcfg_sec"))) = {
 
 	{
 		"xlnx,axi-bram-ctrl-4.1", /* compatible */
-		0x40610000, /* reg */
+		0x37ff0000, /* reg */
 		0x20, /* xlnx,data-width */
 		0x0, /* xlnx,ecc */
 		0x0, /* xlnx,fault-inject */
