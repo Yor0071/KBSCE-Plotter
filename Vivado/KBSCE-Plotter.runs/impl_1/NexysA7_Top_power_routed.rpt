@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Tue Dec  9 11:52:43 2025
+| Date             : Tue Dec  9 12:03:41 2025
 | Host             : mrt-fed-lap running 64-bit unknown
 | Command          : report_power -file NexysA7_Top_power_routed.rpt -pb NexysA7_Top_power_summary_routed.pb -rpx NexysA7_Top_power_routed.rpx
 | Design           : NexysA7_Top
@@ -52,16 +52,16 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.020 |       10 |       --- |             --- |
-| Slice Logic              |     0.005 |     7488 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     2956 |     63400 |            4.66 |
+| Clocks                   |     0.019 |       10 |       --- |             --- |
+| Slice Logic              |     0.005 |     7475 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     2943 |     63400 |            4.64 |
 |   LUT as Distributed RAM |    <0.001 |       64 |     19000 |            0.34 |
 |   Register               |    <0.001 |     2667 |    126800 |            2.10 |
 |   CARRY4                 |    <0.001 |       91 |     15850 |            0.57 |
 |   F7/F8 Muxes            |    <0.001 |      192 |     63400 |            0.30 |
 |   LUT as Shift Register  |    <0.001 |       43 |     19000 |            0.23 |
 |   Others                 |     0.000 |      739 |       --- |             --- |
-| Signals                  |     0.008 |     5983 |       --- |             --- |
+| Signals                  |     0.008 |     5978 |       --- |             --- |
 | Block RAM                |     0.016 |    107.5 |       135 |           79.63 |
 | MMCM                     |     0.106 |        1 |         6 |           16.67 |
 | I/O                      |     0.006 |       58 |       210 |           27.62 |

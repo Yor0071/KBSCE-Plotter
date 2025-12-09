@@ -3172,7 +3172,7 @@
                 "value": "1"
               },
               "SEG003_BASE_ADDR": {
-                "value": "0x00000000C0000000"
+                "value": "0x0000000040610000"
               },
               "SEG003_SECURE_READ": {
                 "value": "0"
