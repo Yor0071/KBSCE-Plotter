@@ -44,8 +44,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity BRAMMux is
     port(
         s_in_microblaze_en : in std_logic; -- Chip Enable Signal (optional)
-        s_in_microblaze_dout : out std_logic_vector(11 downto 0); -- Data Out Bus (optional)
-        s_in_microblaze_din : in std_logic_vector(11 downto 0); -- Data In Bus (optional)
+        s_in_microblaze_dout : out std_logic_vector(31 downto 0); -- Data Out Bus (optional)
+        s_in_microblaze_din : in std_logic_vector(31 downto 0); -- Data In Bus (optional)
         s_in_microblaze_we : in std_logic_vector(0 downto 0); -- Byte Enables (optional)
         s_in_microblaze_addr : in std_logic_vector(18 downto 0); -- Address Signal (required)
         s_in_microblaze_clk : in std_logic; -- Clock Signal (required)
@@ -102,15 +102,17 @@ architecture RTL of BRAMMux is
     --ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
     --ATTRIBUTE X_INTERFACE_PARAMETER of <port_name>: SIGNAL is "MASTER_TYPE <value>,MEM_ECC <value>,MEM_WIDTH <value>,MEM_SIZE <value>,READ_WRITE_MODE <value>";
 
+    signal dout_data : std_logic_vector(11 downto 0); -- Otherwise opt_design won't run because multiple sources drive this
 begin
     s_out_fb_clk <= s_in_microblaze_clk when s_in_microblaze_en = '1' else s_in_camera_clk;
     s_out_fb_rst <= s_in_microblaze_rst when s_in_microblaze_en = '1' else s_in_camera_rst;
     
     s_out_fb_en   <= s_in_microblaze_en   when s_in_microblaze_en = '1' else s_in_camera_en;
-    s_out_fb_din  <= s_in_microblaze_din  when s_in_microblaze_en = '1' else s_in_camera_din;
+    s_out_fb_din  <= s_in_microblaze_din(11 downto 0)  when s_in_microblaze_en = '1' else s_in_camera_din;
     s_out_fb_we   <= s_in_microblaze_we   when s_in_microblaze_en = '1' else s_in_camera_we;
     s_out_fb_addr <= s_in_microblaze_addr when s_in_microblaze_en = '1' else s_in_camera_addr;
     
-    s_in_microblaze_dout <= s_out_fb_dout;
-    s_in_camera_dout <= s_out_fb_dout;
+    s_in_microblaze_dout <= (others => '0');
+    s_in_microblaze_dout(11 downto 0) <= dout_data when s_in_microblaze_en = '1' else (others => '0');
+    s_in_camera_dout <= dout_data when s_in_microblaze_en = '1' else (others => '0');
 end RTL;

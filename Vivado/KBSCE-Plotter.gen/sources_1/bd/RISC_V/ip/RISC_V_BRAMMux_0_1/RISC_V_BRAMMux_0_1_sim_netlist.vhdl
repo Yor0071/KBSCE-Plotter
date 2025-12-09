@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Tue Dec  9 12:37:56 2025
+-- Date        : Tue Dec  9 14:41:03 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_1/RISC_V_BRAMMux_0_1_sim_netlist.vhdl
@@ -380,8 +380,8 @@ use UNISIM.VCOMPONENTS.ALL;
 entity RISC_V_BRAMMux_0_1 is
   port (
     s_in_microblaze_en : in STD_LOGIC;
-    s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    s_in_microblaze_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_in_microblaze_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_in_microblaze_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
     s_in_microblaze_clk : in STD_LOGIC;
@@ -414,7 +414,7 @@ entity RISC_V_BRAMMux_0_1 is
 end RISC_V_BRAMMux_0_1;
 
 architecture STRUCTURE of RISC_V_BRAMMux_0_1 is
-  signal \^s_out_fb_dout\ : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal \<const0>\ : STD_LOGIC;
   attribute x_interface_info : string;
   attribute x_interface_info of s_in_camera_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA CLK";
   attribute x_interface_info of s_in_camera_en : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA EN";
@@ -426,7 +426,7 @@ architecture STRUCTURE of RISC_V_BRAMMux_0_1 is
   attribute x_interface_info of s_in_microblaze_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE CLK";
   attribute x_interface_info of s_in_microblaze_en : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE EN";
   attribute x_interface_mode of s_in_microblaze_en : signal is "slave BRAM_IN_PORT_MICROBLAZE";
-  attribute x_interface_parameter of s_in_microblaze_en : signal is "XIL_INTERFACENAME BRAM_IN_PORT_MICROBLAZE, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
+  attribute x_interface_parameter of s_in_microblaze_en : signal is "XIL_INTERFACENAME BRAM_IN_PORT_MICROBLAZE, MEM_SIZE 4096, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
   attribute x_interface_info of s_in_microblaze_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE RST";
   attribute x_interface_info of s_out_fb_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB CLK";
   attribute x_interface_info of s_out_fb_en : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB EN";
@@ -446,9 +446,54 @@ architecture STRUCTURE of RISC_V_BRAMMux_0_1 is
   attribute x_interface_info of s_out_fb_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB DOUT";
   attribute x_interface_info of s_out_fb_we : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB WE";
 begin
-  \^s_out_fb_dout\(11 downto 0) <= s_out_fb_dout(11 downto 0);
-  s_in_camera_dout(11 downto 0) <= \^s_out_fb_dout\(11 downto 0);
-  s_in_microblaze_dout(11 downto 0) <= \^s_out_fb_dout\(11 downto 0);
+  s_in_camera_dout(11) <= \<const0>\;
+  s_in_camera_dout(10) <= \<const0>\;
+  s_in_camera_dout(9) <= \<const0>\;
+  s_in_camera_dout(8) <= \<const0>\;
+  s_in_camera_dout(7) <= \<const0>\;
+  s_in_camera_dout(6) <= \<const0>\;
+  s_in_camera_dout(5) <= \<const0>\;
+  s_in_camera_dout(4) <= \<const0>\;
+  s_in_camera_dout(3) <= \<const0>\;
+  s_in_camera_dout(2) <= \<const0>\;
+  s_in_camera_dout(1) <= \<const0>\;
+  s_in_camera_dout(0) <= \<const0>\;
+  s_in_microblaze_dout(31) <= \<const0>\;
+  s_in_microblaze_dout(30) <= \<const0>\;
+  s_in_microblaze_dout(29) <= \<const0>\;
+  s_in_microblaze_dout(28) <= \<const0>\;
+  s_in_microblaze_dout(27) <= \<const0>\;
+  s_in_microblaze_dout(26) <= \<const0>\;
+  s_in_microblaze_dout(25) <= \<const0>\;
+  s_in_microblaze_dout(24) <= \<const0>\;
+  s_in_microblaze_dout(23) <= \<const0>\;
+  s_in_microblaze_dout(22) <= \<const0>\;
+  s_in_microblaze_dout(21) <= \<const0>\;
+  s_in_microblaze_dout(20) <= \<const0>\;
+  s_in_microblaze_dout(19) <= \<const0>\;
+  s_in_microblaze_dout(18) <= \<const0>\;
+  s_in_microblaze_dout(17) <= \<const0>\;
+  s_in_microblaze_dout(16) <= \<const0>\;
+  s_in_microblaze_dout(15) <= \<const0>\;
+  s_in_microblaze_dout(14) <= \<const0>\;
+  s_in_microblaze_dout(13) <= \<const0>\;
+  s_in_microblaze_dout(12) <= \<const0>\;
+  s_in_microblaze_dout(11) <= \<const0>\;
+  s_in_microblaze_dout(10) <= \<const0>\;
+  s_in_microblaze_dout(9) <= \<const0>\;
+  s_in_microblaze_dout(8) <= \<const0>\;
+  s_in_microblaze_dout(7) <= \<const0>\;
+  s_in_microblaze_dout(6) <= \<const0>\;
+  s_in_microblaze_dout(5) <= \<const0>\;
+  s_in_microblaze_dout(4) <= \<const0>\;
+  s_in_microblaze_dout(3) <= \<const0>\;
+  s_in_microblaze_dout(2) <= \<const0>\;
+  s_in_microblaze_dout(1) <= \<const0>\;
+  s_in_microblaze_dout(0) <= \<const0>\;
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 U0: entity work.RISC_V_BRAMMux_0_1_BRAMMux
      port map (
       s_in_camera_addr(18 downto 0) => s_in_camera_addr(18 downto 0),

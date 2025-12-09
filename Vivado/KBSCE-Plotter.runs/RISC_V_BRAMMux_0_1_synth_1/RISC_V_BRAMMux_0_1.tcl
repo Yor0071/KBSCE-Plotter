@@ -74,7 +74,10 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
-set_property ip_repo_paths /home/maartenvk/src/KBSCE-Plotter/ip_repo/bram_mux_1_0 [current_project]
+set_property ip_repo_paths {
+  /home/maartenvk/src/KBSCE-Plotter/ip_repo/better_axi4_bram_controller_1_0
+  /home/maartenvk/src/KBSCE-Plotter/ip_repo/bram_mux_1_0
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Tue Dec  9 12:37:56 2025
+// Date        : Tue Dec  9 14:41:03 2025
 // Host        : mrt-fed-lap running 64-bit unknown
 // Command     : write_verilog -force -mode funcsim
 //               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_1/RISC_V_BRAMMux_0_1_sim_netlist.v
@@ -38,9 +38,9 @@ module RISC_V_BRAMMux_0_1
     s_out_fb_addr,
     s_out_fb_clk,
     s_out_fb_rst);
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE EN" *) (* x_interface_mode = "slave BRAM_IN_PORT_MICROBLAZE" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_IN_PORT_MICROBLAZE, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *) input s_in_microblaze_en;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DOUT" *) output [11:0]s_in_microblaze_dout;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DIN" *) input [11:0]s_in_microblaze_din;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE EN" *) (* x_interface_mode = "slave BRAM_IN_PORT_MICROBLAZE" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_IN_PORT_MICROBLAZE, MEM_SIZE 4096, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *) input s_in_microblaze_en;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DOUT" *) output [31:0]s_in_microblaze_dout;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DIN" *) input [31:0]s_in_microblaze_din;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE WE" *) input [0:0]s_in_microblaze_we;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE ADDR" *) input [18:0]s_in_microblaze_addr;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE CLK" *) input s_in_microblaze_clk;
@@ -60,6 +60,7 @@ module RISC_V_BRAMMux_0_1
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB CLK" *) output s_out_fb_clk;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB RST" *) output s_out_fb_rst;
 
+  wire \<const0> ;
   wire [18:0]s_in_camera_addr;
   wire s_in_camera_clk;
   wire [11:0]s_in_camera_din;
@@ -68,25 +69,68 @@ module RISC_V_BRAMMux_0_1
   wire [0:0]s_in_camera_we;
   wire [18:0]s_in_microblaze_addr;
   wire s_in_microblaze_clk;
-  wire [11:0]s_in_microblaze_din;
+  wire [31:0]s_in_microblaze_din;
   wire s_in_microblaze_en;
   wire s_in_microblaze_rst;
   wire [0:0]s_in_microblaze_we;
   wire [18:0]s_out_fb_addr;
   wire s_out_fb_clk;
   wire [11:0]s_out_fb_din;
-  wire [11:0]s_out_fb_dout;
   wire s_out_fb_en;
   wire s_out_fb_rst;
   wire [0:0]s_out_fb_we;
 
-  assign s_in_camera_dout[11:0] = s_out_fb_dout;
-  assign s_in_microblaze_dout[11:0] = s_out_fb_dout;
+  assign s_in_camera_dout[11] = \<const0> ;
+  assign s_in_camera_dout[10] = \<const0> ;
+  assign s_in_camera_dout[9] = \<const0> ;
+  assign s_in_camera_dout[8] = \<const0> ;
+  assign s_in_camera_dout[7] = \<const0> ;
+  assign s_in_camera_dout[6] = \<const0> ;
+  assign s_in_camera_dout[5] = \<const0> ;
+  assign s_in_camera_dout[4] = \<const0> ;
+  assign s_in_camera_dout[3] = \<const0> ;
+  assign s_in_camera_dout[2] = \<const0> ;
+  assign s_in_camera_dout[1] = \<const0> ;
+  assign s_in_camera_dout[0] = \<const0> ;
+  assign s_in_microblaze_dout[31] = \<const0> ;
+  assign s_in_microblaze_dout[30] = \<const0> ;
+  assign s_in_microblaze_dout[29] = \<const0> ;
+  assign s_in_microblaze_dout[28] = \<const0> ;
+  assign s_in_microblaze_dout[27] = \<const0> ;
+  assign s_in_microblaze_dout[26] = \<const0> ;
+  assign s_in_microblaze_dout[25] = \<const0> ;
+  assign s_in_microblaze_dout[24] = \<const0> ;
+  assign s_in_microblaze_dout[23] = \<const0> ;
+  assign s_in_microblaze_dout[22] = \<const0> ;
+  assign s_in_microblaze_dout[21] = \<const0> ;
+  assign s_in_microblaze_dout[20] = \<const0> ;
+  assign s_in_microblaze_dout[19] = \<const0> ;
+  assign s_in_microblaze_dout[18] = \<const0> ;
+  assign s_in_microblaze_dout[17] = \<const0> ;
+  assign s_in_microblaze_dout[16] = \<const0> ;
+  assign s_in_microblaze_dout[15] = \<const0> ;
+  assign s_in_microblaze_dout[14] = \<const0> ;
+  assign s_in_microblaze_dout[13] = \<const0> ;
+  assign s_in_microblaze_dout[12] = \<const0> ;
+  assign s_in_microblaze_dout[11] = \<const0> ;
+  assign s_in_microblaze_dout[10] = \<const0> ;
+  assign s_in_microblaze_dout[9] = \<const0> ;
+  assign s_in_microblaze_dout[8] = \<const0> ;
+  assign s_in_microblaze_dout[7] = \<const0> ;
+  assign s_in_microblaze_dout[6] = \<const0> ;
+  assign s_in_microblaze_dout[5] = \<const0> ;
+  assign s_in_microblaze_dout[4] = \<const0> ;
+  assign s_in_microblaze_dout[3] = \<const0> ;
+  assign s_in_microblaze_dout[2] = \<const0> ;
+  assign s_in_microblaze_dout[1] = \<const0> ;
+  assign s_in_microblaze_dout[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
   RISC_V_BRAMMux_0_1_BRAMMux U0
        (.s_in_camera_addr(s_in_camera_addr),
         .s_in_camera_din(s_in_camera_din),
         .s_in_microblaze_addr(s_in_microblaze_addr),
-        .s_in_microblaze_din(s_in_microblaze_din),
+        .s_in_microblaze_din(s_in_microblaze_din[11:0]),
         .s_in_microblaze_en(s_in_microblaze_en),
         .s_out_fb_addr(s_out_fb_addr),
         .s_out_fb_din(s_out_fb_din));

@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Tue Dec  9 12:37:15 2025
-# Process ID         : 241447
+# Start of session at: Tue Dec  9 14:40:30 2025
+# Process ID         : 339419
 # Current directory  : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_BRAMMux_0_1_synth_1
 # Command line       : vivado -log RISC_V_BRAMMux_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_BRAMMux_0_1.tcl
 # Log file           : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_BRAMMux_0_1_synth_1/RISC_V_BRAMMux_0_1.vds
@@ -13,16 +13,17 @@
 # Platform           : unknown
 # Operating System   : unknown
 # Processor Detail   : AMD Ryzen 7 5700U with Radeon Graphics
-# CPU Frequency      : 4127.998 MHz
+# CPU Frequency      : 4049.823 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16037 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 24627 MB
-# Available Virtual  : 12353 MB
+# Available Virtual  : 10621 MB
 #-----------------------------------------------------------
 source RISC_V_BRAMMux_0_1.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/maartenvk/src/KBSCE-Plotter/ip_repo/better_axi4_bram_controller_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/maartenvk/src/KBSCE-Plotter/ip_repo/bram_mux_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/ip'.
 Command: synth_design -top RISC_V_BRAMMux_0_1 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
@@ -32,58 +33,91 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 241716
+INFO: [Synth 8-7075] Helper process launched with PID 339494
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2135.246 ; gain = 441.680 ; free physical = 225 ; free virtual = 8130
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2135.645 ; gain = 439.742 ; free physical = 746 ; free virtual = 8949
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'RISC_V_BRAMMux_0_1' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_1/synth/RISC_V_BRAMMux_0_1.vhd:82]
 INFO: [Synth 8-3491] module 'BRAMMux' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/BRAMMux.vhd:44' bound to instance 'U0' of component 'BRAMMux' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_1/synth/RISC_V_BRAMMux_0_1.vhd:149]
 INFO: [Synth 8-638] synthesizing module 'BRAMMux' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/BRAMMux.vhd:72]
 INFO: [Synth 8-256] done synthesizing module 'BRAMMux' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/BRAMMux.vhd:72]
 INFO: [Synth 8-256] done synthesizing module 'RISC_V_BRAMMux_0_1' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_1/synth/RISC_V_BRAMMux_0_1.vhd:82]
+WARNING: [Synth 8-3848] Net dout_data in module/entity BRAMMux does not have driver. [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/BRAMMux.vhd:105]
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[31] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[30] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[29] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[28] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[27] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[26] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[25] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[24] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[23] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[22] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[21] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[20] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[19] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[18] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[17] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[16] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[15] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[14] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[13] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[12] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[11] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[10] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[9] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[8] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[7] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[6] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[5] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[4] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[3] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[2] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[1] in module BRAMMux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[0] in module BRAMMux is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2214.215 ; gain = 520.648 ; free physical = 209 ; free virtual = 7973
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2213.613 ; gain = 517.711 ; free physical = 650 ; free virtual = 8854
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2232.027 ; gain = 538.461 ; free physical = 218 ; free virtual = 7965
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2231.426 ; gain = 535.523 ; free physical = 650 ; free virtual = 8854
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2232.027 ; gain = 538.461 ; free physical = 218 ; free virtual = 7965
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2231.426 ; gain = 535.523 ; free physical = 650 ; free virtual = 8854
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2232.027 ; gain = 0.000 ; free physical = 213 ; free virtual = 7956
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2231.426 ; gain = 0.000 ; free physical = 650 ; free virtual = 8854
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2283.922 ; gain = 0.000 ; free physical = 252 ; free virtual = 7754
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2294.227 ; gain = 0.000 ; free physical = 651 ; free virtual = 8855
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2283.957 ; gain = 0.000 ; free physical = 249 ; free virtual = 7752
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2294.262 ; gain = 0.000 ; free physical = 652 ; free virtual = 8856
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2283.957 ; gain = 590.391 ; free physical = 238 ; free virtual = 7670
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2294.262 ; gain = 598.359 ; free physical = 671 ; free virtual = 8876
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2291.926 ; gain = 598.359 ; free physical = 238 ; free virtual = 7670
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2302.230 ; gain = 606.328 ; free physical = 671 ; free virtual = 8876
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2291.926 ; gain = 598.359 ; free physical = 238 ; free virtual = 7670
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2302.230 ; gain = 606.328 ; free physical = 671 ; free virtual = 8876
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2291.926 ; gain = 598.359 ; free physical = 236 ; free virtual = 7670
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2302.230 ; gain = 606.328 ; free physical = 671 ; free virtual = 8876
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -109,26 +143,138 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[31] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[30] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[29] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[28] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[27] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[26] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[25] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[24] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[23] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[22] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[21] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[20] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[19] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[18] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[17] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[16] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[15] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[14] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[13] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[12] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[11] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[10] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[9] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[8] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[7] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[6] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[5] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[4] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[3] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[2] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[1] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_microblaze_dout[0] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[11] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[10] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[9] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[8] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[7] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[6] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[5] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[4] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[3] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[2] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[1] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMMux_0_1 has port s_in_camera_dout[0] driven by constant 0
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[31] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[30] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[29] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[28] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[27] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[26] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[25] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[24] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[23] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[22] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[21] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[20] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[19] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[18] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[17] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[16] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[15] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[14] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[13] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_in_microblaze_din[12] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[11] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[10] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[9] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[8] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[7] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[6] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[5] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[4] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[3] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[2] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[1] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_out_fb_dout[0] in module RISC_V_BRAMMux_0_1 is either unconnected or has no load
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[11] with 1st driver pin 'U0//s_in_microblaze_dout[11]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[11] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[11] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[10] with 1st driver pin 'U0//s_in_microblaze_dout[10]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[10] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[10] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[9] with 1st driver pin 'U0//s_in_microblaze_dout[9]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[9] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[9] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[8] with 1st driver pin 'U0//s_in_microblaze_dout[8]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[8] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[8] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[7] with 1st driver pin 'U0//s_in_microblaze_dout[7]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[7] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[7] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[6] with 1st driver pin 'U0//s_in_microblaze_dout[6]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[6] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[6] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[5] with 1st driver pin 'U0//s_in_microblaze_dout[5]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[5] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[5] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[4] with 1st driver pin 'U0//s_in_microblaze_dout[4]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[4] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[4] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[3] with 1st driver pin 'U0//s_in_microblaze_dout[3]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[3] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[3] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[2] with 1st driver pin 'U0//s_in_microblaze_dout[2]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[2] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[2] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[1] with 1st driver pin 'U0//s_in_microblaze_dout[1]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[1] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[1] is connected to at least one constant driver which has been preserved, other driver is ignored
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[0] with 1st driver pin 'U0//s_in_microblaze_dout[0]'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s_in_microblaze_dout[0] with 2nd driver pin 'GND'
+CRITICAL WARNING: [Synth 8-6858] multi-driven net s_in_microblaze_dout[0] is connected to at least one constant driver which has been preserved, other driver is ignored
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2291.926 ; gain = 598.359 ; free physical = 215 ; free virtual = 7650
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2302.230 ; gain = 606.328 ; free physical = 671 ; free virtual = 8877
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2390.926 ; gain = 697.359 ; free physical = 191 ; free virtual = 6951
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2391.230 ; gain = 695.328 ; free physical = 567 ; free virtual = 8775
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2390.926 ; gain = 697.359 ; free physical = 190 ; free virtual = 6948
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2391.230 ; gain = 695.328 ; free physical = 567 ; free virtual = 8775
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2399.941 ; gain = 706.375 ; free physical = 193 ; free virtual = 6939
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2400.246 ; gain = 704.344 ; free physical = 559 ; free virtual = 8767
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -146,37 +292,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.754 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.059 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.754 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.059 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.754 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.059 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.754 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.059 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.754 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.059 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.754 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.059 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -196,27 +342,28 @@ Report Cell Usage:
 |2     |LUT3 |    34|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.754 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.059 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2575.754 ; gain = 830.258 ; free physical = 259 ; free virtual = 6794
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.762 ; gain = 882.188 ; free physical = 259 ; free virtual = 6794
+Synthesis finished with 0 errors, 36 critical warnings and 33 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2576.059 ; gain = 817.320 ; free physical = 393 ; free virtual = 8601
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2576.066 ; gain = 880.156 ; free physical = 394 ; free virtual = 8601
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2575.762 ; gain = 0.000 ; free physical = 259 ; free virtual = 6794
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.066 ; gain = 0.000 ; free physical = 394 ; free virtual = 8601
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2631.781 ; gain = 0.000 ; free physical = 423 ; free virtual = 6960
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2632.086 ; gain = 0.000 ; free physical = 558 ; free virtual = 8766
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 171fefd1
+Synth Design complete | Checksum: 797fae9
 INFO: [Common 17-83] Releasing license: Synthesis
-21 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+66 Infos, 66 Warnings, 36 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:32 . Memory (MB): peak = 2631.816 ; gain = 1094.367 ; free physical = 423 ; free virtual = 6960
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1594.217; main = 1594.217; forked = 211.942
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3288.559; main = 2631.785; forked = 962.629
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2655.793 ; gain = 0.000 ; free physical = 422 ; free virtual = 6959
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:28 . Memory (MB): peak = 2632.121 ; gain = 1078.492 ; free physical = 550 ; free virtual = 8758
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1921.410; main = 1761.803; forked = 276.691
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3457.879; main = 2632.090; forked = 962.629
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2656.098 ; gain = 0.000 ; free physical = 550 ; free virtual = 8758
 INFO: [Common 17-1381] The checkpoint '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_BRAMMux_0_1_synth_1/RISC_V_BRAMMux_0_1.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RISC_V_BRAMMux_0_1_utilization_synth.rpt -pb RISC_V_BRAMMux_0_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec  9 12:37:56 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  9 14:41:03 2025...

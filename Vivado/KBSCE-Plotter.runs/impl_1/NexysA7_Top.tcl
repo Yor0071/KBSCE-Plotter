@@ -117,7 +117,10 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/wt [current_project]
   set_property parent.project_path /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.xpr [current_project]
-  set_property ip_repo_paths /home/maartenvk/src/KBSCE-Plotter/ip_repo/bram_mux_1_0 [current_project]
+  set_property ip_repo_paths {
+  /home/maartenvk/src/KBSCE-Plotter/ip_repo/better_axi4_bram_controller_1_0
+  /home/maartenvk/src/KBSCE-Plotter/ip_repo/bram_mux_1_0
+} [current_project]
   update_ip_catalog
   set_property ip_output_repo /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
