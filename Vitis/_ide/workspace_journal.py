@@ -19,3 +19,80 @@ status = domain.update_path(option = "OS",name="standalone", new_path = "/home/m
 
 status = platform.build()
 
+comp = client.get_component(name="app")
+comp.build()
+
+comp.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+advanced_options = client.create_advanced_options_dict(dt_overlay="0")
+
+platform = client.create_platform_component(name = "linux_platform",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
+
+comp = client.create_app_component(name="new_app",platform = "$COMPONENT_LOCATION/../linux_platform/export/linux_platform/linux_platform.xpfm",domain = "standalone_microblaze_riscv_0")
+
+platform = client.get_component(name="linux_platform")
+status = platform.build()
+
+status = platform.build()
+
+comp = client.get_component(name="new_app")
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
