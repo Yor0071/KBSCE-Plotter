@@ -51,7 +51,7 @@
         "qemuData": "",
         "qemuArgsFile": "",
         "pmcQemuArgsFile": "",
-        "isBSPGenReq": true
+        "isBSPGenReq": false
       }
     ],
     "emptyToolchainConfiguration": []

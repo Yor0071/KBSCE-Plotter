@@ -1,7 +1,7 @@
 sdt: hw_artifacts/microblaze_riscv_0_baremetal.dts
 family: artix7
 path: /home/maartenvk/src/KBSCE-Plotter/Vitis/linux/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
-config: default
+config: None
 os: standalone
 os_info:
   standalone:
@@ -154,38 +154,22 @@ drv_info:
     driver: bram
     ip_name: axi_bram_ctrl
     path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_12
-    examples:
-      xbram_example.c: []
   axi_gpio_leds:
     driver: gpio
     ip_name: axi_gpio
     path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/gpio_v4_12
-    examples:
-      xgpio_example.c: []
-      xgpio_low_level_example.c: []
-      xgpio_tapp_example.c: []
   axi_gpio_switches:
     driver: gpio
     ip_name: axi_gpio
     path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/gpio_v4_12
-    examples:
-      xgpio_example.c: []
-      xgpio_low_level_example.c: []
-      xgpio_tapp_example.c: []
   axi_uartlite_0:
     driver: uartlite
     ip_name: axi_uartlite
     path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/uartlite_v3_11
-    examples:
-      xuartlite_low_level_example.c: []
-      xuartlite_polled_example.c: []
-      xuartlite_selftest_example.c: []
   microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr:
     driver: bram
     ip_name: lmb_bram_if_cntlr
     path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_12
-    examples:
-      xbram_example.c: []
 lib_info:
   xiltimer:
     path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/lib/sw_services/xiltimer_v2_2

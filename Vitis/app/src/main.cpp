@@ -4,8 +4,17 @@
 //accessing the GPIOs in a more user-friendly manner.
 #include "xil_types.h" //C types such as u32
 
+//#define XPAR_AXI_BRAM_CTRL_0_COMPATIBLE "xlnx,axi-bram-ctrl-4.1"
+//#define XPAR_AXI_BRAM_CTRL_0_BASEADDR 0x37ff0000
+//#define XPAR_AXI_BRAM_CTRL_0_HIGHADDR 0x37ff1fff
+//#define XPAR_AXI_BRAM_CTRL_0_DATA_WIDTH 0x20
+//#define XPAR_AXI_BRAM_CTRL_0_ECC 0x0
+//#define XPAR_AXI_BRAM_CTRL_0_FAULT_INJECT 0x0
+//#define XPAR_AXI_BRAM_CTRL_0_ECC_ONOFF_RESET_VALUE 0x0
+
 int main()
 {
+    
 // XGpio Gpio_led, Gpio_switches;
 // XGpio_Initialize(&Gpio_led, XPAR_AXI_GPIO_LEDS_BASEADDR);
 // XGpio_Initialize(&Gpio_switches, XPAR_AXI_GPIO_SWITCHES_BASEADDR);
