@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Tue Dec  9 10:57:56 2025
+--Date        : Tue Dec  9 11:01:12 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -536,11 +536,12 @@ entity RISC_V is
     BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORTA_1_en : in STD_LOGIC;
     BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 9 downto 0 );
     BRAM_PORTB_0_clk : in STD_LOGIC;
     BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORTB_0_en : in STD_LOGIC;
+    BRAM_PORTB_0_rst : in STD_LOGIC;
     BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -551,7 +552,7 @@ entity RISC_V is
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of RISC_V : entity is "RISC_V.hwdef";
 end RISC_V;
@@ -802,7 +803,40 @@ architecture STRUCTURE of RISC_V is
     M02_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M02_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M02_AXI_rvalid : in STD_LOGIC;
-    M02_AXI_rready : out STD_LOGIC
+    M02_AXI_rready : out STD_LOGIC;
+    M03_AXI_awaddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    M03_AXI_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M03_AXI_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_awlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M03_AXI_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_awqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_awvalid : out STD_LOGIC;
+    M03_AXI_awready : in STD_LOGIC;
+    M03_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M03_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_wlast : out STD_LOGIC;
+    M03_AXI_wvalid : out STD_LOGIC;
+    M03_AXI_wready : in STD_LOGIC;
+    M03_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_bvalid : in STD_LOGIC;
+    M03_AXI_bready : out STD_LOGIC;
+    M03_AXI_araddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    M03_AXI_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M03_AXI_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_arlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M03_AXI_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_arvalid : out STD_LOGIC;
+    M03_AXI_arready : in STD_LOGIC;
+    M03_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M03_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_rlast : in STD_LOGIC;
+    M03_AXI_rvalid : in STD_LOGIC;
+    M03_AXI_rready : out STD_LOGIC
   );
   end component RISC_V_axi_smc_0;
   component RISC_V_reset_inv_0_0 is
@@ -852,6 +886,63 @@ architecture STRUCTURE of RISC_V is
     s_out_fb_rst : out STD_LOGIC
   );
   end component RISC_V_BRAMMux_0_1;
+  component RISC_V_axi_bram_ctrl_0_0 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_awlock : in STD_LOGIC;
+    s_axi_awcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wlast : in STD_LOGIC;
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_arlock : in STD_LOGIC;
+    s_axi_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rlast : out STD_LOGIC;
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    bram_rst_a : out STD_LOGIC;
+    bram_clk_a : out STD_LOGIC;
+    bram_en_a : out STD_LOGIC;
+    bram_we_a : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bram_addr_a : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    bram_wrdata_a : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component RISC_V_axi_bram_ctrl_0_0;
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_ADDR : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_CLK : STD_LOGIC;
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_DIN : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_DOUT : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_EN : STD_LOGIC;
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_WE : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
+  signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_DOUT : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_EN : STD_LOGIC;
+  signal axi_bram_ctrl_0_BRAM_PORTA_RST : STD_LOGIC;
+  signal axi_bram_ctrl_0_BRAM_PORTA_WE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal axi_smc_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_ARVALID : STD_LOGIC;
@@ -903,6 +994,37 @@ architecture STRUCTURE of RISC_V is
   signal axi_smc_M02_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M02_AXI_WVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_ARADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal axi_smc_M03_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M03_AXI_ARLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal axi_smc_M03_AXI_ARLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_smc_M03_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_ARREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_ARSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_ARVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_AWADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal axi_smc_M03_AXI_AWBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_AWCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M03_AXI_AWLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal axi_smc_M03_AXI_AWLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_smc_M03_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_AWREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_AWSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_AWVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_BREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_BVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M03_AXI_RLAST : STD_LOGIC;
+  signal axi_smc_M03_AXI_RREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_RVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M03_AXI_WLAST : STD_LOGIC;
+  signal axi_smc_M03_AXI_WREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M03_AXI_WVALID : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_riscv_0_Clk : STD_LOGIC;
   signal microblaze_riscv_0_M_AXI_DP_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -956,20 +1078,15 @@ architecture STRUCTURE of RISC_V is
   signal rst_clk_wiz_1_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_wiz_1_100M_mb_reset : STD_LOGIC;
   signal rst_clk_wiz_1_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_BRAMMux_0_s_out_fb_clk_UNCONNECTED : STD_LOGIC;
-  signal NLW_BRAMMux_0_s_out_fb_en_UNCONNECTED : STD_LOGIC;
   signal NLW_BRAMMux_0_s_out_fb_rst_UNCONNECTED : STD_LOGIC;
-  signal NLW_BRAMMux_0_s_in_camera_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
-  signal NLW_BRAMMux_0_s_in_microblaze_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
-  signal NLW_BRAMMux_0_s_out_fb_addr_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal NLW_BRAMMux_0_s_out_fb_din_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
-  signal NLW_BRAMMux_0_s_out_fb_we_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_smc_M00_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M00_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M01_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M01_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M02_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M02_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axi_smc_M03_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axi_smc_M03_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_uartlite_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_riscv_0_Interrupt_Ack_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
   signal NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -983,6 +1100,7 @@ architecture STRUCTURE of RISC_V is
   attribute X_INTERFACE_INFO of BRAM_PORTA_1_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 EN";
   attribute X_INTERFACE_INFO of BRAM_PORTB_0_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 CLK";
   attribute X_INTERFACE_INFO of BRAM_PORTB_0_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 EN";
+  attribute X_INTERFACE_INFO of BRAM_PORTB_0_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 RST";
   attribute X_INTERFACE_INFO of VGA_PCLK : signal is "xilinx.com:signal:clock:1.0 CLK.VGA_PCLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of VGA_PCLK : signal is "XIL_INTERFACENAME CLK.VGA_PCLK, CLK_DOMAIN /clk_wiz_1_clk_out1, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
@@ -1013,27 +1131,71 @@ architecture STRUCTURE of RISC_V is
 begin
 BRAMMux_0: component RISC_V_BRAMMux_0_1
      port map (
-      s_in_camera_addr(9 downto 0) => B"0000000000",
-      s_in_camera_clk => '0',
-      s_in_camera_din(11 downto 0) => B"000000001000",
-      s_in_camera_dout(11 downto 0) => NLW_BRAMMux_0_s_in_camera_dout_UNCONNECTED(11 downto 0),
-      s_in_camera_en => '0',
-      s_in_camera_rst => '0',
-      s_in_camera_we(0) => '0',
-      s_in_microblaze_addr(9 downto 0) => B"0000000000",
-      s_in_microblaze_clk => '0',
-      s_in_microblaze_din(11 downto 0) => B"000000001000",
-      s_in_microblaze_dout(11 downto 0) => NLW_BRAMMux_0_s_in_microblaze_dout_UNCONNECTED(11 downto 0),
-      s_in_microblaze_en => '0',
-      s_in_microblaze_rst => '0',
-      s_in_microblaze_we(0) => '0',
-      s_out_fb_addr(9 downto 0) => NLW_BRAMMux_0_s_out_fb_addr_UNCONNECTED(9 downto 0),
-      s_out_fb_clk => NLW_BRAMMux_0_s_out_fb_clk_UNCONNECTED,
-      s_out_fb_din(11 downto 0) => NLW_BRAMMux_0_s_out_fb_din_UNCONNECTED(11 downto 0),
-      s_out_fb_dout(11 downto 0) => B"000000001000",
-      s_out_fb_en => NLW_BRAMMux_0_s_out_fb_en_UNCONNECTED,
+      s_in_camera_addr(9 downto 0) => BRAM_PORTB_0_addr(9 downto 0),
+      s_in_camera_clk => BRAM_PORTB_0_clk,
+      s_in_camera_din(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
+      s_in_camera_dout(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
+      s_in_camera_en => BRAM_PORTB_0_en,
+      s_in_camera_rst => BRAM_PORTB_0_rst,
+      s_in_camera_we(0) => BRAM_PORTB_0_we(0),
+      s_in_microblaze_addr(9 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(9 downto 0),
+      s_in_microblaze_clk => axi_bram_ctrl_0_BRAM_PORTA_CLK,
+      s_in_microblaze_din(11 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(11 downto 0),
+      s_in_microblaze_dout(11 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(11 downto 0),
+      s_in_microblaze_en => axi_bram_ctrl_0_BRAM_PORTA_EN,
+      s_in_microblaze_rst => axi_bram_ctrl_0_BRAM_PORTA_RST,
+      s_in_microblaze_we(0) => axi_bram_ctrl_0_BRAM_PORTA_WE(0),
+      s_out_fb_addr(9 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_ADDR(9 downto 0),
+      s_out_fb_clk => BRAMMux_0_BRAM_OUT_PORT_FB_CLK,
+      s_out_fb_din(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DIN(11 downto 0),
+      s_out_fb_dout(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DOUT(11 downto 0),
+      s_out_fb_en => BRAMMux_0_BRAM_OUT_PORT_FB_EN,
       s_out_fb_rst => NLW_BRAMMux_0_s_out_fb_rst_UNCONNECTED,
-      s_out_fb_we(0) => NLW_BRAMMux_0_s_out_fb_we_UNCONNECTED(0)
+      s_out_fb_we(0) => BRAMMux_0_BRAM_OUT_PORT_FB_WE(0)
+    );
+axi_bram_ctrl_0: component RISC_V_axi_bram_ctrl_0_0
+     port map (
+      bram_addr_a(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
+      bram_clk_a => axi_bram_ctrl_0_BRAM_PORTA_CLK,
+      bram_en_a => axi_bram_ctrl_0_BRAM_PORTA_EN,
+      bram_rddata_a(31 downto 12) => B"00000000000000000000",
+      bram_rddata_a(11 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(11 downto 0),
+      bram_rst_a => axi_bram_ctrl_0_BRAM_PORTA_RST,
+      bram_we_a(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_WE(3 downto 0),
+      bram_wrdata_a(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
+      s_axi_aclk => microblaze_riscv_0_Clk,
+      s_axi_araddr(12 downto 0) => axi_smc_M03_AXI_ARADDR(12 downto 0),
+      s_axi_arburst(1 downto 0) => axi_smc_M03_AXI_ARBURST(1 downto 0),
+      s_axi_arcache(3 downto 0) => axi_smc_M03_AXI_ARCACHE(3 downto 0),
+      s_axi_aresetn => rst_clk_wiz_1_100M_peripheral_aresetn(0),
+      s_axi_arlen(7 downto 0) => axi_smc_M03_AXI_ARLEN(7 downto 0),
+      s_axi_arlock => axi_smc_M03_AXI_ARLOCK(0),
+      s_axi_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
+      s_axi_arready => axi_smc_M03_AXI_ARREADY,
+      s_axi_arsize(2 downto 0) => axi_smc_M03_AXI_ARSIZE(2 downto 0),
+      s_axi_arvalid => axi_smc_M03_AXI_ARVALID,
+      s_axi_awaddr(12 downto 0) => axi_smc_M03_AXI_AWADDR(12 downto 0),
+      s_axi_awburst(1 downto 0) => axi_smc_M03_AXI_AWBURST(1 downto 0),
+      s_axi_awcache(3 downto 0) => axi_smc_M03_AXI_AWCACHE(3 downto 0),
+      s_axi_awlen(7 downto 0) => axi_smc_M03_AXI_AWLEN(7 downto 0),
+      s_axi_awlock => axi_smc_M03_AXI_AWLOCK(0),
+      s_axi_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
+      s_axi_awready => axi_smc_M03_AXI_AWREADY,
+      s_axi_awsize(2 downto 0) => axi_smc_M03_AXI_AWSIZE(2 downto 0),
+      s_axi_awvalid => axi_smc_M03_AXI_AWVALID,
+      s_axi_bready => axi_smc_M03_AXI_BREADY,
+      s_axi_bresp(1 downto 0) => axi_smc_M03_AXI_BRESP(1 downto 0),
+      s_axi_bvalid => axi_smc_M03_AXI_BVALID,
+      s_axi_rdata(31 downto 0) => axi_smc_M03_AXI_RDATA(31 downto 0),
+      s_axi_rlast => axi_smc_M03_AXI_RLAST,
+      s_axi_rready => axi_smc_M03_AXI_RREADY,
+      s_axi_rresp(1 downto 0) => axi_smc_M03_AXI_RRESP(1 downto 0),
+      s_axi_rvalid => axi_smc_M03_AXI_RVALID,
+      s_axi_wdata(31 downto 0) => axi_smc_M03_AXI_WDATA(31 downto 0),
+      s_axi_wlast => axi_smc_M03_AXI_WLAST,
+      s_axi_wready => axi_smc_M03_AXI_WREADY,
+      s_axi_wstrb(3 downto 0) => axi_smc_M03_AXI_WSTRB(3 downto 0),
+      s_axi_wvalid => axi_smc_M03_AXI_WVALID
     );
 axi_gpio_leds: component RISC_V_axi_gpio_0_0
      port map (
@@ -1140,6 +1302,39 @@ axi_smc: component RISC_V_axi_smc_0
       M02_AXI_wready => axi_smc_M02_AXI_WREADY,
       M02_AXI_wstrb(3 downto 0) => axi_smc_M02_AXI_WSTRB(3 downto 0),
       M02_AXI_wvalid => axi_smc_M02_AXI_WVALID,
+      M03_AXI_araddr(12 downto 0) => axi_smc_M03_AXI_ARADDR(12 downto 0),
+      M03_AXI_arburst(1 downto 0) => axi_smc_M03_AXI_ARBURST(1 downto 0),
+      M03_AXI_arcache(3 downto 0) => axi_smc_M03_AXI_ARCACHE(3 downto 0),
+      M03_AXI_arlen(7 downto 0) => axi_smc_M03_AXI_ARLEN(7 downto 0),
+      M03_AXI_arlock(0) => axi_smc_M03_AXI_ARLOCK(0),
+      M03_AXI_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
+      M03_AXI_arqos(3 downto 0) => NLW_axi_smc_M03_AXI_arqos_UNCONNECTED(3 downto 0),
+      M03_AXI_arready => axi_smc_M03_AXI_ARREADY,
+      M03_AXI_arsize(2 downto 0) => axi_smc_M03_AXI_ARSIZE(2 downto 0),
+      M03_AXI_arvalid => axi_smc_M03_AXI_ARVALID,
+      M03_AXI_awaddr(12 downto 0) => axi_smc_M03_AXI_AWADDR(12 downto 0),
+      M03_AXI_awburst(1 downto 0) => axi_smc_M03_AXI_AWBURST(1 downto 0),
+      M03_AXI_awcache(3 downto 0) => axi_smc_M03_AXI_AWCACHE(3 downto 0),
+      M03_AXI_awlen(7 downto 0) => axi_smc_M03_AXI_AWLEN(7 downto 0),
+      M03_AXI_awlock(0) => axi_smc_M03_AXI_AWLOCK(0),
+      M03_AXI_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
+      M03_AXI_awqos(3 downto 0) => NLW_axi_smc_M03_AXI_awqos_UNCONNECTED(3 downto 0),
+      M03_AXI_awready => axi_smc_M03_AXI_AWREADY,
+      M03_AXI_awsize(2 downto 0) => axi_smc_M03_AXI_AWSIZE(2 downto 0),
+      M03_AXI_awvalid => axi_smc_M03_AXI_AWVALID,
+      M03_AXI_bready => axi_smc_M03_AXI_BREADY,
+      M03_AXI_bresp(1 downto 0) => axi_smc_M03_AXI_BRESP(1 downto 0),
+      M03_AXI_bvalid => axi_smc_M03_AXI_BVALID,
+      M03_AXI_rdata(31 downto 0) => axi_smc_M03_AXI_RDATA(31 downto 0),
+      M03_AXI_rlast => axi_smc_M03_AXI_RLAST,
+      M03_AXI_rready => axi_smc_M03_AXI_RREADY,
+      M03_AXI_rresp(1 downto 0) => axi_smc_M03_AXI_RRESP(1 downto 0),
+      M03_AXI_rvalid => axi_smc_M03_AXI_RVALID,
+      M03_AXI_wdata(31 downto 0) => axi_smc_M03_AXI_WDATA(31 downto 0),
+      M03_AXI_wlast => axi_smc_M03_AXI_WLAST,
+      M03_AXI_wready => axi_smc_M03_AXI_WREADY,
+      M03_AXI_wstrb(3 downto 0) => axi_smc_M03_AXI_WSTRB(3 downto 0),
+      M03_AXI_wvalid => axi_smc_M03_AXI_WVALID,
       S00_AXI_araddr(31 downto 0) => microblaze_riscv_0_M_AXI_DP_ARADDR(31 downto 0),
       S00_AXI_arprot(2 downto 0) => microblaze_riscv_0_M_AXI_DP_ARPROT(2 downto 0),
       S00_AXI_arready => microblaze_riscv_0_M_AXI_DP_ARREADY,
@@ -1190,17 +1385,18 @@ axi_uartlite_0: component RISC_V_axi_uartlite_0_0
 blk_mem_gen_0: component RISC_V_blk_mem_gen_0_0
      port map (
       addra(18 downto 0) => BRAM_PORTA_1_addr(18 downto 0),
-      addrb(18 downto 0) => BRAM_PORTB_0_addr(18 downto 0),
+      addrb(18 downto 10) => B"000000000",
+      addrb(9 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_ADDR(9 downto 0),
       clka => BRAM_PORTA_1_clk,
-      clkb => BRAM_PORTB_0_clk,
+      clkb => BRAMMux_0_BRAM_OUT_PORT_FB_CLK,
       dina(11 downto 0) => BRAM_PORTA_1_din(11 downto 0),
-      dinb(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
+      dinb(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DIN(11 downto 0),
       douta(11 downto 0) => BRAM_PORTA_1_dout(11 downto 0),
-      doutb(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
+      doutb(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DOUT(11 downto 0),
       ena => BRAM_PORTA_1_en,
-      enb => BRAM_PORTB_0_en,
+      enb => BRAMMux_0_BRAM_OUT_PORT_FB_EN,
       wea(0) => BRAM_PORTA_1_we(0),
-      web(0) => BRAM_PORTB_0_we(0)
+      web(0) => BRAMMux_0_BRAM_OUT_PORT_FB_WE(0)
     );
 clk_wiz_1: component RISC_V_clk_wiz_1_0
      port map (

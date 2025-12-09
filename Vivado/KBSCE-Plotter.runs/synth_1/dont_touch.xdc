@@ -51,4 +51,10 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_rese
 # IP: bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_blk_mem_gen_0_0 || ORIG_REF_NAME==RISC_V_blk_mem_gen_0_0} -quiet] -quiet
 
+# IP: bd/RISC_V/ip/RISC_V_BRAMMux_0_1/RISC_V_BRAMMux_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_BRAMMux_0_1 || ORIG_REF_NAME==RISC_V_BRAMMux_0_1} -quiet] -quiet
+
+# IP: bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_bram_ctrl_0_0 || ORIG_REF_NAME==RISC_V_axi_bram_ctrl_0_0} -quiet] -quiet
+
 # XDC: /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc

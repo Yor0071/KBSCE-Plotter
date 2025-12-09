@@ -59,21 +59,21 @@ ENTITY RISC_V_BRAMMux_0_1 IS
     s_in_microblaze_dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
     s_in_microblaze_din : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     s_in_microblaze_we : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    s_in_microblaze_addr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    s_in_microblaze_addr : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
     s_in_microblaze_clk : IN STD_LOGIC;
     s_in_microblaze_rst : IN STD_LOGIC;
     s_in_camera_en : IN STD_LOGIC;
     s_in_camera_dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
     s_in_camera_din : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     s_in_camera_we : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    s_in_camera_addr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    s_in_camera_addr : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
     s_in_camera_clk : IN STD_LOGIC;
     s_in_camera_rst : IN STD_LOGIC;
     s_out_fb_en : OUT STD_LOGIC;
     s_out_fb_dout : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     s_out_fb_din : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
     s_out_fb_we : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    s_out_fb_addr : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+    s_out_fb_addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
     s_out_fb_clk : OUT STD_LOGIC;
     s_out_fb_rst : OUT STD_LOGIC
   );
@@ -88,21 +88,21 @@ ARCHITECTURE RISC_V_BRAMMux_0_1_arch OF RISC_V_BRAMMux_0_1 IS
       s_in_microblaze_dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
       s_in_microblaze_din : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
       s_in_microblaze_we : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      s_in_microblaze_addr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+      s_in_microblaze_addr : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
       s_in_microblaze_clk : IN STD_LOGIC;
       s_in_microblaze_rst : IN STD_LOGIC;
       s_in_camera_en : IN STD_LOGIC;
       s_in_camera_dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
       s_in_camera_din : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
       s_in_camera_we : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      s_in_camera_addr : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+      s_in_camera_addr : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
       s_in_camera_clk : IN STD_LOGIC;
       s_in_camera_rst : IN STD_LOGIC;
       s_out_fb_en : OUT STD_LOGIC;
       s_out_fb_dout : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
       s_out_fb_din : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
       s_out_fb_we : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-      s_out_fb_addr : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+      s_out_fb_addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
       s_out_fb_clk : OUT STD_LOGIC;
       s_out_fb_rst : OUT STD_LOGIC
     );
@@ -124,7 +124,7 @@ ARCHITECTURE RISC_V_BRAMMux_0_1_arch OF RISC_V_BRAMMux_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF s_in_camera_dout: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA DOUT";
   ATTRIBUTE X_INTERFACE_INFO OF s_in_camera_en: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA EN";
   ATTRIBUTE X_INTERFACE_MODE OF s_in_camera_en: SIGNAL IS "slave BRAM_IN_PORT_CAMERA";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_in_camera_en: SIGNAL IS "XIL_INTERFACENAME BRAM_IN_PORT_CAMERA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_in_camera_en: SIGNAL IS "XIL_INTERFACENAME BRAM_IN_PORT_CAMERA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 2";
   ATTRIBUTE X_INTERFACE_INFO OF s_in_camera_rst: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA RST";
   ATTRIBUTE X_INTERFACE_INFO OF s_in_camera_we: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA WE";
   ATTRIBUTE X_INTERFACE_INFO OF s_in_microblaze_addr: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE ADDR";

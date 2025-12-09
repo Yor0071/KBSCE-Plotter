@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Tue Dec  9 10:58:37 2025
+-- Date        : Tue Dec  9 11:07:34 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_1/RISC_V_BRAMMux_0_1_stub.vhdl
@@ -19,21 +19,21 @@ entity RISC_V_BRAMMux_0_1 is
     s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     s_in_microblaze_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     s_in_microblaze_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
     s_in_microblaze_clk : in STD_LOGIC;
     s_in_microblaze_rst : in STD_LOGIC;
     s_in_camera_en : in STD_LOGIC;
     s_in_camera_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     s_in_camera_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     s_in_camera_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s_in_camera_addr : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    s_in_camera_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
     s_in_camera_clk : in STD_LOGIC;
     s_in_camera_rst : in STD_LOGIC;
     s_out_fb_en : out STD_LOGIC;
     s_out_fb_dout : in STD_LOGIC_VECTOR ( 11 downto 0 );
     s_out_fb_din : out STD_LOGIC_VECTOR ( 11 downto 0 );
     s_out_fb_we : out STD_LOGIC_VECTOR ( 0 to 0 );
-    s_out_fb_addr : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    s_out_fb_addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
     s_out_fb_clk : out STD_LOGIC;
     s_out_fb_rst : out STD_LOGIC
   );
@@ -52,7 +52,7 @@ architecture stub of RISC_V_BRAMMux_0_1 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "s_in_microblaze_en,s_in_microblaze_dout[11:0],s_in_microblaze_din[11:0],s_in_microblaze_we[0:0],s_in_microblaze_addr[9:0],s_in_microblaze_clk,s_in_microblaze_rst,s_in_camera_en,s_in_camera_dout[11:0],s_in_camera_din[11:0],s_in_camera_we[0:0],s_in_camera_addr[9:0],s_in_camera_clk,s_in_camera_rst,s_out_fb_en,s_out_fb_dout[11:0],s_out_fb_din[11:0],s_out_fb_we[0:0],s_out_fb_addr[9:0],s_out_fb_clk,s_out_fb_rst";
+  attribute black_box_pad_pin of stub : architecture is "s_in_microblaze_en,s_in_microblaze_dout[11:0],s_in_microblaze_din[11:0],s_in_microblaze_we[0:0],s_in_microblaze_addr[18:0],s_in_microblaze_clk,s_in_microblaze_rst,s_in_camera_en,s_in_camera_dout[11:0],s_in_camera_din[11:0],s_in_camera_we[0:0],s_in_camera_addr[18:0],s_in_camera_clk,s_in_camera_rst,s_out_fb_en,s_out_fb_dout[11:0],s_out_fb_din[11:0],s_out_fb_we[0:0],s_out_fb_addr[18:0],s_out_fb_clk,s_out_fb_rst";
   attribute x_interface_info : string;
   attribute x_interface_info of s_in_microblaze_en : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE EN";
   attribute x_interface_mode : string;
@@ -67,7 +67,7 @@ architecture stub of RISC_V_BRAMMux_0_1 is
   attribute x_interface_info of s_in_microblaze_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE RST";
   attribute x_interface_info of s_in_camera_en : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA EN";
   attribute x_interface_mode of s_in_camera_en : signal is "slave BRAM_IN_PORT_CAMERA";
-  attribute x_interface_parameter of s_in_camera_en : signal is "XIL_INTERFACENAME BRAM_IN_PORT_CAMERA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
+  attribute x_interface_parameter of s_in_camera_en : signal is "XIL_INTERFACENAME BRAM_IN_PORT_CAMERA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 2";
   attribute x_interface_info of s_in_camera_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA DOUT";
   attribute x_interface_info of s_in_camera_din : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA DIN";
   attribute x_interface_info of s_in_camera_we : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA WE";

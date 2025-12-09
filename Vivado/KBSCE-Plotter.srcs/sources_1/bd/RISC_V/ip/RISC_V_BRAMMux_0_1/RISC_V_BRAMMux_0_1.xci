@@ -40,21 +40,21 @@
         "s_in_microblaze_dout": [ { "direction": "out", "size_left": "11", "size_right": "0" } ],
         "s_in_microblaze_din": [ { "direction": "in", "size_left": "11", "size_right": "0", "driver_value": "8" } ],
         "s_in_microblaze_we": [ { "direction": "in", "size_left": "0", "size_right": "0" } ],
-        "s_in_microblaze_addr": [ { "direction": "in", "size_left": "9", "size_right": "0" } ],
+        "s_in_microblaze_addr": [ { "direction": "in", "size_left": "18", "size_right": "0" } ],
         "s_in_microblaze_clk": [ { "direction": "in" } ],
         "s_in_microblaze_rst": [ { "direction": "in" } ],
         "s_in_camera_en": [ { "direction": "in" } ],
         "s_in_camera_dout": [ { "direction": "out", "size_left": "11", "size_right": "0" } ],
         "s_in_camera_din": [ { "direction": "in", "size_left": "11", "size_right": "0", "driver_value": "8" } ],
         "s_in_camera_we": [ { "direction": "in", "size_left": "0", "size_right": "0" } ],
-        "s_in_camera_addr": [ { "direction": "in", "size_left": "9", "size_right": "0" } ],
+        "s_in_camera_addr": [ { "direction": "in", "size_left": "18", "size_right": "0" } ],
         "s_in_camera_clk": [ { "direction": "in" } ],
         "s_in_camera_rst": [ { "direction": "in" } ],
         "s_out_fb_en": [ { "direction": "out" } ],
         "s_out_fb_dout": [ { "direction": "in", "size_left": "11", "size_right": "0", "driver_value": "8" } ],
         "s_out_fb_din": [ { "direction": "out", "size_left": "11", "size_right": "0" } ],
         "s_out_fb_we": [ { "direction": "out", "size_left": "0", "size_right": "0" } ],
-        "s_out_fb_addr": [ { "direction": "out", "size_left": "9", "size_right": "0" } ],
+        "s_out_fb_addr": [ { "direction": "out", "size_left": "18", "size_right": "0" } ],
         "s_out_fb_clk": [ { "direction": "out" } ],
         "s_out_fb_rst": [ { "direction": "out" } ]
       },
@@ -64,12 +64,12 @@
           "abstraction_type": "xilinx.com:interface:bram_rtl:1.0",
           "mode": "slave",
           "parameters": {
-            "MEM_SIZE": [ { "value": "8192", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MEM_WIDTH": [ { "value": "32", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MEM_ECC": [ { "value": "NONE", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "MEM_SIZE": [ { "value": "8192", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MEM_WIDTH": [ { "value": "32", "value_src": "ip_propagated", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MEM_ECC": [ { "value": "NONE", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "MASTER_TYPE": [ { "value": "OTHER", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "READ_LATENCY": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+            "READ_LATENCY": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "EN": [ { "physical_name": "s_in_microblaze_en" } ],
@@ -91,7 +91,7 @@
             "MEM_ECC": [ { "value": "NONE", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "MASTER_TYPE": [ { "value": "OTHER", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "READ_LATENCY": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+            "READ_LATENCY": [ { "value": "2", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "EN": [ { "physical_name": "s_in_camera_en" } ],
@@ -113,7 +113,8 @@
             "MEM_ECC": [ { "value": "NONE", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "MASTER_TYPE": [ { "value": "OTHER", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "READ_LATENCY": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+            "READ_LATENCY": [ { "value": "1", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MEM_ADDRESS_MODE": [ { "value": "", "value_src": "weak", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "EN": [ { "physical_name": "s_out_fb_en" } ],

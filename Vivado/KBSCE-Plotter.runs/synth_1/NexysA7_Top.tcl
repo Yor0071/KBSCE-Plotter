@@ -56,7 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param bd.open.in_stealth_mode 1
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 4
 set_msg_config -id {Common 17-41} -limit 10000000
@@ -73,6 +72,8 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
+set_property ip_repo_paths /home/maartenvk/src/KBSCE-Plotter/ip_repo/bram_mux_1_0 [current_project]
+update_ip_catalog
 set_property ip_output_repo /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -149,9 +150,16 @@ set_property used_in_implementation false [get_files -all /home/maartenvk/src/KB
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_43/bd_33e2_m02awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_44/bd_33e2_m02wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_45/bd_33e2_m02bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_47/bd_33e2_m03s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_48/bd_33e2_m03arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_49/bd_33e2_m03rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_50/bd_33e2_m03awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_51/bd_33e2_m03wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_52/bd_33e2_m03bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_1/RISC_V_blk_mem_gen_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/data/riscv_bootloop.elf]
 

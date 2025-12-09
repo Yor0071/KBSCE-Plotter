@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Tue Dec  9 10:16:29 2025
+| Date         : Tue Dec  9 11:08:34 2025
 | Host         : mrt-fed-lap running 64-bit unknown
 | Command      : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
 | Design       : NexysA7_Top
@@ -183,6 +183,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | RISC_V_axi_smc_0            |    1 |
 | RISC_V_axi_gpio_1_0         |    1 |
 | RISC_V_axi_gpio_0_0         |    1 |
+| RISC_V_axi_bram_ctrl_0_0    |    1 |
+| RISC_V_BRAMMux_0_1          |    1 |
 +-----------------------------+------+
 
 

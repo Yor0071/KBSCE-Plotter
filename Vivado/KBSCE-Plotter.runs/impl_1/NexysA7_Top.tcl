@@ -105,10 +105,9 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param bd.open.in_stealth_mode 1
   set_param general.usePosixSpawnForFork 1
   set_param chipscope.maxJobs 4
-  set_param runs.launchOptions { -jobs 10  }
+  set_param runs.launchOptions { -jobs 16  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
@@ -118,6 +117,8 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/wt [current_project]
   set_property parent.project_path /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.xpr [current_project]
+  set_property ip_repo_paths /home/maartenvk/src/KBSCE-Plotter/ip_repo/bram_mux_1_0 [current_project]
+  update_ip_catalog
   set_property ip_output_repo /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]

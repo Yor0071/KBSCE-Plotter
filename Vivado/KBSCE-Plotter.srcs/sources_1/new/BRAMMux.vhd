@@ -47,7 +47,7 @@ entity BRAMMux is
         s_in_microblaze_dout : out std_logic_vector(11 downto 0); -- Data Out Bus (optional)
         s_in_microblaze_din : in std_logic_vector(11 downto 0); -- Data In Bus (optional)
         s_in_microblaze_we : in std_logic_vector(0 downto 0); -- Byte Enables (optional)
-        s_in_microblaze_addr : in std_logic_vector(9 downto 0); -- Address Signal (required)
+        s_in_microblaze_addr : in std_logic_vector(18 downto 0); -- Address Signal (required)
         s_in_microblaze_clk : in std_logic; -- Clock Signal (required)
         s_in_microblaze_rst : in std_logic; -- Reset Signal (required)
         
@@ -55,7 +55,7 @@ entity BRAMMux is
         s_in_camera_dout : out std_logic_vector(11 downto 0); -- Data Out Bus (optional)
         s_in_camera_din : in std_logic_vector(11 downto 0); -- Data In Bus (optional)
         s_in_camera_we : in std_logic_vector(0 downto 0); -- Byte Enables (optional)
-        s_in_camera_addr : in std_logic_vector(9 downto 0); -- Address Signal (required)
+        s_in_camera_addr : in std_logic_vector(18 downto 0); -- Address Signal (required)
         s_in_camera_clk : in std_logic; -- Clock Signal (required)
         s_in_camera_rst : in std_logic; -- Reset Signal (required)
         
@@ -63,7 +63,7 @@ entity BRAMMux is
         s_out_fb_dout : in std_logic_vector(11 downto 0); -- Data Out Bus (optional)
         s_out_fb_din : out std_logic_vector(11 downto 0); -- Data In Bus (optional)
         s_out_fb_we : out std_logic_vector(0 downto 0); -- Byte Enables (optional)
-        s_out_fb_addr : out std_logic_vector(9 downto 0); -- Address Signal (required)
+        s_out_fb_addr : out std_logic_vector(18 downto 0); -- Address Signal (required)
         s_out_fb_clk : out std_logic; -- Clock Signal (required)
         s_out_fb_rst : out std_logic -- Reset Signal (required)
     );
