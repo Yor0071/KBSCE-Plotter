@@ -1,6 +1,6 @@
 #include "framebuffer.hxx"
 
-Framebuffer::Framebuffer() noexcept : base_ptr{(volatile uint32_t*)XPAR_AXI_BRAM_CTRL_0_BASEADDR} {}
+Framebuffer::Framebuffer() noexcept : base_ptr{(volatile uint32_t*)XPAR_LMB_BRAM_IF_CNTLR_0_BASEADDR} {}
 
 volatile uint32_t* Framebuffer::get_address(uint64_t byte_offset) const noexcept {
     if (!is_in_bounds(byte_offset)) [[unlikely]] {
@@ -13,7 +13,7 @@ volatile uint32_t* Framebuffer::get_address(uint64_t byte_offset) const noexcept
 
 [[nodiscard]]
 bool Framebuffer::is_in_bounds(uint64_t offset) const noexcept {
-    uint64_t max_offset = XPAR_AXI_BRAM_CTRL_0_HIGHADDR - XPAR_AXI_BRAM_CTRL_0_BASEADDR;
+    uint64_t max_offset = XPAR_LMB_BRAM_IF_CNTLR_0_HIGHADDR - XPAR_LMB_BRAM_IF_CNTLR_0_BASEADDR;
     return offset <= max_offset;
 }
 

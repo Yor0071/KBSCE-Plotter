@@ -3,8 +3,8 @@
 XBram_Config XBram_ConfigTable[] __attribute__ ((section (".drvcfg_sec"))) = {
 
 	{
-		"xlnx,axi-bram-ctrl-4.1", /* compatible */
-		0x37ff0000, /* reg */
+		"xlnx,lmb-bram-if-cntlr-4.0", /* compatible */
+		0x3fff0000, /* reg */
 		0x20, /* xlnx,data-width */
 		0x0, /* xlnx,ecc */
 		0x0, /* xlnx,fault-inject */
@@ -15,8 +15,8 @@ XBram_Config XBram_ConfigTable[] __attribute__ ((section (".drvcfg_sec"))) = {
 		0x0, /* xlnx,bram-ecc-status-interrupt-present */
 		0x0, /* xlnx,bram-correctable-counter-bits */
 		0x0, /* xlnx,ecc-onoff-register */
-		0x0, /* xlnx,ecc-onoff-reset-value */
-		0x0, /* xlnx,write-access */
+		0x1, /* xlnx,ecc-onoff-reset-value */
+		0x2, /* xlnx,write-access */
 		0x0, /* xlnx,bram-mem-base-address */
 		0x0, /* xlnx,bram-mem-high-address */
 		0x0, /* xlnx,mem-ctrl-base-address */

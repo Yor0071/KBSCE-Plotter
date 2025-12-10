@@ -150,10 +150,6 @@ include_folder: include
 lib_folder: lib
 libsrc_folder: libsrc
 drv_info:
-  axi_bram_ctrl_0:
-    driver: bram
-    ip_name: axi_bram_ctrl
-    path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_12
   axi_gpio_leds:
     driver: gpio
     ip_name: axi_gpio
@@ -166,6 +162,10 @@ drv_info:
     driver: uartlite
     ip_name: axi_uartlite
     path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/uartlite_v3_11
+  lmb_bram_if_cntlr_0:
+    driver: bram
+    ip_name: lmb_bram_if_cntlr
+    path: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_12
   microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr:
     driver: bram
     ip_name: lmb_bram_if_cntlr
