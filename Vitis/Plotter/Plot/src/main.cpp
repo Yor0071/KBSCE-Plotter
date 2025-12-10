@@ -1,7 +1,8 @@
-// Includes C-headers
-extern "C" {
+// Includes
+extern "C"{
     #include "xparameters.h"
-    #include "xil_printf.h"   // voor xil_printf()
+    #include "xil_io.h"
+    #include <xil_printf.h>
 }
 
 #include <cstdlib>   // voor atoi()
@@ -14,6 +15,12 @@ Motor motors = Motor();
 static void delay_1s(void) {
     for (volatile int i = 0; i < 10000000; i++);
 }
+
+// static void delay_ms(int milliseconds){
+//     int period = milliseconds*10000;
+//     for (volatile int i = 0; i < period; i++);
+// }
+
 
 // Lees één regel van de seriële poort tot '\r' of '\n'
 // en zet er een '\0' achter. Echo de input terug.
@@ -110,6 +117,9 @@ static void handle_command(const char *cmd) {
 //  MAIN
 // ---------------------------------------------------------
 int main(void) {
+     // __uint32_t curent;
+    // __uint32_t prev = Xil_In32(ENCODER_X1_REG);
+
     xil_printf("Motor test interface\r\n");
     xil_printf("Typ bijv: x,+1 of y,-1 en druk enter\r\n");
 
@@ -126,7 +136,23 @@ int main(void) {
         }
 
         handle_command(line);
+
+        // curent = Xil_In32(ENCODER_X1_REG);
+
+        // if(prev != curent){
+        //     xil_printf(tostring(curent), "\n");
+        // }
+
+        // prev = curent;
+
+
+        // if(Xil_In32(ENCODER_X1_REG) & ENCODER_S1_BIT){
+        //     xil_printf("S1", "\n");
+        // }else if (Xil_In32(ENCODER_X1_REG) & ENCODER_S2_BIT) {
+        //     xil_printf("S2", "\n");
+        // }
     }
 
     return 0;
 }
+
