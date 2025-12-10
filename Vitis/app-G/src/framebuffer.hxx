@@ -9,10 +9,21 @@
 #include <xil_printf.h>
 #include <assert.h>
 
-typedef struct {
-    uint16_t r : 4;
-    uint16_t g : 4;
+typedef struct __attribute__((__packed__)) {
+    uint16_t data : 12;
+} RawPixel;
+
+typedef struct __attribute__((__packed__)) {
     uint16_t b : 4;
+    uint16_t g : 4;
+    uint16_t r : 4;
+} RGBPixel;
+
+RGBPixel rgb(uint16_t r, uint16_t g, uint16_t b) noexcept;
+
+typedef union {
+    RawPixel raw;
+    RGBPixel rgb;
 } rgb444_t;
 
 rgb444_t make_pixel(uint16_t raw_pixel_data) noexcept;

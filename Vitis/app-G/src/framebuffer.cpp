@@ -2,6 +2,14 @@
 
 Framebuffer::Framebuffer() noexcept : base_ptr{(volatile uint32_t*)FRAMEBUFFER_BASEADDR} {}
 
+RGBPixel rgb(uint16_t r, uint16_t g, uint16_t b) noexcept {
+    return RGBPixel {
+        .b = b,
+        .g = g,
+        .r = r
+    };
+}
+
 [[nodiscard]]
 volatile uint32_t* Framebuffer::get_address(uint32_t byte_offset) const noexcept {
     if (!is_in_bounds(byte_offset)) [[unlikely]] {
@@ -29,14 +37,14 @@ rgb444_t Framebuffer::read(uint32_t byte_offset) const noexcept {
 [[nodiscard]]
 rgb444_t make_pixel(uint16_t raw_pixel_data) noexcept {
     rgb444_t pixel;
-    pixel.r = raw_pixel_data >> 8 & 0xF;
-    pixel.g = raw_pixel_data >> 4 & 0xF;
-    pixel.b = raw_pixel_data & 0xF;
+    pixel.rgb.r = raw_pixel_data >> 8 & 0xF;
+    pixel.rgb.g = raw_pixel_data >> 4 & 0xF;
+    pixel.rgb.b = raw_pixel_data & 0xF;
 
     return pixel;
 }
 
 [[nodiscard]]
 uint16_t get_raw_pixel_data(rgb444_t pixel) noexcept {
-    return pixel.r << 8 | pixel.g << 4 | pixel.b;
+    return pixel.rgb.r << 8 | pixel.rgb.g << 4 | pixel.rgb.b;
 }
