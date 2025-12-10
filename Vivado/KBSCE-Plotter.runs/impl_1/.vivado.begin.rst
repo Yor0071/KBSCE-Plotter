@@ -3,3 +3,23 @@
     <Process Command="vivado" Owner="maartenvk" Host="mrt-fed-lap" Pid="9942" HostCore="16" HostMemory="15661704">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="maartenvk" Host="mrt-fed-lap" Pid="55671" HostCore="16" HostMemory="15661704">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="maartenvk" Host="mrt-fed-lap" Pid="58844" HostCore="16" HostMemory="15661704">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="maartenvk" Host="mrt-fed-lap" Pid="62774" HostCore="16" HostMemory="15661704">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="maartenvk" Host="mrt-fed-lap" Pid="110188" HostCore="16" HostMemory="15661704">
+    </Process>
+</ProcessHandle>

@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Wed Dec 10 10:17:23 2025
+-- Date        : Wed Dec 10 11:25:34 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_lmb_bram_if_cntlr_0_0/RISC_V_lmb_bram_if_cntlr_0_0_sim_netlist.vhdl
@@ -170,7 +170,7 @@ entity RISC_V_lmb_bram_if_cntlr_0_0_lmb_bram_if_cntlr is
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of RISC_V_lmb_bram_if_cntlr_0_0_lmb_bram_if_cntlr : entity is 0;
   attribute C_MASK : string;
-  attribute C_MASK of RISC_V_lmb_bram_if_cntlr_0_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000000000100000000000000000";
+  attribute C_MASK of RISC_V_lmb_bram_if_cntlr_0_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000001000000000000010000000000000000";
   attribute C_MASK1 : string;
   attribute C_MASK1 of RISC_V_lmb_bram_if_cntlr_0_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK2 : string;
@@ -532,57 +532,62 @@ begin
   \^lmb_addrstrobe\ <= LMB_AddrStrobe;
   \^lmb_clk\ <= LMB_Clk;
   \^lmb_writedbus\(0 to 31) <= LMB_WriteDBus(0 to 31);
-\BRAM_WEN_A[0]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[0]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"80"
+      INIT => X"0800"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(14),
-      I2 => LMB_BE(0),
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(0),
       O => BRAM_WEN_A(0)
     );
-\BRAM_WEN_A[1]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[1]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"80"
+      INIT => X"0800"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(14),
-      I2 => LMB_BE(1),
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(1),
       O => BRAM_WEN_A(1)
     );
-\BRAM_WEN_A[2]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[2]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"80"
+      INIT => X"0800"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(14),
-      I2 => LMB_BE(2),
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(2),
       O => BRAM_WEN_A(2)
     );
-\BRAM_WEN_A[3]_INST_0\: unisim.vcomponents.LUT3
+\BRAM_WEN_A[3]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"80"
+      INIT => X"0800"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(14),
-      I2 => LMB_BE(3),
+      I1 => \^lmb_abus\(15),
+      I2 => \^lmb_abus\(1),
+      I3 => LMB_BE(3),
       O => BRAM_WEN_A(3)
     );
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\No_ECC.Sl_Rdy_i_1\: unisim.vcomponents.LUT2
+\No_ECC.Sl_Rdy_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => \^lmb_abus\(14),
-      I1 => LMB_Rst,
+      I0 => \^lmb_abus\(1),
+      I1 => \^lmb_abus\(15),
+      I2 => LMB_Rst,
       O => \No_ECC.Sl_Rdy_i_1_n_0\
     );
 \No_ECC.Sl_Rdy_reg\: unisim.vcomponents.FDRE
@@ -742,7 +747,7 @@ architecture STRUCTURE of RISC_V_lmb_bram_if_cntlr_0_0 is
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of U0 : label is 0;
   attribute C_MASK : string;
-  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000000000000000000100000000000000000";
+  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000001000000000000010000000000000000";
   attribute C_MASK1 : string;
   attribute C_MASK1 of U0 : label is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK2 : string;
