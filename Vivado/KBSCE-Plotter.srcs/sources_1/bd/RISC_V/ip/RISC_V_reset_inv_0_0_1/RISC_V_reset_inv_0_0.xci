@@ -5,7 +5,7 @@
     "cell_name": "reset_inv_0",
     "component_reference": "xilinx.com:ip:util_vector_logic:2.0",
     "ip_revision": "5",
-    "gen_directory": "../../../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1",
+    "gen_directory": ".",
     "parameters": {
       "component_parameters": {
         "Component_Name": [ { "value": "RISC_V_reset_inv_0_0", "resolve_type": "user", "usage": "all" } ],
@@ -33,10 +33,11 @@
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "5" } ],
+        "LOCKEDBYUSER": [ { "value": "TRUE" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1" } ],
+        "OUTPUTDIR": [ { "value": "." } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
-        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SHAREDDIR": [ { "value": "../../../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared" } ],
         "SWVERSION": [ { "value": "2025.1" } ],
         "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
       }

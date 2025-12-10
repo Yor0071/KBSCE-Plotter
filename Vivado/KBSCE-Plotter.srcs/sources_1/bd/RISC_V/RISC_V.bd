@@ -987,7 +987,7 @@
       },
       "motor_ctrl_0": {
         "vlnv": "xilinx.com:user:motor_ctrl:1.0",
-        "ip_revision": "8",
+        "ip_revision": "13",
         "xci_name": "RISC_V_motor_ctrl_0_0",
         "xci_path": "ip\\RISC_V_motor_ctrl_0_0\\RISC_V_motor_ctrl_0_0.xci",
         "inst_hier_path": "motor_ctrl_0",

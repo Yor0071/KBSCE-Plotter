@@ -356,3 +356,5 @@ set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filte
 set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_axi_smc_0 || ORIG_REF_NAME==RISC_V_axi_smc_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_2/RISC_V_blk_mem_gen_0_0_ooc.xdc
+
+# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc

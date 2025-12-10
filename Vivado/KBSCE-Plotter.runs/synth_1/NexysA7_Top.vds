@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Fri Dec  5 14:47:17 2025
-# Process ID         : 3240
+# Start of session at: Wed Dec 10 14:28:17 2025
+# Process ID         : 2104
 # Current directory  : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1
 # Command line       : vivado.exe -log NexysA7_Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source NexysA7_Top.tcl
 # Log file           : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/NexysA7_Top.vds
@@ -17,12 +17,12 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 17061 MB
-# Swap memory        : 2576 MB
-# Total Virtual      : 19638 MB
-# Available Virtual  : 4386 MB
+# Swap memory        : 2550 MB
+# Total Virtual      : 19611 MB
+# Available Virtual  : 5214 MB
 #-----------------------------------------------------------
 source NexysA7_Top.tcl -notrace
-create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 491.211 ; gain = 209.926
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 492.609 ; gain = 211.621
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/ip_repo/motor_ctrl_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
@@ -33,7 +33,6 @@ It is recommended to migrate these utility IPs to inline hdl  using the command 
 More information on inline hdl is available in UG994.
 Utility IP Component Instances:
  RISC_V_reset_inv_0_0
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 553.812 ; gain = 55.387
 Command: read_checkpoint -auto_incremental -incremental C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/utils_1/imports/synth_1/RISC_V_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/utils_1/imports/synth_1/RISC_V_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -46,9 +45,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6612
+INFO: [Synth 8-7075] Helper process launched with PID 3884
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1254.883 ; gain = 495.184
+Starting RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1254.535 ; gain = 493.859
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0_1/bd_0/ip/ip_7/synth/bd_33e2_aroutsw_0.sv:94]
 WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0_1/bd_0/ip/ip_7/synth/bd_33e2_aroutsw_0.sv:95]
@@ -1096,26 +1095,26 @@ INFO: [Synth 8-3491] module 'RISC_V_motor_ctrl_0_0' declared at 'c:/Users/yoric/
 INFO: [Synth 8-638] synthesizing module 'RISC_V_motor_ctrl_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_0/synth/RISC_V_motor_ctrl_0_0.vhd:98]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'motor_ctrl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:5' bound to instance 'U0' of component 'motor_ctrl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_0/synth/RISC_V_motor_ctrl_0_0.vhd:184]
-INFO: [Synth 8-638] synthesizing module 'motor_ctrl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:62]
+INFO: [Synth 8-3491] module 'motor_ctrl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:5' bound to instance 'U0' of component 'motor_ctrl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_0/synth/RISC_V_motor_ctrl_0_0.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'motor_ctrl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:57]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'motor_ctrl_slave_lite_v1_0_S00_AXI' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd:5' bound to instance 'motor_ctrl_slave_lite_v1_0_S00_AXI_inst' of component 'motor_ctrl_slave_lite_v1_0_S00_AXI' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:141]
-INFO: [Synth 8-638] synthesizing module 'motor_ctrl_slave_lite_v1_0_S00_AXI' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd:74]
-INFO: [Synth 8-256] done synthesizing module 'motor_ctrl_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd:74]
-INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/src/MotorControl.vhd:5' bound to instance 'u_m1' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:203]
-INFO: [Synth 8-638] synthesizing module 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/src/MotorControl.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'MotorControl' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/src/MotorControl.vhd:16]
-INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/src/MotorControl.vhd:5' bound to instance 'u_m2' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:214]
-INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/src/MotorControl.vhd:5' bound to instance 'u_m3' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:225]
-INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/src/MotorControl.vhd:5' bound to instance 'u_m4' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:236]
-INFO: [Synth 8-256] done synthesizing module 'motor_ctrl' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/999a/hdl/motor_ctrl.vhd:62]
+INFO: [Synth 8-3491] module 'motor_ctrl_slave_lite_v1_0_S00_AXI' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd:5' bound to instance 'motor_ctrl_slave_lite_v1_0_S00_AXI_inst' of component 'motor_ctrl_slave_lite_v1_0_S00_AXI' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'motor_ctrl_slave_lite_v1_0_S00_AXI' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'motor_ctrl_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd:74]
+INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd:5' bound to instance 'u_m1' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'MotorControl' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd:16]
+INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd:5' bound to instance 'u_m2' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:234]
+INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd:5' bound to instance 'u_m3' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:245]
+INFO: [Synth 8-3491] module 'MotorControl' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd:5' bound to instance 'u_m4' of component 'MotorControl' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:256]
+INFO: [Synth 8-256] done synthesizing module 'motor_ctrl' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'RISC_V_motor_ctrl_0_0' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_0/synth/RISC_V_motor_ctrl_0_0.vhd:98]
-INFO: [Synth 8-3491] module 'RISC_V_reset_inv_0_0' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1/synth/RISC_V_reset_inv_0_0.v:53' bound to instance 'reset_inv_0' of component 'RISC_V_reset_inv_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1401]
-INFO: [Synth 8-6157] synthesizing module 'RISC_V_reset_inv_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1/synth/RISC_V_reset_inv_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_5_util_vector_logic' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/e056/hdl/util_vector_logic_v2_0_vl_rfs.v:90]
-INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_5_util_vector_logic' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/e056/hdl/util_vector_logic_v2_0_vl_rfs.v:90]
-INFO: [Synth 8-6155] done synthesizing module 'RISC_V_reset_inv_0_0' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1/synth/RISC_V_reset_inv_0_0.v:53]
+INFO: [Synth 8-3491] module 'RISC_V_reset_inv_0_0' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1/synth/RISC_V_reset_inv_0_0.v:53' bound to instance 'reset_inv_0' of component 'RISC_V_reset_inv_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1401]
+INFO: [Synth 8-6157] synthesizing module 'RISC_V_reset_inv_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1/synth/RISC_V_reset_inv_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_5_util_vector_logic' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ipshared/e056/hdl/util_vector_logic_v2_0_vl_rfs.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_5_util_vector_logic' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ipshared/e056/hdl/util_vector_logic_v2_0_vl_rfs.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'RISC_V_reset_inv_0_0' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0_1/synth/RISC_V_reset_inv_0_0.v:53]
 INFO: [Synth 8-3491] module 'RISC_V_rst_clk_wiz_1_100M_0' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0_1/synth/RISC_V_rst_clk_wiz_1_100M_0.vhd:59' bound to instance 'rst_clk_wiz_1_100M' of component 'RISC_V_rst_clk_wiz_1_100M_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1406]
 INFO: [Synth 8-638] synthesizing module 'RISC_V_rst_clk_wiz_1_100M_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0_1/synth/RISC_V_rst_clk_wiz_1_100M_0.vhd:74]
 	Parameter C_FAMILY bound to: artix7 - type: string 
@@ -1267,14 +1266,6 @@ WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module motor_ctrl_slave_lite_v1_
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module motor_ctrl_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module motor_ctrl_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module motor_ctrl_slave_lite_v1_0_S00_AXI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_x1_a in module motor_ctrl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_x1_b in module motor_ctrl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_x2_a in module motor_ctrl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_x2_b in module motor_ctrl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_y_a in module motor_ctrl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_y_b in module motor_ctrl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_z_a in module motor_ctrl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port enc_z_b in module motor_ctrl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CLKB in module blk_mem_output_block__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SBITERR_I in module blk_mem_output_block__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBITERR_I in module blk_mem_output_block__parameterized0 is either unconnected or has no load
@@ -1359,22 +1350,30 @@ WARNING: [Synth 8-7129] Port DBITERRIN[0] in module blk_mem_gen_mux__parameteriz
 WARNING: [Synth 8-7129] Port ECCPIPECE in module blk_mem_gen_mux__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MUX_RST[0] in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MEM_LAT_RST in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_REG_RST in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MUX_REGCE[0] in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_REGCE in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WE in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[11] in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[10] in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[9] in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[8] in module blk_mem_gen_mux__parameterized1 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:04:06 ; elapsed = 00:05:20 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished RTL Elaboration : Time (s): cpu = 00:02:14 ; elapsed = 00:02:24 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:08 ; elapsed = 00:05:23 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:15 ; elapsed = 00:02:25 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:08 ; elapsed = 00:05:23 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:15 ; elapsed = 00:02:25 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3895.633 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3876.367 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 490 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -1422,7 +1421,7 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/NexysA7_Top_
 INFO: [Project 1-1714] 74 XPM XDC files have been applied to the design.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 3895.633 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 3876.367 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 254 instances were transformed.
   BUFGCE_1 => BUFGCTRL: 2 instances
@@ -1433,27 +1432,27 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
   SRL16 => SRL16E: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.617 . Memory (MB): peak = 3895.633 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.481 . Memory (MB): peak = 3876.367 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:08:05 ; elapsed = 00:10:22 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Constraint Validation : Time (s): cpu = 00:04:03 ; elapsed = 00:04:13 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:08:05 ; elapsed = 00:10:22 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Loading Part and Timing Information : Time (s): cpu = 00:04:03 ; elapsed = 00:04:13 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:08:05 ; elapsed = 00:10:22 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:03 ; elapsed = 00:04:14 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:08:22 ; elapsed = 00:10:41 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:19 ; elapsed = 00:04:30 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1504,7 +1503,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 22    
 	                4 Bit    Registers := 51    
 	                3 Bit    Registers := 80    
-	                2 Bit    Registers := 72    
+	                2 Bit    Registers := 88    
 	                1 Bit    Registers := 860   
 +---Multipliers : 
 	                2x3  Multipliers := 2     
@@ -1541,13 +1540,13 @@ Detailed RTL Component Info :
 	   2 Input    2 Bit        Muxes := 83    
 	   4 Input    2 Bit        Muxes := 3     
 	   5 Input    2 Bit        Muxes := 1     
-	   3 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 5     
 	   2 Input    1 Bit        Muxes := 485   
 	   4 Input    1 Bit        Muxes := 28    
 	   6 Input    1 Bit        Muxes := 9     
 	   7 Input    1 Bit        Muxes := 8     
 	  16 Input    1 Bit        Muxes := 6     
-	   3 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -1568,6 +1567,10 @@ WARNING: [Synth 8-3332] Sequential element (FDRE_inst) is unused and will be rem
 WARNING: [Synth 8-3332] Sequential element (BSR_OUT_DFF[0].FDRE_BSR) is unused and will be removed from module proc_sys_reset.
 WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset.
 WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset__parameterized1.
+WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset__parameterized1.
+WARNING: [Synth 8-3332] Sequential element (POR_FF_I) is unused and will be removed from module lmb_v10.
+WARNING: [Synth 8-3332] Sequential element (POR_FF_I) is unused and will be removed from module lmb_v10__1.
 WARNING: [Synth 8-3332] Sequential element (Using_FPGA.Native) is unused and will be removed from module MB_FDR__6.
 WARNING: [Synth 8-3332] Sequential element (Using_FPGA.Native) is unused and will be removed from module MB_FDR__7.
 WARNING: [Synth 8-3332] Sequential element (Using_FPGA.Native) is unused and will be removed from module MB_FDR__8.
@@ -1592,12 +1595,8 @@ WARNING: [Synth 8-3332] Sequential element (Using_FPGA.Native) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (Using_FPGA.Native) is unused and will be removed from module microblaze_v11_0_15_MB_FDRE__73.
 WARNING: [Synth 8-3332] Sequential element (Using_FPGA.Native) is unused and will be removed from module microblaze_v11_0_15_MB_FDRE__74.
 WARNING: [Synth 8-3332] Sequential element (Using_FPGA.Native) is unused and will be removed from module microblaze_v11_0_15_MB_FDRE__75.
-WARNING: [Synth 8-3332] Sequential element (POR_FF_I) is unused and will be removed from module lmb_v10.
-WARNING: [Synth 8-3332] Sequential element (POR_FF_I) is unused and will be removed from module lmb_v10__1.
-WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset__parameterized1.
-WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset__parameterized1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:09:10 ; elapsed = 00:11:30 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:05:03 ; elapsed = 00:05:15 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1619,13 +1618,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'microblaze_riscv_0/U0/Reset' to pin 'rst_clk_wiz_1_100M/U0/FDRE_inst/Q'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:09:30 ; elapsed = 00:11:50 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:21 ; elapsed = 00:05:34 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:10:06 ; elapsed = 00:12:30 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Technology Mapping : Time (s): cpu = 00:06:04 ; elapsed = 00:06:20 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1637,19 +1636,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:10:14 ; elapsed = 00:12:37 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished IO Insertion : Time (s): cpu = 00:06:13 ; elapsed = 00:06:29 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:10:14 ; elapsed = 00:12:38 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Renaming Generated Instances : Time (s): cpu = 00:06:13 ; elapsed = 00:06:29 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:10:14 ; elapsed = 00:12:38 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Handling Custom Attributes : Time (s): cpu = 00:06:13 ; elapsed = 00:06:30 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1697,16 +1696,16 @@ Report Cell Usage:
 |1     |BSCANE2    |     1|
 |2     |BUFG       |     4|
 |3     |BUFGCE     |     2|
-|4     |CARRY4     |    58|
-|5     |LUT1       |   236|
-|6     |LUT2       |   712|
-|7     |LUT3       |   555|
-|8     |LUT4       |   626|
-|9     |LUT5       |   624|
-|10    |LUT6       |  1028|
+|4     |CARRY4     |    90|
+|5     |LUT1       |   241|
+|6     |LUT2       |   679|
+|7     |LUT3       |   677|
+|8     |LUT4       |   634|
+|9     |LUT5       |   626|
+|10    |LUT6       |  1057|
 |12    |MMCME2_ADV |     1|
 |13    |MUXCY_L    |   124|
-|14    |MUXF7      |   116|
+|14    |MUXF7      |   148|
 |15    |MUXF8      |    40|
 |16    |RAM32M     |    16|
 |17    |RAMB18E1   |     1|
@@ -1718,25 +1717,25 @@ Report Cell Usage:
 |122   |FDCE       |   213|
 |123   |FDPE       |     1|
 |124   |FDR        |    19|
-|125   |FDRE       |  2584|
+|125   |FDRE       |  2744|
 |126   |FDS        |     1|
 |127   |FDSE       |   118|
-|128   |IBUF       |    19|
+|128   |IBUF       |    27|
 |129   |OBUF       |    39|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:10:14 ; elapsed = 00:12:38 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Finished Writing Synthesis Report : Time (s): cpu = 00:06:13 ; elapsed = 00:06:30 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 33 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:24 ; elapsed = 00:07:53 . Memory (MB): peak = 3895.633 ; gain = 3135.934
-Synthesis Optimization Complete : Time (s): cpu = 00:10:15 ; elapsed = 00:12:39 . Memory (MB): peak = 3895.633 ; gain = 3135.934
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:23 ; elapsed = 00:04:55 . Memory (MB): peak = 3876.367 ; gain = 3115.691
+Synthesis Optimization Complete : Time (s): cpu = 00:06:14 ; elapsed = 00:06:30 . Memory (MB): peak = 3876.367 ; gain = 3115.691
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3895.633 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 612 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3876.367 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 676 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 3895.633 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 3876.367 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 121 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 33 instances
@@ -1747,13 +1746,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
   SRL16 => SRL16E: 2 instances
 
-Synth Design complete | Checksum: d8f73275
+Synth Design complete | Checksum: a9a6c51f
 INFO: [Common 17-83] Releasing license: Synthesis
 417 Infos, 258 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:11:26 ; elapsed = 00:13:54 . Memory (MB): peak = 3895.633 ; gain = 3338.441
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 3895.633 ; gain = 0.000
+synth_design: Time (s): cpu = 00:07:19 ; elapsed = 00:07:40 . Memory (MB): peak = 3876.367 ; gain = 3319.172
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 3876.367 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/NexysA7_Top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 3895.633 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3876.367 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Dec  5 15:01:41 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 14:36:24 2025...
