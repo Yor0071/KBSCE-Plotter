@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Wed Dec 10 13:33:36 2025
+-- Date        : Wed Dec 10 15:05:41 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_2/RISC_V_BRAMMux_0_2_sim_netlist.vhdl
@@ -70,7 +70,7 @@ architecture STRUCTURE of RISC_V_BRAMMux_0_2 is
   attribute x_interface_info of s_in_microblaze_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE CLK";
   attribute x_interface_info of s_in_microblaze_en : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE EN";
   attribute x_interface_mode of s_in_microblaze_en : signal is "slave BRAM_IN_PORT_MICROBLAZE";
-  attribute x_interface_parameter of s_in_microblaze_en : signal is "XIL_INTERFACENAME BRAM_IN_PORT_MICROBLAZE, MEM_SIZE 65536, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
+  attribute x_interface_parameter of s_in_microblaze_en : signal is "XIL_INTERFACENAME BRAM_IN_PORT_MICROBLAZE, MEM_SIZE 16777216, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 2";
   attribute x_interface_info of s_in_microblaze_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE RST";
   attribute x_interface_info of s_out_fb_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB CLK";
   attribute x_interface_info of s_out_fb_en : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB EN";

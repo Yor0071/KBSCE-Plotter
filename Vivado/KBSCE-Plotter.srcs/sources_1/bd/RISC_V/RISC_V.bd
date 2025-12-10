@@ -971,6 +971,12 @@
         "inst_hier_path": "axi_bram_ctrl_0",
         "has_run_ip_tcl": "true",
         "parameters": {
+          "PROTOCOL": {
+            "value": "AXI4"
+          },
+          "READ_LATENCY": {
+            "value": "2"
+          },
           "SINGLE_PORT_BRAM": {
             "value": "1"
           }
@@ -1017,7 +1023,7 @@
                 "value_src": "user_prop"
               },
               "READ_LATENCY": {
-                "value": "1",
+                "value": "2",
                 "value_src": "user_prop"
               }
             },

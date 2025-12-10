@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Dec 10 13:54:27 2025
-# Process ID         : 368580
+# Start of session at: Wed Dec 10 14:47:05 2025
+# Process ID         : 421187
 # Current directory  : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1
 # Command line       : vivado -log RISC_V_axi_bram_ctrl_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_axi_bram_ctrl_0_0.tcl
 # Log file           : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0.vds
@@ -13,13 +13,13 @@
 # Platform           : unknown
 # Operating System   : unknown
 # Processor Detail   : AMD Ryzen 7 5700U with Radeon Graphics
-# CPU Frequency      : 3203.458 MHz
+# CPU Frequency      : 1114.905 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16037 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 24627 MB
-# Available Virtual  : 12995 MB
+# Available Virtual  : 12359 MB
 #-----------------------------------------------------------
 source RISC_V_axi_bram_ctrl_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -33,9 +33,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 368635
+INFO: [Synth 8-7075] Helper process launched with PID 421220
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2135.246 ; gain = 438.742 ; free physical = 169 ; free virtual = 10068
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2135.535 ; gain = 439.742 ; free physical = 237 ; free virtual = 10686
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_bram_ctrl_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/synth/RISC_V_axi_bram_ctrl_0_0.vhd:104]
 	Parameter C_BRAM_INST_MODE bound to: EXTERNAL - type: string 
@@ -48,7 +48,7 @@ INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_bram_ctrl_0_0' [/home/maarte
 	Parameter C_S_AXI_SUPPORTS_NARROW_BURST bound to: 0 - type: integer 
 	Parameter C_SINGLE_PORT_BRAM bound to: 1 - type: integer 
 	Parameter C_FAMILY bound to: artix7 - type: string 
-	Parameter C_READ_LATENCY bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY bound to: 2 - type: integer 
 	Parameter C_RD_CMD_OPTIMIZATION bound to: 0 - type: integer 
 	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
@@ -107,7 +107,10 @@ WARNING: [Synth 8-6014] Unused sequential element curr_awsize_reg_reg was remove
 WARNING: [Synth 8-6014] Unused sequential element curr_awlen_reg_1_or_2_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:25517]
 WARNING: [Synth 8-6014] Unused sequential element GEN_NO_RD_CMD_OPT.axi_arsize_pipe_max_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:15432]
 WARNING: [Synth 8-6014] Unused sequential element GEN_NO_RD_CMD_OPT.curr_arsize_reg_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:15924]
+WARNING: [Synth 8-6014] Unused sequential element GEN_NO_RD_CMD_OPT.rd_skid_buf_ld_reg_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:19824]
+WARNING: [Synth 8-6014] Unused sequential element GEN_NO_RD_CMD_OPT.rddata_mux_sel_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:19825]
 WARNING: [Synth 8-6014] Unused sequential element GEN_NO_RD_CMD_OPT.no_ar_ack_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:19829]
+WARNING: [Synth 8-6014] Unused sequential element GEN_NO_RD_CMD_OPT.GEN_RDATA_NO_ECC.rd_skid_buf_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:19935]
 WARNING: [Synth 8-6014] Unused sequential element GEN_NO_RD_CMD_OPT.do_cmplt_burst_reg was removed.  [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2f03/hdl/axi_bram_ctrl_v4_1_rfs.vhd:21170]
 WARNING: [Synth 8-7129] Port curr_axlen[7] in module wrap_brst is either unconnected or has no load
 WARNING: [Synth 8-7129] Port curr_axlen[6] in module wrap_brst is either unconnected or has no load
@@ -142,7 +145,6 @@ WARNING: [Synth 8-7129] Port AXI_ARCACHE[0] in module rd_chnl is either unconnec
 WARNING: [Synth 8-7129] Port AXI_ARPROT[2] in module rd_chnl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port AXI_ARPROT[1] in module rd_chnl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port AXI_ARPROT[0] in module rd_chnl is either unconnected or has no load
-WARNING: [Synth 8-7129] Port AXI_ARVALID in module rd_chnl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Enable_ECC in module rd_chnl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Sng_arb_Arready in module rd_chnl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port AXI_AWADDR[1] in module wr_chnl is either unconnected or has no load
@@ -209,20 +211,21 @@ WARNING: [Synth 8-7129] Port BRAM_RdData[14] in module wr_chnl is either unconne
 WARNING: [Synth 8-7129] Port BRAM_RdData[13] in module wr_chnl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BRAM_RdData[12] in module wr_chnl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BRAM_RdData[11] in module wr_chnl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BRAM_RdData[10] in module wr_chnl is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2230.184 ; gain = 533.680 ; free physical = 226 ; free virtual = 9982
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2229.473 ; gain = 533.680 ; free physical = 298 ; free virtual = 10650
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2247.996 ; gain = 551.492 ; free physical = 217 ; free virtual = 9974
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2247.285 ; gain = 551.492 ; free physical = 298 ; free virtual = 10650
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2247.996 ; gain = 551.492 ; free physical = 217 ; free virtual = 9974
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2247.285 ; gain = 551.492 ; free physical = 298 ; free virtual = 10650
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2253.934 ; gain = 0.000 ; free physical = 222 ; free virtual = 9978
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2253.223 ; gain = 0.000 ; free physical = 297 ; free virtual = 10649
 INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -235,33 +238,32 @@ Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RI
 Finished Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2368.734 ; gain = 0.000 ; free physical = 185 ; free virtual = 9917
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2368.023 ; gain = 0.000 ; free physical = 278 ; free virtual = 10636
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 5 instances were transformed.
   FDR => FDRE: 1 instance 
   MUXCY_L => MUXCY: 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2368.770 ; gain = 0.000 ; free physical = 177 ; free virtual = 9910
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2368.059 ; gain = 0.000 ; free physical = 277 ; free virtual = 10636
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2368.770 ; gain = 672.266 ; free physical = 186 ; free virtual = 9875
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2368.059 ; gain = 672.266 ; free physical = 299 ; free virtual = 10658
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2376.738 ; gain = 680.234 ; free physical = 186 ; free virtual = 9875
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2376.027 ; gain = 680.234 ; free physical = 299 ; free virtual = 10658
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2376.738 ; gain = 680.234 ; free physical = 186 ; free virtual = 9875
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2376.027 ; gain = 680.234 ; free physical = 299 ; free virtual = 10658
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'arb_sm_cs_reg' in module 'sng_port_arb'
 INFO: [Synth 8-802] inferred FSM for state register 'GEN_WDATA_SM_NO_ECC_SNG_REG_WREADY.wr_data_sng_sm_cs_reg' in module 'wr_chnl'
-INFO: [Synth 8-802] inferred FSM for state register 'GEN_NO_RD_CMD_OPT.rd_data_sm_cs_reg' in module 'rd_chnl'
 INFO: [Synth 8-802] inferred FSM for state register 'GEN_NO_RD_CMD_OPT.rlast_sm_cs_reg' in module 'rd_chnl'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -282,65 +284,51 @@ INFO: [Synth 8-3354] encoded FSM with state register 'GEN_WDATA_SM_NO_ECC_SNG_RE
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    idle |                             0000 |                             0000
-                sng_addr |                             0001 |                             0011
-                sec_addr |                             0010 |                             0100
-               full_pipe |                             0011 |                             0101
-           full_throttle |                             0100 |                             0110
-               last_addr |                             0101 |                             0111
-           last_throttle |                             0110 |                             1000
-               last_data |                             0111 |                             1001
-       last_data_ar_pend |                             1000 |                             1010
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'GEN_NO_RD_CMD_OPT.rd_data_sm_cs_reg' using encoding 'sequential' in module 'rd_chnl'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    idle |                              000 |                              000
-          w8_throttle_b2 |                              001 |                              101
-             w8_throttle |                              010 |                              010
-        w8_2nd_last_data |                              011 |                              011
-            w8_last_data |                              100 |                              100
+                    idle |                               00 |                              000
+        rd_latency_rlast |                               01 |                              001
+        w8_2nd_last_data |                               10 |                              011
+            w8_last_data |                               11 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'GEN_NO_RD_CMD_OPT.rlast_sm_cs_reg' using encoding 'sequential' in module 'rd_chnl'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2376.738 ; gain = 680.234 ; free physical = 179 ; free virtual = 9869
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2376.027 ; gain = 680.234 ; free physical = 298 ; free virtual = 10658
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   10 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 1     
 	   2 Input    3 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 4     
 +---Registers : 
-	               32 Bit    Registers := 1     
 	               22 Bit    Registers := 1     
 	               21 Bit    Registers := 2     
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 3     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 106   
+	                1 Bit    Registers := 73    
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 1     
 	   2 Input   22 Bit        Muxes := 5     
-	   2 Input    8 Bit        Muxes := 2     
-	   9 Input    4 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 10    
+	   2 Input    8 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
 	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 4     
-	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 3     
-	   2 Input    2 Bit        Muxes := 5     
-	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 51    
+	   2 Input    2 Bit        Muxes := 9     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 57    
 	   3 Input    1 Bit        Muxes := 15    
-	   9 Input    1 Bit        Muxes := 19    
-	   5 Input    1 Bit        Muxes := 2     
+	  11 Input    1 Bit        Muxes := 6     
+	   4 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -357,31 +345,62 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RDATA_NO_ECC.GEN_RDATA_RL_NO_ECC.rl_rd_buf_reg",trying to implement using LUTRAM
+WARNING: [Synth 8-6849] Infeasible attribute ram_style = "block" set for RAM "U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RDATA_NO_ECC.GEN_RDATA_RL_NO_ECC.rl_rd_buf_reg",trying to implement using LUTRAM
 INFO: [Synth 8-3332] Sequential element (gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Data_Exists_DFF) is unused and will be removed from module axi_bram_ctrl.
 INFO: [Synth 8-3332] Sequential element (gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Addr_Counters[0].FDRE_I) is unused and will be removed from module axi_bram_ctrl.
 INFO: [Synth 8-3332] Sequential element (gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Addr_Counters[1].FDRE_I) is unused and will be removed from module axi_bram_ctrl.
 INFO: [Synth 8-3332] Sequential element (gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Addr_Counters[2].FDRE_I) is unused and will be removed from module axi_bram_ctrl.
 INFO: [Synth 8-3332] Sequential element (gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Addr_Counters[3].FDRE_I) is unused and will be removed from module axi_bram_ctrl.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2376.738 ; gain = 680.234 ; free physical = 202 ; free virtual = 9835
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2376.027 ; gain = 680.234 ; free physical = 282 ; free virtual = 10642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                                                                                                                    | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|U0          | gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RDATA_NO_ECC.GEN_RDATA_RL_NO_ECC.rl_rd_buf_reg | Implied   | 512 x 32             | RAM64M x 55  | 
++------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2401.738 ; gain = 705.234 ; free physical = 172 ; free virtual = 9769
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2402.027 ; gain = 706.234 ; free physical = 221 ; free virtual = 10582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2437.340 ; gain = 740.836 ; free physical = 176 ; free virtual = 9707
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2445.637 ; gain = 749.844 ; free physical = 178 ; free virtual = 10539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                                                                                                                    | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|U0          | gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RDATA_NO_ECC.GEN_RDATA_RL_NO_ECC.rl_rd_buf_reg | Implied   | 512 x 32             | RAM64M x 55  | 
++------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2445.348 ; gain = 748.844 ; free physical = 175 ; free virtual = 9684
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2453.645 ; gain = 757.852 ; free physical = 238 ; free virtual = 10541
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -399,37 +418,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.160 ; gain = 905.656 ; free physical = 215 ; free virtual = 9444
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.457 ; gain = 913.664 ; free physical = 156 ; free virtual = 10353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.160 ; gain = 905.656 ; free physical = 215 ; free virtual = 9444
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.457 ; gain = 913.664 ; free physical = 156 ; free virtual = 10353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.160 ; gain = 905.656 ; free physical = 215 ; free virtual = 9444
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.457 ; gain = 913.664 ; free physical = 156 ; free virtual = 10353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.160 ; gain = 905.656 ; free physical = 215 ; free virtual = 9444
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.457 ; gain = 913.664 ; free physical = 156 ; free virtual = 10353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.160 ; gain = 905.656 ; free physical = 215 ; free virtual = 9444
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.457 ; gain = 913.664 ; free physical = 156 ; free virtual = 10353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.160 ; gain = 905.656 ; free physical = 215 ; free virtual = 9444
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.457 ; gain = 913.664 ; free physical = 156 ; free virtual = 10353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -442,43 +461,48 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |LUT1 |     1|
-|2     |LUT2 |    22|
-|3     |LUT3 |    77|
-|4     |LUT4 |    25|
-|5     |LUT5 |    38|
-|6     |LUT6 |   104|
-|7     |FDRE |   229|
-|8     |FDSE |     1|
-+------+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     3|
+|2     |LUT1   |     5|
+|3     |LUT2   |    38|
+|4     |LUT3   |    58|
+|5     |LUT4   |    66|
+|6     |LUT5   |    77|
+|7     |LUT6   |   143|
+|8     |RAM64M |    55|
+|9     |FDRE   |   213|
+|10    |FDSE   |     1|
++------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.160 ; gain = 905.656 ; free physical = 215 ; free virtual = 9444
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.457 ; gain = 913.664 ; free physical = 156 ; free virtual = 10353
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 164 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2602.160 ; gain = 784.883 ; free physical = 213 ; free virtual = 9442
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2602.168 ; gain = 905.656 ; free physical = 214 ; free virtual = 9442
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2609.457 ; gain = 792.891 ; free physical = 158 ; free virtual = 10355
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.465 ; gain = 913.664 ; free physical = 159 ; free virtual = 10356
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2602.168 ; gain = 0.000 ; free physical = 213 ; free virtual = 9442
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2609.465 ; gain = 0.000 ; free physical = 160 ; free virtual = 10356
+INFO: [Netlist 29-17] Analyzing 58 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2658.188 ; gain = 0.000 ; free physical = 355 ; free virtual = 9584
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2665.484 ; gain = 0.000 ; free physical = 431 ; free virtual = 10526
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 55 instances were transformed.
+  RAM64M => RAM64M (RAMD64E(x4)): 55 instances
 
-Synth Design complete | Checksum: 5a9cedb1
+Synth Design complete | Checksum: 3dc52f1f
 INFO: [Common 17-83] Releasing license: Synthesis
-79 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
+79 Infos, 114 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.statsThreshold
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2682.199 ; gain = 0.000 ; free physical = 349 ; free virtual = 9582
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2689.496 ; gain = 0.000 ; free physical = 431 ; free virtual = 10526
 INFO: [Common 17-1381] The checkpoint '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP RISC_V_axi_bram_ctrl_0_0, cache-ID = 67b4dff8dfb1d813
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP RISC_V_axi_bram_ctrl_0_0, cache-ID = 413014163a0057b3
 INFO: [Coretcl 2-1174] Renamed 8 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2682.199 ; gain = 0.000 ; free physical = 349 ; free virtual = 9582
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2689.496 ; gain = 0.000 ; free physical = 431 ; free virtual = 10527
 INFO: [Common 17-1381] The checkpoint '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_axi_bram_ctrl_0_0_synth_1/RISC_V_axi_bram_ctrl_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RISC_V_axi_bram_ctrl_0_0_utilization_synth.rpt -pb RISC_V_axi_bram_ctrl_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 13:55:03 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 14:47:38 2025...

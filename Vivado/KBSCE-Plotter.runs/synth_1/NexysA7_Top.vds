@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Dec 10 13:56:01 2025
-# Process ID         : 369254
+# Start of session at: Wed Dec 10 15:06:13 2025
+# Process ID         : 464052
 # Current directory  : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1
 # Command line       : vivado -log NexysA7_Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source NexysA7_Top.tcl
 # Log file           : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/NexysA7_Top.vds
@@ -13,13 +13,13 @@
 # Platform           : unknown
 # Operating System   : unknown
 # Processor Detail   : AMD Ryzen 7 5700U with Radeon Graphics
-# CPU Frequency      : 2297.225 MHz
+# CPU Frequency      : 1892.398 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16037 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 24627 MB
-# Available Virtual  : 13340 MB
+# Available Virtual  : 13116 MB
 #-----------------------------------------------------------
 source NexysA7_Top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -43,9 +43,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 369371
+INFO: [Synth 8-7075] Helper process launched with PID 464173
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2178.066 ; gain = 401.961 ; free physical = 2367 ; free virtual = 11294
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2177.969 ; gain = 399.898 ; free physical = 824 ; free virtual = 11259
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'NexysA7_Top' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:33]
 INFO: [Synth 8-3491] module 'VGASignalGenerator' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/VGASignalGenerator.vhd:34' bound to instance 'u_VGASignalGenerator' of component 'VGASignalGenerator' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:108]
@@ -56,42 +56,42 @@ INFO: [Synth 8-638] synthesizing module 'RISC_V_wrapper' [/home/maartenvk/src/KB
 WARNING: [Synth 8-5640] Port 'bram_portb_0_rst' is missing in component declaration [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:40]
 INFO: [Synth 8-3491] module 'RISC_V' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:533' bound to instance 'RISC_V_i' of component 'RISC_V' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:66]
 INFO: [Synth 8-638] synthesizing module 'RISC_V' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:562]
-INFO: [Synth 8-3491] module 'RISC_V_BRAMMux_0_2' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_BRAMMux_0_2_stub.vhdl:6' bound to instance 'BRAMMux_0' of component 'RISC_V_BRAMMux_0_2' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1134]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_BRAMMux_0_2' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_BRAMMux_0_2_stub.vhdl:41]
-INFO: [Synth 8-3491] module 'RISC_V_axi_bram_ctrl_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_bram_ctrl_0_0_stub.vhdl:6' bound to instance 'axi_bram_ctrl_0' of component 'RISC_V_axi_bram_ctrl_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1158]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_bram_ctrl_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_bram_ctrl_0_0_stub.vhdl:58]
-INFO: [Synth 8-3491] module 'RISC_V_axi_gpio_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_leds' of component 'RISC_V_axi_gpio_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1201]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_gpio_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_gpio_0_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'RISC_V_axi_gpio_1_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_gpio_1_0_stub.vhdl:6' bound to instance 'axi_gpio_switches' of component 'RISC_V_axi_gpio_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1224]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_gpio_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_gpio_1_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'RISC_V_axi_smc_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'RISC_V_axi_smc_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1247]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_smc_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_smc_0_stub.vhdl:129]
-INFO: [Synth 8-3491] module 'RISC_V_axi_uartlite_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_uartlite_0_0_stub.vhdl:6' bound to instance 'axi_uartlite_0' of component 'RISC_V_axi_uartlite_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1361]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_uartlite_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_axi_uartlite_0_0_stub.vhdl:40]
-INFO: [Synth 8-3491] module 'RISC_V_blk_mem_gen_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_blk_mem_gen_0_0_stub.vhdl:6' bound to instance 'blk_mem_gen_0' of component 'RISC_V_blk_mem_gen_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1386]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_blk_mem_gen_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_blk_mem_gen_0_0_stub.vhdl:30]
-INFO: [Synth 8-3491] module 'RISC_V_clk_wiz_1_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_clk_wiz_1_0_stub.vhdl:6' bound to instance 'clk_wiz_1' of component 'RISC_V_clk_wiz_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1401]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_clk_wiz_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_clk_wiz_1_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'RISC_V_mdm_1_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_mdm_1_0_stub.vhdl:6' bound to instance 'mdm_1' of component 'RISC_V_mdm_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1408]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_mdm_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_mdm_1_0_stub.vhdl:28]
-INFO: [Synth 8-3491] module 'RISC_V_microblaze_riscv_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_microblaze_riscv_0_0_stub.vhdl:6' bound to instance 'microblaze_riscv_0' of component 'RISC_V_microblaze_riscv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1421]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_microblaze_riscv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_microblaze_riscv_0_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'RISC_V_BRAMMux_0_2' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_BRAMMux_0_2_stub.vhdl:6' bound to instance 'BRAMMux_0' of component 'RISC_V_BRAMMux_0_2' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1134]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_BRAMMux_0_2' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_BRAMMux_0_2_stub.vhdl:41]
+INFO: [Synth 8-3491] module 'RISC_V_axi_bram_ctrl_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_bram_ctrl_0_0_stub.vhdl:6' bound to instance 'axi_bram_ctrl_0' of component 'RISC_V_axi_bram_ctrl_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1158]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_bram_ctrl_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_bram_ctrl_0_0_stub.vhdl:58]
+INFO: [Synth 8-3491] module 'RISC_V_axi_gpio_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_leds' of component 'RISC_V_axi_gpio_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1201]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_gpio_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_gpio_0_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_axi_gpio_1_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_gpio_1_0_stub.vhdl:6' bound to instance 'axi_gpio_switches' of component 'RISC_V_axi_gpio_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1224]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_gpio_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_gpio_1_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_axi_smc_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'RISC_V_axi_smc_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1247]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_smc_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_smc_0_stub.vhdl:129]
+INFO: [Synth 8-3491] module 'RISC_V_axi_uartlite_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_uartlite_0_0_stub.vhdl:6' bound to instance 'axi_uartlite_0' of component 'RISC_V_axi_uartlite_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1361]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_uartlite_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_axi_uartlite_0_0_stub.vhdl:40]
+INFO: [Synth 8-3491] module 'RISC_V_blk_mem_gen_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_blk_mem_gen_0_0_stub.vhdl:6' bound to instance 'blk_mem_gen_0' of component 'RISC_V_blk_mem_gen_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1386]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_blk_mem_gen_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_blk_mem_gen_0_0_stub.vhdl:30]
+INFO: [Synth 8-3491] module 'RISC_V_clk_wiz_1_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_clk_wiz_1_0_stub.vhdl:6' bound to instance 'clk_wiz_1' of component 'RISC_V_clk_wiz_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1401]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_clk_wiz_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_clk_wiz_1_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'RISC_V_mdm_1_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_mdm_1_0_stub.vhdl:6' bound to instance 'mdm_1' of component 'RISC_V_mdm_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1408]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_mdm_1_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_mdm_1_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'RISC_V_microblaze_riscv_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_microblaze_riscv_0_0_stub.vhdl:6' bound to instance 'microblaze_riscv_0' of component 'RISC_V_microblaze_riscv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1421]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_microblaze_riscv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_microblaze_riscv_0_0_stub.vhdl:70]
 INFO: [Synth 8-638] synthesizing module 'microblaze_riscv_0_local_memory_imp_3UL0U' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:41]
-INFO: [Synth 8-3491] module 'RISC_V_dlmb_bram_if_cntlr_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'dlmb_bram_if_cntlr' of component 'RISC_V_dlmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:215]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_dlmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'RISC_V_dlmb_v10_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_dlmb_v10_0_stub.vhdl:6' bound to instance 'dlmb_v10' of component 'RISC_V_dlmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:269]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_dlmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_dlmb_v10_0_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'RISC_V_ilmb_bram_if_cntlr_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_ilmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'ilmb_bram_if_cntlr' of component 'RISC_V_ilmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:297]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_ilmb_bram_if_cntlr_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'RISC_V_ilmb_v10_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_ilmb_v10_0_stub.vhdl:6' bound to instance 'ilmb_v10' of component 'RISC_V_ilmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:351]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_ilmb_v10_0_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'RISC_V_lmb_bram_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_lmb_bram_0_stub.vhdl:6' bound to instance 'lmb_bram' of component 'RISC_V_lmb_bram_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:379]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_lmb_bram_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_lmb_bram_0_stub.vhdl:34]
+INFO: [Synth 8-3491] module 'RISC_V_dlmb_bram_if_cntlr_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'dlmb_bram_if_cntlr' of component 'RISC_V_dlmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:215]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_dlmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_dlmb_v10_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_dlmb_v10_0_stub.vhdl:6' bound to instance 'dlmb_v10' of component 'RISC_V_dlmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:269]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_dlmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_dlmb_v10_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'RISC_V_ilmb_bram_if_cntlr_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_ilmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'ilmb_bram_if_cntlr' of component 'RISC_V_ilmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:297]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_ilmb_bram_if_cntlr_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_ilmb_v10_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_ilmb_v10_0_stub.vhdl:6' bound to instance 'ilmb_v10' of component 'RISC_V_ilmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:351]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_v10_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_ilmb_v10_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'RISC_V_lmb_bram_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_lmb_bram_0_stub.vhdl:6' bound to instance 'lmb_bram' of component 'RISC_V_lmb_bram_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:379]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_lmb_bram_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_lmb_bram_0_stub.vhdl:34]
 INFO: [Synth 8-256] done synthesizing module 'microblaze_riscv_0_local_memory_imp_3UL0U' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:41]
-INFO: [Synth 8-3491] module 'RISC_V_reset_inv_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_reset_inv_0_0_stub.vhdl:6' bound to instance 'reset_inv_0' of component 'RISC_V_reset_inv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1500]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_reset_inv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_reset_inv_0_0_stub.vhdl:20]
-INFO: [Synth 8-3491] module 'RISC_V_rst_clk_wiz_1_100M_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_rst_clk_wiz_1_100M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_1_100M' of component 'RISC_V_rst_clk_wiz_1_100M_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1505]
-INFO: [Synth 8-638] synthesizing module 'RISC_V_rst_clk_wiz_1_100M_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-369254-mrt-fed-lap/realtime/RISC_V_rst_clk_wiz_1_100M_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'RISC_V_reset_inv_0_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_reset_inv_0_0_stub.vhdl:6' bound to instance 'reset_inv_0' of component 'RISC_V_reset_inv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1500]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_reset_inv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_reset_inv_0_0_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'RISC_V_rst_clk_wiz_1_100M_0' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_rst_clk_wiz_1_100M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_1_100M' of component 'RISC_V_rst_clk_wiz_1_100M_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1505]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_rst_clk_wiz_1_100M_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-464052-mrt-fed-lap/realtime/RISC_V_rst_clk_wiz_1_100M_0_stub.vhdl:28]
 INFO: [Synth 8-256] done synthesizing module 'RISC_V' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:562]
 INFO: [Synth 8-256] done synthesizing module 'RISC_V_wrapper' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:39]
 INFO: [Synth 8-3491] module 'MotorControl' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/MotorControl.vhd:5' bound to instance 'u_motor1' of component 'MotorControl' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:175]
@@ -102,18 +102,18 @@ INFO: [Synth 8-3491] module 'MotorControl' declared at '/home/maartenvk/src/KBSC
 INFO: [Synth 8-3491] module 'MotorControl' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/MotorControl.vhd:5' bound to instance 'u_motor4' of component 'MotorControl' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:214]
 INFO: [Synth 8-256] done synthesizing module 'NexysA7_Top' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:33]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2262.004 ; gain = 485.898 ; free physical = 2299 ; free virtual = 11227
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2261.906 ; gain = 483.836 ; free physical = 717 ; free virtual = 11153
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2270.910 ; gain = 494.805 ; free physical = 2299 ; free virtual = 11227
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2270.812 ; gain = 492.742 ; free physical = 717 ; free virtual = 11153
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2270.910 ; gain = 494.805 ; free physical = 2299 ; free virtual = 11227
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2270.812 ; gain = 492.742 ; free physical = 717 ; free virtual = 11153
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2270.910 ; gain = 0.000 ; free physical = 2299 ; free virtual = 11227
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2270.812 ; gain = 0.000 ; free physical = 718 ; free virtual = 11154
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -163,32 +163,32 @@ Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/sy
 Finished Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2395.648 ; gain = 0.000 ; free physical = 2322 ; free virtual = 11259
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2397.551 ; gain = 0.000 ; free physical = 631 ; free virtual = 11067
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2395.684 ; gain = 0.000 ; free physical = 2322 ; free virtual = 11259
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2397.586 ; gain = 0.000 ; free physical = 631 ; free virtual = 11067
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2395.684 ; gain = 619.578 ; free physical = 2368 ; free virtual = 11304
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2397.586 ; gain = 619.516 ; free physical = 710 ; free virtual = 11146
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2403.652 ; gain = 627.547 ; free physical = 2368 ; free virtual = 11304
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2405.555 ; gain = 627.484 ; free physical = 710 ; free virtual = 11146
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2403.652 ; gain = 627.547 ; free physical = 2368 ; free virtual = 11304
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2405.555 ; gain = 627.484 ; free physical = 710 ; free virtual = 11146
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2403.652 ; gain = 627.547 ; free physical = 2375 ; free virtual = 11313
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2405.555 ; gain = 627.484 ; free physical = 710 ; free virtual = 11147
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -223,19 +223,19 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2403.652 ; gain = 627.547 ; free physical = 2352 ; free virtual = 11295
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2405.555 ; gain = 627.484 ; free physical = 680 ; free virtual = 11122
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2439.652 ; gain = 663.547 ; free physical = 2299 ; free virtual = 11241
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2439.555 ; gain = 661.484 ; free physical = 535 ; free virtual = 10977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2458.684 ; gain = 682.578 ; free physical = 2283 ; free virtual = 11225
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2458.586 ; gain = 680.516 ; free physical = 511 ; free virtual = 10953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -247,19 +247,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2625.496 ; gain = 849.391 ; free physical = 2151 ; free virtual = 11097
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2625.398 ; gain = 847.328 ; free physical = 438 ; free virtual = 10880
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2625.496 ; gain = 849.391 ; free physical = 2151 ; free virtual = 11097
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2625.398 ; gain = 847.328 ; free physical = 438 ; free virtual = 10880
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2625.496 ; gain = 849.391 ; free physical = 2151 ; free virtual = 11097
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2625.398 ; gain = 847.328 ; free physical = 438 ; free virtual = 10880
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -321,19 +321,19 @@ Report Cell Usage:
 |27    |OBUF                             |    39|
 +------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2625.496 ; gain = 849.391 ; free physical = 2151 ; free virtual = 11097
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2625.398 ; gain = 847.328 ; free physical = 438 ; free virtual = 10880
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2625.496 ; gain = 724.617 ; free physical = 2151 ; free virtual = 11097
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2625.504 ; gain = 849.391 ; free physical = 2151 ; free virtual = 11097
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2625.398 ; gain = 720.555 ; free physical = 438 ; free virtual = 10880
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2625.406 ; gain = 847.328 ; free physical = 438 ; free virtual = 10880
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2625.504 ; gain = 0.000 ; free physical = 2150 ; free virtual = 11097
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2625.406 ; gain = 0.000 ; free physical = 438 ; free virtual = 10880
 INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2681.523 ; gain = 0.000 ; free physical = 2300 ; free virtual = 11247
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2681.426 ; gain = 0.000 ; free physical = 600 ; free virtual = 11041
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -343,7 +343,7 @@ INFO: [Common 17-83] Releasing license: Synthesis
 synth_design completed successfully
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.statsThreshold
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2705.535 ; gain = 0.000 ; free physical = 2300 ; free virtual = 11243
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2705.438 ; gain = 0.000 ; free physical = 601 ; free virtual = 11039
 INFO: [Common 17-1381] The checkpoint '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/NexysA7_Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 13:56:40 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 15:06:53 2025...

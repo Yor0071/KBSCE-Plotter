@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.382589",
-   "Default View_TopLeft":"-24,-10",
+   "Default View_ScaleFactor":"0.594595",
+   "Default View_TopLeft":"173,284",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
@@ -19,7 +19,7 @@ preplace inst microblaze_riscv_0 -pg 1 -lvl 2 -x 720 -y 150 -defaultsOSRD
 preplace inst microblaze_riscv_0_local_memory -pg 1 -lvl 3 -x 1240 -y 50 -defaultsOSRD
 preplace inst mdm_1 -pg 1 -lvl 1 -x 220 -y 150 -defaultsOSRD
 preplace inst clk_wiz_1 -pg 1 -lvl 5 -x 4220 -y 600 -defaultsOSRD
-preplace inst rst_clk_wiz_1_100M -pg 1 -lvl 1 -x 220 -y 440 -defaultsOSRD
+preplace inst rst_clk_wiz_1_100M -pg 1 -lvl 1 -x 220 -y 460 -defaultsOSRD
 preplace inst axi_gpio_leds -pg 1 -lvl 6 -x 4560 -y 340 -defaultsOSRD
 preplace inst axi_gpio_switches -pg 1 -lvl 6 -x 4560 -y 200 -defaultsOSRD
 preplace inst axi_uartlite_0 -pg 1 -lvl 6 -x 4560 -y 480 -defaultsOSRD
@@ -36,12 +36,12 @@ preplace inst microblaze_riscv_0_local_memory|lmb_bram -pg 1 -lvl 3 -x 2040 -y 7
 preplace netloc clk_wiz_1_VGA_PCLK 1 5 2 NJ 610 NJ
 preplace netloc mdm_1_debug_sys_rst 1 0 2 40 80 400
 preplace netloc microblaze_riscv_0_Clk 1 0 6 30 70 460 40 1080 430 N 430 NJ 430 4420
-preplace netloc reset_1 1 0 4 20 340 400J 440 NJ 440 2250J
+preplace netloc reset_1 1 0 4 20 360 420J 440 NJ 440 2250J
 preplace netloc reset_inv_0_Res 1 4 1 NJ 590
-preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 1 2 420 60 1100J
-preplace netloc rst_clk_wiz_1_100M_mb_reset 1 1 1 430 180n
-preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 1 5 N 480 1050 530 N 530 NJ 530 4430
-preplace netloc sys_clock_1 1 0 5 NJ 650 420J 580 NJ 580 2220J 650 4030J
+preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 1 2 410 60 1100J
+preplace netloc rst_clk_wiz_1_100M_mb_reset 1 1 1 450 180n
+preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 1 5 N 500 1050 530 N 530 NJ 530 4430
+preplace netloc sys_clock_1 1 0 5 NJ 650 440J 580 NJ 580 2220J 650 4030J
 preplace netloc BRAM_PORTA_1_1 1 0 3 NJ 60 400J 50 1060J
 preplace netloc axi_gpio_0_GPIO 1 6 1 NJ 340
 preplace netloc axi_gpio_1_GPIO 1 6 1 NJ 200
@@ -56,7 +56,7 @@ preplace netloc microblaze_riscv_0_ilmb_1 1 2 1 1070 50n
 preplace netloc axi_smc_M03_AXI 1 2 2 1100 720 2200
 preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 1 3 460 570 NJ 570 2210
 preplace netloc BRAMMux_0_BRAM_OUT_PORT_FB 1 2 1 1090 660n
-preplace netloc BRAM_PORTB_0_1 1 0 2 NJ 260 410
+preplace netloc BRAM_PORTB_0_1 1 0 2 NJ 260 430
 preplace netloc microblaze_riscv_0_local_memory|SYS_Rst_1 1 0 2 1220 150 1500
 preplace netloc microblaze_riscv_0_local_memory|microblaze_riscv_0_Clk 1 0 2 1240 160 1490
 preplace netloc microblaze_riscv_0_local_memory|microblaze_riscv_0_dlmb 1 0 1 1230 30n

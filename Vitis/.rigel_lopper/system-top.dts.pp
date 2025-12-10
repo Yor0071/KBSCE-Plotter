@@ -1,9 +1,9 @@
-# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/system-top.dts"
+# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-i/hw/sdt/system-top.dts"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/system-top.dts"
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-i/hw/sdt/system-top.dts"
 /dts-v1/;
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/pl.dtsi" 1
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-i/hw/sdt/pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -255,7 +255,7 @@
    reg = <0xc0000000 0x1000000>;
    xlnx,bmg-instance = "EXTERNAL";
    xlnx,s-axi-ctrl-addr-width = <32>;
-   xlnx,read-latency = <1>;
+   xlnx,read-latency = <2>;
    xlnx,id-width = <0>;
    xlnx,s-axi-supports-narrow-burst = <0>;
    xlnx,supports-narrow-burst = <0>;
@@ -421,7 +421,7 @@
   };
  };
 };
-# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/system-top.dts" 2
+# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-i/hw/sdt/system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
