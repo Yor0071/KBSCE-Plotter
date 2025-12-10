@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Nov 28 17:45:08 2025
+-- Date        : Wed Dec 10 11:54:57 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
--- Command     : write_vhdl -force -mode funcsim -rename_top RISC_V_dlmb_bram_if_cntlr_0 -prefix
---               RISC_V_dlmb_bram_if_cntlr_0_ RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
 -- Design      : RISC_V_dlmb_bram_if_cntlr_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -160,7 +160,7 @@ entity RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
   attribute C_FAULT_INJECT : integer;
   attribute C_FAULT_INJECT of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
   attribute C_HIGHADDR : string;
-  attribute C_HIGHADDR of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000000000000011111111111111";
+  attribute C_HIGHADDR of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000000000001111111111111111";
   attribute C_INTERCONNECT : integer;
   attribute C_INTERCONNECT of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
   attribute C_LMB_AWIDTH : integer;
@@ -199,6 +199,8 @@ entity RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
   attribute C_UE_FAILING_REGISTERS of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
   attribute C_WRITE_ACCESS : integer;
   attribute C_WRITE_ACCESS of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 2;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "lmb_bram_if_cntlr";
 end RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr;
 
 architecture STRUCTURE of RISC_V_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
@@ -730,7 +732,7 @@ architecture STRUCTURE of RISC_V_dlmb_bram_if_cntlr_0 is
   attribute C_FAULT_INJECT : integer;
   attribute C_FAULT_INJECT of U0 : label is 0;
   attribute C_HIGHADDR : string;
-  attribute C_HIGHADDR of U0 : label is "64'b0000000000000000000000000000000000000000000000000011111111111111";
+  attribute C_HIGHADDR of U0 : label is "64'b0000000000000000000000000000000000000000000000001111111111111111";
   attribute C_INTERCONNECT : integer;
   attribute C_INTERCONNECT of U0 : label is 0;
   attribute C_LMB_AWIDTH : integer;
@@ -776,7 +778,7 @@ architecture STRUCTURE of RISC_V_dlmb_bram_if_cntlr_0 is
   attribute x_interface_mode : string;
   attribute x_interface_mode of BRAM_Rst_A : signal is "master BRAM_PORT";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of BRAM_Rst_A : signal is "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 16384, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1";
+  attribute x_interface_parameter of BRAM_Rst_A : signal is "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 65536, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1";
   attribute x_interface_info of LMB_AddrStrobe : signal is "xilinx.com:interface:lmb:1.0 SLMB ADDRSTROBE";
   attribute x_interface_info of LMB_Clk : signal is "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK";
   attribute x_interface_mode of LMB_Clk : signal is "slave CLK.LMB_Clk";

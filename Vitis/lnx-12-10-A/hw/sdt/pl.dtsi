@@ -317,7 +317,7 @@
 			xlnx,ecc-onoff-register = <0>;
 			xlnx,ecc-onoff-reset-value = <1>;
 			xlnx,s-axi-ctrl-protocol = "AXI4LITE";
-			xlnx,mask = <0x20000>;
+			xlnx,mask = <0x40010000>;
 			xlnx,mask1 = <0x800000>;
 			xlnx,mask2 = <0x800000>;
 			xlnx,fault-inject = <0>;

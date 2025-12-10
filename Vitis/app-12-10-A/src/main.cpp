@@ -5,6 +5,7 @@
 #include "xil_types.h" //C types such as u32
 
 #include "framebuffer.hxx"
+#include <xil_io.h>
 
 void loop(void);
 
@@ -19,8 +20,12 @@ int main(void)
     };
 
     for (uint64_t n = 0; n < 307200; n++) {
-        fb.write(n, red_pixel);
+        Xil_Out32(XPAR_LMB_BRAM_IF_CNTLR_0_BASEADDR + n, 0xFFFFFFFF);
     }
 
-    while (true) {}
+    uint64_t n {0};
+    while (true) {
+        Xil_Out32(XPAR_LMB_BRAM_IF_CNTLR_0_BASEADDR + n, 0xFFFFFFFF);
+        n++;
+    }
 }

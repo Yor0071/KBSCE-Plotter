@@ -245,8 +245,7 @@ vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.ge
 
 vcom -work xil_defaultlib -64 -93  \
 "../../../bd/RISC_V/ip/RISC_V_BRAMMux_0_1/sim/RISC_V_BRAMMux_0_1.vhd" \
-"../../../bd/RISC_V/ip/RISC_V_lmb_bram_if_cntlr_0_0/sim/RISC_V_lmb_bram_if_cntlr_0_0.vhd" \
-"../../../bd/RISC_V/ip/RISC_V_lmb_v10_0_0/sim/RISC_V_lmb_v10_0_0.vhd" \
+"../../../bd/RISC_V/ip/RISC_V_BRAMMultiplier_0_0/sim/RISC_V_BRAMMultiplier_0_0.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
 
 vlog -work xil_defaultlib \
