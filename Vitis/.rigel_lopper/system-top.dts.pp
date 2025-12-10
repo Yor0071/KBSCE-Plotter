@@ -1,9 +1,9 @@
-# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-12-10-A/hw/sdt/system-top.dts"
+# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/system-top.dts"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-12-10-A/hw/sdt/system-top.dts"
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/system-top.dts"
 /dts-v1/;
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-12-10-A/hw/sdt/pl.dtsi" 1
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -241,6 +241,36 @@
   compatible = "simple-bus";
   #address-cells = <1>;
   #size-cells = <1>;
+  axi_bram_ctrl_0: axi_bram_ctrl_0@c0000000 {
+   xlnx,protocol = "AXI4";
+   xlnx,edk-special = "BRAM_CTRL";
+   compatible = "xlnx,axi-bram-ctrl-4.1" , "xlnx,axi-bram-ctrl";
+   xlnx,ecc-onoff-reset-value = <0>;
+   xlnx,ecc-type = <0>;
+   xlnx,rd-cmd-optimization = <0>;
+   xlnx,memory-depth = <4194304>;
+   xlnx,use-ecc = <0>;
+   xlnx,fault-inject = <0>;
+   xlnx,ip-name = "axi_bram_ctrl";
+   reg = <0xc0000000 0x1000000>;
+   xlnx,bmg-instance = "EXTERNAL";
+   xlnx,s-axi-ctrl-addr-width = <32>;
+   xlnx,read-latency = <1>;
+   xlnx,id-width = <0>;
+   xlnx,s-axi-supports-narrow-burst = <0>;
+   xlnx,supports-narrow-burst = <0>;
+   xlnx,single-port-bram = <1>;
+   xlnx,ecc = <0>;
+   xlnx,edk-iptype = "PERIPHERAL";
+   status = "okay";
+   xlnx,data-width = <32>;
+   xlnx,bram-addr-width = <22>;
+   xlnx,bram-inst-mode = "EXTERNAL";
+   xlnx,s-axi-ctrl-data-width = <32>;
+   xlnx,mem-depth = <4194304>;
+   xlnx,s-axi-id-width = <1>;
+   xlnx,name = "axi_bram_ctrl_0";
+  };
   axi_gpio_leds: gpio@40000000 {
    xlnx,gpio-board-interface = "led_16bits";
    compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
@@ -316,51 +346,14 @@
    xlnx,data-bits = <8>;
    xlnx,parity = "No_Parity";
   };
-  lmb_bram_if_cntlr_0: lmb_bram_if_cntlr@0 {
+  microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr: lmb_bram_if_cntlr@0 {
    xlnx,edk-special = "BRAM_CTRL";
    xlnx,write-access = <2>;
    compatible = "xlnx,lmb-bram-if-cntlr-4.0" , "xlnx,axi-bram-ctrl";
    xlnx,ecc-onoff-register = <0>;
    xlnx,ecc-onoff-reset-value = <1>;
    xlnx,s-axi-ctrl-protocol = "AXI4LITE";
-   xlnx,mask = <0x20000>;
-   xlnx,mask1 = <0x800000>;
-   xlnx,mask2 = <0x800000>;
-   xlnx,fault-inject = <0>;
-   xlnx,mask3 = <0x800000>;
-   xlnx,ip-name = "lmb_bram_if_cntlr";
-   xlnx,arbitration = <0>;
-   xlnx,num-lmb = <1>;
-   xlnx,mask4 = <0x800000>;
-   reg = <0x3fff0000 0x10000>;
-   xlnx,s-axi-ctrl-addr-width = <32>;
-   xlnx,mask5 = <0x800000>;
-   xlnx,ecc-status-registers = <0>;
-   xlnx,mask6 = <0x800000>;
-   xlnx,lmb-protocol = <0>;
-   xlnx,ce-counter-width = <0>;
-   xlnx,mask7 = <0x800000>;
-   xlnx,ecc = <0>;
-   xlnx,edk-iptype = "PERIPHERAL";
-   xlnx,lmb-dwidth = <32>;
-   xlnx,interconnect = <0>;
-   xlnx,ce-failing-registers = <0>;
-   xlnx,ue-failing-registers = <0>;
-   status = "okay";
-   xlnx,data-width = <32>;
-   xlnx,s-axi-ctrl-data-width = <32>;
-   xlnx,bram-awidth = <32>;
-   xlnx,lmb-awidth = <32>;
-   xlnx,name = "lmb_bram_if_cntlr_0";
-  };
-  microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr: lmb_bram_if_cntlr@1 {
-   xlnx,edk-special = "BRAM_CTRL";
-   xlnx,write-access = <2>;
-   compatible = "xlnx,lmb-bram-if-cntlr-4.0" , "xlnx,axi-bram-ctrl";
-   xlnx,ecc-onoff-register = <0>;
-   xlnx,ecc-onoff-reset-value = <1>;
-   xlnx,s-axi-ctrl-protocol = "AXI4LITE";
-   xlnx,mask = <0x40010000>;
+   xlnx,mask = <0x40000000>;
    xlnx,mask1 = <0x800000>;
    xlnx,mask2 = <0x800000>;
    xlnx,fault-inject = <0>;
@@ -390,7 +383,7 @@
    xlnx,lmb-awidth = <32>;
    xlnx,name = "microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr";
   };
-  microblaze_riscv_0_local_memory_ilmb_bram_if_cntlr: lmb_bram_if_cntlr@2 {
+  microblaze_riscv_0_local_memory_ilmb_bram_if_cntlr: lmb_bram_if_cntlr@1 {
    xlnx,edk-special = "BRAM_CTRL";
    xlnx,write-access = <2>;
    compatible = "xlnx,lmb-bram-if-cntlr-4.0" , "xlnx,axi-bram-ctrl";
@@ -428,7 +421,7 @@
   };
  };
 };
-# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-12-10-A/hw/sdt/system-top.dts" 2
+# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-G/hw/sdt/system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
@@ -438,12 +431,12 @@
  slrcount = <1>;
  family = "microblaze_riscv";
  speed_grade = "1";
- lmb_bram_if_cntlr_0_memory: memory@3fff0000 {
-  compatible = "xlnx,lmb-bram-if-cntlr-4.0";
-  xlnx,ip-name = "lmb_bram_if_cntlr";
+ axi_bram_ctrl_0_memory: memory@c0000000 {
+  compatible = "xlnx,axi-bram-ctrl-4.1";
+  xlnx,ip-name = "axi_bram_ctrl";
   device_type = "memory";
   memory_type = "memory";
-  reg = <0x3FFF0000 0x10000>;
+  reg = <0xC0000000 0x1000000>;
  };
  microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory: memory@0 {
   compatible = "xlnx,lmb-bram-if-cntlr-4.0";
@@ -459,8 +452,8 @@
   serial0 = &axi_uartlite_0;
  };
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
-  address-map = <0x3FFF0000 &lmb_bram_if_cntlr_0_memory 0x3FFF0000 0x10000>,
-         <0x3FFF0000 &lmb_bram_if_cntlr_0 0x3FFF0000 0x10000>,
+  address-map = <0xC0000000 &axi_bram_ctrl_0_memory 0xC0000000 0x1000000>,
+         <0xC0000000 &axi_bram_ctrl_0 0xC0000000 0x1000000>,
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>,
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x10000>,
          <0x40000000 &axi_gpio_leds 0x40000000 0x10000>,

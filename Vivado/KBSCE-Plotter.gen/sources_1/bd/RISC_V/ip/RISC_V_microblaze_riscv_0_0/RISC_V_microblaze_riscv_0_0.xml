@@ -27609,7 +27609,7 @@
   <spirit:cpus>
     <spirit:cpu>
       <spirit:name>microblaze</spirit:name>
-      <spirit:addressSpaceRef spirit:addressSpaceRef="Instruction"/>
+      <spirit:addressSpaceRef spirit:addressSpaceRef="Data"/>
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>endian</spirit:name>

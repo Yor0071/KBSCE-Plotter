@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Wed Dec 10 12:22:34 2025
+--Date        : Wed Dec 10 13:54:19 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -14,13 +14,6 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_riscv_0_local_memory_imp_3UL0U is
   port (
-    BRAM_OUT_PORT_B_addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_OUT_PORT_B_clk : out STD_LOGIC;
-    BRAM_OUT_PORT_B_din : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_OUT_PORT_B_dout : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    BRAM_OUT_PORT_B_en : out STD_LOGIC;
-    BRAM_OUT_PORT_B_rst : out STD_LOGIC;
-    BRAM_OUT_PORT_B_we : out STD_LOGIC_VECTOR ( 0 to 0 );
     DLMB_abus : in STD_LOGIC_VECTOR ( 0 to 31 );
     DLMB_addrstrobe : in STD_LOGIC;
     DLMB_be : in STD_LOGIC_VECTOR ( 0 to 3 );
@@ -172,38 +165,6 @@ architecture STRUCTURE of microblaze_riscv_0_local_memory_imp_3UL0U is
     rstb_busy : out STD_LOGIC
   );
   end component RISC_V_lmb_bram_0;
-  component RISC_V_BRAMMultiplier_0_0 is
-  port (
-    s_in_en : in STD_LOGIC;
-    s_in_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_in_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_in_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s_in_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_in_clk : in STD_LOGIC;
-    s_in_rst : in STD_LOGIC;
-    s_out_a_en : out STD_LOGIC;
-    s_out_a_dout : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_out_a_din : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_out_a_we : out STD_LOGIC_VECTOR ( 0 to 0 );
-    s_out_a_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_out_a_clk : out STD_LOGIC;
-    s_out_a_rst : out STD_LOGIC;
-    s_out_b_en : out STD_LOGIC;
-    s_out_b_dout : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_out_b_din : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_out_b_we : out STD_LOGIC_VECTOR ( 0 to 0 );
-    s_out_b_addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
-    s_out_b_clk : out STD_LOGIC;
-    s_out_b_rst : out STD_LOGIC
-  );
-  end component RISC_V_BRAMMultiplier_0_0;
-  signal BRAMMultiplier_0_BRAM_OUT_PORT_A_ADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal BRAMMultiplier_0_BRAM_OUT_PORT_A_CLK : STD_LOGIC;
-  signal BRAMMultiplier_0_BRAM_OUT_PORT_A_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal BRAMMultiplier_0_BRAM_OUT_PORT_A_DOUT : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal BRAMMultiplier_0_BRAM_OUT_PORT_A_EN : STD_LOGIC;
-  signal BRAMMultiplier_0_BRAM_OUT_PORT_A_RST : STD_LOGIC;
-  signal BRAMMultiplier_0_BRAM_OUT_PORT_A_WE : STD_LOGIC_VECTOR ( 0 to 0 );
   signal dlmb_bram_if_cntlr_BRAM_PORT_ADDR : STD_LOGIC_VECTOR ( 0 to 31 );
   signal dlmb_bram_if_cntlr_BRAM_PORT_CLK : STD_LOGIC;
   signal dlmb_bram_if_cntlr_BRAM_PORT_DIN : STD_LOGIC_VECTOR ( 0 to 31 );
@@ -251,92 +212,6 @@ architecture STRUCTURE of microblaze_riscv_0_local_memory_imp_3UL0U is
   attribute BMM_INFO_ADDRESS_SPACE of ilmb_bram_if_cntlr : label is "byte  0x00000000 32 > RISC_V microblaze_riscv_0_local_memory/lmb_bram";
   attribute KEEP_HIERARCHY of ilmb_bram_if_cntlr : label is "yes";
 begin
-BRAMMultiplier_0: component RISC_V_BRAMMultiplier_0_0
-     port map (
-      s_in_addr(31) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(0),
-      s_in_addr(30) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(1),
-      s_in_addr(29) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(2),
-      s_in_addr(28) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(3),
-      s_in_addr(27) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(4),
-      s_in_addr(26) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(5),
-      s_in_addr(25) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(6),
-      s_in_addr(24) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(7),
-      s_in_addr(23) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(8),
-      s_in_addr(22) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(9),
-      s_in_addr(21) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(10),
-      s_in_addr(20) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(11),
-      s_in_addr(19) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(12),
-      s_in_addr(18) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(13),
-      s_in_addr(17) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(14),
-      s_in_addr(16) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(15),
-      s_in_addr(15) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(16),
-      s_in_addr(14) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(17),
-      s_in_addr(13) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(18),
-      s_in_addr(12) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(19),
-      s_in_addr(11) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(20),
-      s_in_addr(10) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(21),
-      s_in_addr(9) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(22),
-      s_in_addr(8) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(23),
-      s_in_addr(7) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(24),
-      s_in_addr(6) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(25),
-      s_in_addr(5) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(26),
-      s_in_addr(4) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(27),
-      s_in_addr(3) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(28),
-      s_in_addr(2) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(29),
-      s_in_addr(1) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(30),
-      s_in_addr(0) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(31),
-      s_in_clk => dlmb_bram_if_cntlr_BRAM_PORT_CLK,
-      s_in_din(31) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(0),
-      s_in_din(30) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(1),
-      s_in_din(29) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(2),
-      s_in_din(28) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(3),
-      s_in_din(27) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(4),
-      s_in_din(26) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(5),
-      s_in_din(25) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(6),
-      s_in_din(24) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(7),
-      s_in_din(23) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(8),
-      s_in_din(22) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(9),
-      s_in_din(21) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(10),
-      s_in_din(20) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(11),
-      s_in_din(19) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(12),
-      s_in_din(18) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(13),
-      s_in_din(17) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(14),
-      s_in_din(16) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(15),
-      s_in_din(15) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(16),
-      s_in_din(14) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(17),
-      s_in_din(13) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(18),
-      s_in_din(12) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(19),
-      s_in_din(11) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(20),
-      s_in_din(10) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(21),
-      s_in_din(9) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(22),
-      s_in_din(8) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(23),
-      s_in_din(7) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(24),
-      s_in_din(6) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(25),
-      s_in_din(5) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(26),
-      s_in_din(4) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(27),
-      s_in_din(3) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(28),
-      s_in_din(2) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(29),
-      s_in_din(1) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(30),
-      s_in_din(0) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(31),
-      s_in_dout(31 downto 0) => dlmb_bram_if_cntlr_BRAM_PORT_DOUT(31 downto 0),
-      s_in_en => dlmb_bram_if_cntlr_BRAM_PORT_EN,
-      s_in_rst => dlmb_bram_if_cntlr_BRAM_PORT_RST,
-      s_in_we(0) => dlmb_bram_if_cntlr_BRAM_PORT_WE(3),
-      s_out_a_addr(31 downto 0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_ADDR(31 downto 0),
-      s_out_a_clk => BRAMMultiplier_0_BRAM_OUT_PORT_A_CLK,
-      s_out_a_din(31 downto 0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_DIN(31 downto 0),
-      s_out_a_dout(31 downto 0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_DOUT(31 downto 0),
-      s_out_a_en => BRAMMultiplier_0_BRAM_OUT_PORT_A_EN,
-      s_out_a_rst => BRAMMultiplier_0_BRAM_OUT_PORT_A_RST,
-      s_out_a_we(0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_WE(0),
-      s_out_b_addr(18 downto 0) => BRAM_OUT_PORT_B_addr(18 downto 0),
-      s_out_b_clk => BRAM_OUT_PORT_B_clk,
-      s_out_b_din(31 downto 0) => BRAM_OUT_PORT_B_din(31 downto 0),
-      s_out_b_dout(31 downto 0) => BRAM_OUT_PORT_B_dout(31 downto 0),
-      s_out_b_en => BRAM_OUT_PORT_B_en,
-      s_out_b_rst => BRAM_OUT_PORT_B_rst,
-      s_out_b_we(0) => BRAM_OUT_PORT_B_we(0)
-    );
 dlmb_bram_if_cntlr: component RISC_V_dlmb_bram_if_cntlr_0
      port map (
       BRAM_Addr_A(0 to 31) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(0 to 31),
@@ -503,7 +378,38 @@ ilmb_v10: component RISC_V_ilmb_v10_0
     );
 lmb_bram: component RISC_V_lmb_bram_0
      port map (
-      addra(31 downto 0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_ADDR(31 downto 0),
+      addra(31) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(0),
+      addra(30) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(1),
+      addra(29) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(2),
+      addra(28) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(3),
+      addra(27) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(4),
+      addra(26) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(5),
+      addra(25) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(6),
+      addra(24) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(7),
+      addra(23) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(8),
+      addra(22) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(9),
+      addra(21) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(10),
+      addra(20) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(11),
+      addra(19) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(12),
+      addra(18) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(13),
+      addra(17) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(14),
+      addra(16) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(15),
+      addra(15) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(16),
+      addra(14) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(17),
+      addra(13) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(18),
+      addra(12) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(19),
+      addra(11) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(20),
+      addra(10) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(21),
+      addra(9) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(22),
+      addra(8) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(23),
+      addra(7) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(24),
+      addra(6) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(25),
+      addra(5) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(26),
+      addra(4) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(27),
+      addra(3) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(28),
+      addra(2) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(29),
+      addra(1) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(30),
+      addra(0) => dlmb_bram_if_cntlr_BRAM_PORT_ADDR(31),
       addrb(31) => microblaze_riscv_0_ilmb_cntlr_ADDR(0),
       addrb(30) => microblaze_riscv_0_ilmb_cntlr_ADDR(1),
       addrb(29) => microblaze_riscv_0_ilmb_cntlr_ADDR(2),
@@ -536,9 +442,40 @@ lmb_bram: component RISC_V_lmb_bram_0
       addrb(2) => microblaze_riscv_0_ilmb_cntlr_ADDR(29),
       addrb(1) => microblaze_riscv_0_ilmb_cntlr_ADDR(30),
       addrb(0) => microblaze_riscv_0_ilmb_cntlr_ADDR(31),
-      clka => BRAMMultiplier_0_BRAM_OUT_PORT_A_CLK,
+      clka => dlmb_bram_if_cntlr_BRAM_PORT_CLK,
       clkb => microblaze_riscv_0_ilmb_cntlr_CLK,
-      dina(31 downto 0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_DIN(31 downto 0),
+      dina(31) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(0),
+      dina(30) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(1),
+      dina(29) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(2),
+      dina(28) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(3),
+      dina(27) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(4),
+      dina(26) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(5),
+      dina(25) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(6),
+      dina(24) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(7),
+      dina(23) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(8),
+      dina(22) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(9),
+      dina(21) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(10),
+      dina(20) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(11),
+      dina(19) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(12),
+      dina(18) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(13),
+      dina(17) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(14),
+      dina(16) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(15),
+      dina(15) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(16),
+      dina(14) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(17),
+      dina(13) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(18),
+      dina(12) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(19),
+      dina(11) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(20),
+      dina(10) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(21),
+      dina(9) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(22),
+      dina(8) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(23),
+      dina(7) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(24),
+      dina(6) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(25),
+      dina(5) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(26),
+      dina(4) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(27),
+      dina(3) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(28),
+      dina(2) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(29),
+      dina(1) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(30),
+      dina(0) => dlmb_bram_if_cntlr_BRAM_PORT_DIN(31),
       dinb(31) => microblaze_riscv_0_ilmb_cntlr_DIN(0),
       dinb(30) => microblaze_riscv_0_ilmb_cntlr_DIN(1),
       dinb(29) => microblaze_riscv_0_ilmb_cntlr_DIN(2),
@@ -571,16 +508,18 @@ lmb_bram: component RISC_V_lmb_bram_0
       dinb(2) => microblaze_riscv_0_ilmb_cntlr_DIN(29),
       dinb(1) => microblaze_riscv_0_ilmb_cntlr_DIN(30),
       dinb(0) => microblaze_riscv_0_ilmb_cntlr_DIN(31),
-      douta(31 downto 0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_DOUT(31 downto 0),
+      douta(31 downto 0) => dlmb_bram_if_cntlr_BRAM_PORT_DOUT(31 downto 0),
       doutb(31 downto 0) => microblaze_riscv_0_ilmb_cntlr_DOUT(31 downto 0),
-      ena => BRAMMultiplier_0_BRAM_OUT_PORT_A_EN,
+      ena => dlmb_bram_if_cntlr_BRAM_PORT_EN,
       enb => microblaze_riscv_0_ilmb_cntlr_EN,
-      rsta => BRAMMultiplier_0_BRAM_OUT_PORT_A_RST,
+      rsta => dlmb_bram_if_cntlr_BRAM_PORT_RST,
       rsta_busy => NLW_lmb_bram_rsta_busy_UNCONNECTED,
       rstb => microblaze_riscv_0_ilmb_cntlr_RST,
       rstb_busy => NLW_lmb_bram_rstb_busy_UNCONNECTED,
-      wea(3 downto 1) => B"000",
-      wea(0) => BRAMMultiplier_0_BRAM_OUT_PORT_A_WE(0),
+      wea(3) => dlmb_bram_if_cntlr_BRAM_PORT_WE(0),
+      wea(2) => dlmb_bram_if_cntlr_BRAM_PORT_WE(1),
+      wea(1) => dlmb_bram_if_cntlr_BRAM_PORT_WE(2),
+      wea(0) => dlmb_bram_if_cntlr_BRAM_PORT_WE(3),
       web(3) => microblaze_riscv_0_ilmb_cntlr_WE(0),
       web(2) => microblaze_riscv_0_ilmb_cntlr_WE(1),
       web(1) => microblaze_riscv_0_ilmb_cntlr_WE(2),
@@ -615,7 +554,7 @@ entity RISC_V is
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=2,da_bram_cntlr_cnt=1,da_clkrst_cnt=2,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=2,da_bram_cntlr_cnt=1,da_clkrst_cnt=3,da_microblaze_riscv_cnt=1,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of RISC_V : entity is "RISC_V.hwdef";
 end RISC_V;
@@ -866,7 +805,40 @@ architecture STRUCTURE of RISC_V is
     M02_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M02_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M02_AXI_rvalid : in STD_LOGIC;
-    M02_AXI_rready : out STD_LOGIC
+    M02_AXI_rready : out STD_LOGIC;
+    M03_AXI_awaddr : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    M03_AXI_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M03_AXI_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_awlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M03_AXI_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_awqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_awvalid : out STD_LOGIC;
+    M03_AXI_awready : in STD_LOGIC;
+    M03_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M03_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_wlast : out STD_LOGIC;
+    M03_AXI_wvalid : out STD_LOGIC;
+    M03_AXI_wready : in STD_LOGIC;
+    M03_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_bvalid : in STD_LOGIC;
+    M03_AXI_bready : out STD_LOGIC;
+    M03_AXI_araddr : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    M03_AXI_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M03_AXI_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_arlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M03_AXI_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_arvalid : out STD_LOGIC;
+    M03_AXI_arready : in STD_LOGIC;
+    M03_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M03_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_rlast : in STD_LOGIC;
+    M03_AXI_rvalid : in STD_LOGIC;
+    M03_AXI_rready : out STD_LOGIC
   );
   end component RISC_V_axi_smc_0;
   component RISC_V_reset_inv_0_0 is
@@ -891,7 +863,51 @@ architecture STRUCTURE of RISC_V is
     doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   end component RISC_V_blk_mem_gen_0_0;
-  component RISC_V_BRAMMux_0_1 is
+  component RISC_V_axi_bram_ctrl_0_0 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_awlock : in STD_LOGIC;
+    s_axi_awcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wlast : in STD_LOGIC;
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_arlock : in STD_LOGIC;
+    s_axi_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rlast : out STD_LOGIC;
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    bram_rst_a : out STD_LOGIC;
+    bram_clk_a : out STD_LOGIC;
+    bram_en_a : out STD_LOGIC;
+    bram_we_a : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    bram_addr_a : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    bram_wrdata_a : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component RISC_V_axi_bram_ctrl_0_0;
+  component RISC_V_BRAMMux_0_2 is
   port (
     s_in_microblaze_en : in STD_LOGIC;
     s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -915,13 +931,20 @@ architecture STRUCTURE of RISC_V is
     s_out_fb_clk : out STD_LOGIC;
     s_out_fb_rst : out STD_LOGIC
   );
-  end component RISC_V_BRAMMux_0_1;
+  end component RISC_V_BRAMMux_0_2;
   signal BRAMMux_0_BRAM_OUT_PORT_FB_ADDR : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal BRAMMux_0_BRAM_OUT_PORT_FB_CLK : STD_LOGIC;
   signal BRAMMux_0_BRAM_OUT_PORT_FB_DIN : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal BRAMMux_0_BRAM_OUT_PORT_FB_DOUT : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal BRAMMux_0_BRAM_OUT_PORT_FB_EN : STD_LOGIC;
   signal BRAMMux_0_BRAM_OUT_PORT_FB_WE : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
+  signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_DOUT : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_bram_ctrl_0_BRAM_PORTA_EN : STD_LOGIC;
+  signal axi_bram_ctrl_0_BRAM_PORTA_RST : STD_LOGIC;
+  signal axi_bram_ctrl_0_BRAM_PORTA_WE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal axi_smc_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_ARVALID : STD_LOGIC;
@@ -973,6 +996,37 @@ architecture STRUCTURE of RISC_V is
   signal axi_smc_M02_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M02_AXI_WVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_ARADDR : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal axi_smc_M03_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M03_AXI_ARLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal axi_smc_M03_AXI_ARLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_smc_M03_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_ARREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_ARSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_ARVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_AWADDR : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal axi_smc_M03_AXI_AWBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_AWCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M03_AXI_AWLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal axi_smc_M03_AXI_AWLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_smc_M03_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_AWREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_AWSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_AWVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_BREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_BVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M03_AXI_RLAST : STD_LOGIC;
+  signal axi_smc_M03_AXI_RREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_RVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M03_AXI_WLAST : STD_LOGIC;
+  signal axi_smc_M03_AXI_WREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M03_AXI_WVALID : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_riscv_0_Clk : STD_LOGIC;
   signal microblaze_riscv_0_M_AXI_DP_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1022,13 +1076,6 @@ architecture STRUCTURE of RISC_V is
   signal microblaze_riscv_0_ilmb_1_READY : STD_LOGIC;
   signal microblaze_riscv_0_ilmb_1_UE : STD_LOGIC;
   signal microblaze_riscv_0_ilmb_1_WAIT : STD_LOGIC;
-  signal microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_ADDR : STD_LOGIC_VECTOR ( 18 downto 0 );
-  signal microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_CLK : STD_LOGIC;
-  signal microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_DOUT : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_EN : STD_LOGIC;
-  signal microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_RST : STD_LOGIC;
-  signal microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_WE : STD_LOGIC_VECTOR ( 0 to 0 );
   signal reset_inv_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_wiz_1_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_wiz_1_100M_mb_reset : STD_LOGIC;
@@ -1040,12 +1087,14 @@ architecture STRUCTURE of RISC_V is
   signal NLW_axi_smc_M01_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M02_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M02_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axi_smc_M03_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axi_smc_M03_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_uartlite_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_riscv_0_Interrupt_Ack_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
   signal NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_clk_wiz_1_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute BMM_INFO_PROCESSOR : string;
-  attribute BMM_INFO_PROCESSOR of microblaze_riscv_0 : label is "riscv > RISC_V microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr";
+  attribute BMM_INFO_PROCESSOR of microblaze_riscv_0 : label is "riscv > RISC_V microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr";
   attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of microblaze_riscv_0 : label is "yes";
   attribute X_INTERFACE_INFO : string;
@@ -1082,7 +1131,7 @@ architecture STRUCTURE of RISC_V is
   attribute X_INTERFACE_INFO of SW_tri_i : signal is "xilinx.com:interface:gpio:1.0 SW TRI_I";
   attribute X_INTERFACE_MODE of SW_tri_i : signal is "Master";
 begin
-BRAMMux_0: component RISC_V_BRAMMux_0_1
+BRAMMux_0: component RISC_V_BRAMMux_0_2
      port map (
       s_in_camera_addr(18 downto 0) => BRAM_PORTB_0_addr(18 downto 0),
       s_in_camera_clk => BRAM_PORTB_0_clk,
@@ -1091,13 +1140,13 @@ BRAMMux_0: component RISC_V_BRAMMux_0_1
       s_in_camera_en => BRAM_PORTB_0_en,
       s_in_camera_rst => BRAM_PORTB_0_rst,
       s_in_camera_we(0) => BRAM_PORTB_0_we(0),
-      s_in_microblaze_addr(18 downto 0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_ADDR(18 downto 0),
-      s_in_microblaze_clk => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_CLK,
-      s_in_microblaze_din(31 downto 0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_DIN(31 downto 0),
-      s_in_microblaze_dout(31 downto 0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_DOUT(31 downto 0),
-      s_in_microblaze_en => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_EN,
-      s_in_microblaze_rst => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_RST,
-      s_in_microblaze_we(0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_WE(0),
+      s_in_microblaze_addr(18 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(18 downto 0),
+      s_in_microblaze_clk => axi_bram_ctrl_0_BRAM_PORTA_CLK,
+      s_in_microblaze_din(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
+      s_in_microblaze_dout(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(31 downto 0),
+      s_in_microblaze_en => axi_bram_ctrl_0_BRAM_PORTA_EN,
+      s_in_microblaze_rst => axi_bram_ctrl_0_BRAM_PORTA_RST,
+      s_in_microblaze_we(0) => axi_bram_ctrl_0_BRAM_PORTA_WE(0),
       s_out_fb_addr(18 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_ADDR(18 downto 0),
       s_out_fb_clk => BRAMMux_0_BRAM_OUT_PORT_FB_CLK,
       s_out_fb_din(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DIN(11 downto 0),
@@ -1105,6 +1154,49 @@ BRAMMux_0: component RISC_V_BRAMMux_0_1
       s_out_fb_en => BRAMMux_0_BRAM_OUT_PORT_FB_EN,
       s_out_fb_rst => NLW_BRAMMux_0_s_out_fb_rst_UNCONNECTED,
       s_out_fb_we(0) => BRAMMux_0_BRAM_OUT_PORT_FB_WE(0)
+    );
+axi_bram_ctrl_0: component RISC_V_axi_bram_ctrl_0_0
+     port map (
+      bram_addr_a(23 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(23 downto 0),
+      bram_clk_a => axi_bram_ctrl_0_BRAM_PORTA_CLK,
+      bram_en_a => axi_bram_ctrl_0_BRAM_PORTA_EN,
+      bram_rddata_a(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(31 downto 0),
+      bram_rst_a => axi_bram_ctrl_0_BRAM_PORTA_RST,
+      bram_we_a(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_WE(3 downto 0),
+      bram_wrdata_a(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
+      s_axi_aclk => microblaze_riscv_0_Clk,
+      s_axi_araddr(23 downto 0) => axi_smc_M03_AXI_ARADDR(23 downto 0),
+      s_axi_arburst(1 downto 0) => axi_smc_M03_AXI_ARBURST(1 downto 0),
+      s_axi_arcache(3 downto 0) => axi_smc_M03_AXI_ARCACHE(3 downto 0),
+      s_axi_aresetn => rst_clk_wiz_1_100M_peripheral_aresetn(0),
+      s_axi_arlen(7 downto 0) => axi_smc_M03_AXI_ARLEN(7 downto 0),
+      s_axi_arlock => axi_smc_M03_AXI_ARLOCK(0),
+      s_axi_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
+      s_axi_arready => axi_smc_M03_AXI_ARREADY,
+      s_axi_arsize(2 downto 0) => axi_smc_M03_AXI_ARSIZE(2 downto 0),
+      s_axi_arvalid => axi_smc_M03_AXI_ARVALID,
+      s_axi_awaddr(23 downto 0) => axi_smc_M03_AXI_AWADDR(23 downto 0),
+      s_axi_awburst(1 downto 0) => axi_smc_M03_AXI_AWBURST(1 downto 0),
+      s_axi_awcache(3 downto 0) => axi_smc_M03_AXI_AWCACHE(3 downto 0),
+      s_axi_awlen(7 downto 0) => axi_smc_M03_AXI_AWLEN(7 downto 0),
+      s_axi_awlock => axi_smc_M03_AXI_AWLOCK(0),
+      s_axi_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
+      s_axi_awready => axi_smc_M03_AXI_AWREADY,
+      s_axi_awsize(2 downto 0) => axi_smc_M03_AXI_AWSIZE(2 downto 0),
+      s_axi_awvalid => axi_smc_M03_AXI_AWVALID,
+      s_axi_bready => axi_smc_M03_AXI_BREADY,
+      s_axi_bresp(1 downto 0) => axi_smc_M03_AXI_BRESP(1 downto 0),
+      s_axi_bvalid => axi_smc_M03_AXI_BVALID,
+      s_axi_rdata(31 downto 0) => axi_smc_M03_AXI_RDATA(31 downto 0),
+      s_axi_rlast => axi_smc_M03_AXI_RLAST,
+      s_axi_rready => axi_smc_M03_AXI_RREADY,
+      s_axi_rresp(1 downto 0) => axi_smc_M03_AXI_RRESP(1 downto 0),
+      s_axi_rvalid => axi_smc_M03_AXI_RVALID,
+      s_axi_wdata(31 downto 0) => axi_smc_M03_AXI_WDATA(31 downto 0),
+      s_axi_wlast => axi_smc_M03_AXI_WLAST,
+      s_axi_wready => axi_smc_M03_AXI_WREADY,
+      s_axi_wstrb(3 downto 0) => axi_smc_M03_AXI_WSTRB(3 downto 0),
+      s_axi_wvalid => axi_smc_M03_AXI_WVALID
     );
 axi_gpio_leds: component RISC_V_axi_gpio_0_0
      port map (
@@ -1211,6 +1303,39 @@ axi_smc: component RISC_V_axi_smc_0
       M02_AXI_wready => axi_smc_M02_AXI_WREADY,
       M02_AXI_wstrb(3 downto 0) => axi_smc_M02_AXI_WSTRB(3 downto 0),
       M02_AXI_wvalid => axi_smc_M02_AXI_WVALID,
+      M03_AXI_araddr(23 downto 0) => axi_smc_M03_AXI_ARADDR(23 downto 0),
+      M03_AXI_arburst(1 downto 0) => axi_smc_M03_AXI_ARBURST(1 downto 0),
+      M03_AXI_arcache(3 downto 0) => axi_smc_M03_AXI_ARCACHE(3 downto 0),
+      M03_AXI_arlen(7 downto 0) => axi_smc_M03_AXI_ARLEN(7 downto 0),
+      M03_AXI_arlock(0) => axi_smc_M03_AXI_ARLOCK(0),
+      M03_AXI_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
+      M03_AXI_arqos(3 downto 0) => NLW_axi_smc_M03_AXI_arqos_UNCONNECTED(3 downto 0),
+      M03_AXI_arready => axi_smc_M03_AXI_ARREADY,
+      M03_AXI_arsize(2 downto 0) => axi_smc_M03_AXI_ARSIZE(2 downto 0),
+      M03_AXI_arvalid => axi_smc_M03_AXI_ARVALID,
+      M03_AXI_awaddr(23 downto 0) => axi_smc_M03_AXI_AWADDR(23 downto 0),
+      M03_AXI_awburst(1 downto 0) => axi_smc_M03_AXI_AWBURST(1 downto 0),
+      M03_AXI_awcache(3 downto 0) => axi_smc_M03_AXI_AWCACHE(3 downto 0),
+      M03_AXI_awlen(7 downto 0) => axi_smc_M03_AXI_AWLEN(7 downto 0),
+      M03_AXI_awlock(0) => axi_smc_M03_AXI_AWLOCK(0),
+      M03_AXI_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
+      M03_AXI_awqos(3 downto 0) => NLW_axi_smc_M03_AXI_awqos_UNCONNECTED(3 downto 0),
+      M03_AXI_awready => axi_smc_M03_AXI_AWREADY,
+      M03_AXI_awsize(2 downto 0) => axi_smc_M03_AXI_AWSIZE(2 downto 0),
+      M03_AXI_awvalid => axi_smc_M03_AXI_AWVALID,
+      M03_AXI_bready => axi_smc_M03_AXI_BREADY,
+      M03_AXI_bresp(1 downto 0) => axi_smc_M03_AXI_BRESP(1 downto 0),
+      M03_AXI_bvalid => axi_smc_M03_AXI_BVALID,
+      M03_AXI_rdata(31 downto 0) => axi_smc_M03_AXI_RDATA(31 downto 0),
+      M03_AXI_rlast => axi_smc_M03_AXI_RLAST,
+      M03_AXI_rready => axi_smc_M03_AXI_RREADY,
+      M03_AXI_rresp(1 downto 0) => axi_smc_M03_AXI_RRESP(1 downto 0),
+      M03_AXI_rvalid => axi_smc_M03_AXI_RVALID,
+      M03_AXI_wdata(31 downto 0) => axi_smc_M03_AXI_WDATA(31 downto 0),
+      M03_AXI_wlast => axi_smc_M03_AXI_WLAST,
+      M03_AXI_wready => axi_smc_M03_AXI_WREADY,
+      M03_AXI_wstrb(3 downto 0) => axi_smc_M03_AXI_WSTRB(3 downto 0),
+      M03_AXI_wvalid => axi_smc_M03_AXI_WVALID,
       S00_AXI_araddr(31 downto 0) => microblaze_riscv_0_M_AXI_DP_ARADDR(31 downto 0),
       S00_AXI_arprot(2 downto 0) => microblaze_riscv_0_M_AXI_DP_ARPROT(2 downto 0),
       S00_AXI_arready => microblaze_riscv_0_M_AXI_DP_ARREADY,
@@ -1350,13 +1475,6 @@ microblaze_riscv_0: component RISC_V_microblaze_riscv_0_0
     );
 microblaze_riscv_0_local_memory: entity work.microblaze_riscv_0_local_memory_imp_3UL0U
      port map (
-      BRAM_OUT_PORT_B_addr(18 downto 0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_ADDR(18 downto 0),
-      BRAM_OUT_PORT_B_clk => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_CLK,
-      BRAM_OUT_PORT_B_din(31 downto 0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_DIN(31 downto 0),
-      BRAM_OUT_PORT_B_dout(31 downto 0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_DOUT(31 downto 0),
-      BRAM_OUT_PORT_B_en => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_EN,
-      BRAM_OUT_PORT_B_rst => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_RST,
-      BRAM_OUT_PORT_B_we(0) => microblaze_riscv_0_local_memory_BRAM_OUT_PORT_B_WE(0),
       DLMB_abus(0 to 31) => microblaze_riscv_0_dlmb_1_ABUS(0 to 31),
       DLMB_addrstrobe => microblaze_riscv_0_dlmb_1_ADDRSTROBE,
       DLMB_be(0 to 3) => microblaze_riscv_0_dlmb_1_BE(0 to 3),

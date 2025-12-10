@@ -1,7 +1,7 @@
 from PIL import Image
 
-img = Image.open("wallpaper.jpg").convert("RGB")
-with open("framebuffer_wallpaper.coe", "w") as f:
+img = Image.open("colour-bars-smpte-75-640x480-377410117.gif").convert("RGB")
+with open("framebuffer_color.coe", "w") as f:
     f.write("memory_initialization_radix=16;\n") # Radix of the data
     f.write("memory_initialization_vector=\n")   # Data
     vals = []

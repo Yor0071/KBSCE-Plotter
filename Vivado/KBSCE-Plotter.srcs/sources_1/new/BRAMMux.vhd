@@ -104,15 +104,15 @@ architecture RTL of BRAMMux is
 
     signal dout_data : std_logic_vector(11 downto 0); -- Otherwise opt_design won't run because multiple sources drive this
 begin
-    s_out_fb_clk <= s_in_microblaze_clk when s_in_microblaze_en = '1' else s_in_camera_clk;
-    s_out_fb_rst <= s_in_microblaze_rst when s_in_microblaze_en = '1' else s_in_camera_rst;
+    s_out_fb_clk <= s_in_microblaze_clk when true else s_in_camera_clk;
+    s_out_fb_rst <= s_in_microblaze_rst when true else s_in_camera_rst;
     
-    s_out_fb_en   <= s_in_microblaze_en   when s_in_microblaze_en = '1' else s_in_camera_en;
-    s_out_fb_din  <= s_in_microblaze_din(11 downto 0)  when s_in_microblaze_en = '1' else s_in_camera_din;
-    s_out_fb_we   <= s_in_microblaze_we   when s_in_microblaze_en = '1' else s_in_camera_we;
-    s_out_fb_addr <= s_in_microblaze_addr when s_in_microblaze_en = '1' else s_in_camera_addr;
+    s_out_fb_en   <= s_in_microblaze_en   when true else s_in_camera_en;
+    s_out_fb_din  <= s_in_microblaze_din(11 downto 0)  when true else s_in_camera_din;
+    s_out_fb_we   <= s_in_microblaze_we   when true else s_in_camera_we;
+    s_out_fb_addr <= s_in_microblaze_addr when true else s_in_camera_addr;
     
     s_in_microblaze_dout <= (others => '0');
-    s_in_microblaze_dout(11 downto 0) <= dout_data when s_in_microblaze_en = '1' else (others => '0');
-    s_in_camera_dout <= dout_data when s_in_microblaze_en = '1' else (others => '0');
+    s_in_microblaze_dout(11 downto 0) <= dout_data when true else (others => '0');
+    s_in_camera_dout <= dout_data when true else (others => '0');
 end RTL;

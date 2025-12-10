@@ -106,6 +106,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param general.usePosixSpawnForFork 1
+  set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 4
   set_param tcl.statsThreshold 360
   set_param runs.launchOptions { -jobs 16  }

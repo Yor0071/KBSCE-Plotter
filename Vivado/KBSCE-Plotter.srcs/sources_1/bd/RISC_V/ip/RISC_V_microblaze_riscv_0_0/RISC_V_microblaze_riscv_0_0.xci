@@ -820,7 +820,7 @@
     "contents": {
       "cpus": {
         "microblaze": {
-          "address_space_refs": "Instruction",
+          "address_space_refs": "Data",
           "parameters": {
             "endian": [ { "value": "little" } ],
             "elf_class": [ { "value": "32-bit" } ],
