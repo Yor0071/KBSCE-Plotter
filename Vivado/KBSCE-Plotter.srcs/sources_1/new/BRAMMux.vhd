@@ -113,7 +113,7 @@ begin
     s_out_fb_we   <= s_in_microblaze_we   when true else s_in_camera_we;
     
     converted_addr <= unsigned(s_in_microblaze_addr) / 4;
-    s_out_fb_addr <= std_logic_vector(s_in_microblaze_addr) when true else s_in_camera_addr;
+    s_out_fb_addr <= std_logic_vector(converted_addr) when true else s_in_camera_addr;
     
     s_in_microblaze_dout <= (others => '0');
     s_in_microblaze_dout(11 downto 0) <= dout_data when true else (others => '0');

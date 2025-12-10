@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Wed Dec 10 15:05:41 2025
+// Date        : Wed Dec 10 15:30:40 2025
 // Host        : mrt-fed-lap running 64-bit unknown
 // Command     : write_verilog -force -mode funcsim
 //               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_2/RISC_V_BRAMMux_0_2_sim_netlist.v
@@ -112,7 +112,9 @@ module RISC_V_BRAMMux_0_2
   assign s_in_microblaze_dout[2] = \<const0> ;
   assign s_in_microblaze_dout[1] = \<const0> ;
   assign s_in_microblaze_dout[0] = \<const0> ;
-  assign s_out_fb_addr[18:0] = s_in_microblaze_addr;
+  assign s_out_fb_addr[18] = \<const0> ;
+  assign s_out_fb_addr[17] = \<const0> ;
+  assign s_out_fb_addr[16:0] = s_in_microblaze_addr[18:2];
   assign s_out_fb_clk = s_in_microblaze_clk;
   assign s_out_fb_din[11:0] = s_in_microblaze_din[11:0];
   assign s_out_fb_en = s_in_microblaze_en;
