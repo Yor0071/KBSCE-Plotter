@@ -1,26 +1,84 @@
-# 2025-12-10T14:58:30.511850
+# 2025-12-10T18:48:36.123162
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="Vitis")
 
-platform = client.get_component(name="lnx-i")
+platform = client.get_component(name="lnx-K")
 status = platform.build()
 
-comp = client.get_component(name="app-i")
+comp = client.get_component(name="app-K")
 comp.build()
 
-client.delete_component(name="app-i")
+status = platform.build()
 
-client.delete_component(name="componentName")
+comp.build()
 
-client.delete_component(name="app-J")
+status = platform.build()
 
-client.delete_component(name="componentName")
+comp.build()
 
-client.delete_component(name="lnx-i")
+status = platform.build()
 
-client.delete_component(name="lnx-J")
+comp.build()
 
-vitis.dispose()
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
 

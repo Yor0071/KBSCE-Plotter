@@ -8,33 +8,24 @@
 #include "framebuffer.hxx"
 #include "xil_io.h"
 
-struct {
-    uint64_t size = 307200 * 4;
-    uint8_t* base_addr = (uint8_t*)XPAR_AXI_BRAM_CTRL_0_BASEADDR;
-    uint8_t* high_addr = (uint8_t*)XPAR_AXI_BRAM_CTRL_0_BASEADDR + size;
+using namespace FB;
 
-    rgb444_t read(uint64_t offset) {
-        return rgb444_t { .raw = {.data = (uint16_t)*(volatile uint32_t*)(base_addr + offset) }};
-    }
-
-    void write(uint64_t offset, rgb444_t pixel) {
-        *(volatile uint32_t*)(base_addr + offset) = pixel.raw.data;
-    }
-} FB;
-
-int main(void)
+int main(void) noexcept
 {
     Framebuffer fb;
 
-    rgb444_t pixel_r = { .rgb = rgb(0xF, 0x0, 0x0) };
-    rgb444_t pixel_g = { .rgb = rgb(0x0, 0xF, 0x0) };
-    rgb444_t pixel_b = { .rgb = rgb(0x0, 0x0, 0xF) };
+    pixel_t pixel_r = { .b = 0x0, .g = 0x0, .r = 0xF };
+    pixel_t pixel_g = { .b = 0x0, .g = 0xF, .r = 0x0 };
+    pixel_t pixel_b = { .b = 0xF, .g = 0x0, .r = 0x0 };
 
-    rgb444_t pixel[] = {pixel_r, pixel_g, pixel_b};
+    const pixel_t pixel[] = {pixel_r, pixel_g, pixel_b};
+
     while (true) {
-        for (uint32_t n = 0; n <= 2; n++) {
-            for (uint64_t offset = 0; offset < FB.size; offset++) {
-                FB.write(offset, pixel[n]);
+        for (uint32_t pixel_n = 0; pixel_n <= 2; pixel_n++) {
+            for (uint16_t y = 0; y < fb.HEIGHT; y++) {
+                for (uint16_t x = 0; x < fb.WIDTH; x++) {
+                    fb.write({ .x = x, .y = y }, pixel[pixel_n]);
+                }
             }
         }
     }

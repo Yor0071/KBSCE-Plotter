@@ -1,45 +1,48 @@
 #ifndef H_FRAMEBUFFER
 #define H_FRAMEBUFFER
 
-#define FRAMEBUFFER_BASEADDR 0x70000000
-#define FRAMEBUFFER_HIGHADDR 0x7FFFFFFF
-
 #include <unistd.h>
 #include <xparameters.h>
 #include <xil_printf.h>
 #include <assert.h>
 
-typedef struct __attribute__((__packed__)) {
-    uint16_t data : 12;
-} RawPixel;
+namespace FB {
 
-typedef struct __attribute__((__packed__)) {
-    uint16_t b : 4;
-    uint16_t g : 4;
-    uint16_t r : 4;
-} RGBPixel;
-
-RGBPixel rgb(uint16_t r, uint16_t g, uint16_t b) noexcept;
+typedef struct {
+    const uint16_t x, y;
+} screen_point_t;
 
 typedef union {
-    RawPixel raw;
-    RGBPixel rgb;
-} rgb444_t;
+    struct __attribute__((__packed__)) {
+        uint32_t raw : 12;
+    };
 
-rgb444_t make_pixel(uint16_t raw_pixel_data) noexcept;
-uint16_t get_raw_pixel_data(rgb444_t pixel) noexcept;
+    struct __attribute__((__packed__)) {
+        uint32_t b : 4;
+        uint32_t g : 4;
+        uint32_t r : 4;
+    };
+} pixel_t;
 
 class Framebuffer {
 private:
-    volatile uint32_t* const base_ptr;
-    volatile uint32_t* get_address(uint32_t byte_offset) const noexcept;
+    volatile uint32_t* base_ptr;
+
+    [[nodiscard]] inline volatile uint32_t* get_address(screen_point_t point) const noexcept;
 
 public:
-    Framebuffer() noexcept;
+    static constexpr uint32_t WIDTH = 640;
+    static constexpr uint32_t HEIGHT = 480;
+    static constexpr uint32_t SIZE = (WIDTH * HEIGHT) * 4;
 
-    void write(uint32_t byte_offset, rgb444_t pixel) const noexcept;
-    [[nodiscard]] rgb444_t read(uint32_t byte_offset) const noexcept;
-    [[nodiscard]] bool is_in_bounds(uint32_t byte_offset) const noexcept;
+    Framebuffer() noexcept;
+    ~Framebuffer() = default;
+
+    void write(screen_point_t point, pixel_t pixel) const noexcept;
+    [[nodiscard]] pixel_t read(screen_point_t point) const noexcept;
+    [[nodiscard]] inline bool is_in_bounds(screen_point_t point) const noexcept;
 };
+
+}
 
 #endif
