@@ -9,8 +9,8 @@
 #include "xil_io.h"
 
 struct {
-    uint32_t base_addr = XPAR_AXI_BRAM_CTRL_0_BASEADDR;
-    uint32_t high_addr = XPAR_AXI_BRAM_CTRL_0_BASEADDR + 307200;
+    uint8_t* base_addr = (uint8_t*)XPAR_AXI_BRAM_CTRL_0_BASEADDR;
+    uint8_t* high_addr = (uint8_t*)XPAR_AXI_BRAM_CTRL_0_BASEADDR + 307200;
 } FBAddr;
 
 int main(void)
@@ -24,9 +24,7 @@ int main(void)
     rgb444_t pixel[] = {pixel_r, pixel_g, pixel_b};
     while (true) {
         for (uint32_t n = 0; n <= 2; n++) {
-            for (volatile uint8_t* addr = reinterpret_cast<uint8_t*>(FBAddr.base_addr);
-                 addr <= reinterpret_cast<uint8_t*>(FBAddr.high_addr);
-                 addr++) {
+            for (uint8_t* addr = FBAddr.base_addr; addr <= FBAddr.high_addr; addr++) {
                 *(volatile uint32_t*)addr = pixel[n].raw.data;
             }
         }
