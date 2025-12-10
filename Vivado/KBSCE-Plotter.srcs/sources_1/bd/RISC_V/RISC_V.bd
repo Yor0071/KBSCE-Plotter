@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA001E37F76467FB6",
+      "boundary_crc": "0xA001E37F8D6A71C3",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V",
       "name": "RISC_V",
@@ -784,6 +784,10 @@
               "M02_AXI"
             ],
             "bd_attributes": {
+              "BRIDGES": {
+                "value": "M00_AXI:M01_AXI:M02_AXI",
+                "value_src": "auto"
+              },
               "TYPE": {
                 "value": "interior",
                 "value_src": "default"
@@ -951,8 +955,8 @@
             "vlnv": "xilinx.com:interface:bram_rtl:1.0",
             "parameters": {
               "MEM_SIZE": {
-                "value": "4096",
-                "value_src": "default_prop"
+                "value": "65536",
+                "value_src": "ip_prop"
               },
               "MEM_WIDTH": {
                 "value": "32",
@@ -1348,6 +1352,12 @@
                 "address_block": "/microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem",
                 "offset": "0x00000000",
                 "range": "16K",
+                "offset_high_param": "C_HIGHADDR"
+              },
+              "SEG_lmb_bram_if_cntlr_0_Mem": {
+                "address_block": "/lmb_bram_if_cntlr_0/SLMB/Mem",
+                "offset": "0x3FFF0000",
+                "range": "64K",
                 "offset_high_param": "C_HIGHADDR"
               }
             }

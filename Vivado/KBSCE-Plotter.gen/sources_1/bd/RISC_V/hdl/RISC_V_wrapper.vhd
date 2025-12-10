@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Tue Dec  9 14:40:23 2025
+--Date        : Wed Dec 10 10:16:47 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V_wrapper.bd
 --Design      : RISC_V_wrapper
@@ -50,6 +50,7 @@ architecture STRUCTURE of RISC_V_wrapper is
     BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORTB_0_en : in STD_LOGIC;
     BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORTB_0_rst : in STD_LOGIC;
     BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
     BRAM_PORTA_1_clk : in STD_LOGIC;
     BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -58,8 +59,7 @@ architecture STRUCTURE of RISC_V_wrapper is
     BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     sys_clock : in STD_LOGIC;
     reset : in STD_LOGIC;
-    VGA_PCLK : out STD_LOGIC;
-    BRAM_PORTB_0_rst : in STD_LOGIC
+    VGA_PCLK : out STD_LOGIC
   );
   end component RISC_V;
 begin
