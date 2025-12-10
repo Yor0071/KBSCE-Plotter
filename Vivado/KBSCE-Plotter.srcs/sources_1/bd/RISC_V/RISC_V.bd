@@ -1053,7 +1053,7 @@
               "ADDR": {
                 "physical_name": "s_in_microblaze_addr",
                 "direction": "I",
-                "left": "18",
+                "left": "31",
                 "right": "0"
               },
               "CLK": {

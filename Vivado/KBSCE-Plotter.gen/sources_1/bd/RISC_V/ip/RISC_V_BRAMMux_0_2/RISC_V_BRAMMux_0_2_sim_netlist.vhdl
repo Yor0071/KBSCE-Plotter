@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Wed Dec 10 15:30:40 2025
+-- Date        : Wed Dec 10 15:43:53 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_2/RISC_V_BRAMMux_0_2_sim_netlist.vhdl
@@ -21,7 +21,7 @@ entity RISC_V_BRAMMux_0_2 is
     s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
     s_in_microblaze_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_in_microblaze_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_in_microblaze_clk : in STD_LOGIC;
     s_in_microblaze_rst : in STD_LOGIC;
     s_in_camera_en : in STD_LOGIC;
@@ -53,7 +53,7 @@ end RISC_V_BRAMMux_0_2;
 
 architecture STRUCTURE of RISC_V_BRAMMux_0_2 is
   signal \<const0>\ : STD_LOGIC;
-  signal \^s_in_microblaze_addr\ : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal \^s_in_microblaze_addr\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^s_in_microblaze_clk\ : STD_LOGIC;
   signal \^s_in_microblaze_din\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^s_in_microblaze_en\ : STD_LOGIC;
@@ -90,7 +90,7 @@ architecture STRUCTURE of RISC_V_BRAMMux_0_2 is
   attribute x_interface_info of s_out_fb_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB DOUT";
   attribute x_interface_info of s_out_fb_we : signal is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB WE";
 begin
-  \^s_in_microblaze_addr\(18 downto 2) <= s_in_microblaze_addr(18 downto 2);
+  \^s_in_microblaze_addr\(20 downto 2) <= s_in_microblaze_addr(20 downto 2);
   \^s_in_microblaze_clk\ <= s_in_microblaze_clk;
   \^s_in_microblaze_din\(11 downto 0) <= s_in_microblaze_din(11 downto 0);
   \^s_in_microblaze_en\ <= s_in_microblaze_en;
@@ -140,9 +140,7 @@ begin
   s_in_microblaze_dout(2) <= \<const0>\;
   s_in_microblaze_dout(1) <= \<const0>\;
   s_in_microblaze_dout(0) <= \<const0>\;
-  s_out_fb_addr(18) <= \<const0>\;
-  s_out_fb_addr(17) <= \<const0>\;
-  s_out_fb_addr(16 downto 0) <= \^s_in_microblaze_addr\(18 downto 2);
+  s_out_fb_addr(18 downto 0) <= \^s_in_microblaze_addr\(20 downto 2);
   s_out_fb_clk <= \^s_in_microblaze_clk\;
   s_out_fb_din(11 downto 0) <= \^s_in_microblaze_din\(11 downto 0);
   s_out_fb_en <= \^s_in_microblaze_en\;

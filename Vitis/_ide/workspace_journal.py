@@ -162,3 +162,25 @@ status = platform.build()
 
 comp.build()
 
+advanced_options = client.create_advanced_options_dict(dt_overlay="0")
+
+platform = client.create_platform_component(name = "lnx-K",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
+
+platform = client.get_component(name="lnx-K")
+status = platform.build()
+
+comp = client.create_app_component(name="app-K",platform = "$COMPONENT_LOCATION/../lnx-K/export/lnx-K/lnx-K.xpfm",domain = "standalone_microblaze_riscv_0")
+
+status = platform.build()
+
+comp = client.get_component(name="app-K")
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+

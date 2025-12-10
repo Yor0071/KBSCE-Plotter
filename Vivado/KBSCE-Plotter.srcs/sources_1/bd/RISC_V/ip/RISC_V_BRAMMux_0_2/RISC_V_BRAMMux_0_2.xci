@@ -40,7 +40,7 @@
         "s_in_microblaze_dout": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "s_in_microblaze_din": [ { "direction": "in", "size_left": "31", "size_right": "0", "driver_value": "8" } ],
         "s_in_microblaze_we": [ { "direction": "in", "size_left": "0", "size_right": "0" } ],
-        "s_in_microblaze_addr": [ { "direction": "in", "size_left": "18", "size_right": "0" } ],
+        "s_in_microblaze_addr": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "s_in_microblaze_clk": [ { "direction": "in" } ],
         "s_in_microblaze_rst": [ { "direction": "in" } ],
         "s_in_camera_en": [ { "direction": "in" } ],

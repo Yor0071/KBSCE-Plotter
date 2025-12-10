@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Wed Dec 10 15:29:58 2025
+--Date        : Wed Dec 10 15:43:10 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -913,7 +913,7 @@ architecture STRUCTURE of RISC_V is
     s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
     s_in_microblaze_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_in_microblaze_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_in_microblaze_clk : in STD_LOGIC;
     s_in_microblaze_rst : in STD_LOGIC;
     s_in_camera_en : in STD_LOGIC;
@@ -1140,7 +1140,8 @@ BRAMMux_0: component RISC_V_BRAMMux_0_2
       s_in_camera_en => BRAM_PORTB_0_en,
       s_in_camera_rst => BRAM_PORTB_0_rst,
       s_in_camera_we(0) => BRAM_PORTB_0_we(0),
-      s_in_microblaze_addr(18 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(18 downto 0),
+      s_in_microblaze_addr(31 downto 24) => B"00000000",
+      s_in_microblaze_addr(23 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(23 downto 0),
       s_in_microblaze_clk => axi_bram_ctrl_0_BRAM_PORTA_CLK,
       s_in_microblaze_din(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
       s_in_microblaze_dout(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(31 downto 0),

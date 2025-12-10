@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Wed Dec 10 15:30:40 2025
+// Date        : Wed Dec 10 15:43:53 2025
 // Host        : mrt-fed-lap running 64-bit unknown
 // Command     : write_verilog -force -mode synth_stub
 //               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_2/RISC_V_BRAMMux_0_2_stub.v
@@ -21,12 +21,12 @@ module RISC_V_BRAMMux_0_2(s_in_microblaze_en, s_in_microblaze_dout,
   s_in_microblaze_rst, s_in_camera_en, s_in_camera_dout, s_in_camera_din, s_in_camera_we, 
   s_in_camera_addr, s_in_camera_clk, s_in_camera_rst, s_out_fb_en, s_out_fb_dout, 
   s_out_fb_din, s_out_fb_we, s_out_fb_addr, s_out_fb_clk, s_out_fb_rst)
-/* synthesis syn_black_box black_box_pad_pin="s_in_microblaze_en,s_in_microblaze_dout[31:0],s_in_microblaze_din[31:0],s_in_microblaze_we[0:0],s_in_microblaze_addr[18:0],s_in_microblaze_clk,s_in_microblaze_rst,s_in_camera_en,s_in_camera_dout[11:0],s_in_camera_din[11:0],s_in_camera_we[0:0],s_in_camera_addr[18:0],s_in_camera_clk,s_in_camera_rst,s_out_fb_en,s_out_fb_dout[11:0],s_out_fb_din[11:0],s_out_fb_we[0:0],s_out_fb_addr[18:0],s_out_fb_clk,s_out_fb_rst" */;
+/* synthesis syn_black_box black_box_pad_pin="s_in_microblaze_en,s_in_microblaze_dout[31:0],s_in_microblaze_din[31:0],s_in_microblaze_we[0:0],s_in_microblaze_addr[31:0],s_in_microblaze_clk,s_in_microblaze_rst,s_in_camera_en,s_in_camera_dout[11:0],s_in_camera_din[11:0],s_in_camera_we[0:0],s_in_camera_addr[18:0],s_in_camera_clk,s_in_camera_rst,s_out_fb_en,s_out_fb_dout[11:0],s_out_fb_din[11:0],s_out_fb_we[0:0],s_out_fb_addr[18:0],s_out_fb_clk,s_out_fb_rst" */;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE EN" *) (* x_interface_mode = "slave BRAM_IN_PORT_MICROBLAZE" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_IN_PORT_MICROBLAZE, MEM_SIZE 16777216, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 2" *) input s_in_microblaze_en;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DOUT" *) output [31:0]s_in_microblaze_dout;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DIN" *) input [31:0]s_in_microblaze_din;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE WE" *) input [0:0]s_in_microblaze_we;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE ADDR" *) input [18:0]s_in_microblaze_addr;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE ADDR" *) input [31:0]s_in_microblaze_addr;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE CLK" *) input s_in_microblaze_clk;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE RST" *) input s_in_microblaze_rst;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA EN" *) (* x_interface_mode = "slave BRAM_IN_PORT_CAMERA" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_IN_PORT_CAMERA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 2" *) input s_in_camera_en;

@@ -59,7 +59,7 @@ ENTITY RISC_V_BRAMMux_0_2 IS
     s_in_microblaze_dout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     s_in_microblaze_din : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     s_in_microblaze_we : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    s_in_microblaze_addr : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+    s_in_microblaze_addr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     s_in_microblaze_clk : IN STD_LOGIC;
     s_in_microblaze_rst : IN STD_LOGIC;
     s_in_camera_en : IN STD_LOGIC;
@@ -88,7 +88,7 @@ ARCHITECTURE RISC_V_BRAMMux_0_2_arch OF RISC_V_BRAMMux_0_2 IS
       s_in_microblaze_dout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       s_in_microblaze_din : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       s_in_microblaze_we : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      s_in_microblaze_addr : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+      s_in_microblaze_addr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       s_in_microblaze_clk : IN STD_LOGIC;
       s_in_microblaze_rst : IN STD_LOGIC;
       s_in_camera_en : IN STD_LOGIC;

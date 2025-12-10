@@ -47,7 +47,7 @@ entity BRAMMux is
         s_in_microblaze_dout : out std_logic_vector(31 downto 0); -- Data Out Bus (optional)
         s_in_microblaze_din : in std_logic_vector(31 downto 0); -- Data In Bus (optional)
         s_in_microblaze_we : in std_logic_vector(0 downto 0); -- Byte Enables (optional)
-        s_in_microblaze_addr : in std_logic_vector(18 downto 0); -- Address Signal (required)
+        s_in_microblaze_addr : in std_logic_vector(31 downto 0); -- Address Signal (required)
         s_in_microblaze_clk : in std_logic; -- Clock Signal (required)
         s_in_microblaze_rst : in std_logic; -- Reset Signal (required)
         
@@ -103,7 +103,7 @@ architecture RTL of BRAMMux is
     --ATTRIBUTE X_INTERFACE_PARAMETER of <port_name>: SIGNAL is "MASTER_TYPE <value>,MEM_ECC <value>,MEM_WIDTH <value>,MEM_SIZE <value>,READ_WRITE_MODE <value>";
 
     signal dout_data : std_logic_vector(11 downto 0); -- Otherwise opt_design won't run because multiple sources drive this
-    signal converted_addr : unsigned(18 downto 0);
+    signal converted_addr : unsigned(31 downto 0);
 begin
     s_out_fb_clk <= s_in_microblaze_clk when true else s_in_camera_clk;
     s_out_fb_rst <= s_in_microblaze_rst when true else s_in_camera_rst;
@@ -113,7 +113,7 @@ begin
     s_out_fb_we   <= s_in_microblaze_we   when true else s_in_camera_we;
     
     converted_addr <= unsigned(s_in_microblaze_addr) / 4;
-    s_out_fb_addr <= std_logic_vector(converted_addr) when true else s_in_camera_addr;
+    s_out_fb_addr <= std_logic_vector(converted_addr(18 downto 0)) when true else s_in_camera_addr;
     
     s_in_microblaze_dout <= (others => '0');
     s_in_microblaze_dout(11 downto 0) <= dout_data when true else (others => '0');
