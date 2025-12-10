@@ -1,17 +1,12 @@
 // Includes
-extern "C"{
+extern "C"
+{
     #include "xparameters.h"
     #include "xil_io.h"
 }
 
 // Registers
 #define MOTOR_BASE XPAR_MOTOR_CTRL_0_BASEADDR // Base address of motor IP
-
-// Assumption:
-//   slv_reg0 (0x00) = motor X1
-//   slv_reg1 (0x04) = motor X2
-//   slv_reg2 (0x08) = motor Y
-//   slv_reg2 (0x0C) = motor Z
 
 #define MOTOR_X1_REG     (MOTOR_BASE + 0x00U) // 1e motor = X
 #define MOTOR_X2_REG     (MOTOR_BASE + 0x04U) // 2e motor = X2
@@ -28,7 +23,8 @@ extern "C"{
 // Min speed 75 (max 255)
 #define DEFAULT_SPEED 150U  // Motor speed
 
-class Motor{             
+class Motor
+{             
     public:
         // Initialisation functions
         Motor();
