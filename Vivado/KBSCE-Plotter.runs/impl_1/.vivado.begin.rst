@@ -3,3 +3,8 @@
     <Process Command="vivado.bat" Owner="liamb" Host="THINKPADP1_LIAM" Pid="26052" HostCore="12" HostMemory="034174492672">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="liamb" Host="THINKPADP1_LIAM" Pid="15252" HostCore="12" HostMemory="034174492672">
+    </Process>
+</ProcessHandle>

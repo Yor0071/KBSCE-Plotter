@@ -149,19 +149,7 @@ architecture RTL of NexysA7_Top is
     -- dummy voor BRAM B read-output (we lezen niet vanuit top)
     signal cam_fb_dout_dummy : std_logic_vector(11 downto 0);
 
-    -- vaste minimale snelheid
-    constant MIN_SPEED : std_logic_vector(7 downto 0) := x"BF"; -- 75%
-
-    -- interne signalen per motor
-    signal speed_M1 : std_logic_vector(7 downto 0);
-    signal speed_M2 : std_logic_vector(7 downto 0);
-    signal speed_M3 : std_logic_vector(7 downto 0);
-    signal speed_M4 : std_logic_vector(7 downto 0);
-
-    signal dir_M1   : std_logic;
-    signal dir_M2   : std_logic;
-    signal dir_M3   : std_logic;
-    signal dir_M4   : std_logic;
+    signal frozen : std_logic := '0';
 
 begin
 
@@ -201,7 +189,7 @@ begin
             BRAM_PORTB_0_din  => cap_pixel,
             BRAM_PORTB_0_dout => cam_fb_dout_dummy, -- niet gebruikt
             BRAM_PORTB_0_en   => '1',
-            BRAM_PORTB_0_we   => (0 => cap_we),
+            BRAM_PORTB_0_we   => (0 => cap_we and not frozen),
 
             -- Buttons, I2C
             BTN_tri_i         => BTN,
@@ -262,6 +250,26 @@ begin
     --------------------------------------------------------------------
     OV_XCLK  <= cam_clk_i;  -- cam_clk_0 uit wrapper naar camera XCLK
     OV_PWDN  <= '0';        -- camera altijd aan
-    OV_RESET <= '1';        -- of bv. CPU_RESETN, afhankelijk van je schema
+    OV_RESET <= '1';        -- of bv. CPU_RESETN, afhankelijk van je 
+
+    --------------------------------------------------------------------
+    -- Freeze / Release logica
+    -- BTN(0) = foto (freeze), BTN(4) = release (live)
+    --------------------------------------------------------------------
+    process (CLK100MHZ, CPU_RESETN)
+    begin
+        if CPU_RESETN = '0' then
+            frozen <= '0';  -- start in live-modus
+        elsif rising_edge(CLK100MHZ) then
+            -- BTN(0) = center button => freeze
+            if BTN(0) = '1' then
+                frozen <= '1';
+            -- BTN(3) = right button  => release
+            elsif BTN(3) = '1' then
+                frozen <= '0';
+            end if;
+        end if;
+    end process;
+
 
 end RTL;

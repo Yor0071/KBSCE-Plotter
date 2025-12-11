@@ -32,9 +32,9 @@ int main(void) {
         // xil_printf("OV7670 init OK.\r\n");
     } else {
         // xil_printf("OV7670 init FAILED! (Status = %d)\r\n", Status);
-        while (1) {
+        // while (1) {
             // stil blijven hangen als de camera/I2C init faalt
-        }
+        // }
     }
     // ======================================
 
