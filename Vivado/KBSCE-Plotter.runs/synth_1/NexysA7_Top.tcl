@@ -148,6 +148,7 @@ set_property used_in_implementation false [get_files -all c:/Users/yoric/OneDriv
 set_property used_in_implementation false [get_files -all c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/data/riscv_bootloop.elf]
 
 OPTRACE "Adding files" END { }
