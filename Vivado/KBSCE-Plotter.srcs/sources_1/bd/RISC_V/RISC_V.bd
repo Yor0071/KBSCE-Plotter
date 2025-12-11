@@ -455,7 +455,7 @@
                 "bd_attributes": {
                   "TYPE": {
                     "value": "INTERIOR",
-                    "value_src": "auto"
+                    "value_src": "default"
                   }
                 }
               },
@@ -467,7 +467,7 @@
                   },
                   "TYPE": {
                     "value": "INTERIOR",
-                    "value_src": "auto"
+                    "value_src": "default"
                   }
                 },
                 "vlnv": "xilinx.com:interface:lmb_rtl:1.0",
@@ -490,7 +490,7 @@
                 "bd_attributes": {
                   "TYPE": {
                     "value": "INTERIOR",
-                    "value_src": "auto"
+                    "value_src": "default"
                   }
                 }
               },
@@ -502,7 +502,7 @@
                   },
                   "TYPE": {
                     "value": "INTERIOR",
-                    "value_src": "auto"
+                    "value_src": "default"
                   }
                 },
                 "vlnv": "xilinx.com:interface:lmb_rtl:1.0",
@@ -802,10 +802,6 @@
               "M03_AXI"
             ],
             "bd_attributes": {
-              "BRIDGES": {
-                "value": "M00_AXI:M01_AXI:M02_AXI:M03_AXI",
-                "value_src": "auto"
-              },
               "TYPE": {
                 "value": "interior",
                 "value_src": "default"
@@ -1261,7 +1257,7 @@
               "SEG_dlmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem",
                 "offset": "0x00000000",
-                "range": "16K",
+                "range": "64K",
                 "offset_high_param": "C_HIGHADDR"
               },
               "SEG_motor_ctrl_0_S00_AXI_reg": {
@@ -1278,7 +1274,7 @@
               "SEG_ilmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem",
                 "offset": "0x00000000",
-                "range": "16K",
+                "range": "64K",
                 "offset_high_param": "C_HIGHADDR"
               }
             }

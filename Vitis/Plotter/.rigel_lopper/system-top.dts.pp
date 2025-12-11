@@ -1,9 +1,9 @@
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform3\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform4\\hw\\sdt\\system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform3\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform4\\hw\\sdt\\system-top.dts"
 /dts-v1/;
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform3\\hw\\sdt\\pl.dtsi" 1
+# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform4\\hw\\sdt\\pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -155,7 +155,7 @@
    xlnx,use-interrupt = <0>;
    xlnx,pmp-cfg5 = <0x0>;
    xlnx,async-interrupt = <1>;
-   xlnx,pc-width = <14>;
+   xlnx,pc-width = <16>;
    xlnx,pmp-cfg6 = <0x0>;
    xlnx,icache-victims = <0>;
    xlnx,pmp-cfg7 = <0x0>;
@@ -332,7 +332,7 @@
    xlnx,arbitration = <0>;
    xlnx,num-lmb = <1>;
    xlnx,mask4 = <0x800000>;
-   reg = <0x00000000 0x4000>;
+   reg = <0x00000000 0x10000>;
    xlnx,s-axi-ctrl-addr-width = <32>;
    xlnx,mask5 = <0x800000>;
    xlnx,ecc-status-registers = <0>;
@@ -369,7 +369,7 @@
    xlnx,arbitration = <0>;
    xlnx,num-lmb = <1>;
    xlnx,mask4 = <0x800000>;
-   reg = <0x00000000 0x4000>;
+   reg = <0x00000000 0x10000>;
    xlnx,s-axi-ctrl-addr-width = <32>;
    xlnx,mask5 = <0x800000>;
    xlnx,ecc-status-registers = <0>;
@@ -401,7 +401,7 @@
   };
  };
 };
-# 3 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform3\\hw\\sdt\\system-top.dts" 2
+# 3 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Platform4\\hw\\sdt\\system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
@@ -416,7 +416,7 @@
   xlnx,ip-name = "lmb_bram_if_cntlr";
   device_type = "memory";
   memory_type = "memory";
-  reg = <0x00000000 0x4000>;
+  reg = <0x00000000 0x10000>;
  };
  chosen {
   stdout-path = "serial0:9600n8";
@@ -425,8 +425,8 @@
   serial0 = &axi_uartlite_0;
  };
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
-  address-map = <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x4000>,
-         <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x4000>,
+  address-map = <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>,
+         <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x10000>,
          <0x40000000 &axi_gpio_leds 0x40000000 0x10000>,
          <0x40010000 &axi_gpio_switches 0x40010000 0x10000>,
          <0x40600000 &axi_uartlite_0 0x40600000 0x10000>,

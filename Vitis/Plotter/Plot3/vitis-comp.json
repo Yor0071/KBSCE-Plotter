@@ -1,7 +1,7 @@
 {
   "name": "Plot3",
   "type": "HOST",
-  "platform": "Platform3",
+  "platform": "Platform4",
   "domain": "standalone_microblaze_riscv_0",
   "cpuInstance": "microblaze_riscv_0",
   "cpuType": "microblaze_riscv",

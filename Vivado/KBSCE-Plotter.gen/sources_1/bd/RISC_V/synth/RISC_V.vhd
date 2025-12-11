@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
---Date        : Wed Dec 10 14:27:27 2025
+--Date        : Thu Dec 11 09:34:02 2025
 --Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -567,7 +567,7 @@ entity RISC_V is
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=2,da_bram_cntlr_cnt=1,da_microblaze_riscv_cnt=1,synth_mode=None}";
+  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=2,da_bram_cntlr_cnt=5,da_microblaze_riscv_cnt=1,synth_mode=None}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of RISC_V : entity is "RISC_V.hwdef";
 end RISC_V;
