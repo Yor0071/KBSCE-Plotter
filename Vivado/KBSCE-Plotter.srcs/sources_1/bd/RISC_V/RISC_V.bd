@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA001E37F8D6A71C3",
+      "boundary_crc": "0x3DAD65B5376E7149",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V",
       "name": "RISC_V",
@@ -73,7 +73,7 @@
           }
         }
       },
-      "BRAM_PORTB_0": {
+      "BRAM_PORT_CAM": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
         "vlnv": "xilinx.com:interface:bram_rtl:1.0",
@@ -103,44 +103,44 @@
         },
         "port_maps": {
           "ADDR": {
-            "physical_name": "BRAM_PORTB_0_addr",
+            "physical_name": "BRAM_PORT_CAM_addr",
             "direction": "I",
             "left": "18",
             "right": "0"
           },
           "CLK": {
-            "physical_name": "BRAM_PORTB_0_clk",
+            "physical_name": "BRAM_PORT_CAM_clk",
             "direction": "I"
           },
           "DIN": {
-            "physical_name": "BRAM_PORTB_0_din",
+            "physical_name": "BRAM_PORT_CAM_din",
             "direction": "I",
             "left": "11",
             "right": "0"
           },
           "DOUT": {
-            "physical_name": "BRAM_PORTB_0_dout",
+            "physical_name": "BRAM_PORT_CAM_dout",
             "direction": "O",
             "left": "11",
             "right": "0"
           },
           "EN": {
-            "physical_name": "BRAM_PORTB_0_en",
+            "physical_name": "BRAM_PORT_CAM_en",
             "direction": "I"
           },
           "WE": {
-            "physical_name": "BRAM_PORTB_0_we",
+            "physical_name": "BRAM_PORT_CAM_we",
             "direction": "I",
             "left": "0",
             "right": "0"
           },
           "RST": {
-            "physical_name": "BRAM_PORTB_0_rst",
+            "physical_name": "BRAM_PORT_CAM_rst",
             "direction": "I"
           }
         }
       },
-      "BRAM_PORTA_1": {
+      "BRAM_PORT_VGA": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
         "vlnv": "xilinx.com:interface:bram_rtl:1.0",
@@ -170,33 +170,33 @@
         },
         "port_maps": {
           "ADDR": {
-            "physical_name": "BRAM_PORTA_1_addr",
+            "physical_name": "BRAM_PORT_VGA_addr",
             "direction": "I",
             "left": "18",
             "right": "0"
           },
           "CLK": {
-            "physical_name": "BRAM_PORTA_1_clk",
+            "physical_name": "BRAM_PORT_VGA_clk",
             "direction": "I"
           },
           "DIN": {
-            "physical_name": "BRAM_PORTA_1_din",
+            "physical_name": "BRAM_PORT_VGA_din",
             "direction": "I",
             "left": "11",
             "right": "0"
           },
           "DOUT": {
-            "physical_name": "BRAM_PORTA_1_dout",
+            "physical_name": "BRAM_PORT_VGA_dout",
             "direction": "O",
             "left": "11",
             "right": "0"
           },
           "EN": {
-            "physical_name": "BRAM_PORTA_1_en",
+            "physical_name": "BRAM_PORT_VGA_en",
             "direction": "I"
           },
           "WE": {
-            "physical_name": "BRAM_PORTA_1_we",
+            "physical_name": "BRAM_PORT_VGA_we",
             "direction": "I",
             "left": "0",
             "right": "0"
@@ -1176,13 +1176,13 @@
       },
       "BRAM_PORTA_1_1": {
         "interface_ports": [
-          "BRAM_PORTA_1",
+          "BRAM_PORT_VGA",
           "blk_mem_gen_0/BRAM_PORTA"
         ]
       },
       "BRAM_PORTB_0_1": {
         "interface_ports": [
-          "BRAM_PORTB_0",
+          "BRAM_PORT_CAM",
           "BRAMMux_0/BRAM_IN_PORT_CAMERA"
         ]
       },

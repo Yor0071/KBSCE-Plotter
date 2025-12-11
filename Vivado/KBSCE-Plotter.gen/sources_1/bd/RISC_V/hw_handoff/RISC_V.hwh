@@ -1,72 +1,72 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 10 15:43:13 2025" VIVADOVERSION="2025.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec 11 18:10:05 2025" VIVADOVERSION="2025.1">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="RISC_V" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" LEFT="18" NAME="BRAM_PORTA_1_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_addra">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addra"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="BRAM_PORTA_1_clk" SIGIS="clk" SIGNAME="blk_mem_gen_0_clka">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="11" NAME="BRAM_PORTA_1_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_dina">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="dina"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="11" NAME="BRAM_PORTA_1_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="douta"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="BRAM_PORTA_1_en" SIGIS="undef" SIGNAME="blk_mem_gen_0_ena">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="ena"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="0" NAME="BRAM_PORTA_1_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_wea">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="wea"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="18" NAME="BRAM_PORTB_0_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_addr">
+    <PORT DIR="I" LEFT="18" NAME="BRAM_PORT_CAM_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_addr">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_addr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_PORTB_0_clk" SIGIS="clk" SIGNAME="BRAMMux_0_s_in_camera_clk">
+    <PORT DIR="I" NAME="BRAM_PORT_CAM_clk" SIGIS="clk" SIGNAME="BRAMMux_0_s_in_camera_clk">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_clk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="11" NAME="BRAM_PORTB_0_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_din">
+    <PORT DIR="I" LEFT="11" NAME="BRAM_PORT_CAM_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_din">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_din"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="11" NAME="BRAM_PORTB_0_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_dout">
+    <PORT DIR="O" LEFT="11" NAME="BRAM_PORT_CAM_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_dout"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_PORTB_0_en" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_en">
+    <PORT DIR="I" NAME="BRAM_PORT_CAM_en" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_en">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_en"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_PORTB_0_rst" SIGIS="rst" SIGNAME="BRAMMux_0_s_in_camera_rst">
+    <PORT DIR="I" NAME="BRAM_PORT_CAM_rst" SIGIS="rst" SIGNAME="BRAMMux_0_s_in_camera_rst">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_rst"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="0" NAME="BRAM_PORTB_0_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_we">
+    <PORT DIR="I" LEFT="0" NAME="BRAM_PORT_CAM_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_we">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_we"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="18" NAME="BRAM_PORT_VGA_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_addra">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addra"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_PORT_VGA_clk" SIGIS="clk" SIGNAME="blk_mem_gen_0_clka">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="11" NAME="BRAM_PORT_VGA_din" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_dina">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="dina"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="11" NAME="BRAM_PORT_VGA_dout" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="douta"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="BRAM_PORT_VGA_en" SIGIS="undef" SIGNAME="blk_mem_gen_0_ena">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="ena"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="BRAM_PORT_VGA_we" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_wea">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="wea"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="15" NAME="LED_tri_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_leds_gpio_io_o">
@@ -124,7 +124,7 @@
         <PORTMAP LOGICAL="TxD" PHYSICAL="usb_uart_txd"/>
       </PORTMAPS>
     </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORTB_0" NAME="BRAM_PORTB_0" TYPE="TARGET">
+    <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORT_CAM" NAME="BRAM_PORT_CAM" TYPE="TARGET">
       <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
       <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
       <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
@@ -132,16 +132,16 @@
       <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
       <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
       <PORTMAPS>
-        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_PORTB_0_addr"/>
-        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_PORTB_0_clk"/>
-        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_PORTB_0_din"/>
-        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_PORTB_0_dout"/>
-        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_PORTB_0_en"/>
-        <PORTMAP LOGICAL="RST" PHYSICAL="BRAM_PORTB_0_rst"/>
-        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_PORTB_0_we"/>
+        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_PORT_CAM_addr"/>
+        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_PORT_CAM_clk"/>
+        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_PORT_CAM_din"/>
+        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_PORT_CAM_dout"/>
+        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_PORT_CAM_en"/>
+        <PORTMAP LOGICAL="RST" PHYSICAL="BRAM_PORT_CAM_rst"/>
+        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_PORT_CAM_we"/>
       </PORTMAPS>
     </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORTA_1" NAME="BRAM_PORTA_1" TYPE="TARGET">
+    <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORT_VGA" NAME="BRAM_PORT_VGA" TYPE="TARGET">
       <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
       <PARAMETER NAME="MEM_ADDRESS_MODE"/>
       <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
@@ -150,12 +150,12 @@
       <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
       <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
       <PORTMAPS>
-        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_PORTA_1_addr"/>
-        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_PORTA_1_clk"/>
-        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_PORTA_1_din"/>
-        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_PORTA_1_dout"/>
-        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_PORTA_1_en"/>
-        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_PORTA_1_we"/>
+        <PORTMAP LOGICAL="ADDR" PHYSICAL="BRAM_PORT_VGA_addr"/>
+        <PORTMAP LOGICAL="CLK" PHYSICAL="BRAM_PORT_VGA_clk"/>
+        <PORTMAP LOGICAL="DIN" PHYSICAL="BRAM_PORT_VGA_din"/>
+        <PORTMAP LOGICAL="DOUT" PHYSICAL="BRAM_PORT_VGA_dout"/>
+        <PORTMAP LOGICAL="EN" PHYSICAL="BRAM_PORT_VGA_en"/>
+        <PORTMAP LOGICAL="WE" PHYSICAL="BRAM_PORT_VGA_we"/>
       </PORTMAPS>
     </BUSINTERFACE>
   </EXTERNALINTERFACES>
@@ -170,37 +170,37 @@
       <PORTS>
         <PORT DIR="I" LEFT="18" NAME="s_in_camera_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_addr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTB_0_addr"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_in_camera_clk" SIGIS="clk" SIGNAME="BRAMMux_0_s_in_camera_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTB_0_clk"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="s_in_camera_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_din">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTB_0_din"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="11" NAME="s_in_camera_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTB_0_dout"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_in_camera_en" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_en">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTB_0_en"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_en"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_in_camera_rst" SIGIS="rst" SIGNAME="BRAMMux_0_s_in_camera_rst">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTB_0_rst"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_rst"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="s_in_camera_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_we">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTB_0_we"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_we"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_in_microblaze_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_addr">
@@ -287,7 +287,7 @@
             <PORTMAP LOGICAL="WE" PHYSICAL="s_in_microblaze_we"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORTB_0" NAME="BRAM_IN_PORT_CAMERA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+        <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORT_CAM" NAME="BRAM_IN_PORT_CAMERA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
           <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
           <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
           <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
@@ -3006,7 +3006,7 @@
       <PORTS>
         <PORT DIR="I" LEFT="18" NAME="addra" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_addra">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTA_1_addr"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="18" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_addr">
@@ -3016,7 +3016,7 @@
         </PORT>
         <PORT DIR="I" NAME="clka" SIGIS="clk" SIGNAME="blk_mem_gen_0_clka">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTA_1_clk"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="BRAMMux_0_s_out_fb_clk">
@@ -3026,7 +3026,7 @@
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="dina" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_dina">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTA_1_din"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="dinb" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_din">
@@ -3036,7 +3036,7 @@
         </PORT>
         <PORT DIR="O" LEFT="11" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTA_1_dout"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="11" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_dout">
@@ -3046,7 +3046,7 @@
         </PORT>
         <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="blk_mem_gen_0_ena">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTA_1_en"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_en"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_en">
@@ -3056,7 +3056,7 @@
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_wea">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORTA_1_we"/>
+            <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_we"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_we">
@@ -3066,7 +3066,7 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORTA_1" NAME="BRAM_PORTA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+        <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORT_VGA" NAME="BRAM_PORTA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
           <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
           <PARAMETER NAME="MEM_ADDRESS_MODE" VALUE="BYTE_ADDRESS"/>
           <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
@@ -5491,12 +5491,12 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="reset_inv_0_Res">
+        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="undef" SIGNAME="reset_inv_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_wiz_1" PORT="reset"/>
           </CONNECTIONS>

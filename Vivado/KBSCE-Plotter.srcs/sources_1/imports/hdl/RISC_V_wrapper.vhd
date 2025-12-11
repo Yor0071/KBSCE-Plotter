@@ -37,31 +37,30 @@ entity RISC_V_wrapper is
 end RISC_V_wrapper;
 
 architecture STRUCTURE of RISC_V_wrapper is
-  component RISC_V is
-  port (
-    usb_uart_rxd : in STD_LOGIC;
-    usb_uart_txd : out STD_LOGIC;
-    LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    sys_clock : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    VGA_PCLK : out std_logic;
-    
-    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTA_1_clk : in STD_LOGIC;
-    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_en : in STD_LOGIC;
-    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    
-    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTB_0_clk : in STD_LOGIC;
-    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_en : in STD_LOGIC;
-    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component RISC_V;
+    component RISC_V is
+      port (
+        BRAM_PORT_CAM_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        BRAM_PORT_CAM_clk : in STD_LOGIC;
+        BRAM_PORT_CAM_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_CAM_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_CAM_en : in STD_LOGIC;
+        BRAM_PORT_CAM_rst : in STD_LOGIC;
+        BRAM_PORT_CAM_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+        BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        BRAM_PORT_VGA_clk : in STD_LOGIC;
+        BRAM_PORT_VGA_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_VGA_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_VGA_en : in STD_LOGIC;
+        BRAM_PORT_VGA_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+        LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+        SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+        VGA_PCLK : out STD_LOGIC;
+        reset : in STD_LOGIC;
+        sys_clock : in STD_LOGIC;
+        usb_uart_rxd : in STD_LOGIC;
+        usb_uart_txd : out STD_LOGIC
+      );
+    end component RISC_V;
 begin
 RISC_V_i: component RISC_V
      port map (
@@ -72,19 +71,20 @@ RISC_V_i: component RISC_V
         usb_uart_rxd => UART_RX_OUT,
         usb_uart_txd => UART_TX_IN,
         VGA_PCLK => VGA_PCLK,
+
+        BRAM_PORT_VGA_addr => VGA_FB_addr,
+        BRAM_PORT_VGA_clk  => VGA_FB_clk,
+        BRAM_PORT_VGA_din  => VGA_FB_din,
+        BRAM_PORT_VGA_dout => VGA_FB_dout,
+        BRAM_PORT_VGA_en   => VGA_FB_en,
+        BRAM_PORT_VGA_we   => VGA_FB_we,
         
-        BRAM_PORTA_1_addr => VGA_FB_addr,
-        BRAM_PORTA_1_clk  => VGA_FB_clk,
-        BRAM_PORTA_1_din  => VGA_FB_din,
-        BRAM_PORTA_1_dout => VGA_FB_dout,
-        BRAM_PORTA_1_en   => VGA_FB_en,
-        BRAM_PORTA_1_we   => VGA_FB_we,
-        
-        BRAM_PORTB_0_addr => CAM_FB_addr,
-        BRAM_PORTB_0_clk  => CAM_FB_clk,
-        BRAM_PORTB_0_din  => CAM_FB_din,
-        BRAM_PORTB_0_dout => CAM_FB_dout,
-        BRAM_PORTB_0_en   => CAM_FB_en,
-        BRAM_PORTB_0_we   => CAM_FB_we
+        BRAM_PORT_CAM_addr => CAM_FB_addr,
+        BRAM_PORT_CAM_clk  => CAM_FB_clk,
+        BRAM_PORT_CAM_din  => CAM_FB_din,
+        BRAM_PORT_CAM_dout => CAM_FB_dout,
+        BRAM_PORT_CAM_en   => CAM_FB_en,
+        BRAM_PORT_CAM_we   => CAM_FB_we,
+        BRAM_PORT_CAM_rst  => CPU_RESETN
     );
 end STRUCTURE;

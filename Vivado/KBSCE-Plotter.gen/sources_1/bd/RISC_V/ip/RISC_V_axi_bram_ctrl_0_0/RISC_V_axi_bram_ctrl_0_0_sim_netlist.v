@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
 // Date        : Wed Dec 10 14:47:38 2025
 // Host        : mrt-fed-lap running 64-bit unknown
-// Command     : write_verilog -force -mode funcsim
-//               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top RISC_V_axi_bram_ctrl_0_0 -prefix
+//               RISC_V_axi_bram_ctrl_0_0_ RISC_V_axi_bram_ctrl_0_0_sim_netlist.v
 // Design      : RISC_V_axi_bram_ctrl_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -256,7 +256,7 @@ endmodule
 (* C_READ_LATENCY = "2" *) (* C_SINGLE_PORT_BRAM = "1" *) (* C_S_AXI_ADDR_WIDTH = "24" *) 
 (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
 (* C_S_AXI_ID_WIDTH = "1" *) (* C_S_AXI_PROTOCOL = "AXI4" *) (* C_S_AXI_SUPPORTS_NARROW_BURST = "0" *) 
-(* ORIG_REF_NAME = "axi_bram_ctrl" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl
    (s_axi_aclk,
     s_axi_aresetn,
@@ -578,7 +578,6 @@ module RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_bram_ctrl_top" *) 
 module RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl_top
    (\GEN_NO_RD_CMD_OPT.axi_rvalid_int_reg ,
     \GEN_NO_RD_CMD_OPT.axi_rlast_int_reg ,
@@ -701,7 +700,6 @@ module RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl_top
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "full_axi" *) 
 module RISC_V_axi_bram_ctrl_0_0_full_axi
    (\GEN_NO_RD_CMD_OPT.axi_rvalid_int_reg ,
     \GEN_NO_RD_CMD_OPT.axi_rlast_int_reg ,
@@ -1185,7 +1183,6 @@ module RISC_V_axi_bram_ctrl_0_0_full_axi
         .\save_init_bram_addr_ld_reg[3] (SR));
 endmodule
 
-(* ORIG_REF_NAME = "rd_chnl" *) 
 module RISC_V_axi_bram_ctrl_0_0_rd_chnl
    (s_axi_aresetn_0,
     ar_active_d1,
@@ -6233,7 +6230,6 @@ module RISC_V_axi_bram_ctrl_0_0_rd_chnl
         .O(\s_axi_rdata[9]_INST_0_i_1_n_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "sng_port_arb" *) 
 module RISC_V_axi_bram_ctrl_0_0_sng_port_arb
    (s_axi_awready,
     s_axi_arready,
@@ -6625,7 +6621,6 @@ module RISC_V_axi_bram_ctrl_0_0_sng_port_arb
         .O(ar_active_re29_out));
 endmodule
 
-(* ORIG_REF_NAME = "wr_chnl" *) 
 module RISC_V_axi_bram_ctrl_0_0_wr_chnl
    (aw_active_d1,
     BRAM_En_A_i,
@@ -7386,7 +7381,6 @@ module RISC_V_axi_bram_ctrl_0_0_wr_chnl
         .O(\bvalid_cnt_reg[1]_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "wrap_brst" *) 
 module RISC_V_axi_bram_ctrl_0_0_wrap_brst
    (SR,
     curr_wrap_burst_reg_reg,

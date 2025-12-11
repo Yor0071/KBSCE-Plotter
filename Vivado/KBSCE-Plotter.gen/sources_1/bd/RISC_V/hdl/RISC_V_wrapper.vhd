@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Wed Dec 10 15:43:10 2025
+--Date        : Thu Dec 11 18:10:03 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V_wrapper.bd
 --Design      : RISC_V_wrapper
@@ -14,19 +14,19 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity RISC_V_wrapper is
   port (
-    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTA_1_clk : in STD_LOGIC;
-    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_en : in STD_LOGIC;
-    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTB_0_clk : in STD_LOGIC;
-    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_en : in STD_LOGIC;
-    BRAM_PORTB_0_rst : in STD_LOGIC;
-    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_CAM_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_CAM_clk : in STD_LOGIC;
+    BRAM_PORT_CAM_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_en : in STD_LOGIC;
+    BRAM_PORT_CAM_rst : in STD_LOGIC;
+    BRAM_PORT_CAM_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_VGA_clk : in STD_LOGIC;
+    BRAM_PORT_VGA_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_en : in STD_LOGIC;
+    BRAM_PORT_VGA_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     VGA_PCLK : out STD_LOGIC;
@@ -44,19 +44,19 @@ architecture STRUCTURE of RISC_V_wrapper is
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC;
-    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTB_0_clk : in STD_LOGIC;
-    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_en : in STD_LOGIC;
-    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    BRAM_PORTB_0_rst : in STD_LOGIC;
-    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTA_1_clk : in STD_LOGIC;
-    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_en : in STD_LOGIC;
-    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_CAM_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_CAM_clk : in STD_LOGIC;
+    BRAM_PORT_CAM_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_en : in STD_LOGIC;
+    BRAM_PORT_CAM_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_CAM_rst : in STD_LOGIC;
+    BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_VGA_clk : in STD_LOGIC;
+    BRAM_PORT_VGA_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_en : in STD_LOGIC;
+    BRAM_PORT_VGA_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     sys_clock : in STD_LOGIC;
     reset : in STD_LOGIC;
     VGA_PCLK : out STD_LOGIC
@@ -65,19 +65,19 @@ architecture STRUCTURE of RISC_V_wrapper is
 begin
 RISC_V_i: component RISC_V
      port map (
-      BRAM_PORTA_1_addr(18 downto 0) => BRAM_PORTA_1_addr(18 downto 0),
-      BRAM_PORTA_1_clk => BRAM_PORTA_1_clk,
-      BRAM_PORTA_1_din(11 downto 0) => BRAM_PORTA_1_din(11 downto 0),
-      BRAM_PORTA_1_dout(11 downto 0) => BRAM_PORTA_1_dout(11 downto 0),
-      BRAM_PORTA_1_en => BRAM_PORTA_1_en,
-      BRAM_PORTA_1_we(0) => BRAM_PORTA_1_we(0),
-      BRAM_PORTB_0_addr(18 downto 0) => BRAM_PORTB_0_addr(18 downto 0),
-      BRAM_PORTB_0_clk => BRAM_PORTB_0_clk,
-      BRAM_PORTB_0_din(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
-      BRAM_PORTB_0_dout(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
-      BRAM_PORTB_0_en => BRAM_PORTB_0_en,
-      BRAM_PORTB_0_rst => BRAM_PORTB_0_rst,
-      BRAM_PORTB_0_we(0) => BRAM_PORTB_0_we(0),
+      BRAM_PORT_CAM_addr(18 downto 0) => BRAM_PORT_CAM_addr(18 downto 0),
+      BRAM_PORT_CAM_clk => BRAM_PORT_CAM_clk,
+      BRAM_PORT_CAM_din(11 downto 0) => BRAM_PORT_CAM_din(11 downto 0),
+      BRAM_PORT_CAM_dout(11 downto 0) => BRAM_PORT_CAM_dout(11 downto 0),
+      BRAM_PORT_CAM_en => BRAM_PORT_CAM_en,
+      BRAM_PORT_CAM_rst => BRAM_PORT_CAM_rst,
+      BRAM_PORT_CAM_we(0) => BRAM_PORT_CAM_we(0),
+      BRAM_PORT_VGA_addr(18 downto 0) => BRAM_PORT_VGA_addr(18 downto 0),
+      BRAM_PORT_VGA_clk => BRAM_PORT_VGA_clk,
+      BRAM_PORT_VGA_din(11 downto 0) => BRAM_PORT_VGA_din(11 downto 0),
+      BRAM_PORT_VGA_dout(11 downto 0) => BRAM_PORT_VGA_dout(11 downto 0),
+      BRAM_PORT_VGA_en => BRAM_PORT_VGA_en,
+      BRAM_PORT_VGA_we(0) => BRAM_PORT_VGA_we(0),
       LED_tri_o(15 downto 0) => LED_tri_o(15 downto 0),
       SW_tri_i(15 downto 0) => SW_tri_i(15 downto 0),
       VGA_PCLK => VGA_PCLK,
