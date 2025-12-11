@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Dec  5 11:02:12 2025
--- Host        : mrt-fed-lap running 64-bit unknown
--- Command     : write_vhdl -force -mode synth_stub -rename_top RISC_V_blk_mem_gen_0_0 -prefix
---               RISC_V_blk_mem_gen_0_0_ RISC_V_blk_mem_gen_0_0_stub.vhdl
+-- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+-- Date        : Wed Dec 10 14:29:12 2025
+-- Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_1/RISC_V_blk_mem_gen_0_0_stub.vhdl
 -- Design      : RISC_V_blk_mem_gen_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1
@@ -47,7 +47,7 @@ architecture stub of RISC_V_blk_mem_gen_0_0 is
   attribute x_interface_mode : string;
   attribute x_interface_mode of clka : signal is "slave BRAM_PORTA";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clka : signal is "XIL_INTERFACENAME BRAM_PORTA, MEM_ADDRESS_MODE BYTE_ADDRESS, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_WRITE_MODE READ_WRITE, READ_LATENCY 1";
+  attribute x_interface_parameter of clka : signal is "XIL_INTERFACENAME BRAM_PORTA, MEM_ADDRESS_MODE BYTE_ADDRESS, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_WRITE_MODE READ_WRITE, READ_LATENCY 2";
   attribute x_interface_info of ena : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA EN";
   attribute x_interface_info of wea : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA WE";
   attribute x_interface_info of addra : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR";

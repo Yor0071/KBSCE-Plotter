@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Fri Dec  5 11:54:49 2025
-| Host             : mrt-fed-lap running 64-bit unknown
+| Tool Version     : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date             : Wed Dec 10 16:20:51 2025
+| Host             : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 | Command          : report_power -file NexysA7_Top_power_routed.rpt -pb NexysA7_Top_power_summary_routed.pb -rpx NexysA7_Top_power_routed.rpx
 | Design           : NexysA7_Top
 | Device           : xc7a100tcsg324-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.238        |
+| Total On-Chip Power (W)  | 0.235        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.136        |
+| Dynamic (W)              | 0.132        |
 | Device Static (W)        | 0.103        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -52,21 +52,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |       10 |       --- |             --- |
-| Slice Logic              |     0.004 |     6848 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     2679 |     63400 |            4.23 |
+| Clocks                   |     0.018 |       11 |       --- |             --- |
+| Slice Logic              |     0.006 |     8404 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     3373 |     63400 |            5.32 |
 |   LUT as Distributed RAM |    <0.001 |       64 |     19000 |            0.34 |
-|   CARRY4                 |    <0.001 |       91 |     15850 |            0.57 |
-|   Register               |    <0.001 |     2456 |    126800 |            1.94 |
-|   F7/F8 Muxes            |    <0.001 |      143 |     63400 |            0.23 |
-|   LUT as Shift Register  |    <0.001 |       43 |     19000 |            0.23 |
-|   Others                 |     0.000 |      699 |       --- |             --- |
-| Signals                  |     0.005 |     5438 |       --- |             --- |
-| Block RAM                |     0.002 |    107.5 |       135 |           79.63 |
-| MMCM                     |     0.106 |        1 |         6 |           16.67 |
-| I/O                      |     0.006 |       58 |       210 |           27.62 |
+|   Register               |    <0.001 |     3090 |    126800 |            2.44 |
+|   CARRY4                 |    <0.001 |      110 |     15850 |            0.69 |
+|   F7/F8 Muxes            |    <0.001 |      157 |     63400 |            0.25 |
+|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
+|   LUT as Shift Register  |    <0.001 |       53 |     19000 |            0.28 |
+|   Others                 |     0.000 |      767 |       --- |             --- |
+| Signals                  |     0.010 |     6590 |       --- |             --- |
+| Block RAM                |     0.003 |    119.5 |       135 |           88.52 |
+| MMCM                     |     0.085 |        1 |         6 |           16.67 |
+| I/O                      |     0.011 |       75 |       210 |           35.71 |
 | Static Power             |     0.103 |          |           |                 |
-| Total                    |     0.238 |          |           |                 |
+| Total                    |     0.235 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.042 |       0.024 |      0.018 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.054 |       0.036 |      0.018 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.065 |       0.047 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -133,6 +134,7 @@ Table of Contents
 | Clock                                                                                               | Domain                                                                                              | Constraint (ns) |
 +-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------+
 | VGA_PCLK_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK_RISC_V_clk_wiz_1_0                                           |            40.0 |
+| cam_clk_RISC_V_clk_wiz_1_0                                                                          | u_cpu/RISC_V_i/clk_wiz_1/inst/cam_clk_RISC_V_clk_wiz_1_0                                            |            41.7 |
 | clk_out1_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1_RISC_V_clk_wiz_1_0                                           |            10.0 |
 | clkfbout_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/clkfbout_RISC_V_clk_wiz_1_0                                           |            10.0 |
 | sys_clk_pin                                                                                         | CLK100MHZ                                                                                           |            10.0 |
@@ -152,14 +154,18 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| NexysA7_Top              |     0.136 |
-|   u_cpu                  |     0.128 |
-|     RISC_V_i             |     0.128 |
+| NexysA7_Top              |     0.132 |
+|   u_cap                  |     0.002 |
+|   u_cpu                  |     0.117 |
+|     RISC_V_i             |     0.117 |
 |       axi_gpio_switches  |     0.001 |
-|       axi_smc            |     0.003 |
+|       axi_iic_0          |     0.003 |
+|       axi_smc            |     0.006 |
+|       axi_uartlite_0     |     0.001 |
 |       blk_mem_gen_0      |     0.003 |
-|       clk_wiz_1          |     0.106 |
-|       microblaze_riscv_0 |     0.011 |
+|       clk_wiz_1          |     0.085 |
+|       mdm_1              |     0.001 |
+|       microblaze_riscv_0 |     0.014 |
 +--------------------------+-----------+
 
 

@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Fri Nov 28 17:46:20 2025
-// Host        : mrt-fed-lap running 64-bit unknown
-// Command     : write_verilog -force -mode funcsim -rename_top RISC_V_rst_clk_wiz_1_100M_0 -prefix
-//               RISC_V_rst_clk_wiz_1_100M_0_ RISC_V_rst_clk_wiz_1_100M_0_sim_netlist.v
+// Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+// Date        : Wed Dec 10 14:25:15 2025
+// Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0_sim_netlist.v
 // Design      : RISC_V_rst_clk_wiz_1_100M_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -70,6 +70,7 @@ module RISC_V_rst_clk_wiz_1_100M_0
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
+(* ORIG_REF_NAME = "lpf" *) 
 module RISC_V_rst_clk_wiz_1_100M_0_lpf
    (lpf_int,
     slowest_sync_clk,
@@ -260,6 +261,7 @@ endmodule
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
 (* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "artix7" *) (* C_NUM_BUS_RST = "1" *) 
 (* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
+(* ORIG_REF_NAME = "proc_sys_reset" *) 
 module RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset
    (slowest_sync_clk,
     ext_reset_in,
@@ -376,6 +378,7 @@ module RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
+(* ORIG_REF_NAME = "sequence_psr" *) 
 module RISC_V_rst_clk_wiz_1_100M_0_sequence_psr
    (MB_out,
     Bsr_out,
@@ -616,6 +619,7 @@ module RISC_V_rst_clk_wiz_1_100M_0_sequence_psr
         .R(lpf_int));
 endmodule
 
+(* ORIG_REF_NAME = "upcnt_n" *) 
 module RISC_V_rst_clk_wiz_1_100M_0_upcnt_n
    (Q,
     seq_clr,
@@ -737,9 +741,9 @@ module RISC_V_rst_clk_wiz_1_100M_0_upcnt_n
         .R(clear));
 endmodule
 
-(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) 
-(* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
+(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
+(* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
 module RISC_V_rst_clk_wiz_1_100M_0_xpm_cdc_single
    (src_clk,
     src_in,

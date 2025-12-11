@@ -30891,7 +30891,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f3d3a1c0</spirit:value>
+            <spirit:value>9:da106952</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -30905,11 +30905,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 02 16:46:22 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 13:25:38 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f3d3a1c0</spirit:value>
+            <spirit:value>9:da106952</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -30920,7 +30920,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f3d3a1c0</spirit:value>
+            <spirit:value>9:da106952</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -30939,11 +30939,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:51 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 13:22:30 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:551ed8a0</spirit:value>
+            <spirit:value>9:4de84411</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -30959,11 +30959,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:51 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 13:22:30 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:551ed8a0</spirit:value>
+            <spirit:value>9:4de84411</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -30982,11 +30982,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:51 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 13:22:30 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f3d3a1c0</spirit:value>
+            <spirit:value>9:da106952</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -31002,11 +31002,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:51 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 13:22:30 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f3d3a1c0</spirit:value>
+            <spirit:value>9:da106952</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -41110,7 +41110,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_TRACE_DATA_WIDTH&apos;)) - 1">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_TRACE_DATA_WIDTH&apos;)) - 1">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -65556,7 +65556,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_TRACE_DATA_WIDTH</spirit:name>
         <spirit:displayName>External Trace Data Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_TRACE_DATA_WIDTH" spirit:choiceRef="choice_list_ca108395">32</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_TRACE_DATA_WIDTH" spirit:choiceRef="choice_list_ca108395">2</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
@@ -65760,6 +65760,13 @@
     </spirit:modelParameters>
   </spirit:model>
   <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_552a89ba</spirit:name>
+      <spirit:enumeration>2</spirit:enumeration>
+      <spirit:enumeration>4</spirit:enumeration>
+      <spirit:enumeration>8</spirit:enumeration>
+      <spirit:enumeration>16</spirit:enumeration>
+    </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_ca108395</spirit:name>
       <spirit:enumeration>2</spirit:enumeration>
@@ -66306,7 +66313,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_DATA_WIDTH</spirit:name>
       <spirit:displayName>External Trace Data Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_DATA_WIDTH" spirit:choiceRef="choice_list_ca108395" spirit:order="34" spirit:configGroups="1 Debug">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_DATA_WIDTH" spirit:choiceRef="choice_list_552a89ba" spirit:order="34" spirit:configGroups="1 Debug">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

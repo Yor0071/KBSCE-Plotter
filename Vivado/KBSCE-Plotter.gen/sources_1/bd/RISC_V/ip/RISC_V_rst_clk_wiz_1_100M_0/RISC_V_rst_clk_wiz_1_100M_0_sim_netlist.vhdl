@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Nov 28 17:46:20 2025
--- Host        : mrt-fed-lap running 64-bit unknown
--- Command     : write_vhdl -force -mode funcsim -rename_top RISC_V_rst_clk_wiz_1_100M_0 -prefix
---               RISC_V_rst_clk_wiz_1_100M_0_ RISC_V_rst_clk_wiz_1_100M_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+-- Date        : Wed Dec 10 14:25:15 2025
+-- Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0_sim_netlist.vhdl
 -- Design      : RISC_V_rst_clk_wiz_1_100M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,6 +22,8 @@ entity RISC_V_rst_clk_wiz_1_100M_0_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RISC_V_rst_clk_wiz_1_100M_0_upcnt_n : entity is "upcnt_n";
 end RISC_V_rst_clk_wiz_1_100M_0_upcnt_n;
 
 architecture STRUCTURE of RISC_V_rst_clk_wiz_1_100M_0_upcnt_n is
@@ -188,6 +190,8 @@ entity RISC_V_rst_clk_wiz_1_100M_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of RISC_V_rst_clk_wiz_1_100M_0_xpm_cdc_single : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of RISC_V_rst_clk_wiz_1_100M_0_xpm_cdc_single : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RISC_V_rst_clk_wiz_1_100M_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of RISC_V_rst_clk_wiz_1_100M_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -358,6 +362,8 @@ entity RISC_V_rst_clk_wiz_1_100M_0_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RISC_V_rst_clk_wiz_1_100M_0_lpf : entity is "lpf";
 end RISC_V_rst_clk_wiz_1_100M_0_lpf;
 
 architecture STRUCTURE of RISC_V_rst_clk_wiz_1_100M_0_lpf is
@@ -601,6 +607,8 @@ entity RISC_V_rst_clk_wiz_1_100M_0_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RISC_V_rst_clk_wiz_1_100M_0_sequence_psr : entity is "sequence_psr";
 end RISC_V_rst_clk_wiz_1_100M_0_sequence_psr;
 
 architecture STRUCTURE of RISC_V_rst_clk_wiz_1_100M_0_sequence_psr is
@@ -939,6 +947,8 @@ entity RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset : entity is "proc_sys_reset";
 end RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset;
 
 architecture STRUCTURE of RISC_V_rst_clk_wiz_1_100M_0_proc_sys_reset is

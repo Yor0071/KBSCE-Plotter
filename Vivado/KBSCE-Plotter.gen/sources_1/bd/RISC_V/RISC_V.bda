@@ -191,7 +191,7 @@
             "V3": {
                 "VT": "AC",
                 "BA": "0x00000000",
-                "HA": "0x00003FFF",
+                "HA": "0x0000FFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MA": "Data",
@@ -209,7 +209,7 @@
             "V4": {
                 "VT": "AC",
                 "BA": "0x00000000",
-                "HA": "0x00003FFF",
+                "HA": "0x0000FFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
                 "MA": "Instruction",
@@ -262,6 +262,24 @@
             },
             "V7": {
                 "VT": "AC",
+                "BA": "0x40020000",
+                "HA": "0x4002FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "Data",
+                "MX": "/microblaze_riscv_0",
+                "MI": "M_AXI_DP",
+                "MS": "SEG_axi_gpio_buttons_Reg",
+                "MV": "xilinx.com:ip:microblaze_riscv:1.0",
+                "SX": "/axi_gpio_buttons",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_gpio:2.0",
+                "TM": "data",
+                "TU": "register"
+            },
+            "V8": {
+                "VT": "AC",
                 "BA": "0x40600000",
                 "HA": "0x4060FFFF",
                 "BP": "C_BASEADDR",
@@ -275,6 +293,24 @@
                 "SI": "S_AXI",
                 "SS": "Reg",
                 "SV": "xilinx.com:ip:axi_uartlite:2.0",
+                "TM": "data",
+                "TU": "register"
+            },
+            "V9": {
+                "VT": "AC",
+                "BA": "0x40800000",
+                "HA": "0x4080FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "Data",
+                "MX": "/microblaze_riscv_0",
+                "MI": "M_AXI_DP",
+                "MS": "SEG_axi_iic_0_Reg",
+                "MV": "xilinx.com:ip:microblaze_riscv:1.0",
+                "SX": "/axi_iic_0",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_iic:2.1",
                 "TM": "data",
                 "TU": "register"
             }
@@ -310,6 +346,16 @@
             },
             {
                 "src": "V7",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V8",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V9",
                 "trg": "V2",
                 "EH": "2"
             }

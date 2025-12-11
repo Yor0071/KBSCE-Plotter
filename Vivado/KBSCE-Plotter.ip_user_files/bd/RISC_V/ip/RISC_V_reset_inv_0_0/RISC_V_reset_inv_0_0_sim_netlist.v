@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Fri Nov 28 17:46:18 2025
-// Host        : mrt-fed-lap running 64-bit unknown
-// Command     : write_verilog -force -mode funcsim -rename_top RISC_V_reset_inv_0_0 -prefix
-//               RISC_V_reset_inv_0_0_ RISC_V_reset_inv_0_0_sim_netlist.v
+// Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+// Date        : Wed Dec 10 14:27:18 2025
+// Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0_sim_netlist.v
 // Design      : RISC_V_reset_inv_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

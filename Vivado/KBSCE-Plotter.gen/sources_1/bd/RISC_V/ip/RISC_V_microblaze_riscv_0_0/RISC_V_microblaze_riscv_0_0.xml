@@ -14910,7 +14910,7 @@
         <spirit:addressBlock>
           <spirit:name>microblaze_0</spirit:name>
           <spirit:baseAddress spirit:format="long">0</spirit:baseAddress>
-          <spirit:range spirit:format="long">16384</spirit:range>
+          <spirit:range spirit:format="long">65536</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
             <spirit:parameter>
@@ -14954,7 +14954,7 @@
         <spirit:addressBlock>
           <spirit:name>microblaze_1</spirit:name>
           <spirit:baseAddress spirit:format="long">0</spirit:baseAddress>
-          <spirit:range spirit:format="long">16384</spirit:range>
+          <spirit:range spirit:format="long">65536</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
             <spirit:parameter>
@@ -15042,7 +15042,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:123db4c1</spirit:value>
+            <spirit:value>9:c062d595</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -15056,11 +15056,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 02 16:46:24 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 15:03:28 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:123db4c1</spirit:value>
+            <spirit:value>9:c062d595</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -15074,11 +15074,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:50 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 14:59:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:123db4c1</spirit:value>
+            <spirit:value>9:c062d595</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -15097,11 +15097,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:50 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 13:19:46 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f518c32b</spirit:value>
+            <spirit:value>9:f2348d06</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -15117,11 +15117,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:50 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 14:59:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f518c32b</spirit:value>
+            <spirit:value>9:f2348d06</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -15140,11 +15140,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:50 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 13:19:46 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:123db4c1</spirit:value>
+            <spirit:value>9:c062d595</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -15160,11 +15160,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Nov 13 10:57:50 UTC 2025</spirit:value>
+            <spirit:value>Wed Dec 10 14:59:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:123db4c1</spirit:value>
+            <spirit:value>9:c062d595</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -26644,7 +26644,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_PC_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_PC_WIDTH" spirit:minimum="2" spirit:maximum="32" spirit:rangeType="long">14</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_PC_WIDTH" spirit:minimum="2" spirit:maximum="32" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEBUG_ENABLED</spirit:name>
@@ -27490,12 +27490,6 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>data/riscv_bootloop.elf</spirit:name>
-        <spirit:userFileType>elf</spirit:userFileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>RISC_V_microblaze_riscv_0_0.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
       </spirit:file>
@@ -27605,7 +27599,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_PC_WIDTH</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PC_WIDTH" spirit:order="6" spirit:configGroups="1 NoDisplay">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PC_WIDTH" spirit:order="6" spirit:configGroups="1 NoDisplay">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

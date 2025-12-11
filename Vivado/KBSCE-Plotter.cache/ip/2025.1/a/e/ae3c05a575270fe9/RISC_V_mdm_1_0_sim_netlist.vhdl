@@ -1,9 +1,9 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Nov 28 17:46:22 2025
--- Host        : mrt-fed-lap running 64-bit unknown
+-- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+-- Date        : Wed Dec 10 14:25:36 2025
+-- Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_mdm_1_0_sim_netlist.vhdl
 -- Design      : RISC_V_mdm_1_0
@@ -4977,7 +4977,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV is
     TRACE_CLK_OUT : out STD_LOGIC;
     TRACE_CLK : in STD_LOGIC;
     TRACE_CTL : out STD_LOGIC;
-    TRACE_DATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    TRACE_DATA : out STD_LOGIC_VECTOR ( 1 downto 0 );
     Dbg_Disable_0 : out STD_LOGIC;
     Dbg_Clk_0 : out STD_LOGIC;
     Dbg_TDI_0 : out STD_LOGIC;
@@ -6107,7 +6107,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV is
   attribute C_TRACE_CLK_OUT_PHASE : integer;
   attribute C_TRACE_CLK_OUT_PHASE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV : entity is 90;
   attribute C_TRACE_DATA_WIDTH : integer;
-  attribute C_TRACE_DATA_WIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV : entity is 32;
+  attribute C_TRACE_DATA_WIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV : entity is 2;
   attribute C_TRACE_ID : integer;
   attribute C_TRACE_ID of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV : entity is 110;
   attribute C_TRACE_OUTPUT : integer;
@@ -11819,36 +11819,6 @@ begin
   S_AXI_WREADY <= \<const0>\;
   TRACE_CLK_OUT <= \<const0>\;
   TRACE_CTL <= \<const0>\;
-  TRACE_DATA(31) <= \<const0>\;
-  TRACE_DATA(30) <= \<const0>\;
-  TRACE_DATA(29) <= \<const0>\;
-  TRACE_DATA(28) <= \<const0>\;
-  TRACE_DATA(27) <= \<const0>\;
-  TRACE_DATA(26) <= \<const0>\;
-  TRACE_DATA(25) <= \<const0>\;
-  TRACE_DATA(24) <= \<const0>\;
-  TRACE_DATA(23) <= \<const0>\;
-  TRACE_DATA(22) <= \<const0>\;
-  TRACE_DATA(21) <= \<const0>\;
-  TRACE_DATA(20) <= \<const0>\;
-  TRACE_DATA(19) <= \<const0>\;
-  TRACE_DATA(18) <= \<const0>\;
-  TRACE_DATA(17) <= \<const0>\;
-  TRACE_DATA(16) <= \<const0>\;
-  TRACE_DATA(15) <= \<const0>\;
-  TRACE_DATA(14) <= \<const0>\;
-  TRACE_DATA(13) <= \<const0>\;
-  TRACE_DATA(12) <= \<const0>\;
-  TRACE_DATA(11) <= \<const0>\;
-  TRACE_DATA(10) <= \<const0>\;
-  TRACE_DATA(9) <= \<const0>\;
-  TRACE_DATA(8) <= \<const0>\;
-  TRACE_DATA(7) <= \<const0>\;
-  TRACE_DATA(6) <= \<const0>\;
-  TRACE_DATA(5) <= \<const0>\;
-  TRACE_DATA(4) <= \<const0>\;
-  TRACE_DATA(3) <= \<const0>\;
-  TRACE_DATA(2) <= \<const0>\;
   TRACE_DATA(1) <= \<const0>\;
   TRACE_DATA(0) <= \<const0>\;
   Trig_Ack_In_0 <= \<const0>\;
@@ -13508,7 +13478,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal NLW_U0_S_AXI_BRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_U0_S_AXI_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_S_AXI_RRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_U0_TRACE_DATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal NLW_U0_TRACE_DATA_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute C_ADDR_SIZE : integer;
   attribute C_ADDR_SIZE of U0 : label is 32;
   attribute C_AVOID_PRIMITIVES : integer;
@@ -13562,7 +13532,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   attribute C_TRACE_CLK_OUT_PHASE : integer;
   attribute C_TRACE_CLK_OUT_PHASE of U0 : label is 90;
   attribute C_TRACE_DATA_WIDTH : integer;
-  attribute C_TRACE_DATA_WIDTH of U0 : label is 32;
+  attribute C_TRACE_DATA_WIDTH of U0 : label is 2;
   attribute C_TRACE_ID : integer;
   attribute C_TRACE_ID of U0 : label is 110;
   attribute C_TRACE_OUTPUT : integer;
@@ -15100,7 +15070,7 @@ U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV
       TRACE_CLK => '0',
       TRACE_CLK_OUT => NLW_U0_TRACE_CLK_OUT_UNCONNECTED,
       TRACE_CTL => NLW_U0_TRACE_CTL_UNCONNECTED,
-      TRACE_DATA(31 downto 0) => NLW_U0_TRACE_DATA_UNCONNECTED(31 downto 0),
+      TRACE_DATA(1 downto 0) => NLW_U0_TRACE_DATA_UNCONNECTED(1 downto 0),
       Trig_Ack_In_0 => NLW_U0_Trig_Ack_In_0_UNCONNECTED,
       Trig_Ack_In_1 => NLW_U0_Trig_Ack_In_1_UNCONNECTED,
       Trig_Ack_In_2 => NLW_U0_Trig_Ack_In_2_UNCONNECTED,

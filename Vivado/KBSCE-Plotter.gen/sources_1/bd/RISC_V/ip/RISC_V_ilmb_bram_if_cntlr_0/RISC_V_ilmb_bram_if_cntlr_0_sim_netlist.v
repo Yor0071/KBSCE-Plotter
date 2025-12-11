@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Fri Nov 28 17:45:07 2025
-// Host        : mrt-fed-lap running 64-bit unknown
-// Command     : write_verilog -force -mode funcsim -rename_top RISC_V_ilmb_bram_if_cntlr_0 -prefix
-//               RISC_V_ilmb_bram_if_cntlr_0_ RISC_V_ilmb_bram_if_cntlr_0_sim_netlist.v
+// Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+// Date        : Wed Dec 10 16:01:20 2025
+// Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0_sim_netlist.v
 // Design      : RISC_V_ilmb_bram_if_cntlr_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -49,7 +49,7 @@ module RISC_V_ilmb_bram_if_cntlr_0
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WAIT" *) output Sl_Wait;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB UE" *) output Sl_UE;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB CE" *) output Sl_CE;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT RST" *) (* x_interface_mode = "master BRAM_PORT" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 16384, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) output BRAM_Rst_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT RST" *) (* x_interface_mode = "master BRAM_PORT" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 65536, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) output BRAM_Rst_A;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT CLK" *) output BRAM_Clk_A;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT ADDR" *) output [0:31]BRAM_Addr_A;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT EN" *) output BRAM_EN_A;
@@ -141,7 +141,7 @@ module RISC_V_ilmb_bram_if_cntlr_0
   (* C_ECC_STATUS_REGISTERS = "0" *) 
   (* C_FAMILY = "artix7" *) 
   (* C_FAULT_INJECT = "0" *) 
-  (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000011111111111111" *) 
+  (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000001111111111111111" *) 
   (* C_INTERCONNECT = "0" *) 
   (* C_LMB_AWIDTH = "32" *) 
   (* C_LMB_DWIDTH = "32" *) 
@@ -286,14 +286,14 @@ endmodule
 (* C_ARBITRATION = "0" *) (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_BRAM_AWIDTH = "32" *) 
 (* C_CE_COUNTER_WIDTH = "0" *) (* C_CE_FAILING_REGISTERS = "0" *) (* C_ECC = "0" *) 
 (* C_ECC_ONOFF_REGISTER = "0" *) (* C_ECC_ONOFF_RESET_VALUE = "1" *) (* C_ECC_STATUS_REGISTERS = "0" *) 
-(* C_FAMILY = "artix7" *) (* C_FAULT_INJECT = "0" *) (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000011111111111111" *) 
+(* C_FAMILY = "artix7" *) (* C_FAULT_INJECT = "0" *) (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000001111111111111111" *) 
 (* C_INTERCONNECT = "0" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
 (* C_LMB_PROTOCOL = "0" *) (* C_MASK = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
 (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK4 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
 (* C_MASK5 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK6 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK7 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
 (* C_NUM_LMB = "1" *) (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) 
 (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) (* C_UE_FAILING_REGISTERS = "0" *) 
-(* C_WRITE_ACCESS = "2" *) 
+(* C_WRITE_ACCESS = "2" *) (* ORIG_REF_NAME = "lmb_bram_if_cntlr" *) 
 module RISC_V_ilmb_bram_if_cntlr_0_lmb_bram_if_cntlr
    (LMB_Clk,
     LMB_Rst,

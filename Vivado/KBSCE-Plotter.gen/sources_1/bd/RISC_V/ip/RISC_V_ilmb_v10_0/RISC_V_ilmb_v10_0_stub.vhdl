@@ -1,12 +1,12 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Nov 28 17:45:07 2025
--- Host        : mrt-fed-lap running 64-bit unknown
--- Command     : write_vhdl -force -mode synth_stub -rename_top RISC_V_ilmb_v10_0 -prefix
---               RISC_V_ilmb_v10_0_ RISC_V_dlmb_v10_0_stub.vhdl
--- Design      : RISC_V_dlmb_v10_0
+-- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+-- Date        : Wed Dec 10 14:25:15 2025
+-- Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0_stub.vhdl
+-- Design      : RISC_V_ilmb_v10_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1
 -- --------------------------------------------------------------------------------
@@ -43,9 +43,9 @@ entity RISC_V_ilmb_v10_0 is
   );
 
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of RISC_V_ilmb_v10_0 : entity is "RISC_V_dlmb_v10_0,lmb_v10,{}";
+  attribute CHECK_LICENSE_TYPE of RISC_V_ilmb_v10_0 : entity is "RISC_V_ilmb_v10_0,lmb_v10,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of RISC_V_ilmb_v10_0 : entity is "RISC_V_dlmb_v10_0,lmb_v10,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=15,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_EXT_RESET_HIGH=1}";
+  attribute core_generation_info of RISC_V_ilmb_v10_0 : entity is "RISC_V_ilmb_v10_0,lmb_v10,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=15,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_EXT_RESET_HIGH=1}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of RISC_V_ilmb_v10_0 : entity is "yes";
 end RISC_V_ilmb_v10_0;
@@ -66,7 +66,7 @@ architecture stub of RISC_V_ilmb_v10_0 is
   attribute x_interface_parameter of SYS_Rst : signal is "XIL_INTERFACENAME RST.SYS_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0";
   attribute x_interface_info of LMB_Rst : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST";
   attribute x_interface_mode of LMB_Rst : signal is "mirroredMaster LMB_M";
-  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD";
+  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD";
   attribute x_interface_info of M_ABus : signal is "xilinx.com:interface:lmb:1.0 LMB_M ABUS";
   attribute x_interface_info of M_ReadStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_M READSTROBE";
   attribute x_interface_info of M_WriteStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_M WRITESTROBE";

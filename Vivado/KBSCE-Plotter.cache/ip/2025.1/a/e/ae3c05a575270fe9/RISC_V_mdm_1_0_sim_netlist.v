@@ -1,9 +1,9 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Fri Nov 28 17:46:22 2025
-// Host        : mrt-fed-lap running 64-bit unknown
+// Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+// Date        : Wed Dec 10 14:25:36 2025
+// Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ RISC_V_mdm_1_0_sim_netlist.v
 // Design      : RISC_V_mdm_1_0
@@ -3508,7 +3508,7 @@ endmodule
 (* C_M_AXIS_DATA_WIDTH = "32" *) (* C_M_AXIS_ID_WIDTH = "7" *) (* C_M_AXI_ADDR_WIDTH = "32" *) 
 (* C_M_AXI_DATA_WIDTH = "32" *) (* C_M_AXI_THREAD_ID_WIDTH = "1" *) (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) 
 (* C_S_AXI_ADDR_WIDTH = "4" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TRACE_ASYNC_RESET = "0" *) 
-(* C_TRACE_CLK_FREQ_HZ = "200000000" *) (* C_TRACE_CLK_OUT_PHASE = "90" *) (* C_TRACE_DATA_WIDTH = "32" *) 
+(* C_TRACE_CLK_FREQ_HZ = "200000000" *) (* C_TRACE_CLK_OUT_PHASE = "90" *) (* C_TRACE_DATA_WIDTH = "2" *) 
 (* C_TRACE_ID = "110" *) (* C_TRACE_OUTPUT = "0" *) (* C_TRACE_PROTOCOL = "1" *) 
 (* C_USE_BSCAN = "0" *) (* C_USE_BSCAN_SWITCH = "0" *) (* C_USE_CONFIG_RESET = "0" *) 
 (* C_USE_CROSS_TRIGGER = "0" *) (* C_USE_JTAG_BSCAN = "1" *) (* C_USE_UART = "0" *) 
@@ -5476,7 +5476,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV
   output TRACE_CLK_OUT;
   input TRACE_CLK;
   output TRACE_CTL;
-  output [31:0]TRACE_DATA;
+  output [1:0]TRACE_DATA;
   output Dbg_Disable_0;
   output Dbg_Clk_0;
   output Dbg_TDI_0;
@@ -12206,36 +12206,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MDM_RISCV
   assign S_AXI_WREADY = \<const0> ;
   assign TRACE_CLK_OUT = \<const0> ;
   assign TRACE_CTL = \<const0> ;
-  assign TRACE_DATA[31] = \<const0> ;
-  assign TRACE_DATA[30] = \<const0> ;
-  assign TRACE_DATA[29] = \<const0> ;
-  assign TRACE_DATA[28] = \<const0> ;
-  assign TRACE_DATA[27] = \<const0> ;
-  assign TRACE_DATA[26] = \<const0> ;
-  assign TRACE_DATA[25] = \<const0> ;
-  assign TRACE_DATA[24] = \<const0> ;
-  assign TRACE_DATA[23] = \<const0> ;
-  assign TRACE_DATA[22] = \<const0> ;
-  assign TRACE_DATA[21] = \<const0> ;
-  assign TRACE_DATA[20] = \<const0> ;
-  assign TRACE_DATA[19] = \<const0> ;
-  assign TRACE_DATA[18] = \<const0> ;
-  assign TRACE_DATA[17] = \<const0> ;
-  assign TRACE_DATA[16] = \<const0> ;
-  assign TRACE_DATA[15] = \<const0> ;
-  assign TRACE_DATA[14] = \<const0> ;
-  assign TRACE_DATA[13] = \<const0> ;
-  assign TRACE_DATA[12] = \<const0> ;
-  assign TRACE_DATA[11] = \<const0> ;
-  assign TRACE_DATA[10] = \<const0> ;
-  assign TRACE_DATA[9] = \<const0> ;
-  assign TRACE_DATA[8] = \<const0> ;
-  assign TRACE_DATA[7] = \<const0> ;
-  assign TRACE_DATA[6] = \<const0> ;
-  assign TRACE_DATA[5] = \<const0> ;
-  assign TRACE_DATA[4] = \<const0> ;
-  assign TRACE_DATA[3] = \<const0> ;
-  assign TRACE_DATA[2] = \<const0> ;
   assign TRACE_DATA[1] = \<const0> ;
   assign TRACE_DATA[0] = \<const0> ;
   assign Trig_Ack_In_0 = \<const0> ;
@@ -13723,7 +13693,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   wire [1:0]NLW_U0_S_AXI_BRESP_UNCONNECTED;
   wire [31:0]NLW_U0_S_AXI_RDATA_UNCONNECTED;
   wire [1:0]NLW_U0_S_AXI_RRESP_UNCONNECTED;
-  wire [31:0]NLW_U0_TRACE_DATA_UNCONNECTED;
+  wire [1:0]NLW_U0_TRACE_DATA_UNCONNECTED;
 
   assign Dbg_Disable_0 = \<const0> ;
   GND GND
@@ -13754,7 +13724,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   (* C_TRACE_ASYNC_RESET = "0" *) 
   (* C_TRACE_CLK_FREQ_HZ = "200000000" *) 
   (* C_TRACE_CLK_OUT_PHASE = "90" *) 
-  (* C_TRACE_DATA_WIDTH = "32" *) 
+  (* C_TRACE_DATA_WIDTH = "2" *) 
   (* C_TRACE_ID = "110" *) 
   (* C_TRACE_OUTPUT = "0" *) 
   (* C_TRACE_PROTOCOL = "1" *) 
@@ -15258,7 +15228,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
         .TRACE_CLK(1'b0),
         .TRACE_CLK_OUT(NLW_U0_TRACE_CLK_OUT_UNCONNECTED),
         .TRACE_CTL(NLW_U0_TRACE_CTL_UNCONNECTED),
-        .TRACE_DATA(NLW_U0_TRACE_DATA_UNCONNECTED[31:0]),
+        .TRACE_DATA(NLW_U0_TRACE_DATA_UNCONNECTED[1:0]),
         .Trig_Ack_In_0(NLW_U0_Trig_Ack_In_0_UNCONNECTED),
         .Trig_Ack_In_1(NLW_U0_Trig_Ack_In_1_UNCONNECTED),
         .Trig_Ack_In_2(NLW_U0_Trig_Ack_In_2_UNCONNECTED),
