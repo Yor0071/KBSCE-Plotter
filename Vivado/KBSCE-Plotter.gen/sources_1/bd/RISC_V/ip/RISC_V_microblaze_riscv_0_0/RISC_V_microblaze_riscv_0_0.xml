@@ -14998,7 +14998,7 @@
         <spirit:addressBlock>
           <spirit:name>microblaze_2</spirit:name>
           <spirit:baseAddress spirit:format="long">3221225472</spirit:baseAddress>
-          <spirit:range spirit:format="long">16777216</spirit:range>
+          <spirit:range spirit:format="long">2097152</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
             <spirit:parameter>
@@ -15042,7 +15042,7 @@
         <spirit:addressBlock>
           <spirit:name>microblaze_3</spirit:name>
           <spirit:baseAddress spirit:format="long">3221225472</spirit:baseAddress>
-          <spirit:range spirit:format="long">16777216</spirit:range>
+          <spirit:range spirit:format="long">2097152</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
             <spirit:parameter>

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xD9017C7DEA86682D",
+      "boundary_crc": "0xE5EC690DB7C806E2",
       "design_src": "SBD",
       "device": "xc7a100tcsg324-1",
       "name": "bd_33e2",
@@ -619,7 +619,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "24",
+            "value": "21",
             "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
@@ -3184,7 +3184,7 @@
                 "value": "0b0000000000000000000000000000000000000000000000000000000000000011"
               },
               "SEG003_SIZE": {
-                "value": "24"
+                "value": "21"
               },
               "SEG003_SUPPORTS_READ": {
                 "value": "1"
@@ -8607,7 +8607,7 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "24"
+            "value": "21"
           },
           "AXI_ID_WIDTH": {
             "value": "1"
@@ -9786,7 +9786,7 @@
             "has_run_ip_tcl": "true",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "24"
+                "value": "21"
               },
               "ENABLE_PIPELINING": {
                 "value": "0"

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Thu Dec 11 18:36:41 2025
+| Date             : Thu Dec 11 18:44:11 2025
 | Host             : mrt-fed-lap running 64-bit unknown
 | Command          : report_power -file NexysA7_Top_power_routed.rpt -pb NexysA7_Top_power_summary_routed.pb -rpx NexysA7_Top_power_routed.rpx
 | Design           : NexysA7_Top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.255        |
+| Total On-Chip Power (W)  | 0.256        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.152        |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.018 |       10 |       --- |             --- |
-| Slice Logic              |     0.006 |     8171 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3288 |     63400 |            5.19 |
+| Clocks                   |     0.019 |       10 |       --- |             --- |
+| Slice Logic              |     0.006 |     8178 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     3294 |     63400 |            5.20 |
 |   LUT as Distributed RAM |    <0.001 |      284 |     19000 |            1.49 |
 |   Register               |    <0.001 |     2744 |    126800 |            2.16 |
 |   CARRY4                 |    <0.001 |       94 |     15850 |            0.59 |
 |   F7/F8 Muxes            |    <0.001 |      280 |     63400 |            0.44 |
 |   LUT as Shift Register  |    <0.001 |       43 |     19000 |            0.23 |
 |   Others                 |     0.000 |      704 |       --- |             --- |
-| Signals                  |     0.010 |     6990 |       --- |             --- |
-| Block RAM                |     0.005 |    119.5 |       135 |           88.52 |
+| Signals                  |     0.009 |     6994 |       --- |             --- |
+| Block RAM                |     0.004 |    119.5 |       135 |           88.52 |
 | MMCM                     |     0.106 |        1 |         6 |           16.67 |
-| I/O                      |     0.007 |       58 |       210 |           27.62 |
+| I/O                      |     0.008 |       58 |       210 |           27.62 |
 | Static Power             |     0.103 |          |           |                 |
-| Total                    |     0.255 |          |           |                 |
+| Total                    |     0.256 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -155,13 +155,13 @@ Table of Contents
 | NexysA7_Top                           |     0.152 |
 |   u_cpu                               |     0.143 |
 |     RISC_V_i                          |     0.143 |
-|       axi_bram_ctrl_0                 |     0.005 |
+|       axi_bram_ctrl_0                 |     0.004 |
 |       axi_gpio_switches               |     0.001 |
-|       axi_smc                         |     0.005 |
+|       axi_smc                         |     0.006 |
 |       axi_uartlite_0                  |     0.001 |
 |       blk_mem_gen_0                   |     0.006 |
 |       clk_wiz_1                       |     0.106 |
-|       microblaze_riscv_0              |     0.014 |
+|       microblaze_riscv_0              |     0.015 |
 |       microblaze_riscv_0_local_memory |     0.001 |
 +---------------------------------------+-----------+
 

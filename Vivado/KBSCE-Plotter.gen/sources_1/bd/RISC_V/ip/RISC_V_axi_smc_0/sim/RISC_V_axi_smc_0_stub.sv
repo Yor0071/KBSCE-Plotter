@@ -144,7 +144,7 @@ module RISC_V_axi_smc_0 (
   input bit [1 : 0] M02_AXI_rresp,
   input bit_as_bool M02_AXI_rvalid,
   output bit_as_bool M02_AXI_rready,
-  output bit [23 : 0] M03_AXI_awaddr,
+  output bit [20 : 0] M03_AXI_awaddr,
   output bit [7 : 0] M03_AXI_awlen,
   output bit [2 : 0] M03_AXI_awsize,
   output bit [1 : 0] M03_AXI_awburst,
@@ -162,7 +162,7 @@ module RISC_V_axi_smc_0 (
   input bit [1 : 0] M03_AXI_bresp,
   input bit_as_bool M03_AXI_bvalid,
   output bit_as_bool M03_AXI_bready,
-  output bit [23 : 0] M03_AXI_araddr,
+  output bit [20 : 0] M03_AXI_araddr,
   output bit [7 : 0] M03_AXI_arlen,
   output bit [2 : 0] M03_AXI_arsize,
   output bit [1 : 0] M03_AXI_arburst,
@@ -264,7 +264,7 @@ module RISC_V_axi_smc_0 (aclk,aresetn,S00_AXI_awaddr,S00_AXI_awprot,S00_AXI_awva
   input bit [1 : 0] M02_AXI_rresp;
   input bit M02_AXI_rvalid;
   output wire M02_AXI_rready;
-  output wire [23 : 0] M03_AXI_awaddr;
+  output wire [20 : 0] M03_AXI_awaddr;
   output wire [7 : 0] M03_AXI_awlen;
   output wire [2 : 0] M03_AXI_awsize;
   output wire [1 : 0] M03_AXI_awburst;
@@ -282,7 +282,7 @@ module RISC_V_axi_smc_0 (aclk,aresetn,S00_AXI_awaddr,S00_AXI_awprot,S00_AXI_awva
   input bit [1 : 0] M03_AXI_bresp;
   input bit M03_AXI_bvalid;
   output wire M03_AXI_bready;
-  output wire [23 : 0] M03_AXI_araddr;
+  output wire [20 : 0] M03_AXI_araddr;
   output wire [7 : 0] M03_AXI_arlen;
   output wire [2 : 0] M03_AXI_arsize;
   output wire [1 : 0] M03_AXI_arburst;
