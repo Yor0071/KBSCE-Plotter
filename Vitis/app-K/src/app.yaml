@@ -1,4 +1,4 @@
-domain_path: /home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-K/export/lnx-K/sw/standalone_microblaze_riscv_0
+domain_path: /home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/export/lnx-L/sw/standalone_microblaze_riscv_0
 app_src_dir: /home/maartenvk/apps/Xilinx/2025.1/Vitis/data/embeddedsw/lib/sw_apps/empty_application
 template: empty_application
 lang: c

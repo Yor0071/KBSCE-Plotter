@@ -1,9 +1,9 @@
-# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-K/hw/sdt/system-top.dts"
+# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/system-top.dts"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-K/hw/sdt/system-top.dts"
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/system-top.dts"
 /dts-v1/;
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-K/hw/sdt/pl.dtsi" 1
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -248,11 +248,11 @@
    xlnx,ecc-onoff-reset-value = <0>;
    xlnx,ecc-type = <0>;
    xlnx,rd-cmd-optimization = <0>;
-   xlnx,memory-depth = <4194304>;
+   xlnx,memory-depth = <524288>;
    xlnx,use-ecc = <0>;
    xlnx,fault-inject = <0>;
    xlnx,ip-name = "axi_bram_ctrl";
-   reg = <0xc0000000 0x1000000>;
+   reg = <0xc0000000 0x200000>;
    xlnx,bmg-instance = "EXTERNAL";
    xlnx,s-axi-ctrl-addr-width = <32>;
    xlnx,read-latency = <2>;
@@ -264,10 +264,10 @@
    xlnx,edk-iptype = "PERIPHERAL";
    status = "okay";
    xlnx,data-width = <32>;
-   xlnx,bram-addr-width = <22>;
+   xlnx,bram-addr-width = <19>;
    xlnx,bram-inst-mode = "EXTERNAL";
    xlnx,s-axi-ctrl-data-width = <32>;
-   xlnx,mem-depth = <4194304>;
+   xlnx,mem-depth = <524288>;
    xlnx,s-axi-id-width = <1>;
    xlnx,name = "axi_bram_ctrl_0";
   };
@@ -421,7 +421,7 @@
   };
  };
 };
-# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-K/hw/sdt/system-top.dts" 2
+# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
@@ -436,7 +436,7 @@
   xlnx,ip-name = "axi_bram_ctrl";
   device_type = "memory";
   memory_type = "memory";
-  reg = <0xC0000000 0x1000000>;
+  reg = <0xC0000000 0x200000>;
  };
  microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory: memory@0 {
   compatible = "xlnx,lmb-bram-if-cntlr-4.0";
@@ -452,8 +452,8 @@
   serial0 = &axi_uartlite_0;
  };
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
-  address-map = <0xC0000000 &axi_bram_ctrl_0_memory 0xC0000000 0x1000000>,
-         <0xC0000000 &axi_bram_ctrl_0 0xC0000000 0x1000000>,
+  address-map = <0xC0000000 &axi_bram_ctrl_0_memory 0xC0000000 0x200000>,
+         <0xC0000000 &axi_bram_ctrl_0 0xC0000000 0x200000>,
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>,
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x10000>,
          <0x40000000 &axi_gpio_leds 0x40000000 0x10000>,

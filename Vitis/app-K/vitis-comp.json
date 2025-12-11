@@ -1,7 +1,7 @@
 {
   "name": "app-K",
   "type": "HOST",
-  "platform": "lnx-K",
+  "platform": "lnx-L",
   "domain": "standalone_microblaze_riscv_0",
   "cpuInstance": "microblaze_riscv_0",
   "cpuType": "microblaze_riscv",
