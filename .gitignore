@@ -16,6 +16,7 @@
 *.mcs
 *.prm
 
+
 # Simulation intermediates
 *.wdb
 *.wcfg
@@ -35,3 +36,5 @@
 .srcs/*/ip/*/ui/
 Vivado/KBSCE-Plotter.xpr
 /Vitis/sw_to_led/build
+/Vivado/KBSCE.gen/*
+/Vivado/KBSCE.cache/*
