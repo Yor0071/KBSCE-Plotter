@@ -88,7 +88,11 @@ input wire [0 : 0] s_sc_send;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC RECV" *)
 output wire [0 : 0] s_sc_recv;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC PAYLD" *)
+<<<<<<< HEAD:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0_1/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
 input wire [142 : 0] s_sc_payld;
+=======
+input wire [144 : 0] s_sc_payld;
+>>>>>>> camera_plotter_merge:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_sc_aclk CLK" *)
 (* X_INTERFACE_MODE = "slave" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_sc_aclk, ASSOCIATED_BUSIF M_SC, ASSOCIATED_RESET m_sc_aresetn, ASSOCIATED_CLKEN m_sc_aclken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *)
@@ -107,7 +111,11 @@ output wire [0 : 0] m_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC INFO" *)
 output wire [0 : 0] m_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC PAYLD" *)
+<<<<<<< HEAD:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0_1/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
 output wire [142 : 0] m_sc_payld;
+=======
+output wire [144 : 0] m_sc_payld;
+>>>>>>> camera_plotter_merge:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
 
   sc_node_v1_0_18_top #(
     .C_FAMILY("artix7"),
@@ -121,13 +129,21 @@ output wire [142 : 0] m_sc_payld;
     .C_NUM_SI(1),
     .C_NUM_MI(1),
     .C_CHANNEL(2),
+<<<<<<< HEAD:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0_1/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
     .C_PAYLD_WIDTH(143),
+=======
+    .C_PAYLD_WIDTH(145),
+>>>>>>> camera_plotter_merge:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
     .C_S_NUM_BYTES_ARRAY(32'H00000004),
     .C_M_NUM_BYTES_ARRAY(32'H00000004),
     .C_PRIORITY_ARB_ARRAY(1'B0),
     .C_USER_BITS_PER_BYTE(0),
     .C_ARBITER_MODE(1),
+<<<<<<< HEAD:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0_1/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
     .C_SC_ROUTE_WIDTH(6),
+=======
+    .C_SC_ROUTE_WIDTH(8),
+>>>>>>> camera_plotter_merge:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_41/sim/bd_33e2_m02arn_0.sv
     .C_ID_WIDTH(1),
     .C_ADDR_WIDTH(32),
     .C_USER_WIDTH(0),

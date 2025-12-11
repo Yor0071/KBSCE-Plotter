@@ -267,7 +267,11 @@ output wire m_axi_rready;
     .C_ADDR_WIDTH(9),
     .C_M_PROTOCOL(2),
     .C_HAS_LOCK(0),
+<<<<<<< HEAD:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0_1/bd_0/ip/ip_39/sim/bd_33e2_m01e_0.sv
     .C_NUM_MSC(4),
+=======
+    .C_NUM_MSC(6),
+>>>>>>> camera_plotter_merge:Vivado/KBSCE-Plotter.ip_user_files/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_39/sim/bd_33e2_m01e_0.sv
     .C_SINGLE_ISSUING(1),
     .C_M_LIMIT_READ_LENGTH(0),
     .C_M_LIMIT_WRITE_LENGTH(0),

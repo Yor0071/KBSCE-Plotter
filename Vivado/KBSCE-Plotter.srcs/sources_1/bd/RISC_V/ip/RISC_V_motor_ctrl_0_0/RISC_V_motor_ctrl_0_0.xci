@@ -39,7 +39,11 @@
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2025.1" } ],
+<<<<<<< HEAD
         "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
+=======
+        "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
+>>>>>>> camera_plotter_merge
       }
     },
     "boundary": {

@@ -1,9 +1,9 @@
-# 0 "/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/hw/sdt/system-top.dts"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/hw/sdt/system-top.dts"
+# 1 "C:\\Users\\liamb\\GitHub\\KBSCE-Plotter\\Vitis\\NexysA7-100T\\hw\\sdt\\system-top.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "C:\\Users\\liamb\\GitHub\\KBSCE-Plotter\\Vitis\\NexysA7-100T\\hw\\sdt\\system-top.dts"
 /dts-v1/;
-# 1 "/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/hw/sdt/pl.dtsi" 1
+# 1 "C:\\Users\\liamb\\GitHub\\KBSCE-Plotter\\Vitis\\NexysA7-100T\\hw\\sdt\\pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -155,7 +155,7 @@
    xlnx,use-interrupt = <0>;
    xlnx,pmp-cfg5 = <0x0>;
    xlnx,async-interrupt = <1>;
-   xlnx,pc-width = <14>;
+   xlnx,pc-width = <16>;
    xlnx,pmp-cfg6 = <0x0>;
    xlnx,icache-victims = <0>;
    xlnx,pmp-cfg7 = <0x0>;
@@ -241,6 +241,34 @@
   compatible = "simple-bus";
   #address-cells = <1>;
   #size-cells = <1>;
+  axi_gpio_buttons: gpio@40020000 {
+   xlnx,gpio-board-interface = "push_buttons_5bits";
+   compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
+   xlnx,all-outputs = <0>;
+   #gpio-cells = <2>;
+   xlnx,gpio-width = <5>;
+   clock-frequency = <100000000>;
+   xlnx,dout-default = <0x0>;
+   xlnx,is-dual = <0>;
+   xlnx,ip-name = "axi_gpio";
+   xlnx,tri-default-2 = <0xffffffff>;
+   reg = <0x40020000 0x10000>;
+   xlnx,all-inputs-2 = <0>;
+   clocks = <&clk_bus_0>;
+   xlnx,all-outputs-2 = <0>;
+   gpio-controller;
+   xlnx,interrupt-present = <0>;
+   xlnx,gpio2-board-interface = "Custom";
+   xlnx,edk-iptype = "PERIPHERAL";
+   xlnx,dout-default-2 = <0x0>;
+   status = "okay";
+   xlnx,gpio2-width = <32>;
+   clock-names = "s_axi_aclk";
+   xlnx,use-board-flow;
+   xlnx,tri-default = <0xffffffff>;
+   xlnx,name = "axi_gpio_buttons";
+   xlnx,all-inputs = <1>;
+  };
   axi_gpio_leds: gpio@40000000 {
    xlnx,gpio-board-interface = "led_16bits";
    compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
@@ -297,6 +325,31 @@
    xlnx,name = "axi_gpio_switches";
    xlnx,all-inputs = <1>;
   };
+  axi_iic_0: i2c@40800000 {
+   xlnx,iic-freq-khz = <100>;
+   compatible = "xlnx,axi-iic-2.1" , "xlnx,xps-iic-2.00.a";
+   xlnx,scl-inertial-delay = <0>;
+   clock-frequency = <100000000>;
+   xlnx,ip-name = "axi_iic";
+   xlnx,disable-setup-violation-check = <0>;
+   reg = <0x40800000 0x10000>;
+   clocks = <&clk_bus_0>;
+   xlnx,gpo-width = <1>;
+   xlnx,edk-iptype = "PERIPHERAL";
+   xlnx,static-timing-reg-width = <0>;
+   xlnx,sda-level = <1>;
+   status = "okay";
+   xlnx,use-board-flow;
+   xlnx,ten-bit-adr = <0>;
+   xlnx,default-value = <0x0>;
+   xlnx,iic-board-interface = "temp_sensor";
+   xlnx,timing-reg-width = <32>;
+   xlnx,iic-freq = <100000>;
+   xlnx,smbus-pmbus-host = <0>;
+   xlnx,name = "axi_iic_0";
+   xlnx,axi-aclk-freq-mhz = <100>;
+   xlnx,sda-inertial-delay = <0>;
+  };
   axi_uartlite_0: serial@40600000 {
    compatible = "xlnx,axi-uartlite-2.0" , "xlnx,xps-uartlite-1.00.a";
    clock-frequency = <100000000>;
@@ -332,7 +385,7 @@
    xlnx,arbitration = <0>;
    xlnx,num-lmb = <1>;
    xlnx,mask4 = <0x800000>;
-   reg = <0x00000000 0x4000>;
+   reg = <0x00000000 0x10000>;
    xlnx,s-axi-ctrl-addr-width = <32>;
    xlnx,mask5 = <0x800000>;
    xlnx,ecc-status-registers = <0>;
@@ -369,7 +422,7 @@
    xlnx,arbitration = <0>;
    xlnx,num-lmb = <1>;
    xlnx,mask4 = <0x800000>;
-   reg = <0x00000000 0x4000>;
+   reg = <0x00000000 0x10000>;
    xlnx,s-axi-ctrl-addr-width = <32>;
    xlnx,mask5 = <0x800000>;
    xlnx,ecc-status-registers = <0>;
@@ -389,9 +442,19 @@
    xlnx,lmb-awidth = <32>;
    xlnx,name = "microblaze_riscv_0_local_memory_ilmb_bram_if_cntlr";
   };
+  motor_ctrl_0: motor_ctrl@44a00000 {
+   xlnx,s00-axi-data-width = <32>;
+   compatible = "xlnx,motor-ctrl-1.0";
+   status = "okay";
+   xlnx,s00-axi-addr-width = <5>;
+   xlnx,ip-name = "motor_ctrl";
+   xlnx,edk-iptype = "PERIPHERAL";
+   reg = <0x44a00000 0x10000>;
+   xlnx,name = "motor_ctrl_0";
+  };
  };
 };
-# 3 "/home/maartenvk/Documents/vitis_workspaces/KBSCE-Plotter/Vitis/linux/hw/sdt/system-top.dts" 2
+# 3 "C:\\Users\\liamb\\GitHub\\KBSCE-Plotter\\Vitis\\NexysA7-100T\\hw\\sdt\\system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
@@ -406,20 +469,24 @@
   xlnx,ip-name = "lmb_bram_if_cntlr";
   device_type = "memory";
   memory_type = "memory";
-  reg = <0x00000000 0x4000>;
+  reg = <0x00000000 0x10000>;
  };
  chosen {
   stdout-path = "serial0:9600n8";
  };
  aliases {
   serial0 = &axi_uartlite_0;
+  i2c0 = &axi_iic_0;
  };
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
-  address-map = <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x4000>,
-         <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x4000>,
+  address-map = <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>,
+         <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x10000>,
          <0x40000000 &axi_gpio_leds 0x40000000 0x10000>,
          <0x40010000 &axi_gpio_switches 0x40010000 0x10000>,
-         <0x40600000 &axi_uartlite_0 0x40600000 0x10000>;
+         <0x40020000 &axi_gpio_buttons 0x40020000 0x10000>,
+         <0x40600000 &axi_uartlite_0 0x40600000 0x10000>,
+         <0x40800000 &axi_iic_0 0x40800000 0x10000>,
+         <0x44a00000 &motor_ctrl_0 0x44a00000 0x10000>;
   #ranges-address-cells = <0x1>;
   #ranges-size-cells = <0x1>;
  };
