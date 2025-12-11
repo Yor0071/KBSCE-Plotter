@@ -58,8 +58,6 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param general.usePosixSpawnForFork 1
-set_param bd.open.in_stealth_mode 1
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -74,6 +72,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/liamb/AppData/Roaming/Xilinx/Vivado/2025.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
+set_property ip_repo_paths c:/Users/liamb/GitHub/KBSCE-Plotter/ip_repo [current_project]
+update_ip_catalog
 set_property ip_output_repo c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -83,7 +83,6 @@ add_files C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_
 add_files C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/ip/framebuffer/framebuffer_tptilewv.coe
 add_files C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/ip/framebuffer/framebuffer_wallpaper.coe
 read_vhdl -library xil_defaultlib {
-  C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/MotorControl.vhd
   C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd
   C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/VGASignalGenerator.vhd
   C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/ov7670_vhdl_full_project/ov7670_capture.vhd
@@ -163,6 +162,12 @@ set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/
 set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_57/bd_33e2_m04awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_58/bd_33e2_m04wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_59/bd_33e2_m04bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_61/bd_33e2_m05s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_62/bd_33e2_m05arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_63/bd_33e2_m05rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_64/bd_33e2_m05awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_65/bd_33e2_m05wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_66/bd_33e2_m05bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_1/RISC_V_blk_mem_gen_0_0_ooc.xdc]

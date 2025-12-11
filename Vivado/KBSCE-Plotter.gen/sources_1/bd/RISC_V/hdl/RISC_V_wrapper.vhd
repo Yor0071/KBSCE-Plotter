@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
---Date        : Wed Dec 10 15:59:09 2025
+--Date        : Thu Dec 11 10:25:21 2025
 --Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 --Command     : generate_target RISC_V_wrapper.bd
 --Design      : RISC_V_wrapper
@@ -33,6 +33,22 @@ entity RISC_V_wrapper is
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     VGA_PCLK : out STD_LOGIC;
     cam_clk_0 : out STD_LOGIC;
+    enc_x1_a_0 : in STD_LOGIC;
+    enc_x1_b_0 : in STD_LOGIC;
+    enc_x2_a_0 : in STD_LOGIC;
+    enc_x2_b_0 : in STD_LOGIC;
+    enc_y_a_0 : in STD_LOGIC;
+    enc_y_b_0 : in STD_LOGIC;
+    enc_z_a_0 : in STD_LOGIC;
+    enc_z_b_0 : in STD_LOGIC;
+    m1_in1_0 : out STD_LOGIC;
+    m1_in2_0 : out STD_LOGIC;
+    m2_in1_0 : out STD_LOGIC;
+    m2_in2_0 : out STD_LOGIC;
+    m3_in1_0 : out STD_LOGIC;
+    m3_in2_0 : out STD_LOGIC;
+    m4_in1_0 : out STD_LOGIC;
+    m4_in2_0 : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -69,7 +85,23 @@ architecture STRUCTURE of RISC_V_wrapper is
     sys_clock : in STD_LOGIC;
     reset : in STD_LOGIC;
     VGA_PCLK : out STD_LOGIC;
-    cam_clk_0 : out STD_LOGIC
+    cam_clk_0 : out STD_LOGIC;
+    enc_y_a_0 : in STD_LOGIC;
+    enc_x2_b_0 : in STD_LOGIC;
+    enc_x2_a_0 : in STD_LOGIC;
+    enc_x1_b_0 : in STD_LOGIC;
+    enc_x1_a_0 : in STD_LOGIC;
+    m4_in1_0 : out STD_LOGIC;
+    m2_in2_0 : out STD_LOGIC;
+    m2_in1_0 : out STD_LOGIC;
+    enc_z_b_0 : in STD_LOGIC;
+    m3_in2_0 : out STD_LOGIC;
+    m3_in1_0 : out STD_LOGIC;
+    enc_z_a_0 : in STD_LOGIC;
+    m1_in2_0 : out STD_LOGIC;
+    m1_in1_0 : out STD_LOGIC;
+    enc_y_b_0 : in STD_LOGIC;
+    m4_in2_0 : out STD_LOGIC
   );
   end component RISC_V;
   component IOBUF is
@@ -126,6 +158,22 @@ RISC_V_i: component RISC_V
       SW_tri_i(15 downto 0) => SW_tri_i(15 downto 0),
       VGA_PCLK => VGA_PCLK,
       cam_clk_0 => cam_clk_0,
+      enc_x1_a_0 => enc_x1_a_0,
+      enc_x1_b_0 => enc_x1_b_0,
+      enc_x2_a_0 => enc_x2_a_0,
+      enc_x2_b_0 => enc_x2_b_0,
+      enc_y_a_0 => enc_y_a_0,
+      enc_y_b_0 => enc_y_b_0,
+      enc_z_a_0 => enc_z_a_0,
+      enc_z_b_0 => enc_z_b_0,
+      m1_in1_0 => m1_in1_0,
+      m1_in2_0 => m1_in2_0,
+      m2_in1_0 => m2_in1_0,
+      m2_in2_0 => m2_in2_0,
+      m3_in1_0 => m3_in1_0,
+      m3_in2_0 => m3_in2_0,
+      m4_in1_0 => m4_in1_0,
+      m4_in2_0 => m4_in2_0,
       reset => reset,
       sys_clock => sys_clock,
       usb_uart_rxd => usb_uart_rxd,

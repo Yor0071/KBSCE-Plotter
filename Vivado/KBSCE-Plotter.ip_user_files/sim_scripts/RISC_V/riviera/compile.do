@@ -239,6 +239,13 @@ vlog -work xil_defaultlib  -incr "+incdir+../../../../KBSCE-Plotter.gen/sources_
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_58/sim/bd_33e2_m04wn_0.sv" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_59/sim/bd_33e2_m04bn_0.sv" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_60/sim/bd_33e2_m04e_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_61/sim/bd_33e2_m05s2a_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_62/sim/bd_33e2_m05arn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_63/sim/bd_33e2_m05rn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_64/sim/bd_33e2_m05awn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_65/sim/bd_33e2_m05wn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_66/sim/bd_33e2_m05bn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_67/sim/bd_33e2_m05e_0.sv" \
 
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_15 -l microblaze_riscv_v1_0_5 -l xil_defaultlib -l lmb_v10_v3_0_15 -l lmb_bram_if_cntlr_v4_0_26 -l blk_mem_gen_v8_4_11 -l axi_lite_ipif_v3_0_4 -l mdm_riscv_v1_0_5 -l proc_sys_reset_v5_0_17 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_37 -l axi_uartlite_v2_0_39 -l xlconstant_v1_1_10 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_35 -l axi_vip_v1_1_21 -l util_vector_logic_v2_0_5 -l axi_iic_v2_1_11 \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/sim/bd_33e2.v" \
@@ -269,6 +276,10 @@ vcom -work xil_defaultlib -93  -incr \
 "../../../bd/RISC_V/ip/RISC_V_axi_iic_0_0/sim/RISC_V_axi_iic_0_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_axi_gpio_0_2/sim/RISC_V_axi_gpio_0_2.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd" \
+"../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_0/sim/RISC_V_motor_ctrl_0_0.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

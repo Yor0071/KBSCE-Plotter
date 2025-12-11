@@ -236,6 +236,13 @@ vlog -work xil_defaultlib  -incr -mfcu  -sv -L axi_vip_v1_1_21 -L smartconnect_v
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_58/sim/bd_33e2_m04wn_0.sv" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_59/sim/bd_33e2_m04bn_0.sv" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_60/sim/bd_33e2_m04e_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_61/sim/bd_33e2_m05s2a_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_62/sim/bd_33e2_m05arn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_63/sim/bd_33e2_m05rn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_64/sim/bd_33e2_m05awn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_65/sim/bd_33e2_m05wn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_66/sim/bd_33e2_m05bn_0.sv" \
+"../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_67/sim/bd_33e2_m05e_0.sv" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a9be" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/f0b6/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/a8e4/hdl/verilog" "+incdir+../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/ec67/hdl" "+incdir+../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/sim/bd_33e2.v" \
@@ -266,6 +273,10 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/RISC_V/ip/RISC_V_axi_iic_0_0/sim/RISC_V_axi_iic_0_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_axi_gpio_0_2/sim/RISC_V_axi_gpio_0_2.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd" \
+"../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_0/sim/RISC_V_motor_ctrl_0_0.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

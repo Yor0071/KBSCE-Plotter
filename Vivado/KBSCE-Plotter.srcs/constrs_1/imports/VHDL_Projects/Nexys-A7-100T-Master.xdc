@@ -119,24 +119,32 @@
     set_property -dict { PACKAGE_PIN H16 IOSTANDARD LVCMOS33 } [get_ports { OV_D[7] }];
     
     ##Pmod Header JC
-    #set_property -dict { PACKAGE_PIN K1    IOSTANDARD LVCMOS33 } [get_ports { JC[1] }]; #IO_L23N_T3_35 Sch=jc[1]
-    #set_property -dict { PACKAGE_PIN F6    IOSTANDARD LVCMOS33 } [get_ports { JC[2] }]; #IO_L19N_T3_VREF_35 Sch=jc[2]
-    #set_property -dict { PACKAGE_PIN J2    IOSTANDARD LVCMOS33 } [get_ports { JC[3] }]; #IO_L22N_T3_35 Sch=jc[3]
-    #set_property -dict { PACKAGE_PIN G6    IOSTANDARD LVCMOS33 } [get_ports { JC[4] }]; #IO_L19P_T3_35 Sch=jc[4]
-    #set_property -dict { PACKAGE_PIN E7    IOSTANDARD LVCMOS33 } [get_ports { JC[7] }]; #IO_L6P_T0_35 Sch=jc[7]
-    #set_property -dict { PACKAGE_PIN J3    IOSTANDARD LVCMOS33 } [get_ports { JC[8] }]; #IO_L22P_T3_35 Sch=jc[8]
-    #set_property -dict { PACKAGE_PIN J4    IOSTANDARD LVCMOS33 } [get_ports { JC[9] }]; #IO_L21P_T3_DQS_35 Sch=jc[9]
-    #set_property -dict { PACKAGE_PIN E6    IOSTANDARD LVCMOS33 } [get_ports { JC[10] }]; #IO_L5P_T0_AD13P_35 Sch=jc[10]
+        ## Encoder X1 (A/B) op JC1 / JC2
+        set_property -dict { PACKAGE_PIN K1 IOSTANDARD LVCMOS33 } [get_ports { enc_x1_a_0 }];
+        set_property -dict { PACKAGE_PIN F6 IOSTANDARD LVCMOS33 } [get_ports { enc_x1_b_0 }];
     
-    ##Pmod Header JD
-    set_property -dict { PACKAGE_PIN H4 IOSTANDARD LVCMOS33 } [get_ports { M1_IN1 }]; # JD1
-    set_property -dict { PACKAGE_PIN H1 IOSTANDARD LVCMOS33 } [get_ports { M1_IN2 }]; # JD2
-    set_property -dict { PACKAGE_PIN G1 IOSTANDARD LVCMOS33 } [get_ports { M2_IN1 }]; # JD3
-    set_property -dict { PACKAGE_PIN G3 IOSTANDARD LVCMOS33 } [get_ports { M2_IN2 }]; # JD4
-    set_property -dict { PACKAGE_PIN H2    IOSTANDARD LVCMOS33 } [get_ports { M3_IN1 }]; #IO_L15P_T2_DQS_35 Sch=jd[7]
-    set_property -dict { PACKAGE_PIN G4    IOSTANDARD LVCMOS33 } [get_ports { M3_IN2 }]; #IO_L20P_T3_35 Sch=jd[8]
-    set_property -dict { PACKAGE_PIN G2    IOSTANDARD LVCMOS33 } [get_ports { M4_IN1 }]; #IO_L15N_T2_DQS_35 Sch=jd[9]
-    set_property -dict { PACKAGE_PIN F3    IOSTANDARD LVCMOS33 } [get_ports { M4_IN2 }]; #IO_L13N_T2_MRCC_35 Sch=jd[10]
+        ## Encoder X2 (A/B) op JC3 / JC4
+        set_property -dict { PACKAGE_PIN J2 IOSTANDARD LVCMOS33 } [get_ports { enc_x2_a_0 }];
+        set_property -dict { PACKAGE_PIN G6 IOSTANDARD LVCMOS33 } [get_ports { enc_x2_b_0 }];
+        
+        ## Encoder Y (A/B) op JC7 / JC8
+        set_property -dict { PACKAGE_PIN E7    IOSTANDARD LVCMOS33 } [get_ports { enc_y_a_0 }]; #IO_L6P_T0_35 Sch=jc[7]
+        set_property -dict { PACKAGE_PIN J3    IOSTANDARD LVCMOS33 } [get_ports { enc_y_b_0 }]; #IO_L22P_T3_35 Sch=jc[8]
+        
+        ## Encoder Z (A/B) op JC9 / JC10
+        set_property -dict { PACKAGE_PIN J4    IOSTANDARD LVCMOS33 } [get_ports { enc_z_a_0 }]; #IO_L21P_T3_DQS_35 Sch=jc[9]
+        set_property -dict { PACKAGE_PIN E6    IOSTANDARD LVCMOS33 } [get_ports { enc_z_b_0 }]; #IO_L5P_T0_AD13P_35 Sch=jc[10]
+        
+        ##Pmod Header JD
+        ##Pmod Header JD - motor outputs
+        set_property -dict { PACKAGE_PIN H4 IOSTANDARD LVCMOS33 } [get_ports { m1_in1_0 }]; # JD1
+        set_property -dict { PACKAGE_PIN H1 IOSTANDARD LVCMOS33 } [get_ports { m1_in2_0 }]; # JD2
+        set_property -dict { PACKAGE_PIN G1 IOSTANDARD LVCMOS33 } [get_ports { m2_in1_0 }]; # JD3
+        set_property -dict { PACKAGE_PIN G3 IOSTANDARD LVCMOS33 } [get_ports { m2_in2_0 }]; # JD4
+        set_property -dict { PACKAGE_PIN H2 IOSTANDARD LVCMOS33 } [get_ports { m3_in1_0 }]; # JD7
+        set_property -dict { PACKAGE_PIN G4 IOSTANDARD LVCMOS33 } [get_ports { m3_in2_0 }]; # JD8
+        set_property -dict { PACKAGE_PIN G2 IOSTANDARD LVCMOS33 } [get_ports { m4_in1_0 }]; # JD9
+        set_property -dict { PACKAGE_PIN F3 IOSTANDARD LVCMOS33 } [get_ports { m4_in2_0 }]; # JD10
     
     ##Pmod Header JXADC
     #set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { XA_N[1] }]; #IO_L9N_T1_DQS_AD3N_15 Sch=xa_n[1]

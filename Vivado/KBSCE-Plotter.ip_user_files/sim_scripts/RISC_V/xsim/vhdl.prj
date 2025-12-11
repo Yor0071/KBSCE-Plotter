@@ -13,6 +13,10 @@ vhdl xil_defaultlib  \
 "../../../bd/RISC_V/ip/RISC_V_axi_iic_0_0/sim/RISC_V_axi_iic_0_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_axi_gpio_0_2/sim/RISC_V_axi_gpio_0_2.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd" \
+"../../../bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd" \
+"../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_0/sim/RISC_V_motor_ctrl_0_0.vhd" \
 
 # Do not sort compile order
 nosort

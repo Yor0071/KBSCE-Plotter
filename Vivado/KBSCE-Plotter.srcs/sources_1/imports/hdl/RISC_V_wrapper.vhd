@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
---Date        : Wed Dec 10 13:14:56 2025
+--Date        : Thu Dec 11 10:25:21 2025
 --Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 --Command     : generate_target RISC_V_wrapper.bd
 --Design      : RISC_V_wrapper
@@ -33,6 +33,22 @@ entity RISC_V_wrapper is
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     VGA_PCLK : out STD_LOGIC;
     cam_clk_0 : out STD_LOGIC;
+    enc_x1_a_0 : in STD_LOGIC;
+    enc_x1_b_0 : in STD_LOGIC;
+    enc_x2_a_0 : in STD_LOGIC;
+    enc_x2_b_0 : in STD_LOGIC;
+    enc_y_a_0 : in STD_LOGIC;
+    enc_y_b_0 : in STD_LOGIC;
+    enc_z_a_0 : in STD_LOGIC;
+    enc_z_b_0 : in STD_LOGIC;
+    m1_in1_0 : out STD_LOGIC;
+    m1_in2_0 : out STD_LOGIC;
+    m2_in1_0 : out STD_LOGIC;
+    m2_in2_0 : out STD_LOGIC;
+    m3_in1_0 : out STD_LOGIC;
+    m3_in2_0 : out STD_LOGIC;
+    m4_in1_0 : out STD_LOGIC;
+    m4_in2_0 : out STD_LOGIC;
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -59,17 +75,33 @@ architecture STRUCTURE of RISC_V_wrapper is
     BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORTA_1_en : in STD_LOGIC;
     BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    sys_clock : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    VGA_PCLK : out STD_LOGIC;
-    cam_clk_0 : out STD_LOGIC;
     IIC_0_scl_i : in STD_LOGIC;
     IIC_0_scl_o : out STD_LOGIC;
     IIC_0_scl_t : out STD_LOGIC;
     IIC_0_sda_i : in STD_LOGIC;
     IIC_0_sda_o : out STD_LOGIC;
     IIC_0_sda_t : out STD_LOGIC;
-    BTN_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 )
+    BTN_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    sys_clock : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    VGA_PCLK : out STD_LOGIC;
+    cam_clk_0 : out STD_LOGIC;
+    enc_y_a_0 : in STD_LOGIC;
+    enc_x2_b_0 : in STD_LOGIC;
+    enc_x2_a_0 : in STD_LOGIC;
+    enc_x1_b_0 : in STD_LOGIC;
+    enc_x1_a_0 : in STD_LOGIC;
+    m4_in1_0 : out STD_LOGIC;
+    m2_in2_0 : out STD_LOGIC;
+    m2_in1_0 : out STD_LOGIC;
+    enc_z_b_0 : in STD_LOGIC;
+    m3_in2_0 : out STD_LOGIC;
+    m3_in1_0 : out STD_LOGIC;
+    enc_z_a_0 : in STD_LOGIC;
+    m1_in2_0 : out STD_LOGIC;
+    m1_in1_0 : out STD_LOGIC;
+    enc_y_b_0 : in STD_LOGIC;
+    m4_in2_0 : out STD_LOGIC
   );
   end component RISC_V;
   component IOBUF is
@@ -126,6 +158,22 @@ RISC_V_i: component RISC_V
       SW_tri_i(15 downto 0) => SW_tri_i(15 downto 0),
       VGA_PCLK => VGA_PCLK,
       cam_clk_0 => cam_clk_0,
+      enc_x1_a_0 => enc_x1_a_0,
+      enc_x1_b_0 => enc_x1_b_0,
+      enc_x2_a_0 => enc_x2_a_0,
+      enc_x2_b_0 => enc_x2_b_0,
+      enc_y_a_0 => enc_y_a_0,
+      enc_y_b_0 => enc_y_b_0,
+      enc_z_a_0 => enc_z_a_0,
+      enc_z_b_0 => enc_z_b_0,
+      m1_in1_0 => m1_in1_0,
+      m1_in2_0 => m1_in2_0,
+      m2_in1_0 => m2_in1_0,
+      m2_in2_0 => m2_in2_0,
+      m3_in1_0 => m3_in1_0,
+      m3_in2_0 => m3_in2_0,
+      m4_in1_0 => m4_in1_0,
+      m4_in2_0 => m4_in2_0,
       reset => reset,
       sys_clock => sys_clock,
       usb_uart_rxd => usb_uart_rxd,

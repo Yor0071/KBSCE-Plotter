@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xFB2117D7D1339093",
+      "boundary_crc": "0x33661BD35500717E",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V",
       "name": "RISC_V",
@@ -29,7 +29,8 @@
       "reset_inv_0": "",
       "blk_mem_gen_0": "",
       "axi_iic_0": "",
-      "axi_gpio_buttons": ""
+      "axi_gpio_buttons": "",
+      "motor_ctrl_0": ""
     },
     "interface_ports": {
       "LED": {
@@ -333,6 +334,54 @@
             "value_src": "ip_prop"
           }
         }
+      },
+      "enc_y_a_0": {
+        "direction": "I"
+      },
+      "enc_x2_b_0": {
+        "direction": "I"
+      },
+      "enc_x2_a_0": {
+        "direction": "I"
+      },
+      "enc_x1_b_0": {
+        "direction": "I"
+      },
+      "enc_x1_a_0": {
+        "direction": "I"
+      },
+      "m4_in1_0": {
+        "direction": "O"
+      },
+      "m2_in2_0": {
+        "direction": "O"
+      },
+      "m2_in1_0": {
+        "direction": "O"
+      },
+      "enc_z_b_0": {
+        "direction": "I"
+      },
+      "m3_in2_0": {
+        "direction": "O"
+      },
+      "m3_in1_0": {
+        "direction": "O"
+      },
+      "enc_z_a_0": {
+        "direction": "I"
+      },
+      "m1_in2_0": {
+        "direction": "O"
+      },
+      "m1_in1_0": {
+        "direction": "O"
+      },
+      "enc_y_b_0": {
+        "direction": "I"
+      },
+      "m4_in2_0": {
+        "direction": "O"
       }
     },
     "components": {
@@ -823,7 +872,7 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "NUM_MI": {
-            "value": "5"
+            "value": "6"
           },
           "NUM_SI": {
             "value": "1"
@@ -847,11 +896,12 @@
               "M01_AXI",
               "M02_AXI",
               "M03_AXI",
-              "M04_AXI"
+              "M04_AXI",
+              "M05_AXI"
             ],
             "bd_attributes": {
               "BRIDGES": {
-                "value": "M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI",
+                "value": "M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI",
                 "value_src": "auto"
               },
               "TYPE": {
@@ -1014,6 +1064,37 @@
                 "value_src": "default"
               }
             }
+          },
+          "M05_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "NUM_READ_OUTSTANDING": {
+                "value": "1"
+              },
+              "NUM_READ_THREADS": {
+                "value": "1"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "1"
+              },
+              "NUM_WRITE_THREADS": {
+                "value": "1"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            },
+            "bd_attributes": {
+              "TYPE": {
+                "value": "interior",
+                "value_src": "default"
+              }
+            }
           }
         }
       },
@@ -1095,6 +1176,14 @@
             "value": "true"
           }
         }
+      },
+      "motor_ctrl_0": {
+        "vlnv": "xilinx.com:user:motor_ctrl:1.0",
+        "ip_revision": "13",
+        "xci_name": "RISC_V_motor_ctrl_0_0",
+        "xci_path": "ip\\RISC_V_motor_ctrl_0_0\\RISC_V_motor_ctrl_0_0.xci",
+        "inst_hier_path": "motor_ctrl_0",
+        "has_run_ip_tcl": "true"
       }
     },
     "interface_nets": {
@@ -1164,6 +1253,12 @@
           "axi_gpio_buttons/S_AXI"
         ]
       },
+      "axi_smc_M05_AXI": {
+        "interface_ports": [
+          "axi_smc/M05_AXI",
+          "motor_ctrl_0/S00_AXI"
+        ]
+      },
       "axi_uartlite_0_UART": {
         "interface_ports": [
           "usb_uart",
@@ -1208,6 +1303,54 @@
           "cam_clk_0"
         ]
       },
+      "enc_x1_a_0_1": {
+        "ports": [
+          "enc_x1_a_0",
+          "motor_ctrl_0/enc_x1_a"
+        ]
+      },
+      "enc_x1_b_0_1": {
+        "ports": [
+          "enc_x1_b_0",
+          "motor_ctrl_0/enc_x1_b"
+        ]
+      },
+      "enc_x2_a_0_1": {
+        "ports": [
+          "enc_x2_a_0",
+          "motor_ctrl_0/enc_x2_a"
+        ]
+      },
+      "enc_x2_b_0_1": {
+        "ports": [
+          "enc_x2_b_0",
+          "motor_ctrl_0/enc_x2_b"
+        ]
+      },
+      "enc_y_a_0_1": {
+        "ports": [
+          "enc_y_a_0",
+          "motor_ctrl_0/enc_y_a"
+        ]
+      },
+      "enc_y_b_0_1": {
+        "ports": [
+          "enc_y_b_0",
+          "motor_ctrl_0/enc_y_b"
+        ]
+      },
+      "enc_z_a_0_1": {
+        "ports": [
+          "enc_z_a_0",
+          "motor_ctrl_0/enc_z_a"
+        ]
+      },
+      "enc_z_b_0_1": {
+        "ports": [
+          "enc_z_b_0",
+          "motor_ctrl_0/enc_z_b"
+        ]
+      },
       "mdm_1_debug_sys_rst": {
         "ports": [
           "mdm_1/Debug_SYS_Rst",
@@ -1225,7 +1368,56 @@
           "axi_gpio_switches/s_axi_aclk",
           "axi_uartlite_0/s_axi_aclk",
           "axi_iic_0/s_axi_aclk",
-          "axi_gpio_buttons/s_axi_aclk"
+          "axi_gpio_buttons/s_axi_aclk",
+          "motor_ctrl_0/s00_axi_aclk"
+        ]
+      },
+      "motor_ctrl_0_m1_in1": {
+        "ports": [
+          "motor_ctrl_0/m1_in1",
+          "m1_in1_0"
+        ]
+      },
+      "motor_ctrl_0_m1_in2": {
+        "ports": [
+          "motor_ctrl_0/m1_in2",
+          "m1_in2_0"
+        ]
+      },
+      "motor_ctrl_0_m2_in1": {
+        "ports": [
+          "motor_ctrl_0/m2_in1",
+          "m2_in1_0"
+        ]
+      },
+      "motor_ctrl_0_m2_in2": {
+        "ports": [
+          "motor_ctrl_0/m2_in2",
+          "m2_in2_0"
+        ]
+      },
+      "motor_ctrl_0_m3_in1": {
+        "ports": [
+          "motor_ctrl_0/m3_in1",
+          "m3_in1_0"
+        ]
+      },
+      "motor_ctrl_0_m3_in2": {
+        "ports": [
+          "motor_ctrl_0/m3_in2",
+          "m3_in2_0"
+        ]
+      },
+      "motor_ctrl_0_m4_in1": {
+        "ports": [
+          "motor_ctrl_0/m4_in1",
+          "m4_in1_0"
+        ]
+      },
+      "motor_ctrl_0_m4_in2": {
+        "ports": [
+          "motor_ctrl_0/m4_in2",
+          "m4_in2_0"
         ]
       },
       "reset_1": {
@@ -1261,7 +1453,8 @@
           "axi_gpio_switches/s_axi_aresetn",
           "axi_uartlite_0/s_axi_aresetn",
           "axi_iic_0/s_axi_aresetn",
-          "axi_gpio_buttons/s_axi_aresetn"
+          "axi_gpio_buttons/s_axi_aresetn",
+          "motor_ctrl_0/s00_axi_aresetn"
         ]
       },
       "sys_clock_1": {
@@ -1306,6 +1499,13 @@
                 "offset": "0x00000000",
                 "range": "64K",
                 "offset_high_param": "C_HIGHADDR"
+              },
+              "SEG_motor_ctrl_0_S00_AXI_reg": {
+                "address_block": "/motor_ctrl_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A00000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
               }
             }
           },
