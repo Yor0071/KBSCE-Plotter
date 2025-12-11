@@ -75,7 +75,7 @@
         "Disable_Collision_Warnings": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Disable_Out_of_Range_Warnings": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "use_bram_block": [ { "value": "Stand_Alone", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
-        "MEM_FILE": [ { "value": "NONE", "value_src": "ip_propagated", "resolve_type": "user", "usage": "all" } ],
+        "MEM_FILE": [ { "value": "RISC_V_blk_mem_gen_0_0.mem", "value_src": "ip_propagated", "resolve_type": "user", "usage": "all" } ],
         "CTRL_ECC_ALGO": [ { "value": "NONE", "value_src": "propagated", "resolve_type": "user", "usage": "all" } ],
         "EN_SAFETY_CKT": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
         "READ_LATENCY_A": [ { "value": "1", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
@@ -99,7 +99,7 @@
         "C_PRIM_TYPE": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_LOAD_INIT_FILE": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_INIT_FILE_NAME": [ { "value": "RISC_V_blk_mem_gen_0_0.mif", "resolve_type": "generated", "usage": "all" } ],
-        "C_INIT_FILE": [ { "value": "NONE", "resolve_type": "generated", "usage": "all" } ],
+        "C_INIT_FILE": [ { "value": "RISC_V_blk_mem_gen_0_0.mem", "resolve_type": "generated", "usage": "all" } ],
         "C_USE_DEFAULT_DATA": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_DEFAULT_DATA": [ { "value": "0", "resolve_type": "generated", "usage": "all" } ],
         "C_HAS_RSTA": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -250,12 +250,12 @@
           "mode": "slave",
           "parameters": {
             "MEM_ADDRESS_MODE": [ { "value": "BYTE_ADDRESS", "value_permission": "bd", "resolve_type": "user", "usage": "all" } ],
-            "MEM_SIZE": [ { "value": "8192", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MEM_WIDTH": [ { "value": "32", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MEM_ECC": [ { "value": "NONE", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "MEM_SIZE": [ { "value": "16777216", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MEM_WIDTH": [ { "value": "32", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MEM_ECC": [ { "value": "NONE", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "MASTER_TYPE": [ { "value": "OTHER", "value_src": "user", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "READ_LATENCY": [ { "value": "1", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+            "READ_LATENCY": [ { "value": "2", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "ADDR": [ { "physical_name": "addrb" } ],

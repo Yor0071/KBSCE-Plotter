@@ -1,42 +1,42 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec 11 18:10:05 2025" VIVADOVERSION="2025.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec 11 18:32:34 2025" VIVADOVERSION="2025.1">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="RISC_V" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" LEFT="18" NAME="BRAM_PORT_CAM_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_addr">
+    <PORT DIR="I" LEFT="18" NAME="BRAM_PORT_CAM_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_addr">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_addr"/>
+        <CONNECTION INSTANCE="BRAMEater_0" PORT="bram_addr"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_PORT_CAM_clk" SIGIS="clk" SIGNAME="BRAMMux_0_s_in_camera_clk">
+    <PORT DIR="I" NAME="BRAM_PORT_CAM_clk" SIGIS="clk" SIGNAME="BRAMEater_0_bram_clk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_clk"/>
+        <CONNECTION INSTANCE="BRAMEater_0" PORT="bram_clk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="11" NAME="BRAM_PORT_CAM_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_din">
+    <PORT DIR="I" LEFT="11" NAME="BRAM_PORT_CAM_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_din">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_din"/>
+        <CONNECTION INSTANCE="BRAMEater_0" PORT="bram_din"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="11" NAME="BRAM_PORT_CAM_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_dout">
+    <PORT DIR="O" LEFT="11" NAME="BRAM_PORT_CAM_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_dout">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_dout"/>
+        <CONNECTION INSTANCE="BRAMEater_0" PORT="bram_dout"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_PORT_CAM_en" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_en">
+    <PORT DIR="I" NAME="BRAM_PORT_CAM_en" SIGIS="undef" SIGNAME="BRAMEater_0_bram_en">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_en"/>
+        <CONNECTION INSTANCE="BRAMEater_0" PORT="bram_en"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="BRAM_PORT_CAM_rst" SIGIS="rst" SIGNAME="BRAMMux_0_s_in_camera_rst">
+    <PORT DIR="I" NAME="BRAM_PORT_CAM_rst" SIGIS="rst" SIGNAME="BRAMEater_0_bram_rst">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_rst"/>
+        <CONNECTION INSTANCE="BRAMEater_0" PORT="bram_rst"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="0" NAME="BRAM_PORT_CAM_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_we">
+    <PORT DIR="I" LEFT="0" NAME="BRAM_PORT_CAM_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_we">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_camera_we"/>
+        <CONNECTION INSTANCE="BRAMEater_0" PORT="bram_we"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="18" NAME="BRAM_PORT_VGA_addr" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_addra">
@@ -161,133 +161,51 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="1" FULLNAME="/BRAMMux_0" HWVERSION="1.0" INSTANCE="BRAMMux_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BRAMMux" VLNV="xilinx.com:module_ref:BRAMMux:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/BRAMEater_0" HWVERSION="1.0" INSTANCE="BRAMEater_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BRAMEater" VLNV="xilinx.com:module_ref:BRAMEater:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="RISC_V_BRAMMux_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="RISC_V_BRAMEater_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="18" NAME="s_in_camera_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_addr">
+        <PORT DIR="I" LEFT="18" NAME="bram_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_addr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_in_camera_clk" SIGIS="clk" SIGNAME="BRAMMux_0_s_in_camera_clk">
+        <PORT DIR="I" NAME="bram_clk" SIGIS="clk" SIGNAME="BRAMEater_0_bram_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="s_in_camera_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_din">
+        <PORT DIR="I" LEFT="11" NAME="bram_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_din">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="11" NAME="s_in_camera_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_dout">
+        <PORT DIR="O" LEFT="11" NAME="bram_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_in_camera_en" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_en">
+        <PORT DIR="I" NAME="bram_en" SIGIS="undef" SIGNAME="BRAMEater_0_bram_en">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_en"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_in_camera_rst" SIGIS="rst" SIGNAME="BRAMMux_0_s_in_camera_rst">
+        <PORT DIR="I" NAME="bram_rst" SIGIS="rst" SIGNAME="BRAMEater_0_bram_rst">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_rst"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="s_in_camera_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_camera_we">
+        <PORT DIR="I" LEFT="0" NAME="bram_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMEater_0_bram_we">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_CAM_we"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_in_microblaze_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_addr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_addr_a"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_in_microblaze_clk" SIGIS="clk" SIGNAME="BRAMMux_0_s_in_microblaze_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_clk_a"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_in_microblaze_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_din">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_wrdata_a"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_in_microblaze_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_rddata_a"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_in_microblaze_en" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_en">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_en_a"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_in_microblaze_rst" SIGIS="rst" SIGNAME="BRAMMux_0_s_in_microblaze_rst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_rst_a"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="s_in_microblaze_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_we">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_we_a"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="18" NAME="s_out_fb_addr" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_addr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_out_fb_clk" SIGIS="clk" SIGNAME="BRAMMux_0_s_out_fb_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clkb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="11" NAME="s_out_fb_din" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_din">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="dinb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="11" NAME="s_out_fb_dout" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="doutb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_out_fb_en" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_en">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="enb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="s_out_fb_we" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_we">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="web"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="axi_bram_ctrl_0_BRAM_PORTA" NAME="BRAM_IN_PORT_MICROBLAZE" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
-          <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
-          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
-          <PARAMETER NAME="MEM_SIZE" VALUE="16777216"/>
-          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
-          <PARAMETER NAME="READ_WRITE_MODE"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="ADDR" PHYSICAL="s_in_microblaze_addr"/>
-            <PORTMAP LOGICAL="CLK" PHYSICAL="s_in_microblaze_clk"/>
-            <PORTMAP LOGICAL="DIN" PHYSICAL="s_in_microblaze_din"/>
-            <PORTMAP LOGICAL="DOUT" PHYSICAL="s_in_microblaze_dout"/>
-            <PORTMAP LOGICAL="EN" PHYSICAL="s_in_microblaze_en"/>
-            <PORTMAP LOGICAL="RST" PHYSICAL="s_in_microblaze_rst"/>
-            <PORTMAP LOGICAL="WE" PHYSICAL="s_in_microblaze_we"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORT_CAM" NAME="BRAM_IN_PORT_CAMERA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+        <BUSINTERFACE BUSNAME="External_Interface_BRAM_PORT_CAM" NAME="BRAM_IN_PORT" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
           <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
           <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
           <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
@@ -295,30 +213,13 @@
           <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
           <PARAMETER NAME="READ_WRITE_MODE"/>
           <PORTMAPS>
-            <PORTMAP LOGICAL="ADDR" PHYSICAL="s_in_camera_addr"/>
-            <PORTMAP LOGICAL="CLK" PHYSICAL="s_in_camera_clk"/>
-            <PORTMAP LOGICAL="DIN" PHYSICAL="s_in_camera_din"/>
-            <PORTMAP LOGICAL="DOUT" PHYSICAL="s_in_camera_dout"/>
-            <PORTMAP LOGICAL="EN" PHYSICAL="s_in_camera_en"/>
-            <PORTMAP LOGICAL="RST" PHYSICAL="s_in_camera_rst"/>
-            <PORTMAP LOGICAL="WE" PHYSICAL="s_in_camera_we"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="BRAMMux_0_BRAM_OUT_PORT_FB" NAME="BRAM_OUT_PORT_FB" TYPE="INITIATOR" VLNV="xilinx.com:interface:bram:1.0">
-          <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
-          <PARAMETER NAME="MEM_ADDRESS_MODE"/>
-          <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
-          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
-          <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
-          <PARAMETER NAME="READ_WRITE_MODE"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="ADDR" PHYSICAL="s_out_fb_addr"/>
-            <PORTMAP LOGICAL="CLK" PHYSICAL="s_out_fb_clk"/>
-            <PORTMAP LOGICAL="DIN" PHYSICAL="s_out_fb_din"/>
-            <PORTMAP LOGICAL="DOUT" PHYSICAL="s_out_fb_dout"/>
-            <PORTMAP LOGICAL="EN" PHYSICAL="s_out_fb_en"/>
-            <PORTMAP LOGICAL="WE" PHYSICAL="s_out_fb_we"/>
+            <PORTMAP LOGICAL="ADDR" PHYSICAL="bram_addr"/>
+            <PORTMAP LOGICAL="CLK" PHYSICAL="bram_clk"/>
+            <PORTMAP LOGICAL="DIN" PHYSICAL="bram_din"/>
+            <PORTMAP LOGICAL="DOUT" PHYSICAL="bram_dout"/>
+            <PORTMAP LOGICAL="EN" PHYSICAL="bram_en"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="bram_rst"/>
+            <PORTMAP LOGICAL="WE" PHYSICAL="bram_we"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -672,39 +573,34 @@
         <PARAMETER NAME="C_S_AXI_HIGHADDR" VALUE="0xC0FFFFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="23" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_addr">
+        <PORT DIR="O" LEFT="23" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_addr_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_microblaze_addr"/>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="BRAMMux_0_s_in_microblaze_clk">
+        <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="axi_bram_ctrl_0_bram_clk_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_microblaze_clk"/>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clkb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_en">
+        <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_microblaze_en"/>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="enb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_dout">
+        <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_rddata_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_microblaze_dout"/>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="doutb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_rst_a" SIGIS="rst" SIGNAME="BRAMMux_0_s_in_microblaze_rst">
+        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_we_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_microblaze_rst"/>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="web"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_we">
+        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_wrdata_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_microblaze_we"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_in_microblaze_din">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_in_microblaze_din"/>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="dinb"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="clk_wiz_1_clk_out1">
@@ -942,6 +838,7 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_bram_ctrl_0_BRAM_PORTA" NAME="BRAM_PORTA" TYPE="INITIATOR" VLNV="xilinx.com:interface:bram:1.0">
           <PARAMETER NAME="MASTER_TYPE" VALUE="BRAM_CTRL"/>
+          <PARAMETER NAME="MEM_ADDRESS_MODE"/>
           <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
           <PARAMETER NAME="MEM_SIZE" VALUE="16777216"/>
           <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
@@ -953,7 +850,6 @@
             <PORTMAP LOGICAL="DIN" PHYSICAL="bram_wrdata_a"/>
             <PORTMAP LOGICAL="DOUT" PHYSICAL="bram_rddata_a"/>
             <PORTMAP LOGICAL="EN" PHYSICAL="bram_en_a"/>
-            <PORTMAP LOGICAL="RST" PHYSICAL="bram_rst_a"/>
             <PORTMAP LOGICAL="WE" PHYSICAL="bram_we_a"/>
           </PORTMAPS>
         </BUSINTERFACE>
@@ -2895,7 +2791,7 @@
         <PARAMETER NAME="C_HAS_SOFTECC_OUTPUT_REGS_B" VALUE="0"/>
         <PARAMETER NAME="C_INITA_VAL" VALUE="0"/>
         <PARAMETER NAME="C_INITB_VAL" VALUE="0"/>
-        <PARAMETER NAME="C_INIT_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="C_INIT_FILE" VALUE="RISC_V_blk_mem_gen_0_0.mem"/>
         <PARAMETER NAME="C_INIT_FILE_NAME" VALUE="RISC_V_blk_mem_gen_0_0.mif"/>
         <PARAMETER NAME="C_INTERFACE_TYPE" VALUE="0"/>
         <PARAMETER NAME="C_LOAD_INIT_FILE" VALUE="1"/>
@@ -2955,7 +2851,7 @@
         <PARAMETER NAME="Fill_Remaining_Memory_Locations" VALUE="false"/>
         <PARAMETER NAME="Interface_Type" VALUE="Native"/>
         <PARAMETER NAME="Load_Init_File" VALUE="true"/>
-        <PARAMETER NAME="MEM_FILE" VALUE="NONE"/>
+        <PARAMETER NAME="MEM_FILE" VALUE="RISC_V_blk_mem_gen_0_0.mem"/>
         <PARAMETER NAME="Memory_Type" VALUE="True_Dual_Port_RAM"/>
         <PARAMETER NAME="Operating_Mode_A" VALUE="WRITE_FIRST"/>
         <PARAMETER NAME="Operating_Mode_B" VALUE="WRITE_FIRST"/>
@@ -3009,9 +2905,9 @@
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_addr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="18" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_addr">
+        <PORT DIR="I" LEFT="18" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_addr_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_out_fb_addr"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_addr_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="clka" SIGIS="clk" SIGNAME="blk_mem_gen_0_clka">
@@ -3019,9 +2915,9 @@
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="BRAMMux_0_s_out_fb_clk">
+        <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="axi_bram_ctrl_0_bram_clk_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_out_fb_clk"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_clk_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="dina" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_dina">
@@ -3029,9 +2925,9 @@
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="dinb" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_din">
+        <PORT DIR="I" LEFT="11" NAME="dinb" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_wrdata_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_out_fb_din"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_wrdata_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="11" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
@@ -3039,9 +2935,9 @@
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="11" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_dout">
+        <PORT DIR="O" LEFT="11" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_rddata_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_out_fb_dout"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_rddata_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="blk_mem_gen_0_ena">
@@ -3049,9 +2945,9 @@
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_en"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_en">
+        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_out_fb_en"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_en_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_wea">
@@ -3059,9 +2955,9 @@
             <CONNECTION INSTANCE="RISC_V_imp" PORT="BRAM_PORT_VGA_we"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="BRAMMux_0_s_out_fb_we">
+        <PORT DIR="I" LEFT="0" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_we_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BRAMMux_0" PORT="s_out_fb_we"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_we_a"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3083,13 +2979,13 @@
             <PORTMAP LOGICAL="WE" PHYSICAL="wea"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="BRAMMux_0_BRAM_OUT_PORT_FB" NAME="BRAM_PORTB" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
+        <BUSINTERFACE BUSNAME="axi_bram_ctrl_0_BRAM_PORTA" NAME="BRAM_PORTB" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
           <PARAMETER NAME="MASTER_TYPE" VALUE="OTHER"/>
           <PARAMETER NAME="MEM_ADDRESS_MODE" VALUE="BYTE_ADDRESS"/>
           <PARAMETER NAME="MEM_ECC" VALUE="NONE"/>
-          <PARAMETER NAME="MEM_SIZE" VALUE="8192"/>
+          <PARAMETER NAME="MEM_SIZE" VALUE="16777216"/>
           <PARAMETER NAME="MEM_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
+          <PARAMETER NAME="READ_LATENCY" VALUE="2"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="ADDR" PHYSICAL="addrb"/>
