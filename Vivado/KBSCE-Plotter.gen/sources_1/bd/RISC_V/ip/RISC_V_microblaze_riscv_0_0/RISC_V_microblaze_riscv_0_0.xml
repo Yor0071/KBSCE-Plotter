@@ -15147,7 +15147,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Dec 12 10:50:41 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 12:12:15 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -15165,7 +15165,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 11 21:51:40 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 12:12:02 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -15188,7 +15188,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 11 16:56:45 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 12:12:02 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -15208,7 +15208,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 11 21:51:40 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 12:12:02 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -15231,7 +15231,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 11 16:56:45 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 12:12:02 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -15251,7 +15251,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 11 21:51:40 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 12:12:02 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -27580,6 +27580,12 @@
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>data/riscv_bootloop.elf</spirit:name>
+        <spirit:userFileType>elf</spirit:userFileType>
+        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+      </spirit:file>
       <spirit:file>
         <spirit:name>RISC_V_microblaze_riscv_0_0.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>

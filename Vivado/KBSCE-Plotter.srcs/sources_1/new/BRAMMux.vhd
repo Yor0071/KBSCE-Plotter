@@ -104,25 +104,25 @@ architecture RTL of BRAMMux is
     --ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
     --ATTRIBUTE X_INTERFACE_PARAMETER of <port_name>: SIGNAL is "MASTER_TYPE <value>,MEM_ECC <value>,MEM_WIDTH <value>,MEM_SIZE <value>,READ_WRITE_MODE <value>";
 begin
-    process(s_in_microblaze_clk) is
-    begin
-        if true then
-            s_out_fb_clk  <= s_in_microblaze_clk;
-            s_out_fb_rst  <= s_in_microblaze_rst;
-            s_out_fb_en   <= s_in_microblaze_en;
-            s_out_fb_din  <= s_in_microblaze_din(11 downto 0);
-            s_out_fb_we   <= s_in_microblaze_we;
-            s_out_fb_addr <= s_in_microblaze_addr(18 downto 0);
-            
-            s_in_microblaze_dout <= (others => '0');
-            s_in_microblaze_dout(11 downto 0) <= s_out_fb_dout;
-        else
-            s_out_fb_clk  <= s_in_camera_clk;
-            s_out_fb_rst  <= s_in_camera_rst;
-            s_out_fb_en   <= s_in_camera_en;
-            s_out_fb_din  <= s_in_camera_din;
-            s_out_fb_we   <= s_in_camera_we;
-            s_out_fb_addr <= s_in_camera_addr;
-        end if;
-    end process;
+
+    -- BRAM clock and reset must NEVER be multiplexed with logic
+    s_out_fb_clk <= s_in_microblaze_clk;
+    s_out_fb_rst <= s_in_microblaze_rst;
+
+    -- Select which master is driving the BRAM access
+    -- Camera has priority if its WE is asserted
+    s_out_fb_en   <= s_in_microblaze_en   when s_in_camera_we = "0" else s_in_camera_en;
+    s_out_fb_we   <= s_in_microblaze_we   when s_in_camera_we = "0" else s_in_camera_we;
+    s_out_fb_din  <= s_in_microblaze_din(11 downto 0) when s_in_camera_we = "0"
+                     else s_in_camera_din;
+    s_out_fb_addr <= s_in_microblaze_addr(18 downto 0) when s_in_camera_we = "0"
+                     else s_in_camera_addr;
+
+    -- MicroBlaze read return path (BRAM_OUT)
+    s_in_microblaze_dout <= (31 downto 12 => '0') & std_logic_vector(s_out_fb_dout);
+    -- s_in_microblaze_dout <= (31 downto 12 => '0', others => s_out_fb_dout);
+
+    -- Camera read return path (if used)
+    s_in_camera_dout <= s_out_fb_dout;
+
 end RTL;

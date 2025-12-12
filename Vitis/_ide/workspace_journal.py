@@ -1,29 +1,66 @@
-# 2025-12-12T11:04:09.811023
+# 2025-12-12T13:06:31.095603
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="Vitis")
 
+platform = client.get_component(name="lnx-X")
+status = platform.build()
+
+comp = client.get_component(name="app-X")
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
 advanced_options = client.create_advanced_options_dict(dt_overlay="0")
 
-platform = client.create_platform_component(name = "lnx-P",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
+platform = client.create_platform_component(name = "Y-lnx",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
 
-platform = client.get_component(name="lnx-P")
+platform = client.get_component(name="Y-lnx")
 status = platform.build()
 
-comp = client.create_app_component(name="app-P",platform = "$COMPONENT_LOCATION/../lnx-P/export/lnx-P/lnx-P.xpfm",domain = "standalone_microblaze_riscv_0")
+comp = client.create_app_component(name="Y-app",platform = "$COMPONENT_LOCATION/../Y-lnx/export/Y-lnx/Y-lnx.xpfm",domain = "standalone_microblaze_riscv_0")
 
 status = platform.build()
 
-comp = client.get_component(name="app-P")
+comp = client.get_component(name="Y-app")
 comp.build()
 
 status = platform.build()
 
 comp.build()
 
+advanced_options = client.create_advanced_options_dict(dt_overlay="0")
+
+platform = client.create_platform_component(name = "Z-lnx",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
+
+platform = client.get_component(name="Z-lnx")
 status = platform.build()
 
+advanced_options = client.create_advanced_options_dict(dt_overlay="0")
+
+platform = client.create_platform_component(name = "AA-lnx",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
+
+platform = client.get_component(name="AA-lnx")
+status = platform.build()
+
+status = platform.build()
+
+comp = client.create_app_component(name="AA-app",platform = "$COMPONENT_LOCATION/../AA-lnx/export/AA-lnx/AA-lnx.xpfm",domain = "standalone_microblaze_riscv_0")
+
+status = platform.build()
+
+comp = client.get_component(name="AA-app")
 comp.build()
 
 status = platform.build()

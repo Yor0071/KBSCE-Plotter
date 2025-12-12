@@ -979,7 +979,7 @@
             "value": "AXI4"
           },
           "READ_LATENCY": {
-            "value": "2"
+            "value": "1"
           },
           "SINGLE_PORT_BRAM": {
             "value": "1"
@@ -1041,7 +1041,7 @@
                 "value_src": "user_prop"
               },
               "READ_LATENCY": {
-                "value": "2",
+                "value": "1",
                 "value_src": "user_prop"
               }
             },

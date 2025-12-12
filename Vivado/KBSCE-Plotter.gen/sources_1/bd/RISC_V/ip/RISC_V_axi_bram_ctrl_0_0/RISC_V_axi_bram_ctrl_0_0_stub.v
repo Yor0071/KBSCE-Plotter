@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Thu Dec 11 18:41:09 2025
+// Date        : Fri Dec 12 12:28:43 2025
 // Host        : mrt-fed-lap running 64-bit unknown
 // Command     : write_verilog -force -mode synth_stub -rename_top RISC_V_axi_bram_ctrl_0_0 -prefix
 //               RISC_V_axi_bram_ctrl_0_0_ RISC_V_axi_bram_ctrl_0_0_stub.v
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "RISC_V_axi_bram_ctrl_0_0,axi_bram_ctrl,{}" *) (* core_generation_info = "RISC_V_axi_bram_ctrl_0_0,axi_bram_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=524288,C_BRAM_ADDR_WIDTH=19,C_S_AXI_ADDR_WIDTH=21,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=1,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=1,C_FAMILY=artix7,C_READ_LATENCY=2,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32,C_ECC=0,C_ECC_TYPE=0,C_FAULT_INJECT=0,C_ECC_ONOFF_RESET_VALUE=0}" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "RISC_V_axi_bram_ctrl_0_0,axi_bram_ctrl,{}" *) (* core_generation_info = "RISC_V_axi_bram_ctrl_0_0,axi_bram_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=524288,C_BRAM_ADDR_WIDTH=19,C_S_AXI_ADDR_WIDTH=21,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=1,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=1,C_FAMILY=artix7,C_READ_LATENCY=1,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32,C_ECC=0,C_ECC_TYPE=0,C_FAULT_INJECT=0,C_ECC_ONOFF_RESET_VALUE=0}" *) (* downgradeipidentifiedwarnings = "yes" *) 
 (* x_core_info = "axi_bram_ctrl,Vivado 2025.1" *) 
 module RISC_V_axi_bram_ctrl_0_0(s_axi_aclk, s_axi_aresetn, s_axi_awaddr, 
   s_axi_awlen, s_axi_awsize, s_axi_awburst, s_axi_awlock, s_axi_awcache, s_axi_awprot, 
@@ -59,7 +59,7 @@ module RISC_V_axi_bram_ctrl_0_0(s_axi_aclk, s_axi_aresetn, s_axi_awaddr,
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RLAST" *) output s_axi_rlast;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output s_axi_rvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) input s_axi_rready;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA RST" *) (* x_interface_mode = "master BRAM_PORTA" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTA, MASTER_TYPE BRAM_CTRL, MEM_SIZE 2097152, MEM_WIDTH 32, MEM_ECC NONE, READ_WRITE_MODE READ_WRITE, READ_LATENCY 2" *) output bram_rst_a;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA RST" *) (* x_interface_mode = "master BRAM_PORTA" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTA, MASTER_TYPE BRAM_CTRL, MEM_SIZE 2097152, MEM_WIDTH 32, MEM_ECC NONE, READ_WRITE_MODE READ_WRITE, READ_LATENCY 1" *) output bram_rst_a;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *) output bram_clk_a /* synthesis syn_isclock = 1 */;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *) output bram_en_a;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA WE" *) output [3:0]bram_we_a;

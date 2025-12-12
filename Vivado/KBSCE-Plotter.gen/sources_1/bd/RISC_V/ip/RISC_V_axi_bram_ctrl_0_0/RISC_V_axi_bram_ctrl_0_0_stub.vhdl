@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Thu Dec 11 18:41:09 2025
+-- Date        : Fri Dec 12 12:28:43 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode synth_stub -rename_top RISC_V_axi_bram_ctrl_0_0 -prefix
 --               RISC_V_axi_bram_ctrl_0_0_ RISC_V_axi_bram_ctrl_0_0_stub.vhdl
@@ -60,7 +60,7 @@ entity RISC_V_axi_bram_ctrl_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of RISC_V_axi_bram_ctrl_0_0 : entity is "RISC_V_axi_bram_ctrl_0_0,axi_bram_ctrl,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of RISC_V_axi_bram_ctrl_0_0 : entity is "RISC_V_axi_bram_ctrl_0_0,axi_bram_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=524288,C_BRAM_ADDR_WIDTH=19,C_S_AXI_ADDR_WIDTH=21,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=1,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=1,C_FAMILY=artix7,C_READ_LATENCY=2,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32,C_ECC=0,C_ECC_TYPE=0,C_FAULT_INJECT=0,C_ECC_ONOFF_RESET_VALUE=0}";
+  attribute core_generation_info of RISC_V_axi_bram_ctrl_0_0 : entity is "RISC_V_axi_bram_ctrl_0_0,axi_bram_ctrl,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=524288,C_BRAM_ADDR_WIDTH=19,C_S_AXI_ADDR_WIDTH=21,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=1,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=1,C_FAMILY=artix7,C_READ_LATENCY=1,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32,C_ECC=0,C_ECC_TYPE=0,C_FAULT_INJECT=0,C_ECC_ONOFF_RESET_VALUE=0}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of RISC_V_axi_bram_ctrl_0_0 : entity is "yes";
 end RISC_V_axi_bram_ctrl_0_0;
@@ -114,7 +114,7 @@ architecture stub of RISC_V_axi_bram_ctrl_0_0 is
   attribute x_interface_info of s_axi_rready : signal is "xilinx.com:interface:aximm:1.0 S_AXI RREADY";
   attribute x_interface_info of bram_rst_a : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA RST";
   attribute x_interface_mode of bram_rst_a : signal is "master BRAM_PORTA";
-  attribute x_interface_parameter of bram_rst_a : signal is "XIL_INTERFACENAME BRAM_PORTA, MASTER_TYPE BRAM_CTRL, MEM_SIZE 2097152, MEM_WIDTH 32, MEM_ECC NONE, READ_WRITE_MODE READ_WRITE, READ_LATENCY 2";
+  attribute x_interface_parameter of bram_rst_a : signal is "XIL_INTERFACENAME BRAM_PORTA, MASTER_TYPE BRAM_CTRL, MEM_SIZE 2097152, MEM_WIDTH 32, MEM_ECC NONE, READ_WRITE_MODE READ_WRITE, READ_LATENCY 1";
   attribute x_interface_info of bram_clk_a : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK";
   attribute x_interface_info of bram_en_a : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA EN";
   attribute x_interface_info of bram_we_a : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA WE";

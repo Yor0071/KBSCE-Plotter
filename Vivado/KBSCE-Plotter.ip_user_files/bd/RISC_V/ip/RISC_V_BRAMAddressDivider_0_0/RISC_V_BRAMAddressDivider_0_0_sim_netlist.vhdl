@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Dec 12 11:51:29 2025
+-- Date        : Fri Dec 12 13:13:10 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMAddressDivider_0_0/RISC_V_BRAMAddressDivider_0_0_sim_netlist.vhdl
@@ -59,7 +59,7 @@ architecture STRUCTURE of RISC_V_BRAMAddressDivider_0_0 is
   attribute x_interface_mode : string;
   attribute x_interface_mode of bram_in_en : signal is "slave BRAM_PORT_IN";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of bram_in_en : signal is "XIL_INTERFACENAME BRAM_PORT_IN, MASTER_TYPE OTHER, MEM_SIZE 2097152, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 2";
+  attribute x_interface_parameter of bram_in_en : signal is "XIL_INTERFACENAME BRAM_PORT_IN, MASTER_TYPE OTHER, MEM_SIZE 2097152, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1";
   attribute x_interface_info of bram_in_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_IN RST";
   attribute x_interface_info of bram_out_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_OUT CLK";
   attribute x_interface_info of bram_out_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_OUT EN";

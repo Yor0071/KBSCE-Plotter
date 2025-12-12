@@ -59,6 +59,7 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param bd.open.in_stealth_mode 1
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 4
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {BD 41-237}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1

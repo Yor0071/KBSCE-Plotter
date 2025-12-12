@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Fri Dec 12 11:58:46 2025
+// Date        : Fri Dec 12 14:32:52 2025
 // Host        : mrt-fed-lap running 64-bit unknown
 // Command     : write_verilog -force -mode synth_stub
 //               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_0/RISC_V_BRAMMux_0_0_stub.v
@@ -26,7 +26,7 @@ module RISC_V_BRAMMux_0_0(s_in_microblaze_en, s_in_microblaze_dout,
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DOUT" *) output [31:0]s_in_microblaze_dout;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DIN" *) input [31:0]s_in_microblaze_din;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE WE" *) input [0:0]s_in_microblaze_we;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE ADDR" *) input [31:0]s_in_microblaze_addr;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE ADDR" *) (* x_interface_parameter = "MASTER_TYPE OTHER" *) input [31:0]s_in_microblaze_addr;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE CLK" *) input s_in_microblaze_clk;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE RST" *) input s_in_microblaze_rst;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA EN" *) (* x_interface_mode = "slave BRAM_IN_PORT_CAMERA" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_IN_PORT_CAMERA, MASTER_TYPE OTHER, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 2" *) input s_in_camera_en;

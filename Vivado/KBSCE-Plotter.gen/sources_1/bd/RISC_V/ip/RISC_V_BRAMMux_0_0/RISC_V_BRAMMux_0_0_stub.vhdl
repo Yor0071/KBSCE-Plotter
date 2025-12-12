@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Dec 12 11:58:46 2025
+-- Date        : Fri Dec 12 14:32:52 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMMux_0_0/RISC_V_BRAMMux_0_0_stub.vhdl
@@ -63,6 +63,7 @@ architecture stub of RISC_V_BRAMMux_0_0 is
   attribute x_interface_info of s_in_microblaze_din : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE DIN";
   attribute x_interface_info of s_in_microblaze_we : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE WE";
   attribute x_interface_info of s_in_microblaze_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE ADDR";
+  attribute x_interface_parameter of s_in_microblaze_addr : signal is "MASTER_TYPE OTHER";
   attribute x_interface_info of s_in_microblaze_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE CLK";
   attribute x_interface_info of s_in_microblaze_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_MICROBLAZE RST";
   attribute x_interface_info of s_in_camera_en : signal is "xilinx.com:interface:bram:1.0 BRAM_IN_PORT_CAMERA EN";

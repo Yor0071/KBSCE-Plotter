@@ -140,11 +140,11 @@ begin
         VGA_FB_we    => (others => '0'), -- Read by default
         
         CAM_FB_addr  => (others => '0'),
-        CAM_FB_clk   => '0', -- Change to CAM_PCLK
+        CAM_FB_clk   => VGA_PCLK, -- Change to CAM_PCLK
         CAM_FB_din   => (others => '0'),
         CAM_FB_dout  => open, -- Unused
         CAM_FB_en    => '1',
-        CAM_FB_we    => (others => '1') -- Write by default
+        CAM_FB_we    => (others => SW(0)) -- Write by default
     );
 
   --------------------------------------------------------------------

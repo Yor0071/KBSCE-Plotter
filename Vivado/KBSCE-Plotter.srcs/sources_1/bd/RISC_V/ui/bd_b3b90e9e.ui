@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.13784",
-   "Default View_TopLeft":"1337,226",
+   "Default View_ScaleFactor":"0.816666",
+   "Default View_TopLeft":"-696,174",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
@@ -30,21 +30,21 @@ preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -x 1400 -y 380 -defaultsOSRD
 preplace inst BRAMAddressDivider_0 -pg 1 -lvl 5 -x 1720 -y 380 -defaultsOSRD
 preplace inst BRAMMux_0 -pg 1 -lvl 6 -x 2140 -y 390 -defaultsOSRD
 preplace netloc clk_wiz_1_VGA_PCLK 1 8 2 NJ 560 NJ
-preplace netloc mdm_1_debug_sys_rst 1 0 2 20 80 380
-preplace netloc microblaze_riscv_0_Clk 1 0 9 10 70 400 60 950 70 1240 280 NJ 280 NJ 280 NJ 280 NJ 280 2910
-preplace netloc reset_1 1 0 7 0 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 2380J
+preplace netloc mdm_1_debug_sys_rst 1 0 2 10 220 380
+preplace netloc microblaze_riscv_0_Clk 1 0 9 20 230 390 240 950 70 1260 290 NJ 290 NJ 290 NJ 290 NJ 290 2910
+preplace netloc reset_1 1 0 7 0 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 2380J
 preplace netloc reset_inv_0_Res 1 7 1 NJ 540
 preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 1 2 N 310 920J
-preplace netloc rst_clk_wiz_1_100M_mb_reset 1 1 1 380 180n
-preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 1 8 N 370 930 400 1260 460 NJ 460 NJ 460 NJ 460 NJ 460 2890
+preplace netloc rst_clk_wiz_1_100M_mb_reset 1 1 1 400 180n
+preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 1 8 N 370 930 400 1250 480 NJ 480 NJ 480 NJ 480 NJ 480 2900
 preplace netloc sys_clock_1 1 0 8 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 2690J
-preplace netloc BRAM_PORTA_1_1 1 0 7 20J 50 NJ 50 NJ 50 NJ 50 NJ 50 NJ 50 2370J
+preplace netloc BRAM_PORTA_1_1 1 0 7 NJ 60 NJ 60 NJ 60 NJ 60 NJ 60 NJ 60 2370J
 preplace netloc axi_gpio_0_GPIO 1 9 1 NJ 180
 preplace netloc axi_gpio_1_GPIO 1 9 1 NJ 320
-preplace netloc axi_smc_M00_AXI 1 3 6 1230J 270 NJ 270 NJ 270 NJ 270 NJ 270 2900
-preplace netloc axi_smc_M01_AXI 1 3 6 1250J 290 NJ 290 NJ 290 NJ 290 NJ 290 2920
-preplace netloc axi_smc_M02_AXI 1 3 6 1260J 300 NJ 300 NJ 300 NJ 300 NJ 300 2900
-preplace netloc axi_smc_M03_AXI 1 3 1 1230 340n
+preplace netloc axi_smc_M00_AXI 1 3 6 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 2890
+preplace netloc axi_smc_M01_AXI 1 3 6 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 N
+preplace netloc axi_smc_M02_AXI 1 3 6 1230J 470 NJ 470 NJ 470 NJ 470 NJ 470 2920
+preplace netloc axi_smc_M03_AXI 1 3 1 1240 340n
 preplace netloc axi_uartlite_0_UART 1 9 1 NJ 470
 preplace netloc microblaze_riscv_0_M_AXI_DP 1 2 1 930 170n
 preplace netloc microblaze_riscv_0_debug 1 1 1 N 140
@@ -53,9 +53,9 @@ preplace netloc microblaze_riscv_0_ilmb_1 1 2 1 N 150
 preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 NJ 380
 preplace netloc BRAMMux_0_BRAM_OUT_PORT_FB 1 6 1 N 390
 preplace netloc BRAMAddressDivider_0_BRAM_PORT_OUT 1 5 1 N 380
-preplace netloc BRAM_PORT_CAM_1 1 0 6 NJ 500 NJ 500 NJ 500 NJ 500 NJ 500 1900J
+preplace netloc BRAM_PORT_CAM_1 1 0 6 NJ 500 NJ 500 NJ 500 1260J 460 NJ 460 1900J
 levelinfo -pg 1 -20 200 660 1090 1400 1720 2140 2540 2790 3040 3180
-pagesize -pg 1 -db -bbox -sgen -200 0 3310 650
+pagesize -pg 1 -db -bbox -sgen -320 -20 3310 650
 "
 }
 {
