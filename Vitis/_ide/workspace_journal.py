@@ -199,3 +199,19 @@ status = platform.build()
 
 comp.build()
 
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+client.delete_component(name="app-O")
+
+client.delete_component(name="componentName")
+
+status = platform.build()
+
+comp.build()
+

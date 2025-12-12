@@ -31,8 +31,8 @@ private:
     [[nodiscard]] inline volatile uint32_t* get_address(screen_point_t point) const noexcept;
 
 public:
-    static constexpr uint16_t WIDTH = 640;
-    static constexpr uint16_t HEIGHT = 480;
+    static constexpr uint32_t WIDTH = 640;
+    static constexpr uint32_t HEIGHT = 480;
     static constexpr uint32_t SIZE = (WIDTH * HEIGHT) * 4;
 
     Framebuffer() noexcept;
