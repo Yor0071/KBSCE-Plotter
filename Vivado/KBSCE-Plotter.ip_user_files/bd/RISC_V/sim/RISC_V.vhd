@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Fri Dec 12 10:46:17 2025
+--Date        : Fri Dec 12 11:58:00 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -907,17 +907,6 @@ architecture STRUCTURE of RISC_V is
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component RISC_V_axi_bram_ctrl_0_0;
-  component RISC_V_BRAMEater_0_0 is
-  port (
-    bram_en : in STD_LOGIC;
-    bram_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    bram_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    bram_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    bram_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    bram_clk : in STD_LOGIC;
-    bram_rst : in STD_LOGIC
-  );
-  end component RISC_V_BRAMEater_0_0;
   component RISC_V_BRAMAddressDivider_0_0 is
   port (
     bram_in_en : in STD_LOGIC;
@@ -936,12 +925,44 @@ architecture STRUCTURE of RISC_V is
     bram_out_rst : out STD_LOGIC
   );
   end component RISC_V_BRAMAddressDivider_0_0;
+  component RISC_V_BRAMMux_0_0 is
+  port (
+    s_in_microblaze_en : in STD_LOGIC;
+    s_in_microblaze_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_in_microblaze_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_in_microblaze_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s_in_microblaze_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_in_microblaze_clk : in STD_LOGIC;
+    s_in_microblaze_rst : in STD_LOGIC;
+    s_in_camera_en : in STD_LOGIC;
+    s_in_camera_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_in_camera_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_in_camera_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s_in_camera_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    s_in_camera_clk : in STD_LOGIC;
+    s_in_camera_rst : in STD_LOGIC;
+    s_out_fb_en : out STD_LOGIC;
+    s_out_fb_dout : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_out_fb_din : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    s_out_fb_we : out STD_LOGIC_VECTOR ( 0 to 0 );
+    s_out_fb_addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    s_out_fb_clk : out STD_LOGIC;
+    s_out_fb_rst : out STD_LOGIC
+  );
+  end component RISC_V_BRAMMux_0_0;
   signal BRAMAddressDivider_0_BRAM_PORT_OUT_ADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal BRAMAddressDivider_0_BRAM_PORT_OUT_CLK : STD_LOGIC;
   signal BRAMAddressDivider_0_BRAM_PORT_OUT_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal BRAMAddressDivider_0_BRAM_PORT_OUT_DOUT : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal BRAMAddressDivider_0_BRAM_PORT_OUT_DOUT : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal BRAMAddressDivider_0_BRAM_PORT_OUT_EN : STD_LOGIC;
+  signal BRAMAddressDivider_0_BRAM_PORT_OUT_RST : STD_LOGIC;
   signal BRAMAddressDivider_0_BRAM_PORT_OUT_WE : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_ADDR : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_CLK : STD_LOGIC;
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_DIN : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_DOUT : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_EN : STD_LOGIC;
+  signal BRAMMux_0_BRAM_OUT_PORT_FB_WE : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 20 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1084,7 +1105,7 @@ architecture STRUCTURE of RISC_V is
   signal rst_clk_wiz_1_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_wiz_1_100M_mb_reset : STD_LOGIC;
   signal rst_clk_wiz_1_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_BRAMAddressDivider_0_bram_out_rst_UNCONNECTED : STD_LOGIC;
+  signal NLW_BRAMMux_0_s_out_fb_rst_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_smc_M00_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M00_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M01_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -1151,21 +1172,34 @@ BRAMAddressDivider_0: component RISC_V_BRAMAddressDivider_0_0
       bram_out_addr(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_ADDR(31 downto 0),
       bram_out_clk => BRAMAddressDivider_0_BRAM_PORT_OUT_CLK,
       bram_out_din(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DIN(31 downto 0),
-      bram_out_dout(31 downto 12) => B"00000000000000000000",
-      bram_out_dout(11 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DOUT(11 downto 0),
+      bram_out_dout(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DOUT(31 downto 0),
       bram_out_en => BRAMAddressDivider_0_BRAM_PORT_OUT_EN,
-      bram_out_rst => NLW_BRAMAddressDivider_0_bram_out_rst_UNCONNECTED,
+      bram_out_rst => BRAMAddressDivider_0_BRAM_PORT_OUT_RST,
       bram_out_we(0) => BRAMAddressDivider_0_BRAM_PORT_OUT_WE(0)
     );
-BRAMEater_0: component RISC_V_BRAMEater_0_0
+BRAMMux_0: component RISC_V_BRAMMux_0_0
      port map (
-      bram_addr(18 downto 0) => BRAM_PORT_CAM_addr(18 downto 0),
-      bram_clk => BRAM_PORT_CAM_clk,
-      bram_din(11 downto 0) => BRAM_PORT_CAM_din(11 downto 0),
-      bram_dout(11 downto 0) => BRAM_PORT_CAM_dout(11 downto 0),
-      bram_en => BRAM_PORT_CAM_en,
-      bram_rst => BRAM_PORT_CAM_rst,
-      bram_we(0) => BRAM_PORT_CAM_we(0)
+      s_in_camera_addr(18 downto 0) => BRAM_PORT_CAM_addr(18 downto 0),
+      s_in_camera_clk => BRAM_PORT_CAM_clk,
+      s_in_camera_din(11 downto 0) => BRAM_PORT_CAM_din(11 downto 0),
+      s_in_camera_dout(11 downto 0) => BRAM_PORT_CAM_dout(11 downto 0),
+      s_in_camera_en => BRAM_PORT_CAM_en,
+      s_in_camera_rst => BRAM_PORT_CAM_rst,
+      s_in_camera_we(0) => BRAM_PORT_CAM_we(0),
+      s_in_microblaze_addr(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_ADDR(31 downto 0),
+      s_in_microblaze_clk => BRAMAddressDivider_0_BRAM_PORT_OUT_CLK,
+      s_in_microblaze_din(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DIN(31 downto 0),
+      s_in_microblaze_dout(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DOUT(31 downto 0),
+      s_in_microblaze_en => BRAMAddressDivider_0_BRAM_PORT_OUT_EN,
+      s_in_microblaze_rst => BRAMAddressDivider_0_BRAM_PORT_OUT_RST,
+      s_in_microblaze_we(0) => BRAMAddressDivider_0_BRAM_PORT_OUT_WE(0),
+      s_out_fb_addr(18 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_ADDR(18 downto 0),
+      s_out_fb_clk => BRAMMux_0_BRAM_OUT_PORT_FB_CLK,
+      s_out_fb_din(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DIN(11 downto 0),
+      s_out_fb_dout(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DOUT(11 downto 0),
+      s_out_fb_en => BRAMMux_0_BRAM_OUT_PORT_FB_EN,
+      s_out_fb_rst => NLW_BRAMMux_0_s_out_fb_rst_UNCONNECTED,
+      s_out_fb_we(0) => BRAMMux_0_BRAM_OUT_PORT_FB_WE(0)
     );
 axi_bram_ctrl_0: component RISC_V_axi_bram_ctrl_0_0
      port map (
@@ -1398,17 +1432,17 @@ axi_uartlite_0: component RISC_V_axi_uartlite_0_0
 blk_mem_gen_0: component RISC_V_blk_mem_gen_0_0
      port map (
       addra(18 downto 0) => BRAM_PORT_VGA_addr(18 downto 0),
-      addrb(18 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_ADDR(18 downto 0),
+      addrb(18 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_ADDR(18 downto 0),
       clka => BRAM_PORT_VGA_clk,
-      clkb => BRAMAddressDivider_0_BRAM_PORT_OUT_CLK,
+      clkb => BRAMMux_0_BRAM_OUT_PORT_FB_CLK,
       dina(11 downto 0) => BRAM_PORT_VGA_din(11 downto 0),
-      dinb(11 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DIN(11 downto 0),
+      dinb(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DIN(11 downto 0),
       douta(11 downto 0) => BRAM_PORT_VGA_dout(11 downto 0),
-      doutb(11 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DOUT(11 downto 0),
+      doutb(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DOUT(11 downto 0),
       ena => BRAM_PORT_VGA_en,
-      enb => BRAMAddressDivider_0_BRAM_PORT_OUT_EN,
+      enb => BRAMMux_0_BRAM_OUT_PORT_FB_EN,
       wea(0) => BRAM_PORT_VGA_we(0),
-      web(0) => BRAMAddressDivider_0_BRAM_PORT_OUT_WE(0)
+      web(0) => BRAMMux_0_BRAM_OUT_PORT_FB_WE(0)
     );
 clk_wiz_1: component RISC_V_clk_wiz_1_0
      port map (

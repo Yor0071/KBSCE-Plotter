@@ -96,26 +96,33 @@ architecture RTL of BRAMMux is
     ATTRIBUTE X_INTERFACE_INFO of s_out_fb_rst: SIGNAL is "xilinx.com:interface:bram:1.0 BRAM_OUT_PORT_FB RST";
 
     ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-    ATTRIBUTE X_INTERFACE_PARAMETER of s_out_fb_addr : SIGNAL is "MASTER_TYPE BRAM_CTRL";
+    ATTRIBUTE X_INTERFACE_PARAMETER of s_out_fb_addr : SIGNAL is "MASTER_TYPE OTHER";
+    ATTRIBUTE X_INTERFACE_PARAMETER of s_in_camera_addr : SIGNAL is "MASTER_TYPE OTHER";
+    ATTRIBUTE X_INTERFACE_PARAMETER of s_in_microblaze_addr : SIGNAL is "MASTER_TYPE OTHER";
 
   -- Uncomment the following to set interface specific parameter on the bus interface.
     --ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
     --ATTRIBUTE X_INTERFACE_PARAMETER of <port_name>: SIGNAL is "MASTER_TYPE <value>,MEM_ECC <value>,MEM_WIDTH <value>,MEM_SIZE <value>,READ_WRITE_MODE <value>";
-
-    signal dout_data : std_logic_vector(11 downto 0); -- Otherwise opt_design won't run because multiple sources drive this
-    signal converted_addr : unsigned(31 downto 0);
 begin
-    s_out_fb_clk <= s_in_microblaze_clk when true else s_in_camera_clk;
-    s_out_fb_rst <= s_in_microblaze_rst when true else s_in_camera_rst;
-    
-    s_out_fb_en   <= s_in_microblaze_en   when true else s_in_camera_en;
-    s_out_fb_din  <= s_in_microblaze_din(11 downto 0)  when true else s_in_camera_din;
-    s_out_fb_we   <= s_in_microblaze_we   when true else s_in_camera_we;
-    
-    converted_addr <= unsigned(s_in_microblaze_addr) / 4;
-    s_out_fb_addr <= std_logic_vector(converted_addr(18 downto 0)) when true else s_in_camera_addr;
-    
-    s_in_microblaze_dout <= (others => '0');
-    s_in_microblaze_dout(11 downto 0) <= dout_data when true else (others => '0');
-    s_in_camera_dout <= dout_data when true else (others => '0');
+    process(s_in_microblaze_clk) is
+    begin
+        if true then
+            s_out_fb_clk  <= s_in_microblaze_clk;
+            s_out_fb_rst  <= s_in_microblaze_rst;
+            s_out_fb_en   <= s_in_microblaze_en;
+            s_out_fb_din  <= s_in_microblaze_din(11 downto 0);
+            s_out_fb_we   <= s_in_microblaze_we;
+            s_out_fb_addr <= s_in_microblaze_addr(18 downto 0);
+            
+            s_in_microblaze_dout <= (others => '0');
+            s_in_microblaze_dout(11 downto 0) <= s_out_fb_dout;
+        else
+            s_out_fb_clk  <= s_in_camera_clk;
+            s_out_fb_rst  <= s_in_camera_rst;
+            s_out_fb_en   <= s_in_camera_en;
+            s_out_fb_din  <= s_in_camera_din;
+            s_out_fb_we   <= s_in_camera_we;
+            s_out_fb_addr <= s_in_camera_addr;
+        end if;
+    end process;
 end RTL;

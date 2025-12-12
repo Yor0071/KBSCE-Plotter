@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Thu Dec 11 18:41:10 2025
+-- Date        : Thu Dec 11 18:41:09 2025
 -- Host        : mrt-fed-lap running 64-bit unknown
--- Command     : write_vhdl -force -mode funcsim
---               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top RISC_V_axi_bram_ctrl_0_0 -prefix
+--               RISC_V_axi_bram_ctrl_0_0_ RISC_V_axi_bram_ctrl_0_0_sim_netlist.vhdl
 -- Design      : RISC_V_axi_bram_ctrl_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -41,8 +41,6 @@ entity RISC_V_axi_bram_ctrl_0_0_sng_port_arb is
     s_axi_aresetn : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_axi_bram_ctrl_0_0_sng_port_arb : entity is "sng_port_arb";
 end RISC_V_axi_bram_ctrl_0_0_sng_port_arb;
 
 architecture STRUCTURE of RISC_V_axi_bram_ctrl_0_0_sng_port_arb is
@@ -533,8 +531,6 @@ entity RISC_V_axi_bram_ctrl_0_0_wrap_brst is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_axi_bram_ctrl_0_0_wrap_brst : entity is "wrap_brst";
 end RISC_V_axi_bram_ctrl_0_0_wrap_brst;
 
 architecture STRUCTURE of RISC_V_axi_bram_ctrl_0_0_wrap_brst is
@@ -2288,8 +2284,6 @@ entity RISC_V_axi_bram_ctrl_0_0_rd_chnl is
     \GEN_NO_RD_CMD_OPT.GEN_CURR_ARLEN_RL.GEN_CURR_ARLEN_SNG.curr_arlen_reg_reg[7]_0\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_axi_bram_ctrl_0_0_rd_chnl : entity is "rd_chnl";
 end RISC_V_axi_bram_ctrl_0_0_rd_chnl;
 
 architecture STRUCTURE of RISC_V_axi_bram_ctrl_0_0_rd_chnl is
@@ -8711,8 +8705,6 @@ entity RISC_V_axi_bram_ctrl_0_0_wr_chnl is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_axi_bram_ctrl_0_0_wr_chnl : entity is "wr_chnl";
 end RISC_V_axi_bram_ctrl_0_0_wr_chnl;
 
 architecture STRUCTURE of RISC_V_axi_bram_ctrl_0_0_wr_chnl is
@@ -9633,8 +9625,6 @@ entity RISC_V_axi_bram_ctrl_0_0_full_axi is
     s_axi_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_axi_bram_ctrl_0_0_full_axi : entity is "full_axi";
 end RISC_V_axi_bram_ctrl_0_0_full_axi;
 
 architecture STRUCTURE of RISC_V_axi_bram_ctrl_0_0_full_axi is
@@ -10162,8 +10152,6 @@ entity RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl_top is
     s_axi_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl_top : entity is "axi_bram_ctrl_top";
 end RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl_top;
 
 architecture STRUCTURE of RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl_top is
@@ -10313,8 +10301,6 @@ entity RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl is
   attribute C_S_AXI_PROTOCOL of RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "AXI4";
   attribute C_S_AXI_SUPPORTS_NARROW_BURST : integer;
   attribute C_S_AXI_SUPPORTS_NARROW_BURST of RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "axi_bram_ctrl";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "yes";
 end RISC_V_axi_bram_ctrl_0_0_axi_bram_ctrl;

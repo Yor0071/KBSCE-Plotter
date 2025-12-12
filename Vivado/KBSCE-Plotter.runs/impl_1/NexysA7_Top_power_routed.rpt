@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Fri Dec 12 10:49:30 2025
+| Date             : Fri Dec 12 12:01:49 2025
 | Host             : mrt-fed-lap running 64-bit unknown
 | Command          : report_power -file NexysA7_Top_power_routed.rpt -pb NexysA7_Top_power_summary_routed.pb -rpx NexysA7_Top_power_routed.rpx
 | Design           : NexysA7_Top
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.019 |       10 |       --- |             --- |
-| Slice Logic              |     0.006 |     8487 |       --- |             --- |
+| Slice Logic              |     0.006 |     8488 |       --- |             --- |
 |   LUT as Logic           |     0.005 |     3549 |     63400 |            5.60 |
 |   LUT as Distributed RAM |    <0.001 |      284 |     19000 |            1.49 |
 |   Register               |    <0.001 |     2796 |    126800 |            2.21 |
 |   CARRY4                 |    <0.001 |       95 |     15850 |            0.60 |
 |   F7/F8 Muxes            |    <0.001 |      274 |     63400 |            0.43 |
 |   LUT as Shift Register  |    <0.001 |       43 |     19000 |            0.23 |
-|   Others                 |     0.000 |      708 |       --- |             --- |
+|   Others                 |     0.000 |      709 |       --- |             --- |
 | Signals                  |     0.009 |     7278 |       --- |             --- |
 | Block RAM                |     0.005 |    119.5 |       135 |           88.52 |
 | MMCM                     |     0.106 |        1 |         6 |           16.67 |

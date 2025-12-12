@@ -257,8 +257,8 @@ vcom -work axi_bram_ctrl_v4_1_13 -64 -93  \
 
 vcom -work xil_defaultlib -64 -93  \
 "../../../bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/sim/RISC_V_axi_bram_ctrl_0_0.vhd" \
-"../../../bd/RISC_V/ip/RISC_V_BRAMEater_0_0/sim/RISC_V_BRAMEater_0_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_BRAMAddressDivider_0_0/sim/RISC_V_BRAMAddressDivider_0_0.vhd" \
+"../../../bd/RISC_V/ip/RISC_V_BRAMMux_0_0/sim/RISC_V_BRAMMux_0_0.vhd" \
 "../../../bd/RISC_V/sim/RISC_V.vhd" \
 
 vlog -work xil_defaultlib \
