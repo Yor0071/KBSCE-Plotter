@@ -1,69 +1,30 @@
-# 2025-12-12T13:06:31.095603
+# 2025-12-12T13:49:35.516085
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="Vitis")
 
-platform = client.get_component(name="lnx-X")
-status = platform.build()
+client.delete_component(name="app-Q")
 
-comp = client.get_component(name="app-X")
-comp.build()
+client.delete_component(name="componentName")
 
-status = platform.build()
+client.delete_component(name="app-S")
 
-comp.build()
+client.delete_component(name="componentName")
 
-status = platform.build()
+client.delete_component(name="app-T")
 
-comp.build()
+client.delete_component(name="componentName")
 
-status = platform.build()
+client.delete_component(name="app-V")
 
-comp.build()
+client.delete_component(name="componentName")
 
-advanced_options = client.create_advanced_options_dict(dt_overlay="0")
-
-platform = client.create_platform_component(name = "Y-lnx",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
-
-platform = client.get_component(name="Y-lnx")
-status = platform.build()
-
-comp = client.create_app_component(name="Y-app",platform = "$COMPONENT_LOCATION/../Y-lnx/export/Y-lnx/Y-lnx.xpfm",domain = "standalone_microblaze_riscv_0")
-
-status = platform.build()
-
-comp = client.get_component(name="Y-app")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-advanced_options = client.create_advanced_options_dict(dt_overlay="0")
-
-platform = client.create_platform_component(name = "Z-lnx",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
-
-platform = client.get_component(name="Z-lnx")
-status = platform.build()
-
-advanced_options = client.create_advanced_options_dict(dt_overlay="0")
-
-platform = client.create_platform_component(name = "AA-lnx",hw_design = "$COMPONENT_LOCATION/../../Vivado/NexysA7_Top.xsa",os = "standalone",cpu = "microblaze_riscv_0",domain_name = "standalone_microblaze_riscv_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
+client.delete_component(name="app-W")
 
 platform = client.get_component(name="AA-lnx")
 status = platform.build()
 
-status = platform.build()
-
-comp = client.create_app_component(name="AA-app",platform = "$COMPONENT_LOCATION/../AA-lnx/export/AA-lnx/AA-lnx.xpfm",domain = "standalone_microblaze_riscv_0")
-
-status = platform.build()
-
 comp = client.get_component(name="AA-app")
-comp.build()
-
-status = platform.build()
-
 comp.build()
 
