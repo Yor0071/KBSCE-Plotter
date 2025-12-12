@@ -118,3 +118,84 @@ status = platform.build()
 
 comp.build()
 
+client.delete_component(name="lnx-N")
+
+client.delete_component(name="lnx-M")
+
+client.delete_component(name="lnx-L")
+
+client.delete_component(name="lnx-K")
+
+client.delete_component(name="componentName")
+
+client.delete_component(name="app-K")
+
+client.delete_component(name="componentName")
+
+client.delete_component(name="app-N")
+
+client.delete_component(name="componentName")
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+comp = client.create_app_component(name="app-o-cpp",platform = "$COMPONENT_LOCATION/../lnx-O/export/lnx-O/lnx-O.xpfm",domain = "standalone_microblaze_riscv_0")
+
+status = platform.build()
+
+comp = client.get_component(name="app-o-cpp")
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
