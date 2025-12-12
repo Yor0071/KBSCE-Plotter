@@ -42,7 +42,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_
 # IP: bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_uartlite_0_0 || ORIG_REF_NAME==RISC_V_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_axi_smc_0/RISC_V_axi_smc_0.xci
+# IP: bd/RISC_V/ip/RISC_V_axi_smc_0_3/RISC_V_axi_smc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_smc_0 || ORIG_REF_NAME==RISC_V_axi_smc_0} -quiet] -quiet
 
 # IP: bd/RISC_V/ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0.xci
@@ -51,4 +51,13 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_rese
 # IP: bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_blk_mem_gen_0_0 || ORIG_REF_NAME==RISC_V_blk_mem_gen_0_0} -quiet] -quiet
 
-# XDC: /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc
+# IP: bd/RISC_V/ip/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_iic_0_0 || ORIG_REF_NAME==RISC_V_axi_iic_0_0} -quiet] -quiet
+
+# IP: bd/RISC_V/ip/RISC_V_axi_gpio_0_2/RISC_V_axi_gpio_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_0_2 || ORIG_REF_NAME==RISC_V_axi_gpio_0_2} -quiet] -quiet
+
+# IP: bd/RISC_V/ip/RISC_V_motor_ctrl_0_0_2/RISC_V_motor_ctrl_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_motor_ctrl_0_0 || ORIG_REF_NAME==RISC_V_motor_ctrl_0_0} -quiet] -quiet
+
+# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc
