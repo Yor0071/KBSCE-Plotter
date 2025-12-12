@@ -6,355 +6,58 @@
 # Block Designs: bd/RISC_V/RISC_V.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V || ORIG_REF_NAME==RISC_V} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0_2/RISC_V_microblaze_riscv_0_0.xci
+# IP: bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_microblaze_riscv_0_0 || ORIG_REF_NAME==RISC_V_microblaze_riscv_0_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_dlmb_v10_0_2/RISC_V_dlmb_v10_0.xci
+# IP: bd/RISC_V/ip/RISC_V_dlmb_v10_0/RISC_V_dlmb_v10_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_dlmb_v10_0 || ORIG_REF_NAME==RISC_V_dlmb_v10_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_ilmb_v10_0_2/RISC_V_ilmb_v10_0.xci
+# IP: bd/RISC_V/ip/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_ilmb_v10_0 || ORIG_REF_NAME==RISC_V_ilmb_v10_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0_2/RISC_V_dlmb_bram_if_cntlr_0.xci
+# IP: bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_dlmb_bram_if_cntlr_0 || ORIG_REF_NAME==RISC_V_dlmb_bram_if_cntlr_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0_2/RISC_V_ilmb_bram_if_cntlr_0.xci
+# IP: bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_ilmb_bram_if_cntlr_0 || ORIG_REF_NAME==RISC_V_ilmb_bram_if_cntlr_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_lmb_bram_0_2/RISC_V_lmb_bram_0.xci
+# IP: bd/RISC_V/ip/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_lmb_bram_0 || ORIG_REF_NAME==RISC_V_lmb_bram_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_mdm_1_0_2/RISC_V_mdm_1_0.xci
+# IP: bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_mdm_1_0 || ORIG_REF_NAME==RISC_V_mdm_1_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_clk_wiz_1_0_2/RISC_V_clk_wiz_1_0.xci
+# IP: bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_clk_wiz_1_0 || ORIG_REF_NAME==RISC_V_clk_wiz_1_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0_2/RISC_V_rst_clk_wiz_1_100M_0.xci
+# IP: bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_rst_clk_wiz_1_100M_0 || ORIG_REF_NAME==RISC_V_rst_clk_wiz_1_100M_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_axi_gpio_leds_0_1/RISC_V_axi_gpio_leds_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_leds_0 || ORIG_REF_NAME==RISC_V_axi_gpio_leds_0} -quiet] -quiet
+# IP: bd/RISC_V/ip/RISC_V_axi_gpio_0_0/RISC_V_axi_gpio_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_0_0 || ORIG_REF_NAME==RISC_V_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_axi_gpio_switches_0_1/RISC_V_axi_gpio_switches_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_switches_0 || ORIG_REF_NAME==RISC_V_axi_gpio_switches_0} -quiet] -quiet
+# IP: bd/RISC_V/ip/RISC_V_axi_gpio_1_0/RISC_V_axi_gpio_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_1_0 || ORIG_REF_NAME==RISC_V_axi_gpio_1_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_axi_uartlite_0_0_2/RISC_V_axi_uartlite_0_0.xci
+# IP: bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_uartlite_0_0 || ORIG_REF_NAME==RISC_V_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_axi_smc_0_2/RISC_V_axi_smc_0.xci
+# IP: bd/RISC_V/ip/RISC_V_axi_smc_0_3/RISC_V_axi_smc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_smc_0 || ORIG_REF_NAME==RISC_V_axi_smc_0} -quiet] -quiet
 
-# Block Designs: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/bd_33e2.bd
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_0/bd_33e2_one_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_1/bd_33e2_psr_aclk_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_2/bd_33e2_arinsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_3/bd_33e2_rinsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_4/bd_33e2_awinsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_5/bd_33e2_winsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_6/bd_33e2_binsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_7/bd_33e2_aroutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/bd_33e2_routsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_9/bd_33e2_awoutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_10/bd_33e2_woutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/bd_33e2_boutsw_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_12/bd_33e2_arni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_13/bd_33e2_rni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_14/bd_33e2_awni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_15/bd_33e2_wni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_16/bd_33e2_bni_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_17/bd_33e2_s00mmu_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_18/bd_33e2_s00tr_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_19/bd_33e2_s00sic_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_20/bd_33e2_s00a2s_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_21/bd_33e2_sarn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_22/bd_33e2_srn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_23/bd_33e2_sawn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_24/bd_33e2_swn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_25/bd_33e2_sbn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_26/bd_33e2_m00s2a_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_27/bd_33e2_m00arn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_28/bd_33e2_m00rn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_29/bd_33e2_m00awn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_30/bd_33e2_m00wn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_31/bd_33e2_m00bn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_32/bd_33e2_m00e_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_33/bd_33e2_m01s2a_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_34/bd_33e2_m01arn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_35/bd_33e2_m01rn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_36/bd_33e2_m01awn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_37/bd_33e2_m01wn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_38/bd_33e2_m01bn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_39/bd_33e2_m01e_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_40/bd_33e2_m02s2a_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_41/bd_33e2_m02arn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_42/bd_33e2_m02rn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_43/bd_33e2_m02awn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_44/bd_33e2_m02wn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_45/bd_33e2_m02bn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_46/bd_33e2_m02e_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_47/bd_33e2_m03s2a_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_48/bd_33e2_m03arn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_49/bd_33e2_m03rn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_50/bd_33e2_m03awn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_51/bd_33e2_m03wn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_52/bd_33e2_m03bn_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_53/bd_33e2_m03e_0.xci
-# DONT_TOUCH constraint suppressed by (parent) sub-design file.
-
-# IP: bd/RISC_V/ip/RISC_V_reset_inv_0_0_2/RISC_V_reset_inv_0_0.xci
+# IP: bd/RISC_V/ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_reset_inv_0_0 || ORIG_REF_NAME==RISC_V_reset_inv_0_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_2/RISC_V_blk_mem_gen_0_0.xci
+# IP: bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_blk_mem_gen_0_0 || ORIG_REF_NAME==RISC_V_blk_mem_gen_0_0} -quiet] -quiet
 
-# IP: bd/RISC_V/ip/RISC_V_motor_ctrl_0_0_1/RISC_V_motor_ctrl_0_0.xci
+# IP: bd/RISC_V/ip/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_iic_0_0 || ORIG_REF_NAME==RISC_V_axi_iic_0_0} -quiet] -quiet
+
+# IP: bd/RISC_V/ip/RISC_V_axi_gpio_0_2/RISC_V_axi_gpio_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_0_2 || ORIG_REF_NAME==RISC_V_axi_gpio_0_2} -quiet] -quiet
+
+# IP: bd/RISC_V/ip/RISC_V_motor_ctrl_0_0_2/RISC_V_motor_ctrl_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RISC_V_motor_ctrl_0_0 || ORIG_REF_NAME==RISC_V_motor_ctrl_0_0} -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_microblaze_riscv_0_0 || ORIG_REF_NAME==RISC_V_microblaze_riscv_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc_debug.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_mdm_1_0 || ORIG_REF_NAME==RISC_V_mdm_1_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0_ooc_trace.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_clk_wiz_1_0 || ORIG_REF_NAME==RISC_V_clk_wiz_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0.xdc
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_clk_wiz_1_0 || ORIG_REF_NAME==RISC_V_clk_wiz_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_rst_clk_wiz_1_100M_0 || ORIG_REF_NAME==RISC_V_rst_clk_wiz_1_100M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_leds_0/RISC_V_axi_gpio_leds_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_leds_0 || ORIG_REF_NAME==RISC_V_axi_gpio_leds_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_leds_0/RISC_V_axi_gpio_leds_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_switches_0/RISC_V_axi_gpio_switches_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_axi_gpio_switches_0 || ORIG_REF_NAME==RISC_V_axi_gpio_switches_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_switches_0/RISC_V_axi_gpio_switches_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0_board.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_axi_uartlite_0_0 || ORIG_REF_NAME==RISC_V_axi_uartlite_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_1/bd_33e2_psr_aclk_0_board.xdc
-# DONT_TOUCH constraint suppressed by parent sub-design file.
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_2/bd_33e2_arinsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_3/bd_33e2_rinsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_4/bd_33e2_awinsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_5/bd_33e2_winsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_6/bd_33e2_binsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_7/bd_33e2_aroutsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/bd_33e2_routsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_9/bd_33e2_awoutsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_10/bd_33e2_woutsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/bd_33e2_boutsw_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_12/bd_33e2_arni_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_13/bd_33e2_rni_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_14/bd_33e2_awni_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_15/bd_33e2_wni_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_16/bd_33e2_bni_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_20/bd_33e2_s00a2s_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_21/bd_33e2_sarn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_22/bd_33e2_srn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_23/bd_33e2_sawn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_24/bd_33e2_swn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_25/bd_33e2_sbn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_26/bd_33e2_m00s2a_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_27/bd_33e2_m00arn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_28/bd_33e2_m00rn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_29/bd_33e2_m00awn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_30/bd_33e2_m00wn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_31/bd_33e2_m00bn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_33/bd_33e2_m01s2a_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_34/bd_33e2_m01arn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_35/bd_33e2_m01rn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_36/bd_33e2_m01awn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_37/bd_33e2_m01wn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_38/bd_33e2_m01bn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_40/bd_33e2_m02s2a_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_41/bd_33e2_m02arn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_42/bd_33e2_m02rn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_43/bd_33e2_m02awn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_44/bd_33e2_m02wn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_45/bd_33e2_m02bn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_47/bd_33e2_m03s2a_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_48/bd_33e2_m03arn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_49/bd_33e2_m03rn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_50/bd_33e2_m03awn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_51/bd_33e2_m03wn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_52/bd_33e2_m03bn_0_ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/ooc.xdc
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/smartconnect.xdc
-set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==RISC_V_axi_smc_0 || ORIG_REF_NAME==RISC_V_axi_smc_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0_ooc.xdc
 
 # XDC: c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/RISC_V_ooc.xdc

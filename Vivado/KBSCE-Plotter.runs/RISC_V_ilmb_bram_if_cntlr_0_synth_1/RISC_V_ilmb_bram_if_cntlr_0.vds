@@ -3,26 +3,31 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Dec 10 15:59:33 2025
-# Process ID         : 19796
-# Current directory  : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1
+# Start of session at: Fri Dec 12 11:55:36 2025
+# Process ID         : 8708
+# Current directory  : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1
 # Command line       : vivado.exe -log RISC_V_ilmb_bram_if_cntlr_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_ilmb_bram_if_cntlr_0.tcl
-# Log file           : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/RISC_V_ilmb_bram_if_cntlr_0.vds
-# Journal file       : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1\vivado.jou
-# Running On         : ThinkpadP1_Liam
+# Log file           : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/RISC_V_ilmb_bram_if_cntlr_0.vds
+# Journal file       : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1\vivado.jou
+# Running On         : DESKTOP-H6STBOR
 # Platform           : Windows Server 2016 or Windows 10
-# Operating System   : 26100
-# Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
-# CPU Frequency      : 2592 MHz
-# CPU Physical cores : 6
-# CPU Logical cores  : 12
-# Host memory        : 34174 MB
-# Swap memory        : 5100 MB
-# Total Virtual      : 39274 MB
-# Available Virtual  : 13811 MB
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+# CPU Frequency      : 1992 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 17061 MB
+# Swap memory        : 4048 MB
+# Total Virtual      : 21110 MB
+# Available Virtual  : 3013 MB
 #-----------------------------------------------------------
 source RISC_V_ilmb_bram_if_cntlr_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 494.004 ; gain = 212.008
+create_project: Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 495.199 ; gain = 214.734
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/ip_repo/motor_ctrl_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip 
 Command: synth_design -top RISC_V_ilmb_bram_if_cntlr_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
@@ -30,11 +35,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 27084
+INFO: [Synth 8-7075] Helper process launched with PID 4860
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1202.895 ; gain = 493.414
+Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 1201.203 ; gain = 493.137
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/synth/RISC_V_ilmb_bram_if_cntlr_0.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/synth/RISC_V_ilmb_bram_if_cntlr_0.vhd:84]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_HIGHADDR bound to: 64'b0000000000000000000000000000000000000000000000001111111111111111 
 	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
@@ -64,8 +69,8 @@ INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' [c:/Users/
 	Parameter C_BRAM_AWIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'lmb_bram_if_cntlr' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5040' bound to instance 'U0' of component 'lmb_bram_if_cntlr' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/synth/RISC_V_ilmb_bram_if_cntlr_0.vhd:280]
-INFO: [Synth 8-638] synthesizing module 'lmb_bram_if_cntlr' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
+INFO: [Synth 8-3491] module 'lmb_bram_if_cntlr' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5040' bound to instance 'U0' of component 'lmb_bram_if_cntlr' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/synth/RISC_V_ilmb_bram_if_cntlr_0.vhd:280]
+INFO: [Synth 8-638] synthesizing module 'lmb_bram_if_cntlr' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
 	Parameter C_TARGET bound to: 2 - type: integer 
 	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
@@ -83,17 +88,17 @@ INFO: [Synth 8-638] synthesizing module 'lmb_bram_if_cntlr' [c:/Users/liamb/GitH
 	Parameter C_NUM_LMB bound to: 1 - type: integer 
 	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
 	Parameter C_ARBITRATION bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'lmb_mux' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4146' bound to instance 'lmb_mux_I' of component 'lmb_mux' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5548]
-INFO: [Synth 8-638] synthesizing module 'lmb_mux' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
+INFO: [Synth 8-3491] module 'lmb_mux' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4146' bound to instance 'lmb_mux_I' of component 'lmb_mux' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5548]
+INFO: [Synth 8-638] synthesizing module 'lmb_mux' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
 	Parameter C_AW bound to: 32 - type: integer 
 	Parameter C_BAR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
-INFO: [Synth 8-3491] module 'pselect_mask' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3470' bound to instance 'pselect_mask_lmb' of component 'pselect_mask' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4404]
-INFO: [Synth 8-638] synthesizing module 'pselect_mask' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
-INFO: [Synth 8-256] done synthesizing module 'pselect_mask' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
-INFO: [Synth 8-256] done synthesizing module 'lmb_mux' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
-INFO: [Synth 8-256] done synthesizing module 'lmb_bram_if_cntlr' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
-INFO: [Synth 8-256] done synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/synth/RISC_V_ilmb_bram_if_cntlr_0.vhd:84]
+INFO: [Synth 8-3491] module 'pselect_mask' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3470' bound to instance 'pselect_mask_lmb' of component 'pselect_mask' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4404]
+INFO: [Synth 8-638] synthesizing module 'pselect_mask' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'pselect_mask' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'lmb_mux' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4291]
+INFO: [Synth 8-256] done synthesizing module 'lmb_bram_if_cntlr' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0e64/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5222]
+INFO: [Synth 8-256] done synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/synth/RISC_V_ilmb_bram_if_cntlr_0.vhd:84]
 WARNING: [Synth 8-7129] Port A[0] in module pselect_mask is either unconnected or has no load
 WARNING: [Synth 8-7129] Port A[1] in module pselect_mask is either unconnected or has no load
 WARNING: [Synth 8-7129] Port A[2] in module pselect_mask is either unconnected or has no load
@@ -196,52 +201,52 @@ WARNING: [Synth 8-7129] Port LMB1_AddrStrobe in module lmb_mux is either unconne
 WARNING: [Synth 8-7129] Port LMB1_ReadStrobe in module lmb_mux is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1318.664 ; gain = 609.184
+Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 1318.062 ; gain = 609.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 1318.664 ; gain = 609.184
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 1318.062 ; gain = 609.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 1318.664 ; gain = 609.184
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 1318.062 ; gain = 609.996
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1318.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1318.062 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1364.723 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1348.082 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1365.621 ; gain = 0.898
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1350.914 ; gain = 2.832
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 1365.621 ; gain = 656.141
+Finished Constraint Validation : Time (s): cpu = 00:00:56 ; elapsed = 00:01:15 . Memory (MB): peak = 1350.914 ; gain = 642.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 1365.621 ; gain = 656.141
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:56 ; elapsed = 00:01:15 . Memory (MB): peak = 1350.914 ; gain = 642.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 1365.621 ; gain = 656.141
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:15 . Memory (MB): peak = 1350.914 ; gain = 642.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 1365.621 ; gain = 656.141
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:17 . Memory (MB): peak = 1350.914 ; gain = 642.848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -266,25 +271,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1365.621 ; gain = 656.141
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:29 . Memory (MB): peak = 1356.285 ; gain = 648.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 1521.160 ; gain = 811.680
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:26 ; elapsed = 00:02:02 . Memory (MB): peak = 1519.344 ; gain = 811.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 1521.422 ; gain = 811.941
+Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:02:02 . Memory (MB): peak = 1519.418 ; gain = 811.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 1531.125 ; gain = 821.645
+Finished Technology Mapping : Time (s): cpu = 00:01:26 ; elapsed = 00:02:02 . Memory (MB): peak = 1529.598 ; gain = 821.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -302,37 +307,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Finished IO Insertion : Time (s): cpu = 00:01:45 ; elapsed = 00:02:30 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:45 ; elapsed = 00:02:30 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:45 ; elapsed = 00:02:30 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:45 ; elapsed = 00:02:30 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:02:30 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:45 ; elapsed = 00:02:30 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -353,28 +358,28 @@ Report Cell Usage:
 |3     |FDRE |     2|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:02:30 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 606 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 1766.008 ; gain = 1009.570
-Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:10 . Memory (MB): peak = 1766.008 ; gain = 1056.527
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:10 ; elapsed = 00:02:22 . Memory (MB): peak = 1764.660 ; gain = 1023.742
+Synthesis Optimization Complete : Time (s): cpu = 00:01:45 ; elapsed = 00:02:31 . Memory (MB): peak = 1764.660 ; gain = 1056.594
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1766.082 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1765.543 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1770.406 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1767.375 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete | Checksum: 42729311
 INFO: [Common 17-83] Releasing license: Synthesis
-25 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+28 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:09 ; elapsed = 00:01:21 . Memory (MB): peak = 1770.406 ; gain = 1263.602
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1770.406 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/RISC_V_ilmb_bram_if_cntlr_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:57 ; elapsed = 00:02:49 . Memory (MB): peak = 1767.375 ; gain = 1256.207
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1767.375 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/RISC_V_ilmb_bram_if_cntlr_0.dcp' has been generated.
 INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP RISC_V_ilmb_bram_if_cntlr_0, cache-ID = 9fb86cfed93a573d
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1770.406 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/RISC_V_ilmb_bram_if_cntlr_0.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1767.375 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_ilmb_bram_if_cntlr_0_synth_1/RISC_V_ilmb_bram_if_cntlr_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RISC_V_ilmb_bram_if_cntlr_0_utilization_synth.rpt -pb RISC_V_ilmb_bram_if_cntlr_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 16:01:20 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 12 11:59:19 2025...

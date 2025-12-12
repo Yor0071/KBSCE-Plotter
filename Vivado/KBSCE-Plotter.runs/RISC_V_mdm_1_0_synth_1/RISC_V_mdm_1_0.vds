@@ -3,26 +3,31 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Dec 10 14:22:37 2025
-# Process ID         : 2832
-# Current directory  : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1
+# Start of session at: Fri Dec 12 14:30:25 2025
+# Process ID         : 16888
+# Current directory  : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1
 # Command line       : vivado.exe -log RISC_V_mdm_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_mdm_1_0.tcl
-# Log file           : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/RISC_V_mdm_1_0.vds
-# Journal file       : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1\vivado.jou
-# Running On         : ThinkpadP1_Liam
+# Log file           : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/RISC_V_mdm_1_0.vds
+# Journal file       : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1\vivado.jou
+# Running On         : DESKTOP-H6STBOR
 # Platform           : Windows Server 2016 or Windows 10
-# Operating System   : 26100
-# Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
-# CPU Frequency      : 2592 MHz
-# CPU Physical cores : 6
-# CPU Logical cores  : 12
-# Host memory        : 34174 MB
-# Swap memory        : 5100 MB
-# Total Virtual      : 39274 MB
-# Available Virtual  : 16453 MB
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+# CPU Frequency      : 1992 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 17061 MB
+# Swap memory        : 2550 MB
+# Total Virtual      : 19611 MB
+# Available Virtual  : 5281 MB
 #-----------------------------------------------------------
 source RISC_V_mdm_1_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 492.078 ; gain = 210.676
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 491.863 ; gain = 210.523
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/ip_repo/motor_ctrl_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip 
 Command: synth_design -top RISC_V_mdm_1_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
@@ -30,11 +35,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 29012
+INFO: [Synth 8-7075] Helper process launched with PID 17288
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 1209.383 ; gain = 493.316
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1208.402 ; gain = 493.098
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'RISC_V_mdm_1_0' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/synth/RISC_V_mdm_1_0.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_mdm_1_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/synth/RISC_V_mdm_1_0.vhd:74]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_DEVICE bound to: xc7a100t - type: string 
 	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
@@ -54,7 +59,7 @@ INFO: [Synth 8-638] synthesizing module 'RISC_V_mdm_1_0' [c:/Users/liamb/GitHub/
 	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
 	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
 	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
-	Parameter C_TRACE_DATA_WIDTH bound to: 2 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
 	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
 	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
@@ -71,32 +76,32 @@ INFO: [Synth 8-638] synthesizing module 'RISC_V_mdm_1_0' [c:/Users/liamb/GitHub/
 	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
 	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-3491] module 'MDM_RISCV' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:11977' bound to instance 'U0' of component 'mdm_riscv' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/synth/RISC_V_mdm_1_0.vhd:1662]
-INFO: [Synth 8-638] synthesizing module 'MDM_RISCV' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:13662]
+INFO: [Synth 8-3491] module 'MDM_RISCV' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:11977' bound to instance 'U0' of component 'mdm_riscv' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/synth/RISC_V_mdm_1_0.vhd:1662]
+INFO: [Synth 8-638] synthesizing module 'MDM_RISCV' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:13662]
 	Parameter C_TARGET bound to: 2 - type: integer 
 	Parameter DISABLE_JTAG bound to: FALSE - type: string 
 	Parameter JTAG_CHAIN bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'MB_BSCANE2' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:510' bound to instance 'BSCAN_I' of component 'MB_BSCANE2' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15459]
-INFO: [Synth 8-638] synthesizing module 'MB_BSCANE2' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:534]
+INFO: [Synth 8-3491] module 'MB_BSCANE2' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:510' bound to instance 'BSCAN_I' of component 'MB_BSCANE2' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15459]
+INFO: [Synth 8-638] synthesizing module 'MB_BSCANE2' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:534]
 	Parameter DISABLE_JTAG bound to: FALSE - type: string 
 	Parameter JTAG_CHAIN bound to: 2 - type: integer 
-INFO: [Synth 8-113] binding component instance 'BSCANE2_I' to cell 'BSCANE2' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:544]
-INFO: [Synth 8-256] done synthesizing module 'MB_BSCANE2' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:534]
+INFO: [Synth 8-113] binding component instance 'BSCANE2_I' to cell 'BSCANE2' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:544]
+INFO: [Synth 8-256] done synthesizing module 'MB_BSCANE2' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:534]
 	Parameter C_TARGET bound to: 2 - type: integer 
 	Parameter INIT bound to: 2'b10 
-INFO: [Synth 8-3491] module 'MB_LUT1' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1735' bound to instance 'LUT1_I' of component 'MB_LUT1' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15477]
-INFO: [Synth 8-638] synthesizing module 'MB_LUT1' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1749]
+INFO: [Synth 8-3491] module 'MB_LUT1' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1735' bound to instance 'LUT1_I' of component 'MB_LUT1' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15477]
+INFO: [Synth 8-638] synthesizing module 'MB_LUT1' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1749]
 	Parameter INIT bound to: 2'b10 
-INFO: [Synth 8-113] binding component instance 'Native' to cell 'LUT1' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1771]
-INFO: [Synth 8-256] done synthesizing module 'MB_LUT1' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1749]
-INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:319' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15521]
-INFO: [Synth 8-638] synthesizing module 'xil_scan_reset_control' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:328]
-INFO: [Synth 8-256] done synthesizing module 'xil_scan_reset_control' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:328]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'LUT1' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1771]
+INFO: [Synth 8-256] done synthesizing module 'MB_LUT1' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1749]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:319' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15521]
+INFO: [Synth 8-638] synthesizing module 'xil_scan_reset_control' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:328]
+INFO: [Synth 8-256] done synthesizing module 'xil_scan_reset_control' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:328]
 	Parameter C_TARGET bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:621' bound to instance 'BUFG_JTAG_TCK' of component 'MB_BUFGCE_1' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15917]
-INFO: [Synth 8-638] synthesizing module 'MB_BUFGCE_1' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:635]
-INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFGCE_1' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:645]
-INFO: [Synth 8-256] done synthesizing module 'MB_BUFGCE_1' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:635]
+INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:621' bound to instance 'BUFG_JTAG_TCK' of component 'MB_BUFGCE_1' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:15917]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFGCE_1' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:635]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFGCE_1' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:645]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFGCE_1' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:635]
 	Parameter C_TARGET bound to: 2 - type: integer 
 	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
 	Parameter C_USE_BSCAN bound to: 0 - type: integer 
@@ -117,7 +122,7 @@ INFO: [Synth 8-256] done synthesizing module 'MB_BUFGCE_1' (0#1) [c:/Users/liamb
 	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
 	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
 	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
-	Parameter C_TRACE_DATA_WIDTH bound to: 2 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
 	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
 	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
@@ -125,8 +130,8 @@ INFO: [Synth 8-256] done synthesizing module 'MB_BUFGCE_1' (0#1) [c:/Users/liamb
 	Parameter C_UART_WIDTH bound to: 8 - type: integer 
 	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-3491] module 'MDM_Core' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:5249' bound to instance 'MDM_Core_I1' of component 'MDM_Core' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:16077]
-INFO: [Synth 8-638] synthesizing module 'MDM_Core' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6497]
+INFO: [Synth 8-3491] module 'MDM_Core' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:5249' bound to instance 'MDM_Core_I1' of component 'MDM_Core' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:16077]
+INFO: [Synth 8-638] synthesizing module 'MDM_Core' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6497]
 	Parameter C_TARGET bound to: 2 - type: integer 
 	Parameter C_USE_BSCAN bound to: 0 - type: integer 
 	Parameter C_DTM_IDCODE bound to: 147 - type: integer 
@@ -144,25 +149,25 @@ INFO: [Synth 8-638] synthesizing module 'MDM_Core' [c:/Users/liamb/GitHub/KBSCE-
 	Parameter C_USE_UART bound to: 0 - type: integer 
 	Parameter C_UART_WIDTH bound to: 8 - type: integer 
 	Parameter C_EN_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'JTAG_CONTROL' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3265' bound to instance 'JTAG_CONTROL_I' of component 'JTAG_CONTROL' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:9053]
-INFO: [Synth 8-638] synthesizing module 'JTAG_CONTROL' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3507]
-WARNING: [Synth 8-6774] Null subtype or type declaration found [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3651]
-WARNING: [Synth 8-3919] null assignment ignored [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3651]
-INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:319' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3678]
-INFO: [Synth 8-226] default block is never used [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3756]
+INFO: [Synth 8-3491] module 'JTAG_CONTROL' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3265' bound to instance 'JTAG_CONTROL_I' of component 'JTAG_CONTROL' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:9053]
+INFO: [Synth 8-638] synthesizing module 'JTAG_CONTROL' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3507]
+WARNING: [Synth 8-6774] Null subtype or type declaration found [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3651]
+WARNING: [Synth 8-3919] null assignment ignored [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3651]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:319' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3678]
+INFO: [Synth 8-226] default block is never used [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3756]
 	Parameter C_TARGET bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:621' bound to instance 'BUFG_DRCK' of component 'MB_BUFGCE_1' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3916]
+INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:621' bound to instance 'BUFG_DRCK' of component 'MB_BUFGCE_1' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3916]
 	Parameter C_TARGET bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'MB_BUFG' declared at 'c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:572' bound to instance 'BUFG_UPDATE' of component 'MB_BUFG' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3928]
-INFO: [Synth 8-638] synthesizing module 'MB_BUFG' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:585]
+INFO: [Synth 8-3491] module 'MB_BUFG' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:572' bound to instance 'BUFG_UPDATE' of component 'MB_BUFG' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3928]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFG' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:585]
 	Parameter C_TARGET bound to: 2 - type: integer 
-INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFG' [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:595]
-INFO: [Synth 8-256] done synthesizing module 'MB_BUFG' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:585]
-WARNING: [Synth 8-3919] null assignment ignored [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:4294]
-INFO: [Synth 8-256] done synthesizing module 'JTAG_CONTROL' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3507]
-INFO: [Synth 8-256] done synthesizing module 'MDM_Core' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6497]
-INFO: [Synth 8-256] done synthesizing module 'MDM_RISCV' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:13662]
-INFO: [Synth 8-256] done synthesizing module 'RISC_V_mdm_1_0' (0#1) [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/synth/RISC_V_mdm_1_0.vhd:74]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFG' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:595]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFG' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:585]
+WARNING: [Synth 8-3919] null assignment ignored [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:4294]
+INFO: [Synth 8-256] done synthesizing module 'JTAG_CONTROL' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3507]
+INFO: [Synth 8-256] done synthesizing module 'MDM_Core' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6497]
+INFO: [Synth 8-256] done synthesizing module 'MDM_RISCV' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/2c73/hdl/mdm_riscv_v1_0_vh_rfs.vhd:13662]
+INFO: [Synth 8-256] done synthesizing module 'RISC_V_mdm_1_0' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/synth/RISC_V_mdm_1_0.vhd:74]
 WARNING: [Synth 8-7129] Port Clk in module JTAG_CONTROL is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Rst in module JTAG_CONTROL is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Read_RX_FIFO in module JTAG_CONTROL is either unconnected or has no load
@@ -265,56 +270,56 @@ WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[7] in module JTAG_CONTROL is either u
 WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[0] in module JTAG_CONTROL is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:47 . Memory (MB): peak = 1351.125 ; gain = 635.059
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1350.086 ; gain = 634.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:48 . Memory (MB): peak = 1351.125 ; gain = 635.059
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1350.086 ; gain = 634.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:48 . Memory (MB): peak = 1351.125 ; gain = 635.059
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1350.086 ; gain = 634.781
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 1351.125 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 1350.086 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/dont_touch.xdc]
-Parsing XDC File [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0_ooc_trace.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0_ooc_trace.xdc] for cell 'U0'
-Parsing XDC File [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xdc] for cell 'U0'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RISC_V_mdm_1_0_propImpl.xdc].
+Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0_ooc_trace.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0_ooc_trace.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RISC_V_mdm_1_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/RISC_V_mdm_1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1425.152 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1431.035 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   BUFGCE_1 => BUFGCTRL: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 1426.508 ; gain = 1.355
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1433.199 ; gain = 2.164
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:51 ; elapsed = 00:01:13 . Memory (MB): peak = 1426.508 ; gain = 710.441
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1433.199 ; gain = 717.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:51 ; elapsed = 00:01:13 . Memory (MB): peak = 1426.508 ; gain = 710.441
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1433.199 ; gain = 717.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:13 . Memory (MB): peak = 1426.508 ; gain = 710.441
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1433.199 ; gain = 717.895
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'Test_Access_Port.state_reg' in module 'JTAG_CONTROL'
 ---------------------------------------------------------------------------------------------------
@@ -339,7 +344,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'Test_Access_Port.state_reg'
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'Test_Access_Port.state_reg' using encoding 'one-hot' in module 'JTAG_CONTROL'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 1426.508 ; gain = 710.441
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1433.199 ; gain = 717.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -386,25 +391,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:01:23 . Memory (MB): peak = 1426.508 ; gain = 710.441
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1433.199 ; gain = 717.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:39 . Memory (MB): peak = 1533.824 ; gain = 817.758
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1530.281 ; gain = 814.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:16 ; elapsed = 00:01:39 . Memory (MB): peak = 1537.773 ; gain = 821.707
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1534.801 ; gain = 819.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:16 ; elapsed = 00:01:40 . Memory (MB): peak = 1556.840 ; gain = 840.773
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1553.887 ; gain = 838.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -422,37 +427,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:29 ; elapsed = 00:01:53 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:29 ; elapsed = 00:01:54 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:29 ; elapsed = 00:01:54 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:29 ; elapsed = 00:01:54 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:29 ; elapsed = 00:01:54 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:29 ; elapsed = 00:01:54 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -503,32 +508,32 @@ Report Cell Usage:
 |15    |FDSE    |     6|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:29 ; elapsed = 00:01:54 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4313 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:46 . Memory (MB): peak = 1779.711 ; gain = 988.262
-Synthesis Optimization Complete : Time (s): cpu = 00:01:29 ; elapsed = 00:01:54 . Memory (MB): peak = 1779.711 ; gain = 1063.645
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:45 . Memory (MB): peak = 1777.773 ; gain = 979.355
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1777.773 ; gain = 1062.469
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1779.711 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1777.773 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1782.406 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1779.609 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   BUFGCE_1 => BUFGCTRL: 2 instances
 
-Synth Design complete | Checksum: 76599913
+Synth Design complete | Checksum: fc0bed
 INFO: [Common 17-83] Releasing license: Synthesis
-54 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:40 ; elapsed = 00:02:11 . Memory (MB): peak = 1782.406 ; gain = 1268.523
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1782.406 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/RISC_V_mdm_1_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP RISC_V_mdm_1_0, cache-ID = ae3c05a575270fe9
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1779.609 ; gain = 1268.738
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1779.609 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/RISC_V_mdm_1_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP RISC_V_mdm_1_0, cache-ID = 8983f263963f857c
 INFO: [Coretcl 2-1174] Renamed 8 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1782.406 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/RISC_V_mdm_1_0.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1779.609 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_mdm_1_0_synth_1/RISC_V_mdm_1_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RISC_V_mdm_1_0_utilization_synth.rpt -pb RISC_V_mdm_1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 14:25:38 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 12 14:31:37 2025...

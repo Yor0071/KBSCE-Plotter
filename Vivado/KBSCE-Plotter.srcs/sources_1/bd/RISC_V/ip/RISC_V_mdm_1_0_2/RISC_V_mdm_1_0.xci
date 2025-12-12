@@ -68,7 +68,7 @@
         "C_USE_CROSS_TRIGGER": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_EXT_TRIG_RESET_VALUE": [ { "value": "0xF1234", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_TRACE_OUTPUT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_TRACE_DATA_WIDTH": [ { "value": "2", "resolve_type": "generated", "format": "long", "enabled": false, "usage": "all" } ],
+        "C_TRACE_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "enabled": false, "usage": "all" } ],
         "C_TRACE_CLK_FREQ_HZ": [ { "value": "200000000", "resolve_type": "generated", "format": "long", "enabled": false, "usage": "all" } ],
         "C_TRACE_CLK_OUT_PHASE": [ { "value": "90", "resolve_type": "generated", "format": "long", "enabled": false, "usage": "all" } ],
         "C_TRACE_ASYNC_RESET": [ { "value": "0", "resolve_type": "generated", "format": "long", "enabled": false, "usage": "all" } ],

@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Thu Dec 11 15:27:08 2025
-# Process ID         : 1412
+# Start of session at: Fri Dec 12 14:31:39 2025
+# Process ID         : 16604
 # Current directory  : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1
 # Command line       : vivado.exe -log NexysA7_Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source NexysA7_Top.tcl
 # Log file           : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/NexysA7_Top.vds
@@ -19,24 +19,21 @@
 # Host memory        : 17061 MB
 # Swap memory        : 2550 MB
 # Total Virtual      : 19611 MB
-# Available Virtual  : 5296 MB
+# Available Virtual  : 5400 MB
 #-----------------------------------------------------------
 source NexysA7_Top.tcl -notrace
-create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 491.965 ; gain = 210.605
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 491.801 ; gain = 210.816
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/ip_repo/motor_ctrl_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip 
-WARNING: [BD 41-1661] One or more IPs have been locked in the design 'RISC_V.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
-List of locked IPs:
-RISC_V_mdm_1_0
-
 INFO: [Project 1-5698] Found the below utility IPs instantiated in block design C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/RISC_V.bd which have equivalent inline hdl with improved performance and reduced diskspace.
 It is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.
 More information on inline hdl is available in UG994.
 Utility IP Component Instances:
  RISC_V_reset_inv_0_0
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 558.070 ; gain = 58.520
 Command: read_checkpoint -auto_incremental -incremental C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/utils_1/imports/synth_1/RISC_V_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/utils_1/imports/synth_1/RISC_V_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -49,31 +46,10 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 12644
+INFO: [Synth 8-7075] Helper process launched with PID 11840
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1262.207 ; gain = 494.617
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1259.066 ; gain = 493.629
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_7/synth/bd_33e2_aroutsw_0.sv:94]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_7/synth/bd_33e2_aroutsw_0.sv:95]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_7/synth/bd_33e2_aroutsw_0.sv:96]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/synth/bd_33e2_routsw_0.sv:83]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/synth/bd_33e2_routsw_0.sv:84]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/synth/bd_33e2_routsw_0.sv:85]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/synth/bd_33e2_routsw_0.sv:86]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/synth/bd_33e2_routsw_0.sv:87]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_8/synth/bd_33e2_routsw_0.sv:88]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_9/synth/bd_33e2_awoutsw_0.sv:94]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_9/synth/bd_33e2_awoutsw_0.sv:95]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_9/synth/bd_33e2_awoutsw_0.sv:96]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_10/synth/bd_33e2_woutsw_0.sv:94]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_10/synth/bd_33e2_woutsw_0.sv:95]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_10/synth/bd_33e2_woutsw_0.sv:96]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/synth/bd_33e2_boutsw_0.sv:83]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/synth/bd_33e2_boutsw_0.sv:84]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/synth/bd_33e2_boutsw_0.sv:85]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/synth/bd_33e2_boutsw_0.sv:86]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/synth/bd_33e2_boutsw_0.sv:87]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0/bd_0/ip/ip_11/synth/bd_33e2_boutsw_0.sv:88]
 WARNING: [Synth 8-9112] actual for formal port 'bram_portb_0_we' is neither a static name nor a globally static expression [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:192]
 INFO: [Synth 8-638] synthesizing module 'NexysA7_Top' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:57]
 INFO: [Synth 8-3491] module 'VGASignalGenerator' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/VGASignalGenerator.vhd:34' bound to instance 'u_VGASignalGenerator' of component 'VGASignalGenerator' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:159]
@@ -86,22 +62,307 @@ INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/2025.1/Vivado/script
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [C:/Xilinx/2025.1/Vivado/scripts/rt/data/unisim_comp.v:81434]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/2025.1/Vivado/scripts/rt/data/unisim_comp.v:81434' bound to instance 'IIC_0_sda_iobuf' of component 'IOBUF' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:130]
 INFO: [Synth 8-3491] module 'RISC_V' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' bound to instance 'RISC_V_i' of component 'RISC_V' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'iic_0_scl_i' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'iic_0_scl_o' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'iic_0_scl_t' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'iic_0_sda_i' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'iic_0_sda_o' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'iic_0_sda_t' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'btn_tri_i' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-3493] module 'risc_v' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:531' does not have matching formal port for component port 'cam_clk_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:137]
-ERROR: [Synth 8-285] failed synthesizing module 'RISC_V_wrapper' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:60]
-ERROR: [Synth 8-285] failed synthesizing module 'NexysA7_Top' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'RISC_V' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:583]
+INFO: [Synth 8-3491] module 'RISC_V_axi_gpio_0_2' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_gpio_0_2_stub.vhdl:6' bound to instance 'axi_gpio_buttons' of component 'RISC_V_axi_gpio_0_2' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1229]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_gpio_0_2' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_gpio_0_2_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_axi_gpio_0_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_leds' of component 'RISC_V_axi_gpio_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1252]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_gpio_0_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_gpio_0_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_axi_gpio_1_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_gpio_1_0_stub.vhdl:6' bound to instance 'axi_gpio_switches' of component 'RISC_V_axi_gpio_1_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1275]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_gpio_1_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_gpio_1_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_axi_iic_0_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_iic_0_0_stub.vhdl:6' bound to instance 'axi_iic_0' of component 'RISC_V_axi_iic_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1298]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_iic_0_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_iic_0_0_stub.vhdl:45]
+INFO: [Synth 8-3491] module 'RISC_V_axi_smc_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'RISC_V_axi_smc_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1328]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_smc_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_smc_0_stub.vhdl:153]
+INFO: [Synth 8-3491] module 'RISC_V_axi_uartlite_0_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_uartlite_0_0_stub.vhdl:6' bound to instance 'axi_uartlite_0' of component 'RISC_V_axi_uartlite_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1466]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_axi_uartlite_0_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_axi_uartlite_0_0_stub.vhdl:40]
+INFO: [Synth 8-3491] module 'RISC_V_blk_mem_gen_0_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_blk_mem_gen_0_0_stub.vhdl:6' bound to instance 'blk_mem_gen_0' of component 'RISC_V_blk_mem_gen_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1491]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_blk_mem_gen_0_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_blk_mem_gen_0_0_stub.vhdl:30]
+INFO: [Synth 8-3491] module 'RISC_V_clk_wiz_1_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_clk_wiz_1_0_stub.vhdl:6' bound to instance 'clk_wiz_1' of component 'RISC_V_clk_wiz_1_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1506]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_clk_wiz_1_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_clk_wiz_1_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'RISC_V_mdm_1_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_mdm_1_0_stub.vhdl:6' bound to instance 'mdm_1' of component 'RISC_V_mdm_1_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1514]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_mdm_1_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_mdm_1_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'RISC_V_microblaze_riscv_0_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_microblaze_riscv_0_0_stub.vhdl:6' bound to instance 'microblaze_riscv_0' of component 'RISC_V_microblaze_riscv_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1527]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_microblaze_riscv_0_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_microblaze_riscv_0_0_stub.vhdl:70]
+INFO: [Synth 8-638] synthesizing module 'microblaze_riscv_0_local_memory_imp_3UL0U' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:41]
+INFO: [Synth 8-3491] module 'RISC_V_dlmb_bram_if_cntlr_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'dlmb_bram_if_cntlr' of component 'RISC_V_dlmb_bram_if_cntlr_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:213]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_dlmb_bram_if_cntlr_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_dlmb_bram_if_cntlr_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_dlmb_v10_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_dlmb_v10_0_stub.vhdl:6' bound to instance 'dlmb_v10' of component 'RISC_V_dlmb_v10_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:267]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_dlmb_v10_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_dlmb_v10_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'RISC_V_ilmb_bram_if_cntlr_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_ilmb_bram_if_cntlr_0_stub.vhdl:6' bound to instance 'ilmb_bram_if_cntlr' of component 'RISC_V_ilmb_bram_if_cntlr_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:295]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_bram_if_cntlr_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_ilmb_bram_if_cntlr_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'RISC_V_ilmb_v10_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_ilmb_v10_0_stub.vhdl:6' bound to instance 'ilmb_v10' of component 'RISC_V_ilmb_v10_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:349]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_ilmb_v10_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_ilmb_v10_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'RISC_V_lmb_bram_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_lmb_bram_0_stub.vhdl:6' bound to instance 'lmb_bram' of component 'RISC_V_lmb_bram_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:377]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_lmb_bram_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_lmb_bram_0_stub.vhdl:34]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_riscv_0_local_memory_imp_3UL0U' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:41]
+INFO: [Synth 8-3491] module 'RISC_V_motor_ctrl_0_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_motor_ctrl_0_0_stub.vhdl:6' bound to instance 'motor_ctrl_0' of component 'RISC_V_motor_ctrl_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1606]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_motor_ctrl_0_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_motor_ctrl_0_0_stub.vhdl:55]
+INFO: [Synth 8-3491] module 'RISC_V_reset_inv_0_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_reset_inv_0_0_stub.vhdl:6' bound to instance 'reset_inv_0' of component 'RISC_V_reset_inv_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1646]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_reset_inv_0_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_reset_inv_0_0_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'RISC_V_rst_clk_wiz_1_100M_0' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_rst_clk_wiz_1_100M_0_stub.vhdl:6' bound to instance 'rst_clk_wiz_1_100M' of component 'RISC_V_rst_clk_wiz_1_100M_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:1651]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_rst_clk_wiz_1_100M_0' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/.Xil/Vivado-16604-DESKTOP-H6STBOR/realtime/RISC_V_rst_clk_wiz_1_100M_0_stub.vhdl:28]
+INFO: [Synth 8-256] done synthesizing module 'RISC_V' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/synth/RISC_V.vhd:583]
+INFO: [Synth 8-256] done synthesizing module 'RISC_V_wrapper' (0#1) [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/hdl/RISC_V_wrapper.vhd:60]
+INFO: [Synth 8-3491] module 'ov7670_capture' declared at 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/ov7670_vhdl_full_project/ov7670_capture.vhd:5' bound to instance 'u_cap' of component 'ov7670_capture' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:237]
+INFO: [Synth 8-638] synthesizing module 'ov7670_capture' [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/ov7670_vhdl_full_project/ov7670_capture.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'ov7670_capture' (0#1) [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/ov7670_vhdl_full_project/ov7670_capture.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'NexysA7_Top' (0#1) [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/new/NexysA7_Top.vhd:57]
+WARNING: [Synth 8-3917] design NexysA7_Top has port OV_PWDN driven by constant 0
+WARNING: [Synth 8-3917] design NexysA7_Top has port OV_RESET driven by constant 1
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1663.234 ; gain = 895.645
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1379.934 ; gain = 614.496
 ---------------------------------------------------------------------------------
-RTL Elaboration failed
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1379.934 ; gain = 614.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1379.934 ; gain = 614.496
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1379.934 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_v10_0/RISC_V_dlmb_v10_0/RISC_V_ilmb_v10_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_v10_0/RISC_V_dlmb_v10_0/RISC_V_ilmb_v10_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/ilmb_v10'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/lmb_bram'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/lmb_bram'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0/RISC_V_mdm_1_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/mdm_1'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0/RISC_V_mdm_1_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/mdm_1'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/clk_wiz_1'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/clk_wiz_1'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/rst_clk_wiz_1_100M'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_0_0/RISC_V_axi_gpio_0_0/RISC_V_axi_gpio_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_gpio_leds'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_0_0/RISC_V_axi_gpio_0_0/RISC_V_axi_gpio_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_gpio_leds'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_1_0/RISC_V_axi_gpio_1_0/RISC_V_axi_gpio_1_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_gpio_switches'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_1_0/RISC_V_axi_gpio_1_0/RISC_V_axi_gpio_1_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_gpio_switches'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_uartlite_0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_uartlite_0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0_1/RISC_V_axi_smc_0/RISC_V_axi_smc_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_smc'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_smc_0_1/RISC_V_axi_smc_0/RISC_V_axi_smc_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_smc'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/reset_inv_0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/bd/RISC_V/ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/reset_inv_0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_1/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/blk_mem_gen_0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_blk_mem_gen_0_0_1/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/blk_mem_gen_0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_iic_0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_iic_0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_0_2/RISC_V_axi_gpio_0_2/RISC_V_axi_gpio_0_2_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_gpio_buttons'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_axi_gpio_0_2/RISC_V_axi_gpio_0_2/RISC_V_axi_gpio_0_2_in_context.xdc] for cell 'u_cpu/RISC_V_i/axi_gpio_buttons'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_0_1/RISC_V_motor_ctrl_0_0/RISC_V_motor_ctrl_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/motor_ctrl_0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_motor_ctrl_0_0_1/RISC_V_motor_ctrl_0_0/RISC_V_motor_ctrl_0_0_in_context.xdc] for cell 'u_cpu/RISC_V_i/motor_ctrl_0'
+Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/constrs_1/imports/VHDL_Projects/Nexys-A7-100T-Master.xdc]
+WARNING: [Vivado 12-507] No nets matched 'OV_PCLK_IBUF'. [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/constrs_1/imports/VHDL_Projects/Nexys-A7-100T-Master.xdc:239]
+Finished Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/constrs_1/imports/VHDL_Projects/Nexys-A7-100T-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/constrs_1/imports/VHDL_Projects/Nexys-A7-100T-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/NexysA7_Top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/constrs_1/imports/VHDL_Projects/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/NexysA7_Top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/NexysA7_Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1469.469 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1469.469 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'u_cpu/RISC_V_i/microblaze_riscv_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1469.488 ; gain = 704.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1469.488 ; gain = 704.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1469.488 ; gain = 704.051
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'first_byte_reg' and it is trimmed from '8' to '4' bits. [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/ov7670_vhdl_full_project/ov7670_capture.vhd:55]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1469.488 ; gain = 704.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
++---Registers : 
+	               19 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1469.488 ; gain = 704.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1575.172 ; gain = 809.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 1594.422 ; gain = 828.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1820.582 ; gain = 1055.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1820.582 ; gain = 1055.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1820.582 ; gain = 1055.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------------+----------+
+|      |BlackBox name               |Instances |
++------+----------------------------+----------+
+|1     |RISC_V_dlmb_bram_if_cntlr_0 |         1|
+|2     |RISC_V_dlmb_v10_0           |         1|
+|3     |RISC_V_ilmb_bram_if_cntlr_0 |         1|
+|4     |RISC_V_ilmb_v10_0           |         1|
+|5     |RISC_V_lmb_bram_0           |         1|
+|6     |RISC_V_axi_gpio_0_2         |         1|
+|7     |RISC_V_axi_gpio_0_0         |         1|
+|8     |RISC_V_axi_gpio_1_0         |         1|
+|9     |RISC_V_axi_iic_0_0          |         1|
+|10    |RISC_V_axi_smc_0            |         1|
+|11    |RISC_V_axi_uartlite_0_0     |         1|
+|12    |RISC_V_blk_mem_gen_0_0      |         1|
+|13    |RISC_V_clk_wiz_1_0          |         1|
+|14    |RISC_V_mdm_1_0              |         1|
+|15    |RISC_V_microblaze_riscv_0_0 |         1|
+|16    |RISC_V_motor_ctrl_0_0       |         1|
+|17    |RISC_V_reset_inv_0_0        |         1|
+|18    |RISC_V_rst_clk_wiz_1_100M_0 |         1|
++------+----------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------------+------+
+|      |Cell                             |Count |
++------+---------------------------------+------+
+|1     |RISC_V_axi_gpio_0_0_bbox         |     1|
+|2     |RISC_V_axi_gpio_0_2_bbox         |     1|
+|3     |RISC_V_axi_gpio_1_0_bbox         |     1|
+|4     |RISC_V_axi_iic_0_0_bbox          |     1|
+|5     |RISC_V_axi_smc_0_bbox            |     1|
+|6     |RISC_V_axi_uartlite_0_0_bbox     |     1|
+|7     |RISC_V_blk_mem_gen_0_0_bbox      |     1|
+|8     |RISC_V_clk_wiz_1_0_bbox          |     1|
+|9     |RISC_V_dlmb_bram_if_cntlr_0_bbox |     1|
+|10    |RISC_V_dlmb_v10_0_bbox           |     1|
+|11    |RISC_V_ilmb_bram_if_cntlr_0_bbox |     1|
+|12    |RISC_V_ilmb_v10_0_bbox           |     1|
+|13    |RISC_V_lmb_bram_0_bbox           |     1|
+|14    |RISC_V_mdm_1_0_bbox              |     1|
+|15    |RISC_V_microblaze_riscv_0_0_bbox |     1|
+|16    |RISC_V_motor_ctrl_0_0_bbox       |     1|
+|17    |RISC_V_reset_inv_0_0_bbox        |     1|
+|18    |RISC_V_rst_clk_wiz_1_100M_0_bbox |     1|
+|19    |BUFG                             |     1|
+|20    |CARRY4                           |    10|
+|21    |LUT1                             |     4|
+|22    |LUT2                             |     5|
+|23    |LUT3                             |     9|
+|24    |LUT4                             |    22|
+|25    |LUT5                             |    12|
+|26    |LUT6                             |    11|
+|27    |FDCE                             |     1|
+|28    |FDRE                             |   100|
+|29    |IBUF                             |    38|
+|30    |IOBUF                            |     2|
+|31    |OBUF                             |    42|
++------+---------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1820.582 ; gain = 1055.145
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1820.582 ; gain = 965.590
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1820.582 ; gain = 1055.145
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1820.582 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1833.371 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+Synth Design complete | Checksum: 2653c8b3
 INFO: [Common 17-83] Releasing license: Synthesis
-25 Infos, 24 Warnings, 0 Critical Warnings and 11 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 11 15:28:12 2025...
+84 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 1833.371 ; gain = 1270.871
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1833.371 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/NexysA7_Top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 12 14:32:48 2025...
