@@ -1,9 +1,9 @@
-# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/system-top.dts"
+# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-O/hw/sdt/system-top.dts"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/system-top.dts"
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-O/hw/sdt/system-top.dts"
 /dts-v1/;
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/pl.dtsi" 1
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-O/hw/sdt/pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -211,7 +211,7 @@
    xlnx,use-fpu = <0>;
    xlnx,use-non-secure = <0>;
    d-cache-baseaddr = <0x0>;
-   xlnx,use-compression = <0>;
+   xlnx,use-compression = <1>;
    xlnx,instr-size = <32>;
    xlnx,fsl-links = <0>;
    xlnx,dcache-victims = <0>;
@@ -282,7 +282,7 @@
    xlnx,is-dual = <0>;
    xlnx,ip-name = "axi_gpio";
    xlnx,tri-default-2 = <0xffffffff>;
-   reg = <0x40000000 0x10000>;
+   reg = <0x40000000 0x80>;
    xlnx,all-inputs-2 = <0>;
    clocks = <&clk_bus_0>;
    xlnx,all-outputs-2 = <0>;
@@ -310,7 +310,7 @@
    xlnx,is-dual = <0>;
    xlnx,ip-name = "axi_gpio";
    xlnx,tri-default-2 = <0xffffffff>;
-   reg = <0x40010000 0x10000>;
+   reg = <0x40010000 0x80>;
    xlnx,all-inputs-2 = <0>;
    clocks = <&clk_bus_0>;
    xlnx,all-outputs-2 = <0>;
@@ -421,7 +421,7 @@
   };
  };
 };
-# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-L/hw/sdt/system-top.dts" 2
+# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/lnx-O/hw/sdt/system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
@@ -456,8 +456,8 @@
          <0xC0000000 &axi_bram_ctrl_0 0xC0000000 0x200000>,
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>,
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x10000>,
-         <0x40000000 &axi_gpio_leds 0x40000000 0x10000>,
-         <0x40010000 &axi_gpio_switches 0x40010000 0x10000>,
+         <0x40000000 &axi_gpio_leds 0x40000000 0x80>,
+         <0x40010000 &axi_gpio_switches 0x40010000 0x80>,
          <0x40600000 &axi_uartlite_0 0x40600000 0x10000>;
   #ranges-address-cells = <0x1>;
   #ranges-size-cells = <0x1>;

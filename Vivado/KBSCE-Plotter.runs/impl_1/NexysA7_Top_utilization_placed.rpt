@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Thu Dec 11 18:43:49 2025
+| Date         : Fri Dec 12 10:49:06 2025
 | Host         : mrt-fed-lap running 64-bit unknown
 | Command      : report_utilization -file NexysA7_Top_utilization_placed.rpt -pb NexysA7_Top_utilization_placed.pb
 | Design       : NexysA7_Top
@@ -32,15 +32,15 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs                 | 3621 |     0 |          0 |     63400 |  5.71 |
-|   LUT as Logic             | 3294 |     0 |          0 |     63400 |  5.20 |
+| Slice LUTs                 | 3876 |     0 |          0 |     63400 |  6.11 |
+|   LUT as Logic             | 3549 |     0 |          0 |     63400 |  5.60 |
 |   LUT as Memory            |  327 |     0 |          0 |     19000 |  1.72 |
 |     LUT as Distributed RAM |  284 |     0 |            |           |       |
 |     LUT as Shift Register  |   43 |     0 |            |           |       |
-| Slice Registers            | 2744 |     0 |          0 |    126800 |  2.16 |
-|   Register as Flip Flop    | 2744 |     0 |          0 |    126800 |  2.16 |
+| Slice Registers            | 2796 |     0 |          0 |    126800 |  2.21 |
+|   Register as Flip Flop    | 2796 |     0 |          0 |    126800 |  2.21 |
 |   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                   |  208 |     0 |          0 |     31700 |  0.66 |
+| F7 Muxes                   |  202 |     0 |          0 |     31700 |  0.64 |
 | F8 Muxes                   |   72 |     0 |          0 |     15850 |  0.45 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! LUT value is adjusted to account for LUT combining.
@@ -61,7 +61,7 @@ Table of Contents
 | 1     |          Yes |           - |          Set |
 | 123   |          Yes |           - |        Reset |
 | 125   |          Yes |         Set |            - |
-| 2495  |          Yes |       Reset |            - |
+| 2547  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -71,13 +71,13 @@ Table of Contents
 +--------------------------------------------+------+-------+------------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Prohibited | Available | Util% |
 +--------------------------------------------+------+-------+------------+-----------+-------+
-| Slice                                      | 1389 |     0 |          0 |     15850 |  8.76 |
-|   SLICEL                                   |  958 |     0 |            |           |       |
-|   SLICEM                                   |  431 |     0 |            |           |       |
-| LUT as Logic                               | 3294 |     0 |          0 |     63400 |  5.20 |
+| Slice                                      | 1456 |     0 |          0 |     15850 |  9.19 |
+|   SLICEL                                   | 1037 |     0 |            |           |       |
+|   SLICEM                                   |  419 |     0 |            |           |       |
+| LUT as Logic                               | 3549 |     0 |          0 |     63400 |  5.60 |
 |   using O5 output only                     |    0 |       |            |           |       |
-|   using O6 output only                     | 2654 |       |            |           |       |
-|   using O5 and O6                          |  640 |       |            |           |       |
+|   using O6 output only                     | 2906 |       |            |           |       |
+|   using O5 and O6                          |  643 |       |            |           |       |
 | LUT as Memory                              |  327 |     0 |          0 |     19000 |  1.72 |
 |   LUT as Distributed RAM                   |  284 |     0 |            |           |       |
 |     using O5 output only                   |    0 |       |            |           |       |
@@ -87,12 +87,12 @@ Table of Contents
 |     using O5 output only                   |    8 |       |            |           |       |
 |     using O6 output only                   |    4 |       |            |           |       |
 |     using O5 and O6                        |   31 |       |            |           |       |
-| Slice Registers                            | 2744 |     0 |          0 |    126800 |  2.16 |
-|   Register driven from within the Slice    | 1550 |       |            |           |       |
-|   Register driven from outside the Slice   | 1194 |       |            |           |       |
-|     LUT in front of the register is unused |  652 |       |            |           |       |
-|     LUT in front of the register is used   |  542 |       |            |           |       |
-| Unique Control Sets                        |  203 |       |          0 |     15850 |  1.28 |
+| Slice Registers                            | 2796 |     0 |          0 |    126800 |  2.21 |
+|   Register driven from within the Slice    | 1573 |       |            |           |       |
+|   Register driven from outside the Slice   | 1223 |       |            |           |       |
+|     LUT in front of the register is unused |  595 |       |            |           |       |
+|     LUT in front of the register is used   |  628 |       |            |           |       |
+| Unique Control Sets                        |  207 |       |          0 |     15850 |  1.31 |
 +--------------------------------------------+------+-------+------------+-----------+-------+
 * * Note: Available Control Sets calculated as Slice * 1, Review the Control Sets Report for more information regarding control sets.
 
@@ -186,20 +186,20 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 2495 |        Flop & Latch |
-| LUT6       | 1388 |                 LUT |
-| LUT5       |  717 |                 LUT |
-| LUT4       |  647 |                 LUT |
-| LUT3       |  515 |                 LUT |
-| LUT2       |  488 |                 LUT |
+| FDRE       | 2547 |        Flop & Latch |
+| LUT6       | 1591 |                 LUT |
+| LUT5       |  735 |                 LUT |
+| LUT4       |  664 |                 LUT |
+| LUT3       |  534 |                 LUT |
+| LUT2       |  490 |                 LUT |
 | RAMD64E    |  220 |  Distributed Memory |
-| MUXF7      |  208 |               MuxFx |
-| LUT1       |  179 |                 LUT |
+| MUXF7      |  202 |               MuxFx |
+| LUT1       |  178 |                 LUT |
 | FDSE       |  125 |        Flop & Latch |
 | FDCE       |  123 |        Flop & Latch |
 | RAMB36E1   |  119 |        Block Memory |
 | RAMD32     |   96 |  Distributed Memory |
-| CARRY4     |   94 |          CarryLogic |
+| CARRY4     |   95 |          CarryLogic |
 | SRL16E     |   73 |  Distributed Memory |
 | MUXF8      |   72 |               MuxFx |
 | OBUF       |   39 |                  IO |
@@ -226,25 +226,26 @@ Table of Contents
 10. Instantiated Netlists
 -------------------------
 
-+-----------------------------+------+
-|           Ref Name          | Used |
-+-----------------------------+------+
-| RISC_V_rst_clk_wiz_1_100M_0 |    1 |
-| RISC_V_reset_inv_0_0        |    1 |
-| RISC_V_microblaze_riscv_0_0 |    1 |
-| RISC_V_mdm_1_0              |    1 |
-| RISC_V_lmb_bram_0           |    1 |
-| RISC_V_ilmb_v10_0           |    1 |
-| RISC_V_ilmb_bram_if_cntlr_0 |    1 |
-| RISC_V_dlmb_v10_0           |    1 |
-| RISC_V_dlmb_bram_if_cntlr_0 |    1 |
-| RISC_V_clk_wiz_1_0          |    1 |
-| RISC_V_blk_mem_gen_0_0      |    1 |
-| RISC_V_axi_uartlite_0_0     |    1 |
-| RISC_V_axi_smc_0            |    1 |
-| RISC_V_axi_gpio_1_0         |    1 |
-| RISC_V_axi_gpio_0_0         |    1 |
-| RISC_V_axi_bram_ctrl_0_0    |    1 |
-+-----------------------------+------+
++-------------------------------+------+
+|            Ref Name           | Used |
++-------------------------------+------+
+| RISC_V_rst_clk_wiz_1_100M_0   |    1 |
+| RISC_V_reset_inv_0_0          |    1 |
+| RISC_V_microblaze_riscv_0_0   |    1 |
+| RISC_V_mdm_1_0                |    1 |
+| RISC_V_lmb_bram_0             |    1 |
+| RISC_V_ilmb_v10_0             |    1 |
+| RISC_V_ilmb_bram_if_cntlr_0   |    1 |
+| RISC_V_dlmb_v10_0             |    1 |
+| RISC_V_dlmb_bram_if_cntlr_0   |    1 |
+| RISC_V_clk_wiz_1_0            |    1 |
+| RISC_V_blk_mem_gen_0_0        |    1 |
+| RISC_V_axi_uartlite_0_0       |    1 |
+| RISC_V_axi_smc_0              |    1 |
+| RISC_V_axi_gpio_1_0           |    1 |
+| RISC_V_axi_gpio_0_0           |    1 |
+| RISC_V_axi_bram_ctrl_0_0      |    1 |
+| RISC_V_BRAMAddressDivider_0_0 |    1 |
++-------------------------------+------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Thu Dec 11 18:42:50 2025
+| Date         : Fri Dec 12 10:48:09 2025
 | Host         : mrt-fed-lap running 64-bit unknown
 | Command      : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
 | Design       : NexysA7_Top
@@ -165,27 +165,28 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+-----------------------------+------+
-|           Ref Name          | Used |
-+-----------------------------+------+
-| RISC_V_rst_clk_wiz_1_100M_0 |    1 |
-| RISC_V_reset_inv_0_0        |    1 |
-| RISC_V_microblaze_riscv_0_0 |    1 |
-| RISC_V_mdm_1_0              |    1 |
-| RISC_V_lmb_bram_0           |    1 |
-| RISC_V_ilmb_v10_0           |    1 |
-| RISC_V_ilmb_bram_if_cntlr_0 |    1 |
-| RISC_V_dlmb_v10_0           |    1 |
-| RISC_V_dlmb_bram_if_cntlr_0 |    1 |
-| RISC_V_clk_wiz_1_0          |    1 |
-| RISC_V_blk_mem_gen_0_0      |    1 |
-| RISC_V_axi_uartlite_0_0     |    1 |
-| RISC_V_axi_smc_0            |    1 |
-| RISC_V_axi_gpio_1_0         |    1 |
-| RISC_V_axi_gpio_0_0         |    1 |
-| RISC_V_axi_bram_ctrl_0_0    |    1 |
-| RISC_V_BRAMEater_0_0        |    1 |
-+-----------------------------+------+
++-------------------------------+------+
+|            Ref Name           | Used |
++-------------------------------+------+
+| RISC_V_rst_clk_wiz_1_100M_0   |    1 |
+| RISC_V_reset_inv_0_0          |    1 |
+| RISC_V_microblaze_riscv_0_0   |    1 |
+| RISC_V_mdm_1_0                |    1 |
+| RISC_V_lmb_bram_0             |    1 |
+| RISC_V_ilmb_v10_0             |    1 |
+| RISC_V_ilmb_bram_if_cntlr_0   |    1 |
+| RISC_V_dlmb_v10_0             |    1 |
+| RISC_V_dlmb_bram_if_cntlr_0   |    1 |
+| RISC_V_clk_wiz_1_0            |    1 |
+| RISC_V_blk_mem_gen_0_0        |    1 |
+| RISC_V_axi_uartlite_0_0       |    1 |
+| RISC_V_axi_smc_0              |    1 |
+| RISC_V_axi_gpio_1_0           |    1 |
+| RISC_V_axi_gpio_0_0           |    1 |
+| RISC_V_axi_bram_ctrl_0_0      |    1 |
+| RISC_V_BRAMEater_0_0          |    1 |
+| RISC_V_BRAMAddressDivider_0_0 |    1 |
++-------------------------------+------+
 
 
 9. Instantiated Netlists

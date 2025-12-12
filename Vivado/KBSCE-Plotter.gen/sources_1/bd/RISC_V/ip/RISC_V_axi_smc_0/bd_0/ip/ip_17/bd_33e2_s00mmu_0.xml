@@ -1427,7 +1427,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a8ba3751</spirit:value>
+            <spirit:value>9:d927e171</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1450,7 +1450,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d928e8a2</spirit:value>
+            <spirit:value>9:396f9d9b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1466,11 +1466,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 11 17:40:27 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 09:46:18 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d928e8a2</spirit:value>
+            <spirit:value>9:396f9d9b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1493,7 +1493,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a8ba3751</spirit:value>
+            <spirit:value>9:d927e171</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1509,11 +1509,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 11 17:40:27 UTC 2025</spirit:value>
+            <spirit:value>Fri Dec 12 09:46:18 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a8ba3751</spirit:value>
+            <spirit:value>9:d927e171</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3673,7 +3673,7 @@
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SIZE_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_SIZE_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SIZE_ARRAY" spirit:bitStringLength="128">0x00000015000000100000001000000010</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SIZE_ARRAY" spirit:bitStringLength="128">0x00000015000000100000000700000007</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SEP_ROUTE_ARRAY</spirit:name>
@@ -4132,7 +4132,7 @@
     <spirit:parameter>
       <spirit:name>SEG000_SIZE</spirit:name>
       <spirit:displayName>SEG000_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG000_SIZE">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG000_SIZE">7</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG000_SEP_ROUTE</spirit:name>
@@ -4167,7 +4167,7 @@
     <spirit:parameter>
       <spirit:name>SEG001_SIZE</spirit:name>
       <spirit:displayName>SEG001_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_SIZE">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_SIZE">7</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG001_SEP_ROUTE</spirit:name>

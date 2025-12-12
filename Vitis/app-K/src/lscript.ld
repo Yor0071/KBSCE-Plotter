@@ -3,7 +3,7 @@
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
-_STACK_SIZE = DEFINED(_STACK_SIZE) ? _STACK_SIZE : 0x400;
+_STACK_SIZE = DEFINED(_STACK_SIZE) ? _STACK_SIZE : 0x800;
 _HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 0x800;
 
 /* Define Memories in the system */
@@ -12,7 +12,8 @@ MEMORY
 {
 	axi_bram_ctrl_0_memory_0 : ORIGIN = 0xc0000000, LENGTH = 0x1000000
 	microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory_0 : ORIGIN = 0x0, LENGTH = 0x10000
-}
+	uart : ORIGIN = 0x40600000, LENGTH = 0xFFFF
+ }
 
 /* Specify the default entry point to the program */
 

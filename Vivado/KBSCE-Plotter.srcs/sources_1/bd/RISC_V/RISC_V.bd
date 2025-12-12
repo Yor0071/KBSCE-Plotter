@@ -29,7 +29,8 @@
       "reset_inv_0": "",
       "blk_mem_gen_0": "",
       "axi_bram_ctrl_0": "",
-      "BRAMEater_0": ""
+      "BRAMEater_0": "",
+      "BRAMAddressDivider_0": ""
     },
     "interface_ports": {
       "LED": {
@@ -289,6 +290,9 @@
           },
           "C_I_LMB": {
             "value": "1"
+          },
+          "C_USE_COMPRESSION": {
+            "value": "1"
           }
         },
         "interface_ports": {
@@ -367,7 +371,7 @@
         },
         "hdl_attributes": {
           "BMM_INFO_PROCESSOR": {
-            "value": "riscv > RISC_V microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr RISC_V axi_bram_ctrl_0",
+            "value": "riscv > RISC_V microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr",
             "value_src": "default"
           },
           "KEEP_HIERARCHY": {
@@ -1065,9 +1069,144 @@
             }
           }
         }
+      },
+      "BRAMAddressDivider_0": {
+        "vlnv": "xilinx.com:module_ref:BRAMAddressDivider:1.0",
+        "ip_revision": "1",
+        "xci_name": "RISC_V_BRAMAddressDivider_0_0",
+        "xci_path": "ip/RISC_V_BRAMAddressDivider_0_0/RISC_V_BRAMAddressDivider_0_0.xci",
+        "inst_hier_path": "BRAMAddressDivider_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BRAMAddressDivider",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "BRAM_PORT_IN": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "constant"
+              },
+              "MEM_SIZE": {
+                "value": "2097152",
+                "value_src": "ip_prop"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "ip_prop"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "user_prop"
+              },
+              "READ_LATENCY": {
+                "value": "2",
+                "value_src": "user_prop"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_in_en",
+                "direction": "I"
+              },
+              "DOUT": {
+                "physical_name": "bram_in_dout",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_in_din",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_in_we",
+                "direction": "I",
+                "left": "0",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "bram_in_addr",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_in_clk",
+                "direction": "I"
+              },
+              "RST": {
+                "physical_name": "bram_in_rst",
+                "direction": "I"
+              }
+            }
+          },
+          "BRAM_PORT_OUT": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_out_en",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "bram_out_dout",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_out_din",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_out_we",
+                "direction": "O",
+                "left": "0",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "bram_out_addr",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_out_clk",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "bram_out_rst",
+                "direction": "O"
+              }
+            }
+          }
+        }
       }
     },
     "interface_nets": {
+      "BRAMAddressDivider_0_BRAM_PORT_OUT": {
+        "interface_ports": [
+          "BRAMAddressDivider_0/BRAM_PORT_OUT",
+          "blk_mem_gen_0/BRAM_PORTB"
+        ]
+      },
       "BRAM_PORTA_1_1": {
         "interface_ports": [
           "BRAM_PORT_VGA",
@@ -1083,7 +1222,7 @@
       "axi_bram_ctrl_0_BRAM_PORTA": {
         "interface_ports": [
           "axi_bram_ctrl_0/BRAM_PORTA",
-          "blk_mem_gen_0/BRAM_PORTB"
+          "BRAMAddressDivider_0/BRAM_PORT_IN"
         ]
       },
       "axi_gpio_0_GPIO": {
@@ -1234,12 +1373,12 @@
               "SEG_axi_gpio_leds_Reg": {
                 "address_block": "/axi_gpio_leds/S_AXI/Reg",
                 "offset": "0x40000000",
-                "range": "64K"
+                "range": "128"
               },
               "SEG_axi_gpio_switches_Reg": {
                 "address_block": "/axi_gpio_switches/S_AXI/Reg",
                 "offset": "0x40010000",
-                "range": "64K"
+                "range": "128"
               },
               "SEG_axi_uartlite_0_Reg": {
                 "address_block": "/axi_uartlite_0/S_AXI/Reg",
