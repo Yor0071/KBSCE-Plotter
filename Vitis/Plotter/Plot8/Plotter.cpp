@@ -123,3 +123,20 @@ void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
 
     motors.stop_motors();
 }
+
+void Plotter::drawPath(const Vec2* path, uint32_t length, uint8_t speed)
+{
+    if (path == nullptr || length == 0) return;
+
+    for (uint32_t i = 0; i < length; i++)
+    {
+        // xil_printf("[PATH] %lu -> (%ld,%ld)\r\n",
+        //            (unsigned long)i, (long)path[i].x, (long)path[i].y);
+
+        moveTo(path[i].x, path[i].y, speed);
+        usleep(500);
+        // int32_t cx, cy;
+        // encoders.getXY(cx, cy);
+        // xil_printf("[PATH] reached (%ld,%ld)\r\n\r\n", (long)cx, (long)cy);
+    }
+}

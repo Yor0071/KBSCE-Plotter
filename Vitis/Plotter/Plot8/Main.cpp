@@ -11,6 +11,28 @@ extern "C" {
 #include "Plotter.h"
 #include "ov7670_i2c.h"
 
+// Dummy vector array (square)
+static const Vec2 square[] = 
+{
+    {2000,1500},
+    {1962,1691},
+    {1854,1854},
+    {1691,1962},
+    {1500,2000},
+    {1309,1962},
+    {1146,1854},
+    {1038,1691},
+    {1000,1500},
+    {1038,1309},
+    {1146,1146},
+    {1309,1038},
+    {1500,1000},
+    {1691,1038},
+    {1854,1146},
+    {1962,1309},
+    {2000,1500}
+};
+
 // -------- seriële helper ----------
 
 static int readline(char *buf, int maxlen) {
@@ -50,44 +72,7 @@ static void print_position() {
 
 // -------- commandos --------
 
-// oude stijl: x,+1 / y,-1 / z,+1 : 1s lang rijden
-static void handle_step_command(const char *cmd) {
-    char axis = cmd[0];
-    if (cmd[1] != ',') { xil_printf("fmt err\r\n"); return; }
-    char sign = cmd[2];
-    if (sign != '+' && sign != '-') { xil_printf("sgn err\r\n"); return; }
-
-    int seconds = atoi(&cmd[3]);
-    if (seconds <= 0) seconds = 1;
-
-    bool forward = (sign == '+');
-
-    xil_printf("mv %c %c %d\r\n", axis, forward ? '+' : '-', seconds);
-
-    for (int s = 0; s < seconds; ++s) {
-        switch (axis) {
-        case 'x': case 'X':
-            plotter.enc(); // niks, alleen om het te linken
-            plotter.enc(); // (mag weg, maar schaadt niet)
-            // directe motor calls:
-            // (Plotter heeft geen eigen 1D-move, dus via Motor class)
-            // maar je kunt hier ook gewoon plotter.moveTo(..) gebruiken.
-            break;
-        case 'y': case 'Y':
-            break;
-        case 'z': case 'Z':
-            break;
-        default:
-            xil_printf("axis?\r\n");
-            return;
-        }
-    }
-
-    xil_printf("ok\r\n");
-    print_position();
-}
-
-// nieuw: goto: "g,X,Y" bv: g,1000,2000
+// goto: "g,X,Y" bv: g,1000,2000
 static void handle_goto_command(const char *cmd) {
     // verwacht "g,<x>,<y>"
     // zoek eerste komma
@@ -140,15 +125,21 @@ int main() {
 
     static char line[64];
 
-    while (1) {
+    while (1) 
+    {
         xil_printf("> ");
         int n = readline(line, sizeof(line));
         if (n <= 0) continue;
 
-        if (line[0] == 'g' || line[0] == 'G') {
+        if (line[0] == 'g' || line[0] == 'G') 
+        {
             handle_goto_command(line);
-        } else {
-            handle_step_command(line);
+        } 
+        else if (line[0] == 's') 
+        {
+            xil_printf("Drawing square\r\n");
+            plotter.drawPath(square, sizeof(square)/sizeof(square[0]), 175);
+            xil_printf("Done square\r\n");
         }
     }
 
