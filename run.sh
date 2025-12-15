@@ -6,6 +6,7 @@ make
 if [ $? != 0 ]; then
     exit $?
 fi
+echo
 
 # assumes we are in build directory
 function run_algorithm {
@@ -13,6 +14,10 @@ function run_algorithm {
     echo -e "Algorithm: $1 ${time_output}\n"
     python3 ../py/fb_to_png.py ${1}fb ${1}.png
 }
+
+echo "== SIZE"
+size CMakeFiles/app.dir/src/algo_*.cpp.o
+echo
 
 echo "== RUNNING"
 run_algorithm CANNY \
