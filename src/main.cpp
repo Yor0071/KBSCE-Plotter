@@ -7,6 +7,10 @@
 #include "framebuffer.hxx"
 #include "mock_framebuffer.hxx"
 #include "algorithm.hxx"
+#include "algo_canny.hxx"
+#include "algo_sobel.hxx"
+#include "algo_prewitt.hxx"
+#include "algo_roberts.hxx"
 
 std::function<FB::pixel_t(FB::Framebuffer&,FB::screen_point_t)> get_function_instance(AlgoType algorithm_type) noexcept;
 
