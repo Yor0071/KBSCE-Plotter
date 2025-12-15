@@ -1,0 +1,12 @@
+# Build
+bin/
+obj/
+.cache/
+build/
+
+# Editor
+.zed/
+.vscode/
+
+# Framebuffer output file
+output_fb
