@@ -31,7 +31,7 @@ void Framebuffer::write(screen_point_t point, pixel_t pixel) const noexcept {
     };
 }
 
-[[nodiscard]] inline bool Framebuffer::is_in_bounds(screen_point_t point) const noexcept {
+[[nodiscard]] bool Framebuffer::is_in_bounds(screen_point_t point) const noexcept {
     return point.x < WIDTH && point.y < HEIGHT;
 }
 

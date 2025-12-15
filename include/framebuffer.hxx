@@ -43,7 +43,7 @@ public:
 
     virtual void write(screen_point_t point, pixel_t pixel) const noexcept;
     [[nodiscard]] virtual pixel_t read(screen_point_t point) const noexcept;
-    [[nodiscard]] inline bool is_in_bounds(screen_point_t point) const noexcept;
+    [[nodiscard]] bool is_in_bounds(screen_point_t point) const noexcept;
 };
 
 }

@@ -1,10 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <functional>
+#include <utility>
 
+#include "framebuffer.hxx"
 #include "mock_framebuffer.hxx"
-#include "roberts.hxx"
 #include "algorithm.hxx"
+
+std::function<FB::pixel_t(FB::Framebuffer&,FB::screen_point_t)> get_function_instance(AlgoType algorithm_type) noexcept;
 
 int main(int argc, char** argv) {
     FB::pixel_t input_fb[FB::MockFramebuffer::HEIGHT][FB::MockFramebuffer::WIDTH];
@@ -22,15 +26,27 @@ int main(int argc, char** argv) {
 
     std::string algorithm_name{argv[3]};
     AlgoType algo = to_algo_type(algorithm_name);
+    auto algo_fun = get_function_instance(algo);
 
-    // copy over temporarily
-    for (uint64_t y = 0; y < FB::MockFramebuffer::HEIGHT; y++) {
-        for (uint64_t x = 0; x < FB::MockFramebuffer::WIDTH; x++) {
-            output_fb[y][x] = input_fb[y][x];
+    for (uint16_t y = 0; y < FB::MockFramebuffer::HEIGHT; y++) {
+        for (uint16_t x = 0; x < FB::MockFramebuffer::WIDTH; x++) {
+            FB::screen_point_t point = { .x = x, .y = y };
+            fb.write(point, algo_fun(fb, point));
         }
     }
 
     std::ofstream output_fb_file(argv[2], std::ios::binary);
     output_fb_file.write(reinterpret_cast<char*>(output_fb), sizeof(output_fb));
     return EXIT_SUCCESS;
+}
+
+std::function<FB::pixel_t(FB::Framebuffer&,FB::screen_point_t)> get_function_instance(AlgoType algorithm_type) noexcept {
+    switch (algorithm_type) {
+        case AlgoType::CANNY:   return canny_process_pixel;
+        case AlgoType::SOBEL:   return sobel_process_pixel;
+        case AlgoType::PREWITT: return prewitt_process_pixel;
+        case AlgoType::ROBERTS: return roberts_process_pixel;
+    }
+
+    std::unreachable();
 }
