@@ -12,8 +12,10 @@
 namespace FB {
 
 typedef struct {
-    const uint16_t x, y;
+    uint16_t x, y;
 } screen_point_t;
+
+screen_point_t offset(screen_point_t point, uint16_t x, uint16_t y) noexcept;
 
 typedef union {
     struct __attribute__((__packed__)) {
@@ -26,6 +28,9 @@ typedef union {
         uint32_t r : 4;
     };
 } pixel_t;
+
+[[nodiscard]] uint16_t intensity(pixel_t pixel) noexcept;
+[[nodiscard]] pixel_t from_intensity(uint16_t intensity) noexcept;
 
 class Framebuffer {
 private:

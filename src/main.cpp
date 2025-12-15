@@ -24,6 +24,11 @@ int main(int argc, char** argv) {
     }
 
     std::ifstream input_fb_file(argv[1], std::ios::binary);
+    if (!input_fb_file) {
+        std::cerr << "Failed to open file: " << argv[1] << std::endl;
+        return EXIT_FAILURE;
+    }
+
     input_fb_file.read(reinterpret_cast<char*>(input_fb), sizeof(input_fb));
 
     FB::MockFramebuffer fb(input_fb, output_fb);
@@ -35,11 +40,17 @@ int main(int argc, char** argv) {
     for (uint16_t y = 0; y < FB::MockFramebuffer::HEIGHT; y++) {
         for (uint16_t x = 0; x < FB::MockFramebuffer::WIDTH; x++) {
             FB::screen_point_t point = { .x = x, .y = y };
-            fb.write(point, algo_fun(fb, point));
+            FB::pixel_t p = algo_fun(fb, point);
+            fb.write(point, p);
         }
     }
 
     std::ofstream output_fb_file(argv[2], std::ios::binary);
+    if (!output_fb_file) {
+        std::cerr << "Failed to open file: " << argv[2] << std::endl;
+        return EXIT_FAILURE;
+    }
+
     output_fb_file.write(reinterpret_cast<char*>(output_fb), sizeof(output_fb));
     return EXIT_SUCCESS;
 }

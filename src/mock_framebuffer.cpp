@@ -15,7 +15,7 @@ void FB::MockFramebuffer::write(screen_point_t point, pixel_t pixel) const noexc
 [[nodiscard]] FB::pixel_t FB::MockFramebuffer::read(screen_point_t point) const noexcept {
     if (!is_in_bounds(point)) {
         std::cerr << "Out of bounds access: [" << point.y << ',' << point.x << "]\n";
-        std::abort();
+        return { .raw = 0 };
     }
 
     return input_fb[point.y][point.x];

@@ -2,6 +2,21 @@
 
 namespace FB {
 
+[[nodiscard]] uint16_t intensity(pixel_t pixel) noexcept {
+    return pixel.r + pixel.g + pixel.b;
+}
+
+[[nodiscard]] pixel_t from_intensity(uint16_t intensity) noexcept {
+    return { .b = uint16_t(intensity / 3), .g = uint16_t(intensity / 3), .r = uint16_t(intensity / 3) };
+}
+
+screen_point_t offset(screen_point_t point, uint16_t x, uint16_t y) noexcept {
+    return {
+        .x = static_cast<uint16_t>(point.x + x),
+        .y = static_cast<uint16_t>(point.y + y),
+    };
+}
+
 Framebuffer::Framebuffer() noexcept
     : base_ptr{reinterpret_cast<volatile uint32_t*>(XPAR_AXI_BRAM_CTRL_0_BASEADDR)} {}
 
