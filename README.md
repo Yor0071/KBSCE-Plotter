@@ -6,7 +6,9 @@ In de build directory:
 `make`
 
 Uitvoeren:
-`./app input_fb output_fb`
+`chmod +x ./run.sh && ./run.sh`
+
+Dit voert elke algoritme uit en stopt het als `algo.png` in de build directory
 
 # Python
 Om een plaatje om te zetten naar een framebuffer of andersom
