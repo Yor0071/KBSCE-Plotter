@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import sys
+
 import numpy as np
 from PIL import Image
 
@@ -6,8 +8,12 @@ from PIL import Image
 WIDTH = 640
 HEIGHT = 480
 
-input_image_file = "image.jpg"  # Image to convert to fb
-output_fb_file = "../build/input_fb"
+if len(sys.argv) != 3:
+    print(f"Usage: {sys.argv[0]} <input_image> <result_fb>")
+    exit(-1)
+
+input_image_file = sys.argv[1]
+output_fb_file = sys.argv[2]
 
 # Load image
 img = Image.open(input_image_file).convert("RGB")

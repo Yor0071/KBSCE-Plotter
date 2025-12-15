@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import sys
+
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
@@ -7,7 +9,11 @@ from PIL import Image
 WIDTH = 640
 HEIGHT = 480
 
-input_fb_file = "../build/output_fb"
+if len(sys.argv) != 3:
+    print(f"Usage: {sys.argv[0]} <input_fb> <result_image>")
+    exit(-1)
+
+input_fb_file = sys.argv[1]
 
 fb = np.fromfile(input_fb_file, dtype=np.uint16)
 fb = fb.reshape((HEIGHT, WIDTH))
@@ -24,7 +30,7 @@ b8 = (b4 * 17).astype(np.uint8)
 img_data = np.stack([r8, g8, b8], axis=-1)
 
 img = Image.fromarray(img_data, mode="RGB")
-img.save("output_fb.png")
+img.save(sys.argv[2])
 
 plt.imshow(img)
 plt.axis("off")
