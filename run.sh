@@ -25,3 +25,5 @@ run_algorithm CANNY \
 & run_algorithm SOBEL \
 & run_algorithm PREWITT \
 & run_algorithm ROBERTS
+
+wait # wait for parallel processes
