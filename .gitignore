@@ -8,5 +8,6 @@ build/
 .zed/
 .vscode/
 
-# Framebuffer output file
+# Big framebuffer files
 output_fb
+input_fb
