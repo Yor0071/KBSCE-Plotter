@@ -32,6 +32,7 @@ img_data = np.stack([r8, g8, b8], axis=-1)
 img = Image.fromarray(img_data, mode="RGB")
 img.save(sys.argv[2])
 
-plt.imshow(img)
-plt.axis("off")
-plt.show()
+## temporarily disable plotter so it can be used as a command
+# plt.imshow(img)
+# plt.axis("off")
+# plt.show()

@@ -8,8 +8,8 @@ int main(int argc, char** argv) {
     FB::pixel_t input_fb[FB::MockFramebuffer::HEIGHT][FB::MockFramebuffer::WIDTH];
     FB::pixel_t output_fb[FB::MockFramebuffer::HEIGHT][FB::MockFramebuffer::WIDTH];
 
-    if (argc != 3) {
-        std::cerr << "Usage: " << argv[0] << " <input_fb_file> <output_fb_file>\n";
+    if (argc != 4) {
+        std::cerr << "Usage: " << argv[0] << " <input_fb_file> <output_fb_file> ALGORITHM_TYPE\n\tALGORITHM_TYPE: CANNY SOBEL PREWITT ROBERTS\n";
         return EXIT_FAILURE;
     }
 
