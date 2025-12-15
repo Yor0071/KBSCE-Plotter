@@ -23,7 +23,7 @@ int32_t canny_gaussian_for_pixel(Framebuffer& fb, screen_point_t point) noexcept
     return result_blurred / 159;
 }
 
-pixel_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
+uint32_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     int32_t NW = canny_gaussian_for_pixel(fb, offset(point, -1, -1));
     int32_t N  = canny_gaussian_for_pixel(fb, offset(point, 0, -1));
     int32_t NE = canny_gaussian_for_pixel(fb, offset(point, 1, -1));
@@ -43,5 +43,5 @@ pixel_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
 
     // 180^2 + 180^2 = 64800, sqrt(64800) approx 255
     // 255 / 45 approx 0.703
-    return from_intensity(I / 5.66);
+    return I / 5.66;
 }

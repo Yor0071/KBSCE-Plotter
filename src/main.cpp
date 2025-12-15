@@ -12,7 +12,7 @@
 #include "algo_prewitt.hxx"
 #include "algo_roberts.hxx"
 
-std::function<FB::pixel_t(FB::Framebuffer&,FB::screen_point_t)> get_function_instance(AlgoType algorithm_type) noexcept;
+std::function<uint32_t(FB::Framebuffer&,FB::screen_point_t)> get_function_instance(AlgoType algorithm_type) noexcept;
 
 int main(int argc, char** argv) {
     FB::pixel_t input_fb[FB::MockFramebuffer::HEIGHT][FB::MockFramebuffer::WIDTH];
@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
     for (uint16_t y = 0; y < FB::MockFramebuffer::HEIGHT; y++) {
         for (uint16_t x = 0; x < FB::MockFramebuffer::WIDTH; x++) {
             FB::screen_point_t point = { .x = x, .y = y };
-            FB::pixel_t p = algo_fun(fb, point);
+            FB::pixel_t p = FB::from_intensity(algo_fun(fb, point));
             fb.write(point, p);
         }
     }
@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
     return EXIT_SUCCESS;
 }
 
-std::function<FB::pixel_t(FB::Framebuffer&,FB::screen_point_t)> get_function_instance(AlgoType algorithm_type) noexcept {
+std::function<uint32_t(FB::Framebuffer&,FB::screen_point_t)> get_function_instance(AlgoType algorithm_type) noexcept {
     switch (algorithm_type) {
         case AlgoType::CANNY:   return canny_process_pixel;
         case AlgoType::SOBEL:   return sobel_process_pixel;

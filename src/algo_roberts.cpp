@@ -2,7 +2,7 @@
 
 using namespace FB;
 
-pixel_t roberts_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
+uint32_t roberts_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     pixel_t pixel = fb.read(point);
 
     int32_t G_x = intensity(pixel) - intensity(fb.read(offset(point, 1, 1)));
@@ -12,5 +12,5 @@ pixel_t roberts_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
 
     // 45^2 + 45^2 = 4050, sqrt(4050) approx 64
     // 45 / 64 approx 0.703
-    return from_intensity(I * 0.703);
+    return I * 0.703;
 }
