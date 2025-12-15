@@ -8,7 +8,7 @@ pixel_t roberts_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     int32_t G_x = intensity(pixel) - intensity(fb.read(offset(point, 1, 1)));
     int32_t G_y = intensity(fb.read(offset(point, 1, 1))) - intensity(fb.read(offset(point, 1, 1)));
 
-    uint32_t I = std::sqrt(G_x * G_x + G_y * G_y);
+    double I = std::sqrt(G_x * G_x + G_y * G_y);
 
     // 45^2 + 45^2 = 4050, sqrt(4050) approx 64
     // 45 / 64 approx 0.703
