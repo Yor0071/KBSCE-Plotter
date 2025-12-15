@@ -16,14 +16,14 @@ typedef struct {
 } screen_point_t;
 
 typedef union {
-    struct {
-        uint16_t raw : 12;
+    struct __attribute__((__packed__)) {
+        uint32_t raw : 12;
     };
 
-    struct {
-        uint16_t b : 4;
-        uint16_t g : 4;
-        uint16_t r : 4;
+    struct __attribute__((__packed__)) {
+        uint32_t b : 4;
+        uint32_t g : 4;
+        uint32_t r : 4;
     };
 } pixel_t;
 
