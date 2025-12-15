@@ -3,6 +3,8 @@
 #include <cstdlib>
 
 #include "mock_framebuffer.hxx"
+#include "roberts.hxx"
+#include "algorithm.hxx"
 
 int main(int argc, char** argv) {
     FB::pixel_t input_fb[FB::MockFramebuffer::HEIGHT][FB::MockFramebuffer::WIDTH];
@@ -17,6 +19,9 @@ int main(int argc, char** argv) {
     input_fb_file.read(reinterpret_cast<char*>(input_fb), sizeof(input_fb));
 
     FB::MockFramebuffer fb(input_fb, output_fb);
+
+    std::string algorithm_name{argv[3]};
+    AlgoType algo = to_algo_type(algorithm_name);
 
     // copy over temporarily
     for (uint64_t y = 0; y < FB::MockFramebuffer::HEIGHT; y++) {
