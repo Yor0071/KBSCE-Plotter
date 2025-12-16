@@ -11,6 +11,81 @@ extern "C" {
 #include "Plotter.h"
 #include "ov7670_i2c.h"
 
+// Dummy vector array (square)
+static const Vec2 square[] = 
+{
+    // {2250,3750} -> {2680,2680}
+    {2250,3750},
+    {2336,3536},
+    {2422,3322},
+    {2508,3108},
+    {2594,2894},
+    {2680,2680},
+
+    // {2680,2680} -> {3750,2680}
+    {2894,2680},
+    {3108,2680},
+    {3322,2680},
+    {3536,2680},
+    {3750,2680},
+
+    // {3750,2680} -> {2900,2150}
+    {3580,2574},
+    {3410,2468},
+    {3240,2362},
+    {3070,2256},
+    {2900,2150},
+
+    // {2900,2150} -> {3250,900}
+    {2970,1900},
+    {3040,1650},
+    {3110,1400},
+    {3180,1150},
+    {3250, 900},
+
+    // {3250,900} -> {2250,1600}
+    {3050,1040},
+    {2850,1180},
+    {2650,1320},
+    {2450,1460},
+    {2250,1600},
+
+    // {2250,1600} -> {1250,900}
+    {2050,1460},
+    {1850,1320},
+    {1650,1180},
+    {1450,1040},
+    {1250, 900},
+
+    // {1250,900} -> {1600,2150}
+    {1320,1150},
+    {1390,1400},
+    {1460,1650},
+    {1530,1900},
+    {1600,2150},
+
+    // {1600,2150} -> {750,2680}
+    {1430,2256},
+    {1260,2362},
+    {1090,2468},
+    { 920,2574},
+    { 750,2680},
+
+    // {750,2680} -> {1820,2680}
+    { 964,2680},
+    {1178,2680},
+    {1392,2680},
+    {1606,2680},
+    {1820,2680},
+
+    // {1820,2680} -> {2250,3750}
+    {1906,2894},
+    {1992,3108},
+    {2078,3322},
+    {2164,3536},
+    {2250,3750}
+};
+
 // -------- seriële helper ----------
 
 static int readline(char *buf, int maxlen) {
@@ -50,44 +125,7 @@ static void print_position() {
 
 // -------- commandos --------
 
-// oude stijl: x,+1 / y,-1 / z,+1 : 1s lang rijden
-static void handle_step_command(const char *cmd) {
-    char axis = cmd[0];
-    if (cmd[1] != ',') { xil_printf("fmt err\r\n"); return; }
-    char sign = cmd[2];
-    if (sign != '+' && sign != '-') { xil_printf("sgn err\r\n"); return; }
-
-    int seconds = atoi(&cmd[3]);
-    if (seconds <= 0) seconds = 1;
-
-    bool forward = (sign == '+');
-
-    xil_printf("mv %c %c %d\r\n", axis, forward ? '+' : '-', seconds);
-
-    for (int s = 0; s < seconds; ++s) {
-        switch (axis) {
-        case 'x': case 'X':
-            plotter.enc(); // niks, alleen om het te linken
-            plotter.enc(); // (mag weg, maar schaadt niet)
-            // directe motor calls:
-            // (Plotter heeft geen eigen 1D-move, dus via Motor class)
-            // maar je kunt hier ook gewoon plotter.moveTo(..) gebruiken.
-            break;
-        case 'y': case 'Y':
-            break;
-        case 'z': case 'Z':
-            break;
-        default:
-            xil_printf("axis?\r\n");
-            return;
-        }
-    }
-
-    xil_printf("ok\r\n");
-    print_position();
-}
-
-// nieuw: goto: "g,X,Y" bv: g,1000,2000
+// goto: "g,X,Y" bv: g,1000,2000
 static void handle_goto_command(const char *cmd) {
     // verwacht "g,<x>,<y>"
     // zoek eerste komma
@@ -114,15 +152,15 @@ int main() {
 
     // ===== OV7670 + I2C initialisatie =====
     xil_printf("Starting OV7670 initialization...\r\n");
-    int Status = Ov7670_Init();
-    if (Status == XST_SUCCESS) {
-        // xil_printf("OV7670 init OK.\r\n");
-    } else {
-        // xil_printf("OV7670 init FAILED! (Status = %d)\r\n", Status);
-        // while (1) {
-            // stil blijven hangen als de camera/I2C init faalt
-        // }
-    }
+    // int Status = Ov7670_Init();
+    // if (Status == XST_SUCCESS) {
+    //     // xil_printf("OV7670 init OK.\r\n");
+    // } else {
+    //     // xil_printf("OV7670 init FAILED! (Status = %d)\r\n", Status);
+    //     // while (1) {
+    //         // stil blijven hangen als de camera/I2C init faalt
+    //     // }
+    // }
     // ======================================
 
     xil_printf("Typ bijv: x,+1 of y,-1 en druk enter\r\n");
@@ -140,15 +178,21 @@ int main() {
 
     static char line[64];
 
-    while (1) {
+    while (1) 
+    {
         xil_printf("> ");
         int n = readline(line, sizeof(line));
         if (n <= 0) continue;
 
-        if (line[0] == 'g' || line[0] == 'G') {
+        if (line[0] == 'g' || line[0] == 'G') 
+        {
             handle_goto_command(line);
-        } else {
-            handle_step_command(line);
+        } 
+        else if (line[0] == 's') 
+        {
+            xil_printf("Drawing square\r\n");
+            plotter.drawPath(square, sizeof(square)/sizeof(square[0]), 225);
+            xil_printf("Done square\r\n");
         }
     }
 
