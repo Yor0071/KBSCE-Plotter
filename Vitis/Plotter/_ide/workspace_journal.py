@@ -1,4 +1,4 @@
-# 2025-12-16T14:25:35.180974800
+# 2025-12-17T14:36:01.304297300
 import vitis
 
 client = vitis.create_client()
@@ -30,85 +30,7 @@ status = platform.build()
 
 comp.build()
 
-status = platform.build()
+vitis.dispose()
 
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-platform = client.get_component(name="Plotform3")
-status = platform.build()
-
-comp = client.get_component(name="Plot8")
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
+vitis.dispose()
 
