@@ -23,7 +23,7 @@ Framebuffer::Framebuffer() noexcept
 
 [[nodiscard]] inline volatile uint32_t* Framebuffer::get_address(screen_point_t point) const noexcept {
     if (!is_in_bounds(point)) [[unlikely]] {
-        xil_printf("E: Out of bounds [%hu,%hu]\n", point.x, point.y);
+        // xil_printf("E: Out of bounds [%hu,%hu]\n", point.x, point.y);
         return base_ptr;
     }
 

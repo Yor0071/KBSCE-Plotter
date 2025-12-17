@@ -159,6 +159,19 @@ static void handle_goto_command(const char *cmd) {
     print_position();
 }
 
+void draw_test() {
+    xil_printf("Drawing to the framebuffer\r\n");
+    FB::Framebuffer fb;
+
+    for (uint16_t y = 0; y < fb.HEIGHT; y++) {
+        for (uint16_t x = 0; x < fb.WIDTH; x++) {
+            fb.write({ .x = x, .y = y }, { .b = 0xF, .g = 0x0, .r = 0x0 });
+        }
+    }
+
+    xil_printf("done\r\n");
+}
+
 // ------------- MAIN --------------
 
 int main() {
@@ -210,6 +223,10 @@ int main() {
         else if (line[0] == 'z' || line[0] == 'Z')
         {
             print_z_only();
+        }
+        else if (line[0] == 'd' || line[0] == 'D')
+        {
+            draw_test();
         }
     }
 
