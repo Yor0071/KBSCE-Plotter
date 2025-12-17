@@ -176,3 +176,100 @@ void Plotter::drawPath(const Vec2* path, uint32_t length, uint8_t speed)
         // xil_printf("[PATH] reached (%ld,%ld)\r\n\r\n", (long)cx, (long)cy);
     }
 }
+
+void Plotter::home(uint8_t speed)
+{
+    const int32_t DEAD_BAND = 1;   // <= 1 tick verschil telt als "niet veranderd"
+    const int STABLE_N = 40;       // aantal keren achter elkaar stil => homed
+    const int MAX_LOOPS = 20000;   // safety: voorkomt eeuwig doorgaan
+
+    if (speed < 130) speed = 130;
+
+    // ---------- HOME Z ----------
+    {
+        int stable = 0;
+        int32_t last = encoders.getZ();
+
+        Motor::move_Z(true, speed);
+
+        for (int i = 0; i < MAX_LOOPS; i++)
+        {
+            usleep(2000);
+
+            int32_t cur = encoders.getZ();
+            int32_t d = cur - last;
+            if (d < 0) d = -d;
+
+            if (d <= DEAD_BAND) stable++;
+            else stable = 0;
+
+            last = cur;
+
+            if (stable >= STABLE_N) break;
+        }
+
+        Motor::stop_Z();
+    }
+
+    // ---------- HOME X ----------
+    {
+        int stable = 0;
+        int32_t last = encoders.getX();
+
+        // richting naar "0": bij jullie is dir_fw=false meestal de andere kant
+        Motor::move_X(false, speed);
+
+        for (int i = 0; i < MAX_LOOPS; i++)
+        {
+            usleep(2000); // 2ms
+
+            int32_t cur = encoders.getX();
+            int32_t d = cur - last;
+            if (d < 0) d = -d;
+
+            if (d <= DEAD_BAND) stable++;
+            else stable = 0;
+
+            last = cur;
+
+            if (stable >= STABLE_N) break;
+        }
+
+        Motor::stop_X();
+    }
+
+    // ---------- HOME Y ----------
+    {
+        int stable = 0;
+        int32_t last = encoders.getY();
+
+        Motor::move_Y(false, speed);
+
+        for (int i = 0; i < MAX_LOOPS; i++)
+        {
+            usleep(2000);
+
+            int32_t cur = encoders.getY();
+            int32_t d = cur - last;
+            if (d < 0) d = -d;
+
+            if (d <= DEAD_BAND) stable++;
+            else stable = 0;
+
+            last = cur;
+
+            if (stable >= STABLE_N) break;
+        }
+
+        Motor::stop_Y();
+    }
+    
+    // Zet huidige “fysieke home” als software (0,0)
+    encoders.setZeroToCurrent();
+
+    // Verplaats nulpunt naar (100,100)
+    moveTo(100, 100, speed);
+    
+    encoders.setZeroToCurrent();
+}
+

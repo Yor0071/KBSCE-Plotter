@@ -20,6 +20,7 @@ public:
     void moveTo(int32_t targetX, int32_t targetY, uint8_t speed);
     void stop();
     void drawPath(const Vec2* path, uint32_t length, uint8_t speed);
+    void home(uint8_t homepwm = 160);
 
     Encoders &enc() { return encoders; }
     const Encoders &enc() const { return encoders; }

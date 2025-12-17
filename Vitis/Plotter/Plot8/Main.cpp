@@ -163,12 +163,11 @@ int main() {
     // }
     // ======================================
 
-    xil_printf("Typ bijv: x,+1 of y,-1 en druk enter\r\n");
-
-
+    xil_printf("Homing plotter\r\n");
+    plotter.home();
+    xil_printf("Plotter homed\r\n");
 
     xil_printf("Plotter ready\r\n");
-    xil_printf("step: x,+1 / y,-1 / z,+1\r\n");
     xil_printf("goto: g,<x>,<y>  (encoder stappen)\r\n");
 
     plotter.init();      // motors uit + software (0,0) zetten
