@@ -1,13 +1,15 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.626016",
-   "Default View_TopLeft":"-174,-137",
+   "Default View_ScaleFactor":"0.733353",
+   "Default View_TopLeft":"323,38",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
 preplace port LED -pg 1 -lvl 10 -x 3270 -y 500 -defaultsOSRD
 preplace port SW -pg 1 -lvl 10 -x 3270 -y 360 -defaultsOSRD
 preplace port usb_uart -pg 1 -lvl 10 -x 3270 -y 660 -defaultsOSRD
+preplace port BRAM_PORT_CAM -pg 1 -lvl 0 -x -10 -y 240 -defaultsOSRD
+preplace port BRAM_PORT_VGA -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
 preplace port IIC_0 -pg 1 -lvl 10 -x 3270 -y 200 -defaultsOSRD
 preplace port BTN -pg 1 -lvl 10 -x 3270 -y 80 -defaultsOSRD
 preplace port port-id_sys_clock -pg 1 -lvl 0 -x -10 -y 790 -defaultsOSRD
@@ -30,8 +32,6 @@ preplace port port-id_m1_in2_0 -pg 1 -lvl 10 -x 3270 -y 840 -defaultsOSRD
 preplace port port-id_m1_in1_0 -pg 1 -lvl 10 -x 3270 -y 820 -defaultsOSRD
 preplace port port-id_enc_y_b_0 -pg 1 -lvl 0 -x -10 -y 910 -defaultsOSRD
 preplace port port-id_m4_in2_0 -pg 1 -lvl 10 -x 3270 -y 960 -defaultsOSRD
-preplace port BRAM_PORT_CAM -pg 1 -lvl 0 -x -10 -y 240 -defaultsOSRD
-preplace port BRAM_PORT_VGA -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
 preplace inst microblaze_riscv_0 -pg 1 -lvl 2 -x 700 -y 560 -defaultsOSRD
 preplace inst microblaze_riscv_0_local_memory -pg 1 -lvl 3 -x 1140 -y 580 -defaultsOSRD
 preplace inst mdm_1 -pg 1 -lvl 1 -x 220 -y 510 -defaultsOSRD
@@ -97,7 +97,7 @@ preplace netloc BRAMAddressDivider_0_BRAM_PORT_OUT 1 5 1 NJ 160
 preplace netloc BRAM_PORTB_0_1 1 0 6 NJ 240 NJ 240 NJ 240 NJ 240 NJ 240 1960J
 preplace netloc BRAMMux_0_BRAM_OUT_PORT_FB 1 6 1 2420 100n
 levelinfo -pg 1 -10 220 700 1140 1460 1780 2190 2570 2830 3120 3270
-pagesize -pg 1 -db -bbox -sgen -180 0 3400 1050
+pagesize -pg 1 -db -bbox -sgen -190 0 3400 1050
 "
 }
 {

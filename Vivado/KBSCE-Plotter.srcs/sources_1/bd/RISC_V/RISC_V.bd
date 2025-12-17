@@ -1437,6 +1437,10 @@
                 "value": "OTHER",
                 "value_src": "constant"
               },
+              "MEM_SIZE": {
+                "value": "2097152",
+                "value_src": "ip_prop"
+              },
               "MEM_WIDTH": {
                 "value": "32",
                 "value_src": "ip_prop"
@@ -1873,6 +1877,11 @@
         "address_spaces": {
           "Data": {
             "segments": {
+              "SEG_axi_bram_ctrl_0_Mem0": {
+                "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
+                "offset": "0xC0000000",
+                "range": "2M"
+              },
               "SEG_axi_gpio_buttons_Reg": {
                 "address_block": "/axi_gpio_buttons/S_AXI/Reg",
                 "offset": "0x40020000",

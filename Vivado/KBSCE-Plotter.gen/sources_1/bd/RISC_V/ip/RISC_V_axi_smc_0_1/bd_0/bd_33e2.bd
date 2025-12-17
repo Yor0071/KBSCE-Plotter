@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7DD3BD2F5D256EE1",
+      "boundary_crc": "0x7C861246125DD00D",
       "design_src": "SBD",
       "device": "xc7a100tcsg324-1",
       "name": "bd_33e2",
@@ -1030,7 +1030,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "15",
+            "value": "21",
             "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
@@ -3901,7 +3901,7 @@
                 "value": "1"
               },
               "NUM_SEG": {
-                "value": "6"
+                "value": "7"
               },
               "NUM_WRITE_OUTSTANDING": {
                 "value": "1"
@@ -4036,6 +4036,27 @@
                 "value": "1"
               },
               "SEG005_SUPPORTS_WRITE": {
+                "value": "1"
+              },
+              "SEG006_BASE_ADDR": {
+                "value": "0x00000000C0000000"
+              },
+              "SEG006_SECURE_READ": {
+                "value": "0"
+              },
+              "SEG006_SECURE_WRITE": {
+                "value": "0"
+              },
+              "SEG006_SEP_ROUTE": {
+                "value": "0b0000000000000000000000000000000000000000000000000000000000000110"
+              },
+              "SEG006_SIZE": {
+                "value": "21"
+              },
+              "SEG006_SUPPORTS_READ": {
+                "value": "1"
+              },
+              "SEG006_SUPPORTS_WRITE": {
                 "value": "1"
               },
               "SINGLE_ISSUING": {
@@ -4254,7 +4275,7 @@
                 "value": "1"
               },
               "NUM_SEG": {
-                "value": "6"
+                "value": "7"
               },
               "NUM_WRITE_OUTSTANDING": {
                 "value": "1"
@@ -4323,6 +4344,15 @@
                 "value": "32"
               },
               "SEP005_WDATA_WIDTH": {
+                "value": "32"
+              },
+              "SEP006_PROTOCOL": {
+                "value": "AXI4"
+              },
+              "SEP006_RDATA_WIDTH": {
+                "value": "32"
+              },
+              "SEP006_WDATA_WIDTH": {
                 "value": "32"
               },
               "SINGLE_ISSUING": {
@@ -13389,7 +13419,7 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "15"
+            "value": "21"
           },
           "AXI_ID_WIDTH": {
             "value": "1"
@@ -14568,7 +14598,7 @@
             "has_run_ip_tcl": "true",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "15"
+                "value": "21"
               },
               "ENABLE_PIPELINING": {
                 "value": "0"
