@@ -165,7 +165,14 @@ void draw_test() {
 
     for (uint16_t y = 0; y < fb.HEIGHT; y++) {
         for (uint16_t x = 0; x < fb.WIDTH; x++) {
-            fb.write({ .x = x, .y = y }, { .b = 0xF, .g = 0x0, .r = 0x0 });
+            FB::pixel_t pixel = { .b = 0, .g = 0, .r = 0xF };
+            if (x > (fb.WIDTH / 3)) {
+                pixel = { .b = 0, .g = 0xF, .r = 0 };
+            } else if (x > (fb.WIDTH / 3 * 2)) {
+                pixel = { .b = 0xF, .g = 0, .r = 0 };
+            }
+
+            fb.write({ .x = x, .y = y }, pixel);
         }
     }
 
