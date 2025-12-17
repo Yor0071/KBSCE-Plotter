@@ -159,24 +159,6 @@ void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
     motors.stop_motors();
 }
 
-
-void Plotter::drawPath(const Vec2* path, uint32_t length, uint8_t speed)
-{
-    if (path == nullptr || length == 0) return;
-
-    for (uint32_t i = 0; i < length; i++)
-    {
-        // xil_printf("[PATH] %lu -> (%ld,%ld)\r\n",
-        //            (unsigned long)i, (long)path[i].x, (long)path[i].y);
-
-        moveTo(path[i].x, path[i].y, speed);
-        //usleep(500);
-        // int32_t cx, cy;
-        // encoders.getXY(cx, cy);
-        // xil_printf("[PATH] reached (%ld,%ld)\r\n\r\n", (long)cx, (long)cy);
-    }
-}
-
 void Plotter::home(uint8_t speed)
 {
     const int32_t DEAD_BAND = 1;   // <= 1 tick verschil telt als "niet veranderd"
@@ -273,3 +255,73 @@ void Plotter::home(uint8_t speed)
     encoders.setZeroToCurrent();
 }
 
+void Plotter::drawPolyline(const PolylineView& line, bool reverse, uint8_t speed)
+{
+    if (!line.pts || line.count == 0) return;
+
+    if(!reverse)
+    {
+        for (uint16_t i = 0; i < line.count; i++)
+        {
+            moveTo(line.pts[i].x, line.pts[i].y, speed);
+        }
+    }
+    else
+    {
+        for (int32_t i = (int32_t)line.count - 1; i >= 0; i--)
+        {
+            moveTo(line.pts[i].x, line.pts[i].y, speed);
+        }
+    }
+}
+
+void Plotter::drawLineArray(const PolylineView* lines, uint16_t lineCount, uint8_t speed)
+{
+    if (!lines || lineCount == 0) return;
+
+    penUp();
+
+    for (uint16_t i = 0; i < lineCount; ++i) {
+        const PolylineView& pl = lines[i];
+        if (!pl.pts || pl.count == 0) continue;
+
+        // Klein liftje (of UP als je zeker wil zijn)
+        penLift();
+
+        // Move naar startpunt met pen omhoog/lift
+        moveTo(pl.pts[0].x, pl.pts[0].y, speed);
+
+        // Pen omlaag en tekenen
+        penDown();
+
+        for (uint16_t k = 1; k < pl.count; ++k) {
+            moveTo(pl.pts[k].x, pl.pts[k].y, speed);
+        }
+    }
+
+    penUp();
+}
+
+void Plotter::moveZTo(int32_t targetZ, uint8_t speed)
+{
+    const int32_t tolerance = 2;       // ticks
+    const uint8_t MIN_PWM_Z = 130;
+    if (speed < MIN_PWM_Z) speed = MIN_PWM_Z;
+
+    while (1) {
+        int32_t curZ = encoders.getZ();           
+        int32_t dz = targetZ - curZ;
+
+        if (dz >= -tolerance && dz <= tolerance) break;
+
+        bool dirUp = (dz > 0);
+        Motor::move_Z(dirUp, speed);               
+        usleep(2000);
+    }
+
+    Motor::stop_Z();                               
+}
+
+void Plotter::penUp(uint8_t speed)   { moveZTo(Z_UP,   speed); }
+void Plotter::penLift(uint8_t speed) { moveZTo(Z_LIFT, speed); }
+void Plotter::penDown(uint8_t speed) { moveZTo(Z_DOWN, speed); }
