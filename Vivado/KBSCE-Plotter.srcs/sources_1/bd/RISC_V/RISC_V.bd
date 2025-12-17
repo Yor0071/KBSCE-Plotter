@@ -411,6 +411,9 @@
           },
           "C_I_LMB": {
             "value": "1"
+          },
+          "C_USE_COMPRESSION": {
+            "value": "1"
           }
         },
         "interface_ports": {
