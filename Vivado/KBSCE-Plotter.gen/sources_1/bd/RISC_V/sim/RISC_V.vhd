@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Wed Dec 17 13:23:22 2025
+--Date        : Wed Dec 17 13:28:16 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
@@ -530,19 +530,19 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity RISC_V is
   port (
-    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTA_1_clk : in STD_LOGIC;
-    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_en : in STD_LOGIC;
-    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTB_0_clk : in STD_LOGIC;
-    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_en : in STD_LOGIC;
-    BRAM_PORTB_0_rst : in STD_LOGIC;
-    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_CAM_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_CAM_clk : in STD_LOGIC;
+    BRAM_PORT_CAM_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_en : in STD_LOGIC;
+    BRAM_PORT_CAM_rst : in STD_LOGIC;
+    BRAM_PORT_CAM_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_VGA_clk : in STD_LOGIC;
+    BRAM_PORT_VGA_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_en : in STD_LOGIC;
+    BRAM_PORT_VGA_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     BTN_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     IIC_0_scl_i : in STD_LOGIC;
     IIC_0_scl_o : out STD_LOGIC;
@@ -1358,11 +1358,11 @@ architecture STRUCTURE of RISC_V is
   attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of microblaze_riscv_0 : label is "yes";
   attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of BRAM_PORTA_1_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 CLK";
-  attribute X_INTERFACE_INFO of BRAM_PORTA_1_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 EN";
-  attribute X_INTERFACE_INFO of BRAM_PORTB_0_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 CLK";
-  attribute X_INTERFACE_INFO of BRAM_PORTB_0_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 EN";
-  attribute X_INTERFACE_INFO of BRAM_PORTB_0_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 RST";
+  attribute X_INTERFACE_INFO of BRAM_PORT_CAM_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_CAM CLK";
+  attribute X_INTERFACE_INFO of BRAM_PORT_CAM_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_CAM EN";
+  attribute X_INTERFACE_INFO of BRAM_PORT_CAM_rst : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_CAM RST";
+  attribute X_INTERFACE_INFO of BRAM_PORT_VGA_clk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_VGA CLK";
+  attribute X_INTERFACE_INFO of BRAM_PORT_VGA_en : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_VGA EN";
   attribute X_INTERFACE_INFO of IIC_0_scl_i : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_I";
   attribute X_INTERFACE_MODE : string;
   attribute X_INTERFACE_MODE of IIC_0_scl_i : signal is "Master";
@@ -1383,18 +1383,18 @@ architecture STRUCTURE of RISC_V is
   attribute X_INTERFACE_INFO of usb_uart_rxd : signal is "xilinx.com:interface:uart:1.0 usb_uart RxD";
   attribute X_INTERFACE_MODE of usb_uart_rxd : signal is "Master";
   attribute X_INTERFACE_INFO of usb_uart_txd : signal is "xilinx.com:interface:uart:1.0 usb_uart TxD";
-  attribute X_INTERFACE_INFO of BRAM_PORTA_1_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 ADDR";
-  attribute X_INTERFACE_MODE of BRAM_PORTA_1_addr : signal is "Slave";
-  attribute X_INTERFACE_PARAMETER of BRAM_PORTA_1_addr : signal is "XIL_INTERFACENAME BRAM_PORTA_1, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 2, READ_WRITE_MODE READ_WRITE";
-  attribute X_INTERFACE_INFO of BRAM_PORTA_1_din : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 DIN";
-  attribute X_INTERFACE_INFO of BRAM_PORTA_1_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 DOUT";
-  attribute X_INTERFACE_INFO of BRAM_PORTA_1_we : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA_1 WE";
-  attribute X_INTERFACE_INFO of BRAM_PORTB_0_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 ADDR";
-  attribute X_INTERFACE_MODE of BRAM_PORTB_0_addr : signal is "Slave";
-  attribute X_INTERFACE_PARAMETER of BRAM_PORTB_0_addr : signal is "XIL_INTERFACENAME BRAM_PORTB_0, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 2, READ_WRITE_MODE READ_WRITE";
-  attribute X_INTERFACE_INFO of BRAM_PORTB_0_din : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 DIN";
-  attribute X_INTERFACE_INFO of BRAM_PORTB_0_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 DOUT";
-  attribute X_INTERFACE_INFO of BRAM_PORTB_0_we : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB_0 WE";
+  attribute X_INTERFACE_INFO of BRAM_PORT_CAM_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_CAM ADDR";
+  attribute X_INTERFACE_MODE of BRAM_PORT_CAM_addr : signal is "Slave";
+  attribute X_INTERFACE_PARAMETER of BRAM_PORT_CAM_addr : signal is "XIL_INTERFACENAME BRAM_PORT_CAM, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 2, READ_WRITE_MODE READ_WRITE";
+  attribute X_INTERFACE_INFO of BRAM_PORT_CAM_din : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_CAM DIN";
+  attribute X_INTERFACE_INFO of BRAM_PORT_CAM_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_CAM DOUT";
+  attribute X_INTERFACE_INFO of BRAM_PORT_CAM_we : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_CAM WE";
+  attribute X_INTERFACE_INFO of BRAM_PORT_VGA_addr : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_VGA ADDR";
+  attribute X_INTERFACE_MODE of BRAM_PORT_VGA_addr : signal is "Slave";
+  attribute X_INTERFACE_PARAMETER of BRAM_PORT_VGA_addr : signal is "XIL_INTERFACENAME BRAM_PORT_VGA, MASTER_TYPE OTHER, MEM_ECC NONE, MEM_SIZE 8192, MEM_WIDTH 32, READ_LATENCY 2, READ_WRITE_MODE READ_WRITE";
+  attribute X_INTERFACE_INFO of BRAM_PORT_VGA_din : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_VGA DIN";
+  attribute X_INTERFACE_INFO of BRAM_PORT_VGA_dout : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_VGA DOUT";
+  attribute X_INTERFACE_INFO of BRAM_PORT_VGA_we : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_VGA WE";
   attribute X_INTERFACE_INFO of BTN_tri_i : signal is "xilinx.com:interface:gpio:1.0 BTN TRI_I";
   attribute X_INTERFACE_MODE of BTN_tri_i : signal is "Master";
   attribute X_INTERFACE_INFO of LED_tri_o : signal is "xilinx.com:interface:gpio:1.0 LED TRI_O";
@@ -1422,13 +1422,13 @@ BRAMAddressDivider_0: component RISC_V_BRAMAddressDivider_0_0
     );
 BRAMMux_0: component RISC_V_BRAMMux_0_0
      port map (
-      s_in_camera_addr(18 downto 0) => BRAM_PORTB_0_addr(18 downto 0),
-      s_in_camera_clk => BRAM_PORTB_0_clk,
-      s_in_camera_din(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
-      s_in_camera_dout(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
-      s_in_camera_en => BRAM_PORTB_0_en,
-      s_in_camera_rst => BRAM_PORTB_0_rst,
-      s_in_camera_we(0) => BRAM_PORTB_0_we(0),
+      s_in_camera_addr(18 downto 0) => BRAM_PORT_CAM_addr(18 downto 0),
+      s_in_camera_clk => BRAM_PORT_CAM_clk,
+      s_in_camera_din(11 downto 0) => BRAM_PORT_CAM_din(11 downto 0),
+      s_in_camera_dout(11 downto 0) => BRAM_PORT_CAM_dout(11 downto 0),
+      s_in_camera_en => BRAM_PORT_CAM_en,
+      s_in_camera_rst => BRAM_PORT_CAM_rst,
+      s_in_camera_we(0) => BRAM_PORT_CAM_we(0),
       s_in_microblaze_addr(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_ADDR(31 downto 0),
       s_in_microblaze_clk => BRAMAddressDivider_0_BRAM_PORT_OUT_CLK,
       s_in_microblaze_din(31 downto 0) => BRAMAddressDivider_0_BRAM_PORT_OUT_DIN(31 downto 0),
@@ -1784,17 +1784,17 @@ axi_uartlite_0: component RISC_V_axi_uartlite_0_0
     );
 blk_mem_gen_0: component RISC_V_blk_mem_gen_0_0
      port map (
-      addra(18 downto 0) => BRAM_PORTA_1_addr(18 downto 0),
+      addra(18 downto 0) => BRAM_PORT_VGA_addr(18 downto 0),
       addrb(18 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_ADDR(18 downto 0),
-      clka => BRAM_PORTA_1_clk,
+      clka => BRAM_PORT_VGA_clk,
       clkb => BRAMMux_0_BRAM_OUT_PORT_FB_CLK,
-      dina(11 downto 0) => BRAM_PORTA_1_din(11 downto 0),
+      dina(11 downto 0) => BRAM_PORT_VGA_din(11 downto 0),
       dinb(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DIN(11 downto 0),
-      douta(11 downto 0) => BRAM_PORTA_1_dout(11 downto 0),
+      douta(11 downto 0) => BRAM_PORT_VGA_dout(11 downto 0),
       doutb(11 downto 0) => BRAMMux_0_BRAM_OUT_PORT_FB_DOUT(11 downto 0),
-      ena => BRAM_PORTA_1_en,
+      ena => BRAM_PORT_VGA_en,
       enb => BRAMMux_0_BRAM_OUT_PORT_FB_EN,
-      wea(0) => BRAM_PORTA_1_we(0),
+      wea(0) => BRAM_PORT_VGA_we(0),
       web(0) => BRAMMux_0_BRAM_OUT_PORT_FB_WE(0)
     );
 clk_wiz_1: component RISC_V_clk_wiz_1_0

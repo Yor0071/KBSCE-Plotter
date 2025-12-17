@@ -8,8 +8,6 @@
 preplace port LED -pg 1 -lvl 10 -x 3270 -y 500 -defaultsOSRD
 preplace port SW -pg 1 -lvl 10 -x 3270 -y 360 -defaultsOSRD
 preplace port usb_uart -pg 1 -lvl 10 -x 3270 -y 660 -defaultsOSRD
-preplace port BRAM_PORTB_0 -pg 1 -lvl 0 -x -10 -y 240 -defaultsOSRD
-preplace port BRAM_PORTA_1 -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
 preplace port IIC_0 -pg 1 -lvl 10 -x 3270 -y 200 -defaultsOSRD
 preplace port BTN -pg 1 -lvl 10 -x 3270 -y 80 -defaultsOSRD
 preplace port port-id_sys_clock -pg 1 -lvl 0 -x -10 -y 790 -defaultsOSRD
@@ -32,6 +30,8 @@ preplace port port-id_m1_in2_0 -pg 1 -lvl 10 -x 3270 -y 840 -defaultsOSRD
 preplace port port-id_m1_in1_0 -pg 1 -lvl 10 -x 3270 -y 820 -defaultsOSRD
 preplace port port-id_enc_y_b_0 -pg 1 -lvl 0 -x -10 -y 910 -defaultsOSRD
 preplace port port-id_m4_in2_0 -pg 1 -lvl 10 -x 3270 -y 960 -defaultsOSRD
+preplace port BRAM_PORT_CAM -pg 1 -lvl 0 -x -10 -y 240 -defaultsOSRD
+preplace port BRAM_PORT_VGA -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
 preplace inst microblaze_riscv_0 -pg 1 -lvl 2 -x 700 -y 560 -defaultsOSRD
 preplace inst microblaze_riscv_0_local_memory -pg 1 -lvl 3 -x 1140 -y 580 -defaultsOSRD
 preplace inst mdm_1 -pg 1 -lvl 1 -x 220 -y 510 -defaultsOSRD

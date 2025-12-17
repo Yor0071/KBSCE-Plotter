@@ -68,12 +68,12 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="14"/>
-    <Option Name="WTModelSimExportSim" Val="14"/>
-    <Option Name="WTQuestaExportSim" Val="14"/>
+    <Option Name="WTXSimExportSim" Val="15"/>
+    <Option Name="WTModelSimExportSim" Val="15"/>
+    <Option Name="WTQuestaExportSim" Val="15"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="1"/>
-    <Option Name="WTRivieraExportSim" Val="14"/>
+    <Option Name="WTVcsExportSim" Val="2"/>
+    <Option Name="WTRivieraExportSim" Val="15"/>
     <Option Name="WTActivehdlExportSim" Val="13"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
@@ -134,9 +134,6 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="RISC_V.bd" FileRelPathName="ip/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0.xci">
           <Proxy FileSetName="RISC_V_axi_iic_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="RISC_V.bd" FileRelPathName="ip/RISC_V_axi_smc_0_3/RISC_V_axi_smc_0.xci">
-          <Proxy FileSetName="RISC_V_axi_smc_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="RISC_V.bd" FileRelPathName="ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0.xci">
           <Proxy FileSetName="RISC_V_axi_uartlite_0_0"/>
@@ -355,12 +352,6 @@
     <FileSet Name="RISC_V_mdm_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/RISC_V_mdm_1_0" RelGenDir="$PGENDIR/RISC_V_mdm_1_0">
       <Config>
         <Option Name="TopModule" Val="RISC_V_mdm_1_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="RISC_V_axi_smc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/RISC_V_axi_smc_0" RelGenDir="$PGENDIR/RISC_V_axi_smc_0">
-      <Config>
-        <Option Name="TopModule" Val="RISC_V_axi_smc_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -588,18 +579,6 @@
     <Run Id="RISC_V_mdm_1_0_synth_1" Type="Ft3:Synth" SrcSet="RISC_V_mdm_1_0" Part="xc7a100tcsg324-1" ConstrsSet="RISC_V_mdm_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/RISC_V_mdm_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/RISC_V_mdm_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/RISC_V_mdm_1_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="RISC_V_axi_smc_0_synth_1" Type="Ft3:Synth" SrcSet="RISC_V_axi_smc_0" Part="xc7a100tcsg324-1" ConstrsSet="RISC_V_axi_smc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/RISC_V_axi_smc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/RISC_V_axi_smc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/RISC_V_axi_smc_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -924,25 +903,6 @@
     <Run Id="RISC_V_mdm_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="RISC_V_mdm_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="RISC_V_mdm_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/RISC_V_mdm_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/RISC_V_mdm_1_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="RISC_V_axi_smc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="RISC_V_axi_smc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="RISC_V_axi_smc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/RISC_V_axi_smc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/RISC_V_axi_smc_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
