@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/xiltimer/src/core
+# Install script for directory: C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/xiltimer/src/core
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Xilinx/2025.1/Vitis/gnu/riscv/nt/riscv64-unknown-elf/bin/riscv64-unknown-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "D:/xlilinx/2025.1/Vitis/gnu/riscv/nt/riscv64-unknown-elf/bin/riscv64-unknown-elf-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/core/default_timer/cmake_install.cmake")
+  include("C:/Users/emmah/Desktop/school/KBS_CE/KBSCE-Plotter/Vitis/Plotter/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/core/default_timer/cmake_install.cmake")
 
 endif()
 

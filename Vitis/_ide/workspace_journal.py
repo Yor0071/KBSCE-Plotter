@@ -1,8 +1,9 @@
-# 2025-12-11T14:56:58.851672900
+# 2025-12-17T10:00:14.899932
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="Vitis")
 
-vitis.dispose()
+platform = client.get_component(name="Plotter")
+status = platform.build()
 

@@ -10,10 +10,10 @@ extern "C" {
 #define ENCODER_BASE XPAR_MOTOR_CTRL_0_BASEADDR
 
 // Encoders
-#define ENCODER_X1_REG  (ENCODER_BASE + 0x10U) // Encoder x1????
-#define ENCODER_X2_REG  (ENCODER_BASE + 0x14U) // Encoder x2????
-#define ENCODER_Y_REG  (ENCODER_BASE + 0x18U) // Encoder y????
-#define ENCODER_Z_REG  (ENCODER_BASE + 0x1CU) // Encoder z????
+#define ENCODER_X1_REG  (ENCODER_BASE + 0x10U) // Encoder x1
+#define ENCODER_X2_REG  (ENCODER_BASE + 0x14U) // Encoder x2
+#define ENCODER_Y_REG  (ENCODER_BASE + 0x18U) // Encoder y
+#define ENCODER_Z_REG  (ENCODER_BASE + 0x1CU) // Encoder z
 
 class Encoders {
 public:

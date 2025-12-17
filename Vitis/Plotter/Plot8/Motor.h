@@ -16,10 +16,10 @@ extern "C"{
 //   slv_reg2 (0x08) = motor Y
 //   slv_reg3 (0x0C) = motor Z
 
-#define MOTOR_X1_REG     (MOTOR_BASE + 0x00U) // 1e motor = X
-#define MOTOR_X2_REG     (MOTOR_BASE + 0x04U) // 2e motor = X2
-#define MOTOR_Y_REG      (MOTOR_BASE + 0x08U) // 3e motor = Y-as
-#define MOTOR_Z_REG      (MOTOR_BASE + 0x0CU) // 4e motor = Z-as
+#define MOTOR_X1_REG     (MOTOR_BASE + 0x00U) // 1st motor = X
+#define MOTOR_X2_REG     (MOTOR_BASE + 0x04U) // 2nd motor = X2
+#define MOTOR_Y_REG      (MOTOR_BASE + 0x08U) // 3rd motor = Y-axis
+#define MOTOR_Z_REG      (MOTOR_BASE + 0x0CU) // 4th motor = Z-axis
 
 // Bitmasks motor
 // | bit 9  | bit 8  | bits 7..0 |
@@ -30,10 +30,6 @@ extern "C"{
 
 // Min speed 75 (max 255)
 #define DEFAULT_SPEED 150U  // Motor speed
-
-//?????? welke bits gebruikt de encoder???
-#define ENCODER_S1_BIT (1U << 0) //verander deze twee naar de juiste waardes
-#define ENCODER_S2_BIT (1U << 1)
 
 class Motor{             
     public:
