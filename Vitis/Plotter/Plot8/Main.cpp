@@ -10,6 +10,9 @@ extern "C" {
 #include <stdint.h>
 #include "Plotter.h"
 #include "ov7670_i2c.h"
+#include "Geometry.h"
+
+static Plotter plotter;
 
 // Dummy vector array (square)
 static const Vec2 square[] = 
@@ -86,6 +89,20 @@ static const Vec2 square[] =
     {2250,3750}
 };
 
+static void print_z_only()
+{
+    int32_t x1, x2, yy, zraw32;
+    plotter.enc().readRaw(x1, x2, yy, zraw32);
+
+    // Interpretatie als 16-bit signed (heel waarschijnlijk wat jouw IP core bedoelt)
+    int16_t zraw16 = (int16_t)(uint16_t)zraw32;
+
+    int32_t zrel = plotter.enc().getZ();
+
+    xil_printf("RAW Z=%08x  (Z16=%d)  Zrel=%d\r\n",
+               (uint32_t)zraw32, (int)zraw16, (int)zrel);
+}
+
 // -------- seriële helper ----------
 
 static int readline(char *buf, int maxlen) {
@@ -104,10 +121,6 @@ static int readline(char *buf, int maxlen) {
         }
     }
 }
-
-// -------- globaal plotter-object ----------
-
-static Plotter plotter;
 
 // Print status
 static void print_position() {
@@ -189,9 +202,13 @@ int main() {
         } 
         else if (line[0] == 's') 
         {
-            xil_printf("Drawing square\r\n");
-            plotter.drawPath(square, sizeof(square)/sizeof(square[0]), 225);
-            xil_printf("Done square\r\n");
+            xil_printf("Drawing square line array\r\n");
+            plotter.drawLineArray(squares, squares_count, 225);
+            xil_printf("Done\r\n");
+        }
+        else if (line[0] == 'z' || line[0] == 'Z')
+        {
+            print_z_only();
         }
     }
 
