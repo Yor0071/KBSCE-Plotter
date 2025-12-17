@@ -3,22 +3,22 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Dec 17 13:37:17 2025
-# Process ID         : 23807
-# Current directory  : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1
-# Command line       : vivado -log NexysA7_Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source NexysA7_Top.tcl
-# Log file           : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/NexysA7_Top.vds
-# Journal file       : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/synth_1/vivado.jou
+# Start of session at: Wed Dec 17 13:38:18 2025
+# Process ID         : 24293
+# Current directory  : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/impl_1
+# Command line       : vivado -log NexysA7_Top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source NexysA7_Top.tcl -notrace
+# Log file           : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/impl_1/NexysA7_Top.vdi
+# Journal file       : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/impl_1/vivado.jou
 # Running On         : mrt-fed-lap
 # Platform           : unknown
 # Operating System   : unknown
 # Processor Detail   : AMD Ryzen 7 5700U with Radeon Graphics
-# CPU Frequency      : 1114.905 MHz
+# CPU Frequency      : 1845.174 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16037 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 24627 MB
-# Available Virtual  : 16364 MB
+# Available Virtual  : 16816 MB
 #-----------------------------------------------------------
 source NexysA7_Top.tcl -notrace
