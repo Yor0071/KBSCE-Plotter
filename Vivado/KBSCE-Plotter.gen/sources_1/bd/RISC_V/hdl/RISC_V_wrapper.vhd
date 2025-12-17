@@ -1,9 +1,9 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
---Date        : Fri Dec 12 14:30:08 2025
---Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+--Date        : Wed Dec 17 13:23:22 2025
+--Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V_wrapper.bd
 --Design      : RISC_V_wrapper
 --Purpose     : IP block netlist
@@ -25,6 +25,7 @@ entity RISC_V_wrapper is
     BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORTB_0_en : in STD_LOGIC;
+    BRAM_PORTB_0_rst : in STD_LOGIC;
     BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     BTN_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     IIC_0_scl_io : inout STD_LOGIC;
@@ -101,7 +102,8 @@ architecture STRUCTURE of RISC_V_wrapper is
     m1_in2_0 : out STD_LOGIC;
     m1_in1_0 : out STD_LOGIC;
     enc_y_b_0 : in STD_LOGIC;
-    m4_in2_0 : out STD_LOGIC
+    m4_in2_0 : out STD_LOGIC;
+    BRAM_PORTB_0_rst : in STD_LOGIC
   );
   end component RISC_V;
   component IOBUF is
@@ -146,6 +148,7 @@ RISC_V_i: component RISC_V
       BRAM_PORTB_0_din(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
       BRAM_PORTB_0_dout(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
       BRAM_PORTB_0_en => BRAM_PORTB_0_en,
+      BRAM_PORTB_0_rst => BRAM_PORTB_0_rst,
       BRAM_PORTB_0_we(0) => BRAM_PORTB_0_we(0),
       BTN_tri_i(4 downto 0) => BTN_tri_i(4 downto 0),
       IIC_0_scl_i => IIC_0_scl_i,

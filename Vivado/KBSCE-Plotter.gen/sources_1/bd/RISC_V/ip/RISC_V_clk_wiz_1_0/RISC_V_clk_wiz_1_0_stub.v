@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Fri Dec 12 11:55:20 2025
-// Host        : DESKTOP-H6STBOR running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+// Date        : Wed Dec 17 13:24:34 2025
+// Host        : mrt-fed-lap running 64-bit unknown
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0_stub.v
+//               /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0_stub.v
 // Design      : RISC_V_clk_wiz_1_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
