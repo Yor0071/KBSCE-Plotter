@@ -1,4 +1,5 @@
 #pragma once
+#include "Framebuffer.hxx"
 #include <stdint.h>
 
 struct Vec2 {
@@ -10,6 +11,14 @@ struct PolylineView {
     const Vec2* pts;
     uint16_t    count;
 };
+
+constexpr int32_t SCREEN_POINT_TO_VEC2_SCALING = 15;
+[[nodiscard]] inline struct Vec2 screen_point_to_vec2(FB::screen_point_t point) noexcept {
+    return {
+        .x = SCREEN_POINT_TO_VEC2_SCALING * point.x,
+        .y = SCREEN_POINT_TO_VEC2_SCALING * point.y
+    };
+}
 
 //
 // ===== HOOFD (ruwe cirkel, open polyline) =====

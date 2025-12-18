@@ -3,6 +3,33 @@
 
 using namespace FB;
 
+namespace EdgeDetect {
+
+// screen_point: do times 15 for coordinates of Vec2
+[[nodiscard]] MaybePolylineView get_next_line(FB::screen_point_t& point) noexcept {
+    MaybePolylineView line = {};
+    line.contains_data = false;
+
+    static Framebuffer fb;
+
+    while (true) {
+        if (++point.x > fb.WIDTH) {
+            point.x = 0;
+            if (++point.y > fb.HEIGHT) {
+                return line; // End of framebuffer
+            }
+        }
+
+        int32_t intensity = canny_process_pixel(fb, point);
+        if (intensity >= 5) {
+            
+        }
+    }
+
+    line.contains_data = true;
+    return line;
+}
+
 int32_t canny_gaussian_for_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     int32_t gaussian_kernel[5][5] = {
         {2,  4,  5,  4, 2},
@@ -44,4 +71,6 @@ uint32_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     // 180^2 + 180^2 = 64800, sqrt(64800) approx 255
     // 255 / 45 approx 0.703
     return I / 5.66;
+}
+
 }

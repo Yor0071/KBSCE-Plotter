@@ -1,8 +1,6 @@
 #ifndef H_FRAMEBUFFER
 #define H_FRAMEBUFFER
 
-#define XPAR_AXI_BRAM_CTRL_0_BASEADDR 0
-
 #include <xparameters.h>
 #include <xil_printf.h>
 
