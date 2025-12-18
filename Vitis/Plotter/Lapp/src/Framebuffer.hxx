@@ -1,16 +1,18 @@
 #ifndef H_FRAMEBUFFER
 #define H_FRAMEBUFFER
 
-#include <unistd.h>
+#define XPAR_AXI_BRAM_CTRL_0_BASEADDR 0
+
 #include <xparameters.h>
 #include <xil_printf.h>
-#include <assert.h>
 
 namespace FB {
 
 typedef struct {
-    const uint16_t x, y;
+    uint16_t x, y;
 } screen_point_t;
+
+screen_point_t offset(screen_point_t point, uint16_t x, uint16_t y) noexcept;
 
 typedef union {
     struct __attribute__((__packed__)) {
@@ -23,6 +25,9 @@ typedef union {
         uint32_t r : 4;
     };
 } pixel_t;
+
+[[nodiscard]] uint16_t intensity(pixel_t pixel) noexcept;
+[[nodiscard]] pixel_t from_intensity(uint16_t intensity) noexcept;
 
 class Framebuffer {
 private:
@@ -38,9 +43,9 @@ public:
     Framebuffer() noexcept;
     ~Framebuffer() = default;
 
-    void write(screen_point_t point, pixel_t pixel) const noexcept;
-    [[nodiscard]] pixel_t read(screen_point_t point) const noexcept;
-    [[nodiscard]] inline bool is_in_bounds(screen_point_t point) const noexcept;
+    virtual void write(screen_point_t point, pixel_t pixel) const noexcept;
+    [[nodiscard]] virtual pixel_t read(screen_point_t point) const noexcept;
+    [[nodiscard]] bool is_in_bounds(screen_point_t point) const noexcept;
 };
 
 }
