@@ -13,6 +13,7 @@ extern "C" {
 #include "Geometry.h"
 #include "Framebuffer.hxx"
 #include "RoutePlanner.h"
+#include "EdgeDetect.hxx"
 
 static Plotter plotter;
 
@@ -214,6 +215,32 @@ int main() {
             xil_printf("Homing done\r\n");
 
             print_position();
+        }
+        else if (line[0] == 'e' || line[0] == 'E') {
+            xil_printf("Performing edge detection...\r\n");
+            plotter.penLift();
+            plotter.home();
+            
+            FB::screen_point_t point = { .x = 0, . y = 0 };
+            
+            while (true) {
+                EdgeDetect::MaybePolylineView line = EdgeDetect::get_next_line(point);
+                if (!line.contains_data) {
+                    break;
+                }
+
+                const Vec2& start = line.data.pts[line.data.count - 1];
+
+                plotter.moveTo(start.x, start.y, 225);
+                plotter.penDown();
+                plotter.drawPolyline(line.data, false, 225);
+                plotter.penLift();
+            }
+            
+
+            plotter.penUp();
+            plotter.home();
+            xil_printf("Done\r\n");
         }
     }
 

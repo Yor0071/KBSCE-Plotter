@@ -1,6 +1,4 @@
 #include "EdgeDetect.hxx"
-#include "Geometry.h"
-#include "Framebuffer.hxx"
 
 using namespace FB;
 
@@ -10,7 +8,7 @@ namespace EdgeDetect {
     MaybePolylineView line = {};
     line.contains_data = false;
 
-    static Framebuffer fb;
+    Framebuffer fb;
     static Vec2 vec2;
 
     while (true) {
@@ -63,7 +61,6 @@ uint32_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     int32_t NE = canny_gaussian_for_pixel(fb, offset(point, 1, -1));
 
     int32_t W = canny_gaussian_for_pixel(fb, offset(point, -1, 0));
-    int32_t C  = canny_gaussian_for_pixel(fb, offset(point, 0, 0));
     int32_t E = canny_gaussian_for_pixel(fb, offset(point, 1, 0));
 
     int32_t SW = canny_gaussian_for_pixel(fb, offset(point, -1, 1));
@@ -73,7 +70,7 @@ uint32_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     int32_t G_x = -NW - 2 * W - SW + NE + 2 * E + SE;
     int32_t G_y = -NW - 2 * N - NE + SW + 2 * S + SE;
 
-    double I = std::sqrt(G_x * G_x + G_y * G_y);
+    double I = sqrt(G_x * G_x + G_y * G_y);
 
     // 180^2 + 180^2 = 64800, sqrt(64800) approx 255
     // 255 / 45 approx 0.703

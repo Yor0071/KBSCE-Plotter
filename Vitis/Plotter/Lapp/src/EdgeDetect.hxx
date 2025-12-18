@@ -4,7 +4,7 @@
 #include "Framebuffer.hxx"
 #include "Geometry.h"
 #include "xil_types.h"
-#include <cmath>
+#include "math.h"
 
 namespace EdgeDetect {
 
@@ -16,7 +16,7 @@ typedef struct {
 int32_t canny_gaussian_for_pixel(FB::Framebuffer& fb, FB::screen_point_t point) noexcept;
 uint32_t canny_process_pixel(FB::Framebuffer& fb, FB::screen_point_t point) noexcept;
 
-[[nodiscard]] MaybePolylineView get_next_line(FB::screen_point_t point) noexcept;
+[[nodiscard]] MaybePolylineView get_next_line(FB::screen_point_t& point) noexcept;
 
 }
 #endif
