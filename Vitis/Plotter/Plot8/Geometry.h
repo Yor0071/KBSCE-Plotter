@@ -11,35 +11,109 @@ struct PolylineView {
     uint16_t    count;
 };
 
-// Vierkant 1 (5 punten: 4 hoeken + terug naar start)
-static const Vec2 sq0[] = {
-    {1000,1000},
-    {2000,1000},
-    {2000,2000},
-    {1000,2000}
+//
+// ===== HOOFD (ruwe cirkel, open polyline) =====
+//
+static const Vec2 head[] = {
+    {3500,5800}, // top
+    {3950,5650},
+    {4250,5300},
+    {4400,5000},
+    {4250,4700},
+    {3950,4350},
+    {3500,4200}, // bottom
+    {3050,4350},
+    {2750,4700},
+    {2600,5000},
+    {2750,5300},
+    {3050,5650},
 };
 
-// Vierkant 2 (zelfde grootte, andere positie)
-static const Vec2 sq1[] = {
-    {2500,1000},
-    {3500,1000},
-    {3500,2000},
-    {2500,2000}
+//
+// ===== OGEN =====
+//
+static const Vec2 eye_left[] = {
+    {3300,5200},
+    {3350,5250},
+    {3400,5200},
 };
 
-// Vierkant 3 (groter, weer andere positie)
-static const Vec2 sq2[] = {
-    {1000,2500},
-    {1000,4100},
-    {2600,4100},
-    {2600,2500},
+static const Vec2 eye_right[] = {
+    {3600,5200},
+    {3650,5250},
+    {3700,5200},
 };
 
-// Line array: meerdere polylines (elk polyline = 1 vierkant)
-static const PolylineView squares[] = {
-    { sq0, (uint16_t)(sizeof(sq0) / sizeof(sq0[0])) },
-    { sq1, (uint16_t)(sizeof(sq1) / sizeof(sq1[0])) },
-    { sq2, (uint16_t)(sizeof(sq2) / sizeof(sq2[0])) },
+//
+// ===== MOND (smile) =====
+//
+static const Vec2 mouth[] = {
+    {3200,4700},
+    {3350,4600},
+    {3500,4550},
+    {3650,4600},
+    {3800,4700},
 };
 
-static const uint16_t squares_count = (uint16_t)(sizeof(squares) / sizeof(squares[0]));
+//
+// ===== LICHAAM =====
+//
+static const Vec2 body[] = {
+    {3500,4200},
+    {3500,3000},
+};
+
+//
+// ===== ARMEN =====
+//
+static const Vec2 arm_left[] = {
+    {3500,3600},
+    {3000,3200},
+};
+
+static const Vec2 arm_right[] = {
+    {3500,3600},
+    {4000,3200},
+};
+
+//
+// ===== BENEN =====
+//
+static const Vec2 leg_left[] = {
+    {3500,3000},
+    {3200,1500},
+};
+
+static const Vec2 leg_right[] = {
+    {3500,3000},
+    {3800,1500},
+};
+
+static const Vec2 square[] =
+{
+    {0,0},
+    {9599,0},
+    {9599,7199},
+    {0,7199},
+    {0,0},
+};
+
+//
+// ===== LINE ARRAY =====
+// Elke polyline = 1 tekenbare eenheid
+//
+static const PolylineView smiley[] = {
+    { head,      (uint16_t)(sizeof(head)      / sizeof(head[0])) },
+    { eye_left,  (uint16_t)(sizeof(eye_left)  / sizeof(eye_left[0])) },
+    { eye_right, (uint16_t)(sizeof(eye_right) / sizeof(eye_right[0])) },
+    { mouth,     (uint16_t)(sizeof(mouth)     / sizeof(mouth[0])) },
+    { body,      (uint16_t)(sizeof(body)      / sizeof(body[0])) },
+    { arm_left,  (uint16_t)(sizeof(arm_left)  / sizeof(arm_left[0])) },
+    { arm_right, (uint16_t)(sizeof(arm_right) / sizeof(arm_right[0])) },
+    { leg_left,  (uint16_t)(sizeof(leg_left)  / sizeof(leg_left[0])) },
+    { leg_right, (uint16_t)(sizeof(leg_right) / sizeof(leg_right[0])) },
+    { square,    (uint16_t)(sizeof(square)    / sizeof(square[0])) },
+};
+
+static const uint16_t smiley_count =
+    (uint16_t)(sizeof(smiley) / sizeof(smiley[0]));
