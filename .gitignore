@@ -82,6 +82,7 @@
 !*.cpp
 !*.c
 !*.h
+!*.hxx
 !*.elf
 !*.bmm
 !*.xmp

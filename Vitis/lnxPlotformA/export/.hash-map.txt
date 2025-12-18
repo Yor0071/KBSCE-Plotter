@@ -1,0 +1,1 @@
+{"generate.platform":[{"uri":"/home/maartenvk/src/KBSCE-Plotter/Vitis/lnxPlotformA/vitis-comp.json","md5":"3424039ee5a2e5f2339c66a11461995e"},{"uri":"/home/maartenvk/src/KBSCE-Plotter/Vitis/lnxPlotformA/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/bsp.yaml","md5":"a3493baae7fc5a1872917715920b752b"}]}
