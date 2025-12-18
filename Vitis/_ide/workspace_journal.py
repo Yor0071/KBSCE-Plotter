@@ -6,3 +6,7 @@ client.set_workspace(path="Vitis")
 
 vitis.dispose()
 
+client.delete_component(name="Plotter_with_picture")
+
+vitis.dispose()
+
