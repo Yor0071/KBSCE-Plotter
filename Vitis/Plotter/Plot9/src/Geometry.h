@@ -36,7 +36,7 @@ static const Vec2 sq2[] = {
 };
 
 // Line array: meerdere polylines (elk polyline = 1 vierkant)
-static const PolylineView squares[] = {
+static const PolylineView squares[1024] = {
     { sq0, (uint16_t)(sizeof(sq0) / sizeof(sq0[0])) },
     { sq1, (uint16_t)(sizeof(sq1) / sizeof(sq1[0])) },
     { sq2, (uint16_t)(sizeof(sq2) / sizeof(sq2[0])) },
