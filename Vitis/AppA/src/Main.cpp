@@ -12,83 +12,9 @@ extern "C" {
 #include "ov7670_i2c.h"
 #include "Geometry.h"
 #include "Framebuffer.hxx"
+#include "RoutePlanner.h"
 
 static Plotter plotter;
-
-// Dummy vector array (square)
-static const Vec2 square[] = 
-{
-    // {2250,3750} -> {2680,2680}
-    {2250,3750},
-    {2336,3536},
-    {2422,3322},
-    {2508,3108},
-    {2594,2894},
-    {2680,2680},
-
-    // {2680,2680} -> {3750,2680}
-    {2894,2680},
-    {3108,2680},
-    {3322,2680},
-    {3536,2680},
-    {3750,2680},
-
-    // {3750,2680} -> {2900,2150}
-    {3580,2574},
-    {3410,2468},
-    {3240,2362},
-    {3070,2256},
-    {2900,2150},
-
-    // {2900,2150} -> {3250,900}
-    {2970,1900},
-    {3040,1650},
-    {3110,1400},
-    {3180,1150},
-    {3250, 900},
-
-    // {3250,900} -> {2250,1600}
-    {3050,1040},
-    {2850,1180},
-    {2650,1320},
-    {2450,1460},
-    {2250,1600},
-
-    // {2250,1600} -> {1250,900}
-    {2050,1460},
-    {1850,1320},
-    {1650,1180},
-    {1450,1040},
-    {1250, 900},
-
-    // {1250,900} -> {1600,2150}
-    {1320,1150},
-    {1390,1400},
-    {1460,1650},
-    {1530,1900},
-    {1600,2150},
-
-    // {1600,2150} -> {750,2680}
-    {1430,2256},
-    {1260,2362},
-    {1090,2468},
-    { 920,2574},
-    { 750,2680},
-
-    // {750,2680} -> {1820,2680}
-    { 964,2680},
-    {1178,2680},
-    {1392,2680},
-    {1606,2680},
-    {1820,2680},
-
-    // {1820,2680} -> {2250,3750}
-    {1906,2894},
-    {1992,3108},
-    {2078,3322},
-    {2164,3536},
-    {2250,3750}
-};
 
 static void print_z_only()
 {
@@ -228,8 +154,35 @@ int main() {
         } 
         else if (line[0] == 's') 
         {
-            xil_printf("Drawing square line array\r\n");
-            plotter.drawLineArray(squares, squares_count, 225);
+            
+            xil_printf("Planning route...\r\n");
+
+            RoutePlanner rp;
+            RouteStep steps[32];
+
+            int32_t sx, sy;
+            plotter.enc().getXY(sx, sy);
+
+            uint16_t n = rp.buildPlan_LongToShort_EntryNN(
+                smiley,
+                smiley_count,
+                sx, sy,
+                steps
+            );
+
+            for (uint16_t i = 0; i < n; ++i) {
+                const RouteStep& st = steps[i];
+                plotter.penLift();
+
+                const PolylineView& pl = smiley[st.polyIndex];
+                const Vec2& start = st.reverse ? pl.pts[pl.count - 1] : pl.pts[0];
+
+                plotter.moveTo(start.x, start.y, 225);
+                plotter.penDown();
+                plotter.drawPolyline(pl, st.reverse, 225);
+            }
+            plotter.penUp();
+
             xil_printf("Done\r\n");
         }
         else if (line[0] == 'z' || line[0] == 'Z')
@@ -239,6 +192,28 @@ int main() {
         else if (line[0] == 'd' || line[0] == 'D')
         {
             draw_test();
+        } else if ((line[0] == 'p' || line[0] == 'P') && (line[1] == 'd' || line[1] == 'D'))
+        {
+            xil_printf("Pen DOWN\r\n");
+            plotter.penDown();
+        }
+        else if ((line[0] == 'p' || line[0] == 'P') && (line[1] == 'l' || line[1] == 'L'))
+        {
+            xil_printf("Pen LIFT\r\n");
+            plotter.penLift();
+        }
+        else if ((line[0] == 'p' || line[0] == 'P') && (line[1] == 'u' || line[1] == 'U'))
+        {
+            xil_printf("Pen UP\r\n");
+            plotter.penUp();
+        }
+        else if (line[0] == 'h' || line[0] == 'H')
+        {
+            xil_printf("Homing plotter...\r\n");
+            plotter.home();
+            xil_printf("Homing done\r\n");
+
+            print_position();
         }
     }
 
