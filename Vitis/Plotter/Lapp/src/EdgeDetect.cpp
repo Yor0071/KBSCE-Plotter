@@ -1,16 +1,17 @@
 #include "EdgeDetect.hxx"
+#include "Geometry.h"
 #include "Framebuffer.hxx"
 
 using namespace FB;
 
 namespace EdgeDetect {
 
-// screen_point: do times 15 for coordinates of Vec2
 [[nodiscard]] MaybePolylineView get_next_line(FB::screen_point_t& point) noexcept {
     MaybePolylineView line = {};
     line.contains_data = false;
 
     static Framebuffer fb;
+    static Vec2 vec2;
 
     while (true) {
         if (++point.x > fb.WIDTH) {
@@ -22,7 +23,13 @@ namespace EdgeDetect {
 
         int32_t intensity = canny_process_pixel(fb, point);
         if (intensity >= 5) {
-            
+            vec2 = screen_point_to_vec2(point);
+            line.data = PolylineView {
+                .pts = &vec2,
+                .count = 1
+            };
+
+            break;
         }
     }
 
