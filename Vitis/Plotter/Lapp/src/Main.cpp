@@ -224,20 +224,29 @@ int main() {
             FB::screen_point_t point = { .x = 0, . y = 0 };
             
             while (true) {
-                EdgeDetect::MaybePolylineView line = EdgeDetect::get_next_line(point);
-                if (!line.contains_data) {
-                    break;
+                for (uint32_t y = 0; y < (480 / 3); y++) {
+                    for (uint32_t x = 0; x < (640 / 3); x++) {
+                        point = { .x = x, .y = y };
+                        EdgeDetect::fill_buffer(point);
+                        int32_t line_count = EdgeDetect::make_lines();
+
+                        for (int32_t n = 0; n < line_count; n++) {
+                            plotter.penLift();
+                            plotter.moveTo(
+                                EdgeDetect::lines[n].pts[0].x,
+                                EdgeDetect::lines[n].pts[0].y, 255);
+                            plotter.penDown();
+                            plotter.moveTo(
+                                EdgeDetect::lines[n].pts[1].x,
+                                EdgeDetect::lines[n].pts[1].y, 255);
+                            plotter.penLift();
+                        }
+                    }
                 }
-
-                const Vec2& start = line.data.pts[line.data.count - 1];
-
-                plotter.moveTo(start.x, start.y, 225);
-                plotter.penDown();
-                plotter.drawPolyline(line.data, false, 225);
-                plotter.penLift();
+                plotter.penUp();
+                break;
             }
             
-
             plotter.penUp();
             plotter.home();
             xil_printf("Done\r\n");

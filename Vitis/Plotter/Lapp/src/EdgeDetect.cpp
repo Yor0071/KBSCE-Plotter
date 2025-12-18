@@ -1,38 +1,67 @@
 #include "EdgeDetect.hxx"
+#include "Framebuffer.hxx"
+#include "Geometry.h"
+#include <xil_printf.h>
 
 using namespace FB;
 
 namespace EdgeDetect {
 
-[[nodiscard]] MaybePolylineView get_next_line(FB::screen_point_t& point) noexcept {
-    MaybePolylineView line = {};
-    line.contains_data = false;
+bool big_beautiful_buffer[3][3] = {};
+PolylineView lines[8] = {};
+Vec2 startstop[8][2] = {};
 
+[[nodiscard]] bool is_edge(FB::screen_point_t point) noexcept {
     Framebuffer fb;
-    static Vec2 vec2;
+    int32_t I = canny_process_pixel(fb, point);
+    return I >= 4;
+}
 
-    while (true) {
-        if (++point.x > fb.WIDTH) {
-            point.x = 0;
-            if (++point.y > fb.HEIGHT) {
-                return line; // End of framebuffer
+void fill_buffer(FB::screen_point_t offset) noexcept {
+    for (uint32_t y = 0; y < 3; y++) {
+        for (uint32_t x = 0; x < 3; x++) {
+            bool value = is_edge({ .x = offset.x + x, .y = offset.y + y });
+            big_beautiful_buffer[y][x] = value;
+        }
+    }
+}
+
+// return line count
+[[nodiscard]] int32_t make_lines() noexcept {
+    int32_t line_count = 0;
+    for (uint32_t y = 0; y < 3; y++) {
+        bool is_line = true;
+        for (uint32_t x = 0; x < 3; x++) {
+            if (!big_beautiful_buffer[y][x]) {
+                is_line = false;
+                break;
             }
         }
 
-        int32_t intensity = canny_process_pixel(fb, point);
-        if (intensity >= 5) {
-            vec2 = screen_point_to_vec2(point);
-            line.data = PolylineView {
-                .pts = &vec2,
-                .count = 1
-            };
-
-            break;
+        if (is_line) {
+            lines[line_count].count = 2;
+            lines[line_count].pts = startstop[line_count];
+            line_count++;
         }
     }
 
-    line.contains_data = true;
-    return line;
+    for (uint32_t x = 0; x < 3; x++) {
+        bool is_line = true;
+        for (uint32_t y = 0; y < 3; y++) {
+            if (!big_beautiful_buffer[y][x]) {
+                is_line = false;
+                break;
+            }
+        }
+
+        if (is_line) {
+            lines[line_count].count = 2;
+            lines[line_count].pts = startstop[line_count];
+            line_count++;
+        }
+    }
+
+    return line_count;
 }
 
 int32_t canny_gaussian_for_pixel(Framebuffer& fb, screen_point_t point) noexcept {

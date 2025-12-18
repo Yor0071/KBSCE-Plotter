@@ -15,7 +15,7 @@ struct PolylineView {
 constexpr int32_t SCREEN_POINT_TO_VEC2_SCALING = 15;
 [[nodiscard]] inline struct Vec2 screen_point_to_vec2(FB::screen_point_t point) noexcept {
     return {
-        .x = SCREEN_POINT_TO_VEC2_SCALING * point.x,
+        .x = static_cast<uint32_t>(FB::Framebuffer::WIDTH) * SCREEN_POINT_TO_VEC2_SCALING - SCREEN_POINT_TO_VEC2_SCALING * static_cast<int32_t>(point.x),
         .y = SCREEN_POINT_TO_VEC2_SCALING * point.y
     };
 }
