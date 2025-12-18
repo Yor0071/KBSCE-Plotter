@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x33661BD35500717E",
+      "boundary_crc": "0x483C2008C6E24D53",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V",
       "name": "RISC_V",
@@ -30,7 +30,10 @@
       "blk_mem_gen_0": "",
       "axi_iic_0": "",
       "axi_gpio_buttons": "",
-      "motor_ctrl_0": ""
+      "motor_ctrl_0": "",
+      "BRAMMux_0": "",
+      "BRAMAddressDivider_0": "",
+      "axi_bram_ctrl_0": ""
     },
     "interface_ports": {
       "LED": {
@@ -74,7 +77,7 @@
           }
         }
       },
-      "BRAM_PORTB_0": {
+      "BRAM_PORT_CAM": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
         "vlnv": "xilinx.com:interface:bram_rtl:1.0",
@@ -104,40 +107,44 @@
         },
         "port_maps": {
           "ADDR": {
-            "physical_name": "BRAM_PORTB_0_addr",
+            "physical_name": "BRAM_PORT_CAM_addr",
             "direction": "I",
             "left": "18",
             "right": "0"
           },
           "CLK": {
-            "physical_name": "BRAM_PORTB_0_clk",
+            "physical_name": "BRAM_PORT_CAM_clk",
             "direction": "I"
           },
           "DIN": {
-            "physical_name": "BRAM_PORTB_0_din",
+            "physical_name": "BRAM_PORT_CAM_din",
             "direction": "I",
             "left": "11",
             "right": "0"
           },
           "DOUT": {
-            "physical_name": "BRAM_PORTB_0_dout",
+            "physical_name": "BRAM_PORT_CAM_dout",
             "direction": "O",
             "left": "11",
             "right": "0"
           },
           "EN": {
-            "physical_name": "BRAM_PORTB_0_en",
+            "physical_name": "BRAM_PORT_CAM_en",
             "direction": "I"
           },
           "WE": {
-            "physical_name": "BRAM_PORTB_0_we",
+            "physical_name": "BRAM_PORT_CAM_we",
             "direction": "I",
             "left": "0",
             "right": "0"
+          },
+          "RST": {
+            "physical_name": "BRAM_PORT_CAM_rst",
+            "direction": "I"
           }
         }
       },
-      "BRAM_PORTA_1": {
+      "BRAM_PORT_VGA": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
         "vlnv": "xilinx.com:interface:bram_rtl:1.0",
@@ -167,33 +174,33 @@
         },
         "port_maps": {
           "ADDR": {
-            "physical_name": "BRAM_PORTA_1_addr",
+            "physical_name": "BRAM_PORT_VGA_addr",
             "direction": "I",
             "left": "18",
             "right": "0"
           },
           "CLK": {
-            "physical_name": "BRAM_PORTA_1_clk",
+            "physical_name": "BRAM_PORT_VGA_clk",
             "direction": "I"
           },
           "DIN": {
-            "physical_name": "BRAM_PORTA_1_din",
+            "physical_name": "BRAM_PORT_VGA_din",
             "direction": "I",
             "left": "11",
             "right": "0"
           },
           "DOUT": {
-            "physical_name": "BRAM_PORTA_1_dout",
+            "physical_name": "BRAM_PORT_VGA_dout",
             "direction": "O",
             "left": "11",
             "right": "0"
           },
           "EN": {
-            "physical_name": "BRAM_PORTA_1_en",
+            "physical_name": "BRAM_PORT_VGA_en",
             "direction": "I"
           },
           "WE": {
-            "physical_name": "BRAM_PORTA_1_we",
+            "physical_name": "BRAM_PORT_VGA_we",
             "direction": "I",
             "left": "0",
             "right": "0"
@@ -389,7 +396,7 @@
         "vlnv": "xilinx.com:ip:microblaze_riscv:1.0",
         "ip_revision": "5",
         "xci_name": "RISC_V_microblaze_riscv_0_0",
-        "xci_path": "ip\\RISC_V_microblaze_riscv_0_0\\RISC_V_microblaze_riscv_0_0.xci",
+        "xci_path": "ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xci",
         "inst_hier_path": "microblaze_riscv_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -403,6 +410,9 @@
             "value": "1"
           },
           "C_I_LMB": {
+            "value": "1"
+          },
+          "C_USE_COMPRESSION": {
             "value": "1"
           }
         },
@@ -519,7 +529,7 @@
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "15",
             "xci_name": "RISC_V_dlmb_v10_0",
-            "xci_path": "ip\\RISC_V_dlmb_v10_0\\RISC_V_dlmb_v10_0.xci",
+            "xci_path": "ip/RISC_V_dlmb_v10_0/RISC_V_dlmb_v10_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/dlmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -554,7 +564,7 @@
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "15",
             "xci_name": "RISC_V_ilmb_v10_0",
-            "xci_path": "ip\\RISC_V_ilmb_v10_0\\RISC_V_ilmb_v10_0.xci",
+            "xci_path": "ip/RISC_V_ilmb_v10_0/RISC_V_ilmb_v10_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/ilmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -589,7 +599,7 @@
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "26",
             "xci_name": "RISC_V_dlmb_bram_if_cntlr_0",
-            "xci_path": "ip\\RISC_V_dlmb_bram_if_cntlr_0\\RISC_V_dlmb_bram_if_cntlr_0.xci",
+            "xci_path": "ip/RISC_V_dlmb_bram_if_cntlr_0/RISC_V_dlmb_bram_if_cntlr_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -622,7 +632,7 @@
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "26",
             "xci_name": "RISC_V_ilmb_bram_if_cntlr_0",
-            "xci_path": "ip\\RISC_V_ilmb_bram_if_cntlr_0\\RISC_V_ilmb_bram_if_cntlr_0.xci",
+            "xci_path": "ip/RISC_V_ilmb_bram_if_cntlr_0/RISC_V_ilmb_bram_if_cntlr_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -645,7 +655,7 @@
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
             "ip_revision": "11",
             "xci_name": "RISC_V_lmb_bram_0",
-            "xci_path": "ip\\RISC_V_lmb_bram_0\\RISC_V_lmb_bram_0.xci",
+            "xci_path": "ip/RISC_V_lmb_bram_0/RISC_V_lmb_bram_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/lmb_bram",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -721,7 +731,7 @@
         "vlnv": "xilinx.com:ip:mdm_riscv:1.0",
         "ip_revision": "5",
         "xci_name": "RISC_V_mdm_1_0",
-        "xci_path": "ip\\RISC_V_mdm_1_0\\RISC_V_mdm_1_0.xci",
+        "xci_path": "ip/RISC_V_mdm_1_0/RISC_V_mdm_1_0.xci",
         "inst_hier_path": "mdm_1",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -740,7 +750,7 @@
         "vlnv": "xilinx.com:ip:clk_wiz:6.0",
         "ip_revision": "16",
         "xci_name": "RISC_V_clk_wiz_1_0",
-        "xci_path": "ip\\RISC_V_clk_wiz_1_0\\RISC_V_clk_wiz_1_0.xci",
+        "xci_path": "ip/RISC_V_clk_wiz_1_0/RISC_V_clk_wiz_1_0.xci",
         "inst_hier_path": "clk_wiz_1",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -822,7 +832,7 @@
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "ip_revision": "17",
         "xci_name": "RISC_V_rst_clk_wiz_1_100M_0",
-        "xci_path": "ip\\RISC_V_rst_clk_wiz_1_100M_0\\RISC_V_rst_clk_wiz_1_100M_0.xci",
+        "xci_path": "ip/RISC_V_rst_clk_wiz_1_100M_0/RISC_V_rst_clk_wiz_1_100M_0.xci",
         "inst_hier_path": "rst_clk_wiz_1_100M",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -838,7 +848,7 @@
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "37",
         "xci_name": "RISC_V_axi_gpio_0_0",
-        "xci_path": "ip\\RISC_V_axi_gpio_0_0\\RISC_V_axi_gpio_0_0.xci",
+        "xci_path": "ip/RISC_V_axi_gpio_0_0/RISC_V_axi_gpio_0_0.xci",
         "inst_hier_path": "axi_gpio_leds",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -854,7 +864,7 @@
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "37",
         "xci_name": "RISC_V_axi_gpio_1_0",
-        "xci_path": "ip\\RISC_V_axi_gpio_1_0\\RISC_V_axi_gpio_1_0.xci",
+        "xci_path": "ip/RISC_V_axi_gpio_1_0/RISC_V_axi_gpio_1_0.xci",
         "inst_hier_path": "axi_gpio_switches",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -870,7 +880,7 @@
         "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
         "ip_revision": "39",
         "xci_name": "RISC_V_axi_uartlite_0_0",
-        "xci_path": "ip\\RISC_V_axi_uartlite_0_0\\RISC_V_axi_uartlite_0_0.xci",
+        "xci_path": "ip/RISC_V_axi_uartlite_0_0/RISC_V_axi_uartlite_0_0.xci",
         "inst_hier_path": "axi_uartlite_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -886,12 +896,12 @@
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "27",
         "xci_name": "RISC_V_axi_smc_0",
-        "xci_path": "ip\\RISC_V_axi_smc_0_3\\RISC_V_axi_smc_0.xci",
+        "xci_path": "ip/RISC_V_axi_smc_0_3/RISC_V_axi_smc_0.xci",
         "inst_hier_path": "axi_smc",
         "has_run_ip_tcl": "true",
         "parameters": {
           "NUM_MI": {
-            "value": "6"
+            "value": "7"
           },
           "NUM_SI": {
             "value": "1"
@@ -916,11 +926,12 @@
               "M02_AXI",
               "M03_AXI",
               "M04_AXI",
-              "M05_AXI"
+              "M05_AXI",
+              "M06_AXI"
             ],
             "bd_attributes": {
               "BRIDGES": {
-                "value": "M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI",
+                "value": "M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI:M06_AXI",
                 "value_src": "auto"
               },
               "TYPE": {
@@ -1114,6 +1125,43 @@
                 "value_src": "default"
               }
             }
+          },
+          "M06_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "256"
+              },
+              "NUM_READ_OUTSTANDING": {
+                "value": "1"
+              },
+              "NUM_READ_THREADS": {
+                "value": "1"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "1"
+              },
+              "NUM_WRITE_THREADS": {
+                "value": "1"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            },
+            "bd_attributes": {
+              "TYPE": {
+                "value": "interior",
+                "value_src": "default"
+              }
+            }
           }
         }
       },
@@ -1121,7 +1169,7 @@
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
         "ip_revision": "5",
         "xci_name": "RISC_V_reset_inv_0_0",
-        "xci_path": "ip\\RISC_V_reset_inv_0_0\\RISC_V_reset_inv_0_0.xci",
+        "xci_path": "ip/RISC_V_reset_inv_0_0/RISC_V_reset_inv_0_0.xci",
         "inst_hier_path": "reset_inv_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -1137,7 +1185,7 @@
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
         "ip_revision": "11",
         "xci_name": "RISC_V_blk_mem_gen_0_0",
-        "xci_path": "ip\\RISC_V_blk_mem_gen_0_0\\RISC_V_blk_mem_gen_0_0.xci",
+        "xci_path": "ip/RISC_V_blk_mem_gen_0_0/RISC_V_blk_mem_gen_0_0.xci",
         "inst_hier_path": "blk_mem_gen_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -1168,7 +1216,7 @@
         "vlnv": "xilinx.com:ip:axi_iic:2.1",
         "ip_revision": "11",
         "xci_name": "RISC_V_axi_iic_0_0",
-        "xci_path": "ip\\RISC_V_axi_iic_0_0\\RISC_V_axi_iic_0_0.xci",
+        "xci_path": "ip/RISC_V_axi_iic_0_0/RISC_V_axi_iic_0_0.xci",
         "inst_hier_path": "axi_iic_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -1184,7 +1232,7 @@
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "37",
         "xci_name": "RISC_V_axi_gpio_0_2",
-        "xci_path": "ip\\RISC_V_axi_gpio_0_2\\RISC_V_axi_gpio_0_2.xci",
+        "xci_path": "ip/RISC_V_axi_gpio_0_2/RISC_V_axi_gpio_0_2.xci",
         "inst_hier_path": "axi_gpio_buttons",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -1200,22 +1248,358 @@
         "vlnv": "xilinx.com:user:motor_ctrl:1.0",
         "ip_revision": "13",
         "xci_name": "RISC_V_motor_ctrl_0_0",
-        "xci_path": "ip\\RISC_V_motor_ctrl_0_0_2\\RISC_V_motor_ctrl_0_0.xci",
+        "xci_path": "ip/RISC_V_motor_ctrl_0_0_2/RISC_V_motor_ctrl_0_0.xci",
         "inst_hier_path": "motor_ctrl_0",
         "has_run_ip_tcl": "true"
+      },
+      "BRAMMux_0": {
+        "vlnv": "xilinx.com:module_ref:BRAMMux:1.0",
+        "ip_revision": "1",
+        "xci_name": "RISC_V_BRAMMux_0_0",
+        "xci_path": "ip/RISC_V_BRAMMux_0_0/RISC_V_BRAMMux_0_0.xci",
+        "inst_hier_path": "BRAMMux_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BRAMMux",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "BRAM_IN_PORT_MICROBLAZE": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "s_in_microblaze_en",
+                "direction": "I"
+              },
+              "DOUT": {
+                "physical_name": "s_in_microblaze_dout",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "s_in_microblaze_din",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "s_in_microblaze_we",
+                "direction": "I",
+                "left": "0",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "s_in_microblaze_addr",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "s_in_microblaze_clk",
+                "direction": "I"
+              },
+              "RST": {
+                "physical_name": "s_in_microblaze_rst",
+                "direction": "I"
+              }
+            }
+          },
+          "BRAM_IN_PORT_CAMERA": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "constant"
+              },
+              "READ_LATENCY": {
+                "value": "2",
+                "value_src": "user_prop"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "s_in_camera_en",
+                "direction": "I"
+              },
+              "DOUT": {
+                "physical_name": "s_in_camera_dout",
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "s_in_camera_din",
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "s_in_camera_we",
+                "direction": "I",
+                "left": "0",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "s_in_camera_addr",
+                "direction": "I",
+                "left": "18",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "s_in_camera_clk",
+                "direction": "I"
+              },
+              "RST": {
+                "physical_name": "s_in_camera_rst",
+                "direction": "I"
+              }
+            }
+          },
+          "BRAM_OUT_PORT_FB": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "s_out_fb_en",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "s_out_fb_dout",
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "s_out_fb_din",
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "s_out_fb_we",
+                "direction": "O",
+                "left": "0",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "s_out_fb_addr",
+                "direction": "O",
+                "left": "18",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "s_out_fb_clk",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "s_out_fb_rst",
+                "direction": "O"
+              }
+            }
+          }
+        }
+      },
+      "BRAMAddressDivider_0": {
+        "vlnv": "xilinx.com:module_ref:BRAMAddressDivider:1.0",
+        "ip_revision": "1",
+        "xci_name": "RISC_V_BRAMAddressDivider_0_0",
+        "xci_path": "ip/RISC_V_BRAMAddressDivider_0_0/RISC_V_BRAMAddressDivider_0_0.xci",
+        "inst_hier_path": "BRAMAddressDivider_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BRAMAddressDivider",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "BRAM_PORT_IN": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "constant"
+              },
+              "MEM_SIZE": {
+                "value": "2097152",
+                "value_src": "ip_prop"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "ip_prop"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "user_prop"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "user_prop"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_in_en",
+                "direction": "I"
+              },
+              "DOUT": {
+                "physical_name": "bram_in_dout",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_in_din",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_in_we",
+                "direction": "I",
+                "left": "0",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "bram_in_addr",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_in_clk",
+                "direction": "I"
+              },
+              "RST": {
+                "physical_name": "bram_in_rst",
+                "direction": "I"
+              }
+            }
+          },
+          "BRAM_PORT_OUT": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "OTHER",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_out_en",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "bram_out_dout",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_out_din",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_out_we",
+                "direction": "O",
+                "left": "0",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "bram_out_addr",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_out_clk",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "bram_out_rst",
+                "direction": "O"
+              }
+            }
+          }
+        }
+      },
+      "axi_bram_ctrl_0": {
+        "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
+        "ip_revision": "13",
+        "xci_name": "RISC_V_axi_bram_ctrl_0_0",
+        "xci_path": "ip/RISC_V_axi_bram_ctrl_0_0/RISC_V_axi_bram_ctrl_0_0.xci",
+        "inst_hier_path": "axi_bram_ctrl_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "SINGLE_PORT_BRAM": {
+            "value": "1"
+          }
+        },
+        "interface_ports": {
+          "S_AXI": {
+            "bd_attributes": {
+              "FUNCTION": {
+                "value": "BRAM_CTRL",
+                "value_src": "default"
+              }
+            }
+          }
+        }
       }
     },
     "interface_nets": {
+      "BRAMAddressDivider_0_BRAM_PORT_OUT": {
+        "interface_ports": [
+          "BRAMAddressDivider_0/BRAM_PORT_OUT",
+          "BRAMMux_0/BRAM_IN_PORT_MICROBLAZE"
+        ]
+      },
+      "BRAMMux_0_BRAM_OUT_PORT_FB": {
+        "interface_ports": [
+          "BRAMMux_0/BRAM_OUT_PORT_FB",
+          "blk_mem_gen_0/BRAM_PORTB"
+        ]
+      },
       "BRAM_PORTA_1_1": {
         "interface_ports": [
-          "BRAM_PORTA_1",
+          "BRAM_PORT_VGA",
           "blk_mem_gen_0/BRAM_PORTA"
         ]
       },
       "BRAM_PORTB_0_1": {
         "interface_ports": [
-          "BRAM_PORTB_0",
-          "blk_mem_gen_0/BRAM_PORTB"
+          "BRAM_PORT_CAM",
+          "BRAMMux_0/BRAM_IN_PORT_CAMERA"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTA": {
+        "interface_ports": [
+          "axi_bram_ctrl_0/BRAM_PORTA",
+          "BRAMAddressDivider_0/BRAM_PORT_IN"
         ]
       },
       "axi_gpio_0_GPIO": {
@@ -1276,6 +1660,12 @@
         "interface_ports": [
           "axi_smc/M05_AXI",
           "motor_ctrl_0/S00_AXI"
+        ]
+      },
+      "axi_smc_M06_AXI": {
+        "interface_ports": [
+          "axi_smc/M06_AXI",
+          "axi_bram_ctrl_0/S_AXI"
         ]
       },
       "axi_uartlite_0_UART": {
@@ -1388,7 +1778,8 @@
           "axi_uartlite_0/s_axi_aclk",
           "axi_iic_0/s_axi_aclk",
           "axi_gpio_buttons/s_axi_aclk",
-          "motor_ctrl_0/s00_axi_aclk"
+          "motor_ctrl_0/s00_axi_aclk",
+          "axi_bram_ctrl_0/s_axi_aclk"
         ]
       },
       "motor_ctrl_0_m1_in1": {
@@ -1473,7 +1864,8 @@
           "axi_uartlite_0/s_axi_aresetn",
           "axi_iic_0/s_axi_aresetn",
           "axi_gpio_buttons/s_axi_aresetn",
-          "motor_ctrl_0/s00_axi_aresetn"
+          "motor_ctrl_0/s00_axi_aresetn",
+          "axi_bram_ctrl_0/s_axi_aresetn"
         ]
       },
       "sys_clock_1": {
@@ -1488,6 +1880,11 @@
         "address_spaces": {
           "Data": {
             "segments": {
+              "SEG_axi_bram_ctrl_0_Mem0": {
+                "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
+                "offset": "0xC0000000",
+                "range": "2M"
+              },
               "SEG_axi_gpio_buttons_Reg": {
                 "address_block": "/axi_gpio_buttons/S_AXI/Reg",
                 "offset": "0x40020000",

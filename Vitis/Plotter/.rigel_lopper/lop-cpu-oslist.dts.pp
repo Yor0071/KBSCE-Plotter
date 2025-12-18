@@ -1,8 +1,8 @@
-# 1 "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/lopper/depends/lopper/lops/lop-cpu-oslist.dts"
-# 1 "<built-in>"
-# 1 "<command-line>"
-# 1 "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/lopper/depends/lopper/lops/lop-cpu-oslist.dts"
-# 10 "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/lopper/depends/lopper/lops/lop-cpu-oslist.dts"
+# 0 "/home/maartenvk/apps/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/lopper/depends/lopper/lops/lop-cpu-oslist.dts"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/home/maartenvk/apps/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/lopper/depends/lopper/lops/lop-cpu-oslist.dts"
+# 10 "/home/maartenvk/apps/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/lopper/depends/lopper/lops/lop-cpu-oslist.dts"
 /dts-v1/;
 
 / {

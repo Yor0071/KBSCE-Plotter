@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1765546222" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RISC_V_wrapper.dcp">
-  <File Type="PA-TCL" Name="NexysA7_Top.tcl"/>
-  <File Type="REPORTS-TCL" Name="NexysA7_Top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="NexysA7_Top.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="NexysA7_Top_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="NexysA7_Top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="NexysA7_Top_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="NexysA7_Top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="NexysA7_Top_timing_summary_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1765975633" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RISC_V_wrapper.dcp">
   <File Type="VDS-TIMING-PB" Name="NexysA7_Top_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="NexysA7_Top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="NexysA7_Top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="NexysA7_Top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="NexysA7_Top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="NexysA7_Top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="NexysA7_Top.vds"/>
+  <File Type="REPORTS-TCL" Name="NexysA7_Top_reports.tcl"/>
+  <File Type="PA-TCL" Name="NexysA7_Top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/new/BRAMMux.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vivado/KBSCE-Plotter.srcs/sources_1/new/BRAMMux.vhd"/>
+        <Attr Name="ImportTime" Val="1765973563"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/BRAMAddressDivider.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Vivado/KBSCE-Plotter.srcs/sources_1/new/BRAMAddressDivider.vhd"/>
+        <Attr Name="ImportTime" Val="1765973563"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/RISC_V/RISC_V.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -92,20 +108,23 @@
       <Option Id="FsmExtraction">0</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_blk_mem_gen_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_iic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_microblaze_riscv_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_ilmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_rst_clk_wiz_1_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_clk_wiz_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_gpio_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_BRAMMux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_dlmb_v10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_motor_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_gpio_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_dlmb_bram_if_cntlr_0"/>
   <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_uartlite_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="RISC_V_ilmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_dlmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_gpio_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_BRAMAddressDivider_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_clk_wiz_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_rst_clk_wiz_1_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_ilmb_v10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_microblaze_riscv_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="RISC_V_mdm_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_motor_ctrl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_dlmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="RISC_V_lmb_bram_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="RISC_V_blk_mem_gen_0_0"/>
 </GenRun>

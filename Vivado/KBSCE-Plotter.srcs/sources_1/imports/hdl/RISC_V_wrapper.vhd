@@ -15,24 +15,24 @@ use UNISIM.VCOMPONENTS.ALL;
 
 entity RISC_V_wrapper is
   port (
-    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTA_1_clk : in STD_LOGIC;
-    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_en : in STD_LOGIC;
-    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTB_0_clk : in STD_LOGIC;
-    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_en : in STD_LOGIC;
-    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    VGA_PCLK : out STD_LOGIC;
+    VGA_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    VGA_FB_clk : in STD_LOGIC;
+    VGA_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_FB_en : in STD_LOGIC;
+    VGA_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    CAM_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    CAM_FB_clk : in STD_LOGIC;
+    CAM_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    CAM_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    CAM_FB_en : in STD_LOGIC;
+    CAM_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     BTN_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     IIC_0_scl_io : inout STD_LOGIC;
     IIC_0_sda_io : inout STD_LOGIC;
     LED_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    VGA_PCLK : out STD_LOGIC;
     cam_clk_0 : out STD_LOGIC;
     enc_x1_a_0 : in STD_LOGIC;
     enc_x1_b_0 : in STD_LOGIC;
@@ -64,18 +64,19 @@ architecture STRUCTURE of RISC_V_wrapper is
     SW_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC;
-    BRAM_PORTB_0_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTB_0_clk : in STD_LOGIC;
-    BRAM_PORTB_0_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTB_0_en : in STD_LOGIC;
-    BRAM_PORTB_0_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-    BRAM_PORTA_1_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    BRAM_PORTA_1_clk : in STD_LOGIC;
-    BRAM_PORTA_1_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    BRAM_PORTA_1_en : in STD_LOGIC;
-    BRAM_PORTA_1_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_CAM_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_CAM_clk : in STD_LOGIC;
+    BRAM_PORT_CAM_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_CAM_en : in STD_LOGIC;
+    BRAM_PORT_CAM_rst : in STD_LOGIC;
+    BRAM_PORT_CAM_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    BRAM_PORT_VGA_clk : in STD_LOGIC;
+    BRAM_PORT_VGA_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    BRAM_PORT_VGA_en : in STD_LOGIC;
+    BRAM_PORT_VGA_we : in STD_LOGIC_VECTOR ( 0 to 0 );
     IIC_0_scl_i : in STD_LOGIC;
     IIC_0_scl_o : out STD_LOGIC;
     IIC_0_scl_t : out STD_LOGIC;
@@ -136,18 +137,22 @@ IIC_0_sda_iobuf: component IOBUF
     );
 RISC_V_i: component RISC_V
      port map (
-      BRAM_PORTA_1_addr(18 downto 0) => BRAM_PORTA_1_addr(18 downto 0),
-      BRAM_PORTA_1_clk => BRAM_PORTA_1_clk,
-      BRAM_PORTA_1_din(11 downto 0) => BRAM_PORTA_1_din(11 downto 0),
-      BRAM_PORTA_1_dout(11 downto 0) => BRAM_PORTA_1_dout(11 downto 0),
-      BRAM_PORTA_1_en => BRAM_PORTA_1_en,
-      BRAM_PORTA_1_we(0) => BRAM_PORTA_1_we(0),
-      BRAM_PORTB_0_addr(18 downto 0) => BRAM_PORTB_0_addr(18 downto 0),
-      BRAM_PORTB_0_clk => BRAM_PORTB_0_clk,
-      BRAM_PORTB_0_din(11 downto 0) => BRAM_PORTB_0_din(11 downto 0),
-      BRAM_PORTB_0_dout(11 downto 0) => BRAM_PORTB_0_dout(11 downto 0),
-      BRAM_PORTB_0_en => BRAM_PORTB_0_en,
-      BRAM_PORTB_0_we(0) => BRAM_PORTB_0_we(0),
+      VGA_PCLK => VGA_PCLK,
+
+      BRAM_PORT_VGA_addr => VGA_FB_addr,
+      BRAM_PORT_VGA_clk  => VGA_FB_clk,
+      BRAM_PORT_VGA_din  => VGA_FB_din,
+      BRAM_PORT_VGA_dout => VGA_FB_dout,
+      BRAM_PORT_VGA_en   => VGA_FB_en,
+      BRAM_PORT_VGA_we   => VGA_FB_we,
+      
+      BRAM_PORT_CAM_addr => CAM_FB_addr,
+      BRAM_PORT_CAM_clk  => CAM_FB_clk,
+      BRAM_PORT_CAM_din  => CAM_FB_din,
+      BRAM_PORT_CAM_dout => CAM_FB_dout,
+      BRAM_PORT_CAM_en   => CAM_FB_en,
+      BRAM_PORT_CAM_we   => CAM_FB_we,
+      BRAM_PORT_CAM_rst  => reset,
       BTN_tri_i(4 downto 0) => BTN_tri_i(4 downto 0),
       IIC_0_scl_i => IIC_0_scl_i,
       IIC_0_scl_o => IIC_0_scl_o,
@@ -157,7 +162,6 @@ RISC_V_i: component RISC_V
       IIC_0_sda_t => IIC_0_sda_t,
       LED_tri_o(15 downto 0) => LED_tri_o(15 downto 0),
       SW_tri_i(15 downto 0) => SW_tri_i(15 downto 0),
-      VGA_PCLK => VGA_PCLK,
       cam_clk_0 => cam_clk_0,
       enc_x1_a_0 => enc_x1_a_0,
       enc_x1_b_0 => enc_x1_b_0,

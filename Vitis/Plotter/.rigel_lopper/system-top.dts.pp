@@ -1,9 +1,9 @@
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotform3\\hw\\sdt\\system-top.dts"
-# 1 "<built-in>"
-# 1 "<command-line>"
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotform3\\hw\\sdt\\system-top.dts"
+# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/LinuxPlotform1/hw/sdt/system-top.dts"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/LinuxPlotform1/hw/sdt/system-top.dts"
 /dts-v1/;
-# 1 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotform3\\hw\\sdt\\pl.dtsi" 1
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/LinuxPlotform1/hw/sdt/pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -211,7 +211,7 @@
    xlnx,use-fpu = <0>;
    xlnx,use-non-secure = <0>;
    d-cache-baseaddr = <0x0>;
-   xlnx,use-compression = <0>;
+   xlnx,use-compression = <1>;
    xlnx,instr-size = <32>;
    xlnx,fsl-links = <0>;
    xlnx,dcache-victims = <0>;
@@ -241,6 +241,36 @@
   compatible = "simple-bus";
   #address-cells = <1>;
   #size-cells = <1>;
+  axi_bram_ctrl_0: axi_bram_ctrl_0@c0000000 {
+   xlnx,protocol = "AXI4";
+   xlnx,edk-special = "BRAM_CTRL";
+   compatible = "xlnx,axi-bram-ctrl-4.1" , "xlnx,axi-bram-ctrl";
+   xlnx,ecc-onoff-reset-value = <0>;
+   xlnx,ecc-type = <0>;
+   xlnx,rd-cmd-optimization = <0>;
+   xlnx,memory-depth = <524288>;
+   xlnx,use-ecc = <0>;
+   xlnx,fault-inject = <0>;
+   xlnx,ip-name = "axi_bram_ctrl";
+   reg = <0xc0000000 0x200000>;
+   xlnx,bmg-instance = "EXTERNAL";
+   xlnx,s-axi-ctrl-addr-width = <32>;
+   xlnx,read-latency = <1>;
+   xlnx,id-width = <0>;
+   xlnx,s-axi-supports-narrow-burst = <0>;
+   xlnx,supports-narrow-burst = <0>;
+   xlnx,single-port-bram = <1>;
+   xlnx,ecc = <0>;
+   xlnx,edk-iptype = "PERIPHERAL";
+   status = "okay";
+   xlnx,data-width = <32>;
+   xlnx,bram-addr-width = <19>;
+   xlnx,bram-inst-mode = "EXTERNAL";
+   xlnx,s-axi-ctrl-data-width = <32>;
+   xlnx,mem-depth = <524288>;
+   xlnx,s-axi-id-width = <1>;
+   xlnx,name = "axi_bram_ctrl_0";
+  };
   axi_gpio_buttons: gpio@40020000 {
    xlnx,gpio-board-interface = "push_buttons_5bits";
    compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
@@ -454,7 +484,7 @@
   };
  };
 };
-# 3 "C:\\Users\\yoric\\OneDrive\\Documenten\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotform3\\hw\\sdt\\system-top.dts" 2
+# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/LinuxPlotform1/hw/sdt/system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
@@ -464,6 +494,13 @@
  slrcount = <1>;
  family = "microblaze_riscv";
  speed_grade = "1";
+ axi_bram_ctrl_0_memory: memory@c0000000 {
+  compatible = "xlnx,axi-bram-ctrl-4.1";
+  xlnx,ip-name = "axi_bram_ctrl";
+  device_type = "memory";
+  memory_type = "memory";
+  reg = <0xC0000000 0x200000>;
+ };
  microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory: memory@0 {
   compatible = "xlnx,lmb-bram-if-cntlr-4.0";
   xlnx,ip-name = "lmb_bram_if_cntlr";
@@ -479,7 +516,9 @@
   i2c0 = &axi_iic_0;
  };
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
-  address-map = <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>,
+  address-map = <0xC0000000 &axi_bram_ctrl_0_memory 0xC0000000 0x200000>,
+         <0xC0000000 &axi_bram_ctrl_0 0xC0000000 0x200000>,
+         <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>,
          <0x00000000 &microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x10000>,
          <0x40000000 &axi_gpio_leds 0x40000000 0x10000>,
          <0x40010000 &axi_gpio_switches 0x40010000 0x10000>,
