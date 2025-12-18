@@ -948,7 +948,7 @@ BEGIN
       C_USE_MULDIV => 0,
       C_USE_ATOMIC => 0,
       C_USE_FPU => 0,
-      C_USE_COMPRESSION => 1,
+      C_USE_COMPRESSION => 0,
       C_USE_BITMAN => 0,
       C_FSL_LINKS => 0,
       C_USE_EXTENDED_FSL_INSTR => 0,

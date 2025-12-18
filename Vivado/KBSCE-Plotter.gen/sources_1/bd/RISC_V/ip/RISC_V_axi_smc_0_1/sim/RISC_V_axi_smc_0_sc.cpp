@@ -82,8 +82,6 @@ RISC_V_axi_smc_0_sc::RISC_V_axi_smc_0_sc(const sc_core::sc_module_name& nm) : sc
   M04_AXI_tlm_aximm_write_socket = mp_impl->M04_AXI_tlm_aximm_write_socket;
   M05_AXI_tlm_aximm_read_socket = mp_impl->M05_AXI_tlm_aximm_read_socket;
   M05_AXI_tlm_aximm_write_socket = mp_impl->M05_AXI_tlm_aximm_write_socket;
-  M06_AXI_tlm_aximm_read_socket = mp_impl->M06_AXI_tlm_aximm_read_socket;
-  M06_AXI_tlm_aximm_write_socket = mp_impl->M06_AXI_tlm_aximm_write_socket;
 }
 
 RISC_V_axi_smc_0_sc::~RISC_V_axi_smc_0_sc()

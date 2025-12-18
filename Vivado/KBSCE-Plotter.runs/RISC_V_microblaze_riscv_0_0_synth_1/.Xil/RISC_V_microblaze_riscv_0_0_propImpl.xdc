@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc rfile:../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc id:1 order:EARLY scoped_inst:U0} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc rfile:../../../KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc id:1 order:EARLY scoped_inst:U0} [current_design]
 current_instance U0
 set_property src_info {type:SCOPED_XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 create_waiver -internal -scoped -user microblaze_riscv -tags IPCPG-502 -type CDC -id CDC-1  -description "Debug protocol ensures stable signals" -from [get_pins -quiet riscv_core_I/*.Core/*Debug_Logic.Master_Core.Debug*/Serial_Dbg_Intf.*/C]

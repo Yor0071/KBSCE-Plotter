@@ -331,24 +331,6 @@
                 "SV": "xilinx.com:user:motor_ctrl:1.0",
                 "TM": "data",
                 "TU": "register"
-            },
-            "V11": {
-                "VT": "AC",
-                "BA": "0xC0000000",
-                "HA": "0xC01FFFFF",
-                "BP": "C_S_AXI_BASEADDR",
-                "HP": "C_S_AXI_HIGHADDR",
-                "MA": "Data",
-                "MX": "/microblaze_riscv_0",
-                "MI": "M_AXI_DP",
-                "MS": "SEG_axi_bram_ctrl_0_Mem0",
-                "MV": "xilinx.com:ip:microblaze_riscv:1.0",
-                "SX": "/axi_bram_ctrl_0",
-                "SI": "S_AXI",
-                "SS": "Mem0",
-                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
-                "TM": "data",
-                "TU": "memory"
             }
         },
         "edges": [
@@ -397,11 +379,6 @@
             },
             {
                 "src": "V10",
-                "trg": "V2",
-                "EH": "2"
-            },
-            {
-                "src": "V11",
                 "trg": "V2",
                 "EH": "2"
             }

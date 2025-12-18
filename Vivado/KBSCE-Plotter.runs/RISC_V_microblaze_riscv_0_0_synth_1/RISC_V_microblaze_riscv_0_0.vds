@@ -1,42 +1,45 @@
 #-----------------------------------------------------------
 # Vivado v2025.1 (64-bit)
-# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Dec 17 13:47:16 2025
-# Process ID         : 90506
-# Current directory  : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1
-# Command line       : vivado -log RISC_V_microblaze_riscv_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_microblaze_riscv_0_0.tcl
-# Log file           : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/RISC_V_microblaze_riscv_0_0.vds
-# Journal file       : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/vivado.jou
-# Running On         : mrt-fed-lap
-# Platform           : unknown
-# Operating System   : unknown
-# Processor Detail   : AMD Ryzen 7 5700U with Radeon Graphics
-# CPU Frequency      : 1114.905 MHz
-# CPU Physical cores : 8
-# CPU Logical cores  : 16
-# Host memory        : 16037 MB
-# Swap memory        : 8589 MB
-# Total Virtual      : 24627 MB
-# Available Virtual  : 16433 MB
+# Start of session at: Fri Dec 12 11:51:38 2025
+# Process ID         : 10196
+# Current directory  : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1
+# Command line       : vivado.exe -log RISC_V_microblaze_riscv_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_microblaze_riscv_0_0.tcl
+# Log file           : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/RISC_V_microblaze_riscv_0_0.vds
+# Journal file       : C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-H6STBOR
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+# CPU Frequency      : 1992 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 17061 MB
+# Swap memory        : 2550 MB
+# Total Virtual      : 19611 MB
+# Available Virtual  : 9817 MB
 #-----------------------------------------------------------
 source RISC_V_microblaze_riscv_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 493.441 ; gain = 212.465
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/maartenvk/src/KBSCE-Plotter/ip_repo/motor_ctrl_1_0'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/ip_repo/motor_ctrl_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.cache/ip 
 Command: synth_design -top RISC_V_microblaze_riscv_0_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 90590
+INFO: [Synth 8-7075] Helper process launched with PID 11892
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2139.160 ; gain = 440.625 ; free physical = 5373 ; free virtual = 14557
+Starting RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1206.875 ; gain = 492.695
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'RISC_V_microblaze_riscv_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/synth/RISC_V_microblaze_riscv_0_0.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'RISC_V_microblaze_riscv_0_0' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/synth/RISC_V_microblaze_riscv_0_0.vhd:116]
 	Parameter C_FREQ bound to: 100000000 - type: integer 
 	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
 	Parameter C_NUM_SYNC_FF_CLK bound to: 2 - type: integer 
@@ -86,7 +89,7 @@ INFO: [Synth 8-638] synthesizing module 'RISC_V_microblaze_riscv_0_0' [/home/maa
 	Parameter C_USE_MULDIV bound to: 0 - type: integer 
 	Parameter C_USE_ATOMIC bound to: 0 - type: integer 
 	Parameter C_USE_FPU bound to: 0 - type: integer 
-	Parameter C_USE_COMPRESSION bound to: 1 - type: integer 
+	Parameter C_USE_COMPRESSION bound to: 0 - type: integer 
 	Parameter C_USE_BITMAN bound to: 0 - type: integer 
 	Parameter C_FSL_LINKS bound to: 0 - type: integer 
 	Parameter C_USE_EXTENDED_FSL_INSTR bound to: 0 - type: integer 
@@ -276,8 +279,8 @@ INFO: [Synth 8-638] synthesizing module 'RISC_V_microblaze_riscv_0_0' [/home/maa
 	Parameter C_M_AXI_DC_WUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_M_AXI_DC_RUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_M_AXI_DC_BUSER_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'riscv' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0725/hdl/microblaze_riscv_v1_0_vh_rfs.vhd:132548' bound to instance 'U0' of component 'riscv' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/synth/RISC_V_microblaze_riscv_0_0.vhd:918]
-INFO: [Synth 8-256] done synthesizing module 'RISC_V_microblaze_riscv_0_0' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/synth/RISC_V_microblaze_riscv_0_0.vhd:116]
+INFO: [Synth 8-3491] module 'riscv' declared at 'c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ipshared/0725/hdl/microblaze_riscv_v1_0_vh_rfs.vhd:132548' bound to instance 'U0' of component 'riscv' [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/synth/RISC_V_microblaze_riscv_0_0.vhd:918]
+INFO: [Synth 8-256] done synthesizing module 'RISC_V_microblaze_riscv_0_0' (0#1) [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/synth/RISC_V_microblaze_riscv_0_0.vhd:116]
 WARNING: [Synth 8-7129] Port Clk in module pmp_checker is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Reset in module pmp_checker is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Config_Reset in module pmp_checker is either unconnected or has no load
@@ -380,65 +383,65 @@ WARNING: [Synth 8-7129] Port EX_ALU_Result[4] in module pmp_checker is either un
 WARNING: [Synth 8-7129] Port EX_ALU_Result[3] in module pmp_checker is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2718.301 ; gain = 1019.766 ; free physical = 4778 ; free virtual = 13971
+Finished RTL Elaboration : Time (s): cpu = 00:01:31 ; elapsed = 00:02:07 . Memory (MB): peak = 1932.617 ; gain = 1218.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2718.301 ; gain = 1019.766 ; free physical = 4779 ; free virtual = 13972
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:32 ; elapsed = 00:02:09 . Memory (MB): peak = 1932.617 ; gain = 1218.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2718.301 ; gain = 1019.766 ; free physical = 4779 ; free virtual = 13972
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:32 ; elapsed = 00:02:09 . Memory (MB): peak = 1932.617 ; gain = 1218.438
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2775.637 ; gain = 18.234 ; free physical = 4850 ; free virtual = 14042
-INFO: [Netlist 29-17] Analyzing 377 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:28 ; elapsed = 00:00:43 . Memory (MB): peak = 2006.336 ; gain = 12.012
+INFO: [Netlist 29-17] Analyzing 375 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc_debug.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc_debug.xdc] for cell 'U0'
-Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc] for cell 'U0'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RISC_V_microblaze_riscv_0_0_propImpl.xdc].
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc_debug.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc_debug.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_microblaze_riscv_0_0/RISC_V_microblaze_riscv_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RISC_V_microblaze_riscv_0_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/RISC_V_microblaze_riscv_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3365.094 ; gain = 0.000 ; free physical = 4387 ; free virtual = 13580
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 2684.109 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 250 instances were transformed.
+  A total of 248 instances were transformed.
   FDR => FDRE: 37 instances
   FDS => FDSE: 1 instance 
   LUT6_2 => LUT6_2 (LUT5, LUT6): 48 instances
-  MUXCY_L => MUXCY: 148 instances
+  MUXCY_L => MUXCY: 146 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3365.129 ; gain = 0.000 ; free physical = 4387 ; free virtual = 13580
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.392 . Memory (MB): peak = 2687.113 ; gain = 3.004
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 3365.129 ; gain = 1666.594 ; free physical = 4330 ; free virtual = 13523
+Finished Constraint Validation : Time (s): cpu = 00:05:11 ; elapsed = 00:07:02 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4330 ; free virtual = 13523
+Finished Loading Part and Timing Information : Time (s): cpu = 00:05:11 ; elapsed = 00:07:02 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4330 ; free virtual = 13523
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:05:11 ; elapsed = 00:07:02 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4334 ; free virtual = 13534
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:05:24 ; elapsed = 00:07:16 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -456,11 +459,10 @@ Detailed RTL Component Info :
 	             4096 Bit    Registers := 1     
 	               64 Bit    Registers := 2     
 	               42 Bit    Registers := 1     
-	               32 Bit    Registers := 34    
+	               32 Bit    Registers := 33    
 	               31 Bit    Registers := 1     
 	               29 Bit    Registers := 1     
 	               23 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
 	               14 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
 	                7 Bit    Registers := 3     
@@ -469,22 +471,19 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 5     
 	                3 Bit    Registers := 5     
 	                2 Bit    Registers := 33    
-	                1 Bit    Registers := 303   
+	                1 Bit    Registers := 287   
 +---Muxes : 
 	   2 Input   64 Bit        Muxes := 9     
-	   2 Input   32 Bit        Muxes := 39    
+	   2 Input   32 Bit        Muxes := 34    
 	   3 Input   32 Bit        Muxes := 1     
 	   4 Input   32 Bit        Muxes := 4     
-	   2 Input   18 Bit        Muxes := 2     
-	   2 Input   16 Bit        Muxes := 1     
 	   4 Input   16 Bit        Muxes := 1     
 	   2 Input   14 Bit        Muxes := 1     
-	   2 Input   12 Bit        Muxes := 3     
 	   2 Input    8 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 2     
 	   2 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 13    
+	   2 Input    5 Bit        Muxes := 6     
 	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 3     
 	   7 Input    4 Bit        Muxes := 1     
@@ -493,9 +492,8 @@ Detailed RTL Component Info :
 	   2 Input    3 Bit        Muxes := 8     
 	   2 Input    2 Bit        Muxes := 23    
 	   4 Input    2 Bit        Muxes := 2     
-	   3 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 306   
-	   5 Input    1 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 280   
 	   7 Input    1 Bit        Muxes := 4     
 	   3 Input    1 Bit        Muxes := 1     
 	   6 Input    1 Bit        Muxes := 1     
@@ -538,7 +536,7 @@ INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/Using_F
 INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/No_Short_Pipe_5.Using_FPGA.Gen_Bits[5].MEM_EX_Result_Inst/Using_FPGA.Native) is unused and will be removed from module riscv.
 INFO: [Synth 8-3332] Sequential element (riscv_core_I/Base.Core/Decode_I/No_Short_Pipe_5.Using_FPGA.Gen_Bits[4].MEM_EX_Result_Inst/Using_FPGA.Native) is unused and will be removed from module riscv.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4368 ; free virtual = 13568
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:12 ; elapsed = 00:08:04 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -563,19 +561,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:01:14 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4372 ; free virtual = 13572
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:23 ; elapsed = 00:08:15 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4371 ; free virtual = 13571
+Finished Timing Optimization : Time (s): cpu = 00:06:31 ; elapsed = 00:08:23 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:19 ; elapsed = 00:01:23 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4371 ; free virtual = 13571
+Finished Technology Mapping : Time (s): cpu = 00:06:34 ; elapsed = 00:08:26 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -593,37 +591,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Finished IO Insertion : Time (s): cpu = 00:06:43 ; elapsed = 00:08:35 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Finished Renaming Generated Instances : Time (s): cpu = 00:06:43 ; elapsed = 00:08:35 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:06:44 ; elapsed = 00:08:36 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Finished Renaming Generated Ports : Time (s): cpu = 00:06:44 ; elapsed = 00:08:36 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Finished Handling Custom Attributes : Time (s): cpu = 00:06:44 ; elapsed = 00:08:36 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Finished Renaming Generated Nets : Time (s): cpu = 00:06:44 ; elapsed = 00:08:36 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -655,57 +653,55 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |CARRY4  |    36|
-|2     |LUT1    |    52|
-|3     |LUT2    |   253|
-|4     |LUT3    |   282|
-|5     |LUT4    |   449|
-|6     |LUT5    |   322|
-|7     |LUT6    |   835|
-|9     |MUXCY_L |   128|
-|10    |MUXF7   |    16|
+|2     |LUT1    |    45|
+|3     |LUT2    |   247|
+|4     |LUT3    |   266|
+|5     |LUT4    |   442|
+|6     |LUT5    |   309|
+|7     |LUT6    |   631|
+|9     |MUXCY_L |   126|
+|10    |MUXF7   |    22|
 |11    |RAM32M  |    16|
 |12    |SRL16E  |    47|
 |13    |XORCY   |    79|
 |14    |FDCE    |    10|
 |15    |FDPE    |     1|
 |16    |FDR     |    21|
-|17    |FDRE    |  1261|
+|17    |FDRE    |  1223|
 |18    |FDS     |     1|
 |19    |FDSE    |    34|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 3373.098 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Finished Writing Synthesis Report : Time (s): cpu = 00:06:44 ; elapsed = 00:08:36 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11195 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 3373.098 ; gain = 1027.734 ; free physical = 4340 ; free virtual = 13539
-Synthesis Optimization Complete : Time (s): cpu = 00:01:24 ; elapsed = 00:01:27 . Memory (MB): peak = 3373.105 ; gain = 1674.562 ; free physical = 4340 ; free virtual = 13539
+Synthesis finished with 0 errors, 0 critical warnings and 11164 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:58 ; elapsed = 00:04:14 . Memory (MB): peak = 2687.113 ; gain = 1218.438
+Synthesis Optimization Complete : Time (s): cpu = 00:06:44 ; elapsed = 00:08:36 . Memory (MB): peak = 2687.113 ; gain = 1972.934
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3373.105 ; gain = 0.000 ; free physical = 4506 ; free virtual = 13705
-INFO: [Netlist 29-17] Analyzing 345 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.254 . Memory (MB): peak = 2687.113 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 349 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3429.125 ; gain = 0.000 ; free physical = 4505 ; free virtual = 13705
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2687.113 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 121 instances were transformed.
-  (MUXCY,XORCY) => CARRY4: 35 instances
+  A total of 120 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 34 instances
   FDR => FDRE: 21 instances
   FDS => FDSE: 1 instance 
   LUT6_2 => LUT6_2 (LUT5, LUT6): 48 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
 
-Synth Design complete | Checksum: d52675c5
+Synth Design complete | Checksum: e3d090a8
 INFO: [Common 17-83] Releasing license: Synthesis
-47 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+47 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:01:31 . Memory (MB): peak = 3429.160 ; gain = 1891.711 ; free physical = 4505 ; free virtual = 13705
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2906.870; main = 2749.265; forked = 321.710
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4335.730; main = 3429.129; forked = 962.629
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3453.137 ; gain = 0.000 ; free physical = 4505 ; free virtual = 13705
-INFO: [Common 17-1381] The checkpoint '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/RISC_V_microblaze_riscv_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP RISC_V_microblaze_riscv_0_0, cache-ID = 70c380b64b995cf5
-INFO: [Coretcl 2-1174] Renamed 599 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3453.137 ; gain = 0.000 ; free physical = 4499 ; free virtual = 13707
-INFO: [Common 17-1381] The checkpoint '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/RISC_V_microblaze_riscv_0_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:06:56 ; elapsed = 00:08:53 . Memory (MB): peak = 2687.113 ; gain = 2174.688
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2687.113 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/RISC_V_microblaze_riscv_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP RISC_V_microblaze_riscv_0_0, cache-ID = 3e5c75a8a3ad47f3
+INFO: [Coretcl 2-1174] Renamed 594 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2687.113 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_microblaze_riscv_0_0_synth_1/RISC_V_microblaze_riscv_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RISC_V_microblaze_riscv_0_0_utilization_synth.rpt -pb RISC_V_microblaze_riscv_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 17 13:48:55 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 12 12:01:39 2025...

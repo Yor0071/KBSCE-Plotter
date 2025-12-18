@@ -81,25 +81,26 @@ architecture RTL of NexysA7_Top is
     --------------------------------------------------------------------
     component RISC_V_wrapper is
         port (
-            VGA_PCLK : out STD_LOGIC;
-            VGA_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-            VGA_FB_clk : in STD_LOGIC;
-            VGA_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-            VGA_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-            VGA_FB_en : in STD_LOGIC;
-            VGA_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-            CAM_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-            CAM_FB_clk : in STD_LOGIC;
-            CAM_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-            CAM_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-            CAM_FB_en : in STD_LOGIC;
-            CAM_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+            BRAM_PORTA_1_addr : in  STD_LOGIC_VECTOR (18 downto 0);
+            BRAM_PORTA_1_clk  : in  STD_LOGIC;
+            BRAM_PORTA_1_din  : in  STD_LOGIC_VECTOR (11 downto 0);
+            BRAM_PORTA_1_dout : out STD_LOGIC_VECTOR (11 downto 0);
+            BRAM_PORTA_1_en   : in  STD_LOGIC;
+            BRAM_PORTA_1_we   : in  STD_LOGIC_VECTOR (0 to 0);
+
+            BRAM_PORTB_0_addr : in  STD_LOGIC_VECTOR (18 downto 0);
+            BRAM_PORTB_0_clk  : in  STD_LOGIC;
+            BRAM_PORTB_0_din  : in  STD_LOGIC_VECTOR (11 downto 0);
+            BRAM_PORTB_0_dout : out STD_LOGIC_VECTOR (11 downto 0);
+            BRAM_PORTB_0_en   : in  STD_LOGIC;
+            BRAM_PORTB_0_we   : in  STD_LOGIC_VECTOR (0 to 0);
 
             BTN_tri_i         : in  STD_LOGIC_VECTOR (4 downto 0);
             IIC_0_scl_io      : inout STD_LOGIC;
             IIC_0_sda_io      : inout STD_LOGIC;
             LED_tri_o         : out STD_LOGIC_VECTOR (15 downto 0);
             SW_tri_i          : in  STD_LOGIC_VECTOR (15 downto 0);
+            VGA_PCLK          : out STD_LOGIC;
             cam_clk_0         : out STD_LOGIC;
             enc_x1_a_0 : in STD_LOGIC;
             enc_x1_b_0 : in STD_LOGIC;
@@ -175,21 +176,21 @@ begin
     u_cpu : RISC_V_wrapper
         port map(
             -- Port A: VGA read
-            VGA_FB_addr  => vga_address,
-            VGA_FB_clk   => VGA_PCLK,
-            VGA_FB_din   => (others => '0'), -- Unused
-            VGA_FB_dout  => vga_pixel_data,
-            VGA_FB_en    => '1',
-            VGA_FB_we    => (others => '0'), -- Read by default
+            BRAM_PORTA_1_addr => vga_address,
+            BRAM_PORTA_1_clk  => VGA_PCLK,
+            BRAM_PORTA_1_din  => (others => '0'),   -- read-only
+            BRAM_PORTA_1_dout => vga_pixel_data,
+            BRAM_PORTA_1_en   => '1',
+            BRAM_PORTA_1_we   => (others => '0'),
 
             -- Port B: camera write (ov7670_capture)
-            CAM_FB_addr  => cap_addr,
-            CAM_FB_clk   => OV_PCLK, -- Change to CAM_PCLK
-            CAM_FB_din   => cap_pixel,
-            CAM_FB_dout  => cam_fb_dout_dummy, -- Unused
-            CAM_FB_en    => '1',
-            CAM_FB_we    => (0 => (cap_we and not frozen)), -- Write by default
-        
+            BRAM_PORTB_0_addr => cap_addr,
+            BRAM_PORTB_0_clk  => OV_PCLK,
+            BRAM_PORTB_0_din  => cap_pixel,
+            BRAM_PORTB_0_dout => cam_fb_dout_dummy, -- niet gebruikt
+            BRAM_PORTB_0_en   => '1',
+            BRAM_PORTB_0_we   => (0 => cap_we and not frozen),
+
             -- Buttons, I2C
             BTN_tri_i         => BTN,
             IIC_0_scl_io      => OV_SIOC,
