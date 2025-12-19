@@ -111,6 +111,20 @@ void draw_test() {
     xil_printf("done\r\n");
 }
 
+void edge_detect_single_pixel(FB::screen_point_t const& point, bool& is_pen_down) {
+    if (EdgeDetect::is_edge(point)) {
+        Vec2 vec = screen_point_to_vec2(point);
+        plotter.moveTo(vec.x, vec.y, Plotter::MAX_SPEED);
+        if (!is_pen_down) {
+            is_pen_down = true;
+            plotter.penDown();
+        }
+    } else if (is_pen_down) {
+        plotter.penLift();
+        is_pen_down = false;
+    }
+}
+
 void do_edge_detect() {
     plotter.penLift();
     plotter.home();
@@ -118,21 +132,19 @@ void do_edge_detect() {
     FB::screen_point_t point = { .x = 0, . y = 0 };
     
     bool is_pen_down = false;
+    bool is_direction_right = true;
     for (point.y = 1; point.y < FB::Framebuffer::HEIGHT; point.y += 3) {
-        for (point.x = 3; point.x < FB::Framebuffer::WIDTH - 3; point.x++) {
-            if (EdgeDetect::is_edge(point)) {
-                Vec2 vec = screen_point_to_vec2(point);
-                plotter.moveTo(vec.x, vec.y, Plotter::MAX_SPEED);
-                if (!is_pen_down) {
-                    is_pen_down = true;
-                    plotter.penDown();
-                }
-            } else if (is_pen_down) {
-                plotter.penLift();
-                is_pen_down = false;
+        if (is_direction_right) {
+            for (point.x = 3; point.x < FB::Framebuffer::WIDTH - 3; point.x++) {
+                edge_detect_single_pixel(point, is_pen_down);
+            }
+        } else {
+            for (point.x = FB::Framebuffer::WIDTH - 3; point.x >= 3; point.x--) {
+                edge_detect_single_pixel(point, is_pen_down);
             }
         }
 
+        is_direction_right = !is_direction_right; // Toggle between left-to-right, right-to-left
         if (is_pen_down) {
             plotter.penLift();
             is_pen_down = false;
