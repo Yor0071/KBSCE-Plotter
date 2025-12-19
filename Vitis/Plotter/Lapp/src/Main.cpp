@@ -223,28 +223,22 @@ int main() {
             
             FB::screen_point_t point = { .x = 0, . y = 0 };
             
-            while (true) {
-                for (uint32_t y = 0; y < (480 / 3); y++) {
-                    for (uint32_t x = 0; x < (640 / 3); x++) {
-                        point = { .x = x, .y = y };
-                        EdgeDetect::fill_buffer(point);
-                        int32_t line_count = EdgeDetect::make_lines();
-
-                        for (int32_t n = 0; n < line_count; n++) {
-                            plotter.penLift();
-                            plotter.moveTo(
-                                EdgeDetect::lines[n].pts[0].x,
-                                EdgeDetect::lines[n].pts[0].y, 255);
+            bool is_pen_down = false;
+            for (point.y = 0; point.y < FB::Framebuffer::HEIGHT; point.y += 2) {
+                xil_printf("Doing line: %hur\n", point.y);
+                for (point.x = 0; point.x < FB::Framebuffer::WIDTH; point.x += 2) {
+                    if (EdgeDetect::is_edge(point)) {
+                        Vec2 vec = screen_point_to_vec2(point);
+                        plotter.moveTo(vec.x, vec.y, Plotter::MAX_SPEED);
+                        if (!is_pen_down) {
+                            is_pen_down = true;
                             plotter.penDown();
-                            plotter.moveTo(
-                                EdgeDetect::lines[n].pts[1].x,
-                                EdgeDetect::lines[n].pts[1].y, 255);
-                            plotter.penLift();
                         }
+                    } else {
+                        plotter.penLift();
+                        is_pen_down = false;
                     }
                 }
-                plotter.penUp();
-                break;
             }
             
             plotter.penUp();

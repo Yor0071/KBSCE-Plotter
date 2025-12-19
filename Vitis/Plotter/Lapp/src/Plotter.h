@@ -26,6 +26,8 @@ public:
     Encoders &enc() { return encoders; }
     const Encoders &enc() const { return encoders; }
 
+    static constexpr uint8_t MAX_SPEED = 255;
+
 private:
     Motor motors;
     Encoders encoders;

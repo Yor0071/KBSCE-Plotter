@@ -7,64 +7,13 @@ using namespace FB;
 
 namespace EdgeDetect {
 
-bool big_beautiful_buffer[3][3] = {};
-PolylineView lines[8] = {};
-Vec2 startstop[8][2] = {};
-
 [[nodiscard]] bool is_edge(FB::screen_point_t point) noexcept {
     Framebuffer fb;
     int32_t I = canny_process_pixel(fb, point);
-    return I >= 4;
+    return I >= EDGE_THRESHOLD;
 }
 
-void fill_buffer(FB::screen_point_t offset) noexcept {
-    for (uint32_t y = 0; y < 3; y++) {
-        for (uint32_t x = 0; x < 3; x++) {
-            bool value = is_edge({ .x = offset.x + x, .y = offset.y + y });
-            big_beautiful_buffer[y][x] = value;
-        }
-    }
-}
-
-// return line count
-[[nodiscard]] int32_t make_lines() noexcept {
-    int32_t line_count = 0;
-    for (uint32_t y = 0; y < 3; y++) {
-        bool is_line = true;
-        for (uint32_t x = 0; x < 3; x++) {
-            if (!big_beautiful_buffer[y][x]) {
-                is_line = false;
-                break;
-            }
-        }
-
-        if (is_line) {
-            lines[line_count].count = 2;
-            lines[line_count].pts = startstop[line_count];
-            line_count++;
-        }
-    }
-
-    for (uint32_t x = 0; x < 3; x++) {
-        bool is_line = true;
-        for (uint32_t y = 0; y < 3; y++) {
-            if (!big_beautiful_buffer[y][x]) {
-                is_line = false;
-                break;
-            }
-        }
-
-        if (is_line) {
-            lines[line_count].count = 2;
-            lines[line_count].pts = startstop[line_count];
-            line_count++;
-        }
-    }
-
-    return line_count;
-}
-
-int32_t canny_gaussian_for_pixel(Framebuffer& fb, screen_point_t point) noexcept {
+[[nodiscard]] int32_t canny_gaussian_for_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     int32_t gaussian_kernel[5][5] = {
         {2,  4,  5,  4, 2},
         {4,  9, 12,  9, 4},
@@ -84,7 +33,7 @@ int32_t canny_gaussian_for_pixel(Framebuffer& fb, screen_point_t point) noexcept
     return result_blurred / 159;
 }
 
-uint32_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
+[[nodiscard]] uint32_t canny_process_pixel(Framebuffer& fb, screen_point_t point) noexcept {
     int32_t NW = canny_gaussian_for_pixel(fb, offset(point, -1, -1));
     int32_t N  = canny_gaussian_for_pixel(fb, offset(point, 0, -1));
     int32_t NE = canny_gaussian_for_pixel(fb, offset(point, 1, -1));
