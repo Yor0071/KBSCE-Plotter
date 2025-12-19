@@ -13,6 +13,7 @@ extern "C" {
 #include "Geometry.h"
 #include "Framebuffer.hxx"
 #include "RoutePlanner.h"
+#include "EdgeDetect.hxx"
 
 static Plotter plotter;
 
@@ -110,6 +111,34 @@ void draw_test() {
     xil_printf("done\r\n");
 }
 
+void do_edge_detect() {
+    plotter.penLift();
+    plotter.home();
+    
+    FB::screen_point_t point = { .x = 0, . y = 0 };
+    
+    bool is_pen_down = false;
+    for (point.y = 0; point.y < FB::Framebuffer::HEIGHT; point.y += 2) {
+        xil_printf("Doing line: %hur\n", point.y);
+        for (point.x = 0; point.x < FB::Framebuffer::WIDTH; point.x += 2) {
+            if (EdgeDetect::is_edge(point)) {
+                Vec2 vec = screen_point_to_vec2(point);
+                plotter.moveTo(vec.x, vec.y, Plotter::MAX_SPEED);
+                if (!is_pen_down) {
+                    is_pen_down = true;
+                    plotter.penDown();
+                }
+            } else {
+                plotter.penLift();
+                is_pen_down = false;
+            }
+        }
+    }
+    
+    plotter.penUp();
+    plotter.home();
+}
+
 // ------------- MAIN --------------
 
 int main() {
@@ -117,15 +146,15 @@ int main() {
 
     // ===== OV7670 + I2C initialisatie =====
     xil_printf("Starting OV7670 initialization...\r\n");
-    // int Status = Ov7670_Init();
-    // if (Status == XST_SUCCESS) {
-    //     // xil_printf("OV7670 init OK.\r\n");
-    // } else {
-    //     // xil_printf("OV7670 init FAILED! (Status = %d)\r\n", Status);
-    //     // while (1) {
-    //         // stil blijven hangen als de camera/I2C init faalt
-    //     // }
-    // }
+    int Status = Ov7670_Init();
+    if (Status == XST_SUCCESS) {
+        xil_printf("OV7670 init OK.\r\n");
+    } else {
+        xil_printf("OV7670 init FAILED! (Status = %d)\r\n", Status);
+        while (1) {
+            // stil blijven hangen als de camera/I2C init faalt
+        }
+    }
     // ======================================
 
     xil_printf("Homing plotter\r\n");
@@ -214,6 +243,11 @@ int main() {
             xil_printf("Homing done\r\n");
 
             print_position();
+        }
+        else if (line[0] == 'e' || line[0] == 'E') {
+            xil_printf("Performing edge detection...\r\n");
+            do_edge_detect();
+            xil_printf("Done\r\n");
         }
     }
 

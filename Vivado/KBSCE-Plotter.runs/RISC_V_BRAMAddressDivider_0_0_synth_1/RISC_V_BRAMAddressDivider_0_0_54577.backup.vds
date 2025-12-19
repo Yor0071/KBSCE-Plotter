@@ -1,0 +1,226 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Dec 19 10:29:05 2025
+# Process ID         : 54577
+# Current directory  : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_BRAMAddressDivider_0_0_synth_1
+# Command line       : vivado -log RISC_V_BRAMAddressDivider_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_BRAMAddressDivider_0_0.tcl
+# Log file           : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_BRAMAddressDivider_0_0_synth_1/RISC_V_BRAMAddressDivider_0_0.vds
+# Journal file       : /home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_BRAMAddressDivider_0_0_synth_1/vivado.jou
+# Running On         : mrt-fed-lap
+# Platform           : unknown
+# Operating System   : unknown
+# Processor Detail   : AMD Ryzen 7 5700U with Radeon Graphics
+# CPU Frequency      : 3585.657 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16037 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 24627 MB
+# Available Virtual  : 13277 MB
+#-----------------------------------------------------------
+source RISC_V_BRAMAddressDivider_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:10 . Memory (MB): peak = 1536.449 ; gain = 112.055 ; free physical = 240 ; free virtual = 10586
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/maartenvk/src/KBSCE-Plotter/ip_repo/motor_ctrl_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/maartenvk/apps/Xilinx/2025.1/Vivado/data/ip'.
+Command: synth_design -top RISC_V_BRAMAddressDivider_0_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 54985
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2135.340 ; gain = 438.742 ; free physical = 162 ; free virtual = 3317
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'RISC_V_BRAMAddressDivider_0_0' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMAddressDivider_0_0/synth/RISC_V_BRAMAddressDivider_0_0.vhd:75]
+INFO: [Synth 8-3491] module 'BRAMAddressDivider' declared at '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/new/BRAMAddressDivider.vhd:34' bound to instance 'U0' of component 'BRAMAddressDivider' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMAddressDivider_0_0/synth/RISC_V_BRAMAddressDivider_0_0.vhd:126]
+INFO: [Synth 8-638] synthesizing module 'BRAMAddressDivider' [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/new/BRAMAddressDivider.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'BRAMAddressDivider' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.srcs/sources_1/imports/new/BRAMAddressDivider.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'RISC_V_BRAMAddressDivider_0_0' (0#1) [/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.gen/sources_1/bd/RISC_V/ip/RISC_V_BRAMAddressDivider_0_0/synth/RISC_V_BRAMAddressDivider_0_0.vhd:75]
+WARNING: [Synth 8-7129] Port bram_in_addr[1] in module BRAMAddressDivider is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_in_addr[0] in module BRAMAddressDivider is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2214.309 ; gain = 517.711 ; free physical = 182 ; free virtual = 2991
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2229.152 ; gain = 532.555 ; free physical = 159 ; free virtual = 2976
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2229.152 ; gain = 532.555 ; free physical = 159 ; free virtual = 2976
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2229.152 ; gain = 0.000 ; free physical = 159 ; free virtual = 2977
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2278.078 ; gain = 0.000 ; free physical = 255 ; free virtual = 2861
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2278.113 ; gain = 0.000 ; free physical = 252 ; free virtual = 2858
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2278.113 ; gain = 581.516 ; free physical = 254 ; free virtual = 2306
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2286.082 ; gain = 589.484 ; free physical = 253 ; free virtual = 2305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2286.082 ; gain = 589.484 ; free physical = 253 ; free virtual = 2305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2286.082 ; gain = 589.484 ; free physical = 249 ; free virtual = 2302
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3330] design RISC_V_BRAMAddressDivider_0_0 has an empty top module
+INFO: [Synth 8-3917] design RISC_V_BRAMAddressDivider_0_0 has port bram_out_addr[31] driven by constant 0
+INFO: [Synth 8-3917] design RISC_V_BRAMAddressDivider_0_0 has port bram_out_addr[30] driven by constant 0
+WARNING: [Synth 8-7129] Port bram_in_addr[1] in module RISC_V_BRAMAddressDivider_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_in_addr[0] in module RISC_V_BRAMAddressDivider_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2286.082 ; gain = 589.484 ; free physical = 190 ; free virtual = 2281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2371.082 ; gain = 674.484 ; free physical = 181 ; free virtual = 1689
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2371.082 ; gain = 674.484 ; free physical = 182 ; free virtual = 1688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2381.098 ; gain = 684.500 ; free physical = 173 ; free virtual = 1674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.910 ; gain = 859.312 ; free physical = 227 ; free virtual = 1138
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.910 ; gain = 859.312 ; free physical = 232 ; free virtual = 1139
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.910 ; gain = 859.312 ; free physical = 241 ; free virtual = 1136
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.910 ; gain = 859.312 ; free physical = 245 ; free virtual = 1136
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.910 ; gain = 859.312 ; free physical = 248 ; free virtual = 1136
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.910 ; gain = 859.312 ; free physical = 248 ; free virtual = 1136
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.910 ; gain = 859.312 ; free physical = 235 ; free virtual = 1130
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2555.910 ; gain = 810.352 ; free physical = 259 ; free virtual = 1082
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2555.918 ; gain = 859.312 ; free physical = 194 ; free virtual = 1053
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2555.918 ; gain = 0.000 ; free physical = 190 ; free virtual = 1082
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2555.918 ; gain = 0.000 ; free physical = 187 ; free virtual = 879
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 16aacba6
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 2555.945 ; gain = 1019.496 ; free physical = 239 ; free virtual = 884
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1214.792; main = 1049.985; forked = 189.225
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3493.730; main = 2555.914; forked = 962.629
+INFO: [Common 17-1381] The checkpoint '/home/maartenvk/src/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/RISC_V_BRAMAddressDivider_0_0_synth_1/RISC_V_BRAMAddressDivider_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:05 . Memory (MB): peak = 2579.922 ; gain = 23.977 ; free physical = 178 ; free virtual = 891
+INFO: [Vivado 12-24828] Executing command : report_utilization -file RISC_V_BRAMAddressDivider_0_0_utilization_synth.rpt -pb RISC_V_BRAMAddressDivider_0_0_utilization_synth.pb
+write_verilog: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2579.922 ; gain = 0.000 ; free physical = 188 ; free virtual = 612
+write_vhdl: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:13 . Memory (MB): peak = 2579.922 ; gain = 0.000 ; free physical = 189 ; free virtual = 674
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 19 10:30:50 2025...

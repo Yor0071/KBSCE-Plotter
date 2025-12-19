@@ -1,0 +1,16 @@
+# ninja log v5
+0	124	1766053354388227322	CMakeFiles/AppA.elf.dir/Plotter.cpp.obj	68d3db2bad6b2851
+1	109	1766053354372699924	CMakeFiles/AppA.elf.dir/ov7670_i2c.cpp.obj	2caec588504f949c
+2	137	1766053354400817341	CMakeFiles/AppA.elf.dir/Main.cpp.obj	a7031183408afb9e
+2	109	1766053354372512561	CMakeFiles/AppA.elf.dir/Encoders.cpp.obj	7648a8d1c64e7134
+1	111	1766053354374649500	CMakeFiles/AppA.elf.dir/Motor.cpp.obj	aa26f1d25a37a7a6
+2	111	1766053354374335909	CMakeFiles/AppA.elf.dir/Framebuffer.cpp.obj	36a7a024059a14c1
+138	267	1766052803755443805	AppA.elf	332440929c15586c
+2	101	1766053389346632618	CMakeFiles/AppA.elf.dir/RoutePlanner.cpp.obj	bd27cda005112675
+1	107	1766053389352379624	CMakeFiles/AppA.elf.dir/ov7670_i2c.cpp.obj	2caec588504f949c
+1	113	1766053389358869301	CMakeFiles/AppA.elf.dir/Motor.cpp.obj	aa26f1d25a37a7a6
+2	119	1766053389364456426	CMakeFiles/AppA.elf.dir/Encoders.cpp.obj	7648a8d1c64e7134
+2	122	1766053389367868239	CMakeFiles/AppA.elf.dir/Framebuffer.cpp.obj	36a7a024059a14c1
+1	125	1766053389370444807	CMakeFiles/AppA.elf.dir/Plotter.cpp.obj	68d3db2bad6b2851
+1	143	1766053389388016590	CMakeFiles/AppA.elf.dir/Main.cpp.obj	a7031183408afb9e
+143	273	1766053389476230582	AppA.elf	806d37794e91c55a

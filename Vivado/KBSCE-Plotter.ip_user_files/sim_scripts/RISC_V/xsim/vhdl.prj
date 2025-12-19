@@ -16,10 +16,10 @@ vhdl xil_defaultlib  \
 "../../../bd/RISC_V/ipshared/7d6d/hdl/motor_ctrl.vhd" \
 "../../../bd/RISC_V/ipshared/7d6d/src/MotorControl.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_motor_ctrl_0_0_1/sim/RISC_V_motor_ctrl_0_0.vhd" \
-"../../../bd/RISC_V/sim/RISC_V.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_BRAMMux_0_0/sim/RISC_V_BRAMMux_0_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_BRAMAddressDivider_0_0/sim/RISC_V_BRAMAddressDivider_0_0.vhd" \
 "../../../bd/RISC_V/ip/RISC_V_axi_bram_ctrl_0_0/sim/RISC_V_axi_bram_ctrl_0_0.vhd" \
+"../../../bd/RISC_V/sim/RISC_V.vhd" \
 
 # Do not sort compile order
 nosort

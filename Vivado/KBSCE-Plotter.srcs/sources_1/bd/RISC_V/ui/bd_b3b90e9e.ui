@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.733353",
-   "Default View_TopLeft":"323,38",
+   "Default View_TopLeft":"1353,38",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
@@ -75,7 +75,11 @@ preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 1 2 NJ 680 1000
 preplace netloc rst_clk_wiz_1_100M_mb_reset 1 1 1 430 590n
 preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 1 8 420J 470 960 230 1320J 260 NJ 260 NJ 260 NJ 260 NJ 260 2970
 preplace netloc sys_clock_1 1 0 8 20J 600 400J 670 NJ 670 NJ 670 NJ 670 NJ 670 NJ 670 2730J
+preplace netloc BRAMAddressDivider_0_BRAM_PORT_OUT 1 5 1 NJ 160
+preplace netloc BRAMMux_0_BRAM_OUT_PORT_FB 1 6 1 2420 100n
 preplace netloc BRAM_PORTA_1_1 1 0 7 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ
+preplace netloc BRAM_PORTB_0_1 1 0 6 NJ 240 NJ 240 NJ 240 NJ 240 NJ 240 1960J
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 NJ 160
 preplace netloc axi_gpio_0_GPIO 1 9 1 NJ 500
 preplace netloc axi_gpio_0_GPIO1 1 9 1 NJ 80
 preplace netloc axi_gpio_1_GPIO 1 9 1 NJ 360
@@ -86,16 +90,12 @@ preplace netloc axi_smc_M02_AXI 1 3 6 NJ 340 NJ 340 NJ 340 NJ 340 NJ 340 2950
 preplace netloc axi_smc_M03_AXI 1 3 6 1300 250 NJ 250 NJ 250 2420J 200 NJ 200 NJ
 preplace netloc axi_smc_M04_AXI 1 3 6 1280J 20 NJ 20 NJ 20 NJ 20 NJ 20 2990
 preplace netloc axi_smc_M05_AXI 1 3 6 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 2930
+preplace netloc axi_smc_M06_AXI 1 3 1 1290 140n
 preplace netloc axi_uartlite_0_UART 1 9 1 NJ 660
 preplace netloc microblaze_riscv_0_M_AXI_DP 1 2 1 970 340n
 preplace netloc microblaze_riscv_0_debug 1 1 1 440 500n
 preplace netloc microblaze_riscv_0_dlmb_1 1 2 1 980 540n
 preplace netloc microblaze_riscv_0_ilmb_1 1 2 1 960 560n
-preplace netloc axi_smc_M06_AXI 1 3 1 1290 140n
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 NJ 160
-preplace netloc BRAMAddressDivider_0_BRAM_PORT_OUT 1 5 1 NJ 160
-preplace netloc BRAM_PORTB_0_1 1 0 6 NJ 240 NJ 240 NJ 240 NJ 240 NJ 240 1960J
-preplace netloc BRAMMux_0_BRAM_OUT_PORT_FB 1 6 1 2420 100n
 levelinfo -pg 1 -10 220 700 1140 1460 1780 2190 2570 2830 3120 3270
 pagesize -pg 1 -db -bbox -sgen -190 0 3400 1050
 "
