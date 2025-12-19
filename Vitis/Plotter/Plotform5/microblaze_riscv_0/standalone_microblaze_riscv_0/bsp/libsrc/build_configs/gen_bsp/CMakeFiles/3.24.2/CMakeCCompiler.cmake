@@ -67,7 +67,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Plotform5/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include;C:/Xilinx/2025.1/gnu/riscv/nt/riscv64-unknown-elf/x86_64-w64-mingw32/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include;C:/Xilinx/2025.1/gnu/riscv/nt/riscv64-unknown-elf/x86_64-w64-mingw32/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include-fixed;C:/Xilinx/2025.1/Vitis/gnu/riscv/nt/riscv64-unknown-elf/riscv32-xilinx-elf/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/Plotform5/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/include;C:/Xilinx/2025.1/gnu/riscv/nt/riscv64-unknown-elf/x86_64-w64-mingw32/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include;C:/Xilinx/2025.1/gnu/riscv/nt/riscv64-unknown-elf/x86_64-w64-mingw32/usr/lib/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.3.0/include-fixed;C:/Xilinx/2025.1/Vitis/gnu/riscv/nt/riscv64-unknown-elf/riscv32-xilinx-elf/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

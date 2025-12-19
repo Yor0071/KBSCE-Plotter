@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Plotform5/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/uartlite/src
+# Install script for directory: C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/Plotform5/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/uartlite/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

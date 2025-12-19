@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Windows-10.0.19045")
+set(CMAKE_HOST_SYSTEM "Windows-10.0.26100")
 set(CMAKE_HOST_SYSTEM_NAME "Windows")
-set(CMAKE_HOST_SYSTEM_VERSION "10.0.19045")
+set(CMAKE_HOST_SYSTEM_VERSION "10.0.26100")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("C:/Users/yoric/OneDrive/Documenten/GitHub/KBSCE-Plotter/Vitis/Plotter/Plotform5/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/microblaze_riscv_toolchain.cmake")
+include("C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/Plotform5/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/microblaze_riscv_toolchain.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")
