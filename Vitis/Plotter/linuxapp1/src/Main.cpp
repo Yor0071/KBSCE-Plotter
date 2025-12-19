@@ -132,6 +132,11 @@ void do_edge_detect() {
                 is_pen_down = false;
             }
         }
+
+        if (is_pen_down) {
+            plotter.penLift();
+            is_pen_down = false;
+        }
     }
     
     plotter.penUp();
