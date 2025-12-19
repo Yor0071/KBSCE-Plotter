@@ -188,7 +188,7 @@ begin
             CAM_FB_din   => cap_pixel,
             CAM_FB_dout  => cam_fb_dout_dummy, -- Unused
             CAM_FB_en    => '1',
-            CAM_FB_we    => (0 => (cap_we and not frozen)), -- Write by default
+            CAM_FB_we    => (0 => (not frozen)), -- Write by default
         
             -- Buttons, I2C
             BTN_tri_i         => BTN,

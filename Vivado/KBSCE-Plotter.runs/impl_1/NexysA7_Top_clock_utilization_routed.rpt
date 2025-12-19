@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Wed Dec 17 13:51:19 2025
+| Date         : Fri Dec 19 10:51:41 2025
 | Host         : mrt-fed-lap running 64-bit unknown
 | Command      : report_clock_utilization -file NexysA7_Top_clock_utilization_routed.rpt
 | Design       : NexysA7_Top
@@ -65,8 +65,8 @@ Table of Contents
 | g2        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y18 | n/a          |                 8 |         189 |               0 |       40.000 | VGA_PCLK_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/clkout2_buf/O                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK                                                              |
 | g3        | src4      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 1 |          99 |               0 |       66.666 | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native/O | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native/O | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |
 | g4        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 1 |          51 |               0 |       33.333 | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/tck_BUFG_inst/O                                              | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/tck_BUFG                                                     |
-| g5        | src1      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y1  | n/a          |                 3 |          32 |               0 |       33.333 | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Using_FPGA.Native/O                            | u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
-| g6        | src5      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 2 |          29 |               0 |              |                                                                                                     | OV_PCLK_IBUF_BUFG_inst/O                                                                            | OV_PCLK_IBUF_BUFG                                                                                   |
+| g5        | src1      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y1  | n/a          |                 2 |          32 |               0 |       33.333 | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Using_FPGA.Native/O                            | u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
+| g6        | src5      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 2 |          28 |               0 |              |                                                                                                     | OV_PCLK_IBUF_BUFG_inst/O                                                                            | OV_PCLK_IBUF_BUFG                                                                                   |
 | g7        | src6      | BUFG/O          | None       | BUFGCTRL_X0Y19 | n/a          |                 1 |           1 |               0 |       10.000 | clkfbout_RISC_V_clk_wiz_1_0                                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/clkf_buf/O                                                            | u_cpu/RISC_V_i/clk_wiz_1/inst/clkfbout_buf_RISC_V_clk_wiz_1_0                                       |
 | g8        | src7      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 1 |           0 |               1 |       41.667 | cam_clk_RISC_V_clk_wiz_1_0                                                                          | u_cpu/RISC_V_i/clk_wiz_1/inst/clkout3_buf/O                                                         | u_cpu/RISC_V_i/clk_wiz_1/inst/cam_clk                                                               |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -86,7 +86,7 @@ Table of Contents
 | src1      | g5        | BSCANE2/TCK         | None       | BSCAN_X0Y1      | X0Y1         |           2 |               0 |              33.333 | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                            | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/tck                                          |
 | src2      | g1        | VCC/P               | None       |                 | n/a          |           0 |               0 |                     |                                                             | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/VCC/P    | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/VCC_1 |
 | src3      | g2        | MMCME2_ADV/CLKOUT1  | None       | MMCME2_ADV_X1Y2 | X1Y2         |           1 |               0 |              40.000 | VGA_PCLK_RISC_V_clk_wiz_1_0                                 | u_cpu/RISC_V_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT1                                    | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK_RISC_V_clk_wiz_1_0                           |
-| src4      | g3        | FDRE/Q              | None       | SLICE_X52Y86    | X1Y1         |           1 |               0 |                     |                                                             | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf_reg/Q | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf    |
+| src4      | g3        | FDRE/Q              | None       | SLICE_X40Y89    | X0Y1         |           1 |               0 |                     |                                                             | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf_reg/Q | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.update_unbuf    |
 | src5      | g6        | IBUF/O              | IOB_X0Y109 | IOB_X0Y109      | X0Y2         |           1 |               0 |                     |                                                             | OV_PCLK_IBUF_inst/O                                                                    | OV_PCLK_IBUF                                                                        |
 | src6      | g7        | MMCME2_ADV/CLKFBOUT | None       | MMCME2_ADV_X1Y2 | X1Y2         |           1 |               0 |              10.000 | clkfbout_RISC_V_clk_wiz_1_0                                 | u_cpu/RISC_V_i/clk_wiz_1/inst/mmcm_adv_inst/CLKFBOUT                                   | u_cpu/RISC_V_i/clk_wiz_1/inst/clkfbout_RISC_V_clk_wiz_1_0                           |
 | src7      | g8        | MMCME2_ADV/CLKOUT2  | None       | MMCME2_ADV_X1Y2 | X1Y2         |           1 |               0 |              41.667 | cam_clk_RISC_V_clk_wiz_1_0                                  | u_cpu/RISC_V_i/clk_wiz_1/inst/mmcm_adv_inst/CLKOUT2                                    | u_cpu/RISC_V_i/clk_wiz_1/inst/cam_clk_RISC_V_clk_wiz_1_0                            |
@@ -103,14 +103,14 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   600 |    0 |    20 |    8 |    10 |    0 |    20 |
+| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   600 |    0 |    20 |    6 |    10 |    0 |    20 |
 | X1Y0              |    2 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1500 |    0 |   550 |    0 |    40 |   19 |    20 |    0 |    40 |
-| X0Y1              |    7 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2139 |  2000 |  680 |   600 |    0 |    20 |   10 |    10 |    0 |    20 |
-| X1Y1              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  448 |  1900 |  218 |   650 |    0 |    60 |   30 |    30 |    0 |    40 |
-| X0Y2              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  871 |  2000 |  274 |   600 |    0 |    20 |   10 |    10 |    0 |    20 |
-| X1Y2              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  253 |  1900 |  106 |   650 |    0 |    60 |   29 |    30 |    0 |    40 |
-| X0Y3              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   600 |    0 |    20 |    7 |    10 |    0 |    20 |
-| X1Y3              |    2 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |  1350 |    0 |   500 |    0 |    30 |    6 |    15 |    0 |    40 |
+| X0Y1              |    7 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2047 |  2000 |  627 |   600 |    0 |    20 |   10 |    10 |    0 |    20 |
+| X1Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  779 |  1900 |  326 |   650 |    0 |    60 |   30 |    30 |    0 |    40 |
+| X0Y2              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  541 |  2000 |  173 |   600 |    0 |    20 |    8 |    10 |    0 |    20 |
+| X1Y2              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  343 |  1900 |  151 |   650 |    0 |    60 |   29 |    30 |    0 |    40 |
+| X0Y3              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   600 |    0 |    20 |    8 |    10 |    0 |    20 |
+| X1Y3              |    2 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |  1350 |    0 |   500 |    0 |    30 |    9 |    15 |    0 |    40 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 
@@ -146,10 +146,10 @@ All Modules
 +----+-------+------+-----------------------+
 |    | X0    | X1   | HORIZONTAL PROG DELAY |
 +----+-------+------+-----------------------+
-| Y3 |     7 |    6 |                     0 |
-| Y2 |   910 |  206 |                     0 |
-| Y1 |  1797 |  472 |                     0 |
-| Y0 |     8 |   20 |                     0 |
+| Y3 |     8 |    9 |                     0 |
+| Y2 |   573 |  290 |                     0 |
+| Y1 |  1711 |  809 |                     0 |
+| Y0 |     6 |   20 |                     0 |
 +----+-------+------+-----------------------+
 
 
@@ -194,10 +194,10 @@ All Modules
 +----+-----+------+-----------------------+
 |    | X0  | X1   | HORIZONTAL PROG DELAY |
 +----+-----+------+-----------------------+
-| Y3 |   7 |    6 |                     0 |
-| Y2 |  12 |  104 |                     0 |
-| Y1 |   6 |   32 |                     0 |
-| Y0 |   4 |   18 |                     0 |
+| Y3 |   8 |    9 |                     0 |
+| Y2 |  10 |  111 |                     0 |
+| Y1 |   2 |   26 |                     0 |
+| Y0 |   4 |   19 |                     0 |
 +----+-----+------+-----------------------+
 
 
@@ -268,7 +268,7 @@ All Modules
 +----+-----+----+-----------------------+
 | Y3 |   0 |  0 |                     - |
 | Y2 |   0 |  0 |                     - |
-| Y1 |  30 |  1 |                     0 |
+| Y1 |  31 |  0 |                     0 |
 | Y0 |   0 |  0 |                     - |
 +----+-----+----+-----------------------+
 
@@ -279,7 +279,7 @@ All Modules
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net               |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-------------------+
-| g6        | BUFG/O          | n/a               |       |             |               |          29 |        0 |              0 |        0 | OV_PCLK_IBUF_BUFG |
+| g6        | BUFG/O          | n/a               |       |             |               |          28 |        0 |              0 |        0 | OV_PCLK_IBUF_BUFG |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -291,8 +291,8 @@ All Modules
 |    | X0  | X1 | HORIZONTAL PROG DELAY |
 +----+-----+----+-----------------------+
 | Y3 |   0 |  0 |                     - |
-| Y2 |   5 |  0 |                     0 |
-| Y1 |  24 |  0 |                     0 |
+| Y2 |   9 |  0 |                     0 |
+| Y1 |  19 |  0 |                     0 |
 | Y0 |   0 |  0 |                     - |
 +----+-----+----+-----------------------+
 
@@ -351,7 +351,7 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |           8 |               0 |  0 |           0 |    8 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
+| g0        | n/a   | BUFG/O          | None       |           6 |               0 |  0 |           0 |    6 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
 | g2        | n/a   | BUFG/O          | None       |           4 |               0 |  0 |           0 |    4 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -366,7 +366,7 @@ All Modules
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 | g0        | n/a   | BUFG/O          | None       |          20 |               0 |  0 |           0 |   19 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
-| g2        | n/a   | BUFG/O          | None       |          18 |               0 |  0 |           0 |   17 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
+| g2        | n/a   | BUFG/O          | None       |          19 |               0 |  0 |           0 |   18 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -379,13 +379,13 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                 |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1797 |               0 | 1738 |          49 |   10 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1                                                              |
+| g0        | n/a   | BUFG/O          | None       |        1711 |               0 | 1650 |          51 |   10 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1                                                              |
 | g1        | n/a   | BUFGCTRL/O      | None       |         202 |               0 |  200 |           2 |    0 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native_0   |
-| g2        | n/a   | BUFG/O          | None       |           6 |               0 |    0 |           0 |    6 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK                                                              |
+| g2        | n/a   | BUFG/O          | None       |           2 |               0 |    0 |           0 |    2 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK                                                              |
 | g3        | n/a   | BUFG/O          | None       |          99 |               0 |   99 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |
 | g4        | n/a   | BUFG/O          | None       |          51 |               0 |   48 |           3 |    0 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/tck_BUFG                                                     |
-| g5        | n/a   | BUFGCTRL/O      | None       |          30 |               0 |   30 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
-| g6        | n/a   | BUFG/O          | None       |          24 |               0 |   24 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | OV_PCLK_IBUF_BUFG                                                                                   |
+| g5        | n/a   | BUFGCTRL/O      | None       |          31 |               0 |   31 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int                         |
+| g6        | n/a   | BUFG/O          | None       |          19 |               0 |   19 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | OV_PCLK_IBUF_BUFG                                                                                   |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -395,13 +395,12 @@ All Modules
 18. Clock Region Cell Placement per Global Clock: Region X1Y1
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                         |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         472 |               0 | 441 |           1 |   30 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1                                      |
-| g2        | n/a   | BUFG/O          | None       |          32 |               0 |   6 |           0 |   26 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK                                      |
-| g5        | n/a   | BUFGCTRL/O      | None       |           1 |               0 |   1 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-----------------------------------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |         809 |               0 | 779 |           0 |   30 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
+| g2        | n/a   | BUFG/O          | None       |          26 |               0 |   0 |           0 |   26 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -413,9 +412,9 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         910 |               0 | 863 |          37 |   10 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
-| g2        | n/a   | BUFG/O          | None       |          12 |               0 |   3 |           0 |    9 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
-| g6        | n/a   | BUFG/O          | None       |           5 |               0 |   5 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | OV_PCLK_IBUF_BUFG                      |
+| g0        | n/a   | BUFG/O          | None       |         573 |               0 | 529 |          36 |    8 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
+| g2        | n/a   | BUFG/O          | None       |          10 |               0 |   3 |           0 |    7 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
+| g6        | n/a   | BUFG/O          | None       |           9 |               0 |   9 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | OV_PCLK_IBUF_BUFG                      |
 | g8        | n/a   | BUFG/O          | None       |           0 |               1 |   0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/cam_clk  |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -429,8 +428,8 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                           |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         206 |               0 | 177 |           0 |   29 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1                        |
-| g2        | n/a   | BUFG/O          | None       |         104 |               0 |  76 |           0 |   28 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK                        |
+| g0        | n/a   | BUFG/O          | None       |         290 |               0 | 261 |           0 |   29 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1                        |
+| g2        | n/a   | BUFG/O          | None       |         111 |               0 |  82 |           0 |   29 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK                        |
 | g7        | n/a   | BUFG/O          | None       |           1 |               0 |   0 |           0 |    0 |   0 |  0 |    1 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clkfbout_buf_RISC_V_clk_wiz_1_0 |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -444,8 +443,8 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |           7 |               0 |  0 |           0 |    7 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
-| g2        | n/a   | BUFG/O          | None       |           7 |               0 |  0 |           0 |    7 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
+| g0        | n/a   | BUFG/O          | None       |           8 |               0 |  0 |           0 |    8 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
+| g2        | n/a   | BUFG/O          | None       |           8 |               0 |  0 |           0 |    8 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -458,8 +457,8 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |           6 |               0 |  0 |           0 |    6 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
-| g2        | n/a   | BUFG/O          | None       |           6 |               0 |  0 |           0 |    6 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
+| g0        | n/a   | BUFG/O          | None       |           9 |               0 |  0 |           0 |    9 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/clk_out1 |
+| g2        | n/a   | BUFG/O          | None       |           9 |               0 |  0 |           0 |    9 |   0 |  0 |    0 |   0 |       0 | u_cpu/RISC_V_i/clk_wiz_1/inst/VGA_PCLK |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -489,7 +488,7 @@ set_property LOC IOB_X0Y109 [get_ports OV_PCLK]
 #startgroup
 create_pblock {CLKAG_u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}
 add_cells_to_pblock [get_pblocks  {CLKAG_u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=u_cpu/RISC_V_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_DRCK/Using_FPGA.Native} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int"}]]]
-resize_pblock [get_pblocks {CLKAG_u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+resize_pblock [get_pblocks {CLKAG_u_cpu/RISC_V_i/mdm_1/U0/Use_JTAG_BSCAN.BUFG_JTAG_TCK/Use_JTAG_BSCAN.tck_int}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
 #endgroup
 
 # Clock net "u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/tck_BUFG" driven by instance "u_cpu/RISC_V_i/mdm_1/U0/Use_E2.BSCAN_I/tck_BUFG_inst" located at site "BUFGCTRL_X0Y3"

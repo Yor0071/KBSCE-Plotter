@@ -2,7 +2,7 @@
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Wed Dec 17 13:47:07 2025
+--Date        : Fri Dec 19 10:28:50 2025
 --Host        : mrt-fed-lap running 64-bit unknown
 --Command     : generate_target RISC_V_wrapper.bd
 --Design      : RISC_V_wrapper
@@ -70,6 +70,7 @@ architecture STRUCTURE of RISC_V_wrapper is
     BRAM_PORT_CAM_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     BRAM_PORT_CAM_en : in STD_LOGIC;
     BRAM_PORT_CAM_we : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BRAM_PORT_CAM_rst : in STD_LOGIC;
     BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
     BRAM_PORT_VGA_clk : in STD_LOGIC;
     BRAM_PORT_VGA_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -102,8 +103,7 @@ architecture STRUCTURE of RISC_V_wrapper is
     m1_in2_0 : out STD_LOGIC;
     m1_in1_0 : out STD_LOGIC;
     enc_y_b_0 : in STD_LOGIC;
-    m4_in2_0 : out STD_LOGIC;
-    BRAM_PORT_CAM_rst : in STD_LOGIC
+    m4_in2_0 : out STD_LOGIC
   );
   end component RISC_V;
   component IOBUF is
