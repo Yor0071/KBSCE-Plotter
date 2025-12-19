@@ -10,7 +10,7 @@ typedef struct {
     uint16_t x, y;
 } screen_point_t;
 
-screen_point_t offset(screen_point_t point, uint16_t x, uint16_t y) noexcept;
+[[nodiscard]] screen_point_t offset(screen_point_t point, uint16_t x, uint16_t y) noexcept;
 
 typedef union {
     struct __attribute__((__packed__)) {

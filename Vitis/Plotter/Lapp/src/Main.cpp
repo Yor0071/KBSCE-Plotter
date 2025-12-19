@@ -111,6 +111,34 @@ void draw_test() {
     xil_printf("done\r\n");
 }
 
+void do_edge_detect() {
+    plotter.penLift();
+    plotter.home();
+    
+    FB::screen_point_t point = { .x = 0, . y = 0 };
+    
+    bool is_pen_down = false;
+    for (point.y = 0; point.y < FB::Framebuffer::HEIGHT; point.y += 2) {
+        xil_printf("Doing line: %hur\n", point.y);
+        for (point.x = 0; point.x < FB::Framebuffer::WIDTH; point.x += 2) {
+            if (EdgeDetect::is_edge(point)) {
+                Vec2 vec = screen_point_to_vec2(point);
+                plotter.moveTo(vec.x, vec.y, Plotter::MAX_SPEED);
+                if (!is_pen_down) {
+                    is_pen_down = true;
+                    plotter.penDown();
+                }
+            } else {
+                plotter.penLift();
+                is_pen_down = false;
+            }
+        }
+    }
+    
+    plotter.penUp();
+    plotter.home();
+}
+
 // ------------- MAIN --------------
 
 int main() {
@@ -218,31 +246,7 @@ int main() {
         }
         else if (line[0] == 'e' || line[0] == 'E') {
             xil_printf("Performing edge detection...\r\n");
-            plotter.penLift();
-            plotter.home();
-            
-            FB::screen_point_t point = { .x = 0, . y = 0 };
-            
-            bool is_pen_down = false;
-            for (point.y = 0; point.y < FB::Framebuffer::HEIGHT; point.y += 2) {
-                xil_printf("Doing line: %hur\n", point.y);
-                for (point.x = 0; point.x < FB::Framebuffer::WIDTH; point.x += 2) {
-                    if (EdgeDetect::is_edge(point)) {
-                        Vec2 vec = screen_point_to_vec2(point);
-                        plotter.moveTo(vec.x, vec.y, Plotter::MAX_SPEED);
-                        if (!is_pen_down) {
-                            is_pen_down = true;
-                            plotter.penDown();
-                        }
-                    } else {
-                        plotter.penLift();
-                        is_pen_down = false;
-                    }
-                }
-            }
-            
-            plotter.penUp();
-            plotter.home();
+            do_edge_detect();
             xil_printf("Done\r\n");
         }
     }

@@ -23,9 +23,16 @@ namespace EdgeDetect {
     };
 
     double result_blurred = 0;
+    pixel_t p;
     for (uint32_t y = 0; y < 5; y++) {
         for (uint32_t x = 0; x < 5; x++) {
-            pixel_t p = fb.read(offset(point, x - 2, y - 2));
+            screen_point_t offset_point = offset(point, x - 2, y - 2);
+            if (fb.is_in_bounds(offset_point)) [[likely]] {
+                p = fb.read(offset_point);
+            } else {
+                p = fb.read(point);
+            }
+
             result_blurred += gaussian_kernel[y][x] * intensity(p);
         }
     }

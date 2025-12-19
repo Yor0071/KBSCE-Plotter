@@ -10,7 +10,7 @@ namespace FB {
     return { .b = uint16_t(intensity / 3), .g = uint16_t(intensity / 3), .r = uint16_t(intensity / 3) };
 }
 
-screen_point_t offset(screen_point_t point, uint16_t x, uint16_t y) noexcept {
+[[nodiscard]] screen_point_t offset(screen_point_t point, uint16_t x, uint16_t y) noexcept {
     return {
         .x = static_cast<uint16_t>(point.x + x),
         .y = static_cast<uint16_t>(point.y + y),
@@ -22,8 +22,6 @@ Framebuffer::Framebuffer() noexcept
 
 [[nodiscard]] inline volatile uint32_t* Framebuffer::get_address(screen_point_t point) const noexcept {
     if (!is_in_bounds(point)) [[unlikely]] {
-        // Uncomment to test. Commented to save memory space
-        // Xil_printf("E: Out of bounds [%hu,%hu]\n", point.x, point.y);
         return base_ptr;
     }
 
