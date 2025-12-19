@@ -8,7 +8,7 @@
 
 namespace EdgeDetect {
 
-constexpr int32_t EDGE_THRESHOLD = 4;
+constexpr int32_t EDGE_THRESHOLD = 2;
 
 typedef struct {
     Vec2 data;
