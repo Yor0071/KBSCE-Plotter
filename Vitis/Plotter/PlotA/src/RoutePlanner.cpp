@@ -1,16 +1,8 @@
 #include "RoutePlanner.h"
+#include <cmath>   // <-- nodig voor sqrt
 
 // ---------------------------------------------------------
-// Kleine helper: absolute verschil voor uint64_t
-// (embedded-safe, geen stdlib nodig)
-// ---------------------------------------------------------
-static inline uint64_t absdiff_u64(uint64_t a, uint64_t b)
-{
-    return (a > b) ? (a - b) : (b - a);
-}
-
-// ---------------------------------------------------------
-// Euclidische afstand^2 (zonder sqrt)
+// Euclidische afstand^2 (zonder sqrt) - pen-up afstand
 // ---------------------------------------------------------
 uint32_t RoutePlanner::dist2(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
 {
@@ -20,7 +12,8 @@ uint32_t RoutePlanner::dist2(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
 }
 
 // ---------------------------------------------------------
-// Totale polyline-lengte (som van segmentlengtes^2)
+// ECHTE polyline-lengte:
+// som van sqrt(dx^2 + dy^2) per segment
 // ---------------------------------------------------------
 uint64_t RoutePlanner::polyLen2Sum(const Vec2* p, uint16_t n)
 {
@@ -28,18 +21,21 @@ uint64_t RoutePlanner::polyLen2Sum(const Vec2* p, uint16_t n)
 
     uint64_t sum = 0;
     for (uint16_t i = 1; i < n; ++i) {
-        int32_t dx = p[i].x - p[i - 1].x;
-        int32_t dy = p[i].y - p[i - 1].y;
-        sum += (uint64_t)((int64_t)dx * dx + (int64_t)dy * dy);
+        int64_t dx = (int64_t)p[i].x - p[i - 1].x;
+        int64_t dy = (int64_t)p[i].y - p[i - 1].y;
+
+        // echte geometrische lengte van dit segment
+        double segLen = std::sqrt((double)(dx * dx + dy * dy));
+        sum += (uint64_t)segLen;
     }
     return sum;
 }
 
 // ---------------------------------------------------------
-// Route planning:
-// - Primair: langste polyline eerst
-// - Secundair (alleen bij gelijke lengte): kortste pen-up afstand
-// - Daarna: kies tekenrichting (reverse) per polyline
+// Build a plan:
+// 1) sort polylines by TRUE line length desc (STRICT)
+// 2) ONLY if length is EXACTLY equal: closest-to-start tie-break
+// 3) fixed order; NN only for direction (start vs end)
 // ---------------------------------------------------------
 uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
     const PolylineView* polys,
@@ -51,93 +47,88 @@ uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
     if (!polys || !outSteps || n == 0) return 0;
     if (n > 512) return 0;
 
-    static uint64_t len2[512];
-    static bool used[512];
+    static uint16_t order[512];
+    static uint64_t len[512];
 
-    // 1) Voorbereiden
+    // -------- FASE 1: compute true lengths ----------
     for (uint16_t i = 0; i < n; ++i) {
-        len2[i] = polyLen2Sum(polys[i].pts, polys[i].count);
-        used[i] = false;
+        order[i] = i;
+        len[i]   = polyLen2Sum(polys[i].pts, polys[i].count);
     }
 
+    // -------- FASE 1b: strict sort ----------
+    for (uint16_t i = 0; i < n; ++i) {
+        for (uint16_t j = i + 1; j < n; ++j) {
+
+            uint16_t ai = order[i];
+            uint16_t aj = order[j];
+            bool swap = false;
+
+            // primary: longer line first
+            if (len[aj] > len[ai]) {
+                swap = true;
+            }
+            // secondary: EXACT equal length -> closer to start first
+            else if (len[aj] == len[ai]) {
+
+                const PolylineView& pa = polys[ai];
+                const PolylineView& pb = polys[aj];
+
+                if (pa.pts && pb.pts && pa.count && pb.count) {
+
+                    const Vec2& sa = pa.pts[0];
+                    const Vec2& ea = pa.pts[pa.count - 1];
+                    const Vec2& sb = pb.pts[0];
+                    const Vec2& eb = pb.pts[pb.count - 1];
+
+                    uint32_t da = dist2(startX, startY, sa.x, sa.y);
+                    uint32_t dea = dist2(startX, startY, ea.x, ea.y);
+                    uint32_t db = dist2(startX, startY, sb.x, sb.y);
+                    uint32_t deb = dist2(startX, startY, eb.x, eb.y);
+
+                    uint32_t dA = (da < dea) ? da : dea;
+                    uint32_t dB = (db < deb) ? db : deb;
+
+                    if (dB < dA)
+                        swap = true;
+                }
+            }
+
+            if (swap) {
+                uint16_t tmp = order[i];
+                order[i] = order[j];
+                order[j] = tmp;
+            }
+        }
+    }
+
+    // -------- FASE 2: NN only for drawing direction ----------
     int32_t curX = startX;
     int32_t curY = startY;
 
-    // Tolerantie: wanneer beschouwen we lijnen als "even groot"
-    const uint64_t LEN_EPS = 1000;   // pas aan aan jouw schaal
-
-    // 2) Bouw route stap voor stap
     for (uint16_t k = 0; k < n; ++k) {
 
-        int bestIdx = -1;
-        uint64_t bestLen = 0;
-        uint32_t bestDist = 0;
+        uint16_t pi = order[k];
+        const PolylineView& pl = polys[pi];
+        bool reverse = false;
 
-        // 2a) Kies volgende polyline
-        for (uint16_t i = 0; i < n; ++i) {
-            if (used[i]) continue;
-
-            const PolylineView& pl = polys[i];
-            if (!pl.pts || pl.count == 0) continue;
-
-            uint64_t L = len2[i];
-
+        if (pl.pts && pl.count > 0) {
             const Vec2& s = pl.pts[0];
             const Vec2& e = pl.pts[pl.count - 1];
 
-            uint32_t dS = dist2(curX, curY, s.x, s.y);
-            uint32_t dE = dist2(curX, curY, e.x, e.y);
-            uint32_t dMin = (dS < dE) ? dS : dE;
+            uint32_t dStart = dist2(curX, curY, s.x, s.y);
+            uint32_t dEnd   = dist2(curX, curY, e.x, e.y);
+            reverse = (dEnd < dStart);
 
-            if (bestIdx < 0) {
-                bestIdx  = i;
-                bestLen  = L;
-                bestDist = dMin;
-                continue;
-            }
-
-            // Primair criterium: langere polyline wint
-            if (L > bestLen + LEN_EPS) {
-                bestIdx  = i;
-                bestLen  = L;
-                bestDist = dMin;
-            }
-            // Secundair criterium: lengte ~ gelijk → afstand beslist
-            else if (absdiff_u64(L, bestLen) <= LEN_EPS) {
-                if (dMin < bestDist) {
-                    bestIdx  = i;
-                    bestLen  = L;
-                    bestDist = dMin;
-                }
+            if (!reverse) {
+                curX = e.x; curY = e.y;
+            } else {
+                curX = s.x; curY = s.y;
             }
         }
 
-        if (bestIdx < 0)
-            return k; // zou niet moeten gebeuren
-
-        // 2b) Bepaal tekenrichting
-        const PolylineView& pl = polys[bestIdx];
-        const Vec2& s = pl.pts[0];
-        const Vec2& e = pl.pts[pl.count - 1];
-
-        uint32_t dStart = dist2(curX, curY, s.x, s.y);
-        uint32_t dEnd   = dist2(curX, curY, e.x, e.y);
-
-        bool reverse = (dEnd < dStart);
-
-        outSteps[k].polyIndex = (uint16_t)bestIdx;
+        outSteps[k].polyIndex = pi;
         outSteps[k].reverse   = reverse;
-
-        // 2c) Update huidige positie
-        if (!reverse) {
-            curX = e.x;
-            curY = e.y;
-        } else {
-            curX = s.x;
-            curY = s.y;
-        }
-
-        used[bestIdx] = true;
     }
 
     return n;
