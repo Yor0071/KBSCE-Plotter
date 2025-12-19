@@ -1,9 +1,9 @@
-# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot/hw/sdt/system-top.dts"
+# 0 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot1/hw/sdt/system-top.dts"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot/hw/sdt/system-top.dts"
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot1/hw/sdt/system-top.dts"
 /dts-v1/;
-# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot/hw/sdt/pl.dtsi" 1
+# 1 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot1/hw/sdt/pl.dtsi" 1
 / {
  cpus_microblaze_riscv_0: cpus_microblaze_riscv@0 {
   #cpu-mask-cells = <1>;
@@ -484,7 +484,7 @@
   };
  };
 };
-# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot/hw/sdt/system-top.dts" 2
+# 3 "/home/maartenvk/src/KBSCE-Plotter/Vitis/Plotter/linuxplot1/hw/sdt/system-top.dts" 2
 / {
  board = "nexys-a7-100t";
  compatible = "xlnx,nexys-a7-100t";
