@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Mon Dec 22 15:36:55 2025
+| Date         : Mon Dec 22 22:50:37 2025
 | Host         : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 | Command      : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
 | Design       : NexysA7_Top
@@ -36,8 +36,8 @@ Table of Contents
 |   LUT as Memory            |  152 |     0 |          0 |     19000 |  0.80 |
 |     LUT as Distributed RAM |   64 |     0 |            |           |       |
 |     LUT as Shift Register  |   88 |     0 |            |           |       |
-| Slice Registers            | 4156 |     0 |          0 |    126800 |  3.28 |
-|   Register as Flip Flop    | 4156 |     0 |          0 |    126800 |  3.28 |
+| Slice Registers            | 4164 |     0 |          0 |    126800 |  3.28 |
+|   Register as Flip Flop    | 4164 |     0 |          0 |    126800 |  3.28 |
 |   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
 | F7 Muxes                   |  288 |     0 |          0 |     31700 |  0.91 |
 | F8 Muxes                   |   76 |     0 |          0 |     15850 |  0.48 |
@@ -62,7 +62,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 1     |          Yes |           - |          Set |
 | 313   |          Yes |           - |        Reset |
 | 195   |          Yes |         Set |            - |
-| 3647  |          Yes |       Reset |            - |
+| 3655  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -97,7 +97,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   83 |     0 |          0 |       210 | 39.52 |
+| Bonded IOB                  |   87 |     0 |          0 |       210 | 41.43 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         6 |  0.00 |
@@ -153,7 +153,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 3647 |        Flop & Latch |
+| FDRE       | 3655 |        Flop & Latch |
 | LUT6       | 1726 |                 LUT |
 | LUT3       |  961 |                 LUT |
 | LUT2       |  918 |                 LUT |
@@ -168,8 +168,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | RAMD32     |   96 |  Distributed Memory |
 | SRL16E     |   87 |  Distributed Memory |
 | MUXF8      |   76 |               MuxFx |
+| IBUF       |   45 |                  IO |
 | OBUF       |   42 |                  IO |
-| IBUF       |   41 |                  IO |
 | RAMS32     |   32 |  Distributed Memory |
 | BUFG       |    6 |               Clock |
 | OBUFT      |    2 |                  IO |

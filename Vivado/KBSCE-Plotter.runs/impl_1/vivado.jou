@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Mon Dec 22 15:37:02 2025
-# Process ID         : 10328
+# Start of session at: Mon Dec 22 22:50:45 2025
+# Process ID         : 31828
 # Current directory  : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/impl_1
 # Command line       : vivado.exe -log NexysA7_Top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source NexysA7_Top.tcl -notrace
 # Log file           : C:/Users/liamb/GitHub/KBSCE-Plotter/Vivado/KBSCE-Plotter.runs/impl_1/NexysA7_Top.vdi
@@ -19,6 +19,6 @@
 # Host memory        : 34174 MB
 # Swap memory        : 5100 MB
 # Total Virtual      : 39274 MB
-# Available Virtual  : 7471 MB
+# Available Virtual  : 8200 MB
 #-----------------------------------------------------------
 source NexysA7_Top.tcl -notrace

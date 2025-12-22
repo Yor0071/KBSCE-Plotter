@@ -92,13 +92,13 @@
     # JA3: HREF
     set_property -dict { PACKAGE_PIN E18 IOSTANDARD LVCMOS33 } [get_ports { OV_HREF }];
     
-    # JA4: XCLK (FPGA 25 MHz -> camera)
+    # JA4: XCLK (FPGA 24 MHz -> camera)
     set_property -dict { PACKAGE_PIN G17 IOSTANDARD LVCMOS33 } [get_ports { OV_XCLK }];
     
     # JA7: SCL
     set_property -dict { PACKAGE_PIN D17 IOSTANDARD LVCMOS33 PULLUP true } [get_ports { OV_SIOC }];
     
-    # JA8: XCLK SDA
+    # JA8: SDA
     set_property -dict { PACKAGE_PIN E17 IOSTANDARD LVCMOS33 PULLUP true } [get_ports { OV_SIOD }];
     
     # JA9: PWDN

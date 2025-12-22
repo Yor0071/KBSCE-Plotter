@@ -58,12 +58,10 @@ begin
                 else
                     ------------------------------------------------------------
                     -- Tweede byte: GGGG BBBB
-                    -- We negeren G en B en gebruiken alleen R uit first_byte
-                    -- voor alle drie de kanalen → grijsbeeld
                     ------------------------------------------------------------
-                    pixel_reg(11 downto 8) <= first_byte(3 downto 0); -- "R" = gray
-                    pixel_reg(7  downto 4) <= first_byte(3 downto 0); -- "G" = gray
-                    pixel_reg(3  downto 0) <= first_byte(3 downto 0); -- "B" = gray
+                    pixel_reg(11 downto 8) <= first_byte(3 downto 0); -- "R"
+                    pixel_reg(7  downto 4) <= d(7 downto 4); -- "G"
+                    pixel_reg(3  downto 0) <= d(3 downto 0); -- "B"
 
                     we_reg <= '1';
 
