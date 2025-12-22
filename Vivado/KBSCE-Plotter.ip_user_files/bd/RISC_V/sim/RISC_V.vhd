@@ -1,9 +1,9 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Fri Dec 19 10:28:50 2025
---Host        : mrt-fed-lap running 64-bit unknown
+--Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+--Date        : Mon Dec 22 15:07:57 2025
+--Host        : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 --Command     : generate_target RISC_V.bd
 --Design      : RISC_V
 --Purpose     : IP block netlist
@@ -576,7 +576,7 @@ entity RISC_V is
     usb_uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=21,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=2,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of RISC_V : entity is "RISC_V,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=RISC_V,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=21,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=2,synth_mode=None}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of RISC_V : entity is "RISC_V.hwdef";
 end RISC_V;
@@ -658,7 +658,8 @@ architecture STRUCTURE of RISC_V is
     clk_in1 : in STD_LOGIC;
     clk_out1 : out STD_LOGIC;
     VGA_PCLK : out STD_LOGIC;
-    cam_clk : out STD_LOGIC
+    cam_clk : out STD_LOGIC;
+    locked : out STD_LOGIC
   );
   end component RISC_V_clk_wiz_1_0;
   component RISC_V_rst_clk_wiz_1_100M_0 is
@@ -1281,6 +1282,7 @@ architecture STRUCTURE of RISC_V is
   signal axi_smc_M06_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M06_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M06_AXI_WVALID : STD_LOGIC;
+  signal clk_wiz_1_locked : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_riscv_0_Clk : STD_LOGIC;
   signal microblaze_riscv_0_M_AXI_DP_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1803,6 +1805,7 @@ clk_wiz_1: component RISC_V_clk_wiz_1_0
       cam_clk => cam_clk_0,
       clk_in1 => sys_clock,
       clk_out1 => microblaze_riscv_0_Clk,
+      locked => clk_wiz_1_locked,
       reset => reset_inv_0_Res(0)
     );
 mdm_1: component RISC_V_mdm_1_0
@@ -1946,7 +1949,7 @@ rst_clk_wiz_1_100M: component RISC_V_rst_clk_wiz_1_100M_0
      port map (
       aux_reset_in => '1',
       bus_struct_reset(0) => rst_clk_wiz_1_100M_bus_struct_reset(0),
-      dcm_locked => '1',
+      dcm_locked => clk_wiz_1_locked,
       ext_reset_in => reset,
       interconnect_aresetn(0) => NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED(0),
       mb_debug_sys_rst => mdm_1_debug_sys_rst,

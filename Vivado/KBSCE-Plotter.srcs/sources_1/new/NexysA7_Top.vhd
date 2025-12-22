@@ -80,49 +80,56 @@ architecture RTL of NexysA7_Top is
     -- RISC_V_wrapper (nieuwste versie met BRAM_PORTA/B, I2C, BTN, cam_clk)
     --------------------------------------------------------------------
     component RISC_V_wrapper is
-        port (
-            VGA_PCLK : out STD_LOGIC;
-            VGA_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-            VGA_FB_clk : in STD_LOGIC;
-            VGA_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-            VGA_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-            VGA_FB_en : in STD_LOGIC;
-            VGA_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-            CAM_FB_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
-            CAM_FB_clk : in STD_LOGIC;
-            CAM_FB_din : in STD_LOGIC_VECTOR ( 11 downto 0 );
-            CAM_FB_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-            CAM_FB_en : in STD_LOGIC;
-            CAM_FB_we : in STD_LOGIC_VECTOR ( 0 to 0 );
-
-            BTN_tri_i         : in  STD_LOGIC_VECTOR (4 downto 0);
-            IIC_0_scl_io      : inout STD_LOGIC;
-            IIC_0_sda_io      : inout STD_LOGIC;
-            LED_tri_o         : out STD_LOGIC_VECTOR (15 downto 0);
-            SW_tri_i          : in  STD_LOGIC_VECTOR (15 downto 0);
-            cam_clk_0         : out STD_LOGIC;
-            enc_x1_a_0 : in STD_LOGIC;
-            enc_x1_b_0 : in STD_LOGIC;
-            enc_x2_a_0 : in STD_LOGIC;
-            enc_x2_b_0 : in STD_LOGIC;
-            enc_y_a_0 : in STD_LOGIC;
-            enc_y_b_0 : in STD_LOGIC;
-            enc_z_a_0 : in STD_LOGIC;
-            enc_z_b_0 : in STD_LOGIC;
-            m1_in1_0 : out STD_LOGIC;
-            m1_in2_0 : out STD_LOGIC;
-            m2_in1_0 : out STD_LOGIC;
-            m2_in2_0 : out STD_LOGIC;
-            m3_in1_0 : out STD_LOGIC;
-            m3_in2_0 : out STD_LOGIC;
-            m4_in1_0 : out STD_LOGIC;
-            m4_in2_0 : out STD_LOGIC;
-            reset             : in  STD_LOGIC;
-            sys_clock         : in  STD_LOGIC;
-            usb_uart_rxd      : in  STD_LOGIC;
-            usb_uart_txd      : out STD_LOGIC
-        );
+      port (
+        BRAM_PORT_CAM_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        BRAM_PORT_CAM_clk  : in STD_LOGIC;
+        BRAM_PORT_CAM_din  : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_CAM_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_CAM_en   : in STD_LOGIC;
+        BRAM_PORT_CAM_rst  : in STD_LOGIC;
+        BRAM_PORT_CAM_we   : in STD_LOGIC_VECTOR ( 0 to 0 );
+    
+        BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
+        BRAM_PORT_VGA_clk  : in STD_LOGIC;
+        BRAM_PORT_VGA_din  : in STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_VGA_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+        BRAM_PORT_VGA_en   : in STD_LOGIC;
+        BRAM_PORT_VGA_we   : in STD_LOGIC_VECTOR ( 0 to 0 );
+    
+        BTN_tri_i     : in  STD_LOGIC_VECTOR ( 4 downto 0 );
+        IIC_0_scl_io  : inout STD_LOGIC;
+        IIC_0_sda_io  : inout STD_LOGIC;
+        LED_tri_o     : out STD_LOGIC_VECTOR ( 15 downto 0 );
+        SW_tri_i      : in  STD_LOGIC_VECTOR ( 15 downto 0 );
+    
+        VGA_PCLK      : out STD_LOGIC;
+        cam_clk_0     : out STD_LOGIC;
+    
+        enc_x1_a_0 : in STD_LOGIC;
+        enc_x1_b_0 : in STD_LOGIC;
+        enc_x2_a_0 : in STD_LOGIC;
+        enc_x2_b_0 : in STD_LOGIC;
+        enc_y_a_0  : in STD_LOGIC;
+        enc_y_b_0  : in STD_LOGIC;
+        enc_z_a_0  : in STD_LOGIC;
+        enc_z_b_0  : in STD_LOGIC;
+    
+        m1_in1_0 : out STD_LOGIC;
+        m1_in2_0 : out STD_LOGIC;
+        m2_in1_0 : out STD_LOGIC;
+        m2_in2_0 : out STD_LOGIC;
+        m3_in1_0 : out STD_LOGIC;
+        m3_in2_0 : out STD_LOGIC;
+        m4_in1_0 : out STD_LOGIC;
+        m4_in2_0 : out STD_LOGIC;
+    
+        reset        : in STD_LOGIC;
+        sys_clock    : in STD_LOGIC;
+        usb_uart_rxd : in STD_LOGIC;
+        usb_uart_txd : out STD_LOGIC
+      );
     end component;
+
 
     --------------------------------------------------------------------
     -- Camera capture component
@@ -173,62 +180,64 @@ begin
     --  - Port B: framebuffer write vanaf camera
     --------------------------------------------------------------------
     u_cpu : RISC_V_wrapper
-        port map(
-            -- Port A: VGA read
-            VGA_FB_addr  => vga_address,
-            VGA_FB_clk   => VGA_PCLK,
-            VGA_FB_din   => (others => '0'), -- Unused
-            VGA_FB_dout  => vga_pixel_data,
-            VGA_FB_en    => '1',
-            VGA_FB_we    => (others => '0'), -- Read by default
+      port map(
+        -- Port VGA (read)
+        BRAM_PORT_VGA_addr => vga_address,
+        BRAM_PORT_VGA_clk  => VGA_PCLK,
+        BRAM_PORT_VGA_din  => (others => '0'),     -- unused
+        BRAM_PORT_VGA_dout => vga_pixel_data,
+        BRAM_PORT_VGA_en   => '1',
+        BRAM_PORT_VGA_we   => (others => '0'),     -- read
+    
+        -- Port CAM (write)
+        BRAM_PORT_CAM_addr => cap_addr,
+        BRAM_PORT_CAM_clk  => OV_PCLK,
+        BRAM_PORT_CAM_din  => cap_pixel,
+        BRAM_PORT_CAM_dout => cam_fb_dout_dummy,   -- unused
+        BRAM_PORT_CAM_en   => '1',
+        BRAM_PORT_CAM_we   => (0 => (not frozen)), -- write enable (jouw freeze)
+        BRAM_PORT_CAM_rst  => '0',                 -- of evt. (not CPU_RESETN) / '0'
+    
+        -- Buttons, I2C
+        BTN_tri_i    => BTN,
+        IIC_0_scl_io => OV_SIOC,
+        IIC_0_sda_io => OV_SIOD,
+    
+        -- LED & switches
+        LED_tri_o => LED,
+        SW_tri_i  => SW,
+    
+        -- clocks
+        VGA_PCLK  => VGA_PCLK,
+        cam_clk_0 => cam_clk_i,
+    
+        -- encoders
+        enc_x1_a_0 => enc_x1_a_0,
+        enc_x1_b_0 => enc_x1_b_0,
+        enc_x2_a_0 => enc_x2_a_0,
+        enc_x2_b_0 => enc_x2_b_0,
+        enc_y_a_0  => enc_y_a_0,
+        enc_y_b_0  => enc_y_b_0,
+        enc_z_a_0  => enc_z_a_0,
+        enc_z_b_0  => enc_z_b_0,
+    
+        -- motor outputs
+        m1_in1_0 => m1_in1_0,
+        m1_in2_0 => m1_in2_0,
+        m2_in1_0 => m2_in1_0,
+        m2_in2_0 => m2_in2_0,
+        m3_in1_0 => m3_in1_0,
+        m3_in2_0 => m3_in2_0,
+        m4_in1_0 => m4_in1_0,
+        m4_in2_0 => m4_in2_0,
+    
+        -- reset + UART
+        reset        => CPU_RESETN,
+        sys_clock    => CLK100MHZ,
+        usb_uart_rxd => UART_RX_OUT,
+        usb_uart_txd => UART_TX_IN
+      );
 
-            -- Port B: camera write (ov7670_capture)
-            CAM_FB_addr  => cap_addr,
-            CAM_FB_clk   => OV_PCLK, -- Change to CAM_PCLK
-            CAM_FB_din   => cap_pixel,
-            CAM_FB_dout  => cam_fb_dout_dummy, -- Unused
-            CAM_FB_en    => '1',
-            CAM_FB_we    => (0 => (not frozen)), -- Write by default
-        
-            -- Buttons, I2C
-            BTN_tri_i         => BTN,
-            IIC_0_scl_io      => OV_SIOC,
-            IIC_0_sda_io      => OV_SIOD,
-
-            -- LED & switches
-            LED_tri_o         => LED,
-            SW_tri_i          => SW,
-
-            -- clocks
-            VGA_PCLK          => VGA_PCLK,
-            cam_clk_0         => cam_clk_i,
-
-            -- encoders
-            enc_x1_a_0   => enc_x1_a_0,
-            enc_x1_b_0   => enc_x1_b_0,
-            enc_x2_a_0   => enc_x2_a_0,
-            enc_x2_b_0   => enc_x2_b_0,
-            enc_y_a_0    => enc_y_a_0,
-            enc_y_b_0    => enc_y_b_0,
-            enc_z_a_0    => enc_z_a_0,
-            enc_z_b_0    => enc_z_b_0,
-
-            -- motor outputs
-            m1_in1_0     => m1_in1_0,
-            m1_in2_0     => m1_in2_0,
-            m2_in1_0     => m2_in1_0,
-            m2_in2_0     => m2_in2_0,
-            m3_in1_0     => m3_in1_0,
-            m3_in2_0     => m3_in2_0,
-            m4_in1_0     => m4_in1_0,
-            m4_in2_0     => m4_in2_0,
-
-            -- reset + UART
-            reset             => CPU_RESETN,
-            sys_clock         => CLK100MHZ,
-            usb_uart_rxd      => UART_RX_OUT,
-            usb_uart_txd      => UART_TX_IN
-        );
 
     --------------------------------------------------------------------
     -- Camera capture naar BRAM B
@@ -255,11 +264,11 @@ begin
     -- Freeze / Release logica
     -- BTN(0) = foto (freeze), BTN(4) = release (live)
     --------------------------------------------------------------------
-    process (CLK100MHZ, CPU_RESETN)
+    process (VGA_PCLK, CPU_RESETN)
     begin
         if CPU_RESETN = '0' then
             frozen <= '0';  -- start in live-modus
-        elsif rising_edge(CLK100MHZ) then
+        elsif rising_edge(VGA_PCLK) then
             -- BTN(0) = center button => freeze
             if BTN(0) = '1' then
                 frozen <= '1';

@@ -43,6 +43,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source RISC_V_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# BRAMMux, BRAMAddressDivider
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -140,6 +147,8 @@ xilinx.com:ip:smartconnect:1.0\
 xilinx.com:ip:util_vector_logic:2.0\
 xilinx.com:ip:blk_mem_gen:8.4\
 xilinx.com:ip:axi_iic:2.1\
+xilinx.com:user:motor_ctrl:1.0\
+xilinx.com:ip:axi_bram_ctrl:4.1\
 xilinx.com:ip:lmb_v10:3.0\
 xilinx.com:ip:lmb_bram_if_cntlr:4.0\
 "
@@ -159,6 +168,32 @@ xilinx.com:ip:lmb_bram_if_cntlr:4.0\
       set bCheckIPsPassed 0
    }
 
+}
+
+##################################################################
+# CHECK Modules
+##################################################################
+set bCheckModules 1
+if { $bCheckModules == 1 } {
+   set list_check_mods "\ 
+BRAMMux\
+BRAMAddressDivider\
+"
+
+   set list_mods_missing ""
+   common::send_gid_msg -ssname BD::TCL -id 2020 -severity "INFO" "Checking if the following modules exist in the project's sources: $list_check_mods ."
+
+   foreach mod_vlnv $list_check_mods {
+      if { [can_resolve_reference $mod_vlnv] == 0 } {
+         lappend list_mods_missing $mod_vlnv
+      }
+   }
+
+   if { $list_mods_missing ne "" } {
+      catch {common::send_gid_msg -ssname BD::TCL -id 2021 -severity "ERROR" "The following module(s) are not found in the project: $list_mods_missing" }
+      common::send_gid_msg -ssname BD::TCL -id 2022 -severity "INFO" "Please add source files for the missing module(s) above."
+      set bCheckIPsPassed 0
+   }
 }
 
 if { $bCheckIPsPassed != 1 } {
@@ -303,17 +338,17 @@ proc create_root_design { parentCell } {
 
   set usb_uart [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:uart_rtl:1.0 usb_uart ]
 
-  set BRAM_PORTB_0 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:bram_rtl:1.0 BRAM_PORTB_0 ]
+  set BRAM_PORT_CAM [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:bram_rtl:1.0 BRAM_PORT_CAM ]
   set_property -dict [ list \
    CONFIG.READ_LATENCY {2} \
    CONFIG.READ_WRITE_MODE {READ_WRITE} \
-   ] $BRAM_PORTB_0
+   ] $BRAM_PORT_CAM
 
-  set BRAM_PORTA_1 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:bram_rtl:1.0 BRAM_PORTA_1 ]
+  set BRAM_PORT_VGA [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:bram_rtl:1.0 BRAM_PORT_VGA ]
   set_property -dict [ list \
    CONFIG.READ_LATENCY {2} \
    CONFIG.READ_WRITE_MODE {READ_WRITE} \
-   ] $BRAM_PORTA_1
+   ] $BRAM_PORT_VGA
 
   set IIC_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 IIC_0 ]
 
@@ -331,6 +366,22 @@ proc create_root_design { parentCell } {
  ] $reset
   set VGA_PCLK [ create_bd_port -dir O -type clk VGA_PCLK ]
   set cam_clk_0 [ create_bd_port -dir O -type clk cam_clk_0 ]
+  set enc_y_a_0 [ create_bd_port -dir I enc_y_a_0 ]
+  set enc_x2_b_0 [ create_bd_port -dir I enc_x2_b_0 ]
+  set enc_x2_a_0 [ create_bd_port -dir I enc_x2_a_0 ]
+  set enc_x1_b_0 [ create_bd_port -dir I enc_x1_b_0 ]
+  set enc_x1_a_0 [ create_bd_port -dir I enc_x1_a_0 ]
+  set m4_in1_0 [ create_bd_port -dir O m4_in1_0 ]
+  set m2_in2_0 [ create_bd_port -dir O m2_in2_0 ]
+  set m2_in1_0 [ create_bd_port -dir O m2_in1_0 ]
+  set enc_z_b_0 [ create_bd_port -dir I enc_z_b_0 ]
+  set m3_in2_0 [ create_bd_port -dir O m3_in2_0 ]
+  set m3_in1_0 [ create_bd_port -dir O m3_in1_0 ]
+  set enc_z_a_0 [ create_bd_port -dir I enc_z_a_0 ]
+  set m1_in2_0 [ create_bd_port -dir O m1_in2_0 ]
+  set m1_in1_0 [ create_bd_port -dir O m1_in1_0 ]
+  set enc_y_b_0 [ create_bd_port -dir I enc_y_b_0 ]
+  set m4_in2_0 [ create_bd_port -dir O m4_in2_0 ]
 
   # Create instance: microblaze_riscv_0, and set properties
   set microblaze_riscv_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze_riscv:1.0 microblaze_riscv_0 ]
@@ -339,6 +390,7 @@ proc create_root_design { parentCell } {
     CONFIG.C_D_AXI {1} \
     CONFIG.C_D_LMB {1} \
     CONFIG.C_I_LMB {1} \
+    CONFIG.C_USE_COMPRESSION {1} \
   ] $microblaze_riscv_0
 
 
@@ -347,6 +399,12 @@ proc create_root_design { parentCell } {
 
   # Create instance: mdm_1, and set properties
   set mdm_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mdm_riscv:1.0 mdm_1 ]
+  set_property -dict [list \
+    CONFIG.C_ADDR_SIZE {32} \
+    CONFIG.C_M_AXI_ADDR_WIDTH {32} \
+    CONFIG.C_TRACE_OUTPUT {0} \
+  ] $mdm_1
+
 
   # Create instance: clk_wiz_1, and set properties
   set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
@@ -380,6 +438,11 @@ proc create_root_design { parentCell } {
 
   # Create instance: rst_clk_wiz_1_100M, and set properties
   set rst_clk_wiz_1_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_clk_wiz_1_100M ]
+  set_property -dict [list \
+    CONFIG.RESET_BOARD_INTERFACE {reset} \
+    CONFIG.USE_BOARD_FLOW {true} \
+  ] $rst_clk_wiz_1_100M
+
 
   # Create instance: axi_gpio_leds, and set properties
   set axi_gpio_leds [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_leds ]
@@ -408,7 +471,7 @@ proc create_root_design { parentCell } {
   # Create instance: axi_smc, and set properties
   set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
   set_property -dict [list \
-    CONFIG.NUM_MI {5} \
+    CONFIG.NUM_MI {7} \
     CONFIG.NUM_SI {1} \
   ] $axi_smc
 
@@ -450,9 +513,42 @@ proc create_root_design { parentCell } {
   ] $axi_gpio_buttons
 
 
+  # Create instance: motor_ctrl_0, and set properties
+  set motor_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:motor_ctrl:1.0 motor_ctrl_0 ]
+
+  # Create instance: BRAMMux_0, and set properties
+  set block_name BRAMMux
+  set block_cell_name BRAMMux_0
+  if { [catch {set BRAMMux_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $BRAMMux_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: BRAMAddressDivider_0, and set properties
+  set block_name BRAMAddressDivider
+  set block_cell_name BRAMAddressDivider_0
+  if { [catch {set BRAMAddressDivider_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $BRAMAddressDivider_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: axi_bram_ctrl_0, and set properties
+  set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0 ]
+  set_property CONFIG.SINGLE_PORT_BRAM {1} $axi_bram_ctrl_0
+
+
   # Create interface connections
-  connect_bd_intf_net -intf_net BRAM_PORTA_1_1 [get_bd_intf_ports BRAM_PORTA_1] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
-  connect_bd_intf_net -intf_net BRAM_PORTB_0_1 [get_bd_intf_ports BRAM_PORTB_0] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTB]
+  connect_bd_intf_net -intf_net BRAMAddressDivider_0_BRAM_PORT_OUT [get_bd_intf_pins BRAMAddressDivider_0/BRAM_PORT_OUT] [get_bd_intf_pins BRAMMux_0/BRAM_IN_PORT_MICROBLAZE]
+  connect_bd_intf_net -intf_net BRAMMux_0_BRAM_OUT_PORT_FB [get_bd_intf_pins BRAMMux_0/BRAM_OUT_PORT_FB] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTB]
+  connect_bd_intf_net -intf_net BRAM_PORTA_1_1 [get_bd_intf_ports BRAM_PORT_VGA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+  connect_bd_intf_net -intf_net BRAM_PORTB_0_1 [get_bd_intf_ports BRAM_PORT_CAM] [get_bd_intf_pins BRAMMux_0/BRAM_IN_PORT_CAMERA]
+  connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTA [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins BRAMAddressDivider_0/BRAM_PORT_IN]
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO [get_bd_intf_ports LED] [get_bd_intf_pins axi_gpio_leds/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO1 [get_bd_intf_ports BTN] [get_bd_intf_pins axi_gpio_buttons/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_1_GPIO [get_bd_intf_ports SW] [get_bd_intf_pins axi_gpio_switches/GPIO]
@@ -462,6 +558,8 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_smc_M02_AXI [get_bd_intf_pins axi_smc/M02_AXI] [get_bd_intf_pins axi_uartlite_0/S_AXI]
   connect_bd_intf_net -intf_net axi_smc_M03_AXI [get_bd_intf_pins axi_smc/M03_AXI] [get_bd_intf_pins axi_iic_0/S_AXI]
   connect_bd_intf_net -intf_net axi_smc_M04_AXI [get_bd_intf_pins axi_smc/M04_AXI] [get_bd_intf_pins axi_gpio_buttons/S_AXI]
+  connect_bd_intf_net -intf_net axi_smc_M05_AXI [get_bd_intf_pins axi_smc/M05_AXI] [get_bd_intf_pins motor_ctrl_0/S00_AXI]
+  connect_bd_intf_net -intf_net axi_smc_M06_AXI [get_bd_intf_pins axi_smc/M06_AXI] [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
   connect_bd_intf_net -intf_net axi_uartlite_0_UART [get_bd_intf_ports usb_uart] [get_bd_intf_pins axi_uartlite_0/UART]
   connect_bd_intf_net -intf_net microblaze_riscv_0_M_AXI_DP [get_bd_intf_pins microblaze_riscv_0/M_AXI_DP] [get_bd_intf_pins axi_smc/S00_AXI]
   connect_bd_intf_net -intf_net microblaze_riscv_0_debug [get_bd_intf_pins mdm_1/MBDEBUG_0] [get_bd_intf_pins microblaze_riscv_0/DEBUG]
@@ -473,6 +571,22 @@ proc create_root_design { parentCell } {
   [get_bd_ports VGA_PCLK]
   connect_bd_net -net clk_wiz_1_cam_clk  [get_bd_pins clk_wiz_1/cam_clk] \
   [get_bd_ports cam_clk_0]
+  connect_bd_net -net enc_x1_a_0_1  [get_bd_ports enc_x1_a_0] \
+  [get_bd_pins motor_ctrl_0/enc_x1_a]
+  connect_bd_net -net enc_x1_b_0_1  [get_bd_ports enc_x1_b_0] \
+  [get_bd_pins motor_ctrl_0/enc_x1_b]
+  connect_bd_net -net enc_x2_a_0_1  [get_bd_ports enc_x2_a_0] \
+  [get_bd_pins motor_ctrl_0/enc_x2_a]
+  connect_bd_net -net enc_x2_b_0_1  [get_bd_ports enc_x2_b_0] \
+  [get_bd_pins motor_ctrl_0/enc_x2_b]
+  connect_bd_net -net enc_y_a_0_1  [get_bd_ports enc_y_a_0] \
+  [get_bd_pins motor_ctrl_0/enc_y_a]
+  connect_bd_net -net enc_y_b_0_1  [get_bd_ports enc_y_b_0] \
+  [get_bd_pins motor_ctrl_0/enc_y_b]
+  connect_bd_net -net enc_z_a_0_1  [get_bd_ports enc_z_a_0] \
+  [get_bd_pins motor_ctrl_0/enc_z_a]
+  connect_bd_net -net enc_z_b_0_1  [get_bd_ports enc_z_b_0] \
+  [get_bd_pins motor_ctrl_0/enc_z_b]
   connect_bd_net -net mdm_1_debug_sys_rst  [get_bd_pins mdm_1/Debug_SYS_Rst] \
   [get_bd_pins rst_clk_wiz_1_100M/mb_debug_sys_rst]
   connect_bd_net -net microblaze_riscv_0_Clk  [get_bd_pins clk_wiz_1/clk_out1] \
@@ -484,7 +598,25 @@ proc create_root_design { parentCell } {
   [get_bd_pins axi_gpio_switches/s_axi_aclk] \
   [get_bd_pins axi_uartlite_0/s_axi_aclk] \
   [get_bd_pins axi_iic_0/s_axi_aclk] \
-  [get_bd_pins axi_gpio_buttons/s_axi_aclk]
+  [get_bd_pins axi_gpio_buttons/s_axi_aclk] \
+  [get_bd_pins motor_ctrl_0/s00_axi_aclk] \
+  [get_bd_pins axi_bram_ctrl_0/s_axi_aclk]
+  connect_bd_net -net motor_ctrl_0_m1_in1  [get_bd_pins motor_ctrl_0/m1_in1] \
+  [get_bd_ports m1_in1_0]
+  connect_bd_net -net motor_ctrl_0_m1_in2  [get_bd_pins motor_ctrl_0/m1_in2] \
+  [get_bd_ports m1_in2_0]
+  connect_bd_net -net motor_ctrl_0_m2_in1  [get_bd_pins motor_ctrl_0/m2_in1] \
+  [get_bd_ports m2_in1_0]
+  connect_bd_net -net motor_ctrl_0_m2_in2  [get_bd_pins motor_ctrl_0/m2_in2] \
+  [get_bd_ports m2_in2_0]
+  connect_bd_net -net motor_ctrl_0_m3_in1  [get_bd_pins motor_ctrl_0/m3_in1] \
+  [get_bd_ports m3_in1_0]
+  connect_bd_net -net motor_ctrl_0_m3_in2  [get_bd_pins motor_ctrl_0/m3_in2] \
+  [get_bd_ports m3_in2_0]
+  connect_bd_net -net motor_ctrl_0_m4_in1  [get_bd_pins motor_ctrl_0/m4_in1] \
+  [get_bd_ports m4_in1_0]
+  connect_bd_net -net motor_ctrl_0_m4_in2  [get_bd_pins motor_ctrl_0/m4_in2] \
+  [get_bd_ports m4_in2_0]
   connect_bd_net -net reset_1  [get_bd_ports reset] \
   [get_bd_pins reset_inv_0/Op1] \
   [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
@@ -500,18 +632,22 @@ proc create_root_design { parentCell } {
   [get_bd_pins axi_gpio_switches/s_axi_aresetn] \
   [get_bd_pins axi_uartlite_0/s_axi_aresetn] \
   [get_bd_pins axi_iic_0/s_axi_aresetn] \
-  [get_bd_pins axi_gpio_buttons/s_axi_aresetn]
+  [get_bd_pins axi_gpio_buttons/s_axi_aresetn] \
+  [get_bd_pins motor_ctrl_0/s00_axi_aresetn] \
+  [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn]
   connect_bd_net -net sys_clock_1  [get_bd_ports sys_clock] \
   [get_bd_pins clk_wiz_1/clk_in1]
 
   # Create address segments
+  assign_bd_address -offset 0xC0000000 -range 0x00200000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
   assign_bd_address -offset 0x40020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs axi_gpio_buttons/S_AXI/Reg] -force
   assign_bd_address -offset 0x40000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs axi_gpio_leds/S_AXI/Reg] -force
   assign_bd_address -offset 0x40010000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs axi_gpio_switches/S_AXI/Reg] -force
   assign_bd_address -offset 0x40800000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x40600000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] -force
-  assign_bd_address -offset 0x00000000 -range 0x00004000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem] -force
-  assign_bd_address -offset 0x00000000 -range 0x00004000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Instruction] [get_bd_addr_segs microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] -force
+  assign_bd_address -offset 0x00000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem] -force
+  assign_bd_address -offset 0x44A00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Data] [get_bd_addr_segs motor_ctrl_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x00000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_riscv_0/Instruction] [get_bd_addr_segs microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] -force
 
 
   # Restore current instance

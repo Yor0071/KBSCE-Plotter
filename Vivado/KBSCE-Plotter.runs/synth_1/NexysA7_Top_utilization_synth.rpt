@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Dec 19 10:50:19 2025
-| Host         : mrt-fed-lap running 64-bit unknown
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Dec 22 15:36:55 2025
+| Host         : ThinkpadP1_Liam running 64-bit major release  (build 9200)
 | Command      : report_utilization -file NexysA7_Top_utilization_synth.rpt -pb NexysA7_Top_utilization_synth.pb
 | Design       : NexysA7_Top
 | Device       : xc7a100tcsg324-1
@@ -28,18 +28,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |   43 |     0 |          0 |     63400 |  0.07 |
-|   LUT as Logic          |   43 |     0 |          0 |     63400 |  0.07 |
-|   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         |  100 |     0 |          0 |    126800 |  0.08 |
-|   Register as Flip Flop |  100 |     0 |          0 |    126800 |  0.08 |
-|   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                |    0 |     0 |          0 |     31700 |  0.00 |
-| F8 Muxes                |    0 |     0 |          0 |     15850 |  0.00 |
-+-------------------------+------+-------+------------+-----------+-------+
++----------------------------+------+-------+------------+-----------+-------+
+|          Site Type         | Used | Fixed | Prohibited | Available | Util% |
++----------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs*                | 4876 |     0 |          0 |     63400 |  7.69 |
+|   LUT as Logic             | 4724 |     0 |          0 |     63400 |  7.45 |
+|   LUT as Memory            |  152 |     0 |          0 |     19000 |  0.80 |
+|     LUT as Distributed RAM |   64 |     0 |            |           |       |
+|     LUT as Shift Register  |   88 |     0 |            |           |       |
+| Slice Registers            | 4156 |     0 |          0 |    126800 |  3.28 |
+|   Register as Flip Flop    | 4156 |     0 |          0 |    126800 |  3.28 |
+|   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
+| F7 Muxes                   |  288 |     0 |          0 |     31700 |  0.91 |
+| F8 Muxes                   |   76 |     0 |          0 |     15850 |  0.48 |
++----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 Warning! For any ECO changes, please run place_design if there are unplaced instances
@@ -57,23 +59,25 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 1     |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 99    |          Yes |       Reset |            - |
+| 1     |          Yes |           - |          Set |
+| 313   |          Yes |           - |        Reset |
+| 195   |          Yes |         Set |            - |
+| 3647  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
 2. Memory
 ---------
 
-+----------------+------+-------+------------+-----------+-------+
-|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
-+----------------+------+-------+------------+-----------+-------+
-| Block RAM Tile |    0 |     0 |          0 |       135 |  0.00 |
-|   RAMB36/FIFO* |    0 |     0 |          0 |       135 |  0.00 |
-|   RAMB18       |    0 |     0 |          0 |       270 |  0.00 |
-+----------------+------+-------+------------+-----------+-------+
++-------------------+-------+-------+------------+-----------+-------+
+|     Site Type     |  Used | Fixed | Prohibited | Available | Util% |
++-------------------+-------+-------+------------+-----------+-------+
+| Block RAM Tile    | 119.5 |     0 |          0 |       135 | 88.52 |
+|   RAMB36/FIFO*    |   119 |     0 |          0 |       135 | 88.15 |
+|     RAMB36E1 only |   119 |       |            |           |       |
+|   RAMB18          |     1 |     0 |          0 |       270 |  0.37 |
+|     RAMB18E1 only |     1 |       |            |           |       |
++-------------------+-------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
 
@@ -115,9 +119,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
+| BUFGCTRL   |    8 |     0 |          0 |        32 | 25.00 |
 | BUFIO      |    0 |     0 |          0 |        24 |  0.00 |
-| MMCME2_ADV |    0 |     0 |          0 |         6 |  0.00 |
+| MMCME2_ADV |    1 |     0 |          0 |         6 | 16.67 |
 | PLLE2_ADV  |    0 |     0 |          0 |         6 |  0.00 |
 | BUFMRCE    |    0 |     0 |          0 |        12 |  0.00 |
 | BUFHCE     |    0 |     0 |          0 |        96 |  0.00 |
@@ -131,7 +135,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------+------+-------+------------+-----------+-------+
 |  Site Type  | Used | Fixed | Prohibited | Available | Util% |
 +-------------+------+-------+------------+-----------+-------+
-| BSCANE2     |    0 |     0 |          0 |         4 |  0.00 |
+| BSCANE2     |    1 |     0 |          0 |         4 | 25.00 |
 | CAPTUREE2   |    0 |     0 |          0 |         1 |  0.00 |
 | DNA_PORT    |    0 |     0 |          0 |         1 |  0.00 |
 | EFUSE_USR   |    0 |     0 |          0 |         1 |  0.00 |
@@ -146,53 +150,44 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     |   99 |        Flop & Latch |
-| OBUF     |   42 |                  IO |
-| IBUF     |   41 |                  IO |
-| LUT4     |   19 |                 LUT |
-| LUT6     |   13 |                 LUT |
-| LUT5     |   12 |                 LUT |
-| CARRY4   |   10 |          CarryLogic |
-| LUT3     |    7 |                 LUT |
-| LUT1     |    5 |                 LUT |
-| LUT2     |    4 |                 LUT |
-| OBUFT    |    2 |                  IO |
-| FDCE     |    1 |        Flop & Latch |
-| BUFG     |    1 |               Clock |
-+----------+------+---------------------+
++------------+------+---------------------+
+|  Ref Name  | Used | Functional Category |
++------------+------+---------------------+
+| FDRE       | 3647 |        Flop & Latch |
+| LUT6       | 1726 |                 LUT |
+| LUT3       |  961 |                 LUT |
+| LUT2       |  918 |                 LUT |
+| LUT5       |  851 |                 LUT |
+| LUT4       |  848 |                 LUT |
+| LUT1       |  354 |                 LUT |
+| FDCE       |  313 |        Flop & Latch |
+| MUXF7      |  288 |               MuxFx |
+| FDSE       |  195 |        Flop & Latch |
+| CARRY4     |  143 |          CarryLogic |
+| RAMB36E1   |  119 |        Block Memory |
+| RAMD32     |   96 |  Distributed Memory |
+| SRL16E     |   87 |  Distributed Memory |
+| MUXF8      |   76 |               MuxFx |
+| OBUF       |   42 |                  IO |
+| IBUF       |   41 |                  IO |
+| RAMS32     |   32 |  Distributed Memory |
+| BUFG       |    6 |               Clock |
+| OBUFT      |    2 |                  IO |
+| BUFGCTRL   |    2 |               Clock |
+| SRLC32E    |    1 |  Distributed Memory |
+| RAMB18E1   |    1 |        Block Memory |
+| MMCME2_ADV |    1 |               Clock |
+| FDPE       |    1 |        Flop & Latch |
+| BSCANE2    |    1 |              Others |
++------------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+-------------------------------+------+
-|            Ref Name           | Used |
-+-------------------------------+------+
-| RISC_V_rst_clk_wiz_1_100M_0   |    1 |
-| RISC_V_reset_inv_0_0          |    1 |
-| RISC_V_motor_ctrl_0_0         |    1 |
-| RISC_V_microblaze_riscv_0_0   |    1 |
-| RISC_V_mdm_1_0                |    1 |
-| RISC_V_lmb_bram_0             |    1 |
-| RISC_V_ilmb_v10_0             |    1 |
-| RISC_V_ilmb_bram_if_cntlr_0   |    1 |
-| RISC_V_dlmb_v10_0             |    1 |
-| RISC_V_dlmb_bram_if_cntlr_0   |    1 |
-| RISC_V_clk_wiz_1_0            |    1 |
-| RISC_V_blk_mem_gen_0_0        |    1 |
-| RISC_V_axi_uartlite_0_0       |    1 |
-| RISC_V_axi_smc_0              |    1 |
-| RISC_V_axi_iic_0_0            |    1 |
-| RISC_V_axi_gpio_1_0           |    1 |
-| RISC_V_axi_gpio_0_2           |    1 |
-| RISC_V_axi_gpio_0_0           |    1 |
-| RISC_V_axi_bram_ctrl_0_0      |    1 |
-| RISC_V_BRAMMux_0_0            |    1 |
-| RISC_V_BRAMAddressDivider_0_0 |    1 |
-+-------------------------------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 
 9. Instantiated Netlists
