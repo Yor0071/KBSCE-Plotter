@@ -15,11 +15,11 @@ entity NexysA7_Top is
         -- Buttons
         BTN         : in  std_logic_vector(4 downto 0);
 
-        -- I2C naar camera
+        -- I2C to camera
         OV_SIOC     : inout std_logic;
         OV_SIOD     : inout std_logic;
 
-        -- Camera (OV7670) signalen
+        -- Camera (OV7670) pixel interface
         OV_PCLK     : in  std_logic;
         OV_VSYNC    : in  std_logic;
         OV_HREF     : in  std_logic;
@@ -28,6 +28,7 @@ entity NexysA7_Top is
         OV_PWDN     : out std_logic;
         OV_RESET    : out std_logic;
 
+        -- Encoder / Motors
         enc_x1_a_0 : in STD_LOGIC;
         enc_x1_b_0 : in STD_LOGIC;
         enc_x2_a_0 : in STD_LOGIC;
@@ -77,10 +78,11 @@ architecture RTL of NexysA7_Top is
     signal vga_address   : std_logic_vector(18 downto 0);
 
     --------------------------------------------------------------------
-    -- RISC_V_wrapper (nieuwste versie met BRAM_PORTA/B, I2C, BTN, cam_clk)
+    -- RISC_V_wrapper
     --------------------------------------------------------------------
     component RISC_V_wrapper is
       port (
+       -- BRAM port used by camera capture (write side)
         BRAM_PORT_CAM_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
         BRAM_PORT_CAM_clk  : in STD_LOGIC;
         BRAM_PORT_CAM_din  : in STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -89,22 +91,26 @@ architecture RTL of NexysA7_Top is
         BRAM_PORT_CAM_rst  : in STD_LOGIC;
         BRAM_PORT_CAM_we   : in STD_LOGIC_VECTOR ( 0 to 0 );
     
+        -- BRAM port used by VGA (read side)
         BRAM_PORT_VGA_addr : in STD_LOGIC_VECTOR ( 18 downto 0 );
         BRAM_PORT_VGA_clk  : in STD_LOGIC;
         BRAM_PORT_VGA_din  : in STD_LOGIC_VECTOR ( 11 downto 0 );
         BRAM_PORT_VGA_dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
         BRAM_PORT_VGA_en   : in STD_LOGIC;
         BRAM_PORT_VGA_we   : in STD_LOGIC_VECTOR ( 0 to 0 );
-    
+        
+        -- Board peripherals
         BTN_tri_i     : in  STD_LOGIC_VECTOR ( 4 downto 0 );
         IIC_0_scl_io  : inout STD_LOGIC;
         IIC_0_sda_io  : inout STD_LOGIC;
         LED_tri_o     : out STD_LOGIC_VECTOR ( 15 downto 0 );
         SW_tri_i      : in  STD_LOGIC_VECTOR ( 15 downto 0 );
     
+        -- Generated clocks
         VGA_PCLK      : out STD_LOGIC;
         cam_clk_0     : out STD_LOGIC;
     
+        -- Encoders / motors
         enc_x1_a_0 : in STD_LOGIC;
         enc_x1_b_0 : in STD_LOGIC;
         enc_x2_a_0 : in STD_LOGIC;
@@ -122,7 +128,8 @@ architecture RTL of NexysA7_Top is
         m3_in2_0 : out STD_LOGIC;
         m4_in1_0 : out STD_LOGIC;
         m4_in2_0 : out STD_LOGIC;
-    
+        
+        -- System clock/reset/UART
         reset        : in STD_LOGIC;
         sys_clock    : in STD_LOGIC;
         usb_uart_rxd : in STD_LOGIC;
@@ -152,15 +159,16 @@ architecture RTL of NexysA7_Top is
     signal cap_we    : std_logic;
     signal cam_clk_i : std_logic;  -- intern: cam_clk_0 uit wrapper
 
-    -- dummy voor BRAM B read-output (we lezen niet vanuit top)
+    -- Dummy output for unused BRAM read on CAM port
     signal cam_fb_dout_dummy : std_logic_vector(11 downto 0);
 
+    -- Freeze flag: when '1', camera writes to BRAM are disabled (snapshot mode)
     signal frozen : std_logic := '0';
 
 begin
 
     --------------------------------------------------------------------
-    -- VGA Signal Generator (zoals eerst)
+    -- VGA Signal Generator
     --------------------------------------------------------------------
     u_VGASignalGenerator : VGASignalGenerator
         port map(
@@ -254,15 +262,15 @@ begin
         );
 
     --------------------------------------------------------------------
-    -- Camera vaste signalen
+    -- Camera control outputs
     --------------------------------------------------------------------
     OV_XCLK  <= cam_clk_i;  -- cam_clk_0 uit wrapper naar camera XCLK
     OV_PWDN  <= '0';        -- camera altijd aan
     OV_RESET <= '1';        -- of bv. CPU_RESETN, afhankelijk van je 
 
     --------------------------------------------------------------------
-    -- Freeze / Release logica
-    -- BTN(0) = foto (freeze), BTN(4) = release (live)
+    -- Freeze / Release logic (snapshot control)
+    -- BTN(0) = freeze, BTN(3) = release (live)
     --------------------------------------------------------------------
     process (VGA_PCLK, CPU_RESETN)
     begin

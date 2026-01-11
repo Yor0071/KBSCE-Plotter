@@ -1,3 +1,0 @@
-/home/maartenvk/src/KBSCE-Plotter/Vitis/AppA/build/CMakeFiles/AppA.elf.dir
-/home/maartenvk/src/KBSCE-Plotter/Vitis/AppA/build/CMakeFiles/edit_cache.dir
-/home/maartenvk/src/KBSCE-Plotter/Vitis/AppA/build/CMakeFiles/rebuild_cache.dir
