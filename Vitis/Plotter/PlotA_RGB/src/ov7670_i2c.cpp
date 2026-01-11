@@ -1,4 +1,4 @@
-// ov7670_i2c.cpp
+// ov7670_i2c.h
 
 extern "C" {
     #include "xparameters.h"
@@ -19,79 +19,49 @@ typedef struct {
 } ov7670_reg_t;
 
 static const ov7670_reg_t ov7670_init_regs[] = {
-    // 1. Reset & Basis instellingen
-    {0x12, 0x80}, // COM7: Reset alle registers
-    // LET OP: Voeg in je code een delay van 10ms in na dit register!
-    
-    {0x12, 0x04}, // COM7: Stel RGB output in
-    {0x11, 0x01}, // CLKRC: Interne PLL PCLK/2
-    {0x6B, 0x4A}, // Input clock times 4
-    {0x0C, 0x00}, // COM3: Default
-    {0x3E, 0x00}, // COM14: Geen scaling
-    {0x04, 0x00}, // COM1: CCIR656 uit
-    
-    // 2. RGB444 Specifieke instellingen
-    {0x8C, 0x02}, // RGB444: Enable mode + xRGB volgorde
-    {0x40, 0xD0}, // COM15: Full range RGB
-    {0x3A, 0x04}, // TSLB: Correcte output sequence
-    
-    // // 3. Kleur Matrix (MTX) - DIT FIXT DE KLEUREN
-    // {0x4F, 0xB3}, // MTX1
-    // {0x50, 0xB3}, // MTX2
-    // {0x51, 0x00}, // MTX3
-    // {0x52, 0x3D}, // MTX4
-    // {0x53, 0xA7}, // MTX5
-    // {0x54, 0xE4}, // MTX6
-    // {0x58, 0x9E}, // MTXS (Matrix Sign)
-    // {0x3D, 0xC0}, // COM13: Gamma enable
+    // 1) Reset and basic configuration
+    {0x12, 0x80}, // COM7: Reset all registers to default
 
-    // matrix test
+    {0x12, 0x04}, // COM7: Select RGB output mode
+    {0x11, 0x01}, // CLKRC: Internal clock prescaler (PCLK divider)
+    {0x6B, 0x4A}, // DBLV: PLL/clock settings (module-dependent)
+    {0x0C, 0x00}, // COM3: Default (no scaling / no special options)
+    {0x3E, 0x00}, // COM14: No scaling, normal PCLK
+    {0x04, 0x00}, // COM1: Disable CCIR656
+
+    // 2) RGB444 output configuration
+    {0x8C, 0x02}, // RGB444: Enable RGB444 mode (xRGB packing)
+    {0x40, 0xD0}, // COM15: Full-range RGB output
+    {0x3A, 0x04}, // TSLB: Output sequence control (byte order)
+
+    // 3) Color matrix (tuning; values are commonly used presets)
     {0x4F, 0xB3}, // MTX1
     {0x50, 0xA6}, // MTX2
     {0x51, 0x00}, // MTX3
     {0x52, 0x3D}, // MTX4
     {0x53, 0x99}, // MTX5
     {0x54, 0xE4}, // MTX6
-    {0x58, 0x9E}, // MTXS (Matrix Sign)
+    {0x58, 0x9E}, // MTXS: Matrix sign/scale
 
-    // {0x02, 0x52}, // Red gain  (was bv. ~0x4C)
-    // {0x01, 0x40}, // Blue gain (evt. iets omlaag)
+    // 4) Windowing (frame alignment / cropping)
+    {0x17, 0x14}, // HSTART: Horizontal start
+    {0x18, 0x02}, // HSTOP:  Horizontal stop
+    {0x32, 0x80}, // HREF:   Edge offset / HREF control bits
+    {0x19, 0x03}, // VSTART: Vertical start
+    {0x1A, 0x7B}, // VSTOP:  Vertical stop
+    {0x03, 0x0A}, // VREF:   Vertical frame control
 
-    
-    // 4. Windowing (Beeld uitlijning)
-    {0x17, 0x14}, // HSTART
-    {0x18, 0x02}, // HSTOP
-    {0x32, 0x80}, // HREF
-    {0x19, 0x03}, // VSTART
-    {0x1A, 0x7B}, // VSTOP
-    {0x03, 0x0A}, // VREF
-    
-    // // 5. Belichting en Gain (AGC/AEC)
-    // {0x13, 0xE0}, // COM8: Disable AGC/AEC tijdelijk
-    // {0x00, 0x00}, // Gain = 0
-    // {0x10, 0x00}, // ARCJ = 0
-    // {0x0D, 0x40}, // Full window
-    // {0x14, 0x18}, // COM9: 4x gain
-    // {0x24, 0x95}, // AGC Upper limit
-    // {0x25, 0x33}, // AGC Lower limit
-    // {0x13, 0xA7}, // COM8: Enable AGC/AEC/A WB
-    
-    // 6. Gamma Curve (Voor contrast en helderheid)
-    // {0x7A, 0x20}, {0x7B, 0x10}, {0x7C, 0x1E}, {0x7D, 0x35},
-    // {0x7E, 0x5A}, {0x7F, 0x69}, {0x80, 0x76}, {0x81, 0x80},
-    // {0x82, 0x88}, {0x83, 0x8F}, {0x84, 0x96}, {0x85, 0xA3},
-    // {0x86, 0xAF}, {0x87, 0xC4}, {0x88, 0xD7}, {0x89, 0xE8},
-    
-    // 7. Extra optimalisaties
-    {0x0F, 0x41}, // COM6: Reset timings
-    {0x1E, 0x20}, // MVFP: Mirror no flip
-    {0x33, 0x0B}, // CHLF
-    {0x3C, 0x78}, // COM12: Geen HREF bij VSYNC laag
-    {0xB0, 0x84} // RSVD: Magic bit voor betere kleuren
+    // 5) Additional tweaks / quality settings (module-dependent)
+    {0x0F, 0x41}, // COM6: Timing reset / auto settings
+    {0x1E, 0x20}, // MVFP: Mirror/flip control (no flip here)
+    {0x33, 0x0B}, // CHLF:  Array current control / internal tuning
+    {0x3C, 0x78}, // COM12: HREF behavior relative to VSYNC
+    {0xB0, 0x84}  // RSVD:  "Magic" register often used for better colors
 };
 
 #define OV7670_INIT_REGS_LEN (sizeof(ov7670_init_regs) / sizeof(ov7670_reg_t))
 
+// Initialize the Xilinx IIC controller
 static int IicInit(void)
 {
     int Status;
@@ -124,6 +94,7 @@ static int IicInit(void)
     return XST_SUCCESS;
 }
 
+// Write one OV7670 register over I2C.
 static int Ov7670_WriteReg(u8 reg, u8 value)
 {
     u8 buf[2] = {reg, value};
@@ -143,7 +114,7 @@ static int Ov7670_WriteReg(u8 reg, u8 value)
     return XST_FAILURE;
 }
 
-
+// Write a whole register table to the OV7670.
 static int Ov7670_WriteTable(const ov7670_reg_t *table, int len)
 {
     int Status;
@@ -158,7 +129,7 @@ static int Ov7670_WriteTable(const ov7670_reg_t *table, int len)
     return XST_SUCCESS;
 }
 
-// 🔴 LET OP: extern "C" hier!
+// Public initialization function.
 extern "C" int Ov7670_Init(void)
 {
     int Status;
