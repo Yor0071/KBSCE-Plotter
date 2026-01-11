@@ -8,10 +8,7 @@ uint32_t RoutePlanner::dist2(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
     return (uint32_t)((int64_t)dx * dx + (int64_t)dy * dy);
 }
 
-// ---------------------------------------------------------
-// Polyline length:
-// Sum of sqrt(dx^2 + dy^2) per segment
-// ---------------------------------------------------------
+// Compute total polyline length
 uint64_t RoutePlanner::polyLen2Sum(const Vec2* p, uint16_t n)
 {
     if (!p || n < 2) return 0;
@@ -27,12 +24,7 @@ uint64_t RoutePlanner::polyLen2Sum(const Vec2* p, uint16_t n)
     return sum;
 }
 
-// ---------------------------------------------------------
-// Build a plan:
-// 1) sort polylines by TRUE line length desc (STRICT)
-// 2) ONLY if length is EXACTLY equal: closest-to-start tie-break
-// 3) fixed order; NN only for direction (start vs end)
-// ---------------------------------------------------------
+// Build drawing plan
 uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
     const PolylineView* polys,
     uint16_t n,
@@ -46,13 +38,13 @@ uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
     static uint16_t order[512];
     static uint64_t len[512];
 
-    // -------- FASE 1: compute true lengths ----------
+    // Compute polyline lengths
     for (uint16_t i = 0; i < n; ++i) {
         order[i] = i;
         len[i]   = polyLen2Sum(polys[i].pts, polys[i].count);
     }
 
-    // -------- FASE 1b: strict sort ----------
+    // Sort polylines (long to short)
     for (uint16_t i = 0; i < n; ++i) {
         for (uint16_t j = i + 1; j < n; ++j) {
 
@@ -60,11 +52,9 @@ uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
             uint16_t aj = order[j];
             bool swap = false;
 
-            // primary: longer line first
             if (len[aj] > len[ai]) {
                 swap = true;
             }
-            // secondary: EXACT equal length -> closer to start first
             else if (len[aj] == len[ai]) {
 
                 const PolylineView& pa = polys[ai];
@@ -77,9 +67,9 @@ uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
                     const Vec2& sb = pb.pts[0];
                     const Vec2& eb = pb.pts[pb.count - 1];
 
-                    uint32_t da = dist2(startX, startY, sa.x, sa.y);
+                    uint32_t da  = dist2(startX, startY, sa.x, sa.y);
                     uint32_t dea = dist2(startX, startY, ea.x, ea.y);
-                    uint32_t db = dist2(startX, startY, sb.x, sb.y);
+                    uint32_t db  = dist2(startX, startY, sb.x, sb.y);
                     uint32_t deb = dist2(startX, startY, eb.x, eb.y);
 
                     uint32_t dA = (da < dea) ? da : dea;
@@ -98,7 +88,7 @@ uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
         }
     }
 
-    // -------- FASE 2: NN only for drawing direction ----------
+    // Choose drawing direction per polyline
     int32_t curX = startX;
     int32_t curY = startY;
 
@@ -117,9 +107,11 @@ uint16_t RoutePlanner::buildPlan_LongToShort_EntryNN(
             reverse = (dEnd < dStart);
 
             if (!reverse) {
-                curX = e.x; curY = e.y;
+                curX = e.x;
+                curY = e.y;
             } else {
-                curX = s.x; curY = s.y;
+                curX = s.x;
+                curY = s.y;
             }
         }
 
