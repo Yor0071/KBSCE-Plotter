@@ -1,4 +1,4 @@
-#include "Framebuffer.hxx"
+#include "Framebuffer.h"
 
 namespace FB {
 

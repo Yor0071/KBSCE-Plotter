@@ -1,9 +1,6 @@
 #include "RoutePlanner.h"
-#include <cmath>   // <-- nodig voor sqrt
+#include <cmath>  
 
-// ---------------------------------------------------------
-// Euclidische afstand^2 (zonder sqrt) - pen-up afstand
-// ---------------------------------------------------------
 uint32_t RoutePlanner::dist2(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
 {
     int32_t dx = x1 - x0;
@@ -12,8 +9,8 @@ uint32_t RoutePlanner::dist2(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
 }
 
 // ---------------------------------------------------------
-// ECHTE polyline-lengte:
-// som van sqrt(dx^2 + dy^2) per segment
+// Polyline length:
+// Sum of sqrt(dx^2 + dy^2) per segment
 // ---------------------------------------------------------
 uint64_t RoutePlanner::polyLen2Sum(const Vec2* p, uint16_t n)
 {
@@ -24,7 +21,6 @@ uint64_t RoutePlanner::polyLen2Sum(const Vec2* p, uint16_t n)
         int64_t dx = (int64_t)p[i].x - p[i - 1].x;
         int64_t dy = (int64_t)p[i].y - p[i - 1].y;
 
-        // echte geometrische lengte van dit segment
         double segLen = std::sqrt((double)(dx * dx + dy * dy));
         sum += (uint64_t)segLen;
     }

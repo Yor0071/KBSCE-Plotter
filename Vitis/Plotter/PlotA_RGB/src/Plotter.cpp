@@ -9,9 +9,9 @@ extern "C" {
 Plotter::Plotter() : motors(),
                      encoders()
 {
-// empty
 }
 
+// Initialize plotter: stop all motors and zero encoders
 void Plotter::init()
 {
     motors.stop_motors();
@@ -23,39 +23,38 @@ void Plotter::stop()
     motors.stop_motors();
 }
 
-void Plotter::delay()
-{
-    for (volatile int i = 0; i < 100000; ++i)
-    {
-
-    }
-}
-
+// Clamp PWM value to minimum move PWM
+// Returns 0 if motor is disabled
 static inline uint8_t clampMovePwm(uint8_t v, uint8_t minPwm)
 {
     if (v == 0) return 0;
     return (v < minPwm) ? minPwm : v;
 }
 
+// Move X and Y axes simultaneously to a target position
+// Uses proportional speed scaling and live line correction
+// to follow a straight path between start and target
 void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
 {
+    // Position tolerance in encoder ticks
     const int32_t tolerance = 5;
 
     // calibrated speed scale
     const float kx = 1.00f;
     const float ky = 0.80f;
 
-    // Live lijn-correctie (tunen)
-    const int32_t MAX_CORR = 40;     // max PWM correctie
-    const int32_t ERR_DIV  = 800;    // groter = minder correctie (bv 500..1500)
+    // Live lijn correction
+    const int32_t MAX_CORR = 40;     // max PWM correction
+    const int32_t ERR_DIV  = 800;    // smaller number is more correction
 
-    // Min PWM om motor in beweging te houden
+    // Min PWM
     const uint8_t MIN_PWM_MOVE = 130;
 
-    // Startpunt 1x vastleggen
+    // Starting pojnt
     int32_t startX, startY;
     encoders.getXY(startX, startY);
 
+    // Current position error
     int32_t totalDx = target_x - startX;
     int32_t totalDy = target_y - startY;
 
@@ -67,7 +66,7 @@ void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
         return;
     }
 
-    // Basis PWM ratio (1x)
+    // Base PWM ratio
     uint8_t baseSpeedX = 0;
     uint8_t baseSpeedY = 0;
 
@@ -96,7 +95,7 @@ void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
         return (uint8_t)v;
     };
 
-    // clamp met enable: als je moet bewegen, nooit onder MIN_PWM_MOVE
+    // clamp with enable. Speed is never below min speed
     auto clampMove = [&](int32_t v, bool enable) -> uint8_t {
         if (!enable) return 0;
         if (v < (int32_t)MIN_PWM_MOVE) v = MIN_PWM_MOVE;
@@ -122,23 +121,22 @@ void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
         bool enableX = (absDx > tolerance);
         bool enableY = (absDy > tolerance);
 
-        // ===== Live lijn error =====
-        // Gebruik absolute total afstanden (geen deling door 0, robust)
+        // ===== Live line correction =====
         int32_t xRel = curX - startX;
         int32_t yRel = curY - startY;
 
-        // e = xRel*absTotalDy - yRel*absTotalDx  (0 = precies op de lijn)
+        // e = xRel*absTotalDy - yRel*absTotalDx  (0 = on the line)
         int64_t e = (int64_t)xRel * (int64_t)absTotalDy - (int64_t)yRel * (int64_t)absTotalDx;
 
         int32_t corr = (int32_t)(e / ERR_DIV);
         if (corr >  MAX_CORR) corr =  MAX_CORR;
         if (corr < -MAX_CORR) corr = -MAX_CORR;
 
-        // Basis PWM
+        // Base PWM
         int32_t sx = enableX ? (int32_t)(baseSpeedX * kx) : 0;
         int32_t sy = enableY ? (int32_t)(baseSpeedY * ky) : 0;
 
-        // Corrigeer symmetrisch (houdt lijn het strakst)
+        // Symetrical correction
         sx -= corr;
         sy += corr;
 
@@ -146,7 +144,7 @@ void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
         sx = (int32_t)clampU8(sx);
         sy = (int32_t)clampU8(sy);
 
-        // Clamp naar min PWM als enable
+        // Clamp to min pwm
         uint8_t speedX = clampMove(sx, enableX);
         uint8_t speedY = clampMove(sy, enableY);
 
@@ -161,9 +159,9 @@ void Plotter::moveTo(int32_t target_x, int32_t target_y, uint8_t speed)
 
 void Plotter::home(uint8_t speed)
 {
-    const int32_t DEAD_BAND = 1;   // <= 1 tick verschil telt als "niet veranderd"
-    const int STABLE_N = 40;       // aantal keren achter elkaar stil => homed
-    const int MAX_LOOPS = 20000;   // safety: voorkomt eeuwig doorgaan
+    const int32_t DEAD_BAND = 1;   // <= 1 tick difference is no movement
+    const int STABLE_N = 40;       // after x times no movement => homed
+    const int MAX_LOOPS = 20000;   // safety
 
     if (speed < 130) speed = 130;
 
@@ -198,7 +196,6 @@ void Plotter::home(uint8_t speed)
         int stable = 0;
         int32_t last = encoders.getX();
 
-        // richting naar "0": bij jullie is dir_fw=false meestal de andere kant
         Motor::move_X(false, speed);
 
         for (int i = 0; i < MAX_LOOPS; i++)
@@ -246,12 +243,13 @@ void Plotter::home(uint8_t speed)
         Motor::stop_Y();
     }
     
-    // Zet huidige “fysieke home” als software (0,0)
+    // set current pos to zero (Homed position)
     encoders.setZeroToCurrent();
 
-    // Verplaats nulpunt naar (100,100)
+    // Move to offset home
     moveTo(100, 100, speed);
     
+    // Set offset pos to zero (Offset home position)
     encoders.setZeroToCurrent();
 }
 
@@ -285,13 +283,8 @@ void Plotter::drawLineArray(const PolylineView* lines, uint16_t lineCount, uint8
         const PolylineView& pl = lines[i];
         if (!pl.pts || pl.count == 0) continue;
 
-        // Klein liftje (of UP als je zeker wil zijn)
         penLift();
-
-        // Move naar startpunt met pen omhoog/lift
         moveTo(pl.pts[0].x, pl.pts[0].y, speed);
-
-        // Pen omlaag en tekenen
         penDown();
 
         for (uint16_t k = 1; k < pl.count; ++k) {

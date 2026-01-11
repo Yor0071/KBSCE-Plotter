@@ -35,6 +35,4 @@ private:
     static constexpr int32_t Z_UP   = 0;
     static constexpr int32_t Z_LIFT = -2861;   
     static constexpr int32_t Z_DOWN = -3075;
-
-    void delay();
 };

@@ -20,8 +20,10 @@ constexpr int32_t SCREEN_POINT_TO_VEC2_SCALING = 15;
     };
 }
 
-//
-// ===== HOOFD (ruwe cirkel, open polyline) =====
+/* Test Data
+
+// Simple character
+// ===== Head =====
 //
 static const Vec2 head[] = {
     {3500,5800}, // top
@@ -39,7 +41,7 @@ static const Vec2 head[] = {
 };
 
 //
-// ===== OGEN =====
+// ===== Eyes =====
 //
 static const Vec2 eye_left[] = {
     {3300,5200},
@@ -54,7 +56,7 @@ static const Vec2 eye_right[] = {
 };
 
 //
-// ===== MOND (smile) =====
+// ===== Mouth (smile) =====
 //
 static const Vec2 mouth[] = {
     {3200,4700},
@@ -65,7 +67,7 @@ static const Vec2 mouth[] = {
 };
 
 //
-// ===== LICHAAM =====
+// ===== Body =====
 //
 static const Vec2 body[] = {
     {3500,4200},
@@ -73,7 +75,7 @@ static const Vec2 body[] = {
 };
 
 //
-// ===== ARMEN =====
+// ===== Arms =====
 //
 static const Vec2 arm_left[] = {
     {3500,3600},
@@ -86,7 +88,7 @@ static const Vec2 arm_right[] = {
 };
 
 //
-// ===== BENEN =====
+// ===== Legs =====
 //
 static const Vec2 leg_left[] = {
     {3500,3000},
@@ -98,6 +100,10 @@ static const Vec2 leg_right[] = {
     {3800,1500},
 };
 
+
+//
+// ===== Simple Square ====
+// 
 static const Vec2 square[] =
 {
     {0,0},
@@ -109,8 +115,7 @@ static const Vec2 square[] =
 
 //
 // ===== LINE ARRAY =====
-// Elke polyline = 1 tekenbare eenheid
-//
+// 
 static const PolylineView smiley[] = {
     { head,      (uint16_t)(sizeof(head)      / sizeof(head[0])) },
     { eye_left,  (uint16_t)(sizeof(eye_left)  / sizeof(eye_left[0])) },
@@ -126,3 +131,5 @@ static const PolylineView smiley[] = {
 
 static const uint16_t smiley_count =
     (uint16_t)(sizeof(smiley) / sizeof(smiley[0]));
+
+*/

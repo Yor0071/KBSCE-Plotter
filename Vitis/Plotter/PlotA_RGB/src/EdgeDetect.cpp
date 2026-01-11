@@ -1,4 +1,4 @@
-#include "EdgeDetect.hxx"
+#include "EdgeDetect.h"
 #include "Framebuffer.hxx"
 #include "Geometry.h"
 #include <xil_printf.h>

@@ -11,7 +11,6 @@ Encoders::Encoders()
 
 void Encoders::initZeroFromHardware() 
 {
-    // zelfde als setZeroToCurrent, maar duidelijker naam
     setZeroToCurrent();
 }
 

@@ -7,31 +7,28 @@ extern "C" {
     #include <stdint.h>
 }
 
-#define ENCODER_BASE XPAR_MOTOR_CTRL_0_BASEADDR
-
 // Encoders
-#define ENCODER_X1_REG  (ENCODER_BASE + 0x10U) // Encoder x1????
-#define ENCODER_X2_REG  (ENCODER_BASE + 0x14U) // Encoder x2????
-#define ENCODER_Y_REG  (ENCODER_BASE + 0x18U) // Encoder y????
-#define ENCODER_Z_REG  (ENCODER_BASE + 0x1CU) // Encoder z????
+#define ENCODER_BASE XPAR_MOTOR_CTRL_0_BASEADDR // Base registry address
+
+#define ENCODER_X1_REG  (ENCODER_BASE + 0x10U)
+#define ENCODER_X2_REG  (ENCODER_BASE + 0x14U)
+#define ENCODER_Y_REG  (ENCODER_BASE + 0x18U)
+#define ENCODER_Z_REG  (ENCODER_BASE + 0x1CU)
 
 class Encoders {
 public:
     Encoders();
 
-    // Call één keer bij start (na reset)
-    // -> pakt huidige standen als nulpositie.
+    // Get position and set to 0
     void initZeroFromHardware();
 
-    // Later (bij homing met eindschakelaars) kun je deze opnieuw gebruiken
+    // Set to 0
     void setZeroToCurrent();
 
-    // Ruwe registers (zonder offset, 32-bit signed)
-    void readRaw(int32_t &x1, int32_t &x2,
-                 int32_t &y,  int32_t &z) const;
+    // Read registry
+    void readRaw(int32_t &x1, int32_t &x2, int32_t &y,  int32_t &z) const;
 
-    // Software-positie in stappen t.o.v. nul:
-    // X = (X2 - X1)/2, Y = Y-encoder
+    // Get XY position
     void getXY(int32_t &x, int32_t &y) const;
 
     int32_t getX() const;
@@ -45,7 +42,6 @@ private:
     int32_t z_zero;
 
     static inline int32_t readEnc(uint32_t addr) {
-        // direct cast naar signed
         return (int32_t)Xil_In32(addr);
     }
 };
