@@ -1,0 +1,17 @@
+# ninja log v5
+8	275	7877613276160900	CMakeFiles/PlotA.elf.dir/Encoders.cpp.obj	f988a562db502563
+89	858	7877613282072322	CMakeFiles/PlotA.elf.dir/RoutePlanner.cpp.obj	50e98241957e862
+23	328	7877613276679140	CMakeFiles/PlotA.elf.dir/Framebuffer.cpp.obj	8ee9b113eb49c3b3
+62	326	7877613276679140	CMakeFiles/PlotA.elf.dir/ov7670_i2c.cpp.obj	af96946fae4cc689
+858	1061	7877613283406272	PlotA.elf	a4517a8ffbf82840
+48	327	7877613276679140	CMakeFiles/PlotA.elf.dir/Motor.cpp.obj	93b84b3ce2bda31
+77	357	7877613276928420	CMakeFiles/PlotA.elf.dir/Plotter.cpp.obj	e999786fc4a8357b
+35	376	7877613277238402	CMakeFiles/PlotA.elf.dir/Main.cpp.obj	265aa534dfe3256b
+5	279	7881445977669789	CMakeFiles/PlotA.elf.dir/Encoders.cpp.obj	f988a562db502563
+16	313	7881445977977757	CMakeFiles/PlotA.elf.dir/Framebuffer.cpp.obj	8ee9b113eb49c3b3
+35	315	7881445977998538	CMakeFiles/PlotA.elf.dir/Motor.cpp.obj	93b84b3ce2bda31
+47	322	7881445978096874	CMakeFiles/PlotA.elf.dir/ov7670_i2c.cpp.obj	af96946fae4cc689
+58	374	7881445978621219	CMakeFiles/PlotA.elf.dir/Plotter.cpp.obj	e999786fc4a8357b
+26	393	7881445978817644	CMakeFiles/PlotA.elf.dir/Main.cpp.obj	265aa534dfe3256b
+69	660	7881445981475000	CMakeFiles/PlotA.elf.dir/RoutePlanner.cpp.obj	50e98241957e862
+660	928	7881445983350705	PlotA.elf	a4517a8ffbf82840

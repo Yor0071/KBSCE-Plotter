@@ -1,0 +1,3 @@
+C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/PlotA1/build/CMakeFiles/PlotA1.elf.dir
+C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/PlotA1/build/CMakeFiles/edit_cache.dir
+C:/Users/liamb/GitHub/KBSCE-Plotter/Vitis/Plotter/PlotA1/build/CMakeFiles/rebuild_cache.dir

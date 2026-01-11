@@ -1,0 +1,21 @@
+# ninja log v5
+457	662	7878544842879497	PlotA1.elf	36df6f077564c41d
+23	457	7878544841435969	CMakeFiles/PlotA1.elf.dir/Main.cpp.obj	d00e039a753f3697
+39	281	7878544839649594	CMakeFiles/PlotA1.elf.dir/Plotter.cpp.obj	b6374274c7d71fb9
+54	277	7878544839609433	CMakeFiles/PlotA1.elf.dir/ov7670_i2c.cpp.obj	ba4669d3e0a8e613
+2	426	7878544841050341	CMakeFiles/PlotA1.elf.dir/EdgeDetect.cpp.obj	24ddfbdb2fc66455
+46	271	7878544839533035	CMakeFiles/PlotA1.elf.dir/RoutePlanner.cpp.obj	a2e0d92d4b8bf155
+31	234	7878544839084537	CMakeFiles/PlotA1.elf.dir/Motor.cpp.obj	7432bfb79b5046f3
+9	240	7878544838942442	CMakeFiles/PlotA1.elf.dir/Encoders.cpp.obj	ce3fec28e6d017c0
+16	251	7878544839211480	CMakeFiles/PlotA1.elf.dir/Framebuffer.cpp.obj	64960dae04d49337
+5	148	7881222300763638	build.ninja	ac94c5655192bcb8
+3	13	0	clean	c3a864d8c6b392ab
+16	277	7881222304871015	CMakeFiles/PlotA1.elf.dir/Encoders.cpp.obj	ce3fec28e6d017c0
+26	279	7881222304901191	CMakeFiles/PlotA1.elf.dir/Framebuffer.cpp.obj	64960dae04d49337
+47	306	7881222305121349	CMakeFiles/PlotA1.elf.dir/Motor.cpp.obj	7432bfb79b5046f3
+70	329	7881222305419689	CMakeFiles/PlotA1.elf.dir/RoutePlanner.cpp.obj	a2e0d92d4b8bf155
+82	343	7881222305572151	CMakeFiles/PlotA1.elf.dir/ov7670_i2c.cpp.obj	ba4669d3e0a8e613
+57	360	7881222305692269	CMakeFiles/PlotA1.elf.dir/Plotter.cpp.obj	b6374274c7d71fb9
+5	549	7881222307607134	CMakeFiles/PlotA1.elf.dir/EdgeDetect.cpp.obj	24ddfbdb2fc66455
+36	590	7881222308009092	CMakeFiles/PlotA1.elf.dir/Main.cpp.obj	d00e039a753f3697
+590	914	7881222310340436	PlotA1.elf	36df6f077564c41d

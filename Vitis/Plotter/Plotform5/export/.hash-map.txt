@@ -1,0 +1,1 @@
+{"generate.platform":[{"uri":"C:\\Users\\liamb\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotform5\\vitis-comp.json","md5":"e0fe16c55250213dc9a0a6b6c1955fbf"},{"uri":"C:\\Users\\liamb\\GitHub\\KBSCE-Plotter\\Vitis\\Plotter\\Plotform5\\microblaze_riscv_0\\standalone_microblaze_riscv_0\\bsp\\bsp.yaml","md5":"f8b8649190af6e3a43afb702c990800c"}]}
