@@ -1,7 +1,7 @@
 #ifndef H_EDGE_DETECT
 #define H_EDGE_DETECT
 
-#include "Framebuffer."
+#include "Framebuffer.h"
 #include "Geometry.h"
 #include "xil_types.h"
 #include "math.h"

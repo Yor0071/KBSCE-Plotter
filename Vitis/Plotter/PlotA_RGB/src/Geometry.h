@@ -1,5 +1,5 @@
 #pragma once
-#include "Framebuffer.hxx"
+#include "Framebuffer.h"
 #include <stdint.h>
 
 struct Vec2 {
@@ -20,7 +20,7 @@ constexpr int32_t SCREEN_POINT_TO_VEC2_SCALING = 15;
     };
 }
 
-/* Test Data
+// /* Test Data
 
 // Simple character
 // ===== Head =====
@@ -132,4 +132,4 @@ static const PolylineView smiley[] = {
 static const uint16_t smiley_count =
     (uint16_t)(sizeof(smiley) / sizeof(smiley[0]));
 
-*/
+// */

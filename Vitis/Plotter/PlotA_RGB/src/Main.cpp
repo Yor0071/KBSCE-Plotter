@@ -11,9 +11,9 @@ extern "C" {
 #include "Plotter.h"
 #include "ov7670_i2c.h"
 #include "Geometry.h"
-#include "Framebuffer.hxx"
+#include "Framebuffer.h"
 #include "RoutePlanner.h"
-#include "EdgeDetect.hxx"
+#include "EdgeDetect.h"
 
 static Plotter plotter;
 
